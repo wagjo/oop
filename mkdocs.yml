@@ -2,3 +2,7 @@ site_name: My Docs
 site_url: https://oop.wagjo.com
 theme:
   name: material
+  features:
+    - toc.integrate
+extra_css:
+  - stylesheets/tufte-sidebars.css
