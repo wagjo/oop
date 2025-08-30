@@ -1,8 +1,56 @@
-site_name: My Docs
+site_name: Objektovo Orientované Programovanie
 site_url: https://oop.wagjo.com
+nav:
+  - Úvod: 'index.md'
+  - Teória: 
+    - 1 - Úvod: 'teoria-3/t1-uvod.md'
+  - Cvičenia: 
+    - 1 - Úvod: 'cvicenie-3/cv1-uvod.md'
+  - Kontakt: 'autor.md'
+copyright: Copyright © 2025, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
 theme:
   name: material
   features:
     - toc.integrate
+    - content.code.copy
+    - content.code.annotate
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - header.autohide
+  palette:
+    primary: blue grey
 extra_css:
   - stylesheets/tufte-sidebars.css
+markdown_extensions:
+  - attr_list
+  - abbr
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - toc:
+      permalink: true

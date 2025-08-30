@@ -1,30 +1,20 @@
-# Welcome to MkDocs
+---
+hide:
+  - navigation
+---
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# Kurz objektovo orientovaného programovania
 
-## Commands
+Predmet *Objektovo orientované programovanie* je určený pre tretí ročník na [SPŠE v Prešove](https://www.spse-po.sk/). Medzi jeho hlavné ciele patrí osvojenie si základov objektovo orientovaného programovania a tvorbe programov v jazyku Java. Okrem toho predmet rozvíja a upevňuje základné znalosti programovania a softvérového vývoja. 
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+![Image title](assets/works-why.jpeg ){ align=right width=300 }
 
-<div class="md-has-sidebar">
-  <main>
-    This project experiments with adding Tuftean sidenotes to Material for MkDocs.
-    It's a bit simpler than what you'll find in the Tufte CSS and more like what
-    Bureau Gorbunov projects use.
-  </main>
+Výučba sa zameriava na moderné aspekty jazyka Java za pomoci použitia najnovších nástrojov a umelej inteligencie. V neposlednej rade sa predmet venuje rozvíjaniu schopností tvorivého riešenia problémov, kritického myslenia a výchove k zodpovednosti a samostatnosti. 
 
-  <aside>
-    This is a margin note – a sidenote without a footnote-style number.
-    Footnotes aren't implemented yet, but would be nice to have, too.
-  </aside>
-</div>
+*Počet hodín:* 3 hodiny týždenne, z toho 1 hodina teórie a 1 dvojhodinovka cvičenia. Doplňujúci povinne voliteľné predmet OPGP sa vyučuje 2 hodiny týždenne. Všetky veci uvedené na týchto stránkach sú aktuálne ku školskému roku 2025/2026.
 
-## Project layout
+!!! info "Upozornenie"
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+    Text neprešiel jazykovou ani štylistickou úpravou `¯\_(ツ)_/¯`. Tieto stránky sú v procese tvorby a pravidelne prechádzajú mnohými zmenami. Návrhy a pripomienky adresujte autorovi na adresu <jozef@wagjo.com>
+
+Copyright © 2025, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> :simple-creativecommons: :fontawesome-brands-creative-commons-by: :fontawesome-brands-creative-commons-nc: :fontawesome-brands-creative-commons-sa:
