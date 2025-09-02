@@ -591,6 +591,8 @@ Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programov
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
+    PRÍPRAVA NA PREDMET
+
     Podklady k predmetu sú na stránke https://oop.wagjo.com/
 
     Pre účely programovania je potrebné nainštalovať si Javu typu JDK. 
@@ -604,10 +606,20 @@ Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programov
     Vývojové prostredie, IDE, je softvér uľahčujúci programovanie. 
     Na tomto predmete budeme používať vývojové prostredie IntelliJ IDEA.
 
+
+    ÚVOD DO DIAGRAMOV
+
     Vývojový diagram slúži na znázornenie jednotlivých krokov procesu
     alebo algoritmu. V praxi sa používa v zjednodušenej forme a podľa potreby 
     dopĺňa iné typy diagramov.
     
+    >> zapísať tabuľku so základnými typmi symbolov vývojového diagramu.
+
+    >> nakresliť jeden jednoduchý vývojový diagram a jeden diagram s rozhodovacím blokom
+
+
+    DIAGRAMY AKO KÓD
+
     "Diagram as Code" alebo DaC umožňuje písať diagramy vo forme textu, ktorý
     vieme vložiť priamo do dokumentácie alebo zdrojového kódu.
 
@@ -618,17 +630,18 @@ Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programov
     Nástroj mermaid.live a knižnica mermaid.js nám umožňuje 
     automaticky vytvoriť diagramy z jednoduchého textového zápisu.
 
+
+    PSEUDOKÓD
+
     Pseudokód je zápis algoritmu v prirodzenom jazyku, bez pravidiel. 
     Pomáha nám vysvetliť algoritmus a plánodať kód.
+
+    >> zapísať pseudokód jedného z vývojových diagramov
+
     ```
 
-    - zapísať tabuľku so základnými typmi symbolov vývojového diagramu.
-    - nakresliť jeden jednoduchý vývojový diagram a jeden diagram s rozhodovacím blokom
-    - zapísať pseudokód jedného z vývojových diagramov
 
-
-
-!!! warning "Skúšanie a hodnotenie"
+!!! warning "Skúšanie a kontrola vedomostí"
 
     Na ďalšej hodine budeme kontrolovať nasledovné veci:
 

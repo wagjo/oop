@@ -1,5 +1,8 @@
 site_name: Objektovo Orientované Programovanie
 site_url: https://oop.wagjo.com
+plugins:
+  - glightbox:
+      manual: true
 nav:
   - Úvod: 'index.md'
   - Teória: 
