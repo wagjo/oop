@@ -1,4 +1,4 @@
-# Teória 1 - Úvod a motivácia
+# Teória 1: Úvod a motivácia
 
 Vitajte na predmete Objektovo orientované programovanie. Počas roka sa naučíte navrhovať a vytvárať softvér pomocou princípov OOP. Okrem toho sa zlepšíte v programovaní a softvérovom vývoji, naberiete nové vedomosti a praktické skúsenosti. Predmet je delený na 1 hodinu teórie a 2 hodiny cvičení. 
 
