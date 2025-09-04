@@ -591,28 +591,31 @@ Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programov
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    PRÍPRAVA NA PREDMET
+    Skriptá na stránke oop.wagjo.com
 
-    Podklady k predmetu sú na stránke https://oop.wagjo.com/
 
-    Pre účely programovania je potrebné nainštalovať si Javu typu JDK. 
-    Odporúčaná je distribúcia s názvom Temurin.
+    PRÍPRAVA
 
-    Prítomnosť Javy zistíme príkazom java --version.
+    Pre programovanie je potrebné mať Javu JDK (Java Development Kit).
+    Odporúčaná je distribúcia Temurin.
 
-    Nová verzia Javy vychádza každých 6 mesiacov, 
-    najnovšie stabilné verzie Javy sú 17, 21 a 25.
+    Akú Javu máme:
+    - príkaz: java --version
+    - nová verzia vychádza každých 6m
+    - posledné stabilné verzie Javy sú 17, 21 a 25
 
-    Vývojové prostredie, IDE, je softvér uľahčujúci programovanie. 
-    Na tomto predmete budeme používať vývojové prostredie IntelliJ IDEA.
+    IDE (Integrated Development Environment):
+    - vývojové prostredie
+    - uľahčuje programovanie
+    - IntelliJ IDEA
 
 
     ÚVOD DO DIAGRAMOV
 
-    Vývojový diagram slúži na znázornenie jednotlivých krokov procesu
-    alebo algoritmu. V praxi sa používa v zjednodušenej forme a podľa potreby 
-    dopĺňa iné typy diagramov.
-    
+    Vývojový diagram znázorňuje kroky procesu alebo algoritmu. 
+    V praxi sa používa v zjednodušenej forme.
+    Dopĺňa iné typy diagramov.
+
     >> zapísať tabuľku so základnými typmi symbolov vývojového diagramu.
 
     >> nakresliť jeden jednoduchý vývojový diagram a jeden diagram s rozhodovacím blokom
@@ -620,15 +623,19 @@ Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programov
 
     DIAGRAMY AKO KÓD
 
-    "Diagram as Code" alebo DaC umožňuje písať diagramy vo forme textu, ktorý
-    vieme vložiť priamo do dokumentácie alebo zdrojového kódu.
+    "Diagram as Code" alebo DaC sú diagramy vo forme textu.
+    Vieme ich dať do dokumentácie alebo zdrojového kódu.
+    Používame nástroj http://mermaid.live
 
-    Textový zápis diagramov sa ľahšie udržiava aktuálny a vie ho generovať
-    a upravovať aj AI. Nevýhodou je nezrelosť nástrojov, nutnosť ovládať
-    špecifickú syntax a strata precíznej kontroly vizuálu. 
+    Vlastnosti:
+    - generované automaticky z textu
+    - ľahšie sa udržiava aktuálny
+    - vie ho vytvárať a meniť AI
 
-    Nástroj mermaid.live a knižnica mermaid.js nám umožňuje 
-    automaticky vytvoriť diagramy z jednoduchého textového zápisu.
+    Nevýhody:
+    - nezrelosť nástrojov
+    - musíte vedieť špecifickú syntax
+    - strata precíznej kontroly vizuálu
 
 
     PSEUDOKÓD

@@ -332,95 +332,84 @@ Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložen�
 
     JAZYK PYTHON
 
-    Interpretovaný programovací jazyk na všeobecné použitie.
+    Vlastnosti:
+    - interpretovaný jazyk 
+    - všeobecné použitie
+    - dynamické typovanie
 
-    Používa sa v umelej inteligencii, strojovom učení a dátovej analytike.
+    Použitie:
+    - umelá inteligencia
+    - strojové učenie
+    - dátová analytika a dátová veda
 
-    Novšie verzie, aj minor, sú často nekompatibilné so starými a je nutná migrácia.
+    Novšie verzie sú často nekompatibilné so starými a je nutná migrácia
+
 
     SEMANTIC VERSIONING
 
-    Označovanie verzií softvéru a knižníc formátom MAJOR.MINOR.PATCH
+    Vytváranie verzií vo formáte MAJOR.MINOR.PATCH
+    Používané napr. v knižniciach v Javascripte, Pythone a Jave.
 
     Príklad: 3.13.7, 1.0.0
 
-    - MAJOR sa zvýši, keď sme spravili nekompatibilné zmeny,
-    - MINOR sa zvýši, keď sme pridali funkcionalitu so zachovaním spätnej kompatibility,
-    - PATCH sa zvýši, keď sme opravili chyby a ostala zachovaná spätná kompatibilita.
+    - MAJOR sa zvýši: veľké a nekompatibilné zmeny
+    - MINOR sa zvýši: nová funkcionalita, spätne kompatibilná
+    - PATCH sa zvýši: oprava chýb, spätne kompatibiliná
 
-    Používané napr. v knižniciach v Javascripte, Pythone a Jave
 
     KOMPILOVANÝ VS INTERPRETOVANÝ JAZYK
 
     Interpretovaný jazyk: 
     - interaktívny, skriptovací, pomalší
-    - pre svoj beh potrebuje mať interpreter
-    - chyby skontroluje až počas behu
+    - potrebuje interpreter
     - Python, PHP, Javascript
 
     Kompilovaný jazyk: 
-    - rýchly, môžem spustiť až keď skompilujem
-    - chyby skontroluje ešte pred spustením programu
-    - každý OS a procesor má svoju vlastnú verziu programu
+    - rýchly, program spustím až keď ho skompilujem
+    - chyby nájde ešte pred spustením programu
+    - špeciálna verzia pre každý typ OS a CPU
     - C, C++, Rust, Swift
 
-    Java je hybrid, najprv sa skompiluje do bytekódu a potom 
-    sa program interpretuje cez JVM virtuálny stroj.
+    Java je hybrid, kód sa skompiluje do bytekódu a ten sa interpretuje cez JVM
+
 
     INTERAKTÍVNE PROGRAMOVANIE
 
-    V konzole spustím program python
+    V konzole spustím program python.
+    Zadávam príkaz a python mi vypíše jeho výsledok.
+    Vhodné na skúšanie vecí a opravu chýb.
 
-    Zadávam príkaz a python mi vypíše jeho výsledok, ak nejaký je
-
-    Vhodné na skúšanie vecí a opravu chýb v bežiacom programe
 
     SKRIPTY
 
-    Skript vytvorím pomocou PyCharm
+    Skript je súbor s príponou .py, v ktorom je kód programu.
+    Skript vytvorím pomocou PyCharm. Spúšťam pomocou SHIFT-F10.
 
-    Skript je súbor s príponou .py, v ktorom je kód programu
-
-    Spúšťam pomocou SHIFT-F10
 
     PREMENNÁ
 
-    Premenná v Pythone je ako šípka (referencia) s menom, 
-    ktorá ukazuje na nejakú hodnotu (objekt) v pamäti počítača
+    Python premenná je pomenovaná referencia na objekt uložený v pamäti počítača.
+    Vytvárame a meníme pomocou operácie priradenia, napr. a = 10.
+    Premenná v Pythone nemá dátový typ, môže ukazovať na hocičo.
 
-    To, na akú vec bude ukazovať, vieme počas programu kedykoľvek meniť.
-
-    Premennú vytvárame a meníme pomocou operácie priradenia, napr. a = 10
-
-    Premenná v Pythone nemá dátový typ, môže ukazovať na hocičo
 
     KONŠTANTA
 
-    Konštanta je ako premenná, ale jej hodnota sa nemá meniť
-    
-    Pre názov konštanty sa používajú veľké písmená
-    
-    Je to iba dohoda, Python nekontroluje, či konštantu meníme
+    Konštanta je ako premenná, ale jej hodnota sa nemá meniť.
+    Pre názov konštanty sa používajú veľké písmená.
+    Je to iba dohoda, Python nekontroluje, či konštantu meníme.
+
 
     VSTUP A VÝSTUP
     
-    Do konzoly vypíšeme pomocou funkcie print()
-    
-    Z klávesnice načítame pomocou funkcie input()
+    - do konzoly vypíšeme pomocou funkcie print()
+    - z klávesnice načítame pomocou funkcie input()
+
 
     F-STRING
     
-    Umožňuje nám vkladať do reťazca premenné
-    
+    Umožňuje nám vkladať do reťazca premenné.    
     Príklad: f"Ahoj {meno} z obce {obec}, rád ťa tu vidím!"
-
-    PRÍKLAD
-
-    print("Dobrý deň, ako sa voláš?")
-    meno = input()
-    print("V akej obci bývaš?")
-    obec = input()
-    print(f"Ahoj {meno} z obce {obec}, rád ťa tu vidím!")
     ```
 
 

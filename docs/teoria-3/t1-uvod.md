@@ -19,7 +19,7 @@ Zmena prichádza aj do vyučovania a vzdelávania. V škole je zbytočné pasív
 
 Vo vašej budúcej práci *budete musieť umelú inteligenciu používať dennodenne*, inak ste nezamestnateľný. Vytváranie softvéru cez AI nebude pridanou hodnotou, ale nutnosťou. Dnešní AI agenti za vás vedia napísať zdrojový kód, opraviť chyby, napísať a vykonať testy a vygenerovať dokumentáciu. Používanie AI asistentov a vyhodnotenie toho, čo napíšu, bude vašou zručnosťou.
 
-Bez AI budete pomalý, ale ak AI agentov necháte robiť všetko za vás, budete vytvárať iba odpad, pomyje (AI slop). Firmy budú hľadať konkurenčnú výhodu a tá bude vždy v ľuďoch, ktorí budú vedieť AI vhodne používať a vyhodnotiť to, čo digitálny asistent vyprodukuje. Táto tzv. AI verifikácia sa stane vyhľadávanou zručnosťou a nedá sa automatizovať. Budú ju vedieť robiť iba skúsení a zruční softvérovi inžinieri a firmy budú takýchto ľudí vždy potrebovať.
+Bez AI budete pomalý, ale ak AI agentov necháte robiť všetko za vás, budete vytvárať iba odpad, pomyje (AI slop). Firmy budú hľadať konkurenčnú výhodu a tá bude vždy v ľuďoch, ktorí budú vedieť AI vhodne používať a vyhodnotiť to, čo digitálny asistent vyprodukuje. Táto tzv. AI verifikácia sa stane vyhľadávanou zručnosťou a nedá sa plne automatizovať. Budú ju vedieť robiť iba skúsení a zruční softvérovi inžinieri a firmy budú takýchto ľudí vždy potrebovať.
   </main>
 
   <aside markdown>
@@ -47,10 +47,10 @@ Paradigma určuje spôsoby, akým by sa malo riešenie danej úlohy - *implement
 * *Funkcionálne programovanie* - funkcie bez názvu, schopnosť funkciu posielať ako argument, alebo návratovú hodnotu
 * *Súbežné programovanie* - rozdelenie programu do častí, ktoré sú vykonávane súbežne, teda úlohy sú vykonávané súčasne naraz
 
-Na predchádzajúcich predmetoch ste sa naučili technikám štruktúrovaného a procedurálneho programovania. Tie budete využívať aj naďalej a k nim na tomto predmete pridáme programovanie objektovo orientované.
-
 <div class="md-has-sidebar" markdown>
   <main markdown>
+Na predchádzajúcich predmetoch ste sa naučili technikám štruktúrovaného a procedurálneho programovania. Tie budete využívať aj naďalej a k nim na tomto predmete pridáme programovanie objektovo orientované.
+
 !!! tip "Učím sa s pomocou umelej inteligencie"
 
     Som študent strednej školy, a učím sa objektové programovanie. Uveď [krátku históriu rôznych typov programovacích jazykov](https://chatgpt.com/share/68b363bf-4888-8011-bf48-d9c73d8e0115).
@@ -124,55 +124,54 @@ Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vy
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    Podklady k predmetu sú na stránke https://oop.wagjo.com/
+    Skriptá na stránke oop.wagjo.com
+
 
     DIGITÁLNY ASISTENTI
 
-    Použitie AI asistentov a agentov je v praxi nutnosťou.
+    AI Asistent - reaktívny, odpovedá na otázky, jednoduché úlohy
+    AI Agent - proaktívny, autonómny, zložité viackrokové úlohy
 
-    Bez AI budete pomalý, ale ak AI necháte robiť všetko za vás, 
-    budete vytvárať iba odpad, pomyje (anglicky AI slop).
+    AI Prompting - vytváranie inštrukcií pre AI
+    AI Verifikácia - kontrola presnosti, spoľahlovosti a kvality výstupu
+                   - vždy riadená človekom
 
-    Cieľ je vedieť AI vhodne používať a vyhodnotiť to, čo AI vyprodukuje. 
-    
-    AI verifikácia sa stane vyhľadávanou zručnosťou a nedá sa automatizovať.
-
+    AI Slop - odpad, vznikne ak AI slepo dôverujem
 
     OBJEKTOVO ORIENTOVANÉ PROGRAMOVANIE
 
-    Programovanie sa vyvíjalo od nízkoúrovňových jazykov k postupne zložitejším paradigmám.
+    Paradigmy v programovaní:
+    - Štruktúrované: sekvencie príkazov, podmienky, cykly
+    - Procedurálne: podprogramy, ktoré sa vedia navzájom volať
+    - Objektovo orientované: objekty, zapuzdrenie, polymorfizmus
+    - Funkcionálne: anonymné funkcie, high-order funkcie
 
-    Programovacie paradigmy:
-    - Štruktúrované programovanie
-    - Procedurálne programovanie
-    - Objektovo orientované programovanie
-    - Funkcionálne programovanie
-
-    OOP modeluje svet podobne ako ho vnímame my.
-
-    Pomocou OOP vieme zvládnuť väčšiu komplexnosť programov. 
-    
-    Umožňuje nám znovupoužitie kódu a jeho intuitívnu organizáciu.
+    OOP:
+    - modeluje podľa nášho vnímania sveta
+    - zvláda väčšiu komplexnosť
+    - umožňuje znovupoužitie
+    - intuitívna organizácia kódu
 
 
     JAZYK JAVA
 
-    Využívaný vo veľkých podnikových systémoch, webových back-endoch a cloudových aplikáciách.
+    Vlastnosti:
+    - objektovo orientovaný
+    - univerzálny
+    - platformovo nezávislý 
+    - staticko typovaný: typy premenných sú kontrolované pri kompilácii 
 
-    Hlavná platforma pre vývoj mobilných Android aplikácií (jazyk Kotlin).
+    Použitie:
+    - veľké podnikové systémy
+    - webový back-end
+    - Android aplikácie (jazyk Kotlin)
+    - cloudové a distrubuované systémy
 
-    Mottom Javy je Napíš raz, spusti všade (Write Once, Run Anywhere, WORA).
-
-    Ponúka platformovú nezávislosť - Kód sa prekladá do bytecode a beží nad JVM.
-    
-    JVM - Java Virtual Machine
-
-    Java API - štandardizovaná sada knižníc na bežné použitie
-
-    Statické typovanie - typy premenných sú známe a kontrolované už pri kompilácii
-
-    Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vyššia spotreba pamäte.
-
+    Platformová nezávislosť:
+    - kód sa kompiluje do bytecode a beží nad JVM
+    - motto Javy: Write Once, Run Anywhere (WORA)
+    - virtuálny stroj JVM (Java Virtual Machine)
+    - Java API: vždy dostupná sada knižníc na bežné použitie
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
@@ -189,4 +188,4 @@ Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vy
     - Čo nové nám OOP prináša?
     - Čo znamená: Napíš raz, spusti všade (Write Once, Run Anywhere, WORA)?
     - Aké sú typické vlastnosti jazyka Java?
-    - Aké má jazyk Java nevýhody?
+    - Bonus: Aké sú nevýhody jazyka Java?
