@@ -591,7 +591,7 @@ Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programov
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    Skriptá na stránke oop.wagjo.com
+    Učebnica na stránke oop.wagjo.com
 
 
     PRÍPRAVA
@@ -641,7 +641,7 @@ Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programov
     PSEUDOKÓD
 
     Pseudokód je zápis algoritmu v prirodzenom jazyku, bez pravidiel. 
-    Pomáha nám vysvetliť algoritmus a plánodať kód.
+    Pomáha nám vysvetliť algoritmus a plánovať kód.
 
     >> zapísať pseudokód jedného z vývojových diagramov
 

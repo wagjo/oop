@@ -124,7 +124,7 @@ Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vy
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    Skriptá na stránke oop.wagjo.com
+    Učebnica na stránke oop.wagjo.com
 
 
     DIGITÁLNY ASISTENTI

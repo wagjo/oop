@@ -46,3 +46,7 @@ Vedieť sformulovať definície vlastností algoritmov
     • Vedieť zápis, význam a použitie výrazov a operátorov v Jave 
 
     2 cvika
+
+    vibe coding
+
+    carpathy

@@ -6,14 +6,14 @@ plugins:
 nav:
   - Úvod: 'index.md'
   - Teória: 
-    - 1 - Úvod: 'teoria-3/t1-uvod.md'
-    - 2 - Opakovanie: 'teoria-3/t2-opakovanie.md'
+    - 1 - Úvod: 'teoria-3/t01-uvod.md'
+    - 2 - Opakovanie: 'teoria-3/t02-opakovanie.md'
   - Cvičenia: 
-    - 1 - Úvod: 'cvicenie-3/cv1-uvod.md'
-    - 2 - Opakovanie: 'cvicenie-3/cv2-opakovanie.md'
+    - 1 - Úvod: 'cvicenie-3/c01-uvod.md'
+    - 2 - Opakovanie: 'cvicenie-3/c02-opakovanie.md'
   - Pokročilí: 
-    - 1 - Úvod: 'pokrocili-3/p1-uvod.md'
-    - 2 - Opakovanie: 'pokrocili-3/p2-opakovanie.md'
+    - 1 - Úvod: 'pokrocili-3/p01-uvod.md'
+    - 2 - Opakovanie: 'pokrocili-3/p02-opakovanie.md'
   - Kontakt: 'autor.md'
 copyright: Copyright © 2025, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
 theme:

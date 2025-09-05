@@ -335,7 +335,7 @@ Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložen�
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    Podklady k predmetu sú na stránke https://oop.wagjo.com/
+    Učebnica na stránke https://oop.wagjo.com/
 
     JAZYK PYTHON
 
