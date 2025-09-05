@@ -284,6 +284,13 @@ Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložen�
     Ahoj Jožo z obce Prešov, rád ťa tu vidím!
     ```
 
+!!! tip "Učím sa s pomocou umelej inteligencie"
+
+    Som študent strednej školy, učím sa Python. Napíš 3 nie zložité príklady na:
+
+    - [použitie premenných a konštánt](https://grok.com/s/c2hhcmQtMg%3D%3D_b34d50b3-4fc3-4793-8677-67feae0ff42f)
+    - [použitie funkcií input() a print()](https://grok.com/s/c2hhcmQtMg%3D%3D_f6804dbb-58b4-49e2-acb9-57ef35db5f6b)
+    - [prácu s formátovanými reťazcomi f-string](https://grok.com/s/c2hhcmQtMg%3D%3D_e52c28f4-60e6-4909-92d8-d83ab4844f2b)
 
 ## Zhrnutie cvičenia
 

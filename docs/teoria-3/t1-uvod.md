@@ -138,6 +138,7 @@ Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vy
 
     AI Slop - odpad, vznikne ak AI slepo dôverujem
 
+
     OBJEKTOVO ORIENTOVANÉ PROGRAMOVANIE
 
     Paradigmy v programovaní:
