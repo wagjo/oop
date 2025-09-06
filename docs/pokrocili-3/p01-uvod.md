@@ -134,8 +134,8 @@ S Pythonom následne komunikujeme tak, že do príkazového riadku napíšeme pr
     125
     >>> 10 - 3
     7
-    >>> 'Ahoj ' + 'Jožo' # (1)!
-    'Ahoj Jožo'
+    >>> 'Ahoj ' + 'Fero' # (1)!
+    'Ahoj Fero'
     ```
 
     1. Operátor sčítania `+` sa dá v Pythone použiť nie len pre čísla
@@ -254,8 +254,8 @@ Tak ako vieme do konzoly niečo vypísať, vieme aj požiadať o nejaký vstup o
 
     ``` console
     Dobrý deň, ako sa voláš?
-    Jožo
-    Ahoj Jožo Rád ťa tu vidím
+    Fero
+    Ahoj Fero Rád ťa tu vidím
     ```
 
 !!! warning "Upozornenie"
@@ -278,10 +278,10 @@ Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložen�
 
     ``` console
     Dobrý deň, ako sa voláš?
-    Jožo
+    Fero
     V akej obci bývaš?
     Prešov
-    Ahoj Jožo z obce Prešov, rád ťa tu vidím!
+    Ahoj Fero z obce Prešov, rád ťa tu vidím!
     ```
 
 !!! tip "Učím sa s pomocou umelej inteligencie"
