@@ -15,7 +15,7 @@
 <td width=30%>TODO
 </td>
 <td width=50%>
-<a href="../cvicenie-3/c01-uvod">Úvod, vývojový diagram</a> (<a href="../assets/c01.pdf">pdf</a>)
+<a href="../cvicenie-3/c01-uvod">Úvod, vývojový diagram</a> (<a href="../assets/c01.pdf">pdf</a>, <a href="../assets/c01w.pdf">wide</a>)
 <ul>
 <li>Inštalácia JDK</li>
 <li>Inštalácia IDE</li>
