@@ -1,4 +1,4 @@
-# Pokročílí 1: Úvod do predmetu
+# Pokročílí 1: Úvod do predmetu, premenné, vstup a výstup
 
 Na tomto voliteľnom predmete budeme preberať pokročilejšie témy z oblasti objektovo orientovaného programovania. Pôjdeme viac do hĺbky a ukážeme si pokročilejšie nástroje používané pri vývoji softvéru. Tak isto si ukážeme viacero praktických aplikačných využití.
 
