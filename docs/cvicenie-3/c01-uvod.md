@@ -32,8 +32,8 @@ V rámci tohto predmetu budeme používať okrem IDE aj konzolu a príkazový ri
     Som študent strednej školy. Vysvetli mi jednoduchým spôsobom, ako funguje:
 
     - [Triediaci algoritmus Bubble Sort](https://grok.com/share/c2hhcmQtMg%3D%3D_04b3627f-6f2d-4869-ad90-7ffbc532171b)
-    - [Rekurzia](https://grok.com/share/c2hhcmQtMg%3D%3D_395beb3e-61f3-416c-a956-11f492e70de2)
-    - [Zložené dátové typy](https://grok.com/share/c2hhcmQtMg%3D%3D_22a68726-c192-4788-856a-96af9b2c544f)
+    - [Rekurzia](https://grok.com/share/c2hhcmQtMg%3D%3D_f9683f65-b3d4-433a-a350-d308f461b67d)
+    - [Zložené dátové typy](https://grok.com/share/c2hhcmQtMg%3D%3D_94026252-0da8-4476-838b-f72158d34ddd)
 
     Sú tieto odpovede, ktoré nám dala umelá inteligencia, správne? Dôverovali by ste umelej inteligencii pri témach, o ktorých vôbec nič neviete?
 
@@ -124,6 +124,8 @@ Moderným prístupom ku tvorbe diagramov sa budeme venovať aj na tomto predmete
 !!! tip "Učím sa s pomocou Umelej Inteligencie"
 
     Som študent strednej školy. Chcem vedieť, [aké sú súčasné trendy používania diagramov pri softvérovom vývoji.](https://chatgpt.com/share/68b2c1fd-aefc-8011-819b-73cfec407b22)
+
+![Treba prečitať](../assets/pointing5l.png){align=left width=150}
 
 Návrh vývojového diagramu netreba komplikovať. Často je vhodné použiť iba minimálny počet blokov, prepojením šípkami určiť ich poradie a bloky zrozumiteľne označiť. Pri popise blokov je najlepšie zamerať sa na vyjadrenie akcie, ktorú daný blok vykonáva. Zložitejšie časti procesu je vhodné rozdeliť do viacerých menších diagramov a na tie sa potom v hlavnom diagrame odkazovať.
 
