@@ -13,7 +13,7 @@
 <tr >
 <td width=10%>1</td>
 <td width=30%>
-<a href="../teoria-3/t01-uvod">Úvod a motivácia</a> (<a href="../assets/t01.pdf">pdf</a>)
+<a href="../teoria-3/t01-uvod">Úvod a motivácia</a> (<a href="../assets/t01w.pdf">pdf</a>)
 <ul>
 <li>Digitálni asistenti</li>
 <li>Objektovo orientované programovanie</li>
@@ -21,7 +21,7 @@
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c01-uvod">Úvod, vývojový diagram</a> (<a href="../assets/c01.pdf">pdf</a>)
+<a href="../cvicenie-3/c01-uvod">Úvod, vývojový diagram</a> (<a href="../assets/c01w.pdf">pdf</a>)
 <ul>
 <li>Inštalácia JDK</li>
 <li>Inštalácia IDE</li>
@@ -31,7 +31,7 @@
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p01-uvod">Úvod, premenné, vstup a výstup</a> (<a href="../assets/p01.pdf">pdf</a>)
+<a href="../pokrocili-3/p01-uvod">Úvod, premenné, vstup a výstup</a> (<a href="../assets/p01w.pdf">pdf</a>)
 <ul>
 <li>Jazyk Python, IDE</li>
 <li>Semantic versioning</li>
@@ -56,7 +56,7 @@
 <td width=30%>
 <a href="../cvicenie-3/c02-uvod"></a> (<a href="../assets/c02.pdf">pdf</a>)
 <ul>
-<li>konzola: javac, java; spúšťanie cez IDE, JRE</li>
+<li>spúšťanie cez IDE, JRE</li>
 <li>Reťazce - úvod</li>
 <li>Vstup a výstup</li>
 <li>Formátovanie výstupu</li>
