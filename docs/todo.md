@@ -10,6 +10,7 @@
 - subor, namespace
 - vibe coding
 - carpathy
+- konzola: javac, java; 
 
 ## BACKLOG
 
