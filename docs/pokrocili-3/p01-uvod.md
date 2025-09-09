@@ -142,7 +142,7 @@ S Pythonom následne komunikujeme tak, že do príkazového riadku napíšeme pr
 
 </main>
   <aside markdown>
-Interaktívne programovanie pomocou konzoly sa nazýva REPL, a znamená *read–eval–print loop*. Je výsadou interaktívnych jazykov a umožňuje meniť program za jeho behu a dokonca opraviť aj komplikované chyby bez toho, aby sa program musel reštartovať. Svetovo známym príkladom je ako NASA pomocou REPL opravila kritickú chyby vo vesmírnej lodi [Deep Space 1](https://susam.net/very-remote-debugging.html), ktorá bola od zeme vzdialená 100 miliónov kilometrov.
+Interaktívne programovanie pomocou konzoly sa nazýva REPL, a znamená *read–eval–print loop*. Je výsadou interaktívnych jazykov a umožňuje meniť program za jeho behu a dokonca opraviť aj komplikované chyby bez toho, aby sa program musel reštartovať. Svetovo známym príkladom je ako NASA pomocou REPL opravila kritickú chyby vo vesmírnej sonde [Deep Space 1](https://susam.net/very-remote-debugging.html), ktorá bola od zeme vzdialená 100 miliónov kilometrov.
   </aside>
 </div>
 
