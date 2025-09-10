@@ -65,10 +65,12 @@ Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci pa
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p02-uvod"></a> (<a href="../assets/p02.pdf">pdf</a>)
+<a href="../pokrocili-3/p02-opakovanie"></a> (<a href="../assets/p02w.pdf">pdf</a>)
 <ul>
-<li>typy: int, str, float, bool, tuple, list, set, dict</li>
-<li>funkcie, riadenie: if, elif, else, for, while, výnimky, odsadzovanie, štruktúra programu</li>
+<li>Príkazy a výrazy</li>
+<li>dátové typy: int, str, float, bool, tuple, list, set, dict</li>
+<li>funkcie, riadenie: if, elif, else</li>
+<li>for, while, výnimky</li>
 </ul>
 </td>
 </tr>
