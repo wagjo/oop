@@ -307,8 +307,7 @@ Preto majú neprimitívne konštanty využitie hlavne v prípadoch, kedy aj samo
     ```
     ALGORITMUS
 
-    Algoritmus je postupnosť presne definovaných krokov, 
-    ktoré musíme realizovať, aby sme vyriešili úlohu a dosiahli výsledok. 
+    Postupnosť presne definovaných krokov na dosiahnutie výsledku. 
     
     Algoritmus musí mať tieto vlastnosti:
     - Konečnosť
@@ -321,14 +320,14 @@ Preto majú neprimitívne konštanty využitie hlavne v prípadoch, kedy aj samo
     DÁTOVÉ TYPY V JAVE
 
     Java má 8 primitívnych dátových typov
-    - logický typ: boolean
-    - celé čísla: byte, short, int, long
-    - čísla s pohyblivou rádovou čiarkou: float a double
-    - znaky: char
+    - boolean
+    - byte, short, int, long
+    - float a double
+    - char
     
     Neprimitívne dátové typy
-    - Je ich veľa a vieme si vytvárať vlastné
-    - Hodnoty neprimitívnych typov sú objekty
+    - Vieme si vytvárať vlastné
+    - Ich hodnoty sú objekty
     - Príklad: File, Date, Map, String, Array
 
 

@@ -1,8 +1,14 @@
 # Pokročílí 2: Opakovanie
 
+Na tomto cvičení pokračujeme v opakovaní základov Pythonu. Pripomenieme si základné dátové typy a tvorbu funkcií. Zopakujeme si tiež vetvenia, cykly a výnimky.
+
 ## Literál
 
 Dátové typy majú svoje konkrétne hodnoty. Zápis takejto hodnoty priamo v kóde sa nazýva **literál**. Syntax literálov je súčasťou programovacieho jazyka.
+
+<div class="md-has-sidebar" markdown>
+  <main markdown>
+
 
 === "Príklady literálov v Pythone"
 
@@ -21,7 +27,20 @@ Dátové typy majú svoje konkrétne hodnoty. Zápis takejto hodnoty priamo v k�
     {1, 2, 3}       # set
     {}              # empty dict
     ```
+  
+  
+  </main>
+  <aside markdown>
+Reťazce znakov (strings) majú viacero typov zápisov, aby sa uľahčilo ich písanie. Ak potrebujem mať v reťazci dvojité úvodzovky, zvolím zápis s obyčajnými úvodzovkami, a naopak. `"McDonald's"`
 
+Python podporuje taktiež aj viacriadkový reťazec, ktorý píšeme s troma úvodzovkami.
+```python
+"""Tento text
+je na viac
+riadkov"""
+```
+  </aside>
+</div>
 V Pythone každý **literál vytvorí nový objekt v pamäti počítača**. Výnimku tvoria malé nemenné objekty, ktoré Python môže, ak chce, vytvoriť v pamäti iba raz, a znovupoužiť ich. 
 
 Na rozdiel of Javy Python nemá primitívne dátové typy, každá hodnota je objekt. Teda aj hodnoty všetkých dátových typov sú objekty. Či už máme číslo `4` alebo zoznam `[1, 2, 3]`, obidve sú v pamäti uložené ako objekty.
@@ -34,6 +53,7 @@ V Pythone existuje špeciálna hodnota, ktorá signalizuje, že žiadna hodnota 
 
 V Pythone máme tieto základné dátové typy:
 
+
 | Kategória | Názov | Popis | Príklad literálu |
 | --- | --- | --- | --- |
 | Čísla | `int` | celé číslo | `10`, `-5` |
@@ -45,6 +65,8 @@ V Pythone máme tieto základné dátové typy:
 | Množiny | `set` | množina, bez poradia, meniteľná | `{1, "Fero", False}` |
 | Mapovanie | `dict` | slovník, kľúč -> hodnota, meniteľná | `{"meno": "Fero", "známka": 1}` |
 
+<div class="md-has-sidebar" markdown>
+<main markdown>
 
 !!! tip "Učím sa s pomocou umelej inteligencie"
 
@@ -53,6 +75,12 @@ V Pythone máme tieto základné dátové typy:
     - [dátové typy int, float, bool a str](https://grok.com/share/c2hhcmQtMg%3D%3D_a3187edc-dfd0-47f4-8f5c-a300115fb98f)
     - [dátové typy list a tuple](https://grok.com/share/c2hhcmQtMg%3D%3D_0a0dbf7f-3eea-4cbd-92c1-16bf8f6036f7)
     - [dátové typy set a dict](https://grok.com/share/c2hhcmQtMg%3D%3D_23cd9ba6-d77c-4ba7-827b-f0aaa3e1c8fc)
+
+</main>
+  <aside markdown>
+Na rozdiel od Javy v Pythone nemáme maximálnu hodnotu daného typu. Čísla môžu byť akokoľvek veľké, a jediným obmedzením je pamäť vášho počítača.
+  </aside>
+</div>
 
 ## Funkcie
 
@@ -108,71 +136,148 @@ Vyššie uvedené zadávanie parametrov sa vola pozičné. Okrem neho môžem v 
 
 Základné vetvenie pomocou podmienok:
 
-```python
-if podmienka1:
-    pass # vykoná sa, ak je podmienka1 pravdivá (True)
-elif podmienka2: # voliteľná časť
-    pass # vykoná sa, ak je podmienka1 nepravdivá a podmienka2 pravdivá
-else: # voliteľná časť
-    pass # vykoná sa, ak žiadna podmienka nebola pravdivá
-```
+<div class="md-has-sidebar" markdown>
+<main markdown>
 
-pass je klucove slovo, ktorým označujeme prázdny blok, ak v ňom nechceme nič vykonávať
+=== "Podmienka v Pythone"
 
-```python
-vek = 18
+    ```python
+    if podmienka1:
+        pass # vykoná sa, ak je podmienka1 pravdivá (True)
+    elif podmienka2: # voliteľná časť
+        pass # vykoná sa, ak je podmienka1 nepravdivá a podmienka2 pravdivá
+    else: # voliteľná časť
+        pass # vykoná sa, ak žiadna podmienka nebola pravdivá
+    ```
 
-if vek < 18:
-    print("Si mladší ako 18 rokov.")
-elif vek == 18:
-    print("Máš presne 18 rokov!")
-else:
-    print("Si starší ako 18 rokov.")
-```
+</main>
+  <aside markdown>
+  V Pythone je `pass` špeciálny príkaz, ktorým označujeme prázdny blok, ak v ňom nechceme nič vykonávať. Zložené príkazy ako `if` alebo `while` totiž čakajú nejaký blok kódu, a musíme tam niečo napísať.
+  </aside>
+</div>
 
-If a aj iné rozhodovacie bloky môžem ľubovoľne vnárať.
 
-```python
-vek = 13
-ma_dospely_doprovod = True
 
-if vek >= 15:
-    print("Môžeš ísť do kina na film od 15 rokov.")
-else:
-    print("Si mladší ako 15.")
-    if ma_dospely_doprovod and vek >= 12:
-        print("Môžeš ísť s dospelým doprovodom.")
+=== "Použitie podmienky"
+
+    ```python
+    vek = 18
+
+    if vek < 18:
+        print("Si mladší ako 18 rokov.")
+    elif vek == 18:
+        print("Máš presne 18 rokov!")
     else:
-        print("Nemôžeš ísť na film od 15 rokov.")
-```
+        print("Si starší ako 18 rokov.")
+    ```
+
+`if` a aj iné rozhodovacie bloky môžem ľubovoľne vnárať.
+
+
+
+<div class="md-has-sidebar" markdown>
+<main markdown>
+
+=== "Vnorená podmienka"
+
+    ```python
+    vek = 13
+    ma_dospely_doprovod = True
+
+    if vek >= 15:
+        print("Môžeš ísť do kina na film od 15 rokov.")
+    else:
+        print("Si mladší ako 15.")
+        if ma_dospely_doprovod and vek >= 12:
+            print("Môžeš ísť s dospelým doprovodom.")
+        else:
+            print("Nemôžeš ísť na film od 15 rokov.")
+    ```
+</main>
+  <aside markdown>
+
+Do podmienky vieme vložiť akýkoľvek výraz. Často sa v podmienkach používajú aj logické výrazy `and`, `or` a `not`.
+
+  </aside>
+</div>
+
+
+  V pythone existuje aj tzv. ternárny operátor, čo je podmienka, ktorú môžeme zapísať do jedného riadku a predstavuje výraz a nie príkaz, teda môžme je použiť v rámci iného kódu.
+
+=== "Ternárny operátor"
+
+    ```python
+    status = "dospelý" if x >= 18 else "nedospelý"
+    ```
+
+
 
 ## Cykly
 
-```python
-for i in range(5):
-    print("Číslo:", i)
-```
+Cykly slúžia na opakovanie nejakej časti kódu. Poznáme dva hlavné fory cyklov
 
-```python
-x = 0
-while x < 5:
-    print("x je", x)
-    x += 1
-```
+`for` cyklus sa používa sa na iterovanie cez kolekcie (zoznamy, reťazce, množiny, atď.) alebo rozsahy čísel. Používame ho keď vieme, koľko iterácií nastane alebo keď potrebujeme iterovať cez nejakú kolekciu.
 
-```python
-for i in range(10):
-    if i == 3:
-        break
-    print(i)
-```
+=== "Cyklus for"
 
-```python
-for i in range(5):
-    if i == 2:
-        continue
-    print(i)
-```
+    ```python
+    # iteracia cez rozsah
+    for i in range(5):
+        print("Číslo:", i)
+
+    # iteracia cez zoznam
+    farby = ["červená", "modrá", "zelená"]
+    for farba in farby:
+        print(farba)
+
+    # iteracia cez slovnik
+    student = {"meno": "Ferp", "vek": 20}
+    for kluc, hodnota in student.items():
+        print(kluc, ":", hodnota)
+    ```
+
+`while` cyklus sa opakuje, kým platí podmienka (hodnota je `True` alebo true like). Používame ho keď dopredu nevieme, koľko krát sa cyklus má opakovať.
+
+=== "Cyklus while"
+
+    ```python
+    x = 0
+    while x < 5:
+        print("x je", x)
+        x += 1
+    ```
+
+Python má naviac špeciálne príkazy, ktoré menia správanie cyklov. `break` ukončí celý cyklus a `continue` preskočí aktuálnu iteráciu a pokračuje ďalšou.
+
+=== "Riadenie cyklu"
+
+    ```python
+    for i in range(10):
+        if i == 3:
+            break
+        print(i)
+
+    for i in range(5):
+        if i == 2:
+            continue
+        print(i)
+    ```
+
+Niekedy potrebujeme zistiť, či náš cyklus skončil normálne, alebo bol predčasne ukončený pomocou `break`. V Pythone na to máme špeciálnu formu použitia príkazu `else`, ktorý sa vykoná, keď cyklus skončí normálne, bez breaknutia
+
+=== "Použitie for-break-else v príklade"
+
+    ```python
+    cisla = [2, 4, 6, 8, 10]
+    hladane = 6
+
+    for n in cisla:
+        if n == hladane:
+            print("Našiel som číslo:", n)
+            break
+    else:
+        print("Číslo sa v zozname nenachádza")
+    ```
 
 ## výnimky
 

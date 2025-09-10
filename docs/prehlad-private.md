@@ -45,7 +45,7 @@
 <tr >
 <td width=10%>1</td>
 <td width=30%>
-<a href="../teoria-3/t02-opakovanie">Algoritmus, dátové typy a premenné</a> (<a href="../assets/t02.pdf">pdf</a>)
+<a href="../teoria-3/t02-opakovanie">Algoritmus, dátové typy a premenné</a> (<a href="../assets/t02w.pdf">pdf</a>)
 <ul>
 <li>Algoritmus a jeho vlastnosti</li>
 <li>Dáta v počítači</li>
