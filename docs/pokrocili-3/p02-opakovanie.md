@@ -395,8 +395,8 @@ def faktorial(n):
     Základné dátové typy v Pythone:
     - int, float, str, bool, list, tuple, set, dict
 
-    Funkcia vytvorím pomocou def
-    - argumentom môžem priradiť defaultnú hodnotu
+    Funkciu vytvorím pomocou def
+    - parametrom môžem priradiť defaultnú hodnotu
     - vieme použiť aj kľúčové zadávanie parametrov
 
     Vetvenie programu:
