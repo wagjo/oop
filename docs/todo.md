@@ -11,6 +11,7 @@
 - vibe coding
 - carpathy
 - konzola: javac, java; 
+- p03 viditelnost premennych, scope, global, nonlocal, inner funkcie
 
 ## BACKLOG
 
