@@ -349,5 +349,5 @@ while (i < 5) {
     - Vedieť napísať statickú metódu
     - Vedieť napísať cyklus a podmienku
     - Ternárny operátor, čo to je?
-    - Ako načítame vstup z klávecnice?
+    - Ako načítame vstup z klávesnice?
     - Ako vypíšeme niečo na obrazovku?
