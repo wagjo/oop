@@ -119,7 +119,7 @@ Výraz je kombinácia hodnôt, premenných, operátorov a volaní metód, ktorá
 
 Príklad výrazov: `5`, `a + 3`, `s.length()`
 
-Príkaz je samostatná jednotka vykonania, ktorá niečo robí. Príkazy nevracajú hodnotu.
+Príkaz je samostatná jednotka vykonania, ktorá niečo robí. Príkazy nevracajú hodnotu. Príkazy končia bodkočiarkou, alebo blokom kódu v zložených zátvorkách.
 
 Príklad príkazov: podmienky a cykly (`if`, `while`, `for`), `return`, `break`, `System.out.println()`
 
@@ -139,7 +139,7 @@ Niektoré príkazy majú špeciálnu výrazovú formu. Napríklad príkaz `if` m
 
 ## Zhrnutie teórie
 
-- [x] Identita (anglicky identity) reprezentuje jedinečnosť danej veci, jej výnimočnosť.  
+- [x] Identita (anglicky identity) reprezentuje jedinečnosť danej veci, jej výnimočnosť
     * [ ] Identita veci sa v čase nemení, ale hodnota (anglicky value) danej veci sa meniť môže
     * [ ] Všetky primitívne dátove typy v Jave majú hodnoty bez identity
     * [ ] Hodnoty primitívnych typov porovnávame pomocou operátora ==
@@ -148,7 +148,7 @@ Niektoré príkazy majú špeciálnu výrazovú formu. Napríklad príkaz `if` m
     * [ ] nesie stav - má svoje konkrétne hodnoty - atribúty
     * [ ] poskytuje správanie - poskytuje metódy, ktoré môžeme nad objektom volať
     * [ ] je inštanciou triedy (class) - je konkrétnym výtvorom z abstraktného návrhu triedy
-- [x] Všetky neprimitívne dátove typy vytvárajú objekty.
+- [x] Všetky neprimitívne dátove typy vytvárajú objekty
     * [ ] Objekty vytvárame pomocou operátora new
     * [ ] Identitu objektov porovnávame pomocou operátora ==
     * [ ] Hodnoty objektov porovnávame pomocou metódy equals()    
@@ -160,9 +160,10 @@ Niektoré príkazy majú špeciálnu výrazovú formu. Napríklad príkaz `if` m
     * [ ] operátory rovnosti: `==,` `!`
     * [ ] operátor vytvorenia objektu: `new`
 - [x] Príkazy (statements) a výrazy (expressions)
-    * [ ] Výraz je kombinácia hodnôt, premenných, operátorov a volaní metód, ktorá po vyhodnotení vráti hodnotu. 
-    * [ ] Výrazy môžu byť súčasťou príkazov.
-    * [ ] Príkaz je samostatná jednotka vykonania, ktorá niečo robí. Príkazy nevracajú hodnotu.
+    * [ ] Výraz je kombinácia hodnôt, premenných, operátorov a volaní metód, ktorá po vyhodnotení vráti hodnotu.
+    * [ ] Výrazy môžu byť súčasťou príkazov
+    * [ ] Príkaz je samostatná jednotka vykonania, ktorá niečo robí. Príkazy nevracajú hodnotu
+    * [ ] Príkazy končia bodkočiarkou, alebo blokom kódu v zložených zátvorkách
     
 
 !!! note "Poznámky do zošita"
@@ -187,6 +188,7 @@ Niektoré príkazy majú špeciálnu výrazovú formu. Napríklad príkaz `if` m
     - Výrazy môžu byť súčasťou príkazov
     - Príkaz je samostatná jednotka vykonania, ktorá niečo robí
     - Príkazy nevracajú hodnotu
+    - Príkazy končia bodkočiarkou, alebo blokom kódu v zložených zátvorkách
 
     ```
 
