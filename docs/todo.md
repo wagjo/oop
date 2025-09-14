@@ -12,6 +12,10 @@
 - carpathy
 - konzola: javac, java; 
 - p03 viditelnost premennych, scope, global, nonlocal, inner funkcie
+<li>null referencia</li>
+
+<li>diagram aktivít</li>
+<li>Vibe coding, carpathy</li>
 <li>Trieda</li>
 
 

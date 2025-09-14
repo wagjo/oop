@@ -89,13 +89,9 @@ Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci pa
 <td width=30%>
 <a href="../cvicenie-3/c03-uvod"></a> (<a href="../assets/c03.pdf">pdf</a>)
 <ul>
-<li>Vetvenie</li>
-<li>null referencia</li>
-<li>Cykly</li>
-<li>Prerušenie toku</li>
-<li>diagram aktivít</li>
-<li>Vibe coding, carpathy</li>
-Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci parametrizované (rôzne veľké) obrazce (štvorce, obdĺžniky, trojuholníky, bonus – kruhy) vyplnené i prázdne
+<li>Vetvenie - switch</li>
+<li>Cykly - do-while, for-each</li>
+<li>Prerušenie toku - break, continue</li>
 </ul>
 </td>
 <td width=30%>
