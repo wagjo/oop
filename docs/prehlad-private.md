@@ -81,9 +81,8 @@ Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci pa
 <ul>
 <li>Identita a hodnota</li>
 <li>Objekt</li>
-<li>null referencia</li>
-<li>Príkazy a výrazy</li>
 <li>Operátory</li>
+<li>Príkazy a výrazy</li>
 <li></li>
 </ul>
 </td>
@@ -91,6 +90,7 @@ Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci pa
 <a href="../cvicenie-3/c03-uvod"></a> (<a href="../assets/c03.pdf">pdf</a>)
 <ul>
 <li>Vetvenie</li>
+<li>null referencia</li>
 <li>Cykly</li>
 <li>Prerušenie toku</li>
 <li>diagram aktivít</li>
@@ -101,7 +101,9 @@ Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci pa
 <td width=30%>
 <a href="../pokrocili-3/p03-uvod"></a> (<a href="../assets/p03.pdf">pdf</a>)
 <ul>
-<li>rekurzia</li>
+<li>Iterácia</li>
+<li>Rekurzia</li>
+<li>Zásobník volaní</li>
 </ul>
 </td>
 </tr>
