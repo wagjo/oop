@@ -42,11 +42,27 @@
 </ul>
 </td>
 </tr>
-<tr>
+<tr >
 <td width=10%>2</td>
+<td width=30%>
+<a href="../teoria-3/t02-opakovanie">Algoritmus, dátové typy a premenné</a> (<a href="../assets/t02w.pdf">pdf</a>)
+<ul>
+<li>Algoritmus a jeho vlastnosti</li>
+<li>Dáta v počítači</li>
+<li>Dátové typy v Jave</li>
+<li>Premenné a konštanty</li>
+</ul>
+</td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p02-opakovanie">Podmienky, cykly</a> (<a href="../assets/p02w.pdf">pdf</a>)
+<ul>
+<li>Príkazy a výrazy</li>
+<li>dátové typy: int, str, float, bool, tuple, list, set, dict</li>
+<li>funkcie, riadenie: if, elif, else</li>
+<li>for, while, výnimky</li>
+</ul>
+</td>
 </tr>
 <tr>
 <td width=10%>3</td>

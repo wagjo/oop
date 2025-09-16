@@ -7,7 +7,7 @@ nav:
   - Úvod: 'index.md'
   - Teória: 
     - 1 - Úvod a motivácia: 'teoria-3/t01-uvod.md'
-  #  - 2 - Algoritmus, dátové typy a premenné: 'teoria-3/t02-opakovanie.md'
+    - 2 - Algoritmus, dátové typy a premenné: 'teoria-3/t02-opakovanie.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
   #  - 2 - XXX: 'cvicenie-3/c02-opakovanie.md'
