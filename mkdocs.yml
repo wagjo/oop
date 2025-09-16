@@ -13,7 +13,7 @@ nav:
   #  - 2 - XXX: 'cvicenie-3/c02-opakovanie.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
-  #  - 2 - XXX: 'pokrocili-3/p02-opakovanie.md'
+    - 2 - Vetvenie, cykly: 'pokrocili-3/p02-opakovanie.md'
   - Prehľad tém: 'prehlad.md'
   #- Ťahák: 'tahak.md'
   - Kontakt: 'autor.md'
