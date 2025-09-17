@@ -253,7 +253,7 @@ Preto majú neprimitívne konštanty využitie hlavne v prípadoch, kedy aj samo
 === "Príklad neprimitívnej konštanty"
 
     ```java
-      final String APP_NAME = "Moje aplikácia";
+      final String APP_NAME = "Moja aplikácia";
       final String DEFAULT_COUNTRY_CODE = "SVK";
     ```
 
