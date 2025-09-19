@@ -173,7 +173,8 @@ Niektoré príkazy majú špeciálnu výrazovú formu. Napríklad príkaz `if` m
     Identita reprezentuje jedinečnosť danej veci. 
     Hodnota/vlastnosť veci sa meniť môže, identita ostáva.
 
-    Objekt
+    OBJEKT
+
     - má svoju identitu - jedinečnosť
     - nesie stav - atribúty
     - poskytuje správanie - metódy
@@ -183,7 +184,8 @@ Niektoré príkazy majú špeciálnu výrazovú formu. Napríklad príkaz `if` m
     - == porovnáva objekty podľa identity, primitívne typy podľa hodnoty
     - equals() porovnáva objekty podľa hodnoty
 
-    Príkazy (statements) a výrazy (expressions)
+    PRÍKAZY (statements) A VÝRAZY (expressions)
+
     - Výraz po vyhodnotení vráti hodnotu
     - Výrazy môžu byť súčasťou príkazov
     - Príkaz je samostatná jednotka vykonania, ktorá niečo robí

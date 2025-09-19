@@ -8,12 +8,16 @@ nav:
   - Teória: 
     - 1 - Úvod a motivácia: 'teoria-3/t01-uvod.md'
     - 2 - Algoritmus, dátové typy a premenné: 'teoria-3/t02-opakovanie.md'
+    #- 3 - Identita, Objekt: 'teoria-3/t03-objekt.md'
+    #- 4 - Trieda: 'teoria-3/t04-trieda.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
-  #  - 2 - XXX: 'cvicenie-3/c02-opakovanie.md'
+    #- 2 - Prvý Java program: 'cvicenie-3/c02-opakovanie.md'
+    #- 3 - Riadenie toku programu: 'cvicenie-3/c03-cykly.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-opakovanie.md'
+    #- 3 - Rekurzia: 'pokrocili-3/p03-rekurzia.md'
   - Prehľad tém: 'prehlad.md'
   #- Ťahák: 'tahak.md'
   - Kontakt: 'autor.md'

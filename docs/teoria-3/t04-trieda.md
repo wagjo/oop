@@ -1,6 +1,8 @@
-# Teória 4: Operátory, Trieda
+# Teória 4: Trieda
 
-V tejto časti vás oboznámime s triedami v Jave. Vysvetlíme si na čo slúžia, ako sa vytvárajú a ukážeme si ich reprezentáciu v UML diagramoch. Ďalej si ukážeme niektoré ďalšie operátory, ktoré Java poskytuje.
+V tejto časti vás oboznámime s triedami v Jave. Vysvetlíme si na čo slúžia, ako sa vytvárajú a ukážeme si ich reprezentáciu v UML diagramoch. Predstavíme si tiež balíky tried a modifikátory prístupu.
+
+Jednotlivé koncepty si detailne preberieme na iných hodinách. Dnes to bude iba úvod.
 
 ## Trieda - základy
 
@@ -17,11 +19,11 @@ Trieda obsahuje okrem iného tieto základné veci:
   </main>
 
   <aside markdown>
-Aj keď sú triedy spájané s objektovým programovaním, nie všetky objektovo orientované jazyky majú triedy. Objekty sa v takýhto jazykoch vytvárajú iným spôsobom. Napríklad jazyk Javascript je objektovo orientovaný, avšak triedy v ňom nie sú. Vytváranie objektov má pomocou tzv. prototypov.
+Aj keď sú triedy spájané s objektovým programovaním, nie všetky objektovo orientované jazyky majú triedy. Objekty sa v takýchto jazykoch vytvárajú iným spôsobom. Napríklad jazyk Javascript je objektovo orientovaný, avšak triedy v ňom nie sú. Vytváranie objektov má pomocou tzv. prototypov.
 </aside>
 </div>
 
-Atribúty a metódy môžu byť aj statické, v takom prípade nepatria konkrétnemu objektu ale patria celej triede a môžeme s nimi pracovať bez toho, aby sme museli mať k dispozívii objekt danej triedy.
+Atribúty a metódy môžu byť aj statické, v takom prípade nepatria konkrétnemu objektu ale patria celej triede a môžeme s nimi pracovať bez toho, aby sme museli mať k dispozícii objekt danej triedy. Typickým príkladom je statická metóda `main`, ktorá je vstupným bodom programu.
 
 V Jave názov triedy začína veľkým písmenom. Zdrojový kód tried píšeme do súborov s príponou `.java`. Každá verejná trieda musí byť vo svojom vlastnom súbore. Jej názov musí byť taký istý ako názov súboru.
 
@@ -29,6 +31,7 @@ V Jave názov triedy začína veľkým písmenom. Zdrojový kód tried píšeme 
 
     ```java
     public class Auto {
+
         // Atribúty
         final String znacka;
         final String model;
@@ -45,7 +48,7 @@ V Jave názov triedy začína veľkým písmenom. Zdrojový kód tried píšeme 
             this.farba = farba;
         }
 
-        // Metóda
+        // Metódy
         public void prefarbit(String novaFarba) {
             this.farba = novaFarba;
         }
@@ -54,27 +57,33 @@ V Jave názov triedy začína veľkým písmenom. Zdrojový kód tried píšeme 
             return farba;
         }
 
-        // Textova reprezentacia objektu
+        // Textová reprezentacia objektu
         @Override
         public String toString() {
-            return String.format("Auto %s %s, rok %d, %s farba", znacka, model, rokVyroby, farba);
+            return String.format("Auto %s %s, rok %d, %s farba", 
+                                 znacka, model, rokVyroby, farba);
         }
 
         // Hlavná metóda na testovanie
         public static void main(String[] args) {
-            Auto mojeAuto = new Auto("Audi", "RS4", 2018, "WUAZZZF43JA900725","cierna"); // Vytvorenie objektu
-            mojeAuto.prefarbit("zlta"); // Zmena farby
+            // Vytvorenie objektu pomocou konštruktora
+            Auto mojeAuto = new Auto("Audi", "RS4", 2018, "WUAZZZF43JA900725","cierna");
+            // Zmena farby
+            mojeAuto.prefarbit("zlta"); 
+            // Vypísanie objektu do konzoly
             System.out.println(mojeAuto);
         }
     }
     ```
 
 
-## Class diagram - trieda
+## Class diagram - úvod
 
-Pomocou tried vieme modelovať riešenie našej úlohy. Koncepty z domény, v ktorej pracujeme, si vieme preniesť do sveta programovania vo forme tried a vzťahou medzi nimi. Pri návrhu tried a pochopení architektúry sa často využíva tzv. diagram tried (class diagram), v ktorom sú vykreslené jednotlivé triedy a ich prepojenia. 
+Pomocou tried vieme modelovať riešenie našej úlohy. Koncepty z domény, v ktorej pracujeme, si vieme preniesť do sveta programovania vo forme tried a vzťahov medzi nimi. Pri návrhu tried a pochopení architektúry sa často využíva tzv. diagram tried (class diagram), v ktorom sú vykreslené jednotlivé triedy a ich prepojenia. 
 
-Trieda je znázornená pomocou obdĺžnika, ktorý má 3 časti. V prvej časti je názov triedy, v druhej časti sú jeho atribúty a v tretej časti sú metódy. Diagramy tried (class diagram) vieme vytvárať aj pomocou nástroja mermaid.live
+Trieda je znázornená pomocou obdĺžnika, ktorý má 3 časti. V prvej časti je názov triedy, v druhej časti sú jeho atribúty a v tretej časti sú metódy. Diagram tried (class diagram) vieme vytvárať aj pomocou nástroja [mermaid.live](https://mermaid.live) a písať formou DaC.
+
+*[DaC]: Diagramy ako Kód
 
 ```mermaid
 classDiagram
@@ -90,204 +99,156 @@ classDiagram
 /// caption
 UML Class diagram pre triedu Auto
 ///
+ 
 
 ## Rozdiel medzi objektom a triedou
 
+Trieda ja šablóna (anglicky blueprint), pomocou ktorej vieme v Jave vytvárať konkrétne objekty. Objekty sú hodnoty uložené v pamäti počítača a vieme na nich odkazovať pomocou premenných. Keďže každá hodnota má dátový typ, má ju aj objekt. **Dátový typ objektu je trieda, z ktorej bol objekt vytvorený.**
 
-## Hierarchia tried
+![trieda a objekty](../assets/trieda.png){.on-glb}
+/// caption
+Trieda a jej objekty
+///
+
+Z jednej triedy viem vytvoriť veľa objektov, Priame vytvorenie objektu sa robí pomocou operátora `new`. Ten zavolá vhodný konštruktor - metódu, ktorá inicializuje atribúty nového objektu.
+
+=== "Vytváranie objektov pomocou operátora `new`"
+
+    ```java
+    Auto moje = new Auto("Audi", "A4", 2020, "WUAZZZF43JA900725", "červená");
+    Auto svokrine = new Auto("Škoda", "Fabia", 2018, "TMBAA25J183195020", "modrá");
+    Auto susedove = new Auto("Dacia", "Duster", 2019, "VF1HJD40469459441", "žltá");
+    ```
+
+Ak v tom stále nemáte jasno, tu je zopár analógii zo života:
+
+- Trieda je recept, objekty sú koláče upečené podľa tohto receptu
+- Trieda je plán architekta, objekt je dom postavený podľa tohto plánu
+- Trieda je ako pravidlá futbalu, objekt je konkrétny futbalový zápas
 
 
-## Modifikátory prístupu
+## Usporiadanie tried
 
+Takmer všetko v Jave je vnútri nejakej triedy, a pomocou tried sa modeluje väčšina vecí v Jave. Tried je teda strašne veľa a je preto veľmi dôležité ich vhodne usporiadať, aby sa rôzne knižnice alebo programy mohli vzájomne volať a používať. 
 
+V Jave sú triedy súčasťou tzv. balíka tried (anglicky package). Balíky zoskupujú triedy a pomáhajú riešiť problémy s názvami a orientáciou vo veľkom množstve tried. 
 
-## Identita a Hodnota
+Ak chceme dať triedu do balíka, v `.java` súbore použijeme príkaz `package nazov_balika;` Súbory v rámci toho istého balíka musia byť v tom istom adresári. Názov adresára musí byť rovnaký ako názov balíka. V Jave je dohoda písať názvy balíkov malými písmenami.
 
-Číslo 15 je údaj, hodnota. Môže to byť počet hodín, alebo vek človeka. Samotné číslo 15 je však iba hodnota, nič iné v sebe neobnáša. Podobne aj slovo "Fero", ak ho čítame v kalendári, je to mužské meno. Môže ho mať veľa ľudí, alebo dokonca to môže byť názov firmy. Ak iba uvedieme "Fero", je to len meno bez konkrétneho človeka. V angličtine na také názvy máme neurčitý člen *"a"*, napríklad *a pen*, *a chair*.
+Balíky tvoria hierarchiu, podobne ako adresáre na disku. To znamená že balík môže byť súčasťou iného balíka. V takýchto prípadoch je názov balíka zložený zo všetkých podadresárov, oddelených bodkami.
 
-<div class="md-has-sidebar" markdown>
-<main markdown>
-Niekedy však máme na mysli konkrétnu vec. Ak si chceme opraviť známku 5 v žiackej knižne, nemyslíme na hocijakú päťku, ale práve na tú našu, ktorú sme pred týždňom dostali. Alebo ak povieme, "Fero mi nevrátil knihu", myslíme na konkrétneho človeka a na konkrétnu knihu. V angličtine pre takéto prípady máme člen *"the"*, napríklad *the book* alebo *the student*.
+Napríklad ak uvedieme v súbore `Auto.java` deklaráciu `package com.wagjo.vozidla;` tak na disku musím mať súbor `Auto.java` v nasledovných podadresároch
 
-Identita (anglicky identity) reprezentuje jedinečnosť danej veci, jej výnimočnosť. Identita veci sa v čase nemení, ale hodnota (anglicky value) o danej veci sa meniť môže. Ak si môj spolužiak zmení meno z Fero na Hugo, bude to stále ten istý človek. Ak si prestriekam svoje auto na inú farbu, stále to bude to moje auto.
-
-!!! info "Filozofické okienko"
-
-    Identita versus vlastnosť je častým predmetom filozofických debát. Veľmi známy je grécky paradox [Theseovej lode](https://en.wikipedia.org/wiki/Ship_of_Theseus). Predstav si, že máš novú loď, s ktorou sa plavíš po mori. Jej drevené časti však začínajú postupne hniť a si nútený vymieňať ich. Ak na lodi postupne vymeníš všetky jej časti (dosky, klince, plachty) za nové, je to stále tá istá loď?
-
-Identita je veľmi dôležitá vec. Ak máme v triede dvoch "Ferov", identita je to, čo nám pomôže rozlíšiť medzi nimi. Podobne je to aj v programovaní. Niekedy pracujeme s hodnotou, a niekedy potrebujeme porovnať identitu daných vecí.
-
-Všetky **primitívne dátove typy v Jave majú hodnoty bez identity**. Ak vytvoríme premennú typu int, hodnoty tejto premennej nemajú identitu a nevieme sa opýtať, ktorá päťka to je.
-
-```java title="Porovnanie primitívnych hodnôt"
-  int a = 5;
-  int b = 5;
-  System.out.println(a == b); // true, porovnala sa hodnota premenných
+```
+src/
+ └── com/
+     └── wagjo/
+          └── vozidla/
+              └── Auto.java
 ```
 
-  </main>
+Ako ste si isto všimli, názov balíka pripomína webovú doménu. V Jave sa stalo zvykom, aby názvy balíkov začínali s doménou, ktorú vlastní daný programátor. Tak sa predíde konfliktom, kedy rôzni autori by vytvorili rovnaký názov balíka.
 
-  <aside markdown>
-!!! quote "Terry Pratchett: [Pátý Elefant](https://www.martinus.sk/28961-paty-elefant/kniha)"
-    „Tohle, mylorde, je dědičná sekera naší rodiny. Dědí se u nás z pokolení na
-    pokolení přes devět set let. Je pochopitelné, že během toho času několikrát
-    potřebovala novou hlavici. A mezitím také novou rukojeť, drobné úpravy
-    tvaru a obnovu některých ornamentů…, ale není to snad stále devět set let
-    stará sekera naší rodiny? A protože se měnila během času jen pomalu, je to
-    pořád ještě skvělá sekera, abyste věděl. Velmi skvělá. Chcete mi snad říci,
-    že i tohle je padělek?“  
-</aside>
-</div>
+!!! info
 
-## Objekt
+    Existuje veľké množstvo open source Java knižníc, zdrojové kódy ktorých môžete študovať a spoznávať tak princípy a zásady tvoby programov v Jave. Pre lepšie pochopenie usporiadania tried a balíkov odporúčame pozrieť si [zdrojový kód knižnice jsoup](https://github.com/jhy/jsoup/tree/master/src/main/java/org/jsoup), ktorý sa nachádza na GitHube a predstavuje dobrý príklad ako vytvárať triedy a balíky.
 
-Ak chceme mať v Jave niečo, čo so sebou nesie aj identitu, musíme použiť objekt.
+## Modifikátory prístupu - úvod
 
-Objekt v Jave je vec, ktorá
+Iste ste si všimli slov ako `public` a `private` v definícii triedy, jej atribútov a metód. Ide o tzv. modifikátory prístupu a v Jave ich je niekoľko. Detailne si ich predstavíme neskôr, dnes iba uvedieme do problematiky.
 
-- **má svoju identitu** - je jedinečná entita
-- **nesie stav** - má svoje konkrétne hodnoty - atribúty
-- **poskytuje správanie** - poskytuje metódy, ktoré môžeme nad objektom volať
-- **je inštanciou triedy** - je konkrétnym výtvorom z abstraktného návrhu triedy
+Keď chceme, aby sa naša trieda mohla používať aj z iných balíkov, musíme pri jej deklarácii uviesť slovíčko `public`. 
 
-<div class="md-has-sidebar" markdown>
-<main markdown>
+=== "Príklad triedy, ktorú je možné použiť z akejkoľvek inej triedy"
 
-Všetky **neprimitívne dátove typy vytvárajú objekty**. Ak vytvoríme dva rôzne objekty rovnakého typu, s rovnakou hodnotou, budú mať rozdielnu identitu.
+    ```java
+    public class Auto {
+        String znacka;
+        String model;
+    }
+    ```
 
-```java title="Porovnanie objektov"
-String s1 = new String("Fero");
-String s2 = new String("Fero");
-System.out.println(s1 == s2); // false, porovnali sa identity
-System.out.println(s1.equals(s2)); // true, porovnali sa hodnoty
-```
-
-Objekty vytvárame pomocou operátora `new`. Pri takomto vytváraní sa zavolá špeciálna metóda, konštruktor, ktorá nám inicializuje stav objektu, teda všetky jeho atribúty.
-
-Identitu objektov porovnávame pomocou operátora `==`. (Pri primitívnych typoch sa porovná ich hodnota).
-
-Hodnotu objektov porovnávame pomocou metódy `equals()`. Ak chceme, aby toto porovnanie fungovalo aj pre naše vlastné triedy, musíme si napísať vlastnú metódu `equals()`
+Druhá možnosť je nedať tam žiadny modifikátor prístupu. V takom prípade túto triedu bude možné použiť **iba v rámci toho istého balíka tried**.
 
 
-  </main>
+=== "Nasledovnú triedu je možné použiť iba v rámci toho istého balíka"
 
-  <aside markdown>
-Viac o triedach a objektoch si povieme na cvičení, kde si vyskúšame vytvoriť svoje vlastné triedy. 
-</aside>
-</div>
+    ```java
+    class Auto {
+        String znacka;
+        String model;
+    }
+    ```
 
-## Operátory
+Podobne je to aj pri atribútoch a metódach. Použitie modifikátorov prístupu má pri nich nasledovný význam:
 
-Java má viac ako 40 operátorov. Sú to špeciálne symboly, ktoré vykonávajú určitú operáciu nad jednou alebo viacerými hodnotami.
-
-<div class="md-has-sidebar" markdown>
-<main markdown>
-
-Medzi základné operátory patria:
-
-- aritmetické operátory: `+`, `-`, `/`, `*`, `%`, `++`, `--`
-- logické operátory: `||`, `&&`
-- operátory priradenia: `=`, `+=`, `-=`, `*=`, `/=`
-- relačné operátory: `>`, `<`, `>=`, `<=`
-- operátory rovnosti: `==,` `!`
-- operátor vytvorenia objektu: `new`
-
-
-  </main>
-
-  <aside markdown>
-Niektoré operátory sa dajú použiť viacerými spôsobmi. Napríklad operátor inkrementácie čísel `++` sa dá použiť v dvoch formách: prefixovej `++a` alebo postfixovej `a++`. Je rozdiel v správaní, pri postfixovej sa vráti pôvodná hodnota, pri prefixovej tá zvýšená.</aside>
-</div>
-
-
-!!! tip "Učím sa s pomocou umelej inteligencie"
-
-    Som študent strednej školy, učím sa Javu. Vytvor mi [podrobnú tabuľku všetkých operátorov, s ich názvom, kategóriou a s príkladom použitia](https://grok.com/share/c2hhcmQtMg%3D%3D_a8bdc384-5adc-482b-b030-66c210563cb6).
-
-
-## Príkazy a výrazy
-
-
-<div class="md-has-sidebar" markdown>
-<main markdown>
-
-Java rozlišuje medzi príkazmi (statements) a výrazmi (expressions).
-
-Výraz je kombinácia hodnôt, premenných, operátorov a volaní metód, ktorá po vyhodnotení vráti hodnotu. Výrazy môžu byť súčasťou príkazov.
-
-Príklad výrazov: `5`, `a + 3`, `s.length()`
-
-Príkaz je samostatná jednotka vykonania, ktorá niečo robí. Príkazy nevracajú hodnotu. Príkazy končia bodkočiarkou, alebo blokom kódu v zložených zátvorkách.
-
-Príklad príkazov: podmienky a cykly (`if`, `while`, `for`), `return`, `break`, `System.out.println()`
-
-Volanie metódy môže byť aj ako výraz aj ako príkaz. Ako výraz však môže byť iba taká metóda, ktorá vracia hodnotu. (teda nesmie mať `void` návratový typ)
-
-  </main>
-
-  <aside markdown>
-Niektoré príkazy majú špeciálnu výrazovú formu. Napríklad príkaz `if` má ternárny operátor, pre použitie podmienky ako výrazu. Alebo napríklad deklarácia metód má svoju verziu vo forme výrazu, tzv. lambda výraz, napríklad `x -> x * x`. Takéto lambda výrazy sa používajú ak sa v Jave programuje vo funkcionálnom štýle.
-</aside>
-</div>
-
-!!! tip "Učím sa s pomocou umelej inteligencie"
-
-    Som študent strednej školy, učím sa Javu. [Prečo v Jave rozlišujeme medzi príkazmi a výrazmi, na čo je to dobré?](https://grok.com/share/c2hhcmQtMg%3D%3D_9ccfb967-8ab2-47aa-886c-fafdbfc785db).
+- `public` - Metódu/atribút je možné používať z akejkoľvek inej triedy
+- `private` - Metódu/atribút môže použiť iba jeho vlastná trieda
+- *bez modifikátora prístupu* - Metódu/atribút je možné používať iba v rámci toho istého balíka tried
 
 
 ## Zhrnutie teórie
 
-- [x] Identita (anglicky identity) reprezentuje jedinečnosť danej veci, jej výnimočnosť
-    * [ ] Identita veci sa v čase nemení, ale hodnota (anglicky value) danej veci sa meniť môže
-    * [ ] Všetky primitívne dátove typy v Jave majú hodnoty bez identity
-    * [ ] Hodnoty primitívnych typov porovnávame pomocou operátora ==
-- [x] Objekt v Jave je základný stavebný blok, ktorý
-    * [ ] má svoju identitu - je jedinečná entita
-    * [ ] nesie stav - má svoje konkrétne hodnoty - atribúty
-    * [ ] poskytuje správanie - poskytuje metódy, ktoré môžeme nad objektom volať
-    * [ ] je inštanciou triedy (class) - je konkrétnym výtvorom z abstraktného návrhu triedy
-- [x] Všetky neprimitívne dátove typy vytvárajú objekty
-    * [ ] Objekty vytvárame pomocou operátora new
-    * [ ] Identitu objektov porovnávame pomocou operátora ==
-    * [ ] Hodnoty objektov porovnávame pomocou metódy equals()    
-- [x] Java má viac ako 40 operátorov.
-    * [ ] aritmetické operátory: `+`, `-`, `/`, `*`, `%`, `++`, `--`
-    * [ ] logické operátory: `||`, `&&`
-    * [ ] operátory priradenia: `=`, `+=`, `-=`, `*=`, `/=`
-    * [ ] relačné operátory: `>`, `<`, `>=`, `<=`
-    * [ ] operátory rovnosti: `==,` `!`
-    * [ ] operátor vytvorenia objektu: `new`
-- [x] Príkazy (statements) a výrazy (expressions)
-    * [ ] Výraz je kombinácia hodnôt, premenných, operátorov a volaní metód, ktorá po vyhodnotení vráti hodnotu.
-    * [ ] Výrazy môžu byť súčasťou príkazov
-    * [ ] Príkaz je samostatná jednotka vykonania, ktorá niečo robí. Príkazy nevracajú hodnotu
-    * [ ] Príkazy končia bodkočiarkou, alebo blokom kódu v zložených zátvorkách
+- [x] Trieda (anglicky Class) je základný stavebný blok v Jave.
+    * [ ] Trieda predstavuje akýsi „plán“ alebo „šablónu“, podľa ktorej sa vytvárajú objekty.
+    * [ ] Dátový typ objektu je trieda, z ktorej bol objekt vytvorený.
+    * [ ] Taktiež nám triedy pomáhajú organizovať štruktúru zdrojového kódu a knižníc.
+- [x] Trieda obsahuje
+    * [ ] atribúty - fields
+    * [ ] metódy - methods
+    * [ ] konštruktory - constructors
+    * [ ] atribúty a metódy môžu byť statické, potom nepatria objektu, ale triede
+- [x] Vytváranie tried
+    * [ ] Názov triedy začína veľkým písmenom
+    * [ ] Zdrojový kód tried píšeme do súborov s príponou .java
+    * [ ] Každá verejná trieda musí byť vo svojom vlastnom súbore, ktorého názov je taký istý ako názov triedy
+    * [ ] Priame vytvorenie objektu sa robí pomocou operátora `new`, ten volá konštruktor triedy
+- [x] UML Class Diagram
+    * [ ] Znázorňuje triedy a ich prepojenia
+    * [ ] Trieda je obdĺžnik s troma časťami: Názov, atribúty a metódy
+- [x] Balíky tried - packages
+    * [ ] Balíky zoskupujú triedy a pomáhajú riešiť problémy s názvami
+    * [ ] Ak chceme dať triedu do balíka, v `.java` súbore použijeme príkaz `package nazov_balika;`
+    * [ ] Súbory v rámci toho istého balíka musia byť v tom istom adresári
+    * [ ] Názov adresára musí byť rovnaký ako názov balíka
+    * [ ] V Jave je dohoda písať názvy balíkov malými písmenami
+    * [ ] Balík môže byť súčasťou iného balíka. Jeho názov je zložený zo všetkých podadresárov, oddelených bodkami.
+    * [ ] Názov balíka pripomína webovú doménu
     
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    Identita reprezentuje jedinečnosť danej veci. 
-    Hodnota/vlastnosť veci sa meniť môže, identita ostáva.
+    TRIEDA
 
-    Objekt
-    - má svoju identitu - jedinečnosť
-    - nesie stav - atribúty
-    - poskytuje správanie - metódy
-    - je inštanciou triedy (class) - má typ
+    Trieda (anglicky Class) je základný stavebný blok v Jave
+      - Podľa triedy sa vytvárajú objekty
+      - Dátový typ objektu je trieda, z ktorej bol objekt vytvorený
 
-    Nové objekty vytvárame pomocou operátora new
-    - == porovnáva objekty podľa identity, primitívne typy podľa hodnoty
-    - equals() porovnáva objekty podľa hodnoty
+    Trieda obsahuje
+      - atribúty - fields
+      - metódy - methods
+      - konštruktory - constructors
 
-    Príkazy (statements) a výrazy (expressions)
-    - Výraz po vyhodnotení vráti hodnotu
-    - Výrazy môžu byť súčasťou príkazov
-    - Príkaz je samostatná jednotka vykonania, ktorá niečo robí
-    - Príkazy nevracajú hodnotu
-    - Príkazy končia bodkočiarkou, alebo blokom kódu v zložených zátvorkách
+    Atribúty a metódy môžu byť statické, potom nepatria objektu, ale triede
 
+    Vytváranie tried
+      - Názov triedy začína veľkým písmenom
+      - Zdrojový kód píšeme do .java súborov
+      - Názov súboru s verejnou triedou je taký istý ako názov triedy
+      - Operátor `new` volá konštruktor triedy
+    
+    Zakresliť UML Class Diagram triedy
+
+    BALÍKY TRIED
+
+    Balíky tried - packages
+      - Zoskupujú triedy a pomáhajú riešiť problémy s názvami
+      - Príkaz `package nazov_balika;`
+      - Názov adresára musí byť rovnaký ako názov balíka
+      - Názvy balíkov píšeme malými písmenami
+      - Balík môže byť súčasťou iného balíka, názvy adresárov oddeľujeme bodkami
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
@@ -298,8 +259,8 @@ Niektoré príkazy majú špeciálnu výrazovú formu. Napríklad príkaz `if` m
 
     Ústne skúšanie alebo krátka 5-minútovka:
 
-    - Rozdiel medzi identitou a hodnotou
-    - Ako vieme porovnať primitívne hodnoty?
-    - Ako vieme porovnať neprimitívne objekty?
-    - 4 Vlastnosti objektu
-    - Rozdiel medzi príkazom a výrazom
+    - Čo je trieda
+    - Čo trieda obsahuje
+    - Ako sa trieda zapisuje v UML Class diagrame
+    - Ako sa deklarujú balíky tried
+    - Súborová štruktúra tried a balíkov
