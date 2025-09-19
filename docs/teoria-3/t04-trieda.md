@@ -1,11 +1,12 @@
 # Teória 4: Operátory, Trieda
 
-Dnes si začneme vysvetľovať základné pojmy z objektovo orientovaného programovania. Ako prvé si vysvetlíme, čo je objekt. Okrem toho si povieme niečo o veciach ako identita, príkaz vs výraz a ukážeme si základné operátory v Jave.
+V tejto časti vás oboznámime s triedami v Jave. Vysvetlíme si na čo slúžia, ako sa vytvárajú a ukážeme si ich reprezentáciu v UML diagramoch. Ďalej si ukážeme niektoré ďalšie operátory, ktoré Java poskytuje.
 
+## Trieda - základy
 
-## Trieda
-
-Trieda (anglicky Class) je základný stavebný blok v Jave. Trieda predstavuje akýsi „plán“ alebo „šablónu“, podľa ktorej sa vytvárajú objekty.
+<div class="md-has-sidebar" markdown>
+<main markdown>
+Trieda (anglicky Class) je základný stavebný blok v Jave. Trieda predstavuje akýsi „plán“ alebo „šablónu“, podľa ktorej sa vytvárajú objekty. Taktiež nám triedy pomáhajú organizovať štruktúru zdrojového kódu a knižníc.
 
 Trieda obsahuje okrem iného tieto základné veci:
 
@@ -13,44 +14,82 @@ Trieda obsahuje okrem iného tieto základné veci:
 - **metódy** (anglicky methods) - činnosti, ktoré môže objekt vykonávať
 - **konštruktory** (anglicky constructors) - špeciálne metódy na vytváranie objektov
 
-Atribúty a metódy môžu byť aj statické, v takom prípade nepatria konkrétnemu objektu ale patria celej triede a môžem s nimi pracovať bez toho, aby som musel mať objekt danej triedy.
+  </main>
 
-Zdrojový kód tried píšeme do súborov s príponou .java. Každá verejná trieda musí byť vo svojom vlastnom súbore. Jej názov musí byť taký istý ako názov súboru.
+  <aside markdown>
+Aj keď sú triedy spájané s objektovým programovaním, nie všetky objektovo orientované jazyky majú triedy. Objekty sa v takýhto jazykoch vytvárajú iným spôsobom. Napríklad jazyk Javascript je objektovo orientovaný, avšak triedy v ňom nie sú. Vytváranie objektov má pomocou tzv. prototypov.
+</aside>
+</div>
 
-Názov triedy začína veľkým písmenom.
+Atribúty a metódy môžu byť aj statické, v takom prípade nepatria konkrétnemu objektu ale patria celej triede a môžeme s nimi pracovať bez toho, aby sme museli mať k dispozívii objekt danej triedy.
+
+V Jave názov triedy začína veľkým písmenom. Zdrojový kód tried píšeme do súborov s príponou `.java`. Každá verejná trieda musí byť vo svojom vlastnom súbore. Jej názov musí byť taký istý ako názov súboru.
 
 === "Príklad triedy"
 
     ```java
     public class Auto {
         // Atribúty
-        String farba;
-        int rychlost;
+        final String znacka;
+        final String model;
+        final int rokVyroby;
+        private String farba;
+        private final String vin;
 
         // Konštruktor
-        public Auto(String farba, int rychlost) {
+        public Auto(String znacka, String model, int rokVyroby, String vin, String farba) {
+            this.znacka = znacka;
+            this.model = model;
+            this.rokVyroby = rokVyroby;
+            this.vin = vin;
             this.farba = farba;
-            this.rychlost = rychlost;
         }
 
         // Metóda
-        public void zrychlit(int prirastok) {
-            rychlost += prirastok;
+        public void prefarbit(String novaFarba) {
+            this.farba = novaFarba;
         }
 
-        // Metóda na zobrazenie stavu
-        public void vypisStav() {
-            System.out.println("Auto je " + farba + " a ide rýchlosťou " + rychlost + " km/h.");
+        public String getFarba() {
+            return farba;
+        }
+
+        // Textova reprezentacia objektu
+        @Override
+        public String toString() {
+            return String.format("Auto %s %s, rok %d, %s farba", znacka, model, rokVyroby, farba);
         }
 
         // Hlavná metóda na testovanie
         public static void main(String[] args) {
-            Auto mojeAuto = new Auto("červené", 60); // Vytvorenie objektu
-            mojeAuto.zrychlit(20); // Zvýšenie rýchlosti
-            mojeAuto.vypisStav(); // Výstup: Auto je červené a ide rýchlosťou 80 km/h.
+            Auto mojeAuto = new Auto("Audi", "RS4", 2018, "WUAZZZF43JA900725","cierna"); // Vytvorenie objektu
+            mojeAuto.prefarbit("zlta"); // Zmena farby
+            System.out.println(mojeAuto);
         }
     }
     ```
+
+
+## Class diagram - trieda
+
+Pomocou tried vieme modelovať riešenie našej úlohy. Koncepty z domény, v ktorej pracujeme, si vieme preniesť do sveta programovania vo forme tried a vzťahou medzi nimi. Pri návrhu tried a pochopení architektúry sa často využíva tzv. diagram tried (class diagram), v ktorom sú vykreslené jednotlivé triedy a ich prepojenia. 
+
+Trieda je znázornená pomocou obdĺžnika, ktorý má 3 časti. V prvej časti je názov triedy, v druhej časti sú jeho atribúty a v tretej časti sú metódy. Diagramy tried (class diagram) vieme vytvárať aj pomocou nástroja mermaid.live
+
+```mermaid
+classDiagram
+    Auto : String znacka
+    Auto : String modely
+    Auto : int rokVyroby
+    Auto : -String farba
+    Auto : -String vin
+    Auto : +prefarbit(novaFarba)
+    Auto : +getFarba() String
+    Auto : +toString() String
+```
+/// caption
+UML Class diagram pre triedu Auto
+///
 
 ## Rozdiel medzi objektom a triedou
 
