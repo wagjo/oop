@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # Prehľad tém
 
 <table >
@@ -45,7 +51,7 @@
 <tr >
 <td width=10%>1</td>
 <td width=30%>
-<a href="../teoria-3/t02-opakovanie">Algoritmus, dátové typy a premenné</a> (<a href="../assets/t02w.pdf">pdf</a>)
+<a href="../teoria-3/t02-typy">Algoritmus, dátové typy a premenné</a> (<a href="../assets/t02w.pdf">pdf</a>)
 <ul>
 <li>Algoritmus a jeho vlastnosti</li>
 <li>Dáta v počítači</li>
@@ -54,40 +60,38 @@
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c02-uvod"></a> (<a href="../assets/c02.pdf">pdf</a>)
+<a href="../cvicenie-3/c02-hello">Prvý Java program</a> (<a href="../assets/c02w.pdf">pdf</a>)
 <ul>
-<li>spúšťanie cez IDE, JRE</li>
-<li>Reťazce - úvod</li>
+<li>Statická metóda main</li>
 <li>Vstup a výstup</li>
 <li>Formátovanie výstupu</li>
+<li>Reťazce - úvod</li>
 <li>Podmienka a cyklus - úvod</li>
-Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci parametrizované (rôzne veľké) obrazce (štvorce, obdĺžniky, trojuholníky, bonus – kruhy) vyplnené i prázdne
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p02-opakovanie"></a> (<a href="../assets/p02w.pdf">pdf</a>)
+<a href="../pokrocili-3/p02-cykly">Vetvenie, cykly</a> (<a href="../assets/p02w.pdf">pdf</a>)
 <ul>
 <li>Príkazy a výrazy</li>
-<li>dátové typy: int, str, float, bool, tuple, list, set, dict</li>
-<li>funkcie, riadenie: if, elif, else</li>
-<li>for, while, výnimky</li>
+<li>Základné dátové typy</li>
+<li>Funkcie, vetvenie programu</li>
+<li>Cykly, výnimky</li>
 </ul>
 </td>
 </tr>
 <tr >
 <td width=10%>1</td>
 <td width=30%>
-<a href="../teoria-3/t03-objekt"></a> (<a href="../assets/t03.pdf">pdf</a>)
+<a href="../teoria-3/t03-objekt">Identita, objekt</a> (<a href="../assets/t03w.pdf">pdf</a>)
 <ul>
 <li>Identita a hodnota</li>
 <li>Objekt</li>
 <li>Operátory</li>
 <li>Príkazy a výrazy</li>
-<li></li>
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c03-uvod"></a> (<a href="../assets/c03.pdf">pdf</a>)
+<a href="../cvicenie-3/c03-cykly">Riadenie toku programu</a> (<a href="../assets/c03w.pdf">pdf</a>)
 <ul>
 <li>Vetvenie - switch</li>
 <li>Cykly - do-while, for-each</li>
@@ -95,7 +99,7 @@ Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci pa
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p03-uvod"></a> (<a href="../assets/p03.pdf">pdf</a>)
+<a href="../pokrocili-3/p03-rekurzia">Rekurzia</a> (<a href="../assets/p03w.pdf">pdf</a>)
 <ul>
 <li>Iterácia</li>
 <li>Rekurzia</li>
@@ -106,13 +110,12 @@ Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci pa
 <tr >
 <td width=10%>1</td>
 <td width=30%>
-<a href="../teoria-3/t04-trieda"></a> (<a href="../assets/t04w.pdf">pdf</a>)
+<a href="../teoria-3/t04-trieda">Trieda, balíky</a> (<a href="../assets/t04w.pdf">pdf</a>)
 <ul>
 <li>Trieda</li>
 <li>Diagram tried</li>
 <li>Balíky</li>
 <li>Modifikátory prístupu</li>
-<li></li>
 </ul>
 </td>
 <td width=30%>
@@ -122,7 +125,7 @@ Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci pa
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p04-"></a> (<a href="../assets/p04w.pdf">pdf</a>)
+<a href="../pokrocili-3/p04-moduly">Moduly</a> (<a href="../assets/p04w.pdf">pdf</a>)
 <ul>
 <li></li>
 <li></li>

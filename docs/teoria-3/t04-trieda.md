@@ -1,4 +1,4 @@
-# Teória 4: Trieda
+# Teória 4: Trieda, balíky
 
 V tejto časti vás oboznámime s triedami v Jave. Vysvetlíme si na čo slúžia, ako sa vytvárajú a ukážeme si ich reprezentáciu v UML diagramoch. Predstavíme si tiež balíky tried a modifikátory prístupu.
 
@@ -40,7 +40,8 @@ V Jave názov triedy začína veľkým písmenom. Zdrojový kód tried píšeme 
         private final String vin;
 
         // Konštruktor
-        public Auto(String znacka, String model, int rokVyroby, String vin, String farba) {
+        public Auto(String znacka, String model, int rokVyroby, 
+                    String vin, String farba) {
             this.znacka = znacka;
             this.model = model;
             this.rokVyroby = rokVyroby;
@@ -67,7 +68,8 @@ V Jave názov triedy začína veľkým písmenom. Zdrojový kód tried píšeme 
         // Hlavná metóda na testovanie
         public static void main(String[] args) {
             // Vytvorenie objektu pomocou konštruktora
-            Auto mojeAuto = new Auto("Audi", "RS4", 2018, "WUAZZZF43JA900725","cierna");
+            Auto mojeAuto = new Auto("Audi", "RS4", 2018, 
+                                     "WUAZZZF43JA900725","cierna");
             // Zmena farby
             mojeAuto.prefarbit("zlta"); 
             // Vypísanie objektu do konzoly

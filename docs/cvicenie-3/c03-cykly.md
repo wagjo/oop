@@ -303,7 +303,8 @@ Cyklus for-each je jednoduchý, nepotrebujete v ňom spravovať index ako pri kl
     - musí mať primitívnu hodnotu, String, enum
     - ak nič nevyhovuje, vyberie default
     - ak neuvediem break, nastáva fall-through a vykoná sa aj nasledujúca možnosť
-    - moderná verzia switch, je už výraz, nepoužíva fall-through a jeden prípad môže mať viacero možností
+    - moderná verzia switch, je už výraz, nepoužíva fall-through a
+      jeden prípad môže mať viacero možností
 
     Riadenie toku cyklov
     - break ukončí predčasne cyklus

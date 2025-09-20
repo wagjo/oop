@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Prehľad tém
 
 <table >
@@ -43,9 +48,9 @@
 </td>
 </tr>
 <tr >
-<td width=10%>2</td>
+<td width=10%>1</td>
 <td width=30%>
-<a href="../teoria-3/t02-opakovanie">Algoritmus, dátové typy a premenné</a> (<a href="../assets/t02w.pdf">pdf</a>)
+<a href="../teoria-3/t02-typy">Algoritmus, dátové typy a premenné</a> (<a href="../assets/t02w.pdf">pdf</a>)
 <ul>
 <li>Algoritmus a jeho vlastnosti</li>
 <li>Dáta v počítači</li>
@@ -53,14 +58,23 @@
 <li>Premenné a konštanty</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
 <td width=30%>
-<a href="../pokrocili-3/p02-opakovanie">Podmienky, cykly</a> (<a href="../assets/p02w.pdf">pdf</a>)
+<a href="../cvicenie-3/c02-hello">Prvý Java program</a> (<a href="../assets/c02w.pdf">pdf</a>)
+<ul>
+<li>Statická metóda main</li>
+<li>Vstup a výstup</li>
+<li>Formátovanie výstupu</li>
+<li>Reťazce - úvod</li>
+<li>Podmienka a cyklus - úvod</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p02-cykly">Vetvenie, cykly</a> (<a href="../assets/p02w.pdf">pdf</a>)
 <ul>
 <li>Príkazy a výrazy</li>
-<li>dátové typy: int, str, float, bool, tuple, list, set, dict</li>
-<li>funkcie, riadenie: if, elif, else</li>
-<li>for, while, výnimky</li>
+<li>Základné dátové typy</li>
+<li>Funkcie, vetvenie programu</li>
+<li>Cykly, výnimky</li>
 </ul>
 </td>
 </tr>

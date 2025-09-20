@@ -1,4 +1,4 @@
-# Pokročílí 2: Opakovanie
+# Pokročílí 2: Vetvenie, cykly
 
 Na tomto cvičení pokračujeme v opakovaní základov Pythonu. Pripomenieme si základné dátové typy a tvorbu funkcií. Zopakujeme si tiež vetvenia, cykly a výnimky.
 
