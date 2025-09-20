@@ -77,7 +77,7 @@ Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci pa
 <tr >
 <td width=10%>1</td>
 <td width=30%>
-<a href="../teoria-3/t03-opakovanie"></a> (<a href="../assets/t03.pdf">pdf</a>)
+<a href="../teoria-3/t03-objekt"></a> (<a href="../assets/t03.pdf">pdf</a>)
 <ul>
 <li>Identita a hodnota</li>
 <li>Objekt</li>
@@ -100,6 +100,33 @@ Vedieť vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci pa
 <li>Iterácia</li>
 <li>Rekurzia</li>
 <li>Zásobník volaní</li>
+</ul>
+</td>
+</tr>
+<tr >
+<td width=10%>1</td>
+<td width=30%>
+<a href="../teoria-3/t04-trieda"></a> (<a href="../assets/t04w.pdf">pdf</a>)
+<ul>
+<li>Trieda</li>
+<li>Diagram tried</li>
+<li>Balíky</li>
+<li>Modifikátory prístupu</li>
+<li></li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c04-"></a> (<a href="../assets/c04w.pdf">pdf</a>)
+<ul>
+<li></li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p04-"></a> (<a href="../assets/p04w.pdf">pdf</a>)
+<ul>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 </td>
 </tr>
