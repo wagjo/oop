@@ -48,7 +48,7 @@ hide:
 </td>
 </tr>
 <tr >
-<td width=10%>1</td>
+<td width=10%>2</td>
 <td width=30%>
 <a href="../teoria-3/t02-typy">Algoritmus, dátové typy a premenné</a> (<a href="../assets/t02w.pdf">pdf</a>)
 <ul>
