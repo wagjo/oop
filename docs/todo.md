@@ -12,6 +12,8 @@
 - carpathy
 - konzola: javac, java; 
 - p03 viditelnost premennych, scope, global, nonlocal, inner funkcie
+- this
+- javac, pustanie cez konzolu, -cp -m ...
 <li>null referencia</li>
 
 <li>diagram aktivít</li>

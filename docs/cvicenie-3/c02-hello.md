@@ -27,11 +27,11 @@ Metóda `main` prijíma vstupné argumenty, ktoré užívateľ zadal pri volaní
 Podobne ako pri premenných, v Jave musíme explicitne uviesť dátové typy všetkých argumentov danej metódy. 
 Ba čo viac, musíme tak isto uviesť dátový typ výstupu metódy, teda výsledku, ktorý metóda vracia.
 
-Ak metóda nevracia žiaden výsledok, použijeme špeciálne kľúčové slovo `void`.
+Ak metóda nevracia žiaden výsledok, použijeme špeciálne kľúčové slovo `void`. Vidieť to môžme aj v našej metóde `main`.
 
 ## Volanie metód
 
-Statickú metódu v rámci rovnakej triedy volám tak, že napíšem jej názov. Ak je však metóda v inej triede, musím pred meno metódy uviesť aj meno tejto triedy a dať bodku.
+Statickú metódu v rámci rovnakej triedy volám tak, že napíšem jej názov. Ak je však metóda v inej triede, musím pred meno metódy uviesť aj meno tejto triedy a názvy oddeliť bodkou.
 
 Každá verejná trieda musí byť vo svojom vlastnom súbore s príponou `.java`. Názov súboru musí byť rovnaký ako názov triedy.
 
@@ -75,19 +75,19 @@ Príklad 2.1 v prostredí IntelliJ IDEA
 
 ## Štandardný výstup
 
-Na vypísanie textu do konzoly používame metódu `System.out.println`. Táto metóda prijíma jeden argument, ktorý vypíše na obrazovku. Ak chceme výstup formátovať, použijeme podobnú metódu `System.out.printf`. Táto metóda už prijíma viac argumentov.
+Na vypísanie textu do konzoly používame metódu `System.out.println()`. Táto metóda prijíma jeden argument, ktorý vypíše na obrazovku. Ak chceme výstup formátovať, použijeme podobnú metódu `System.out.printf()`. Táto metóda už prijíma viac argumentov.
 
-Prečo také komplikované meno? Trieda `System` je trieda štandardnej knižnice, ktorá okrem iného obsahuje objekty so vstupom a výstupom. `out` je jeden z takýchto objektov. Reprezentuje štandardný výstup z programu. No a metódy `println` a `printf` sú definované nad týmto objektom, preto triedu aj objekt pri volaní musíme uviesť.
+Prečo také komplikované meno? Trieda `System` je trieda štandardnej knižnice, ktorá okrem iného obsahuje objekty so vstupom a výstupom. `out` je jeden z takýchto objektov. Reprezentuje štandardný výstup z programu. No a metódy `println` a `printf` sú definované nad týmto objektom (nie sú statické), preto triedu aj objekt pri volaní musíme uviesť.
 
-!!! info "Dokumentácia"
+!!! abstract "Dokumentácia"
 
-    - Zoznam metód, ktoré vieme volať nad `System.out` nájdeme v [dokumentácii triedy `PrintStream`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html#method-summary)
+    Zoznam metód, ktoré vieme volať nad `System.out` nájdeme v [dokumentácii triedy `PrintStream`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html#method-summary)
 
 
 
 ### Formátovanie výstupu
 
-Ak chceme výstup formátovať, použijeme metódu `System.out.printf`. Vo formátovácom reťazci na miesto, kde chcem vypísať hodnotu uvediem kľúčové slovo začínajúce percentom. Dané hodnoty potom uvediem podľa poradia ako argumenty za formátovací reťazec.
+Ak chceme výstup formátovať, použijeme metódu `System.out.printf()`. Vo formátovácom reťazci na miesto, kde chcem vypísať hodnotu uvediem kľúčové slovo začínajúce percentom. Dané hodnoty potom uvediem podľa poradia ako argumenty za formátovací reťazec.
 
 !!! example "Príklad 2.2: Vypísanie aktuálneho dátumu"
 
@@ -112,9 +112,9 @@ Základné druhy formátovania
 | `%f`   | Desatinné číslo, napr. `%.2f` pre 2 desatinné miesta |
 | `%c`   | Znak |
 
-!!! info "Dokumentácia"
+!!! abstract "Dokumentácia"
 
-    - Podrobný návod ako sa v metóde `printf` formátujú reťazce nájdeme v [doumentácii triedy `Formatter`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax)
+    Podrobný návod ako sa v metóde `printf` formátujú reťazce nájdeme v [dokumentácii triedy `Formatter`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax)
 
 
 ## Importovanie tried
@@ -132,19 +132,6 @@ import java.util.*; // Import celého balíka
 
     Trieda `System` je automaticky importovaná, preto sme ju nemuseli pridávať manuálne. Java automaticky importuje všetky triedy z balíka [`java.lang`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/package-summary.html#class-summary)
 
-Podobne ako triedy musia byť zapísané vo svojom samostatnom súbore, tak aj balíky musia mať svoj samostatný priečinok. Všetky triedy v tom istom priečinku teda patria do toho istého balíka. Balík zadefinujeme na začiatku súboru príkazom `package`.
-
-```java
-// súbor: balicek/Osoba.java
-package balicek;
-
-public class Osoba {
-    public String meno;
-    public Osoba(String meno) {
-        this.meno = meno;
-    }
-}
-```
 
 ## Štandardný vstup
 
@@ -183,9 +170,9 @@ Väčšinou ak skončíte prácu s objektom `Scanner`, mali by ste tento objekt 
 
 `Scanner` nepracuje iba nad štandardným vstupom. Je mu jedno z čoho číta údaje, a tak ho viete vytvoriť nad súborom, reťazcom znakov alebo údajmi, ktoré boli zaslané cez sieť.
 
-!!! info "Dokumentácia"
+!!! abstract "Dokumentácia"
 
-    - Detaily ohľadom metód a použitia triedy Scanner nájdete v [dokumentácii triedy `Scanner`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Scanner.html)
+    Detaily ohľadom metód a použitia triedy Scanner nájdete v [dokumentácii triedy `Scanner`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Scanner.html)
 
 ## Reťazce znakov
 
@@ -197,9 +184,9 @@ String pozdrav = "Ahoj " + meno + "!";
 System.out.println(pozdrav);  // Ahoj Fero!
 ```
 
-!!! info "Dokumentácia"
+!!! abstract "Dokumentácia"
 
-    - Detaily ohľadom reťazcov nájdete v [dokumentácii triedy `String`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
+    Detaily ohľadom reťazcov nájdete v [dokumentácii triedy `String`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
 
 Od Jave verzia 13 je k díspozícii aj viacriadkový reťazec, podobne ako v Pythone:
 
@@ -248,14 +235,25 @@ Cykly slúžia na opakovanie časti kódu. V Jave existujú štyry príkazy na v
 
 Cyklus pomocou `for` sa používa, keď dopredu vieme, koľkokrát sa má cyklus opakovať.
 
-```java
+```java title="Syntax cyklu for"
+for (inicializácia; podmienka; aktualizácia) {
+    // telo cyklu - kód, ktorý sa opakuje
+}
+```
+
+```java title="Príklad použitia cyklu for"
 for (int i = 0; i < 5; i++) {
     System.out.println("i = " + i);
 }
 ```
 
+!!! tip "Učím sa s pomocou umelej inteligencie"
+
+    Som študent strednej školy, a učím sa objektové programovanie v Jave. Vysvetli mi [štruktúru cyklu for, jeho jednotlivé časti, ako sa používa a uveď príklady](https://grok.com/share/c2hhcmQtMg%3D%3D_fc22f475-3a91-4d29-89ac-7b2fb7376862).
+
+
 Cyklus pomocou `while` sa opakuje, kým je podmienka pravdivá
-```java
+```java title="Príklad použitia cyklu while"
 int i = 0;
 while (i < 5) {
     System.out.println("i = " + i);
@@ -340,6 +338,10 @@ while (i < 5) {
 
     Podmienky - if, else
     Cykly - for, while
+
+    for (inicializácia; podmienka; aktualizácia) {
+      // telo cyklu - kód, ktorý sa opakuje
+    }
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
@@ -347,7 +349,8 @@ while (i < 5) {
     Ústne skúšanie alebo krátka 5-minútovka:
 
     - Vedieť napísať statickú metódu
-    - Vedieť napísať cyklus a podmienku
+    - Vedieť napísať cyklus a podmienku, vysvetliť ich časti
     - Ternárny operátor, čo to je?
     - Ako načítame vstup z klávesnice?
     - Ako vypíšeme niečo na obrazovku?
+    - Základné spôsoby formátovania výstupu

@@ -2,7 +2,58 @@
 
 Ak máme väčší program, je vhodné zdrojový kód rozdeliť do viacerých súborov. Dnešné cvičenie si vysvetlíme, akým spôsobom Python umožňuje spravovať väčšie projekty.
 
+Na zopakovanie si pripomenieme, že doteraz sme si ukázali 2 módy spúšťania programov v Pythone
+
+- interaktívny mód - jednoducho spustíme python príkazom `python`
+- skriptovací mód - ak máme súbor `script.py` so skriptom, spustíme ho príkazom `python script.py`
+
 ## Modul
+
+:::štruktúra python projektu: main, modul, import:::
+
+Pri väčších projektoch už jeden súbor nestačí. V takomto prípade rozdelíme kód do viacerých modulov.
+
+Modul napísaný v jazyku Python je súbor s príponou .py, ktorý obsahuje definície funkcií, tried, premenných a iný spustiteľný kód.
+
+Prečo sa to volá modul a nie jednoducho súbor. Moduly totižto nemusia byť napísané iba v Pythone. Niektoré moduly sú napísané aj v iných jazykoch a niektoré moduly sú interné Python moduly, k dispozícii vždy.
+
+module.py
+
+import module
+
+absolute imports
+
+relative imports
+
+import .module
+import ..module
+
+sys.modules - cache už importovaných modulov
+
+module.foo()
+
+sys.path ... module shadowing
+
+PYTHONPATH
+
+sys.path.append("/path/to/project")
+
+Balík (Package) v Pythone je akýkoľvek adresár, ktorý obsahuje moduly (súbory s príponou .py)
+
+V starších verziách Pythonu bolo povinné, aby adresár, ktorý predstavuje balík, mal v sebe špeciálny súbor __init__.py, ináč ho Python nebral ako balík.
+
+if (__name__ == '__main__'):
+    import sys
+    if len(sys.argv) > 1:
+        print(fact(int(sys.argv[1])))
+
+
+import importlib
+>>> importlib.reload(mod)
+
+
+__all__ = ['foo']
+
 
 Zatiaľ sme si vysvetlili interaktívne programovanie pomocou konzoly a programovanie pomocou skriptu. Skript je súbor s príponou `.py` a spúšťam ho pomocou príkazu `python moj-skript.py`
 
