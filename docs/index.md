@@ -5,12 +5,12 @@ hide:
 
 # Učebnica objektovo orientovaného programovania
 
-
+<!--
 ![Písomka time](assets/pisomka.jpg)
 /// caption
 It's písomka time!
 ///
-
+-->
 
 Predmet *Objektovo orientované programovanie* je určený pre tretí ročník na [SPŠE v Prešove](https://www.spse-po.sk/). Medzi jeho hlavné ciele patrí osvojenie si základov objektovo orientovaného programovania a tvorbe programov v jazyku Java. Okrem toho predmet rozvíja a upevňuje základné znalosti programovania a softvérového vývoja. 
 
