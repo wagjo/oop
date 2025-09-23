@@ -1,6 +1,6 @@
 # Pokročílí 4: Moduly
 
-Ak máme väčší program, je vhodné zdrojový kód rozdeliť do viacerých súborov. Dnešné cvičenie si vysvetlíme, akým spôsobom Python umožňuje spravovať väčšie projekty.
+Ak máme väčší program, je vhodné zdrojový kód rozdeliť do viacerých súborov. Na dnešnom cvičení si vysvetlíme, akým spôsobom Python umožňuje spravovať väčšie projekty.
 
 Na zopakovanie si pripomenieme, že doteraz sme si ukázali 2 módy spúšťania programov v Pythone
 
@@ -9,13 +9,141 @@ Na zopakovanie si pripomenieme, že doteraz sme si ukázali 2 módy spúšťania
 
 ## Modul
 
-:::štruktúra python projektu: main, modul, import:::
-
+<div class="md-has-sidebar" markdown>
+<main markdown>
 Pri väčších projektoch už jeden súbor nestačí. V takomto prípade rozdelíme kód do viacerých modulov.
 
-Modul napísaný v jazyku Python je súbor s príponou .py, ktorý obsahuje definície funkcií, tried, premenných a iný spustiteľný kód.
+Modul napísaný v jazyku Python je súbor s príponou `.py`, ktorý obsahuje definície funkcií, tried, premenných a iný spustiteľný kód.
 
-Prečo sa to volá modul a nie jednoducho súbor. Moduly totižto nemusia byť napísané iba v Pythone. Niektoré moduly sú napísané aj v iných jazykoch a niektoré moduly sú interné Python moduly, k dispozícii vždy.
+Ak daný súbor používame ako "hlavný súbor", pomocou ktorého spúšťame program, Python nám automaticky nastaví špeciálnu premennú `__name__` na hodnodu `__main__`. Pomocou tejto hodnoty vieme v programe rozlíšiť, či bol súbor použitý iba "ako modul" alebo bol tento súbor priamo spustený "ako program".
+
+!!! doc "Špeciálne atribúty"
+
+    V Pythone existujú tzv. špeciálne atribúty, ktoré nám poskytujú dodatočné informácie o module, funkcii alebo triede. Všetky špeciálne atribúty začínaju a končia dvoma podčiarkovníkmi, napríklad `__name__`. Ľudovo tieto atribúty Python programátori nazývajú aj "dunder" atribúty, čo je skratka z "double underscore".
+
+ </main>
+  <aside markdown>
+Prečo sa to volá modul a nie jednoducho súbor? Moduly totižto nemusia byť iba súbory alebo napísané iba v Pythone. Niektoré moduly sú napísané aj v iných jazykoch a niektoré moduly sú interné Python moduly, vždy k dispozícii.
+</div>
+
+=== "Modul `util.py`"
+
+    ```python
+    def faktorial(n):
+        if n == 0: return 1
+        return n * faktorial(n - 1)
+
+    def fib(n):
+        if n == 0: return 0
+        if n == 1: return 1
+        return fib(n - 1) + fib(n - 2)
+
+    def obrat(s):
+        if len(s) < 2: return s
+        return s[-1] + obrat(s[:-1])
+
+    def main():
+        print("V tomto module su nasledovné funkcie:")
+        print(f"- Faktoriál (faktoriál čísla 30 je {faktorial(30)})")
+        print(f"- Fibonacciho číslo (fibonacci na pozícii 30 je {fib(30)})")
+        print(f"- Obrátenie reťazca ({obrat("Obrátenie reťazca")})")
+
+    if __name__ == '__main__':
+        main()
+    ```
+
+Modul má svoj vlastný izolovaný priestor na premenné a funkcie, takže veci zadefinované v module sú oddelené od iných modulov a navzájom sa neovplyvňujú. Ináč povedané, **každý modul má svoj vlastný priestor mien** *(namespace)* – teda slovník premenných a funkcií, ktoré sú v ňom definované.
+
+### Používanie modulov
+
+Moduly, ktoré si vytvorím viem použiť v iných moduloch môjho programu. Na to, aby som mohol daný modul plne využívať je potrebné ho 'importovať' pomocou príkazu `import ...`. Po úspešnom importovaní môžem napr. volať funkcie daného modulu. Importované funkcie musím pri volaní prefixovať s názvom modulu, napr. `util.faktorial(10)`
+
+<div class="md-has-sidebar" markdown>
+<main markdown>
+Príkaz import nájde súbor, ktorý reprezentuje daný modul, spustí ho a vykoná v ňom všetky jeho príkazy. Nakoniec vytvorí premennú, pomocou ktorej viem pristupovať k funkciám a premenným daného modulu. Pozor však! Pri importovaní sa **modul spustí a vykoná iba pri prvom importe**. Ak ho importujem viackrát alebo vo viacerých súboroch, každý ďalší import už modul znova nespúšťa!
+ </main>
+  <aside markdown>
+  Ak potrebujem importovaný modul znovunačítať a znovu spustiť, musím použiť špeciálnu funkciu `importlib.reload(moj_modul)` z balíka `importlib`.
+</div>
+
+=== "Modul `main.py` s klasickým importom"
+
+    ```python
+    import util
+
+    print(f"Faktorial cisla 10 je {util.faktorial(10)}")
+
+    postupnost = [util.fib(x) for x in range(12)]
+    print(f"Fibonacciho postupnost je {postupnost}")
+
+    print(util.obrat("ahoj"))
+    ```
+
+Druhá možnosť je importovať priamo funkcie, ktoré budem používať. To sa robí pomocou príkazu `from ... import ...`. V tomto prípade **budú importované iba vybrané funkcie, modul samotný importovaný nebude**.
+
+=== "Modul `main.py` pomocou from ... import ..."
+
+    ```python
+    from util import faktorial, fib
+
+    print(f"Faktorial cisla 10 je {faktorial(10)}")
+
+    postupnost = [fib(x) for x in range(12)]
+    print(f"Fibonacciho postupnost je {postupnost}")
+
+    # print(util.obrat("ahoj"))  # toto fungovať nebude
+    ```
+
+Existuje ešte tretia možnosť, a to importovať všetky veci z daného modulo. Robí sa to pomocou príkazy `from ... import *`. Tento spôsob môže byť ale veľmi nebezpečný, preto ho neodporúčame používať.
+
+### Vytváranie aliasov
+
+Niekedy sa stane, že vo svojom programe už máme funkciu s rovnakým názvom, ako tú, ktorú chcem importovať. V takých prípadoch máme možnosť importovať funkciu pod iným menom, tzv. aliasom. Iné meno môžeme priradiť funkcii alebo aj celému modulu. V oboch prípadoch to robíme v importe pomocou voľby `as ...`.
+
+=== "Alias celého modulu"
+
+    ```python
+    import util as u
+
+    print(f"Faktorial cisla 10 je {u.faktorial(10)}")
+    ```
+
+=== "Alias konkrétnej funkcie"
+
+    ```python
+    from util import faktorial as fak
+
+    print(f"Faktorial cisla 10 je {fak(10)}")
+    ```
+
+!!! tip "Učím sa s pomocou umelej inteligencie"
+
+    Som študent strednej školy, učím sa Python. Vysvetli mi [ako rôzne viem importovať modul alebo jeho časť?](https://grok.com/share/c2hhcmQtMg%3D%3D_3e316290-00ab-438b-aff2-29796e37396a)
+
+
+### Spúšťanie 'modulárnych' projektov
+
+Ak mám už svoj program napísaný vo forme viacerých modulov, má sa už spúšťať ináč ako keď som mal iba jeden súbor (skript). Pri spúšťaní takého projektu mám zvyčajne jeden "hlavný" modul, ktorý obsahuje vstupný bod programu. Na spustenie tohto modulu použijem príkaz `python -m` a názov modulu, ktorý chcem spustiť, teda napr. `python -m main`. Všimnite si, že som už nenapísal názov súboru, ale názov modulu a použil som voľbu `-m`, ktorá hovorí, že spúšťam modul a nie skript.
+
+```
+# Python v interaktívnom móde
+python
+
+# Spustenie Python skriptu
+python script.py
+
+# Spustenie Python modulu
+python -m modul
+```
+
+![import antigravity](../assets/antigravity-top.webp)
+/// caption
+V Pythone na lietanie používame `import antigravity`
+///
+
+## Balík
+
+
 
 module.py
 
@@ -42,10 +170,6 @@ Balík (Package) v Pythone je akýkoľvek adresár, ktorý obsahuje moduly (súb
 
 V starších verziách Pythonu bolo povinné, aby adresár, ktorý predstavuje balík, mal v sebe špeciálny súbor __init__.py, ináč ho Python nebral ako balík.
 
-if (__name__ == '__main__'):
-    import sys
-    if len(sys.argv) > 1:
-        print(fact(int(sys.argv[1])))
 
 
 import importlib
@@ -56,85 +180,6 @@ __all__ = ['foo']
 
 
 Zatiaľ sme si vysvetlili interaktívne programovanie pomocou konzoly a programovanie pomocou skriptu. Skript je súbor s príponou `.py` a spúšťam ho pomocou príkazu `python moj-skript.py`
-
-Iteráciu v programovaní používame dennodenne. Iterácia je proces opakovania určitej operácie pomocou cyklov. Teda cykly `for` a `while` predstavujú iteráciu.
-
-```python title="Výpočet faktoriálu iteratívnym spôsobom"
-def faktorial(n):
-    vysledok = 1
-    for i in range(1, n + 1):
-        vysledok *= i
-    return vysledok
-```
-
-Existujú však typy úloh, kedy použitie iterácie je komplikované, neprehľadné alebo málo elegantné. V takých prípadoch vieme pri určitých typoch úloh použiť rekurziu.
-
-## Rekurzia
-
-Rekurzia je proces, pri ktorom funkcia volá samu seba, aby vyriešila problém rozdelením na menšie podproblémy rovnakého typu.
-
-Rekurzívna funkcia má dve základné časti, prvá je **základný prípad** (base case) a druhá je **rekurzívny prípad** (recursive case). Základný prípad je stav, kedy sa rekurzia zastaví, a predstavuje nejaký konečný stav úlohy. Rekurzívny prípad je stav, kedy funkcia v určitom bode zavolá samú seba.
-
-Ak by rekurzívna funkcia nemala základný - bázový prípad, pokračovala by donekonečna, resp. dovtedy, kým by nezaplnila pamäť počítača.
-
-![](../assets/base_case_meme.jpg){width=500 .on-glb}
-/// caption
-Anakin programátor
-///
-
-
-```python title="Výpočet faktoriálu rekurzívnym spôsobom"
-def faktorial(n):
-    if n == 0:  # Bázový prípad
-        return 1
-    return n * faktorial(n - 1)  # Rekurzívny prípad
-```
-
-## Porovnanie rekurzia a iterácie
-
-Každý algoritmus v rekurzívnom tvare sa dá prepísať na tvar iteratívny. Iteratívna verzia je obvykle efektívnejšia - je rýchlejšia a zaberá menej pamäti. Rekurziu používame hlavne kôli jej elegancii a jednoduchosti pri niektorých prípadoch.
-
-| Vlastnosť | Rekurzia | Iterácia |
-|-------------|-----------|-----------|
-| Princíp | Funkcia volá samu seba | Opakovanie pomocou cyklov |
-| Pamäť | Vyššia spotreba (zásobník) | Nižšia spotreba |
-| Rýchlosť | Pomalšia (opakované volania) | Rýchlejšia |
-| Čitateľnosť | Eleganantná pre zložité problémy |Jednoduchšia pre lineárne úlohy |
-| Riziko | Pretečenie zásobníka pri hlbokej rekurzii | Žiadne také riziko |
-| Použitie | Stromové štruktúry, divide-and-conquer | Lineárne opakovanie, jednoduché úlohy |
-
-## Zásobník volaní
-
-<div class="md-has-sidebar" markdown>
-<main markdown>
-
-Rekurzia, aj keď má bázový prípad, môže pri veľkom počte volaní - vnorení - zaplniť tzv. zásobník volaní bežiaceho programu.
-
-Zásobník (stack) je dátová štruktúra typu LIFO *(Last In, First Out)*, kde sa prvky pridávajú *(push)* a odstraňujú *(pop)* z vrcholu zásobníka. Python interne spravuje volania funkcií pomocou zásobníka volaní *(call stack)*.
-
-Keď sa zavolá funkcia:
-
-- Python vytvorí nový rámec volania *(call frame)* na zásobníku, ktorý obsahuje lokálne premenné funkcie a parametre funkcie.
-- Po dokončení funkcie sa jej rámec odstráni zo zásobníka *(pop)* a program pokračuje tam, kde skončil.
-
-Rekurzia úzko súvisí so zásobníkom, pretože každé rekurzívne volanie funkcie vytvára nový rámec na zásobníku volaní. To umožňuje uchovať stav každého volania (lokálne premenné, parametre) až do dosiahnutia bázového prípadu.
-
-No a pri veľkom počte rekurzívnych volaní (napr. `faktorial(10000)`) môže dôjsť k pretečeniu zásobníka (stack overflow), pretože každý rámec zaberá pamäť.
- </main>
-  <aside markdown>
-Spadnutie programu v dôsledku pretečenia zásobníka je veľmi častá chyba programu. Dokonca taká častá, že si ju za svoj názov zobrala asi najznámejšia stránka pre programátorov, [Stack Overflow](https://stackoverflow.com)  </aside>
-</div>
-Python má predvolený limit rekurzie *(zvyčajne 1000 volaní)*, ktorý sa dá upraviť pomocou funkcie `sys.setrecursionlimit()`.
-
-```python title="Zmena limitu rekurzie"
-import sys
-print(sys.getrecursionlimit())  # štandardne 1000
-sys.setrecursionlimit(2000)     # limit vieme zvýšiť, ale hrozí zaplnenie pamäti
-```
-
-!!! info "Tail Call Optimization"
-
-    Veľa programovacích jazykov podporuje optimalizáciu rekurzie v prípadoch, kedy je rekurzívne volanie poslednou vecou vo funkcii. Pri takejto optimalizícii by sa do zásobníka neuložili nové hodnoty, ale by sa ibe prepísali tie existujúce. Jazyk Python však bohužiaľ túto optimalizáciu nepodporuje.
 
 
 ## Úlohy na precvičenie
