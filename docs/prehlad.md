@@ -78,11 +78,27 @@ hide:
 </ul>
 </td>
 </tr>
-<tr>
+<tr >
 <td width=10%>3</td>
-<td width=30%>TODO</td>
-<td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../teoria-3/t03-objekt">Identita, objekt</a> (<a href="../assets/t03w.pdf">pdf</a>)
+<ul>
+<li>Identita a hodnota</li>
+<li>Objekt</li>
+<li>Operátory</li>
+<li>Príkazy a výrazy</li>
+</ul>
+</td>
+<td width=30%>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p03-rekurzia">Rekurzia</a> (<a href="../assets/p03w.pdf">pdf</a>)
+<ul>
+<li>Iterácia</li>
+<li>Rekurzia</li>
+<li>Zásobník volaní</li>
+</ul>
+</td>
 </tr>
 <tr>
 <td width=10%>4</td>
