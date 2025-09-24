@@ -4,8 +4,8 @@ Ak máme väčší program, je vhodné zdrojový kód rozdeliť do viacerých s�
 
 Na zopakovanie si pripomenieme, že doteraz sme si ukázali 2 módy spúšťania programov v Pythone
 
-- interaktívny mód - jednoducho spustíme python príkazom `python`
-- skriptovací mód - ak máme súbor `script.py` so skriptom, spustíme ho príkazom `python script.py`
+- *interaktívny mód* - spustíme príkazom `python`
+- *skriptovací mód* - skript uložený v súbore `script.py` spustíme príkazom `python script.py`
 
 ## Modul
 
@@ -56,11 +56,11 @@ Modul má svoj vlastný izolovaný priestor na premenné a funkcie, takže veci 
 
 ### Používanie modulov
 
-Moduly, ktoré si vytvorím viem použiť v iných moduloch môjho programu. Na to, aby som mohol daný modul plne využívať je potrebné ho 'importovať' pomocou príkazu `import ...`. Po úspešnom importovaní môžem napr. volať funkcie daného modulu. Importované funkcie musím pri volaní prefixovať s názvom modulu, napr. `util.faktorial(10)`
+Moduly, ktoré si vytvorím, viem použiť v iných moduloch môjho programu. Na to, aby som mohol daný modul plne využívať je potrebné ho 'importovať' pomocou príkazu `import ...`. Po úspešnom importovaní môžem napr. volať funkcie daného modulu. Importované funkcie musím pri volaní prefixovať s názvom modulu, napr. `util.faktorial(10)`
 
 <div class="md-has-sidebar" markdown>
 <main markdown>
-Príkaz import nájde súbor, ktorý reprezentuje daný modul, spustí ho a vykoná v ňom všetky jeho príkazy. Nakoniec vytvorí premennú, pomocou ktorej viem pristupovať k funkciám a premenným daného modulu. Pozor však! Pri importovaní sa **modul spustí a vykoná iba pri prvom importe**. Ak ho importujem viackrát alebo vo viacerých súboroch, každý ďalší import už modul znova nespúšťa!
+Príkaz import nájde súbor, ktorý reprezentuje daný modul, spustí ho a vykoná v ňom všetky jeho príkazy. Nakoniec vytvorí premennú, pomocou ktorej vieme pristupovať k funkciám a premenným daného modulu. Pozor však! Pri importovaní sa **modul spustí a vykoná iba pri prvom importe**. Ak ho importujem viackrát alebo vo viacerých súboroch, každý ďalší import už modul znova nespúšťa!
  </main>
   <aside markdown>
   Ak potrebujem importovaný modul znovunačítať a znovu spustiť, musím použiť špeciálnu funkciu `importlib.reload(moj_modul)` z balíka `importlib`.
@@ -71,30 +71,30 @@ Príkaz import nájde súbor, ktorý reprezentuje daný modul, spustí ho a vyko
     ```python
     import util
 
-    print(f"Faktorial cisla 10 je {util.faktorial(10)}")
+    print(f"Faktoriál čísla 10 je {util.faktorial(10)}")
 
     postupnost = [util.fib(x) for x in range(12)]
-    print(f"Fibonacciho postupnost je {postupnost}")
+    print(f"Fibonacciho postupnosť je {postupnost}")
 
     print(util.obrat("ahoj"))
     ```
 
-Druhá možnosť je importovať priamo funkcie, ktoré budem používať. To sa robí pomocou príkazu `from ... import ...`. V tomto prípade **budú importované iba vybrané funkcie, modul samotný importovaný nebude**.
+Druhá možnosť je importovať priamo funkcie, ktoré budem používať. To sa robí pomocou príkazu `from ... import ...`. V tomto prípade **budú importované iba vybrané funkcie, modul samotný sa volať dať nebude**.
 
 === "Modul `main.py` pomocou from ... import ..."
 
     ```python
     from util import faktorial, fib
 
-    print(f"Faktorial cisla 10 je {faktorial(10)}")
+    print(f"Faktoriál čísla 10 je {faktorial(10)}")
 
     postupnost = [fib(x) for x in range(12)]
-    print(f"Fibonacciho postupnost je {postupnost}")
+    print(f"Fibonacciho postupnosť je {postupnost}")
 
     # print(util.obrat("ahoj"))  # toto fungovať nebude
     ```
 
-Existuje ešte tretia možnosť, a to importovať všetky veci z daného modulo. Robí sa to pomocou príkazy `from ... import *`. Tento spôsob môže byť ale veľmi nebezpečný, preto ho neodporúčame používať.
+Existuje ešte tretia možnosť, a to importovať všetky veci z daného modulu. Robí sa to pomocou príkazu `from ... import *`. Tento spôsob môže byť ale veľmi nebezpečný, preto ho neodporúčame používať.
 
 ### Vytváranie aliasov
 
@@ -105,7 +105,7 @@ Niekedy sa stane, že vo svojom programe už máme funkciu s rovnakým názvom, 
     ```python
     import util as u
 
-    print(f"Faktorial cisla 10 je {u.faktorial(10)}")
+    print(f"Faktoriál čísla 10 je {u.faktorial(10)}")
     ```
 
 === "Alias konkrétnej funkcie"
@@ -123,7 +123,7 @@ Niekedy sa stane, že vo svojom programe už máme funkciu s rovnakým názvom, 
 
 ### Spúšťanie 'modulárnych' projektov
 
-Ak mám už svoj program napísaný vo forme viacerých modulov, má sa už spúšťať ináč ako keď som mal iba jeden súbor (skript). Pri spúšťaní takého projektu mám zvyčajne jeden "hlavný" modul, ktorý obsahuje vstupný bod programu. Na spustenie tohto modulu použijem príkaz `python -m` a názov modulu, ktorý chcem spustiť, teda napr. `python -m main`. Všimnite si, že som už nenapísal názov súboru, ale názov modulu a použil som voľbu `-m`, ktorá hovorí, že spúšťam modul a nie skript.
+Ak mám už svoj program napísaný vo forme viacerých modulov, má sa už spúšťať ináč ako keď som mal iba jeden súbor (skript). Pri spúšťaní takého projektu mám zvyčajne jeden "hlavný" modul, ktorý obsahuje vstupný bod programu. Na spustenie tohto modulu použijem príkaz `python -m` a názov modulu, ktorý chcem spustiť, teda napr. `python -m main`. Všimnite si, že som už nenapísal názov súboru s príponou, ale názov modulu a použil som voľbu `-m`, ktorá hovorí, že spúšťam modul a nie skript.
 
 ```
 # Python v interaktívnom móde
@@ -143,125 +143,247 @@ V Pythone na lietanie používame `import antigravity`
 
 ## Balík
 
+Ak máme modulov veľa, je vhodné ich rozdeliť do skupín pre ľahšiu prehľadnosť. Na to nám v Pythone slúžia balíky (anglicky packages). Balík v Pythone je adresár, ktorý v sebe obsahuje súbory s modulmi. Názov balíka je názov adresára. Balíky v sebe môžu obsahovať ďalšie balíky.
+
+V nasledujúcom príklade si vytvoríme adresár `tvary` a v ňom budeme mať 3 súbory:
+
+=== "Balík s troma modulmi"
+
+    ```python title="tvary/kruh.py"
+    import math
+
+    PI = math.pi
+
+    def obvod(r):
+        return 2 * PI * r
+
+    def obsah(r):
+        return PI * r * r
+    ```
+
+    ```python title="tvary/obdlznik.py"
+    def obvod(a, b):
+        return (2 * a) + (2 * b)
+
+    def obsah(a, b):
+        return a * b
+    ```
+
+    ```python title="tvary/stvorec.py"
+    def obvod(a):
+        return 4 * a
+
+    def obsah(a):
+        return a * a
+    ```
+
+Importovanie modulov v balíkoch je podobné ako importovanie obyčajných modulov. Názvy balíkov a modulu oddelíme bodkou. V nasledujúcom príklade si ukážeme rôzne možnosti importovania.
+
+=== "Importovanie z balíka modulov, súbor `main.py`"
+
+    ```python
+    import tvary.stvorec
+    print(f"Obvod štvorca o veľkosti 10 je {tvary.stvorec.obvod(10)}")
+
+    from tvary import stvorec
+    print(f"Obvod štvorca o veľkosti 10 je {stvorec.obvod(10)}")
+
+    from tvary.stvorec import obvod
+    print(f"Obvod štvorca o veľkosti 10 je {obvod(10)}")
+    ```
+
+### Absolútne a relatívne importovanie
+
+Všetky predchádzajúce príklady importovania používali absolútne importovanie. To znamená, že mali plnú cestu k modulu. Nezáleží z akého modulu robíme import, čí je v nejakom balíku alebo nie. Absolútny import používa vždy plnú cestu k modulu, s uvedením všetkých balíkov, v ktorých sa nachádza.
+
+V niektorých prípadoch môže byť vhodné použiť tzv. relatívny import, keď napríklad chcem importovať modul z toho istého balíka v akom práve sme, ale je nám jedno ako sa balík volá. Náš modul štvorec si napríklad vieme upraviť tak, aby používal funkcie z modulu obdĺžnik, ktorý je v tom istom balíku.
+
+=== "Použitie relatívneho importu, `stvorec.py`"
+
+    ```python
+    from . import obdlznik
+
+    def obvod(a):
+        return obdlznik.obvod(a, a)
+
+    def obsah(a):
+        return obdlznik.obsah(a, a)
+    ```
+
+!!! tip "Učím sa s pomocou umelej inteligencie"
+
+    Som študent strednej školy, učím sa Python. Vysvetli mi [absolútny a relatívny import. Uveď všetky druhy relatívneho importu a ukáž na príkladoch](https://grok.com/share/c2hhcmQtMg%3D%3D_061e9097-5603-44a6-bcf3-bc5e03c176a8)
+    
+Relatívny import vie odkazovať aj na rodičovské a iné balíky v rámci projektu. Nasledovný kód ukazuje rôzne príklady použitia relatívneho importu.
+
+=== "Rôzne formy relatívneho importu"
+
+    ```python
+    from . import modul              # relatívny import z rovnakého balíka
+    from .. import balík             # relatívny import z nadradeného balíka
+    from .modul import funkcia       # import symbolu z modulu v rovnakom balíku
+    from ..balík import trieda       # import symbolu z modulu v nadradenom balíku
+    from ... import nadbalík         # relatívny import o dve úrovne vyššie
+    from ...balík import modul       # relatívny import z balíka o dve úrovne vyššie
+    from . import modul as alias     # relatívny import s aliasom
+    from .modul import *             # relatívny import všetkých symbolov z modulu
+    ```
+
+### Importovanie balíka
+
+Okrem importovania modulu alebo jeho funkcií vieme v Pythone importovať aj samotný balík. V našom príklade s tvarmi by sme import balíka `tvary` zapísali ako `import tvary`.
+
+<div class="md-has-sidebar" markdown>
+<main markdown>
+Na čo je to dobré, keď všetky funkcie a premenné sú v moduloch a nie v samotnom balíku? V Pythone môže mať funkcie a premenné aj samotný balík! Všetko čo chceme vložiť do samotného balíka zapíšeme do špeciálneho súboru s názvom `__init__.py`. Python tento súbor spustí pri importe daného balíka.
+
+V tomto špeciálnom súbore sa niekedy zvyknú importovať funkcie alebo premenné z iných modulov, aby užívateľ nášho balíka nemusel hľadať funkcie po rôznych moduloch. Ukážeme si to na nasledovnom príklade
+ </main>
+  <aside markdown>
+V starších verziách Pythonu bolo nutné, aby každý balík mal svoj súbor `__init__.py`. V nových verziách tento súbor nie je povinný.
+</div>
 
 
-module.py
+=== "Import funkcií do samotného balíka"
 
-import module
+    ```python title="tvary/__init__.py"
+    from .kruh import obvod as obvod_kruhu, obsah as obsah_kruhu
+    from .obdlznik import obvod as obvod_obdlznika, obsah as obsah_obdlznika
+    from .stvorec import obvod as obvod_stvorca, obsah as obsah_stvorca
+    ```
 
-absolute imports
+    ```python title="main.py"
+    import tvary
+    print(f"Obvod štvorca o veľkosti 10 je {tvary.obvod_stvorca(10)}")
+    ```
 
-relative imports
+Import balíka, teda spustenie súboru `__init__.py` sa vykoná keď importujeme balík, ale aj keď importujeme akýkoľvek modul alebo balík, ktorý je vo vnútri daného balíka. Teda `__init__.py` balíka `tvary` sa vykoná aj v nasledovných prípadoch:
 
-import .module
-import ..module
+```python title="Import balíka tvary sa vykoná v každom z nasledovných príkladov"
+import tvary.stvorec
+from tvary import stvorec
+from tvary.stvorec import obvod
+```
 
-sys.modules - cache už importovaných modulov
+Samozrejme súbor `__init__.py` sa spustí iba prvý krát, podobne ako je to pri moduloch.
 
-module.foo()
+### Spúšťanie balíka
 
-sys.path ... module shadowing
+Pri moduloch sme si ukazovali, že program napísaný pomocou modulov je potrebné spúšťať pomocou príkazu `python -m modul`. Pri moduloch v balíkoch je to rovnaké. Ak máme modul v nejakom balíku, program spustíme pomocou `python -m balik.modul`
 
-PYTHONPATH
-
-sys.path.append("/path/to/project")
-
-Balík (Package) v Pythone je akýkoľvek adresár, ktorý obsahuje moduly (súbory s príponou .py)
-
-V starších verziách Pythonu bolo povinné, aby adresár, ktorý predstavuje balík, mal v sebe špeciálny súbor __init__.py, ináč ho Python nebral ako balík.
-
-
-
-import importlib
->>> importlib.reload(mod)
-
-
-__all__ = ['foo']
+V Pythone však vieme spustiť aj samotný balík, pomocou príkazu `python -m balik`. Teda spustiť môžeme rovnako modul alebo balík. Ak spúšťame samotný balík, python spustí špeciálny súbor `__main__.py`, ktorý bude hľadať v danom balíku. Ak sa tam ten súbor nenachádza, Python vypíše chybu.
 
 
-Zatiaľ sme si vysvetlili interaktívne programovanie pomocou konzoly a programovanie pomocou skriptu. Skript je súbor s príponou `.py` a spúšťam ho pomocou príkazu `python moj-skript.py`
+!!! documentation "Pokročilé techniky"
+
+    V súvislosti s modulmi a balíkmi je vhodné ešte spomenúť nasledovné veci (dobrovoľné učivo):
+
+    - aké všelijaké premenné a funkcie máme zadefinované alebo importované v aktuálnom mennom priestore aktuálneho modulu vieme zistiť pomocou funkcie `dir()`
+    - množinu symbolov, ktoré sa importujú pri použití `from modul import *`, je možné zadefinovať pomocou špeciálnej premennej `__all__`, ktorú uvedieme v danom module či balíku.
+    - Pomocou premennej `sys.modules` môžeme zistiť, ktoré balíky a moduly už máme v našom programe importované.
+    - Python pri importovaní vyhľadáva súbory s modulmi na rôznych miestach na disku. Všetky tieto cesty si môžeme pozrieť a aj zmeniť pomocou premennej `sys.path`.
+    - Ak chceme doplniť adresárovú cestu pre importovanie modulov, môžeme tak urobiť pomocou premennej prostredia `PYTHONPATH`
 
 
 ## Úlohy na precvičenie
 
-Pri nasledujúcich úlohách si zmerajte rýchlosť rekurzívnej a iteratívnej verzie pomocou knižnice `timeit`.
+!!! example "Úloha 4.1: Balík kalkulačka"
 
-```python title="Meranie rýchlosti funkcie pomocou timeit"
-import timeit
+    Vytvor balík `kalkulacka`, ktorý bude mať:
 
-def faktorial(n):
-    if n <= 1:
-        return 1
-    return n * faktorial(n - 1)
+    - `zakladne.py` (sčítanie, odčítanie, násobenie, delenie)
+    - `pokrocile.py` (faktoriál, mocnina, odmocnina)
 
-opakovania = 1000
+    V `main.py` napíš jednoduchý textový program, ktorý načíta od používateľa operáciu a čísla a zavolá správnu funkciu.
 
-cas = timeit.timeit(
-    stmt='faktorial(100)',  # Kód, ktorý meriame
-    setup='from __main__ import faktorial',
-    number=opakovania
-)
-
-print(f"Čas funkcie: {cas:.6f} sekúnd ({opakovania} opakovaní)")
-```
-
-!!! example "Úloha 3.1: Fibonacciho postupnosť"
-
-    Vytvorte program na vypis n-tého prvku Fibonacciho postupnosti pomocou rekurzívnej a iteratívnej metódy
-
-!!! example "Úloha 3.2: Mocnina"
-
-    Napíš rekurzívnu funkciu, ktorá vypočíta a^n^ (mocninu čísla a na n). Ako by vyzerala iteratívna verzia?
-
-!!! example "Úloha 3.3: Hanojské veže"
-
-    Napíš rekurzívnu funkciu, ktorá vyrieši problém Hanojských veží pre n diskov. Funkcia vypíše kroky na presun diskov z jedného kolíka (A) na druhý (C) s použitím pomocného kolíka (B).
-
-!!! example "Úloha 3.4: Obrátenie reťazca"
-
-    Napíš rekurzívnu funkciu, ktorá obráti zadaný reťazec (napr. "ahoj" → "joha").
-
-!!! example "Úloha 3.5: Kontrola palindrómu"
-
-    Rekurzívne zisti, či je reťazec palindróm (čítaný spredu aj odzadu je rovnaký).
+    Bonus: napíš `__init__.py`, ktorý zjednotí všetky funkcie.
 
 
 ## Zhrnutie cvičenia
 
-- [x] Iterácia je proces opakovania určitej operácie pomocou cyklov
-- [x] Rekurzia je proces, pri ktorom funkcia volá samu seba, aby vyriešila problém rozdelením na menšie podproblémy rovnakého typu
-- [x] Rekurzívna funkcia má dve základné časti, prvá je základný prípad a druhá je rekurzívny prípad
-    * [ ] Základný prípad je stav, kedy sa rekurzia zastaví, a predstavuje nejaký konečný stav úlohy
-    * [ ] Rekurzívny prípad je stav, kedy funkcia v určitom bode zavolá samú seba
-- [x] Rekurzia môže byť elegantnejšia, iterácia je väčšinou efektívnejšia
-- [x] Zásobník
-    * [ ] Rekurzia pri veľkom počte vnorení zaplní zásobník
-    * [ ] Python má predvolený limit rekurzie (zvyčajne 1000 volaní), ktorý sa dá upraviť pomocou funkcie `sys.setrecursionlimit()`
+- [x] Modul - viem vytvoriť ako súbor s príponou `.py`
+    * [ ] Každý modul má svoj vlastný priestor mien (namespace)
+    * [ ] Pri importovaní sa modul spustí a vykoná iba pri prvom importe
+    * [ ] `import modul` - importované funkcie volám s názvom modulu (`modul.funkcia()`)
+    * [ ] `from modul import funkcia`
+    * [ ] `from modul import funkcia as f`
+    * [ ] `import modul as m`
+    * [ ] `from modul import *` - neodporúča sa
+    * [ ] Spustenie Python modulu `python -m modul`
+- [x] Špeciálna premenná `__name__`
+    * [ ] Pomocou nej vieme v programe rozlíšiť, či bol súbor použitý ako modul alebo bol spustený ako program.
+    * [ ] Python nastaví špeciálnu premennú `__name__` na hodnodu `__main__` ak bol modul spustený ako program
+    * [ ] `if __name__ == '__main__': main()`
+- [x] Balík (package) - adresár s modulmi
+    * [ ] Názov balíka je názov adresára. Balíky v sebe môžu obsahovať ďalšie balíky
+    * [ ] Importovanie modulov v balíkoch je podobné ako importovanie obyčajných modulov. Názvy balíkov a modulu oddelíme bodkou.
+    * [ ] `import balik`
+    * [ ] `import balik.modul`
+    * [ ] `import balik.balik.balik.modul`
+    * [ ] `from balik.modul import funkcia`
+    * [ ] `from balik import modul`
+    * [ ] Absolútny import - plná cesta, bez úvodnej bodky
+    * [ ] Relatívny import - začína bodkou, hľadá sa od aktuálneho balíka/adresára
+    * [ ] `from . import modul`
+    * [ ] `from .. import balík`
+    * [ ] `from .modul import funkcia`
+- [x] Špeciálny súbor `__init__.py`
+    * [ ] Python tento súbor vykoná pri importe daného balíka
+    * [ ] Používa sa na zotriedenie funkcií, ak ich chceme mať na jednom mieste
+- [x] Špeciálny súbor `__main__.py`
+    * [ ] Python tento súbor vykoná pri spustení balíka ako programu
+    * [ ] Spúšťa sa pomocou `python -m balik`
+
 
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    Iterácia - používanie cyklov
-    Rekurzia - volanie samého seba
+    MODUL
 
-    2 časti rekurzívnej funkcie
-    - základný prípad - kedy sa rekurzia zastaví
-    - rekurzívny prípad - keď volá samú seba
+    Väčšie projekty rozdeľujeme do viacerých súborov - modulov
+    Každý modul má svoj vlastný priestor mien (namespace)
+    Ak chcem použiť nejaký modul, musím ho importovať
+    Pri importovaní sa modul spustí a vykoná iba pri prvom importe
 
-    Rekurzia môže byť elegantnejšia, iterácia je väčšinou efektívnejšia
+    Syntax importovania modulov:
+    import ...
+    from ... import ...
+    import ... as ...
+    from ... import ... as ...
+    
+    Špeciálna premenná __name__
+    Používa sa na rozlíšenie, či modul importujem alebo ho spúšťam
+    if __name__ == '__main__': main()
 
-    Rekurzia pri veľkom počte vnorení zaplní zásobník, nastane stack overflow
+    BALÍK
 
-    Python má limit na rekurziu, mení sa pomocu sys.setrecursionlimit()
+    Je to adresár s modulmi. Názov balíka je názov adresára. 
+    Balíky v sebe môžu obsahovať ďalšie balíky.
+    Importovanie modulov v balíkoch je podobné ako importovanie obyčajných modulov. 
+    Názvy balíkov a modulu oddelíme bodkou.
+
+    Absolútny import - plná cesta, bez úvodnej bodky
+    Relatívny import - začína bodkou, hľadá sa od aktuálneho balíka/adresára
+
+    Špeciálny 'balíkový' súbor __init__.py
+    Volá sa pri prvom importe daného balíka
+
+    Špeciálny 'balíkový' súbor __main__.py
+    Volá sa pri spustení balíka ako programu
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Ústne skúšanie alebo krátka 5-minútovka:
+    Okruhy otázok na test:
 
-    - Rozdiel medzi rekurziou a iteráciou
-    - 2 časti rekurzívnej funkcie
-    - Čo je zásobník volaní, ako súvisí s rekurziou
+    - Čo je modul, čo je balík
+    - Ako zistím, či sa modul spustil ako program, alebo či sa importoval
+    - Importovanie modulov a funkcií z modulov
+    - Použitie aliasu pri importovaní
+    - Importovanie balíkov
+    - Relatívne a absolútne importovanie
+    - Špeciálne súbory `__init__.py` a `__main__.py`. Význam a použitie
+    - Ako spustím modul projektu, ako spustím balík?
 

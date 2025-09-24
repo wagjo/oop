@@ -127,9 +127,9 @@ hide:
 <td width=30%>
 <a href="../pokrocili-3/p04-moduly">Moduly</a> (<a href="../assets/p04w.pdf">pdf</a>)
 <ul>
-<li></li>
-<li></li>
-<li></li>
+<li>Modul</li>
+<li>Balík</li>
+<li>Dunder atribúty a súbory</li>
 </ul>
 </td>
 </tr>
