@@ -129,7 +129,7 @@ hide:
 <ul>
 <li>Modul</li>
 <li>Balík</li>
-<li>Dunder atribúty a súbory</li>
+<li>Špeciálne atribúty a súbory</li>
 </ul>
 </td>
 </tr>
