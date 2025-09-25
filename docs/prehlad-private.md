@@ -49,7 +49,7 @@ hide:
 </td>
 </tr>
 <tr >
-<td width=10%>1</td>
+<td width=10%>2</td>
 <td width=30%>
 <a href="../teoria-3/t02-typy">Algoritmus, dátové typy a premenné</a> (<a href="../assets/t02w.pdf">pdf</a>)
 <ul>
@@ -80,7 +80,7 @@ hide:
 </td>
 </tr>
 <tr >
-<td width=10%>1</td>
+<td width=10%>3</td>
 <td width=30%>
 <a href="../teoria-3/t03-objekt">Identita, objekt</a> (<a href="../assets/t03w.pdf">pdf</a>)
 <ul>
@@ -108,7 +108,7 @@ hide:
 </td>
 </tr>
 <tr >
-<td width=10%>1</td>
+<td width=10%>4</td>
 <td width=30%>
 <a href="../teoria-3/t04-trieda">Trieda, balíky</a> (<a href="../assets/t04w.pdf">pdf</a>)
 <ul>
@@ -119,9 +119,10 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c04-"></a> (<a href="../assets/c04w.pdf">pdf</a>)
+<a href="../cvicenie-3/c04-wrapper">Obalené typy</a> (<a href="../assets/c04w.pdf">pdf</a>)
 <ul>
-<li></li>
+<li>Null</li>
+<li>Obalené typy</li>
 </ul>
 </td>
 <td width=30%>
@@ -130,6 +131,28 @@ hide:
 <li>Modul</li>
 <li>Balík</li>
 <li>Špeciálne atribúty a súbory</li>
+</ul>
+</td>
+</tr>
+<tr >
+<td width=10%>5</td>
+<td width=30%>
+<a href="../teoria-3/t05-vynimky">Výnimky</a> (<a href="../assets/t05w.pdf">pdf</a>)
+<ul>
+<li>Správa chýb</li>
+<li>Výnimky</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c05-">TODO</a> (<a href="../assets/c05w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p05-">TODO</a> (<a href="../assets/p05w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
 </ul>
 </td>
 </tr>

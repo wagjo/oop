@@ -89,7 +89,7 @@ hide:
 <li>Príkazy a výrazy</li>
 </ul>
 </td>
-<td width=30%>
+<td width=30%>TODO
 </td>
 <td width=30%>
 <a href="../pokrocili-3/p03-rekurzia">Rekurzia</a> (<a href="../assets/p03w.pdf">pdf</a>)

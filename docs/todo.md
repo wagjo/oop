@@ -5,8 +5,6 @@
 - cv02 null references
 - cv02 vyrazy a prikazy
 - package, import, namespace
-- kazda funkcia patri do nejakej triedy - vola sa to metoda
-- kazda trieda patri do nejakeho package
 - subor, namespace
 - vibe coding
 - carpathy
@@ -18,7 +16,6 @@
 
 <li>diagram aktivít</li>
 <li>Vibe coding, carpathy</li>
-<li>Trieda</li>
 
 
 ## BACKLOG
