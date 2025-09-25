@@ -265,7 +265,7 @@ Môžeme dokonca uviesť viacero takýchto zdrojov, ktoré sa majú automaticky 
 
     Výnimka (anglicky exception) je objekt, ktorý reprezentuje chybový alebo nečakaný stav programu
       - Ak nastane chyba, program 'vyhodí' výnimku
-      - Vyhodená výnimka sa musí ošetriť v metóde kde nastala alebo v nadradených metódach
+      - Vyhodená výnimka sa musí ošetriť v metóde kde nastala, alebo v nadradených metódach
       - Ak sa neošetrí ani v main() tak program skončí chybou
 
     Kategórie výnimiek
