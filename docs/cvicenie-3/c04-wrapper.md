@@ -1,18 +1,42 @@
-# Cvičenie 4: Ošetrenie chýb, Null, Obalené typy, boxing, casting, operátory
+# Cvičenie 4: Literály, null, typová konverzia, obalené typy
 
-- konverzia string/int
-- boxed types, autoboxing, unboxing
-- operatory
-- praca so stringami
-- automaticka konverzia
-- polia
+Staticko typové jazyky nám nájdu veľa chýb pri kompilácii, teda ešte pred spustením programu. Automatické kontroly typov nám dávajú pocit istoty a bezpečnosti, že náš kód je navrhnutý správne a program bude robiť to, čo očakávame.
 
+Nič však nie je zadarmo. Statická typová kontrola so sebou prináša aj množstvo nevýhod. Aby sme v staticko typovom jazyku vedeli dobre programovať, musíme spoznať a pochopiť veci, ktoré sme pri dynamických jazykoch ako Python nemuseli riešiť.
 
-Na tomto cvičení sa hlbšie ponoríme do spôsobov, akými sa v Jave dá riadiť tok programu. Priblížime si detailne podmienky a cykly.
+Na dnešnom cvičení sa povenujeme práci s typmi, ale najprv si ukážeme literály jazyka a vysvetlíme si, ako Java rieši absenciu hodnoty pomocou výrazu `null`.
 
-Veľká úloha na cvičení: Vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci parametrizované (rôzne veľké) obrazce (štvorce, obdĺžniky, trojuholníky, bonus – kruhy) vyplnené i prázdne
+## Literál
 
+Dátové typy majú svoje konkrétne hodnoty. Zápis takejto hodnoty priamo v kóde sa nazýva **literál**. Syntax literálov je súčasťou programovacieho jazyka.
 
+=== "Príklady literálov v Jave"
+
+    ``` java
+    123                // int literál
+    123L               // long literál
+    0xFF               // int literál v hexadecimálnej sústave
+    0b1010             // int literál v binárnej sústave
+    07                 // int literál v osmičkovej sústave
+    1_000_000          // int literál s podtržníkom (pre čitateľnosť)
+    3.14               // double literál
+    3.14f              // float literál
+    6.022e23           // double literál s exponentom
+    'a'                // char literál
+    '\n'               // char literál (escape – nový riadok)
+    '\u03A9'           // char literál (Unicode znak Ω)
+    "Hello"            // String literál
+    "Line1\nLine2"     // String literál s escape sekvenciou
+    "Unicode:\u263A"   // String literál s Unicode znakom ☺
+    """
+    Line1
+    Line2
+    """                // String literál – viacriadkový
+    true               // boolean literál (true)
+    false              // boolean literál (false)
+    null               // null literál (špeciálny)
+    {1, 2, 3}          // pole (zložený typ, prvky sú literály)
+    ```
 
 ## Null
 
@@ -36,27 +60,31 @@ Používa sa pri nasledovných situáciách:
     obj = null; 
     ```
 
-Null referencia je jedna z najkontroverznejších vecí v Jave a celkovo v programovaní. Prináša totiž obrovské množstvo problémov, komplikácií a je najčastejším zdrojom chýb. Nutnosť kontrolovať `null` hodnoty kompikuje a zneprehľadňuje kód. Modernejšie programovanie jazyky sa rôznymi spôsobmi všemožne snažia null referenciám vyhnúť. 
+Null referencia je jedna z najkontroverznejších vecí v Jave a celkovo v programovaní. Prináša totiž obrovské množstvo problémov, komplikácií a je najčastejším zdrojom chýb. Nutnosť kontrolovať `null` hodnoty komplikuje a zneprehľadňuje kód. Modernejšie programovanie jazyky sa rôznymi spôsobmi všemožne snažia `null` referenciám vyhnúť. 
 
 Ak kód v Jave očakáva konkrétny objekt a dostane `null` hodnotu, nemôže ďalej pokračovať a vyhodí výnimku [NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html) (NPE).
 
-```java
-public void spracuj(String input) {
-    int dlzka = input.length(); // Ak je input null, vyhodí sa NPE
-    // Ďalší kód
-}
-```
+=== "Kód, ktorý pozabudol na možnosť mať `null` na vstupe"
+
+    ```java
+    public void spracuj(String input) {
+        int dlzka = input.length(); // Ak je input null, vyhodí sa NPE
+        // Ďalší kód
+    }
+    ```
 
 Väčšine problémov s `null` referenciami dokážeme predísť. Pri písaní kódu je potrebné ošetrovať prípady, kedy vstupné argumenty našich metód obsahujú `null` hodnotu. Ak naša metóda nepripúšťa `null` hodnoty na vstupe, je potrebné čím skôr vyhodiť výnimku, aby sa uľahčilo debugovanie. Na to nám môže poslúžiť metóda [`Objects.requireNonNull()`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Objects.html#requireNonNull(java.lang.Object,java.lang.String)), ktorá vyhodí NPE výnimku, ak je argument `null`.
 
-```java
-import java.util.Objects;
+=== "Ošetrenie vstupného parametra"
 
-public void spracuj(String input) {
-    Objects.requireNonNull(input, "Input nesmie byť null");
-    // Ďalší kód
-}
-```
+    ```java
+    import java.util.Objects;
+
+    public void spracuj(String input) {
+        Objects.requireNonNull(input, "Input nesmie byť null");
+        // Ďalší kód
+    }
+    ```
 
 
  </main>
@@ -72,7 +100,89 @@ Známy počítačový vedec Tony Hoare, ktorý prvý prišiel s nápadom `null` 
 
 !!! tip "Učím sa s pomocou umelej inteligencie"
 
-    Som študent strednej školy. Učím sa Javu. [Objasni mi všetky úskalia práce s null referenciou a poraď, ako vyhnúť problémom s null](https://grok.com/share/c2hhcmQtMg%3D%3D_54ad4e90-09ea-42e7-922f-676579026bd5)
+    Som študent strednej školy. Učím sa Javu. [Objasni mi všetky úskalia práce s null referenciou a poraď, ako sa vyhnúť problémom s null.](https://grok.com/share/c2hhcmQtMg%3D%3D_54ad4e90-09ea-42e7-922f-676579026bd5)
+
+## Typová konverzia
+
+V praxi sa často stáva, že mám hodnotu, ktorú viem rovnako reprezentovať v rôznych dátových typoch alebo triedach. Najčastejšie je to pri číselných typoch. Programovacie jazyky nám rôznymi spôsobmi umožňujú konvertovať hodnoty medzi dátovými typmi. Java nám ponúka niekoľko možností.
+
+### Implicitná konverzia (widening conversion)
+
+<div class="md-has-sidebar" markdown>
+<main markdown>
+
+Pri číselných typoch, kedy nenastáva strata informácie nám Java umožňuje automaticky konvertovať menšie typy na väčšie.
+
+=== "Automatická konverzia - widening"
+
+    ```java
+    int a = 10;
+    long b = a; // implicitná konverzia (int → long)
+    double c = b; // implicitná konverzia (long → double)
+    ```
+
+Poradie primitívnych typov je nasledujúce:
+
+`byte` → `short` → `int` → `long` → `float` → `double`
+</main>
+  <aside markdown>
+Pri konverzii celočíselného typu na `float` alebo `double` môže nastať strata presnosti. [Problematika čísel s pohyblivou desatinnou čiarkou](https://floating-point-gui.de/) je však veľmi komplikovaná a detailné pochopenie ich fungovania by zabralo viacero samostaných cvičení. 
+
+Buďte preto pri ich používaní opatrní a keď sa dá použite celočíselné typy.</aside>
+</div>
+
+### Explicitná konverzia (narrowing conversion, casting)
+
+Opačne to však už automaticky nefunguje, nakoľko by sa mohla stratiť informácia. V takýchto prípadoch to vieme urobiť manuálne pomocou castingu. Pri castingu napíšeme do zátvoriek typ, do ktorého chceme skonvertovať našu hodnotu.
+
+=== "Explicitná konverzia - narrowing, casting"
+
+    ```java
+    double x = 900.78;
+    int y = (int) x;  // explicitný casting (double → int)
+    System.out.println(y); // 900
+
+    byte b = (byte) x;  // explicitný casting (double → byte)
+    System.out.println(b); // -124, nastalo pretečenie
+    ```
+
+Pri konvertovaní na menší číselný typ môžu nastať nasledovné problémy:
+
+- odrezanie desatinných miest
+- pretečenie (overflow)
+
+<div class="md-has-sidebar" markdown>
+<main markdown>
+
+Konverziu vieme vykonať aj medzi nečíselnými typmi. Primitívny typ `char` je vnútorne reprezentovaný ako 16-bitové čislo a dá sa bez straty informácií konvertovať na `int` alebo väčšie typy.
+
+=== "Konverzia typu `char`"
+
+    ```java
+    char c = 'A';
+    int code = c; // implicitne 'A' → 65
+    System.out.println(code);
+
+    code = 100;
+    char d = (char)code; // explicitne 100 → 'd'
+    System.out.println(d);
+    
+    char e = 101; // implicitná konverzia pri inicializacii 101 → 'e'
+    ``` 
+ 
+ </main>
+
+  <aside markdown>
+Každý znak je v pamäti počítača uložený ako číslo. Základná anglická abeceda sa zmestí do jedného bajtu. Prvých 128 znakových kódov je definovaných v [štandarde ASCII](https://www.ascii-code.com/)
+
+Kódovaniu znakov do čísel sa venuje svetový [štandard Unicode](https://home.unicode.org/). Ten rozširuje štandard ASCII a umožňuje kódovať akúkoľvek abecedu a emoji znaky.
+</aside>
+</div>
+
+![ASCII tabuľka](../assets/ascii.svg){.on-glb}
+/// caption
+ASCII tabuľka znakov
+///
 
 ## Obalené typy
 
@@ -83,13 +193,27 @@ Java poskytuje primitívne dátové typy. Sú rýchle a zaberajú málo pamäti.
 
 Sú rôzne situácie, kedy je vyžadovaný objekt a nie primitívna hodnota. Často sa napríklad stáva, že metóda, ktorú by sme chceli použiť vyžaduje na vstupe objekt, ale mi máme primitívnu hodnotu.
 
-Pre takéto prípady má java k dispozícii tzv. obalené typy, anglicky *wrapper classes*. **Pre každý primitívny dátový typ existuje príslušný obalený typ**. Obalené triedy poskytujú plnohodnotné objekty, reprezentujúce dané číslo alebo inú primitívnu hodnotu. Zaberajú však viacej miesta v pamäti.
+Pre takéto prípady má java k dispozícii tzv. obalené typy, anglicky *wrapper classes*. **Pre každý primitívny dátový typ existuje príslušný obalený typ**. Obalené triedy poskytujú plnohodnotné objekty, reprezentujúce dané číslo alebo inú primitívnu hodnotu. Zaberajú však viacej miesta v pamäti. Objekty obalených typov sú nemenné.
 
-Objekty obalených typov sú nemenné. Obalené triedy naviac poskytujú množstvo užitočných metód a konštánt. Niektoré z nich si teraz predstavíme.
+=== "Obalené typy v Jave"
 
-### Na čo si dať pozor
+    ```java
+    int x = 10; // primitívny dátový typ
+    Integer y = 10; // obalený typ
+    System.out.printf("x je %d, y je %d", x, y); // používajú sa rovnako
+    ```
 
-Primitívne hodnoty porovnávame pomocou operátora `==`. Obalené objekty však už musíme porovná
+Java poskytuje množstvo funkcionalít, ktoré umožňujú voľne si zamienať primitívne a obalené objekty vo väčšine prípadov. Preto vy ako programátor by ste mali vždy ak je to možné **uprednostniť primitívne typy a obalené typy používať len vtedy, keď je to nutné**. Obalené typy totiž môžu byť zdrojom problémov.
+
+=== "`NullPointerException` pri obalených typoch"
+
+    ```java
+    int x = 10;
+    Integer y = null;
+    if(x == y) // Vyhodí NPE výnimku
+        System.out.println("rovnajú sa");
+    ```
+ 
  </main>
 
   <aside markdown>
@@ -107,327 +231,171 @@ Primitívne hodnoty porovnávame pomocou operátora `==`. Obalené objekty však
 </aside>
 </div>
 
-Na minulom cvičaní sme si ukázali podmienku `if-else`. Ide o najčastejšie používaný typ podmienky a vo svojich programoch ho budete často používať. Okrem tejto podmienky má však Java aj príkaz `switch`.
+### Autoboxing
 
-`switch` je podmienka, ktorá sa zvykne používať, ak mám na výber z viacerých možností. Ak nenastane ani jeden z `case` prípadov, nastane možnosť `default`.
+Prevod z primitívneho typu na obalený sa v programovaní volá boxing (z anglického slova box ako krabica). Podobne prevod na primitívny typ sa volá unboxing.
 
+Java vykonáva automatickú konverziu z a do balených typov, vždy keď je to potrebné. To sa v Jave nazýva autoboxing a auto-unboxing.
 
-```java title="Tradičný switch príkaz"
-int den = 3;
-
-switch (den) {
-    case 1:
-        System.out.println("Pondelok");
-        break;
-    case 2:
-        System.out.println("Utorok");
-        break;
-    case 3:
-        System.out.println("Streda");
-        break;
-    default:
-        System.out.println("Neznámy deň");
-}
-```
-
-Podmienka v príkaze `switch` musí mať vo výsledku primitívnu hodnotu, `String`, alebo musí byť tzv. `enum` (o tom niekedy inokedy)
-
-Všimnite si použitie príkazu `break`. Ak by v nejakej možnosti `break` nebol, vykonávanie programu by pokračovalo ďalšou možnosťou! Niekedy je to žiadúce, a takýto spôsob sa volá **fall-through**. Uvedieme si ho v nasledovných príkladoch:
-
-??? example "Switch kedy viacero možností má rovnaký kód"
+=== "Príklady autoboxingu a auto-unboxingu"
 
     ```java
-    int mesiac = 3; // marec
+    int x = 5;
+    Integer y = 10; // autoboxing, literály sú vždy primitívneho typu
+    y = x; // autoboxing, x je primitívny, y nie
+    
+    List li = new ArrayList();
+    li.add(x); // autoboxing, x je primitívny typ, 
+               // ale do listu sa dajú vkladať iba objekty
 
-    switch (mesiac) {
-        case 12:
-        case 1:
-        case 2:
-            System.out.println("Zima");
-            break;
 
-        case 3:
-        case 4:
-        case 5:
-            System.out.println("Jar");
-            break;
+    x = y; // auto-unboxing, y je objekt, x je primitívny
 
-        case 6:
-        case 7:
-        case 8:
-            System.out.println("Leto");
-            break;
+    if(x == y) // auto-unboxing, y sa skonvertuje na primitívny typ, 
+               // aby sme mohli porovnať hodnoty
+        System.out.println("x je rovnaké ako y");
 
-        case 9:
-        case 10:
-        case 11:
-            System.out.println("Jeseň");
-            break;
-
-        default:
-            System.out.println("Neplatný mesiac");
-    }
     ```
 
-??? example "Switch s fall through kedy niektoré možnosti obshujú aj tie nasledovné"
+### Na čo si dať pozor
+
+Primitívne hodnoty porovnávame pomocou operátora `==`. Ak je aspoň jeden z operandov primitívna hodnota, Java urobí auto-unboxing a všetko je v poriadku. Ak však porovnávame 2 obalené objekty, musíme použiť namiesto toho metódu `equals()`.
+
+=== "Porovnávanie s obalenými objektami"
 
     ```java
-    int accessCode = 2;
-    String clearance;
+    int a = 10000;
+    Integer b = 10000;
+    Integer c = 10000;
 
-    switch (accessCode) {
-        case 1:
-            clearance = "Top Secret";
-            System.out.println("Full system access!");
-        case 2:
-            clearance = "Secret";
-            System.out.println("Restricted area access!");
-        case 3:
-            clearance = "Confidential";
-            System.out.println("Limited access!");
-            break;
-        case 4:
-            clearance = "Public";
-            System.out.println("Basic access only!");
-            break;
-        default:
-            clearance = "Denied";
-            System.out.println("Access not granted!");
-    }
-
-    System.out.println("Access Code: " + accessCode + ", Clearance: " + clearance);
+    a == b; // v poriadku
+    b == c; // CHYBA, porovná identitu, nie hodnoty!
+    b.equals(c); // správne porovnanie hodnôt dvoch objektov
     ```
 
+### Konštanty a metódy obalených typov
 
-V nových verzíách Javy existuje moderná verzia `switch`, ktorá je už ako výraz, a jednotlivé možnosti môžu byť zložitejšie. `break` sa už nepoužíva a fall through nenastáva.
+Obalené triedy poskytujú množstvo užitočných metód a konštánt. Niektoré z nich si teraz predstavíme.
 
-<div class="md-has-sidebar" markdown>
-<main markdown>
+Triedy obalených typov poskytujú statické konštanty obsahujúce maximálne a minimálne hodnoty a tiež špeciálne hodnoty ako napríklad nekonečno.
 
-```java title="Moderný switch od Javy 14"
-int den = 3;
-
-String nazov = switch (den) {
-    case 1 -> "Pondelok";
-    case 2 -> "Utorok";
-    case 3 -> "Streda";
-    case 6, 7 -> "Víkend";
-    default -> "Neznámy deň";
-};
-
-System.out.println(nazov);
-```
-
-  </main>
-
-  <aside markdown>
-Ak je vo `switch` zápise šípka `->` tak ide o moderný switch výraz.</aside>
-</div>
-
-
-!!! info "Pre pokročilých, od Javy 17"
-
-    V modernom zápise podmienky `switch` tiež závisí na poradí jednotlivých prípadov. Vieme v nich totiž použiť tzv. pattern matching, kde viacero prípadov môže vyhovovať podmienke.
+=== "Statické konštanty v obalených triedach"
 
     ```java
-    int score = 85;
-    String grade = switch (score) {
-        case int s when s >= 90 -> "A";
-        case int s when s >= 80 -> "B";
-        case int s when s >= 70 -> "C";
-        default -> "F";
-    };
-    System.out.println(grade); // Output: B
+    Integer.MAX_VALUE // 2147483647
+    Long.MIN_VALUE // -9223372036854775808
+    Double.POSITIVE_INFINITY // Infinity
     ```
 
-## Cyklus a jeho riadenie
+Metódy tried obalených typov sa často používajú na typovú konverziu s triedou `String`, teda na prevody z a do reťazcov. 
 
-Na minulom cvičení sme si ukázali cykly `for` a `while`. Prvý bol pre prípady, kedy vieme dopredu počet opakovaní, alebo chceme iterovať cez nejakú kolekciu alebo rozsah hodnôt. Cyklus `while` opakuje kód dovtedy kým je splnená podmienka.
-
-Na riadenie toku cyklov existujú dva špeciálne príkazy. Príkaz `break` ukončí predčasne cyklus, a príkaz `continue` preskočí aktuálnu iteráciu pokračuje ďalšou.
-
-```java title="Príklad použitie break a continue"
-for (int i = 0; i < 10; i++) {
-    if (i == 5) break; // ukončí celý cyklus
-    if (i % 2 == 0) continue; // přeskočí párne čísla
-    System.out.println(i);
-} // vypíše čísla 1 a 3
-```
-
-Použitie `break` a `continue` si ukážeme aj v nasledovných príkladoch
-
-??? example "Vyhľadávanie prvku v poli"
+=== "Parsovanie z a do triedy `String`"
 
     ```java
-    int[] pole = {4, 8, 15, 16, 23, 42};
-    int hladane = 23;
-    int i = 0;
+    String s = "11001";
+    int x = Integer.parseInt(s); // prevod z reťazca do int
+    int c = Integer.parseInt(s, 2); // vieme robiť prevod aj z inej číselnej sústavy
+    long y = Long.parseLong(s); // prevod z reťazca do long
+    byte b = Byte.parseByte(s); // Vyhodí NumberFormatException výnimku, 
+                                // pretože číslo je príliš veľké na byte
 
-    while (i < pole.length) {
-        if (pole[i] == hladane) {
-            System.out.println("Našiel som číslo " + hladane + " na indexe " + i);
-            break; // už netreba pokračovať
-        }
-        i++;
-    }
+    long a = 1234;
+    String s10 = Long.toString(a); // prevod do reťazca
+    String s16 = Long.toString(a, 16); // vieme si vybrať číselnú sústavu
+
+    System.out.printf("Číslo %s v šestnástkovej sústave je %s", s10, s16);
     ```
-
-??? example "Hádanie tajného čísla"
-
-    ```java
-    import java.util.Scanner;
-
-    Scanner sc = new Scanner(System.in);
-    int tajne = 7;
-    int pokusy = 0;
-
-    while (true) {
-        System.out.print("Hádaš číslo: ");
-        int tip = sc.nextInt();
-        pokusy++;
-        
-        if (tip <= 0) {
-            System.out.println("Zadaj kladné číslo!");
-            continue; // nepočítaj ako pokus
-        }
-        
-        if (tip == tajne) {
-            System.out.println("Správne! Našiel si číslo na " + pokusy + ". pokus.");
-            break; // koniec hry
-        }
-        
-        if (tip < tajne) {
-            System.out.println("Nesprávne, hľadané číslo je väčšie, skús znova.");
-        } else {
-            System.out.println("Nesprávne, hľadané číslo je menšie, skús znova.");
-        }
-    }
-    ```
-
-## Cyklus do-while
-
-Tretím typom cyklu v Jave je cyklus `do-while`, ktorý je podobný cyklu `while`, ale vždy sa vykoná aspoň jedenkrát. Ukončovacia podmienka sa totiž testuje až na konci.
-
-```java title="Simulácia hádzania kocky"
-import java.util.Random;
-
-...
-
-Random random = new Random();
-int hod;
-
-do {
-    hod = random.nextInt(6) + 1; // Generuje číslo od 1 do 6
-    System.out.println("Padlo číslo: " + hod);
-} while (hod != 6);
-
-System.out.println("Hurá! Padla šestka!");
-```
-
-![Rozdiel medzi while a do-while](../assets/dowhile.webp){.on-glb}
-/// caption
-Rozdiel medzi while a do-while
-///
-
-## Cyklus for-each
-
-Štvrtým typom cyklu v Jave je tzv. for-each cyklus. Ide o cyklus ktorý iteruje naprieč nejakou kolekciou alebo iným objektom, ktorý sa dá iterovať. Používa sa, ak chcete jednoducho spracovať každý prvok bez manuálnej správy indexu alebo iterácie.
-
-```java title="Príklad použitie for-each"
-int[] cisla = {1, 2, 3, 4, 5};
-
-for (int cislo : cisla) {
-    System.out.println("Číslo: " + cislo);
-}
-```
-
-Cyklus for-each je jednoduchý, nepotrebujete v ňom spravovať index ako pri klasickom `for` cykle. Používa sa iba na čítanie prvkov, nie na ich modifikáciu v kolekcii. Taktiež vnútri cyklu neviete zistiť pozíciu prvku v cykle, nakoľko nemáte prístup k indexu.
-
 
 ## Úlohy na precvičenie
 
-!!! example "Úloha 3.1: Zisti, či je číslo negatívne"
+!!! example "Úloha 4.1: Bezpečné porovnanie reťazcov"
 
-    Vytvorte funkciu, ktorá vypíše, či je vstupné číslo negatívne, pozitívne, alebo či je 0. Použite if-else
+    Napíš metódu, ktorá porovnáva dva reťazce aj v prípade, že jeden alebo oba sú null.
 
-!!! example "Úloha 3.2: Switch kalukačka"
+    Výstup: true, ak sú rovnaké (vrátane oboch null), inak false.
 
-    Napíš program, ktorý podľa znaku (+, -, *, /) vykoná príslušnú matematickú operáciu nad dvoma číslami. Použi switch
+!!! example "Úloha 4.2: Číselné sústavy"
 
-!!! example "Úloha 3.3: Slovné hodnotenie"
+    Napíšte program, ktorý načíta celé číslo z klávesnice a vypíše ho v desiatkove, šestnástkovej, osmičkovej a dvojkovej sústave.
 
-    Napíš program, ktorý podľa zadanej známky (1–5) vypíše slovné hodnotenie ("Výborný", "Chválitebný", ...). Použi switch.
+    Bonus: Ak je číslo v správnom rozsahu, napíšte aj, aký znak by toto číslo mohlo reprezentovať.
 
-!!! example "Úloha 3.4: Najväčšie číslo"
+!!! example "Úloha 4.3: Detekcia číselného typu"
 
-    Používateľ bude zadávať celé čísla. Program bude hľadať najväčšie z nich. Zadanie čísla 0 ukončí zadávanie a vypíše sa najväčšie zadané číslo. Použite do-while.
+    Napíš program, ktorý načíta reťazec z klávesnice. Potom program skúsi tento reťazec skonvertovať do rôznych číselných typov a uvedie, ktoré typy by mohli načítaný reťazec reprezentovať.
 
-!!! example "Úloha 3.5: Párne čísla"
+    Pri práci použite ošetrenie výnimiek.
 
-    Napíš program, ktorý vypíše všetky párne čísla od 1 po n (hodnotu n zadá používateľ). Použite while.
+    Najprv vyskúšajte typy `long` a `double`. Môžete pridať menšie celočíselné typy.
+    
+    Bonus: Skúste otestovať aj šestnástkovú, binárnu a osmičkovú sústavu.
 
-!!! example "Úloha 3.6: Nákupné položky"
+!!! example "Úloha 4.4: Delenie"
 
-    Používateľ zadáva ceny položiek. Program počíta celkovú sumu a skončí, keď používateľ zadá 0. Použite do-while.
+    Napíš program, ktorý načíta dve čísla a napíše výsledok po delení. Ošetrite čo najviac výnimiek pri chybách, ktoré môžu nastať.
 
-!!! example "Úloha 3.7: Počítanie deliteľov"
+!!! example "Úloha 4.5: Ošetrená kalkulačka"
 
-    Napíš program, ktorý pre zadané číslo zistí, koľko má deliteľov (vrátane 1 a samotného čísla) pomocou for cyklu.
+    Napíšte program, v ktorom užívateľ bude môcť vykonať základné matematické operácie. Ošetrite možné výnimky. Program rozdeľte do viacerých metód.
 
-!!! example "Úloha 3.8: Výpis párnych čísel"
-
-    Máme pole čísel {10, 15, 20, 25, 30, 20, 88, 43, 77, 32}. Použi for-each cyklus na výpis iba párnych čísel.
 
 ## Zhrnutie cvičenia
 
-- [x] Podmienka `switch` sa zvykne používať, ak mám na výber z viacerých možností
-    * [ ] Podmienka v príkaze `switch` musí mať vo výsledku primitívnu hodnotu, `String`, alebo musí byť tzv. `enum`
-    * [ ] Ak nevyhovuje žiadna možnosť, vyberie sa prípad `default`, ake je definovaný
-    * [ ] Ak v možnosti neuvediem `break`, nastáva *fall-through* a vykoná sa aj nasledujúca možnosť
-    * [ ] Moderná verzia `switch`, ktorá je už ako výraz, nepoužíva fall-through a jeden prípad môže mať viacero možností
-- [x] Na riadenie toku cyklov
-    * [ ] Príkaz `break` ukončí predčasne cyklus
-    * [ ] Príkaz `continue` preskočí aktuálnu iteráciu pokračuje ďalšou
-- [x] V Jave máme 4 typy cyklov: `for`, `while`, `do-while` a `for-each`
-- [x] Cyklus `do-while`
-    * [ ] Je podobný cyklu `while`, ale vždy sa vykoná aspoň jedenkrát
-- [x] Cyklus `for-each`
-    * [ ] Iteruje naprieč nejakou kolekciou alebo iným objektom, ktorý sa dá iterovať
-    * [ ] Používa sa iba čítanie prvkov, nie na ich modifikáciu v kolekcii
-    * [ ] Vnútri cyklu neviete zistiť pozíciu prvku v cykle, nakoľko nemáte prístup k indexu
+- [x] Literál je zápis konkrétneho údaja priamo v kóde
+- [x] Špeciálny literál `null` vyjadruje neprítomnosť hodnoty
+    * [ ] Akákoľvek premenná referenčného (neprimitívneho) typu môže nadobúdať hodnotu `null`
+    * [ ] Používa sa, ak pri inicializácii premennej ešte nemáme vypočítanú hodnotu, ak chceme vyjadriť neprítomnosť hodnoty, alebo ak chceme z premennej vymazať objekt
+    * [ ] Ak kód očakáva objekt a dostane null hodnotu, nemôže pokračovať a vyhodí výnimku `NullPointerException` (NPE).
+    * [ ] Metóda `Objects.requireNonNull()` slúži na ošetrenie vstupov pri kontrole `null` hodnôt
+- [x] Typová konverzia nám v Jave umožňuje konvertovať hodnoty medzi dátovými typmi
+    * [ ] Implicitná konverzia - widening, automaticky konvertuje menšie typy na väčšie
+    * [ ] Explicitná konverzia - narrowing alebo casting, manuálna konverzia, pri ktorej môže nastať strata informácie orezaním alebo pretečením
+    * [ ] Znakový typ `char` viem previesť na `int` alebo väčší, pretože znaky sú vnútorne reprezentované ako číselné kódy
+    * [ ] Základné štandardy znakových kódov sú ASCII a Unicode
+- [x] Obalené typy - wrapper classes
+    * [ ] Pre každý primitívny dátový typ existuje príslušný obalený typ
+    * [ ] Obalený typ je trieda a jeho hodnoty sú objekty
+    * [ ] Autoboxing a auto-unboxing je automatická konverzia z a do balených typov, vždy keď je to potrebné
+    * [ ] Uprednostňujeme primitívne typy a obalené typy používame len keď je to nutné
+    * [ ] Ak porovnávame 2 obalené objekty, musíme použiť metódu `equals()`, nie `==`
+    * [ ] Obalené triedy poskytujú pomocné metódy ako `parseLong()`, `toString()` a rôzne konštanty
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    switch je podmienka pre výber z viacerých možností
-    - musí mať primitívnu hodnotu, String, enum
-    - ak nič nevyhovuje, vyberie default
-    - ak neuvediem break, nastáva fall-through a vykoná sa aj nasledujúca možnosť
-    - moderná verzia switch, je už výraz, nepoužíva fall-through a
-      jeden prípad môže mať viacero možností
+    LITERÁL
 
-    Riadenie toku cyklov
-    - break ukončí predčasne cyklus
-    - continue  preskočí aktuálnu iteráciu pokračuje ďalšou
+    Literál je zápis údaja priamo v kóde
+    Literál null vyjadruje neprítomnosť hodnoty
+    Výnimka NullPointerException sa vyhodí, ak program očakával objekt a nie null
 
-    V Jave máme 4 typy cyklov: for, while, do-while a for-each
+    TYPOVÁ KONVERZIA
 
-    Cyklus do-while je podobný cyklu while, ale vždy sa vykoná aspoň jedenkrát
+    Typová konverzia umožňuje konvertovať medzi dátovými typmi
+    Implicitná konverzia - widening, automaticky konvertuje menšie typy na väčšie
+    byte → short → int → long → float → double
+    Explicitná konverzia - narrowing alebo casting, manuálna konverzia
 
-    Cyklus for-each
-    - iteruje naprieč kolekciou
-    - používa sa na čítanie, nie na modifikáciu
-    - neposkytuje pozíciu prvku v cykle, nemá index
+    char viem previesť na int alebo väčší, pretože znaky sú vnútorne ako číselné kódy
+
+    OBALENÉ TYPY
+
+    Obalené typy - wrapper classes
+    Pre každý primitívny dátový typ existuje príslušný obalený typ - trieda
+    Autoboxing a auto-unboxing je automatická konverzia z a do balených typov, keď je to potrebné
+    Uprednostňujeme primitívne typy pred obalenými, Java robí konverzie za nás
+    2 obalené objekty porovnávam cez equals()
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Ústne skúšanie alebo krátka 5-minútovka:
+    Okruhy otázok na test:
 
-    - Popíšte fungovanie príkazu switch
-    - Čo je fall-through a aké má využitie
-    - Aký je rozdiel medzi while a do-while
-    - Ako funguje príkaz break
-    - Ako funguje príkaz continue
+    - Na čo slúži literál null, aká výnimka sa s ním spája
+    - Ako funguje implicitná typová konverzia
+    - Čo je a ako sa robí explicitná typová konverzia
+    - Čo sú obalené typy, aké majú použitie
+    - Čo je autoboxing a auto-unboxing
+    - Ako sa parsujú čisla z reťazca znakov a ako sa prevádzajú čísla na reťazec
     

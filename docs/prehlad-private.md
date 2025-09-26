@@ -121,7 +121,9 @@ hide:
 <td width=30%>
 <a href="../cvicenie-3/c04-wrapper">Obalené typy</a> (<a href="../assets/c04w.pdf">pdf</a>)
 <ul>
+<li>Literály</li>
 <li>Null</li>
+<li>Typová konverzia</li>
 <li>Obalené typy</li>
 </ul>
 </td>

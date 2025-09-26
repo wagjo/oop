@@ -4,6 +4,7 @@
 - cv02 input output
 - cv02 null references
 - cv02 vyrazy a prikazy
+- vynimky
 - package, import, namespace
 - subor, namespace
 - vibe coding
@@ -12,10 +13,16 @@
 - p03 viditelnost premennych, scope, global, nonlocal, inner funkcie
 - this
 - javac, pustanie cez konzolu, -cp -m ...
+
+- operatory
+- praca so stringami
+- polia
+
 <li>null referencia</li>
 
 <li>diagram aktivít</li>
 <li>Vibe coding, carpathy</li>
+cowsay
 
 
 ## BACKLOG
