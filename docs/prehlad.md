@@ -89,7 +89,13 @@ hide:
 <li>Príkazy a výrazy</li>
 </ul>
 </td>
-<td width=30%>TODO
+<td width=30%>
+<a href="../cvicenie-3/c03-cykly">Riadenie toku programu</a> (<a href="../assets/c03w.pdf">pdf</a>)
+<ul>
+<li>Vetvenie - switch</li>
+<li>Cykly - do-while, for-each</li>
+<li>Prerušenie toku - break, continue</li>
+</ul>
 </td>
 <td width=30%>
 <a href="../pokrocili-3/p03-rekurzia">Rekurzia</a> (<a href="../assets/p03w.pdf">pdf</a>)
