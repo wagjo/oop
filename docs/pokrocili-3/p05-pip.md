@@ -301,7 +301,7 @@ Takto vytvorený projekt potom vieme lokálne nainštalovať príkazom `pip inst
     Izolovaný priestor, ktorý má vlastnú sadu knižníc
     Knižnice z jedného virtuálneho prostredia neovplyvňujú iné virtuálne prostredia
     a nie sú viditeľné ani zo systému.
-    Virtuálne prostredie potrebuje svoj vlastný adresár, väčšinou je to `.venv`
+    Virtuálne prostredie potrebuje svoj vlastný adresár, väčšinou je to .venv
 
     PYPI.ORG
 
