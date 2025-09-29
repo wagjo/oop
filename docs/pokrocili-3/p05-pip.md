@@ -1,347 +1,284 @@
-# Pokročílí 5: Knižnice
+# Pokročílí 5: Správa knižníc
 
 V programovaní pod pojmom knižnica rozumieme sadu funkcií a tried, ktoré riešia nejakú špecifickú úlohu a vieme ich použiť vo svojich programoch. Python poskytuje bohatú štadardnú knižnicu, v ktorej máme k dispozícii množstvo modulov s užitočnými funkciami.
 
 Pri programovaní však nie sme odkázaní iba na štandardnú knižnicu, ale vieme si stiahnuť a použiť tisíce knižníc, ktoré vytvorili iní programátori. Python nám poskytuje rôzne nástroje na správu, používanie a aj vytváranie takýchto knižníc. Dnes sa im povenujeme bližšie.
 
-## pip
+## Správa distribučných balíkov pomocou `pip`
 
-pip je najpopulárnejší nástrojom na spravovanie knižníc v Pythone. Tento nástroj sa nainštaluje automaticky spolu s Pythonom, preto ho má každý používateľ Pythonu k dispozícii.
+`pip` je najpopulárnejší nástroj na spravovanie knižníc v Pythone. Tento nástroj sa nainštaluje automaticky spolu s Pythonom, preto ho má každý používateľ Pythonu k dispozícii.
 
-Knižnica spravovaná pomocou pip sa anglicky volá tiež package, teda balík, ale ide o iný druh "balíka", ako sme si vysvetľovali minule. Preto pip "balíky" budeme ďalej nazývať knižnice.
+Knižnica spravovaná pomocou `pip` sa anglicky volá *distribution package*, teda distribučný balík, ale ide o iný druh "balíka", ako sme si vysvetľovali minule keď sme preberali `import` balíkov. Preto `pip` "distribučné balíky" budeme ďalej niekedy nazývať jednoducho *knižnice*.
 
-Knižnice v pip majú svoje jedinečné meno a obsahujú ľubovoľný počet balíkov a modulov, ktoré po nainštalovaní budeme mať k dispozícii. Okrem mena má každá knižnica aj svoju verziu. Väčšina pip knižníc používa sémantické verzionovanie.
+Distribučné balíky v `pip` majú svoje jedinečné meno a obsahujú ľubovoľný počet balíkov a modulov, ktoré po nainštalovaní budeme mať k dispozícii. Okrem mena má každá knižnica aj svoju verziu. Väčšina `pip` knižníc používa sémantické verzionovanie.
 
-Nástroj pip sa používa z príkazového riadku. Ak chceme zistiť, aké pip knižnice máme vo svojom počítači nainštalované, použijeme na to príkaz `pip list`
-
-Eistuje napríklad populárna knižnica na vytvorenie webového servera s názvom flask. Do svojho počítača ju vieme nainštalovať pomocou príkazu `pip install flask`, ktorý spustíme z príkazového riadku..
-
-pip knižnice sa v Pythone inštalujú globálne, teda
+Nástroj `pip` sa používa z príkazového riadku. Ak chceme zistiť, aké `pip` distribučné balíky máme vo svojom počítači nainštalované, použijeme na to príkaz `pip list`. Program nám do konzoly vypíše všetky nainštalované knižnice a aj ktorú verziu máme nainštalovanú.
 
 <div class="md-has-sidebar" markdown>
 <main markdown>
-Pri väčších projektoch už jeden súbor nestačí. V takomto prípade rozdelíme kód do viacerých modulov.
 
-Modul napísaný v jazyku Python je súbor s príponou `.py`, ktorý obsahuje definície funkcií, tried, premenných a iný spustiteľný kód.
-
-Ak daný súbor používame ako "hlavný súbor", pomocou ktorého spúšťame program, Python nám automaticky nastaví špeciálnu premennú `__name__` na hodnodu `__main__`. Pomocou tejto hodnoty vieme v programe rozlíšiť, či bol súbor použitý iba "ako modul" alebo bol tento súbor priamo spustený "ako program".
-
-!!! doc "Špeciálne atribúty"
-
-    V Pythone existujú tzv. špeciálne atribúty, ktoré nám poskytujú dodatočné informácie o module, funkcii alebo triede. Všetky špeciálne atribúty začínaju a končia dvoma podčiarkovníkmi, napríklad `__name__`. Ľudovo tieto atribúty Python programátori nazývajú aj "dunder" atribúty, čo je skratka z "double underscore".
+Inštaláciu knižnice vykonáme pomocou príkazu `pip install <nazov>`. Existuje napríklad populárna knižnica na vytvorenie webového servera s názvom Flask. Do svojho počítača ju vieme nainštalovať pomocou príkazu `pip install flask`, ktorý spustíme z príkazového riadku.
 
  </main>
   <aside markdown>
-Prečo sa to volá modul a nie jednoducho súbor? Moduly totižto nemusia byť iba súbory alebo napísané iba v Pythone. Niektoré moduly sú napísané aj v iných jazykoch a niektoré moduly sú interné Python moduly, vždy k dispozícii.
+Knižnicu odinštalujeme príkazom `pip uninstall <nazov>`.
+  </aside>
 </div>
 
-=== "Modul `util.py`"
+!!! info "Inštalácia konkrétnej verzie knižnice"
 
-    ```python
-    def faktorial(n):
-        if n == 0: return 1
-        return n * faktorial(n - 1)
-
-    def fib(n):
-        if n == 0: return 0
-        if n == 1: return 1
-        return fib(n - 1) + fib(n - 2)
-
-    def obrat(s):
-        if len(s) < 2: return s
-        return s[-1] + obrat(s[:-1])
-
-    def main():
-        print("V tomto module su nasledovné funkcie:")
-        print(f"- Faktoriál (faktoriál čísla 30 je {faktorial(30)})")
-        print(f"- Fibonacciho číslo (fibonacci na pozícii 30 je {fib(30)})")
-        print(f"- Obrátenie reťazca ({obrat("Obrátenie reťazca")})")
-
-    if __name__ == '__main__':
-        main()
-    ```
-
-Modul má svoj vlastný izolovaný priestor na premenné a funkcie, takže veci zadefinované v module sú oddelené od iných modulov a navzájom sa neovplyvňujú. Ináč povedané, **každý modul má svoj vlastný priestor mien** *(namespace)* – teda slovník premenných a funkcií, ktoré sú v ňom definované.
-
-### Používanie modulov
-
-Moduly, ktoré si vytvorím, viem použiť v iných moduloch môjho programu. Na to, aby som mohol daný modul plne využívať je potrebné ho 'importovať' pomocou príkazu `import ...`. Po úspešnom importovaní môžem napr. volať funkcie daného modulu. Importované funkcie musím pri volaní prefixovať s názvom modulu, napr. `util.faktorial(10)`
+    Niekedy je potrebné mať nainštalovanú nie najnovšiu, ale nejakú konkrétnu verziu knižnice. Verziu vieme špecifikovať pri inštalácii a to pomocou `pip install <nazov>==<verzia>`, teda napr.`pip install flask==3.0.1`
 
 <div class="md-has-sidebar" markdown>
 <main markdown>
-Príkaz import nájde súbor, ktorý reprezentuje daný modul, spustí ho a vykoná v ňom všetky jeho príkazy. Nakoniec vytvorí premennú, pomocou ktorej vieme pristupovať k funkciám a premenným daného modulu. Pozor však! Pri importovaní sa **modul spustí a vykoná iba pri prvom importe**. Ak ho importujem viackrát alebo vo viacerých súboroch, každý ďalší import už modul znova nespúšťa!
+
+Ak na svojom počítači už máme knižnicu nainštalovanú, ale medzitým vyšla nová verzia, je potrebné knižnicu aktualizovať. To vieme urobiť pomocou príkazu `pip install --upgrade <nazov>`.
+
+**`pip` knižnice sa v Pythone inštalujú globálne**, teda nainštalujem ju raz a môžem ju používať vo všetkých svojich Python programoch. Toto je niekedy zdroj nepríjemných problémov, keď máme 2 python programy, ktoré potrebujú tú istú knižnicu, ale rozdielne verzie. Ešte raz, knižnice sa v Pythone inštalujú do celého systému, ich inštalácia nie je obmedzená iba pre daný Python projekt. Nemôžeme mať naraz nainštalované 2 verzie tej istej knižnice.
+
+Na vyriešenie tohto problému sa v Pythone používa virtuálne prostredie, anglicky virtual environment.
+
  </main>
   <aside markdown>
-  Ak potrebujem importovaný modul znovunačítať a znovu spustiť, musím použiť špeciálnu funkciu `importlib.reload(moj_modul)` z balíka `importlib`.
+
+!!! info "Moderné nástroje na správu knižníc"
+
+    Modernou alternatívou k `pip` je nástroj [`uv`](https://docs.astral.sh/uv/), ktorý nahrádza `pip` a aj ďalšie iné Python nástroje. Oproti `pip` je 10-100x rýchlejší a ponpka viac funkcionalít
+</aside>
 </div>
 
-=== "Modul `main.py` s klasickým importom"
+## Virtuálne prostredie `.venv`
 
-    ```python
-    import util
+Virtuálne prostredie v Pythone poskytuje izolovaný priestor pre programátorov, v ktorom majú vlastnú sadu knižníc a vlastnú verziu jazyka Python. Knižnice nainštalované pomocou `pip` v rámci jedného virtuálneho prostredia neovplyvňujú iné virtuálne prostredia a nie sú viditeľné ani zo systému.
 
-    print(f"Faktoriál čísla 10 je {util.faktorial(10)}")
+Virtuálne prostredie má na disku svoj vlastný adresár, do ktorého ukladá svoje nastavenia a nainštalované distribučné balíky. Väčšinou je tento adresár umiestnený v adresári daného Python projektu a jeho názov je `.venv`.
 
-    postupnost = [util.fib(x) for x in range(12)]
-    print(f"Fibonacciho postupnosť je {postupnost}")
+!!! info "Správa virtuálneho prostredie cez príkazový riadok"
 
-    print(util.obrat("ahoj"))
-    ```
+    Ak používame príkazový riadok, tak s virtuálnym prostredím vieme pracovať nasledovne.
 
-Druhá možnosť je importovať priamo funkcie, ktoré budem používať. To sa robí pomocou príkazu `from ... import ...`. V tomto prípade **budú importované iba vybrané funkcie, modul samotný sa volať dať nebude**.
+    - Virtuálne prostredie pred prvým použitím vytvoríme pomocou príkazu `python -m venv .venv`, ktorý vytvorí virtuálne prostredie do adresára `.venv`
+    - Aktivujeme virtuálne prostredie pomocou príkazu `.venv\scripts\activate` 
+    - Vo vnútri virtuálneho prostredia mám zmenený príkazový riadok, na ktorého začiatku mi bude ukazovať `(.venv)`
+    - Po skončení práce s virtuálnym prostredím ho ukončím pomocou príkazu `deactivate`
 
-=== "Modul `main.py` pomocou from ... import ..."
+Vývojové prostredie PyCharm vie spravovať a používať virtuálne prostredia a štandardne vám ho aj vytvorí pre každý váš projekt. Ak ho chcete znovu vytvoriť, stačí zmazať adresár `.venv` vo vašom projekte a potom kliknutím na menu vpravo dole si viete vytvoriť nové virtuálne prostredie.
 
-    ```python
-    from util import faktorial, fib
-
-    print(f"Faktoriál čísla 10 je {faktorial(10)}")
-
-    postupnost = [fib(x) for x in range(12)]
-    print(f"Fibonacciho postupnosť je {postupnost}")
-
-    # print(util.obrat("ahoj"))  # toto fungovať nebude
-    ```
-
-Existuje ešte tretia možnosť, a to importovať všetky veci z daného modulu. Robí sa to pomocou príkazu `from ... import *`. Tento spôsob môže byť ale veľmi nebezpečný, preto ho neodporúčame používať.
-
-### Vytváranie aliasov
-
-Niekedy sa stane, že vo svojom programe už máme funkciu s rovnakým názvom, ako tú, ktorú chcem importovať. V takých prípadoch máme možnosť importovať funkciu pod iným menom, tzv. aliasom. Iné meno môžeme priradiť funkcii alebo aj celému modulu. V oboch prípadoch to robíme v importe pomocou voľby `as ...`.
-
-=== "Alias celého modulu"
-
-    ```python
-    import util as u
-
-    print(f"Faktoriál čísla 10 je {u.faktorial(10)}")
-    ```
-
-=== "Alias konkrétnej funkcie"
-
-    ```python
-    from util import faktorial as fak
-
-    print(f"Faktorial cisla 10 je {fak(10)}")
-    ```
-
-!!! tip "Učím sa s pomocou umelej inteligencie"
-
-    Som študent strednej školy, učím sa Python. Vysvetli mi [ako rôzne viem importovať modul alebo jeho časť?](https://grok.com/share/c2hhcmQtMg%3D%3D_3e316290-00ab-438b-aff2-29796e37396a)
-
-
-### Spúšťanie 'modulárnych' projektov
-
-Ak mám už svoj program napísaný vo forme viacerých modulov, má sa už spúšťať ináč ako keď som mal iba jeden súbor (skript). Pri spúšťaní takého projektu mám zvyčajne jeden "hlavný" modul, ktorý obsahuje vstupný bod programu. Na spustenie tohto modulu použijem príkaz `python -m` a názov modulu, ktorý chcem spustiť, teda napr. `python -m main`. Všimnite si, že som už nenapísal názov súboru s príponou, ale názov modulu a použil som voľbu `-m`, ktorá hovorí, že spúšťam modul a nie skript.
-
-```
-# Python v interaktívnom móde
-python
-
-# Spustenie Python skriptu
-python script.py
-
-# Spustenie Python modulu
-python -m modul
-```
-
-![import antigravity](../assets/antigravity-top.webp)
+![Vytvorenie virtuálneho prostredia v IDE PyCharm](../assets/pycharm-venv1.png){.on-glb}
 /// caption
-V Pythone na lietanie používame `import antigravity`
+Vytvorenie virtuálneho prostredia pomocou možnosti `Add new interpreter`
 ///
 
-## Balík
+![Vytvorenie virtuálneho prostredia v IDE PyCharm](../assets/pycharm-venv2.png){.on-glb}
+/// caption
+Vytvorenie nového virtuálneho prostredia z existujúceho Pythonu
+///
 
-Ak máme modulov veľa, je vhodné ich rozdeliť do skupín pre ľahšiu prehľadnosť. Na to nám v Pythone slúžia balíky (anglicky packages). Balík v Pythone je adresár, ktorý v sebe obsahuje súbory s modulmi. Názov balíka je názov adresára. Balíky v sebe môžu obsahovať ďalšie balíky.
+To, či náš projekt máme spustený vo virtuálnom prostredí si vieme overiť tak, že si v Pythone otvoríme terminál, pomocou ikonky vľavo dole, alebo pomocou kláves ++"Alt"+"F12"++. Príkazový riadok v tomto termináli musí začínať značkou virtuálneho prostredia `(.venv)`
 
-V nasledujúcom príklade si vytvoríme adresár `tvary` a v ňom budeme mať 3 súbory:
+![Vytvorenie virtuálneho prostredia v IDE PyCharm](../assets/pycharm-venv3.png){.on-glb}
+/// caption
+Virtuálne prostredie je aktívne, príkazový riadok začína textom `(.venv)`
+///
 
-=== "Balík s troma modulmi"
+Ak v tomto termináli teraz nainštalujeme nejakú knižnicu pomocou príkazu `pip install`, tak bude viditeľná iba v rámci tohto virtuálneho prostredia. Tak isto príkaz `pip list` bude ukazovať iba knižnice nainštalované do tohto virtuálneho prostredia.
 
-    ```python title="tvary/kruh.py"
-    import math
+## Verejný repozitár balíkov `PyPI.org`
 
-    PI = math.pi
+Všetky knižnice, ktoré si vieme stiahnuť a používať pomocou nástroja `pip` sú zverejnené vo verejnom repozitári Python Package Index (PyPI) na adrese [https://pypi.org](https://pypi.org). Pomocou tejto stránky vieme knižnice vyhľadávať a prečítať si ich dokumentáciu. Napríklad vyššie spomínaná knižnica Flask má svoju stránku na [https://pypi.org/project/Flask/](https://pypi.org/project/Flask/)
 
-    def obvod(r):
-        return 2 * PI * r
+Do repozitára PyPI si vieme zadarmo uložiť aj svoje vlastné knižnice alebo celé Python programy. Musia byť licencované Open Source licenciou a nesmú byť príliš veľké. Jediné čo treba urobiť je zaregistrovať sa na ich stránke a vygenerovať si API token, pomocou ktorého budete vedieť nahrať váš distribučný balíček do repozitára.
 
-    def obsah(r):
-        return PI * r * r
-    ```
+## Správa závislostí pomocou `requirements.txt`
 
-    ```python title="tvary/obdlznik.py"
-    def obvod(a, b):
-        return (2 * a) + (2 * b)
-
-    def obsah(a, b):
-        return a * b
-    ```
-
-    ```python title="tvary/stvorec.py"
-    def obvod(a):
-        return 4 * a
-
-    def obsah(a):
-        return a * a
-    ```
-
-Importovanie modulov v balíkoch je podobné ako importovanie obyčajných modulov. Názvy balíkov a modulu oddelíme bodkou. V nasledujúcom príklade si ukážeme rôzne možnosti importovania.
-
-=== "Importovanie z balíka modulov, súbor `main.py`"
-
-    ```python
-    import tvary.stvorec
-    print(f"Obvod štvorca o veľkosti 10 je {tvary.stvorec.obvod(10)}")
-
-    from tvary import stvorec
-    print(f"Obvod štvorca o veľkosti 10 je {stvorec.obvod(10)}")
-
-    from tvary.stvorec import obvod
-    print(f"Obvod štvorca o veľkosti 10 je {obvod(10)}")
-    ```
-
-### Absolútne a relatívne importovanie
-
-Všetky predchádzajúce príklady importovania používali absolútne importovanie. To znamená, že mali plnú cestu k modulu. Nezáleží z akého modulu robíme import, čí je v nejakom balíku alebo nie. Absolútny import používa vždy plnú cestu k modulu, s uvedením všetkých balíkov, v ktorých sa nachádza.
-
-V niektorých prípadoch môže byť vhodné použiť tzv. relatívny import, keď napríklad chcem importovať modul z toho istého balíka v akom práve sme, ale je nám jedno ako sa balík volá. Náš modul štvorec si napríklad vieme upraviť tak, aby používal funkcie z modulu obdĺžnik, ktorý je v tom istom balíku.
-
-=== "Použitie relatívneho importu, `stvorec.py`"
-
-    ```python
-    from . import obdlznik
-
-    def obvod(a):
-        return obdlznik.obvod(a, a)
-
-    def obsah(a):
-        return obdlznik.obsah(a, a)
-    ```
-
-!!! tip "Učím sa s pomocou umelej inteligencie"
-
-    Som študent strednej školy, učím sa Python. Vysvetli mi [absolútny a relatívny import. Uveď všetky druhy relatívneho importu a ukáž na príkladoch](https://grok.com/share/c2hhcmQtMg%3D%3D_061e9097-5603-44a6-bcf3-bc5e03c176a8)
-    
-Relatívny import vie odkazovať aj na rodičovské a iné balíky v rámci projektu. Nasledovný kód ukazuje rôzne príklady použitia relatívneho importu.
-
-=== "Rôzne formy relatívneho importu"
-
-    ```python
-    from . import modul              # relatívny import z rovnakého balíka
-    from .. import balík             # relatívny import z nadradeného balíka
-    from .modul import funkcia       # import symbolu z modulu v rovnakom balíku
-    from ..balík import trieda       # import symbolu z modulu v nadradenom balíku
-    from ... import nadbalík         # relatívny import o dve úrovne vyššie
-    from ...balík import modul       # relatívny import z balíka o dve úrovne vyššie
-    from . import modul as alias     # relatívny import s aliasom
-    from .modul import *             # relatívny import všetkých symbolov z modulu
-    ```
-
-### Importovanie balíka
-
-Okrem importovania modulu alebo jeho funkcií vieme v Pythone importovať aj samotný balík. V našom príklade s tvarmi by sme import balíka `tvary` zapísali ako `import tvary`.
+Táto sekcia popisuje starší (ale stále často používaný) spôsob správy projektových závislostí. Moderný spôsob si uvedieme v ďalšej sekcii.
 
 <div class="md-has-sidebar" markdown>
 <main markdown>
-Na čo je to dobré, keď všetky funkcie a premenné sú v moduloch a nie v samotnom balíku? V Pythone môže mať funkcie a premenné aj samotný balík! Všetko čo chceme vložiť do samotného balíka zapíšeme do špeciálneho súboru s názvom `__init__.py`. Python tento súbor spustí pri importe daného balíka.
 
-V tomto špeciálnom súbore sa niekedy zvyknú importovať funkcie alebo premenné z iných modulov, aby užívateľ nášho balíka nemusel hľadať funkcie po rôznych moduloch. Ukážeme si to na nasledovnom príklade
+Keď používame nejakú knižnicu v našom Python programe, musíme ju mať nainštalovanú pomocou `pip` nástroja. Ak vytvárame projekt, ktorý má používať niekto iný, tak ten človek si po stiahnutí nášho projektu musí všetky tieto knižnice nainštalovať. Aby sme mu nemuseli hovoriť, ktorú knižnicu a v akej verzii si musí nainštalovať, tak v Pythone existuje dohoda, že názvy všetkých knižníc, ktoré náš projekt potrebuje, sa dajú do súbora `requirements.txt`. Tento súbor sa umiestni do nášho projektu a ktokoľvek bude chcieť náš projekt používať, bude mať prehľad o požiadavkách nášho projektu na cudzie knižnice.
+
+Súbor `requirements.txt` je obyčajný textový subor, do ktorého na samostatné riadky uvedieme názvy knižníc, ktoré náš projekt vyžaduje.
+
  </main>
   <aside markdown>
-V starších verziách Pythonu bolo nutné, aby každý balík mal svoj súbor `__init__.py`. V nových verziách tento súbor nie je povinný.
-</div>
+Vygenerovať súbor so závislosťami si vieme aj automaticky pomocou príkazu **`pip freeze > requirements.txt`**. Tento príkaz nám vloží do súboru závislosti na všetky aktuálne nainštalované knižnice a uvedie aj ich konkrétnu verziu. Súbor následne môžeme ďalej manuálne upraviť a spresniť naše závislosti.
+  </aside>
+  </div>
 
+=== "Ukážka súboru `requirements.txt`"
 
-=== "Import funkcií do samotného balíka"
-
-    ```python title="tvary/__init__.py"
-    from .kruh import obvod as obvod_kruhu, obsah as obsah_kruhu
-    from .obdlznik import obvod as obvod_obdlznika, obsah as obsah_obdlznika
-    from .stvorec import obvod as obvod_stvorca, obsah as obsah_stvorca
+    ```
+    blinker==1.9.0
+    click>=8.3.0
+    Flask~=3.1.2
+    itsdangerous<=2.2.0
+    MarkupSafe
+    Jinja2>3.1.6
     ```
 
-    ```python title="main.py"
-    import tvary
-    print(f"Obvod štvorca o veľkosti 10 je {tvary.obvod_stvorca(10)}")
+Ak má projekt takýto súbor, potom všetky jeho **závislosti vieme nainštalovať jedným príkazom `pip install -r requirements.txt`**
+
+V súbore `requirements.txt` vidíme, že verzie vieme písať rôznymi spôsobmi. Ak verziu distribučného balíka neuvedieme, nainštaluje sa najnovšia verzia. Pomocou operátora `==` nainštalujeme konkrétnu verziu, a pomocou operátorov `>=`, `<=`, `>` a `<` vieme uviesť, aké verzie vyžadujeme. Operátor `~=` bude akceptovať iba kompatibilné verzie podľa sémentického verzionovania, napr. `~=2.2` bude akceptovať verzie `2.2.1`, `2.2.9`, `2.3`, ale nie `2.1` alebo `3.0`.
+
+!!! abstract "Dokumentácia"
+
+    Kompletný popis rôznych možností deklarovania závislostí a ich verzií môžeme nájsť v [dokumentácii špecifikácie verzií distribučných balíkov Pythonu](https://packaging.python.org/en/latest/specifications/version-specifiers/#id5)
+
+
+## Konfigurácia projektu pomocou `pyproject.toml`
+
+Súbor `requirements.txt` nám umožňuje uviesť závislosti, nič viac. Na detailnejšiu konfiguráciu Python projektov slúži súbor `pyproject.toml`. Poskytuje modernejšiu alternatívu k suboru `requirements.txt` a viem do neho dať všetky nastavenia môjho projektu.
+
+V súbore `pyproject.toml` musím uviesť minimálne názov môjho projektu a verziu. Všetky ostatné nastavenia sú voliteľné. Závislosti na knižniciach uvádzam do atribútu `dependencies`.
+
+=== "Príklad súboru `pyproject.toml`"
+
+    ```toml
+    [project]
+    name = "moj-projekt"
+    version = "0.0.1"
+    dependencies = [
+        "flask",
+        "ascii-announcers==0.0.2"
+    ]
     ```
 
-Import balíka, teda spustenie súboru `__init__.py` sa vykoná keď importujeme balík, ale aj keď importujeme akýkoľvek modul alebo balík, ktorý je vo vnútri daného balíka. Teda `__init__.py` balíka `tvary` sa vykoná aj v nasledovných prípadoch:
+**Ak uvediem závislosti (dependencies) v súbore `pyproject.toml`, súbor `requirements.txt` nepotrebujem**
 
-```python title="Import balíka tvary sa vykoná v každom z nasledovných príkladov"
-import tvary.stvorec
-from tvary import stvorec
-from tvary.stvorec import obvod
-```
+Súbor `pyproject.toml` umiestňujeme do adresára s projektom. Všetky zdrojové moduly a balíky odporúčame dať to adresára `src`, podľa konvencie [src layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/)
 
-Samozrejme súbor `__init__.py` sa spustí iba prvý krát, podobne ako je to pri moduloch.
+V PyCharm vieme potom adresár `src` označiť ako zdrojový tak, že na neho klikneme pravým tlačítkom a vyberieme `Mark Directory as -> Sources root`.
 
-### Spúšťanie balíka
-
-Pri moduloch sme si ukazovali, že program napísaný pomocou modulov je potrebné spúšťať pomocou príkazu `python -m modul`. Pri moduloch v balíkoch je to rovnaké. Ak máme modul v nejakom balíku, program spustíme pomocou `python -m balik.modul`
-
-V Pythone však vieme spustiť aj samotný balík, pomocou príkazu `python -m balik`. Teda spustiť môžeme rovnako modul alebo balík. Ak spúšťame samotný balík, python spustí špeciálny súbor `__main__.py`, ktorý bude hľadať v danom balíku. Ak sa tam ten súbor nenachádza, Python vypíše chybu.
-
-
-!!! documentation "Pokročilé techniky"
-
-    V súvislosti s modulmi a balíkmi je vhodné ešte spomenúť nasledovné veci (dobrovoľné učivo):
-
-    - aké všelijaké premenné a funkcie máme zadefinované alebo importované v aktuálnom mennom priestore aktuálneho modulu vieme zistiť pomocou funkcie `dir()`
-    - množinu symbolov, ktoré sa importujú pri použití `from modul import *`, je možné zadefinovať pomocou špeciálnej premennej `__all__`, ktorú uvedieme v danom module či balíku.
-    - Pomocou premennej `sys.modules` môžeme zistiť, ktoré balíky a moduly už máme v našom programe importované.
-    - Python pri importovaní vyhľadáva súbory s modulmi na rôznych miestach na disku. Všetky tieto cesty si môžeme pozrieť a aj zmeniť pomocou premennej `sys.path`.
-    - Ak chceme doplniť adresárovú cestu pre importovanie modulov, môžeme tak urobiť pomocou premennej prostredia `PYTHONPATH`
+Takto vytvorený projekt potom vieme lokálne nainštalovať príkazom `pip install -e .`, ktorý spustím vo virtuálnom prostredí, napríklad pomocou terminálu v PyCharme. Tým sa nainštalujú všetky závislosti zo súboru `pyproject.toml` a naviac budeme mať lokálne k dispozícii všetky balíky a moduly z adresára `src`, takže ich budeme vedieť spúšťať pomocou príkazu `python -m balik.modul`
 
 
 ## Úlohy na precvičenie
 
-!!! example "Úloha 4.1: Balík kalkulačka"
+!!! example "Úloha 5.1: Základný projekt"
 
-    Vytvor balík `kalkulacka`, ktorý bude mať:
+    1. Vytvorte v PyCharm nový projekt s názvom "cowsay", tak aby mal virtuálne prostredie
+    1. Vytvorte v ňom súbor `pyproject.toml` s nasledovným obsahom
+    ```toml
+    [project]
+    name = "cowsay"
+    version = "0.0.1"
+    dependencies = [
+        "colored",
+        "ascii-announcers==0.0.2"
+    ]
+    ```
+    1. Vytvorte nasledovné adresáre a súbory
+    ```
+    src
+     └── cowsay
+           └── __init__.py
+           └── __main__.py
+    ```
+    1. Adresár `src` v PyCharme označte ako "Sources root"
+    1. V súbore `__main__.py` napíšte jednoduchý Hello World
+    ```
+    print("Hello World!")
+    ```
+    1. V terminály lokálne nainštalujte tento projekt pomocou `pip install -e .`
+    1. Projekt spustite pomocou `python -m cowsay`
 
-    - `zakladne.py` (sčítanie, odčítanie, násobenie, delenie)
-    - `pokrocile.py` (faktoriál, mocnina, odmocnina)
+!!! example "Úloha 5.2: Farebný výpis argumentov"
 
-    V `main.py` napíš jednoduchý textový program, ktorý načíta od používateľa operáciu a čísla a zavolá správnu funkciu.
+    Upravte projekt z úlohy 5.1 nasledovne.
 
-    Bonus: napíš `__init__.py`, ktorý zjednotí všetky funkcie.
+    - prečítajte vstupné argumenty programu pomocou premennej `sys.argv` a vypíšte prvý argument na obrazovku. Príklad spustenia
+    ```python
+    python -m cowsay "Hello there!"
+    ```
+    - použite knižnicu `colored` na zmenu farby textu. Príklad
+    ```python
+    from colored import Style, fore
+
+    color="red"
+    print(fore(color) + "Hello World!" + Style.reset)
+    ```
+
+!!! example "Úloha 5.3: Zvieratko"
+
+    Upravte projekt z úlohy 5.2 nasledovne
+
+    - použite knižnicu `ascii-announcers` na zobrazenie ASCII zvieratka. Príklad
+    ```python
+    from ascii_announcers import announcers
+
+    print(announcers.get("cow"))
+    ```
+    - Vypíšte farebný text z predchádzajúceho zadania a pod ním vykreslite zvieratko
+    - Vyskúšajte iné zvieratká, ktoré sú uložené v premennej `announcers`
+
+!!! example "Úloha 5.4: Orámovaný text"
+
+    Upravte projekt z úlohy 5.3 nasledovne
+    
+    - Použite knižnicu `textwrap` na zalomenie textu do viacerých riadkov
+    - Orámujte text, ktorý vypisujete
+    - Vyskúšajte použiť farby
+
+    Príklad výstupu:
+    ```
+     ________________________________ 
+    / Hello there! I hope you have a \
+    \      nice day today sir!       /
+     -------------------------------- 
+    ```
+
+!!! example "Úloha 5.5: Cowsay"
+
+    Upravte projekt z úlohy 5.4 nasledovne
+
+    - Zo zvieratka nakreslite čiaru ku rámčeku, aby bolo jasné, že to hovorí zvieratko. Príklad:
+    ```
+     ________________________________ 
+    / Hello there! I hope you have a \
+    \      nice day today sir!       /
+     -------------------------------- 
+       \  ^__^
+        \ (oo)\_______
+          (__)\       )\/\
+              ||----w |
+              ||     ||
+    ```
+    - Urobte to tak, aby to fungovalo s akýmkoľvek zvieratkom
+
 
 
 ## Zhrnutie cvičenia
 
-- [x] Modul - viem vytvoriť ako súbor s príponou `.py`
-    * [ ] Každý modul má svoj vlastný priestor mien (namespace)
-    * [ ] Pri importovaní sa modul spustí a vykoná iba pri prvom importe
-    * [ ] `import modul` - importované funkcie volám s názvom modulu (`modul.funkcia()`)
-    * [ ] `from modul import funkcia`
-    * [ ] `from modul import funkcia as f`
-    * [ ] `import modul as m`
-    * [ ] `from modul import *` - neodporúča sa
-    * [ ] Spustenie Python modulu `python -m modul`
-- [x] Špeciálna premenná `__name__`
-    * [ ] Pomocou nej vieme v programe rozlíšiť, či bol súbor použitý ako modul alebo bol spustený ako program.
-    * [ ] Python nastaví špeciálnu premennú `__name__` na hodnodu `__main__` ak bol modul spustený ako program
-    * [ ] `if __name__ == '__main__': main()`
-- [x] Balík (package) - adresár s modulmi
-    * [ ] Názov balíka je názov adresára. Balíky v sebe môžu obsahovať ďalšie balíky
-    * [ ] Importovanie modulov v balíkoch je podobné ako importovanie obyčajných modulov. Názvy balíkov a modulu oddelíme bodkou.
-    * [ ] `import balik`
-    * [ ] `import balik.modul`
-    * [ ] `import balik.balik.balik.modul`
-    * [ ] `from balik.modul import funkcia`
-    * [ ] `from balik import modul`
-    * [ ] Absolútny import - plná cesta, bez úvodnej bodky
-    * [ ] Relatívny import - začína bodkou, hľadá sa od aktuálneho balíka/adresára
-    * [ ] `from . import modul`
-    * [ ] `from .. import balík`
-    * [ ] `from .modul import funkcia`
-- [x] Špeciálny súbor `__init__.py`
-    * [ ] Python tento súbor vykoná pri importe daného balíka
-    * [ ] Používa sa na zotriedenie funkcií, ak ich chceme mať na jednom mieste
-- [x] Špeciálny súbor `__main__.py`
-    * [ ] Python tento súbor vykoná pri spustení balíka ako programu
-    * [ ] Spúšťa sa pomocou `python -m balik`
+- [x] `pip` je nástroj na spravovanie distribučných balíkov
+    * [ ] `pip` knižnice sa v Pythone inštalujú globálne
+    * [ ] Nemôžeme mať naraz nainštalované 2 verzie tej istej knižnice
+    * [ ] `pip list` - zoznam nainštalovaných knižníc
+    * [ ] `pip install <nazov>` - nainštalovanie najnovšej verzie knižnice
+    * [ ] `pip install <nazov>==<verzia>` - nainštalovanie konkrétnej verzie knižnice
+    * [ ] `pip install --upgrage <nazov>` - aktualizácia knižnice
+    * [ ] `pip uninstall <nazov>` - odinštalovanie knižnice
+- [x] Virtuálne prostredie `.venv`
+    * [ ] Izolovaný priestor pre programátorov, ktorý má vlastnú sadu knižníc a vlastnú verziu jazyka Python
+    * [ ] Knižnice z jedného virtuálneho prostredia neovplyvňujú iné virtuálne prostredia a nie sú viditeľné ani zo systému.
+    * [ ] Virtuálne prostredie potrebuje svoj vlastný adresár, väčšinou je to `.venv`
+- [x] Verejný repozitár balíkov PyPI.org
+    * Python Package Index (PyPI) na adrese https://pypi.org
+    * `pip` balíky sa sťahujú práve z tohto repozitára
+    * Do repozitára PyPI si vieme zadarmo uložiť aj svoje vlastné knižnice alebo celé Python programy
+- [x] Správa závislostí pomocou requirements.txt
+    * Starý spôsob
+    * Textový súbor `requirements.txt` na samostatných riadkoch obsahuje názvy knižníc, ktoré náš projekt vyžaduje.
+    * Ak má projekt takýto súbor, potom všetky jeho závislosti vieme nainštalovať jedným príkazom `pip install -r requirements.txt`
+    * Okrem názvu vieme uviesť, akú verziu potrebujeme. Vieme na to použiť operátory `==`, `~=`, `>`, `>=`, `<`, `<=` a iné
+- [x] Konfigurácia projektu pomocou pyproject.toml
+    * Moderný spôsob
+    * V súbore `pyproject.toml` musím uviesť minimálne názov môjho projektu a verziu.
+    * Závislosti na knižniciach uvádzam do atribútu `dependencies`
+    * Ak uvediem závislosti (dependencies) v súbore `pyproject.toml`, súbor `requirements.txt` nepotrebujem
+    * Súbor pyproject.toml umiestňujeme do adresára s projektom. Všetky zdrojové moduly a balíky odporúčame dať to adresára `src`
+    * Projekt viem lokálne nainštalovať príkazom `pip install -e .`
+    * Projekt budem vedieť spúšťať pomocou príkazu `python -m balik.modul`
 
 
 
@@ -349,50 +286,54 @@ V Pythone však vieme spustiť aj samotný balík, pomocou príkazu `python -m b
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    MODUL
+    PIP
 
-    Väčšie projekty rozdeľujeme do viacerých súborov - modulov
-    Každý modul má svoj vlastný priestor mien (namespace)
-    Ak chcem použiť nejaký modul, musím ho importovať
-    Pri importovaní sa modul spustí a vykoná iba pri prvom importe
+    pip je nástroj na spravovanie distribučných balíkov
+    pip knižnice sa v Pythone inštalujú globálne
+    Nemôžeme mať naraz nainštalované 2 verzie tej istej knižnice
 
-    Syntax importovania modulov:
-    import ...
-    from ... import ...
-    import ... as ...
-    from ... import ... as ...
-    
-    Špeciálna premenná __name__
-    Používa sa na rozlíšenie, či modul importujem alebo ho spúšťam
-    if __name__ == '__main__': main()
+    pip list
+    pip install
+    pip install --upgrade
 
-    BALÍK
+    VIRTUÁLNE PROSTREDIE
 
-    Je to adresár s modulmi. Názov balíka je názov adresára. 
-    Balíky v sebe môžu obsahovať ďalšie balíky.
-    Importovanie modulov v balíkoch je podobné ako importovanie obyčajných modulov. 
-    Názvy balíkov a modulu oddelíme bodkou.
+    Izolovaný priestor, ktorý má vlastnú sadu knižníc
+    Knižnice z jedného virtuálneho prostredia neovplyvňujú iné virtuálne prostredia
+    a nie sú viditeľné ani zo systému.
+    Virtuálne prostredie potrebuje svoj vlastný adresár, väčšinou je to `.venv`
 
-    Absolútny import - plná cesta, bez úvodnej bodky
-    Relatívny import - začína bodkou, hľadá sa od aktuálneho balíka/adresára
+    PYPI.ORG
 
-    Špeciálny 'balíkový' súbor __init__.py
-    Volá sa pri prvom importe daného balíka
+    Python Package Index (PyPI) na adrese https://pypi.org
+    pip balíky sa sťahujú práve z tohto repozitára
+    Viem v ňom zverejniť zadarmo aj svoje balíky
 
-    Špeciálny 'balíkový' súbor __main__.py
-    Volá sa pri spustení balíka ako programu
+    requirements.txt
+
+    Starý spôsob písania závislostí, do textového súboru
+    Okrem názvu knižnice vieme uviesť verziu.
+    Vieme na to použiť operátory ==, ~=, >, >=, <, <= a iné
+    Ak mám súbor requirements.txt, závislosti nainštalujem pomocou pip install -r requirements.txt
+
+    pyproject.toml
+
+    Moderný spôsob konfigurácie projektu
+    V súbore musím uviesť minimálne názov môjho projektu a verziu.
+    Závislosti na knižniciach uvádzam do atribútu dependencies
+    Lokálne nainštalujem príkazom pip install -e .
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
     Okruhy otázok na test:
 
-    - Čo je modul, čo je balík
-    - Ako zistím, či sa modul spustil ako program, alebo či sa importoval
-    - Importovanie modulov a funkcií z modulov
-    - Použitie aliasu pri importovaní
-    - Importovanie balíkov
-    - Relatívne a absolútne importovanie
-    - Špeciálne súbory `__init__.py` a `__main__.py`. Význam a použitie
-    - Ako spustím modul projektu, ako spustím balík?
-
+    - Čo je nástroj pip, ako sa používa
+    - Čo je virtuálne prostredie v Pythone, na čo sa používa
+    - Stránka pypi.org, na čo slúži
+    - Súbor requirements.txt, na čo slúži
+    - Ako sa píšu závislosti na knižniciach
+    - Ako nainštalujem závislosti zo súboru requirements.txt
+    - pyproject.toml, na čo slúži, aké má minimálne atribúty
+    - Ako zapíšem závislosti do súboru pyproject.toml
+    - Ako nainštalujem lokálne projekt, ktorý má pyproject.toml

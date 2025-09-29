@@ -106,11 +106,26 @@ hide:
 </ul>
 </td>
 </tr>
-<tr>
+<tr >
 <td width=10%>4</td>
+<td width=30%>
+<a href="../teoria-3/t04-trieda">Trieda, balíky</a> (<a href="../assets/t04w.pdf">pdf</a>)
+<ul>
+<li>Trieda</li>
+<li>Diagram tried</li>
+<li>Balíky</li>
+<li>Modifikátory prístupu</li>
+</ul>
+</td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p04-moduly">Moduly</a> (<a href="../assets/p04w.pdf">pdf</a>)
+<ul>
+<li>Modul</li>
+<li>Balík</li>
+<li>Špeciálne atribúty a súbory</li>
+</ul>
+</td>
 </tr>
 <tr>
 <td width=10%>5</td>

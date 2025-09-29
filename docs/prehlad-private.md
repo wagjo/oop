@@ -152,7 +152,31 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p05-">TODO</a> (<a href="../assets/p05w.pdf">pdf</a>)
+<a href="../pokrocili-3/p05-pip">Správa knižníc</a> (<a href="../assets/p05w.pdf">pdf</a>)
+<ul>
+<li>pip, PyPI.org</li>
+<li>Virtuálne prostredie</li>
+<li>requirements.txt</li>
+<li>pyproject.toml</li>
+</ul>
+</td>
+</tr>
+<tr >
+<td width=10%>6</td>
+<td width=30%>
+<a href="../teoria-3/t06-">TODO</a> (<a href="../assets/t06w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c06-">TODO</a> (<a href="../assets/c06w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p06-">TODO</a> (<a href="../assets/p06w.pdf">pdf</a>)
 <ul>
 <li>TODO</li>
 </ul>
