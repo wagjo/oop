@@ -119,13 +119,13 @@ Základné druhy formátovania
 
 ## Importovanie tried
 
-V predchádzajúcom príklade sa vyskytol príkaz `import`. V Jave sú triedy rozdelené do balíkov (packages). Aby sme mohli použiť triedu z iného balíka, musí sa importovať.
+V predchádzajúcom príklade sa vyskytol príkaz `import`. V Jave sú triedy rozdelené do balíkov (packages). Ak chceme použiť triedu z iného balíka, je pohodlnejšie ju importovať.
 
 Importovať môžem buď iba jednu triedu alebo môžem importovať všetky triedy v balíku.
 
 ```java
 import java.util.Scanner; // Import jednej triedy
-import java.util.*; // Import celého balíka
+import java.util.*; // Import všetky triedy z balíka
 ```
 
 !!! info "Automaticky importované triedy"
@@ -266,23 +266,27 @@ while (i < 5) {
 
 !!! example "Úloha 2.1: Vykreslenie štvorca do konzoly"
 
-    Vytvorte funkciu, ktorá vykreslí štvorec do konzoly. Vstupom do funkcie je veľkosť štvorca.
+    Vytvorte metódu, ktorá vykreslí štvorec do konzoly. Vstupom do funkcie je veľkosť štvorca.
+
+    Vytvorte ďalšie metódy na vykreslenie obdĺžnika a pravouhlého rovnoramenného trojuholníka.
+
+    Bonus - Vytvorte metódu na vykreslenie pyramídy
 
 !!! example "Úloha 2.2: Výpočet obsahu a objemu valca"
 
-    Vytvorte funkciu, ktorá na vstupe prijíma výšku a polomer a vypočíta obsah a objem valca. Výsledok vráťťe ako dict, a na vypísanie na obrazovku vytvorte samostatnú funkciu.
+    Vytvorte metódu, ktorá na vstupe prijíma výšku a polomer a vypočíta obsah a objem valca. Výsledok vráťťe ako dict, a na vypísanie na obrazovku vytvorte samostatnú metódu.
 
 !!! example "Úloha 2.3: Výpočet faktoriálu"
 
-    Vytvorte funkciu na výpočet faktoriálu
+    Vytvorte metódu na výpočet faktoriálu
 
 !!! example "Úloha 2.4: Orámovaný text"
 
-    Vytvorte funkciu na vypísanie orámovaného textu do konzoly. Majte aj maximálnu šírku a text zalomte po slovách, ak je dlhý.
+    Vytvorte metódu na vypísanie orámovaného textu do konzoly. Majte aj maximálnu šírku a text zalomte po slovách, ak je dlhý.
 
 !!! example "Úloha 2.5: Prvočísla"
 
-    Vytvorte funkciu na vrátenie najbližieho prvočísla väčšieho ako zadaný vstup
+    Vytvorte metódu na vrátenie najbližieho prvočísla väčšieho ako zadaný vstup
 
 
 ## Zhrnutie cvičenia
@@ -302,9 +306,8 @@ while (i < 5) {
     * [ ] Každá verejná trieda musí byť vo svojom vlastnom súbore s príponou .java. 
     * [ ] Názov súboru musí byť rovnaký ako názov triedy.
     * [ ] V Jave sú triedy rozdelené do balíkov (packages)
-    * [ ] Aby sme mohli použiť triedu z iného balíka, musí sa importovať
     * [ ] Java automaticky importuje všetky triedy z balíka java.lang
-    * [ ] balíky musia mať svoj samostatný priečinok 
+    * [ ] Balíky musia mať svoj samostatný priečinok
     * [ ] Všetky triedy v tom istom priečinku teda patria do toho istého balíka.
 - [x] Reťazce sú reprezentované triedou `String`, objekty tejto triedy sú nemeniteľné
 - [x] Vstup a výstup

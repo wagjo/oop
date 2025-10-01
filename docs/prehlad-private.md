@@ -119,12 +119,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c04-wrapper">Obalené typy</a> (<a href="../assets/c04w.pdf">pdf</a>)
+<a href="../cvicenie-3/c04-polia">Polia, varargs</a> (<a href="../assets/c04w.pdf">pdf</a>)
 <ul>
-<li>Literály</li>
-<li>Null</li>
-<li>Typová konverzia</li>
-<li>Obalené typy</li>
+<li>Polia - Arrays</li>
+<li>varargs</li>
+<li>Rozdelenie kódu do viacerých tried a balíkov</li>
 </ul>
 </td>
 <td width=30%>
@@ -146,9 +145,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c05-">TODO</a> (<a href="../assets/c05w.pdf">pdf</a>)
+<a href="../cvicenie-3/c05-wrapper">Obalené typy</a> (<a href="../assets/c05w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Literály</li>
+<li>Null</li>
+<li>Typová konverzia</li>
+<li>Obalené typy</li>
 </ul>
 </td>
 <td width=30%>
@@ -164,23 +166,112 @@ hide:
 <tr >
 <td width=10%>6</td>
 <td width=30%>
-<a href="../teoria-3/t06-">TODO</a> (<a href="../assets/t06w.pdf">pdf</a>)
+<a href="../teoria-3/t06-">Operátory</a> (<a href="../assets/t06w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Operátory</li>
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c06-">TODO</a> (<a href="../assets/c06w.pdf">pdf</a>)
+<a href="../cvicenie-3/c06-">Reťazce</a> (<a href="../assets/c06w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Reťazce</li>
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p06-">TODO</a> (<a href="../assets/p06w.pdf">pdf</a>)
+<a href="../pokrocili-3/p06-">x</a> (<a href="../assets/p06w.pdf">pdf</a>)
 <ul>
 <li>TODO</li>
 </ul>
 </td>
 </tr>
+
+<tr >
+<td width=10%>7</td>
+<td width=30%>
+<a href="../teoria-3/t07-">Metódy</a> (<a href="../assets/t07w.pdf">pdf</a>)
+<ul>
+<li>Metódy</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c07-">Metody</a> (<a href="../assets/c07w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p07-">x</a> (<a href="../assets/p07w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
+<tr >
+<td width=10%>8</td>
+<td width=30%>
+<a href="../teoria-3/t08-">Inicializacia a konstruktory</a> (<a href="../assets/t08w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c08-">Inicializacia a konstruktory</a> (<a href="../assets/c08w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p08-">x</a> (<a href="../assets/p08w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
+<tr >
+<td width=10%>9</td>
+<td width=30%>
+<a href="../teoria-3/t09-">x</a> (<a href="../assets/t09w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c09-">x</a> (<a href="../assets/c09w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p09-">x</a> (<a href="../assets/p09w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
+<tr >
+<td width=10%>10</td>
+<td width=30%>
+<a href="../teoria-3/t10-">x</a> (<a href="../assets/t10w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c10-">x</a> (<a href="../assets/c10w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p10-">x</a> (<a href="../assets/p10w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
 </tbody>
 </table>

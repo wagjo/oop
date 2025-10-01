@@ -2,8 +2,6 @@
 
 Na tomto cvičení sa hlbšie ponoríme do spôsobov, akými sa v Jave dá riadiť tok programu. Priblížime si detailne podmienky a cykly.
 
-Veľká úloha na cvičení: Vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci parametrizované (rôzne veľké) obrazce (štvorce, obdĺžniky, trojuholníky, bonus – kruhy) vyplnené i prázdne
-
 ## Podmienka switch
 
 Na minulom cvičaní sme si ukázali podmienku `if-else`. Ide o najčastejšie používaný typ podmienky a vo svojich programoch ho budete často používať. Okrem tejto podmienky má však Java aj príkaz `switch`.
@@ -249,7 +247,7 @@ Cyklus for-each je jednoduchý, nepotrebujete v ňom spravovať index ako pri kl
 
     Vytvorte funkciu, ktorá vypíše, či je vstupné číslo negatívne, pozitívne, alebo či je 0. Použite if-else
 
-!!! example "Úloha 3.2: Switch kalukačka"
+!!! example "Úloha 3.2: Switch kalkulačka"
 
     Napíš program, ktorý podľa znaku (+, -, *, /) vykoná príslušnú matematickú operáciu nad dvoma číslami. Použi switch
 
@@ -274,6 +272,10 @@ Cyklus for-each je jednoduchý, nepotrebujete v ňom spravovať index ako pri kl
     Napíš program, ktorý pre zadané číslo zistí, koľko má deliteľov (vrátane 1 a samotného čísla) pomocou for cyklu.
 
 !!! example "Úloha 3.8: Výpis párnych čísel"
+
+    Máme pole čísel {10, 15, 20, 25, 30, 20, 88, 43, 77, 32}. Použi for-each cyklus na výpis iba párnych čísel.
+
+!!! example "Úloha 3.9: Výpis párnych čísel"
 
     Máme pole čísel {10, 15, 20, 25, 30, 20, 88, 43, 77, 32}. Použi for-each cyklus na výpis iba párnych čísel.
 

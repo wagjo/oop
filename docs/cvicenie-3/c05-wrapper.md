@@ -1,4 +1,4 @@
-# Cvičenie 4: Literály, null, typová konverzia, obalené typy
+# Cvičenie 5: Literály, null, typová konverzia, obalené typy
 
 Staticko typové jazyky nám nájdu veľa chýb pri kompilácii, teda ešte pred spustením programu. Automatické kontroly typov nám dávajú pocit istoty a bezpečnosti, že náš kód je navrhnutý správne a program bude robiť to, čo očakávame.
 
@@ -308,19 +308,19 @@ Metódy tried obalených typov sa často používajú na typovú konverziu s tri
 
 ## Úlohy na precvičenie
 
-!!! example "Úloha 4.1: Bezpečné porovnanie reťazcov"
+!!! example "Úloha 5.1: Bezpečné porovnanie reťazcov"
 
     Napíš metódu, ktorá porovnáva dva reťazce aj v prípade, že jeden alebo oba sú null.
 
     Výstup: true, ak sú rovnaké (vrátane oboch null), inak false.
 
-!!! example "Úloha 4.2: Číselné sústavy"
+!!! example "Úloha 5.2: Číselné sústavy"
 
     Napíšte program, ktorý načíta celé číslo z klávesnice a vypíše ho v desiatkove, šestnástkovej, osmičkovej a dvojkovej sústave.
 
     Bonus: Ak je číslo v správnom rozsahu, napíšte aj, aký znak by toto číslo mohlo reprezentovať.
 
-!!! example "Úloha 4.3: Detekcia číselného typu"
+!!! example "Úloha 5.3: Detekcia číselného typu"
 
     Napíš program, ktorý načíta reťazec z klávesnice. Potom program skúsi tento reťazec skonvertovať do rôznych číselných typov a uvedie, ktoré typy by mohli načítaný reťazec reprezentovať.
 
@@ -330,13 +330,15 @@ Metódy tried obalených typov sa často používajú na typovú konverziu s tri
     
     Bonus: Skúste otestovať aj šestnástkovú, binárnu a osmičkovú sústavu.
 
-!!! example "Úloha 4.4: Delenie"
+!!! example "Úloha 5.4: Delenie"
 
     Napíš program, ktorý načíta dve čísla a napíše výsledok po delení. Ošetrite čo najviac výnimiek pri chybách, ktoré môžu nastať.
 
-!!! example "Úloha 4.5: Ošetrená kalkulačka"
+!!! example "Úloha 5.5: Ošetrená kalkulačka"
 
-    Napíšte program, v ktorom užívateľ bude môcť vykonať základné matematické operácie. Ošetrite možné výnimky. Program rozdeľte do viacerých metód.
+    Napíšte program, v ktorom užívateľ bude môcť vykonať základné matematické operácie. Program rozdeľte do viacerých metód.
+
+    Vypisujte menu a po splnení úlohy sa do neho naspať vráťte. Majte možnosť ukončiť program.
 
 
 ## Zhrnutie cvičenia
