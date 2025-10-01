@@ -387,10 +387,10 @@ Keďže vararg argument je v skutočnosti pole hodnôt, vieme pri volaní takejt
 
     VARARGS
 
-    Varargs - metódy s premenlivým počtom argumentov
+    Varargs - premenlivý počet argumentov pri volaní metódy
     Príklad definície void metoda(int a, int b, String... slova)
-    V tele metódy sú argumenty uložené do poľa
-    Do vararg metódy viem vložiť aj pole, Java ho použije ako pole argumentov
+    V tele metódy sú tieto argumenty uložené do poľa
+    Ak ako vararg argument uvediem pole, použije sa ako pole argumentov
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
