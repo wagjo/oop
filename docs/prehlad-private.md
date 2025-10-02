@@ -166,19 +166,22 @@ hide:
 <tr >
 <td width=10%>6</td>
 <td width=30%>
-<a href="../teoria-3/t06-">Operátory</a> (<a href="../assets/t06w.pdf">pdf</a>)
+<a href="../teoria-3/t06-operatory">Operátory</a> (<a href="../assets/t06w.pdf">pdf</a>)
 <ul>
-<li>Operátory</li>
+<li>Aritmetické operátory</li>
+<li>Priradenie a relačné operátory</li>
+<li>Bitové a logické operátory</li>
+<li>instanceof a poradie vykonávania</li>
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c06-">Reťazce</a> (<a href="../assets/c06w.pdf">pdf</a>)
+<a href="../cvicenie-3/c06-stringy">Reťazce</a> (<a href="../assets/c06w.pdf">pdf</a>)
 <ul>
 <li>Reťazce</li>
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p06-">x</a> (<a href="../assets/p06w.pdf">pdf</a>)
+<a href="../pokrocili-3/p06-git">Git</a> (<a href="../assets/p06w.pdf">pdf</a>)
 <ul>
 <li>TODO</li>
 </ul>
