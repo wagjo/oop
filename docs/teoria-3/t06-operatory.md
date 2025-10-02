@@ -142,7 +142,7 @@ x ^ y   // 0110 → 6 (bitový XOR)
 ~x      // invertovanie bitov → ...11111010
 x << 1  // posun doľava → 1010 (10)
 x >> 1  // posun doprava → 0010 (2)
-x >>> 1 // logický posun doprava (dopĺňa nulami)
+x >>> 1 // unisgned posun doprava (dopĺňa nulami)
 ```
 
 !!! tip "Učím sa s pomocou unelej inteligencie"
@@ -301,7 +301,7 @@ Tak ako aj v matematike aj v Jave môžeme použiť zátvorky, ak chceme zmeniť
     Relačné operátory
     == porovnáva primitívne hodnoty, pri objektoch porovnáva identitu
     ==, !=, <, >, <=, >=
-    vysledok je boolean hodnota
+    výsledok je boolean hodnota
 
     Bitové operátory
     Nepliesť si ich s logickými
