@@ -1,403 +1,364 @@
-# Cvičenie 5: Literály, null, typová konverzia, obalené typy
+# Cvičenie 6: Práca s reťazcami znakov
 
-Staticko typové jazyky nám nájdu veľa chýb pri kompilácii, teda ešte pred spustením programu. Automatické kontroly typov nám dávajú pocit istoty a bezpečnosti, že náš kód je navrhnutý správne a program bude robiť to, čo očakávame.
+Dnešné cvičenie si ukážeme, ako sa v Jave pracuje s reťazcami znakov. Ukážeme si spôsoby vytvárania a manipulácie s reťazcami. Taktiež si predstavíme rôzne pomocné metódy na vyhľadávanie a transformáciu reťazcov.
 
-Nič však nie je zadarmo. Statická typová kontrola so sebou prináša aj množstvo nevýhod. Aby sme v staticko typovom jazyku vedeli dobre programovať, musíme spoznať a pochopiť veci, ktoré sme pri dynamických jazykoch ako Python nemuseli riešiť.
+## String
 
-Na dnešnom cvičení sa povenujeme práci s typmi, ale najprv si ukážeme literály jazyka a vysvetlíme si, ako Java rieši absenciu hodnoty pomocou výrazu `null`.
+V Jave sú reťazce znakov reprezentované ako objekty triedy `String`. Táto trieda je definovaná v balíku `java.lang`.
 
-## Literál
+Reťazce znakov v Jave majú tieto vlastnosti:
 
-Dátové typy majú svoje konkrétne hodnoty. Zápis takejto hodnoty priamo v kóde sa nazýva **literál**. Syntax literálov je súčasťou programovacieho jazyka.
+- Sú objektami triedy `String`, nie sú primitívne
+- Sú nemenné, po vytvorení sa objekt nedá meniť
+- Môžu byť použité ako hodnoty v príkaze `switch`
+- Reťazec má dĺžku a index, viem pristupovať k jednotlivým znakom
 
-=== "Príklady literálov v Jave"
+Reťazce vieme vytvoriť rôznymi spôsobmi.
 
-    ``` java
-    123                // int literál
-    123L               // long literál
-    0xFF               // int literál v hexadecimálnej sústave
-    0b1010             // int literál v binárnej sústave
-    07                 // int literál v osmičkovej sústave
-    1_000_000          // int literál s podtržníkom (pre čitateľnosť)
-    3.14               // double literál
-    3.14f              // float literál
-    6.022e23           // double literál s exponentom
-    'a'                // char literál
-    '\n'               // char literál (escape – nový riadok)
-    '\u03A9'           // char literál (Unicode znak Ω)
-    "Hello"            // String literál
-    "Line1\nLine2"     // String literál s escape sekvenciou
-    "Unicode:\u263A"   // String literál s Unicode znakom ☺
-    """
-    Line1
-    Line2
-    """                // String literál – viacriadkový
-    true               // boolean literál (true)
-    false              // boolean literál (false)
-    null               // null literál (špeciálny)
-    {1, 2, 3}          // pole (zložený typ, prvky sú literály)
+```java
+String s1 = "Hello world!"; // pomocou literálu
+
+String s2 = new String("Hello world!"); // pomocou operátora new
+
+char[] pole = {'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!'};
+String s3 = new String(pole); // z poľa znakov
+
+int i = -37;
+String s4 = Integer.toString(i); // pomocou metódy toString
+```
+
+Pri tvorbe reťazca môžeme používať aj metódu `format()` na formátovanie reťazca, ktorá sa správa podobne ako metóda `printf()`, akurát namiesto vypísania na obrazovku vytvorí string.
+
+```java
+String meno = "Fero";
+int vek = 25;
+String s = String.format("Meno: %s, vek: %d", meno, vek);
+```
+
+Pri vytváraní reťazcov si vieme pomôcť aj s operátormi `+`, `+=` alebo s metódou `repeat()`.
+
+```java
+String s1 = "Hello " + "world"; // "Hello world"
+s1 += "!"; // "Hello world!"
+
+String s2 = "ha".repeat(5); // "hahahahaha"
+```
+
+!!! abstract "Dokumentácia"
+
+    Pre viac detailov si pozrite oficiálnu dokumentáciu triedy [`java.lang.String`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
+
+
+## Základná práca s reťazcami
+
+Dĺžku reťazca viem zistiť pomocou metódy `length()`. K jednotlivým znakom viem pristupovať pomocou indexu a metódy `charAt()`
+
+```java
+String s = "Hello world!";
+System.out.println(s.length()); // 12
+System.out.println(s.charAt(4)); // 'o'
+```
+
+Reťazce medzi sebou viem navzájom porovnať rôznymi spôsobmi.
+
+```java
+String s1 = "Hello";
+String s2 = "world!";
+
+boolean rovnake = s1.equals(s2); // Majú reťazce rovnaké hodnoty?
+
+boolean rovnake = s1.equalsIgnoreCase(s2); // porovnanie bez ohladu na veľkosť písmen
+```
+
+Ak chceme porovnať reťazce lexikograficky (podľa abecedy), použijeme na to metódu `compareTo()`
+
+```java
+System.out.println("abc".compareTo("abc")); // 0  (rovnaké)
+System.out.println("abc".compareTo("abd")); // -1 (c < d)
+System.out.println("abd".compareTo("abc")); //  1 (d > c)
+System.out.println("abc".compareTo("ab"));  //  1 (dlhší je väčší)
+System.out.println("ab".compareTo("abc"));  // -1 (kratší je menší)
+```
+
+Toto porovnávanie sa používa vždy keď sa reťazce zoradzujú, napr. pri kolekciách ako je pole.
+
+```java
+String[] words = {"pear", "apple", "orange"};
+Arrays.sort(words); 
+// zoradí pomocou compareTo: ["apple", "orange", "pear"]
+```
+
+Či je reťazec prázdny alebo obsahuje iba biele znaky (whitespaces) vieme zistiť pomocou metódy `isBlank()`. Na zistenie, či je reťazec prázdny používame metódu `isEmpty()`. Z reťazca vieme vytvoriť podreťazec pomocou metódy `substring()`.
+
+```java
+String s = "Hello world!";
+String s2 = s.substring(6, 11); // "world"
+
+if (s.isBlank()) {
+    System.out.println("Reťazec je prázdny");
+}
+```
+
+## Vyhľadávanie v reťazci
+
+V reťazci vieme vyhľadávať, či sa tam nachádza nejaký znak alebo reťazec znakov. Metóda `indexOf()` nám zistí prvú pozíciu, na ktorej sa hľadaný znak alebo reťazec nachádza. Ak sa hľadaná vec v texte nenachádza, metóda vráti číslo `-1`. V tejto metóde môžeme tiež zadať, v akej časti reťazca má hľadať. Ak chceme iba vedieť, či sa tam hľadaný výraz nachádza alebo nie, môžeme použiť aj metódu `contains()`.
+
+```java
+String s = "banana";
+System.out.println(s.indexOf('n'));     // 2
+System.out.println(s.lastIndexOf("na")); // 4
+System.out.println(s.contains("ban"));   // true
+```
+
+!!! example "Príklad: Nájdene prípony v názve súboru"
+
+    ```java
+    public static String getFileExtension(String fileName) {
+        // Kontrola, či názov súboru nie je null alebo prázdny
+        if (fileName == null || fileName.isEmpty()) {
+            return "Žiadna prípona";
+        }
+
+        // Nájdenie posledného výskytu bodky
+        int dotIndex = fileName.lastIndexOf('.');
+
+        // Ak bodka neexistuje alebo je na konci názvu
+        if (dotIndex == -1 || dotIndex == fileName.length() - 1) {
+            return "Žiadna prípona";
+        }
+
+        // Vracia príponu (časť za poslednou bodkou)
+        return fileName.substring(dotIndex + 1);
+    }
     ```
 
-## Null
+Niekedy potrebujeme zistiť, či sa reťazec začína (alebo končí) nejakým textom. Na to v Jave máme metódy `startswith()` a `endswith()`. 
+
+```java
+String url = "https://oop.wagjo.com";
+System.out.println(url.startsWith("https")); // true
+System.out.println(url.endsWith(".com"));    // true
+```
+
+## Úprava reťazcov
 
 <div class="md-has-sidebar" markdown>
 <main markdown>
+Java nám poskytuje aj niekoľko metód na úpravu reťazcov. Keďže reťazce sú v Jave nemenné, všetky tieto metódy vracajú nový upravený reťazec.
 
-V Jave existuje špeciálna hodnota `null`, ktorá označuje, že premenná referenčného (neprimitivného) typu neukazuje na žiadny objekt. Inými slovami: premenná existuje, ale "neukazuje nikam". Akákoľvek neprimitívna premenná môže mať `null` hodnotu.
+Metóda `strip()` vráti reťazec bez ASCII medzier na začiatku a konci reťazca. Ak chcem odstrániť iba medzeri iba na začiatku alebo na konci, použijeme metódy `stripLeading()` a `stripTrailing()`.
 
-Používa sa pri nasledovných situáciách:
-
-- Inicializácia premenných, v prípadoch keď ešte nemáme vypočítanú hodnotu
-
-    ```java
-    String meno = null;
-    ```
-
-- Indikácia neprítomnosti objektu, napríklad ak metóda, ktorá má vyhľadať a vrátiť objekt ho nenašla, alebo nedokáže vypočítať výsledok
-- Resetovanie premennej, kedy už nechceme aby premenná viac ukazovala na danú hodnotu
-
-    ```java
-    obj = null; 
-    ```
-
-Null referencia je jedna z najkontroverznejších vecí v Jave a celkovo v programovaní. Prináša totiž obrovské množstvo problémov, komplikácií a je najčastejším zdrojom chýb. Nutnosť kontrolovať `null` hodnoty komplikuje a zneprehľadňuje kód. Modernejšie programovanie jazyky sa rôznymi spôsobmi všemožne snažia `null` referenciám vyhnúť. 
-
-Ak kód v Jave očakáva konkrétny objekt a dostane `null` hodnotu, nemôže ďalej pokračovať a vyhodí výnimku [NullPointerException](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/NullPointerException.html) (NPE).
-
-=== "Kód, ktorý pozabudol na možnosť mať `null` na vstupe"
-
-    ```java
-    public void spracuj(String input) {
-        int dlzka = input.length(); // Ak je input null, vyhodí sa NPE
-        // Ďalší kód
-    }
-    ```
-
-Väčšine problémov s `null` referenciami dokážeme predísť. Pri písaní kódu je potrebné ošetrovať prípady, kedy vstupné argumenty našich metód obsahujú `null` hodnotu. Ak naša metóda nepripúšťa `null` hodnoty na vstupe, je potrebné čím skôr vyhodiť výnimku, aby sa uľahčilo debugovanie. Na to nám môže poslúžiť metóda [`Objects.requireNonNull()`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Objects.html#requireNonNull(java.lang.Object,java.lang.String)), ktorá vyhodí NPE výnimku, ak je argument `null`.
-
-=== "Ošetrenie vstupného parametra"
-
-    ```java
-    import java.util.Objects;
-
-    public void spracuj(String input) {
-        Objects.requireNonNull(input, "Input nesmie byť null");
-        // Ďalší kód
-    }
-    ```
-
-
- </main>
-
+</main>
   <aside markdown>
-Známy počítačový vedec Tony Hoare, ktorý prvý prišiel s nápadom `null` referencie, tento svoj objav nazval chybou za miliardu dolárov. 
+Na odstránenie medzier máme aj metódu `trim()`, ktorá však nepodporuje všetky druhy bielych znakov. Preferujte metódu `strip()`
+</div>
 
-!!! quote "Null: The Billion Dollar Mistake"
+Na zmenu všetkých písmen v reťazci na veľké alebo malé máme metódy `toUpperCase()` a `toLowerCase()`. 
 
-    But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.
-</aside>
+<div class="md-has-sidebar" markdown>
+<main markdown>
+Často používanou metódou pri zmene reťazcov je metóda `replace()`, pomocou ktorej vieme nahradiť znak alebo skupinu znakov niečim iným.
+
+```java
+String text = "Ahoj svet";
+String replaced = text.replace("svet", "Java");
+System.out.println(replaced); // Ahoj Java
+```
+</main>
+  <aside markdown>
+Ak chceme použiť regulárne výrazy, vieme použiť metódy `replaceAll()` a `replaceFirst()`.
+</div>
+
+## Rozdeľovanie a spájanie reťazcov
+
+<div class="md-has-sidebar" markdown>
+<main markdown>
+Na rozdelenie reťazca máme v Jave metódu `split()`, ktorá prijíma regulárny výraz. Táto metóda vracia pole reťazcov, a vo výsledných reťazcoch sa text, pomocou ktorého sa oddeľovalo, nebude nachádzať.
+
+```java
+String s = "a,b,c";
+String[] parts = s.split(",");
+for (String part : parts) {
+    System.out.println(part);
+}
+// Výstup: a b c
+```
+
+</main>
+  <aside markdown>
+Ak chceme zachovať vo výsledku aj oddeľovače, použijeme metódu `splitWithDelimiters()`
 </div>
 
 !!! tip "Učím sa s pomocou umelej inteligencie"
 
-    Som študent strednej školy. Učím sa Javu. [Objasni mi všetky úskalia práce s null referenciou a poraď, ako sa vyhnúť problémom s null.](https://grok.com/share/c2hhcmQtMg%3D%3D_54ad4e90-09ea-42e7-922f-676579026bd5)
+    Som študent strednej školy, učím sa Stringy v Jave. Vysvetli mi jednoducho, [čo sú regulárne výrazy a ako sa pri Stringoch v Jave používajú](https://grok.com/share/c2hhcmQtMg%3D%3D_75b56967-2e03-418c-bb19-0a605a37e8af).
 
-## Typová konverzia
+Viacero reťazcov dokopy vieme spojiť pomocou `join()`. Prvý argument tejto metódy je reťazec, ktorý sa použije ako spojovník.
 
-V praxi sa často stáva, že mám hodnotu, ktorú viem rovnako reprezentovať v rôznych dátových typoch alebo triedach. Najčastejšie je to pri číselných typoch. Programovacie jazyky nám rôznymi spôsobmi umožňujú konvertovať hodnoty medzi dátovými typmi. Java nám ponúka niekoľko možností.
+```java
+String joined = String.join("-", "a", "b", "c");
+System.out.println(joined); // "a-b-c"
+```
 
-### Implicitná konverzia (widening conversion)
+## Efektívna tvorba reťazcov
 
-<div class="md-has-sidebar" markdown>
-<main markdown>
+Niekedy potrebujeme pri tvorbe reťazca vykonať viacero zmien, alebo reťazec tvoríme postupne. Pretože každá zmena reťazca vytvára reťazec nový, takéto zložitejšie úpravy môžu byť dosť neefektívne a komplikované na písanie. Java nám naštastie ponúka riešenie pomocou triedy `StringBuilder`. Táto trieda je *mutable*, teda jej objekty sú meniteľné a poskytuje metódy na ľahšiu manipuláciu s reťazcami ako pri triede `String`.
 
-Pri číselných typoch, kedy nenastáva strata informácie nám Java umožňuje automaticky konvertovať menšie typy na väčšie.
+!!! abstract "Dokumentácia"
 
-=== "Automatická konverzia - widening"
+    Pre viac detailov si pozrite oficiálnu dokumentáciu triedy [`java.lang.StringBuilder`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/StringBuilder.html)
+
+S touto triedou sa pracuje nasledovne:
+
+1. Vytvorím si objekt triedy `StringBuilder` pomocou vhodného konštruktora
+1. Vykonám úpravy, ako napr. vloženie, nahradenie alebo vymazanie textu
+1. Výsledný reťazec získam pomocou metódy `toString()`
+
+Na zmenu textu nám trieda `StringBuilder` poskytuje metódy `append()`, `insert()`, `reverse()` a `delete()`.
+
+!!! example "Príklad použitia triedy `StringBuilder`"
 
     ```java
-    int a = 10;
-    long b = a; // implicitná konverzia (int → long)
-    double c = b; // implicitná konverzia (long → double)
+    String[] items = {"Jablko", "Hruška", "Banán"};
+
+    StringBuilder html = new StringBuilder("<ul>");
+    for (String item : items) {
+        html.append("<li>").append(item).append("</li>");
+    }
+    html.append("</ul>");
+
+    String htmlText = html.toString();
+    System.out.println(htmlText);
+
+    // "<ul><li>Jablko</li><li>Hruška</li><li>Banán</li></ul>"    
     ```
 
-Poradie primitívnych typov je nasledujúce:
-
-`byte` → `short` → `int` → `long` → `float` → `double`
-</main>
-  <aside markdown>
-Pri konverzii celočíselného typu na `float` alebo `double` môže nastať strata presnosti. [Problematika čísel s pohyblivou desatinnou čiarkou](https://floating-point-gui.de/) je však veľmi komplikovaná a detailné pochopenie ich fungovania by zabralo viacero samostaných cvičení. 
-
-Buďte preto pri ich používaní opatrní a keď sa dá použite celočíselné typy.</aside>
-</div>
-
-### Explicitná konverzia (narrowing conversion, casting)
-
-Opačne to však už automaticky nefunguje, nakoľko by sa mohla stratiť informácia. V takýchto prípadoch to vieme urobiť manuálne pomocou castingu. Pri castingu napíšeme do zátvoriek typ, do ktorého chceme skonvertovať našu hodnotu.
-
-=== "Explicitná konverzia - narrowing, casting"
-
-    ```java
-    double x = 900.78;
-    int y = (int) x;  // explicitný casting (double → int)
-    System.out.println(y); // 900
-
-    byte b = (byte) x;  // explicitný casting (double → byte)
-    System.out.println(b); // -124, nastalo pretečenie
-    ```
-
-Pri konvertovaní na menší číselný typ môžu nastať nasledovné problémy:
-
-- odrezanie desatinných miest
-- pretečenie (overflow)
-
-<div class="md-has-sidebar" markdown>
-<main markdown>
-
-Konverziu vieme vykonať aj medzi nečíselnými typmi. Primitívny typ `char` je vnútorne reprezentovaný ako 16-bitové čislo a dá sa bez straty informácií konvertovať na `int` alebo väčšie typy.
-
-=== "Konverzia typu `char`"
-
-    ```java
-    char c = 'A';
-    int code = c; // implicitne 'A' → 65
-    System.out.println(code);
-
-    code = 100;
-    char d = (char)code; // explicitne 100 → 'd'
-    System.out.println(d);
-    
-    char e = 101; // implicitná konverzia pri inicializacii 101 → 'e'
-    ``` 
- 
- </main>
-
-  <aside markdown>
-Každý znak je v pamäti počítača uložený ako číslo. Základná anglická abeceda sa zmestí do jedného bajtu. Prvých 128 znakových kódov je definovaných v [štandarde ASCII](https://www.ascii-code.com/)
-
-Kódovaniu znakov do čísel sa venuje svetový [štandard Unicode](https://home.unicode.org/). Ten rozširuje štandard ASCII a umožňuje kódovať akúkoľvek abecedu a emoji znaky.
-</aside>
-</div>
-
-![ASCII tabuľka](../assets/ascii.svg){.on-glb}
-/// caption
-ASCII tabuľka znakov
-///
-
-## Obalené typy
-
-<div class="md-has-sidebar" markdown>
-<main markdown>
-
-Java poskytuje primitívne dátové typy. Sú rýchle a zaberajú málo pamäti. Keďže však v Jave skoro stále pracujeme s objektami a triedami, používanie primitívnych typov často prináša rôzne obmedzenia a komplikácie.
-
-Sú rôzne situácie, kedy je vyžadovaný objekt a nie primitívna hodnota. Často sa napríklad stáva, že metóda, ktorú by sme chceli použiť vyžaduje na vstupe objekt, ale mi máme primitívnu hodnotu.
-
-Pre takéto prípady má java k dispozícii tzv. obalené typy, anglicky *wrapper classes*. **Pre každý primitívny dátový typ existuje príslušný obalený typ**. Obalené triedy poskytujú plnohodnotné objekty, reprezentujúce dané číslo alebo inú primitívnu hodnotu. Zaberajú však viacej miesta v pamäti. Objekty obalených typov sú nemenné.
-
-=== "Obalené typy v Jave"
-
-    ```java
-    int x = 10; // primitívny dátový typ
-    Integer y = 10; // obalený typ
-    System.out.printf("x je %d, y je %d", x, y); // používajú sa rovnako
-    ```
-
-Java poskytuje množstvo funkcionalít, ktoré umožňujú voľne si zamienať primitívne a obalené objekty vo väčšine prípadov. Preto vy ako programátor by ste mali vždy ak je to možné **uprednostniť primitívne typy a obalené typy používať len vtedy, keď je to nutné**. Obalené typy totiž môžu byť zdrojom problémov.
-
-=== "`NullPointerException` pri obalených typoch"
-
-    ```java
-    int x = 10;
-    Integer y = null;
-    if(x == y) // Vyhodí NPE výnimku
-        System.out.println("rovnajú sa");
-    ```
- 
- </main>
-
-  <aside markdown>
-
-| Primitívny<br>typ | Obalený<br>typ |
-|----------------|-------------|
-| byte | [Byte](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Byte.html) |
-| short | [Short](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Short.html) |
-| int | [Integer](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html) |
-| long | [Long](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Long.html) |
-| float | [Float](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Float.html) |
-| double | [Double](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html) |
-| char | [Character](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Character.html) |
-| boolean | [Boolean](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html) |
-</aside>
-</div>
-
-### Autoboxing
-
-Prevod z primitívneho typu na obalený sa v programovaní volá boxing (z anglického slova box ako krabica). Podobne prevod na primitívny typ sa volá unboxing.
-
-Java vykonáva automatickú konverziu z a do balených typov, vždy keď je to potrebné. To sa v Jave nazýva autoboxing a auto-unboxing.
-
-=== "Príklady autoboxingu a auto-unboxingu"
-
-    ```java
-    int x = 5;
-    Integer y = 10; // autoboxing, literály sú vždy primitívneho typu
-    y = x; // autoboxing, x je primitívny, y nie
-    
-    List li = new ArrayList();
-    li.add(x); // autoboxing, x je primitívny typ, 
-               // ale do listu sa dajú vkladať iba objekty
-
-
-    x = y; // auto-unboxing, y je objekt, x je primitívny
-
-    if(x == y) // auto-unboxing, y sa skonvertuje na primitívny typ, 
-               // aby sme mohli porovnať hodnoty
-        System.out.println("x je rovnaké ako y");
-
-    ```
-
-### Na čo si dať pozor
-
-Primitívne hodnoty porovnávame pomocou operátora `==`. Ak je aspoň jeden z operandov primitívna hodnota, Java urobí auto-unboxing a všetko je v poriadku. Ak však porovnávame 2 obalené objekty, musíme použiť namiesto toho metódu `equals()`.
-
-=== "Porovnávanie s obalenými objektami"
-
-    ```java
-    int a = 10000;
-    Integer b = 10000;
-    Integer c = 10000;
-
-    a == b; // v poriadku
-    b == c; // CHYBA, porovná identitu, nie hodnoty!
-    b.equals(c); // správne porovnanie hodnôt dvoch objektov
-    ```
-
-### Konštanty a metódy obalených typov
-
-Obalené triedy poskytujú množstvo užitočných metód a konštánt. Niektoré z nich si teraz predstavíme.
-
-Triedy obalených typov poskytujú statické konštanty obsahujúce maximálne a minimálne hodnoty a tiež špeciálne hodnoty ako napríklad nekonečno.
-
-=== "Statické konštanty v obalených triedach"
-
-    ```java
-    Integer.MAX_VALUE // 2147483647
-    Long.MIN_VALUE // -9223372036854775808
-    Double.POSITIVE_INFINITY // Infinity
-    ```
-
-Metódy tried obalených typov sa často používajú na typovú konverziu s triedou `String`, teda na prevody z a do reťazcov. 
-
-=== "Parsovanie z a do triedy `String`"
-
-    ```java
-    String s = "11001";
-    int x = Integer.parseInt(s); // prevod z reťazca do int
-    int c = Integer.parseInt(s, 2); // vieme robiť prevod aj z inej číselnej sústavy
-    long y = Long.parseLong(s); // prevod z reťazca do long
-    byte b = Byte.parseByte(s); // Vyhodí NumberFormatException výnimku, 
-                                // pretože číslo je príliš veľké na byte
-
-    long a = 1234;
-    String s10 = Long.toString(a); // prevod do reťazca
-    String s16 = Long.toString(a, 16); // vieme si vybrať číselnú sústavu
-
-    System.out.printf("Číslo %s v šestnástkovej sústave je %s", s10, s16);
-    ```
 
 ## Úlohy na precvičenie
 
-!!! example "Úloha 5.1: Bezpečné porovnanie reťazcov"
+!!! example "Úloha 6.1: Obrátenie reťazca"
 
-    Napíš metódu, ktorá porovnáva dva reťazce aj v prípade, že jeden alebo oba sú null.
+    Vypíš reťazec v opačnom poradí
 
-    Výstup: true, ak sú rovnaké (vrátane oboch null), inak false.
+!!! example "Úloha 6.2: Zistenie palindrómu"
 
-!!! example "Úloha 5.2: Číselné sústavy"
+    Zisti, či je zadaný reťazec palindróm (čítaný zľava aj sprava je rovnaký).
 
-    Napíšte program, ktorý načíta celé číslo z klávesnice a vypíše ho v desiatkove, šestnástkovej, osmičkovej a dvojkovej sústave.
+    𝙱𝚘𝚗𝚞𝚜: Ignoruj medzery a veľkosti písmen
 
-    Bonus: Ak je číslo v správnom rozsahu, napíšte aj, aký znak by toto číslo mohlo reprezentovať.
-
-!!! example "Úloha 5.3: Detekcia číselného typu"
-
-    Napíš program, ktorý načíta reťazec z klávesnice. Potom program skúsi tento reťazec skonvertovať do rôznych číselných typov a uvedie, ktoré typy by mohli načítaný reťazec reprezentovať.
-
-    Pri práci použite ošetrenie výnimiek.
-
-    Najprv vyskúšajte typy `long` a `double`. Môžete pridať menšie celočíselné typy.
+    𝕄𝕖𝕘𝕒 𝕓𝕠𝕟𝕦𝕤: Ignoruj interpunkčné znamienka (., !, ?, atď.)
     
-    Bonus: Skúste otestovať aj šestnástkovú, binárnu a osmičkovú sústavu.
+    Ｕｌｔｒａ ｂｏｎｕｓ: Ignoruj diakritiku
 
-!!! example "Úloha 5.4: Delenie"
+!!! example "Úloha 6.3: Počet slov v texte"
 
-    Napíš program, ktorý načíta dve čísla a napíše výsledok po delení. Ošetrite čo najviac výnimiek pri chybách, ktoré môžu nastať.
+    Zadaný text obsahuje viac slov oddelených medzerami. Spočítaj, koľko slov obsahuje.
 
-!!! example "Úloha 5.5: Ošetrená kalkulačka"
+!!! example "Úloha 6.4: Zmena veľkosti písmen"
 
-    Napíšte program, v ktorom užívateľ bude môcť vykonať základné matematické operácie. Program rozdeľte do viacerých metód.
+    Napíš program, ktorý všetky malé písmená v reťazci zmení na veľké a naopak.
 
-    Vypisujte menu a po splnení úlohy sa do neho naspať vráťte. Majte možnosť ukončiť program.
+!!! example "Úloha 6.5: Najdlhšie slovo"
+
+    V texte oddelenom medzerami nájdi a vypíš najdlhšie slovo.
+
+!!! example "Úloha 6.6: Odstránenie číslic"
+
+    Zo zadaného reťazca odstráň všetky číslice a vypíš výsledok.
+
+!!! example "Úloha 6.7: Každé slovo s veľkým písmenom"
+
+    Zmeň reťazec tak, aby každé slovo začínalo veľkým písmenom (napr. `"java je fajn"` → `"Java Je Fajn"`).
+
+!!! example "Úloha 6.8: Kontrola anagramu"
+
+    Zisti, či dva reťazce sú anagramy *(obsahujú tie isté písmená, ale v inom poradí)*.
+
+!!! example "Úloha 6.9: Validácia e-mailu"
+
+    Skontroluj, či zadaný reťazec vyzerá ako validná e-mailová adresa (stačí základná kontrola: obsahuje `@` a `.` na správnych miestach).
+
+!!! example "Úloha 6.10: Spojenie viacerých slov"
+
+    Napíšte program, ktorý od používateľa načíta viacero slov (počet zadá používateľ) a pomocou `StringBuilder` ich spojí do jednej vety s medzerami medzi slovami.
 
 
 ## Zhrnutie cvičenia
 
-- [x] Literál je zápis konkrétneho údaja priamo v kóde
-- [x] Špeciálny literál `null` vyjadruje neprítomnosť hodnoty
-    * [ ] Akákoľvek premenná referenčného (neprimitívneho) typu môže nadobúdať hodnotu `null`
-    * [ ] Používa sa, ak pri inicializácii premennej ešte nemáme vypočítanú hodnotu, ak chceme vyjadriť neprítomnosť hodnoty, alebo ak chceme z premennej vymazať objekt
-    * [ ] Ak kód očakáva objekt a dostane null hodnotu, nemôže pokračovať a vyhodí výnimku `NullPointerException` (NPE).
-    * [ ] Metóda `Objects.requireNonNull()` slúži na ošetrenie vstupov pri kontrole `null` hodnôt
-- [x] Typová konverzia nám v Jave umožňuje konvertovať hodnoty medzi dátovými typmi
-    * [ ] Implicitná konverzia - widening, automaticky konvertuje menšie typy na väčšie
-    * [ ] Explicitná konverzia - narrowing alebo casting, manuálna konverzia, pri ktorej môže nastať strata informácie orezaním alebo pretečením
-    * [ ] Znakový typ `char` viem previesť na `int` alebo väčší, pretože znaky sú vnútorne reprezentované ako číselné kódy
-    * [ ] Základné štandardy znakových kódov sú ASCII a Unicode
-- [x] Obalené typy - wrapper classes
-    * [ ] Pre každý primitívny dátový typ existuje príslušný obalený typ
-    * [ ] Obalený typ je trieda a jeho hodnoty sú objekty
-    * [ ] Autoboxing a auto-unboxing je automatická konverzia z a do balených typov, vždy keď je to potrebné
-    * [ ] Uprednostňujeme primitívne typy a obalené typy používame len keď je to nutné
-    * [ ] Ak porovnávame 2 obalené objekty, musíme použiť metódu `equals()`, nie `==`
-    * [ ] Obalené triedy poskytujú pomocné metódy ako `parseLong()`, `toString()` a rôzne konštanty
+- [x] V Jave sú reťazce znakov reprezentované ako objekty triedy `java.lang.String`
+    * [ ] sú nemenné, po vytvorení sa objekt nedá meniť
+    * [ ] Môžu byť použité ako hodnoty v príkaze switch
+    * [ ] Reťazec má dĺžku a index, viem pristupovať k jednotlivým znakom
+
+Na tomto cvičení sme si predstavili tieto metódy:
+
+| **Metóda**            | **Popis**                                                                 |
+|-----------------------|---------------------------------------------------------------------------|
+| `length()`            | Vráti dĺžku reťazca (počet znakov)                                       |
+| `charAt()`            | Vráti znak na zadanom indexe v reťazci                                   |
+| `equals()`            | Porovná, či majú dva reťazce rovnakú hodnotu                              |
+| `equalsIgnoreCase()`  | Porovná dva reťazce bez ohľadu na veľkosť písmen                         |
+| `compareTo()`         | Lexikograficky porovná dva reťazce (podľa abecedy)                       |
+| `isBlank()`           | Skontroluje, či je reťazec prázdny alebo obsahuje iba biele znaky         |
+| `isEmpty()`           | Skontroluje, či je reťazec prázdny                                       |
+| `substring()`         | Vráti podreťazec zo zadaného rozsahu indexov                             |
+| `indexOf()`           | Vráti index prvého výskytu zadaného znaku alebo podreťazca, alebo -1     |
+| `lastIndexOf()`       | Vráti index posledného výskytu zadaného znaku alebo podreťazca, alebo -1 |
+| `contains()`          | Skontroluje, či reťazec obsahuje zadaný podreťazec                        |
+| `startsWith()`        | Skontroluje, či reťazec začína zadaným podreťazcom                        |
+| `endsWith()`          | Skontroluje, či reťazec končí zadaným podreťazcom                         |
+| `strip()`             | Odstráni biele znaky (ASCII) zo začiatku a konca reťazca                 |
+| `stripLeading()`      | Odstráni biele znaky zo začiatku reťazca                                 |
+| `stripTrailing()`     | Odstráni biele znaky z konca reťazca                                     |
+| `toUpperCase()`       | Prevedie všetky písmená v reťazci na veľké                               |
+| `toLowerCase()`       | Prevedie všetky písmená v reťazci na malé                                |
+| `replace()`           | Nahradí všetky výskyty zadaného znaku alebo podreťazca novým             |
+| `replaceAll()`        | Nahradí všetky výskyty podreťazca zodpovedajúceho regulárnemu výrazu     |
+| `replaceFirst()`      | Nahradí prvý výskyt podreťazca zodpovedajúceho regulárnemu výrazu        |
+| `split()`             | Rozdelí reťazec na pole podreťazcov podľa zadaného regulárneho výrazu    |
+| `join()`              | Spojí viacero reťazcov do jedného s použitím zadaného oddeľovača         |
+| `format()`            | Vytvorí formátovaný reťazec podobný `printf()`                           |
+| `repeat()`            | Opakuje reťazec zadaný počet krát                                       |
+| `toString()`          | Vráti reťazec z objektu `StringBuilder`                 |
+| `append()`            | Pridá text na koniec reťazca v objekte `StringBuilder`                   |
+| `insert()`            | Vloží text na zadaný index v objekte `StringBuilder`                     |
+| `reverse()`           | Obráti poradie znakov v objekte `StringBuilder`                          |
+| `delete()`            | Odstráni časť reťazca v objekte `StringBuilder` zo zadaného rozsahu      |
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    LITERÁL
+    STRING
 
-    Literál je zápis údaja priamo v kóde
-    Literál null vyjadruje neprítomnosť hodnoty
-    Výnimka NullPointerException sa vyhodí, ak program očakával objekt a nie null
+    Reťazce znakov:
+    - Sú objekty triedy java.lang.String, nie sú primitívne
+    - Sú nemenné, po vytvorení sa objekt nedá meniť
+    - Reťazec má dĺžku a index, viem pristupovať k jednotlivým znakom
 
-    TYPOVÁ KONVERZIA
-
-    Typová konverzia umožňuje konvertovať medzi dátovými typmi
-    Implicitná konverzia - widening, automaticky konvertuje menšie typy na väčšie
-    byte → short → int → long → float → double
-    Explicitná konverzia - narrowing alebo casting, manuálna konverzia
-
-    char viem previesť na int alebo väčší, pretože znaky sú vnútorne ako číselné kódy
-
-    OBALENÉ TYPY
-
-    Obalené typy - wrapper classes
-    Pre každý primitívny dátový typ existuje príslušný obalený typ - trieda
-    Autoboxing a auto-unboxing je automatická konverzia z a do balených typov, keď je to potrebné
-    Uprednostňujeme primitívne typy pred obalenými, Java robí konverzie za nás
-    2 obalené objekty porovnávam cez equals()
+    length() - dĺžka
+    charAt() - znak na danej pozícii
+    equals() - porovnanie hodnôt
+    compareTo() - porovnanie "podľa abecedy"
+    isBlank() - je reťazec prázdny?
+    substring() - podreťazec
+    indexOf() - prvý výskyt znaku alebo podreťazca
+    startsWith() - či začína určitým reťazcom
+    strip() - odstráni biele znaku zo začiatku a z konca
+    toUpperCase() - prevedie na veľké písmená
+    replace() - nahradí text
+    split() - rozdelí do poľa reťazcov
+    join() - spojí viacero reťazcov dokopy
+    repeat() - opakuje daný reťazec
+    StringBuilder - mutable trieda na manipuláciu s reťazcami
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
     Okruhy otázok na test:
 
-    - Na čo slúži literál null, aká výnimka sa s ním spája
-    - Ako funguje implicitná typová konverzia
-    - Čo je a ako sa robí explicitná typová konverzia
-    - Čo sú obalené typy, aké majú použitie
-    - Čo je autoboxing a auto-unboxing
-    - Ako sa parsujú čisla z reťazca znakov a ako sa prevádzajú čísla na reťazec
+    - Ako sú v Jave reprezentované reťazce
+    - Vlasnosti reťazcov
+    - Základné metódy na prácu s reťazcami
+    - Čo je a na čo sa používa treida StringBuilder
     

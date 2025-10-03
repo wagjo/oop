@@ -177,7 +177,9 @@ hide:
 <td width=30%>
 <a href="../cvicenie-3/c06-stringy">Reťazce</a> (<a href="../assets/c06w.pdf">pdf</a>)
 <ul>
-<li>Reťazce</li>
+<li>String</li>
+<li>Metódy na prácu s reťazcami</li>
+<li>StringBuilder</li>
 </ul>
 </td>
 <td width=30%>
