@@ -263,22 +263,22 @@ Takto vytvorený projekt potom vieme lokálne nainštalovať príkazom `pip inst
     * [ ] Knižnice z jedného virtuálneho prostredia neovplyvňujú iné virtuálne prostredia a nie sú viditeľné ani zo systému.
     * [ ] Virtuálne prostredie potrebuje svoj vlastný adresár, väčšinou je to `.venv`
 - [x] Verejný repozitár balíkov PyPI.org
-    * Python Package Index (PyPI) na adrese https://pypi.org
-    * `pip` balíky sa sťahujú práve z tohto repozitára
-    * Do repozitára PyPI si vieme zadarmo uložiť aj svoje vlastné knižnice alebo celé Python programy
+    * [ ] Python Package Index (PyPI) na adrese https://pypi.org
+    * [ ] `pip` balíky sa sťahujú práve z tohto repozitára
+    * [ ] Do repozitára PyPI si vieme zadarmo uložiť aj svoje vlastné knižnice alebo celé Python programy
 - [x] Správa závislostí pomocou requirements.txt
-    * Starý spôsob
-    * Textový súbor `requirements.txt` na samostatných riadkoch obsahuje názvy knižníc, ktoré náš projekt vyžaduje.
-    * Ak má projekt takýto súbor, potom všetky jeho závislosti vieme nainštalovať jedným príkazom `pip install -r requirements.txt`
-    * Okrem názvu vieme uviesť, akú verziu potrebujeme. Vieme na to použiť operátory `==`, `~=`, `>`, `>=`, `<`, `<=` a iné
+    * [ ] Starý spôsob
+    * [ ] Textový súbor `requirements.txt` na samostatných riadkoch obsahuje názvy knižníc, ktoré náš projekt vyžaduje.
+    * [ ] Ak má projekt takýto súbor, potom všetky jeho závislosti vieme nainštalovať jedným príkazom `pip install -r requirements.txt`
+    * [ ] Okrem názvu vieme uviesť, akú verziu potrebujeme. Vieme na to použiť operátory `==`, `~=`, `>`, `>=`, `<`, `<=` a iné
 - [x] Konfigurácia projektu pomocou pyproject.toml
-    * Moderný spôsob
-    * V súbore `pyproject.toml` musím uviesť minimálne názov môjho projektu a verziu.
-    * Závislosti na knižniciach uvádzam do atribútu `dependencies`
-    * Ak uvediem závislosti (dependencies) v súbore `pyproject.toml`, súbor `requirements.txt` nepotrebujem
-    * Súbor pyproject.toml umiestňujeme do adresára s projektom. Všetky zdrojové moduly a balíky odporúčame dať to adresára `src`
-    * Projekt viem lokálne nainštalovať príkazom `pip install -e .`
-    * Projekt budem vedieť spúšťať pomocou príkazu `python -m balik.modul`
+    * [ ] Moderný spôsob
+    * [ ] V súbore `pyproject.toml` musím uviesť minimálne názov môjho projektu a verziu.
+    * [ ] Závislosti na knižniciach uvádzam do atribútu `dependencies`
+    * [ ] Ak uvediem závislosti (dependencies) v súbore `pyproject.toml`, súbor `requirements.txt` nepotrebujem
+    * [ ] Súbor pyproject.toml umiestňujeme do adresára s projektom. Všetky zdrojové moduly a balíky odporúčame dať to adresára `src`
+    * [ ] Projekt viem lokálne nainštalovať príkazom `pip install -e .`
+    * [ ] Projekt budem vedieť spúšťať pomocou príkazu `python -m balik.modul`
 
 
 
