@@ -3,35 +3,97 @@
 
 ## Agilný vývoj
 
-Ak softvér vyvíja tím ľudí, dohodnú sa na spôsobe spolupráce aby si navzájom rozumeli a nevznikal chaos. Metódy a princípy pri tvorbe softvéru sa s rokmi menili. V súčasnosti je zaučívaný tzv. agilný prístup k vývoju softvéru.
+<div class="md-has-sidebar" markdown>
+<main markdown>
 
-Agilný vývoj softvéru vznikol ako reakcia programátorov na skostnatelé metodiky v korporáciách. S touto filozofiou prišli samotní programátori a zo začiatku boli agilné princípy oslobodzujúce, prinášali viac kreativity a flexibility. Ako na agilné princípy postupne prechádzali veľké firmy a stal sa hlavným prístupom, urobil sa z toho veľký biznis a agilné metodiky sa začali príliš formalizovať, začali byť povrchnými rituálmi a prestali plniť svoju pôvodnú funkciu. Takýmto iba naoko agilným metodikám sa hovorí Agilné divadlo, anglicky Agile theater.
+Ak softvér vyvíja tím ľudí, dohodnú sa na spôsobe spolupráce aby si navzájom rozumeli a nevznikal chaos. Metódy a princípy pri tvorbe softvéru sa s rokmi menili. V súčasnosti je zaužívaný tzv. agilný prístup k vývoju softvéru.
+
+Agilný vývoj softvéru vznikol ako reakcia programátorov na skostnatelé metodiky v korporáciách. S touto filozofiou prišli samotní programátori a zo začiatku boli agilné princípy oslobodzujúce, prinášali viac kreativity a flexibility. Ako na agilné princípy postupne prechádzali veľké firmy a korporácie, stal sa hlavným prístupom vývoja softvéru. Urobil sa z toho však veľký biznis a agilné metodiky sa začali príliš formalizovať, začali byť povrchnými rituálmi a prestali plniť svoju pôvodnú funkciu. Takýmto iba naoko agilným metodikám sa hovorí Agilné divadlo, anglicky *Agile theater*. 
+
+ </main>
+
+  <aside markdown>
+  Pred agilným prístupom bol v oblasti softvérového vývoja zaužívaný tzv. *waterfall model*, ktorý mal lineárny proces zberu požiadaviek, návrhu, implementácii, testovania a nasadenia. Kým sa však dostal do bodu nasadenia, jeho oneskorenie bolo často také veľké, že bol softvér nepoužiteľný. Požiadavky sa totiž v čase menia a konkurencieschopná firma musí vedieť reagovať na zmeny.  
+</aside>
+</div>
+
 
 !!! tip "Učím sa s pomocou umelej inteligencie"
 
     [Kritický pohľad na históriu agilných metodík vývoja softvéru a aký je súčasný stav](https://grok.com/share/c2hhcmQtMg%3D%3D_b57203e2-b196-4e8c-b868-abef7380a961)
 
-Aj napriek súčasenému častému zneužívaniu agilných metodík v korporáciách a veľkých firmách majú tieto prístupy stále veľký prínos, ak sa samozrejme používajú správne. Základné princípy súčasného agilného vývoja sú vyjadrené v [Manifeste agilného vývoja softvéru](https://agilemanifesto.org/iso/sk/manifesto.html):
 
-- **Ľudia a komunikácia** sú viac než procesy a nástroje.
-- **Funkčný softvér** je viac než vyčerpávajúca dokumentácia.
-- **Spolupráca so zákazníkom** je viac než dojednávanie zmluvy.
+<div class="md-has-sidebar" markdown>
+<main markdown>
+
+
+Aj napriek súčasenému častému zneužívaniu agilných metodík v korporáciách a veľkých firmách majú tieto prístupy stále veľký prínos, samozrejme iba ak sa používajú správne. Základné princípy agilného vývoja sú vyjadrené v [Manifeste agilného vývoja softvéru](https://agilemanifesto.org/iso/sk/manifesto.html):
+
+- **Ľudia a komunikácia** sú viac než procesy a nástroje
+- **Funkčný softvér** je viac než vyčerpávajúca dokumentácia
+- **Spolupráca so zákazníkom** je viac než dojednávanie zmluvy
 - **Radšej reagovať na zmenu** než sa držať plánu.
 
-Aj keď časť napravo je dôležitá,
-viac si ceníme ľavú časť.
+*Aj keď časť napravo je dôležitá, viac si ceníme ľavú časť.*
 
-Toto manifesto je ďalej rozvinuté do [dvanástich princípov agilného vývoja](https://agilemanifesto.org/iso/sk/principles.html). Rokmi praxe sa niektoré z týchto 
+ </main>
+
+  <aside markdown>
+  Príkladom úspešného používania agilných prístupov vo veľkých korporáciách sú Tesla a SpaceX, firmy Elona Muska a firma Valve, ktorú vlastní Gabe Newell. Prečítajte si ich [príručku pre nových zamestnancov](https://www.valvesoftware.com/en/publications)</aside>
+</div>
 
 
- 
+<div class="md-has-sidebar" markdown>
+<main markdown>
 
-by sme vedeli zhrnúť do nasledovných bodov:
+V centre agilného vývoja je teda flexibilita kvôli lepšiemu reagovaniu na zmeny na trhu a krátke iterácie kvôli lepšiemu pochopeniu potrebám zákazníkov. Tento prístup má však aj niekoľko podstatných nedostatkov, ktoré sa musíme snažiť pri svojej práci čo najviac eliminovať.
 
-- vývoj po krátkych iteráciách (tzv. sprinty),
-- spätná väzba od zákazníka alebo užívateľa priebežne,
-- schopnosť flexibilne reagovať na zmenu požiadaviek,
-- dôraz na fungujúci kód viac než na dokumentáciu.
+- **Nedostatok dokumentácie a plánovania**, dôsledkom častých zmien a rýchlej iterácii. Vedie k nedostatku štruktúry projektu a veľmi ťažkému prijímaniu nových ľudí (onboarding)
+- Scope creep - **neustále pridávanie nových funkcionalít**. Zákazníci často sami nevedia, čo potrebuj. Bez jasnej vízie sa projekt rýchlo nafúkne
+- **Prílišná byrokracia**, ceremónia a rituály - manažment zneužíva agilné postupy na tvorbu výkonnostných metrík a deadline-ov 
+
+Väčšina z nedostatkov agilného prístupu sa dá eliminovať, ak má projekt **jasnú víziu**, **lídra** a ľudia v tíme majú **možnosť vlastniť** (anglicky own) nejakú časť projektu, teda mať možnosť rozhodovať ale aj **byť zodpovedný** sa nejakú konkrétnu časť.
+
+ </main>
+
+  <aside markdown>
+Pri vyzretejších a stabilnejších projektoch sa v súčasnosti používajú hybridné prástupy, kombinujúce agilnú metodiku s waterfall modelom. Pre nové startupové a výskumné projekty sú však správne agilné prístupy stále tou najlepšou alternatívou.
+</aside>
+</div>
+
+Programovací jazyk Python je svojou dynamickou povahou veľmi vhodný na použitie agilných prístupov. Rýchlo sa v ňom tvoria a overujú nové nápady, má výbornú podporu pre automatizované testovanie a nástroje pre priebežné nasadzovanie softvéru.
+
+V oblasti softvérového vývoja sa osvedčilo niekoľko nástrojov a techník, ktoré pomáhajú a uľahčujú používanie agilných prístupov.
+
+Prvou technikou je **Kanban**, v ktorom si úlohy rozdelíme do roznych stĺpcov, ktoré reprezentujú stav, v akom sa úloha nachádza. Tradičné stavy sú *"Backlog"*, *"TODO"*, *"In development"*, *"QA"* a *"Done"*. Ako sa na úlohe postupne pracuje, tak sa úloha presúva medzi stĺpcami. Populárnymi nástrojmi pre Kanban sú nástroje GitHub Projects, Trello alebo Jira.
+
+![Kanban](../assets/github-zenhub.png){.on-glb}
+/// caption
+Ukážka nástroja používajúceho Kanban tabuľku
+///
+
+
+
+<div class="md-has-sidebar" markdown>
+<main markdown>
+
+Asi najpopulárnejšou sadou techník pri agilnom programovaní je **SCRUM**, ktorý zavádza určité konkrétne roly a postupy v rámci tímu:
+
+- **Sprint** - mesačné alebo dvojtýždňové iterácie návrhu, vývoja a vyhodnotenia
+- **Daily Standup** - pravidelná krátka tímová porada
+- **Product Owner** - človek zodpovedný za dodržanie vízie projektu
+- **Scrum Master** - asistent, ktorý pomáha, aby v tíme fungovali agilné prístupy 
+
+Najpopulárnejším nástrojom pre podporu techník SCRUM je Jira, ktorá je však často príliš komplikovaná a práca v Jire zaberá veľa času a energie. Pre menšie tímy sú často vhodnejšie agilné nástroje platformy GitHub.
+
+V rámci nasadenia agilných prístupov v softvérovom vývoji často používajú techniky tzv. extrémneho programovania. Ide hlavne o párové programovanie, a Test Driven Development, ktorý dáva dôraz na podrobné testovanie. Prínos týchto techník je však diskutabilný, nakoľko sú pomerne náročné na čas a energiu a tak ich použitie treba dobre zvážiť.
+
+ </main>
+
+  <aside markdown>
+Oproti súčastným metodikám agilného vývoja pomocou techník SCRUM sa hlavne v malých tímoch používa tzv. Lean software development. Tento prístup sa snaží o elimináciu zbytočnej byrokracie a porád a zamerieva sa na praktickosť, rýchle prototypovanie a kontinuálne zlepšovanie.
+</aside>
+</div>
 
 ## Verziovacie systémy
 
