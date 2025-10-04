@@ -241,7 +241,7 @@ Medzi pokročilé nástroje správy vývoja softvéru patrí automatizované tes
     Prílišná byrokracia, ceremónia a rituály
     
     Scrum pojmy
-    - Sprint - 1-4 týždňove opakovanie návrhu, vývoja a vyhodnotenia
+    - Sprint - 1-4 týždňové opakovanie návrhu, vývoja a vyhodnotenia
     - Daily Standup - pravidelná krátka tímová porada
     - Product Owner - človek zodpovedný za dodržanie vízie projektu
     - Scrum Master - asistent, ktorý pomáha, aby v tíme fungovali agilné prístupy 
