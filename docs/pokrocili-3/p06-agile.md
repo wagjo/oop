@@ -1,10 +1,158 @@
-# Pokročílí 5: Správa knižníc
+# Pokročílí 6: Agilný vývoj, verziovacie systémy, správa vývoja
 
-V programovaní pod pojmom knižnica rozumieme sadu funkcií a tried, ktoré riešia nejakú špecifickú úlohu a vieme ich použiť vo svojich programoch. Python poskytuje bohatú štadardnú knižnicu, v ktorej máme k dispozícii množstvo modulov s užitočnými funkciami.
 
-Pri programovaní však nie sme odkázaní iba na štandardnú knižnicu, ale vieme si stiahnuť a použiť tisíce knižníc, ktoré vytvorili iní programátori. Python nám poskytuje rôzne nástroje na správu, používanie a aj vytváranie takýchto knižníc. Dnes sa im povenujeme bližšie.
+## Agilný vývoj
 
-## Správa distribučných balíkov pomocou `pip`
+Ak softvér vyvíja tím ľudí, dohodnú sa na spôsobe spolupráce aby si navzájom rozumeli a nevznikal chaos. Metódy a princípy pri tvorbe softvéru sa s rokmi menili. V súčasnosti je zaučívaný tzv. agilný prístup k vývoju softvéru.
+
+Agilný vývoj softvéru vznikol ako reakcia programátorov na skostnatelé metodiky v korporáciách. S touto filozofiou prišli samotní programátori a zo začiatku boli agilné princípy oslobodzujúce, prinášali viac kreativity a flexibility. Ako na agilné princípy postupne prechádzali veľké firmy a stal sa hlavným prístupom, urobil sa z toho veľký biznis a agilné metodiky sa začali príliš formalizovať, začali byť povrchnými rituálmi a prestali plniť svoju pôvodnú funkciu. Takýmto iba naoko agilným metodikám sa hovorí Agilné divadlo, anglicky Agile theater.
+
+!!! tip "Učím sa s pomocou umelej inteligencie"
+
+    [Kritický pohľad na históriu agilných metodík vývoja softvéru a aký je súčasný stav](https://grok.com/share/c2hhcmQtMg%3D%3D_b57203e2-b196-4e8c-b868-abef7380a961)
+
+Aj napriek súčasenému častému zneužívaniu agilných metodík v korporáciách a veľkých firmách majú tieto prístupy stále veľký prínos, ak sa samozrejme používajú správne. Základné princípy súčasného agilného vývoja sú vyjadrené v [Manifeste agilného vývoja softvéru](https://agilemanifesto.org/iso/sk/manifesto.html):
+
+- **Ľudia a komunikácia** sú viac než procesy a nástroje.
+- **Funkčný softvér** je viac než vyčerpávajúca dokumentácia.
+- **Spolupráca so zákazníkom** je viac než dojednávanie zmluvy.
+- **Radšej reagovať na zmenu** než sa držať plánu.
+
+Aj keď časť napravo je dôležitá,
+viac si ceníme ľavú časť.
+
+Toto manifesto je ďalej rozvinuté do [dvanástich princípov agilného vývoja](https://agilemanifesto.org/iso/sk/principles.html). Rokmi praxe sa niektoré z týchto 
+
+
+ 
+
+by sme vedeli zhrnúť do nasledovných bodov:
+
+- vývoj po krátkych iteráciách (tzv. sprinty),
+- spätná väzba od zákazníka alebo užívateľa priebežne,
+- schopnosť flexibilne reagovať na zmenu požiadaviek,
+- dôraz na fungujúci kód viac než na dokumentáciu.
+
+## Verziovacie systémy
+
+## Správa vývoja
+
+
+1. Agilný vývoj (Agile)
+
+Agile je filozofia riadenia vývoja softvéru. Python projekty sa veľmi často riadia agilne, lebo sa dobre hodí na rýchlu iteráciu a prototypovanie.
+
+Základné princípy:
+
+vývoj po krátkych iteráciách (tzv. sprinty),
+
+spätná väzba od zákazníka alebo užívateľa priebežne,
+
+schopnosť flexibilne reagovať na zmenu požiadaviek,
+
+dôraz na fungujúci kód viac než na dokumentáciu.
+
+Metodiky v rámci Agile:
+
+Scrum → rozdelenie práce na sprinty, role (Product Owner, Scrum Master, vývojársky tím),
+
+Kanban → vizualizácia práce cez tabuľku („To do → In progress → Done“),
+
+Extreme Programming (XP) → dôraz na testovanie, párové programovanie, TDD.
+
+V Pythone sa Agile prejavuje napríklad tým, že:
+
+sa rýchlo tvoria prototypy (Python má veľmi krátky čas od nápadu k funkčnému kódu),
+
+používa sa automatizované testovanie (pytest, unittest),
+
+CI/CD pipeline (GitHub Actions, GitLab CI, Jenkins) umožňuje priebežné nasadzovanie.
+
+
+Verzovacie systémy
+
+Najbežnejší je dnes Git. Python projekty sú takmer vždy verzované v Gite.
+
+Prečo je to dôležité:
+
+sledovanie histórie zmien,
+
+spolupráca viacerých programátorov,
+
+možnosť vracať sa k starým verziám,
+
+experimentovanie v branches.
+
+Platformy:
+
+GitHub, GitLab, Bitbucket → hosting repozitárov + integrácie pre CI/CD.
+
+Typické workflow v Pythone:
+
+main/master branch pre stabilný kód,
+
+feature branches pre nové funkcie,
+
+pull/merge requesty pre code review,
+
+tagy pre verzie (v1.0.0).
+
+Nástroje:
+
+git (príkazová riadok),
+
+GUI (Sourcetree, GitKraken),
+
+v IDE (PyCharm, VS Code).
+
+3. Správa vývoja projektov
+
+Správa projektu znamená, že nielen kód, ale aj organizácia vývoja je riadená.
+
+Projektové nástroje:
+
+Jira, Trello, Asana, GitHub Projects, GitLab Boards – na správu úloh a sprintov,
+
+Slack, MS Teams, Discord – komunikácia v tíme,
+
+Confluence, Notion – dokumentácia.
+
+V Pythone konkrétne:
+
+správa balíkov cez pip, pyproject.toml, poetry alebo pipenv,
+
+používanie virtuálneho prostredia (venv) aby bol projekt oddelený,
+
+dodržiavanie štandardov kvality (PEP8, pylint, black),
+
+testovanie + CI/CD pipeline (každý commit spustí testy).
+
+Release management:
+
+verzovanie cez Semantic Versioning (major.minor.patch),
+
+generovanie release notes (napr. git-changelog, release-drafter),
+
+automatizované nasadzovanie (napr. Docker + Kubernetes).
+
+🔑 Zhrnutie:
+
+Agile → spôsob práce (iteratívne, flexibilne).
+
+Git (verzovací systém) → nástroj na riadenie zdrojového kódu.
+
+Project management → nadstavba, kde sa sleduje kto, čo a kedy robí, a ako sa verzia dostane k zákazníkovi.
+
+
+## Správa verzií
+
+co to je, na co to je dobre
+
+## Instalacia git
+
+## registracia na githube
+
+
 
 `pip` je najpopulárnejší nástroj na spravovanie knižníc v Pythone. Tento nástroj sa nainštaluje automaticky spolu s Pythonom, preto ho má každý používateľ Pythonu k dispozícii.
 

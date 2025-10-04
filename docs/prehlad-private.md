@@ -183,9 +183,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p06-git">Git</a> (<a href="../assets/p06w.pdf">pdf</a>)
+<a href="../pokrocili-3/p06-git">Agilný vývoj</a> (<a href="../assets/p06w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Agilný vývoj</li>
+<li>Verziovacie systémy</li>
+<li>Správa vývoja</li>
 </ul>
 </td>
 </tr>
@@ -205,7 +207,7 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p07-">x</a> (<a href="../assets/p07w.pdf">pdf</a>)
+<a href="../pokrocili-3/p07-">Git</a> (<a href="../assets/p07w.pdf">pdf</a>)
 <ul>
 <li>TODO</li>
 </ul>
