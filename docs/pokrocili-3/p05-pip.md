@@ -74,6 +74,10 @@ Vytvorenie virtuálneho prostredia pomocou možnosti `Add new interpreter`
 Vytvorenie nového virtuálneho prostredia z existujúceho Pythonu
 ///
 
+!!! info "Visual Studio Code"
+
+    Ak používate Visual Studio Code, pozrite si [príručku pre prácu s virtuálnym prostredím](https://code.visualstudio.com/docs/python/environments)
+
 To, či náš projekt máme spustený vo virtuálnom prostredí si vieme overiť tak, že si v Pythone otvoríme terminál, pomocou ikonky vľavo dole, alebo pomocou kláves ++"Alt"+"F12"++. Príkazový riadok v tomto termináli musí začínať značkou virtuálneho prostredia `(.venv)`
 
 ![Vytvorenie virtuálneho prostredia v IDE PyCharm](../assets/pycharm-venv3.png){.on-glb}

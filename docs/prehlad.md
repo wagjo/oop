@@ -117,7 +117,14 @@ hide:
 <li>Modifikátory prístupu</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c04-polia">Polia, varargs</a> (<a href="../assets/c04w.pdf">pdf</a>)
+<ul>
+<li>Polia - Arrays</li>
+<li>varargs</li>
+<li>Rozdelenie kódu do viacerých tried a balíkov</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p04-moduly">Moduly</a> (<a href="../assets/p04w.pdf">pdf</a>)
 <ul>
@@ -129,6 +136,18 @@ hide:
 </tr>
 <tr>
 <td width=10%>5</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
+<tr>
+<td width=10%>6</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
+<tr>
+<td width=10%>6</td>
 <td width=30%>TODO</td>
 <td width=30%>TODO</td>
 <td width=30%>TODO</td>
