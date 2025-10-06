@@ -183,7 +183,7 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p06-git">Agilný vývoj</a> (<a href="../assets/p06w.pdf">pdf</a>)
+<a href="../pokrocili-3/p06-agile">Agilný vývoj</a> (<a href="../assets/p06w.pdf">pdf</a>)
 <ul>
 <li>Agilný vývoj</li>
 <li>Verziovacie systémy</li>

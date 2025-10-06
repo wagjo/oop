@@ -136,24 +136,37 @@ hide:
 </tr>
 <tr>
 <td width=10%>5</td>
-<td width=30%>TODO</td>
-<td width=30%>TODO</td>
-<td width=30%>TODO</td>
-</tr>
-<tr>
-<td width=10%>6</td>
-<td width=30%>TODO</td>
-<td width=30%>TODO</td>
-<td width=30%>TODO</td>
-</tr>
-<tr>
-<td width=10%>6</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../teoria-3/t05-vynimky">Výnimky</a> (<a href="../assets/t05w.pdf">pdf</a>)
+<ul>
+<li>Správa chýb</li>
+<li>Výnimky</li>
+</ul>
+</td>
 <td width=30%>TODO</td>
 <td width=30%>TODO</td>
 </tr>
 <tr>
 <td width=10%>6</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p06-agile">Agilný vývoj</a> (<a href="../assets/p06w.pdf">pdf</a>)
+<ul>
+<li>Agilný vývoj</li>
+<li>Verziovacie systémy</li>
+<li>Správa vývoja</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td width=10%>7</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
+<tr>
+<td width=10%>8</td>
 <td width=30%>TODO</td>
 <td width=30%>TODO</td>
 <td width=30%>TODO</td>
