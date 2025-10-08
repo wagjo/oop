@@ -207,9 +207,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p07-">Git</a> (<a href="../assets/p07w.pdf">pdf</a>)
+<a href="../pokrocili-3/p07-git">Git</a> (<a href="../assets/p07w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Git repozitár</li>
+<li>Working tree a index/staging area</li>
+<li>Zápis zmien do repozitára</li>
+<li>Vetvy zmien</li>
 </ul>
 </td>
 </tr>
