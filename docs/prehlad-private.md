@@ -195,13 +195,16 @@ hide:
 <tr >
 <td width=10%>7</td>
 <td width=30%>
-<a href="../teoria-3/t07-">Metódy</a> (<a href="../assets/t07w.pdf">pdf</a>)
+<a href="../teoria-3/t07-metody">Metódy</a> (<a href="../assets/t07w.pdf">pdf</a>)
 <ul>
-<li>Metódy</li>
+<li>Statické a inštančné metódy</li>
+<li>Getter a Setter metódy</li>
+<li>Preťaženie metód</li>
+<li>Továrenské metódy</li>
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c07-">Metody</a> (<a href="../assets/c07w.pdf">pdf</a>)
+<a href="../cvicenie-3/c07-metody">Metódy</a> (<a href="../assets/c07w.pdf">pdf</a>)
 <ul>
 <li>TODO</li>
 </ul>

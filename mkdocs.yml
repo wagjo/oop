@@ -12,6 +12,7 @@ nav:
     - 4 - Trieda, balíky: 'teoria-3/t04-trieda.md'
     - 5 - Výnimky: 'teoria-3/t05-vynimky.md'    
     #- 6 - Operátory: 'teoria-3/t06-operatory.md'    
+    #- 7 - Metódy: 'teoria-3/t07-metódy.md'    
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
     - 2 - Prvý Java program: 'cvicenie-3/c02-hello.md'
