@@ -258,7 +258,7 @@ Názvy továrenských metód zvyknú byť `getInstance`, `newInstance`, `from`, 
         }
 
         // továrenská metóda
-        public Obdlznik createNaSirku(int a, int b) {
+        public static Obdlznik createNaSirku(int a, int b) {
             if (a > b) 
                 new Obdlznik(a, b); 
             else
@@ -330,7 +330,7 @@ Uvedieme si zopár príkladov metód z knižníc Java API
     - Definícia viacerých metód v rovnakým názvom sa nazýva preťaženie, anglicky overloading
     - Na návratový typ sa neprihliada
 
-    Getter metódy slúžia na zistenie hodnoty nejakého atribátu v objekte
+    Getter metódy slúžia na zistenie hodnoty nejakého atribútu v objekte
     Setter metódy slúžia na zmenu hodnoty v objekte
 
     Továrenské metódy - factory methods
