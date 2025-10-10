@@ -20,7 +20,7 @@ Návrh riešenia:
 - Vytvoríme 3 triedy
 - Trieda `Stav` bude spravovať stav hry: hádané slovo, uhádnuté znaky a počet ostávajúcich pokusov
 - Trieda `TextoveUI` bude mať na starosť užívateľské rozhranie: výpis na obrazovku a načítavanie z klávesnice
-- Trieda `Hra` bude mať hlavkú logiku hry a vstupný bod programu
+- Trieda `Hra` bude mať hlavnú logiku hry a vstupný bod programu
 
 !!! example "Úloha 7.1: Nový projekt"
 
@@ -152,7 +152,7 @@ Ostáva nám napísať zopár metód na vypísanie rôznych informácií na obra
     Vytvorte nasledovné inštančné metódy v triede `TextoveUI`.
 
     - `public void vypisIntro()` - vypíše text "Vitaj v hre Obesenec!". Text môžete pekne orámovať, ak chcete.
-    - `public void vypisStavHry(Stav stav)` - do smostatného riadku vypíše "Slovo: " a za ním vypíše zatiaľ uhádnuté slovo `stav.getSlovo()`
+    - `public void vypisStavHry(Stav stav)` - do samostatného riadku vypíše "Slovo: " a za ním vypíše zatiaľ uhádnuté slovo `stav.getSlovo()`
     - `public void vypisVysledokHry(Stav stav)` - Ak je `stav.isVyhra()` `true`, vypíše "Vyhral si!". V opačnom prípade vypíše "Prehral si, hľadané slovo bolo: " a vypíše hľadané slovo.
     - `public void vypisVysledokHadania(char tip, boolean spravnyTip)` - ak je vstupny argument `spravnyTip` true, vypíše "Uhadol si dalsi znak!". V opačnom prípade vypíše "Znak %c sa v hľadanom slove nenachádza", pričom vypíše znak `tip`.
 
