@@ -206,7 +206,10 @@ hide:
 <td width=30%>
 <a href="../cvicenie-3/c07-metody">Metódy</a> (<a href="../assets/c07w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Hra Hangman</li>
+<li>Statické a inštančné metódy</li>
+<li>Getter a Setter metódy</li>
+<li>UML diagram tried</li>
 </ul>
 </td>
 <td width=30%>
