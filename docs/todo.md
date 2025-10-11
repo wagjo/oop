@@ -1,31 +1,16 @@
 # TODO OPG
 
-## T06
 
-- operatory
-- ++
-- precedencia
-- logicke vs bitove
-- instanceof
+## C08
 
-## C06
-
-- Stringy
-
-## T07
-
-- pretazenie metod
-- getters setters
-- factory metody
-- staticke versus normalne metody
-
-## C07
-
+- konstuktory
 - metody
 - viditelnost premennych, lokalne, globalne
 
 ## T08
 
+- trieda v java api ktora nema public konstruktory, LocalDate???
+- konstruktory
 - inicializacia objektu
 - inicializacia cez referenciu/pomocou metody/pomocou konstruktora
 - konstruktory, pretazovanie
@@ -51,7 +36,6 @@
 - konzola: javac, java; 
 - javac, pustanie cez konzolu, -cp -m ...
 - jar, maven
-- this
 - vlakna
 - diagram aktivit
 - Co je JRE
