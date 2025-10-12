@@ -228,7 +228,9 @@ hide:
 <td width=30%>
 <a href="../teoria-3/t08-">Inicializacia a konstruktory</a> (<a href="../assets/t08w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Inicializácia objektu</li>
+<li>Konštruktory</li>
+<li>Statická inicializácia</li>
 </ul>
 </td>
 <td width=30%>

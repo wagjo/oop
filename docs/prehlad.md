@@ -143,7 +143,15 @@ hide:
 <li>Výnimky</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c05-wrapper">Obalené typy</a> (<a href="../assets/c05w.pdf">pdf</a>)
+<ul>
+<li>Literály</li>
+<li>Null</li>
+<li>Typová konverzia</li>
+<li>Obalené typy</li>
+</ul>
+</td>
 <td width=30%>TODO</td>
 </tr>
 <tr>

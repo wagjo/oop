@@ -1,26 +1,9 @@
 # Teória 8: Inicializácia objektov, konštruktory
 
-- trieda v java api ktora nema public konstruktory, LocalDate???
-- konstruktory
-- inicializacia objektu
-- inicializacia cez referenciu/pomocou metody/pomocou konstruktora
-- konstruktory, pretazovanie
-
-- defaultny konstruktor, nullary/no argument konstruktor, parametrizovany konstruktor, copy konstruktor
-- inicializacia defaultna, ak neuvediem inac
-- inicializacia v deklaracii atributu - field initializers
-- priame vytvorenie objektu vzdy iba cez new. new vykona alokaciu a potom inicializaciu
-
-Konštruktor je špeciálna metóda volaná pri new, s menom triedy a bez návratového typu.
-- delegovanie cez this(a, c, c)
-
-- instancny inicializacny blok
-- staticky inicializator
-
 
 ## Proces vytvárania objektu
 
-Priame vytvorenie objektu sa realizuje vždy pomocou operátora `new`. Ak aj máme nejakú továrenskp metódu, ktorá nám vracia nový objekt, vnútri tej továrenskej metódy je niekde ukryté vytvorenie objektu pomocou `new`. Vytváranie objektu sa skladá z dvoj častí:
+Priame vytvorenie objektu sa realizuje vždy pomocou operátora `new`. Ak aj máme nejakú továrenskú metódu, ktorá nám vracia nový objekt, vnútri továrenskej metódy je niekde ukryté vytvorenie objektu pomocou `new`. Vytváranie objektu sa skladá z dvoch častí:
 
 - Alokácia pamäti pre objekt
 - Inicializácia objektu
@@ -30,17 +13,28 @@ Alokáciu pamäti má na starosti JVM a nemusíme sa o to starať. Inicializáci
 
 ## Inicializácia objektu
 
-Cieľom inicilizácie objektu je nastaviť všetky jeho atribúty na správne hodnoty. Inicializáciu môžeme previesť rôznymi spôsobmi.
+Cieľom inicilizácie objektu je nastaviť všetky jeho atribúty na správne hodnoty. Inicializácia sa vykoná vždy pri vytváraní nového objektu pomocou operátora `new`. Inicializáciu môžeme previesť rôznymi spôsobmi.
 
 ### Priama inicializácia atribútov
 
-Inicializovať atribúty triedy môžeme priamo pri ich deklarácii.
+<div class="md-has-sidebar" markdown>
+<main markdown>
 
-=== "Priama inicializácia atribútov triedy"
+Inicializovať atribúty objektu môžeme priamo pri ich deklarácii. Je to podobné, ako sa inicializujú premenné v metódach.
+
+ </main>
+
+  <aside markdown>
+Atribúty sa inicializujú v poradí, v akom sú deklarované v kóde.
+</aside>
+</div>
+
+
+=== "Priama inicializácia atribútov objektu"
 
     ```java
     public class Rat {
-        private int health = 100;
+        private int health = 100; // priama inicializácia
 
         public int getHealth() {
             return health;
@@ -53,313 +47,280 @@ Inicializovať atribúty triedy môžeme priamo pri ich deklarácii.
 
     ```
 
-Atribúty sa inicializujú v poradí, v akom sú deklarované v kóde.
+### Inicializačný blok
 
-V dnešnej časti si vysvetlíme, aké máme v Jave rôzne druhy metód.
+<div class="md-has-sidebar" markdown>
+<main markdown>
 
-## Základná syntax metódy
+Inicializačný blok, alebo tiež nazývaný inštančný inicializátor, je blok kódu umiestnený priamo do kódu triedy, mimo metódu. Kód v takomto inicializačnom bloku sa vykoná vždy pri vytváraní novej triedy.
 
-Metóda je funkcia, ktorá patrí určitej triede. Môže prijímať vstupy (argumenty), môže vrátiť výsledok (return value), a môže byť volaná z iných častí programu. Spolu s triedami sú metódy základom modularity a znovupoužiteľnosti kódu.
+ </main>
 
-Metóda sa vždy píše vnútri konkrétnej triedy a má nasledovnú syntax:
+  <aside markdown>
+V triede môžeme mať inicializačných blokov viac. Vykonajú sa všetky, v poradí, v akom sú v kóde napísané.
+</aside>
+</div>
 
-=== "Syntax metódy"
 
-    ```
-    <modifikátor> <návratovýTyp> <nazovMetody>(<argumenty>) <throws> {
-        // telo metódy
-        return value; // ak metóda nie je void
-    }
-    ```
-
-=== "Príklad metódy"
+=== "Inicializačný blok"
 
     ```java
-    public int add(int a, int b) {
-        return a + b;
+    public class Rat {
+        private int health;
+        private double damage;
+
+        // inštančný inicializátor
+        {
+            health = 100;
+            damage = 0.5;
+        }
+
+        public int getHealth() {
+            return health;
+        } 
+
+        public double getDamage() {
+            return damage;
+        } 
     }
+
+    // použitie
+    Rat potkan = new Rat();
+    assert potkan.getHealth() == 100 : "Mlady potkan ma mat zdravie 100";
+    assert potkan.getDamage() > 0 : "Potkan má nenulový damage";
     ```
 
-## Statické metódy
+### Konštruktor
 
-Statické metódy na volanie nepotrebujú konkrétny objekt. Statické metódy patria triede v ktorej sú definované a vedia pristupovať iba k statickým atribútom triedy. Typickým príkladom statickej metódy je vstupný bod programu `public static void main(String[] args)`.
+Ako posledný krok inicializácie sa zavolá konštruktor triedy. Konštruktor je špeciálna metóda, ktorá **nemá návratový typ a má rovnaký názov ako jeho trieda**.
 
-Statické metódy sa volajú cez názov triedy, napríklad `Arrays.sort()`. Ak statickú metódu voláme vnútri tej istej triedy, stačí uviesť jej názov.
-
-Hlavné využitie statických metód sú **pomocné funkcionality** (utilitky), **factory metódy** (továrenské metódy) a **vstupný bod programu** (main).
-
-Príklady statických metód:
-
-- `Math.random()`
-- `Math.max()`
-- `Arrays.fill()`
-- `Integer.toString()`
-- `Objects.requireNonNull()`
-
-=== "Trieda so statickými metódami"
+=== "Inicializácia pomocou konštruktora"
 
     ```java
-    public class Vypocty {
-
-        public static int sucetInt(int a, int b) {
-            return a + b;
-        }
-
-        public static double priemer(double... cisla) {
-            double suma = 0;
-            for (double n : cisla) suma += n;
-            return suma / cisla.length;
-        }
-
-        public static int faktorial(int n) {
-            if (n <= 1)
-                return 1;
-            return n * faktorial(n - 1);
-        }
-
-        public static void main(String[] args) {
-            int n = 10;
-            System.out.print("Faktorial cisla %d je %d", n, faktorial(n));
-        }
-
-    }
-    ```
-
-## Inštančné metódy
-
-Najbežnejšie metódy v Jave sú inštančné.
-Inštančné metódy už pracujú s objektom, preto ho musíme pri volaní metódy uviesť. Tieto metódy majú prístup k všetkým atribútom svojej triedy.
-
-=== "Trieda s inštančnými metódami"
-
-    ```java
-    public class Obdlznik {
-        private int a;
-        private int b;
+    public class Rat {
+        private int health;
+        private double damage;
 
         // konštruktor
-        public Obdlznik(int a, int b) {
-            this.a = a;
-            this.b = b;
+        public Rat() {
+            health = 100;
+            damage = 0.5;
         }
 
-        // inštančná metóda
-        public int obvod() {
-            return 2 * (this.a + this.b);
+        public int getHealth() {
+            return health;
+        } 
+
+        public double getDamage() {
+            return damage;
+        } 
+    }
+
+    // použitie
+    Rat potkan = new Rat();
+    assert potkan.getHealth() == 100 : "Mlady potkan ma mat zdravie 100";
+    assert potkan.getDamage() > 0 : "Potkan má nenulový damage";
+    ```
+
+**Konštruktor sa zavolá vždy**. Konštruktorov môžeme mať viac, vyberie a zavolá sa ten, ktorý sa najlepšie hodí argumentom, ktoré boli uvedené pri volaní operátora `new`.
+
+V triede nemusíme mať napísaný žiaden konštruktor. Ak v kóde triedy nie je žiaden konštruktor, Java automaticky vytvorí konštruktor bez parametrov.
+
+### Pravidlá inicializácie
+
+Ak nejaký z atribútov triedy neinicializujeme, Java ho inicializuje automaticky na defaultnú hodnotu `0`, `false` alebo `null`, podľa toho o aký typ atribútu ide. Inicializácia atribútu v kóde teda nie je povinná a nemusíme ju tam mať uvedenú.
+
+Čo sa stane, ak máme v triede viacero druhov inicializácie? Pri vytváraní objektu sa postupne vykonajú všetky dostupné inicializácie v tomto poradí:
+
+1. Ako prvá sa vykoná priama inicializácia atribútov
+1. Následne sa vykonajú všetky inicializačné bloky, v poradí, v akom sú v kóde triedy napísané
+1. Zavolá sa konštruktor a vykoná sa jeho kód. O tom, ktorý konštruktor sa zavolá rozhodujú argumenty, ktoré volajúci zadal pri volaní operátora `new`
+
+## Konštruktory
+
+<div class="md-has-sidebar" markdown>
+<main markdown>
+
+Ako sme písali, konštruktor (anglicky construcvtor) je špeciálna metóda, ktorá sa zavolá pri vytváraní objektu. Konštruktor sa dá preťažiť, teda konštruktorov môžeme mať v triede viacero. Zavolá sa vždy ten, ktorý vyhovuje argumentom zadaným pri vytváraní objektu.
+
+Podľa typu argumentov rozdeľujeme konštruktory nasledovne:
+
+- *defaultný konštruktor* - nemá žiadne argumenty, volá sa tiež nulárny konštruktor (nullary constructor)
+- *kopírovací konštruktor* - má jeden argument, typu svojej triedy. Používa sa na kopírovanie objektu
+- *parametrizovaný konštruktor* - má jeden alebo viac argumentov
+
+**Ak v kóde triedy nemáme napísaný žiaden konštruktor, Java automaticky vygeneruje defaultný konštruktor**. 
+
+!!! tip "Učím sa s pomocou umelej inteligencie"
+
+    Som študent strednej školy, učím sa programovanie v Jave. [Vysvetli mi konštruktory, uveď typy, použitie, príklady a na čo si pri písaní konštruktorov dávať pozor.](https://grok.com/share/c2hhcmQtMg%3D%3D_37d89c9b-333b-4159-8600-c8d54c8ccaec)
+
+
+ </main>
+
+  <aside markdown>
+Konštruktor môže tiež zavolať iný konštruktor, pomocou špeciálnej metódy `this()`. Musí to však byť prvý príkaz v konštruktore.
+</aside>
+</div>
+
+
+=== "Preťaženie konštruktora"
+
+    ```java
+    public class Rat {
+        private int health;
+        private double damage;
+
+        // defaultný konštruktor
+        public Rat() {
+            health = 100;
+            damage = 0.5;
         }
 
-        // inštančná metóda
-        public String toString() {
-            return String.format("%dx%d", a, b);
+        // kopírovací konštruktor
+        public Rat(Rat other) {
+            health = other.health;
+            damage = other.damage;
         }
 
-        // inštančná metóda
-        public boolean equals(Obdlznik other) {
-            return this.a == other.a && this.b == other.b;
+        // parametrizovaný konštruktor
+        public Rat(double damage) {
+            health = 100;
+            this.damage = damage;
+        }
+
+        public int getHealth() {
+            return health;
+        } 
+
+        public double getDamage() {
+            return damage;
+        } 
+    }
+
+    // použitie
+    Rat potkan1 = new Rat();
+    Rat potkan2 = new Rat(2);
+    Rat potkan3 = new Rat(potkan2);
+    ```
+
+### Modifikátory prístupu
+
+<div class="md-has-sidebar" markdown>
+<main markdown>
+
+Podobne ako metódy tak aj konštruktory majú svoj modifikátor prístupu. Sú prípady, kedy volanie konštruktora nechceme povoliť hocikomu, a vytvoríme private konštruktor. V takom prípade sa objekt nedá vytvárať priamo cez `new`, ale v triede musíme mať továrenskú metódu, ktorá nám vytvorí nový objekt.
+
+=== "Privátny konštruktor a továrenske metódy"
+
+    ```java
+    public class Rat {
+        private int health;
+        private double damage;
+
+        // privátny konštruktor
+        private Rat(double damage) {
+            health = 100;
+            this.damage = damage;
+        }
+
+        // továrenské metódy
+        public static Rat newRat() {
+            return new Rat(0.5);
+        }
+
+        public static Rat newEliteRat() {
+            return new Rat(2);
+        }
+    }
+
+    // použitie
+    Rat potkan1 = Rat.newRat();
+    Rat potkan2 = Rat.newEliteRat();
+    ```
+
+Klasickým príkladom triedy s privátnymi konštruktormi je trieda [`java.time.LocalDate`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/LocalDate.html), ktorá nemá verejné konštruktory a pri vytváraní jej objektov musíme použiť niektorú z jej továrenských metód.
+
+ </main>
+
+  <aside markdown>
+Privátne konštruktory sa používajú napríklad v prípadoch, ked chceme mať kontrolu nad tým, koľko objektov trieda môže mať, alebo chceme vrátiť skôr vytvorené objekty.
+</aside>
+</div>
+
+
+## Statická inicializácia
+
+Podobne ako môže mať trieda statické metódy, tak môže mať aj statické atribúty triedy. Používajú sa väčšinou pre definovanie konštánt, napr. trieda 
+Integer má statický atribút [`Integer.MAX_VALUE`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html#MAX_VALUE)
+
+Statické atribúty vieme inicializovať podobne ako aj klasické. Je tu však veľký rozdiel, a to ten, že statické atribúty sa inicializujú iba jeden krát a to pri prvom použití triedy. Statické atribúty vieme inicializovať dvoma spôsobmi.
+
+### Priama inicializícia statických atribútov
+
+Podobne ako klasické atribúty, aj statické atribúty vieme inicializovať pri ich delkarácii.
+
+=== "Priama inicializácia statických atribútov triedy"
+
+    ```java
+    public class Rat {
+        // priama inicializícia statického atribútu triedy
+        public static final double NORMAL_DAMAGE = 0.5;
+
+        private int health;
+        private double damage;
+
+        public Rat() {
+            health = 100;
+            this.damage = NORMAL_DAMAGE;
         }
     }
     ```
 
-Každá inštančná metóda má v sebe definovanú **špeciálnu premennú `this`**, pomocou ktorej vieme pristupovať k objektu, nad ktorým bola daná metóda zavolaná.
+### Statický inicializačný blok
 
-=== "Spôsob volania inštančných metód"
+<div class="md-has-sidebar" markdown>
+<main markdown>
 
-    ```java
-    Obdlznik obd = new Obdlznik(10, 15);
-    System.out.printf("Obdod obdlznika %s je %d", obd, obd.obvod());
-    ```
+Statický inicializačný blok, alebo tiež nazývaný statický inicializátor, je inicializátor začínajúci kľúčovým slovo `static`. Vykoná sa jeden krát pri prvom použití triedy. V statickom inicializačnom bloku nemôžeme používať atribúty objektu ani volať jeho metódy (môžeme volať iba statické)
 
-### Špeciálne inštančné metódy
-
-Existuje niekoľko metód, ktoré majú v Jave špecíálny význam a môžete ich vo svojej triede vytvoriť. V predchádzajúcom príklade sme uviedli 2 z nich, metódy `toString()` a `equals()`.
-
-Metóda `toString()` sa zavolá vždy, keď potrebujeme objekt previesť na reťazec, napríklad pri vypísaní objektu na obrazovku.
-
-```java
-// zavolá sa obd.toString() a výsledok sa vypíše
-System.out.printf("Obdlznik %s", obd); 
-```
-
-Druhá metóda, `equals()` slúži na porovnanie dvoch objektov podľa hodnoty. Ako sme si už pár krát hovorili, objekty sa neporovnávajú pomocou `==`, pretože by sme porovnali ich identitu. Porovnanie podľa hodnôt si musíme naprogramovať sami, pretože každá trieda má svoju vlastnú predstavu o tom, čo je jej hodnota.
-
-V prípade našej triedy `Obdlznik` by sme mohli povedať, že dve obdĺžniky sú rovnaké, ak sú rovnaké dĺžky ich strán. Podľa toho teda naimplementujeme aj metódu `equals()`
-
-```java
-public boolean equals(Obdlznik other) {
-    return this.a == other.a && this.b == other.b;
-}
-```
-
-Túto metódy potom vieme použit v porovnávaní objektov nasledovne:
-
-```java
-Obdlznik obd1 = new Obdlznik(10, 15);
-Obdlznik obd2 = new Obdlznik(10, 15);
-Obdlznik obd3 = new Obdlznik(20, 5);
-
-if(obd1.equals(obd2)) {
-    System.out.println("Obdĺžniky obd1 a obd2 sú rovnaké.");
-}
-if(obd2.equals(obd3)) {
-    // tento kód sa nevykoná
-    System.out.println("Obdĺžniky obd2 a obd3 sú rovnaké.");
-}
-```
-
-## Preťaženie metód
-
-V Jave môžeme mať viacero metód s rovnakým menom. Musia sa však líšiť v type alebo počte argumentov. Týmto spôsobom vieme volať rôzne verzie metód podľa toho, koľko alebo aké argumenty v metóde zašleme. Takáto definícia viacerých metód v rovnakým názvom sa nazýva **preťaženie**, anglicky **overloading**
-
-Preťažené metódy sa musia vzájomne líšiť počtom argumentov alebo typmi argumentov. Na návratový typ sa neprihliada, teda ak má preťažená metóda iba iný návratový typ, je to chyba a program sa neskompiluje.
-
-=== "Príklad preťaženia statických metód"
+=== "Statický inicializačný blok"
 
     ```java
-    class Kalukacka {
-        public static int add(int a, int b) {
-            return a + b;
+    public class Rat {
+        public static final double NORMAL_DAMAGE;
+        public static final double ELITE_DAMAGE;
+
+        private int health;
+        private double damage;
+
+        // Statický inicializačný blok
+        static {
+            NORMAL_DAMAGE = 0.5;
+            ELITE_DAMAGE = 2;
         }
 
-        public static double add(double a, double b) {
-            return a + b;
-        }
-
-        public static int add(int a, int b, int c) {
-            return a + b + c;
+        public Rat() {
+            health = 100;
+            this.damage = NORMAL_DAMAGE;
         }
     }
     ```
 
-## Getter a Setter metódy
+ </main>
 
-Pri návrhu tried je v drvivej väčšine prípadov zlým dizajnom, ak atribúty triedy sprístupníme hocikomu, teda ak im dáme modifikátor `public`. Takmer stále je najlepšie mať všetky atribúty súkromné, teda dať im modifikátor `private`.
+  <aside markdown>
+Podobne ako pri inštančných inicializátoroch, aj statické inicializátory sa vykonajú všetky, v poradí, v akom sú v kóde napísané.
+</aside>
+</div>
 
-Počiatočné hodnoty atribútov triedy sa nastavujú v konštruktori (viac o konštruktoroch nabudúce). Ak však máme existujúci objekt a chceme zistiť hodnotu niektorého z jeho atribútov, priamo to nepôjde a musíme v takom objekte vytvoriť inštančné metódy, ktoré vrátia hodnoty atribútov. Takýmto metódam sa hovorí getter metódy, pretože sa ich názov začína slovkom `get`.
-
-Podobne aj v prípade, ak chceme dovoliť, aby sa dali niektoré z atribútov meniť, je potrebné vytvoriť na to určené metódy. Tie sa zvyknú volať setter metódy, pretože ich názov začína slovom `set`.
-
-=== "Príklad getter a setter metód"
-
-    ```java
-    public class Obdlznik {
-        private int a;
-        private int b;
-
-        // konštruktor
-        public Obdlznik(int a, int b) {
-            this.a = a;
-            this.b = b;
-        }
-
-        // getter metóda
-        public int getA() {
-            return a;
-        }
-
-        // getter metóda
-        public int getB() {
-            return b;
-        }
-
-        // setter metóda
-        public void setA(int a) {
-            if (a <= 0) {
-                throw new IllegalArgumentException("Hodnota musí byť kladná");
-            }
-            this.a = a;
-        }
-
-        // setter metóda
-        public void setB(int b) {
-            if (b <= 0) {
-                throw new IllegalArgumentException("Hodnota musí byť kladná");
-            }
-            this.b = b;
-        }
-    }
-    ```
-
-Pomocou getter a setter metód oddelíme vnútornú implementáciu triedy (aké atribúty sme použili) od spôsobu, aké operácie povolíme nad objektom vytvárať. V getter a setter metódach môžeme mať dodatočnú logiku, napríklad konverzie hodnôt alebo kontroly argumentov. Tým vieme zaručiť lepšiu konzistenciu stavu objektu. Ak by sme zverejnili atribúty pre všetkých, nemáme kontrolu nad tým, aké zmeny tam iný môžu urobiť.
-
-Takéto skrývanie stavu vo vnútri triedy sa v programovaní volá **enkapsulácia**. Detailne sa jej budeme venovať na inej hodine.
-
-## Továrenské metódy
-
-Niekedy je vhodné dať užívateľovi našej triedy možnosť vytvoriť objekty triedy aj pomocou statických metód. Statické metódy, ktoré vracajú inštanciu svojej triedy sa volajú **továrenské metódy**, anglicky **factory methods**.
-
-Továrenské metódy oddeľujú proces vytvárania objektov od kódu, ktorý ich používa.
-
-Továrenské metódy nemusia vždy vytvoriť objekt pomocou operátora new, niekedy vrátia už existujúci predpripravený objekt, alebo iným spôsobom získaju inštanciu triedy. Továrenské metódy s používajú kvôli väčšej flexibilite, efektivite a lepším možnostiam riadiť priebeh tvorby objektu.
-
-Príklady továrenských metód v knižniciach Java:
-
-- `LocalDate.now()` vytvorí nový objekt s aktuálnym dátumom
-- `URI.create()` vytvorí URI identifikátor
-- `Integer.valueOf()` vytvorí číslo z reťazca znakov
-
-Názvy továrenských metód zvyknú byť `getInstance`, `newInstance`, `from`, `valueOf`, `create`, `copyOf` a podobne.
-
-=== "Príklad továrenskej metódy"
-
-    ```java
-    public class Obdlznik {
-        private int a;
-        private int b;
-
-        // konštruktor
-        public Obdlznik(int a, int b) {
-            this.a = a;
-            this.b = b;
-        }
-
-        // továrenská metóda
-        public static Obdlznik createNaSirku(int a, int b) {
-            if (a > b) 
-                new Obdlznik(a, b); 
-            else
-                new Obdlznik(b, a); 
-        }
-    }
-    ```
-
-## Metódy v knižniciach Java API
-
-Uvedieme si zopár príkladov metód z knižníc Java API
-
-- [`java.net.URL`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/URL.html), trieda pre reprezentáciu URL odkazov, obsahujúca množstvo getter metód
-- [`java.lang.String`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html) obsahuje množstvo továrenských metód
-- [`java.util.Arrays`](https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html) obsahuje statické metódy, utility pre prácu s poliami
-- [`java.time.LocalDate`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/LocalDate.html) obsahuje getter aj továrenské metódy
 
 ## Zhrnutie teórie
 
-- [x] Metóda je funkcia patriaca určitej triede
 - [x] Statické metódy
     * [ ] Nepatria objektu ale triede ako takej
     * [ ] Volajú sa cez názov triedy, napríklad `Arrays.sort()`
     * [ ] Hlavné využitie statických metód sú pomocné funkcionality (utilitky), factory metódy (továrenské metódy) a vstupný bod programu (main)
-- [x] Inštančné metódy
-    * [ ] Najbežnejšie metódy v Jave
-    * [ ] Inštančné metódy už pracujú s objektom, preto ho musíme pri volaní metódy uviesť.
-    * [ ] Tieto metódy majú prístup k všetkým atribútom svojej triedy.
-    * [ ] Každá inštančná metóda má v sebe definovanú špeciálnu premennú `this`
-- [x] Špeciálne inštančné metódy
-    * [ ] `toString()` sa zavolá vždy, keď potrebujeme objekt previesť na reťazec, napríklad pri vypísaní objektu na obrazovku.
-    * [ ] `equals()` slúži na porovnanie dvoch objektov podľa hodnoty
-- [x] Preťaženie metód
-    * [ ] V Jave môžeme mať viacero metód s rovnakým menom
-    * [ ] Preťažené metódy sa musia vzájomne líšiť počtom argumentov alebo typmi argumentov
-    * [ ] Definícia viacerých metód v rovnakým názvom sa nazýva preťaženie, anglicky *overloading*
-    * [ ] Na návratový typ sa neprihliada
-- [x] Getter a Setter metódy
-    * [ ] Najlepšie je mať všetky atribúty triedy súkromné (private) a ovládať ich cez metódy
-    * [ ] Getter metódy slúžia na zistenie hodnoty nejakého atribátu v objekte
-    * [ ] Setter metódy slúžia na zmenu hodnoty v objekte
-- [x] Továrenské metódy
-    * [ ] Statické metódy, ktoré vracajú inštanciu svojej triedy sa volajú továrenské metódy, anglicky factory methods.
-    * [ ] Továrenské metódy oddeľujú proces vytvárania objektov od kódu, ktorý ich používa
-    * [ ] Továrenské metódy s používajú kvôli väčšej flexibilite, efektivite a lepším možnostiam riadiť priebeh tvorby objektu.
-    * [ ] Názvy továrenských metód zvyknú byť `getInstance`, `newInstance`, `from`, `valueOf`, `create`, `copyOf` a podobne.
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
