@@ -5,7 +5,7 @@
 
 - konstuktory
 - metody
-- viditelnost premennych, lokalne, globalne
+- viditelnost premennych, lokalne, globalne, overwriting, scope
 
 ## T08
 
@@ -65,6 +65,10 @@
 ## P07
 
 ## P08
+
+- github
+- push pull
+- github classroom
 
 ## P09
 

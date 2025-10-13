@@ -15,7 +15,7 @@
 - Výrazy a operátory - T06, T03
 - Príkazy riadenia toku programu - C03
 - Objekt a trieda - T04, T03
-- Metódy - C02, C04, T07, T08
+- Metódy - C02, C04, T07, T08, C07, C08
 
 ## 7+7 Princípy objektovo orientovaného programovania (OOP)
 

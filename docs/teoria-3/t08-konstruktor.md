@@ -209,7 +209,7 @@ Konštruktor môže tiež zavolať iný konštruktor, pomocou špeciálnej metó
 <div class="md-has-sidebar" markdown>
 <main markdown>
 
-Podobne ako metódy tak aj konštruktory majú svoj modifikátor prístupu. Sú prípady, kedy volanie konštruktora nechceme povoliť hocikomu, a vytvoríme private konštruktor. V takom prípade sa objekt nedá vytvárať priamo cez `new`, ale v triede musíme mať továrenskú metódu, ktorá nám vytvorí nový objekt.
+Podobne ako metódy tak aj konštruktory majú svoj modifikátor prístupu. Sú prípady, kedy volanie konštruktora nechceme povoliť hocikomu a vytvoríme private konštruktor. V takom prípade sa objekt nedá vytvárať priamo cez `new`, ale v triede musíme mať továrenskú metódu, ktorá nám vytvorí nový objekt.
 
 === "Privátny konštruktor a továrenske metódy"
 
@@ -317,41 +317,56 @@ Podobne ako pri inštančných inicializátoroch, aj statické inicializátory s
 
 ## Zhrnutie teórie
 
-- [x] Statické metódy
-    * [ ] Nepatria objektu ale triede ako takej
-    * [ ] Volajú sa cez názov triedy, napríklad `Arrays.sort()`
-    * [ ] Hlavné využitie statických metód sú pomocné funkcionality (utilitky), factory metódy (továrenské metódy) a vstupný bod programu (main)
+- [x] Proces vytvárania objektu
+    * [ ] Nový objekt vytváram pomocou operátora `new`
+    * [ ] Alokácia pamäti
+    * [ ] Inicializácia objektu
+- [x] Inicializácia objektu, v nasledovnom poradí
+    * [ ] Priama inicializácia atribútov (pri ich deklarácii)
+    * [ ] Inicializačný blok (môžem ich mať viac) - inštančný inicializátor
+    * [ ] Konštruktor, volá sa vždy. (Ak trieda konštruktor nemá, vytvorí sa automaticky)
+    * [ ] Ak atribút nie je inicializovaný, inicializuje sa automaticky na `0`, `null` alebo `false`
+- [x] Konštruktor
+    * [ ] Konštruktor je špeciálna metóda, ktorá nemá návratový typ a má rovnaký názov ako jeho trieda
+    * [ ] Defaultný konštruktor (nulárny konštruktor) - nemá žiadne argumenty
+    * [ ] Kopírovací konštruktor - má jeden argument, typu svojej triedy
+    * [ ] Parametrizovaný konštrutor - má jeden alebo viac argumentov
+    * [ ] Ak v kóde triedy nemáme napísaný žiaden konštruktor, Java automaticky vygeneruje defaultný konštruktor
+    * [ ] Konštruktor má modifikátor prístupu. Ak je `private`, vytvorenie objektu musí prebehnúť vnútri továrenskej metódy
+- [x] Statická inicializácia triedy, v nasledovnom poradí
+    * [ ] Priama inicializácia statických atribútov
+    * [ ] Statický inicializačný blok (môžem ich mať viac) - statický inicializátor
+    * [ ] Statická inicializácia inicializuje statické atribúty, jeden krát, pri prvom použití triedy.
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    METÓDY
+    VYTVÁRANIE OBJEKTU
 
-    Statické metódy
-    - Nepatria objektu ale triede ako takej
-    - Volajú sa cez názov triedy, napríklad Arrays.sort()
-    - Využitie: utilitky, factory metódy a vstupný bod programu
+    Objekt vytváram pomocou operátora new, ktorý vykoná:
+    1. Alokáciu pamäte
+    2. Inicializáciu objektu
 
-    Inštančné metódy
-    - pracujú s objektom, volanie obj.metoda()
-    - majú prístup k všetkým atribútom svojej triedy
-    - majú v sebe definovanú špeciálnu premennú this, pomocou ktorej pristupujeme k objektu
+    Inicializácia objektu sa vykoná v tomto poradí:
+    1. Priama inicializácia atribútov
+    2. Inicializačný blok - inštančný inicializátor
+    3. Konštruktor, podľa toho aké argumenty má new
 
-    Špeciálne inštančné metódy toString() a equals()
+    Ak nie je atribút inicializovaný, Java ho inicializuje automaticky na 0, null alebo false
 
-    Preťaženie metód
-    - Môžeme mať viacero metód s rovnakým menom
-    - Preťažené metódy sa musia vzájomne líšiť počtom argumentov alebo typmi argumentov
-    - Definícia viacerých metód v rovnakým názvom sa nazýva preťaženie, anglicky overloading
-    - Na návratový typ sa neprihliada
+    Konštruktor je špeciálna metóda, ktorá nemá návratový typ a má rovnaký názov ako jeho trieda
+    Defaultný konštruktor (nulárny konštruktor) - bez argumentov
+    Kopírovací konštruktor - má jeden argument, typu svojej triedy
+    Parametrizovaný konštrutor - má jeden alebo viac argumentov
+    Ak v kóde triedy nemáme napísaný žiaden konštruktor, vytvorí sa automaticky defaultný konštruktor
+    Konštruktor má modifikátor prístupu. Ak je private, musíme mať továrenskú metódu
 
-    Getter metódy slúžia na zistenie hodnoty nejakého atribútu v objekte
-    Setter metódy slúžia na zmenu hodnoty v objekte
+    Statická inicializácia triedy - inicializuje statické atribúty, v tomto poradí:
+    1. Priama inicializácia statických atribútov
+    2. Statický inicializačný blok
 
-    Továrenské metódy - factory methods
-    Sú to statické metódy, ktoré vracajú inštanciu svojej triedy
-    Továrenské metódy oddeľujú proces vytvárania objektov od kódu, ktorý ich používa
+    Statická inicializácia sa vykoná jeden krát, pri prvom použití triedy.
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
@@ -362,9 +377,10 @@ Podobne ako pri inštančných inicializátoroch, aj statické inicializátory s
 
     Okruhy otázok na test:
 
-    - Rozdiel medzi statickými a inštančnými metódami
-    - Ako voláme statické a ako voláme inštančné metódy
-    - Na čo slúži špeciálna premenná this
-    - Na čo máme Getter a Setter metódy
-    - Čo je preťaženie metód, aké sú podmienky pre preťažené metódy
-    - Čo sú továrenské metódy a na čo sa používajú
+    - Proces vytvárania objektu
+    - Aké druhy inicializácie objektu poznáme
+    - Poradie, v akom sa inicializácia vykonáva
+    - Čo je konštruktor
+    - Druhy konštruktorov
+    - Statický inicializátor, aké druhy poznáme
+    - Kedy sa vykoná inštančný inicializátor a kedy statický

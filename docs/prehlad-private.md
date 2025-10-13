@@ -226,7 +226,7 @@ hide:
 <tr >
 <td width=10%>8</td>
 <td width=30%>
-<a href="../teoria-3/t08-">Inicializacia a konstruktory</a> (<a href="../assets/t08w.pdf">pdf</a>)
+<a href="../teoria-3/t08-konstruktor">Inicializácia a konštruktory</a> (<a href="../assets/t08w.pdf">pdf</a>)
 <ul>
 <li>Inicializácia objektu</li>
 <li>Konštruktory</li>
