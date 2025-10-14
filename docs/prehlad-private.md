@@ -240,9 +240,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p08-">x</a> (<a href="../assets/p08w.pdf">pdf</a>)
+<a href="../pokrocili-3/p08-github">GitHub</a> (<a href="../assets/p08w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Vzdialený repozitár</li>
+<li>GitHub Issues</li>
+<li>GitHub Projects</li>
+<li>GitHub Pull requests</li>
 </ul>
 </td>
 </tr>

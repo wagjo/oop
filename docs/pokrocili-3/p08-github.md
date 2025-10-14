@@ -4,7 +4,7 @@ Dnešné cvičenie pokračujeme s prácou s nástrojom git a ukážeme si, ako f
 
 ## GitHub
 
-[GitHub](https://github.com/) je platforma pre správu git repozitára a poskytuje nástropje pre agilné programovanie. Repozitár vytvorený na minulom cvičení si nahráme na GitHub.
+[GitHub](https://github.com/) je platforma pre správu git repozitára a poskytuje nástroje pre agilné programovanie. Repozitár vytvorený na minulom cvičení si nahráme na GitHub.
 
 !!! example "Úloha 8.1"
 
@@ -18,13 +18,13 @@ Dnešné cvičenie pokračujeme s prácou s nástrojom git a ukážeme si, ako f
 
 Git podporuje posielanie alebo prijímanie zmien z tzv. vzdialených repozítárov, anglicky *remote repositories*.
 
-Pripojenie vzdieleného repozitára realizujeme pomocou príkazu `git remove`. Každému pripojenému vzdielenému repozitáru sa zvykne priradiť meno, štandardne sa takýto repozitár volá `origin`.
+Pripojenie vzdieleného repozitára realizujeme pomocou príkazu `git remote`. Každému pripojenému vzdielenému repozitáru sa zvykne priradiť meno, štandardne sa takýto repozitár volá `origin`.
 
 !!! example "Úloha 8.2"
 
     Spusťte IDE PyCharm, otvorte projekt `opgp7` a spustite terminál.
     
-    1. V termínály pripojte vzdielený repozitár pomocou príkazu `git remote add origin https://github.com/VAS_GITHUB_USERNAME/opgp7.git`
+    1. V termínáli pripojte vzdielený repozitár pomocou príkazu `git remote add origin https://github.com/VAS_GITHUB_USERNAME/opgp7.git`
 
     1. Uploadnite celý váš repozitár pomocou `git push -u origin master`
 
@@ -57,17 +57,17 @@ Teraz si vyskúšame zasielanie zmien na vzdialený repozitár. Urobíme novú z
 
 ## GitHub Issues
 
-Kaťdý repozitár na GitHube má svoj vlastný zoznam issues. Ide o vec mimo nástroja git, a pracuje sa s ním výlučne cez platformu GitHub. Pomocou issues vieme evidovať a manažovať bugy, požiadavky na zmeny a iné plánované alebo rozpracované veci na našom projekte.
+Každý repozitár na GitHube má svoj vlastný zoznam issues. Ide o vec mimo nástroja git, a pracuje sa s ním výlučne cez platformu GitHub. Pomocou issues vieme evidovať a manažovať bugy, požiadavky na zmeny a iné plánované alebo rozpracované veci na našom projekte.
 
 !!! example "Úloha 8.4"
 
     V nástroji GitHub Issues vytvorte nasledovné issues pomocou tlačítka `New issue`:
 
-    1. Názov: pyproject.toml, Popis: Vytvoriť súbor pyproject.toml s konfiguráciou projektu
+    1. Názov: `pyproject.toml`, Popis: `Vytvoriť súbor pyproject.toml s konfiguráciou projektu`
 
-    1. Názov: Aliasy v __init__.py, Popis: Vytvoriť aliasy na tvary v súbore tvary/__init__.py
+    1. Názov: `Aliasy v __init__.py`, Popis: `Vytvoriť aliasy na tvary v súbore tvary/__init__.py`
 
-    1. Názov: Trojuholník, Popis: Vytvoriť nový modul tvary.trojuholník a doplniť ho o metódy pre výpočet obvodu a obsahu
+    1. Názov: `Trojuholník`, Popis: `Vytvoriť nový modul tvary.trojuholník a doplniť ho o metódy pre výpočet obvodu a obsahu`
 
 Ak si otvoríte tieto novo vytvorené issues, uvidíte ich popis a možete doplniť komentár alebo rôzne metadáta. V pravej časti môžete bližšie určiť typ issue, napr. či ide o bug alebo požiadavku na novú funkcionalitu, a môžete prideliť človeka, ktorý bude za daný issue zodpovedný.
 
@@ -79,7 +79,7 @@ Ak si otvoríte tieto novo vytvorené issues, uvidíte ich popis a možete dopln
 
     1. Priraďte seba ako zodpovedného človeka k tomuto issue (Assignees - Assign yourself)
 
-    1. Napíšte nový komentár s popisom: Vytvorím aliasy obvod_kruhu, obsah_kruhu a podobne.
+    1. Napíšte nový komentár s popisom: `Vytvorím aliasy obvod_kruhu, obsah_kruhu a podobne.`
 
 
 ## GitHub Projects
@@ -103,91 +103,103 @@ Okrem issues nám nástroj GitHub ponúka aj iné nástroje na podporu agilného
 
 ## Viacero vetiev na vzdialenom repozitári
 
+Vyskúšame si urobiť issue `Aliasy v __init__.py` v samostatnej vetve. Normálne takéto jednoduché úlohy robíme priamo na hlavnej vetve, samostatné vetvy používame, ak sú zmeny rozsiahlejšie alebo implementácia náročnejšia.
 
+!!! example "Úloha 8.7"
+
+    1. Otvorte issue `Aliasy v __init__.py` a zistite číslo tohto issue, napr. `#2`
+
+    1. V termináli vytvorte nový branch s názvom `issue-2`, kde číslo bude číslo issue, pomocou príkazu `git checkout -b issue-2`
+
+    1. Do súboru `tvary/__init__.py` doplňte aliasy nasledovným kódom
+
+        ```python
+        from .kruh import obvod as obvod_kruhu, obsah as obsah_kruhu
+        from .obdlznik import obvod as obvod_obdlznika, obsah as obsah_obdlznika
+        from .stvorec import obvod as obvod_stvorca, obsah as obsah_stvorca
+        ```
+    
+    1. Vytvorte nový commit, s popisom `[#2] Vytvorenie aliasov v __init__.py`
+
+    1. V termináli odošlite vetvu na GitHub. Keďže ide o novú vetvu, obyčajný `git push` nestačí, musíme to prvý krát nakonfigurovať. Správny príkaz je `git push -u origin issue-2`
+
+Keď si teraz otvoríme issue v prehiadači, uvidíme, že v popise bude odkaz na náš novo vytvorený commit. GitHub tento issue prepojil, pretože sme v popise commitu spomenuli číslo issue pomocou znaku mriežky (#2). V Githube takto pomocou mriežky vieme vytvárať odkaz na nejaký issue.
 
 ## Pull requests
 
+Na GitHube teraz máme 2 vetvy, vetvu `master` a vetvu `issue-2`. Tieto vetvy vieme lokálne zlúčiť pomocou `git merge`. Pri práci v tíme je v prípadoch, že pracujeme na samostatnej vetve často lepšie, ak **zmeny, ktoré chceme zlúčiť si necháme schváliť niekym iným**.
+
+V GitHube na takéto schválenie máme Pull requests. Vyskúšame si teraz z vetvy `issue-2` urobiť takýto pull equest
+
+!!! example "Úloha 8.8"
+
+    1. Na vašom repozitári na GihHube nájdite stránku "Pull requests" a kliknite na "New pull request"
+
+    1. Máte na výber určiť vetvy **base** a **compare**. Base vetvu nechajte `master` a ako compare vetvu vyberte `issue-2`
+
+    1. Kliknite na "Create pull request". Do popisu requestu napíšte `Tento pull request implementuje issue #2`
+
+    1. Stlačte "Create pull request". GitHub ho prepojí aj s issue #2. Samotný pull request má svoje vlastné číslo, napr. #4
+
+    1. Teraz by mala nastať chvíľa, kedy si iný člen tímu prezrie tento pull request a keď je v poriadku tak ho schváli. My si ho schválime sami. V Pull requeste stlačte tlačítko "Merge pull request" a potom na tlačítko "Confirm merge". Pull request bude mať teraz modrú značku "merged"
+
+    1. GitHub nám po schválení pull requestu zlúčil vetvu `issue-2` do vetvy `master`. Teraz si ju lokálne stiahneme. V termináli PyCharmu sa prepnite do vetvy master pomocou `git checkout master` a stiahnite zmeny príkazom `git pull`.
 
 ## Zhrnutie cvičenia
 
-![Git cheatsheet](../assets/git-cheatsheet.png){.on-glb}
+![git architecure](../assets/git-flow.png){.on-glb}
 /// caption
-Ťahák s najpoužívanejšími `git` príkazmi
+Štruktúra `git` repozitára a základné príkazy
 ///
 
-- [x] Nástroj git - distribuovaný systém kontroly verzií
-    * [ ] Konfiguráciu nástroja git robíme pomocou príkazu `git config`
-    * [ ] `git config --global user.name Janko Mrkvicka`
-    * [ ] `git config --global user.email janko.mrkvicka@gmail.com`
-- [x] Vytvorenie git repozitára
-    * [ ] Repozitár vytvoríme pomocou príkazu `git init`
-    * [ ] Existujúci repozitár stiahneme pomocou príkazu `git clone <repo_url>`
-    * [ ] Súbor `.gitignore` obsahuje názvy súborov a adresárov, ktoré má git nástroj ignorovať
-- [x] Working tree a index/staging
-    * [ ] Working tree - Aktuálne súbory na disku s ktorými pracujeme
-    * [ ] Index/staging - Sada zmien, ktoré chceme zapísať do repozitára
-    * [ ] Do indexu pridáme zmeny pomocou príkazu `git add`
-    * [ ] Stav repozitára zistíme príkazom `git status`
-- [x] Commit je zápis súboru zmien v repozitári. Obsahuje:
-    * [ ] Samotné zmeny v súboroch nášho projektu
-    * [ ] Krátka správa s popisom, čoho sa zmena týka
-    * [ ] Dátum, kedy zápis zmien nastal
-    * [ ] Autora, ktorý zápis urobil
-    * [ ] Unikátny identifikátor zmeny, nazývaný hash (napríklad e3a1f5b7c2d4)
-    * [ ] Odkaz na predchádzajúci commit, aby sme vedeli vyskladať postupnosť zmien
-- [x] Zápis zmien do repozitára
-    * [ ] Zápis sady zmien do repozitára urobíme príkazom `git commit -m "popis zmien"`
-    * [ ] Zoznam posledných commitov vypíšeme pomocou príkazu `git log`
-    * [ ] Prehľad zmien, ktoré neboli pridané do indexu si vieme zobraziť pomocou `git diff`
-    * [ ] GUI nástroj na prehľad zmien a histórie spustíme príkazom `gitk`
-- [x] Vetvy zmien
-    * [ ] Novú vetvu vytvoríme pomocou príkazu `git checkout -b <branch_name>`
-    * [ ] Do inej vetvy sa prepneme príkazom `git checkout <branch_name>`
-    * [ ] Inú vetvu zlúčime do aktuálne otvorenej pomocou `git merge <branch_name>`
-    * [ ] Zoznam všetkých vetiev zobrazíme príkazom `git branch -av`
+- [x] Vzdialený repozitár
+    * [ ] Pripojíme pomocou `git remote add <remote_nick> <remote_url>`
+- [x] Odoslanie zmien 
+    * [ ] Prvý krát pomocou `git push -u <remote_nick> <branch_name>`
+    * [ ] Následné posielania už iba pomocou `git push`
+- [x] Prijímanie zmien
+    * [ ] Pomocou `git pull`
+- [x] GitHub Issues
+    * [ ] Slúžia na správu bugov, úloh a pod.
+    * [ ] Každý issue má svoje číslo, v komentároch na neho odkazujeme pomocou mriežky, napr. #2
+- [x] GitHub projects 
+    * [ ] Umožňuje vytvoriť tabuľku s rôznymi stavmi issues, napr. štýlu Kanban
+- [x] Pull requests
+    * [ ] Nástroj na schvaľovanie zmien, ktoré sú v samostatných vetvách
+    * [ ] Pull request vytvoríme vybraním vetvy, ktorá obsahuje zmeny, ktoré chceme dať schváliť
+    * [ ] Človek, zodpovedný za schválenie vie pull request zlúčiť do hlavnej vetvy, alebo vrátiť na prepracovanie
 
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    GIT
+    VZDIALENÝ REPOZITÁR
 
-    Konfiguráciu robíme pomocou git config
-    Repozitár vytvoríme pomocou git init
-    Existujúci repo stiahneme pomocou git clone <repo_url>
-    Do súboru .gitignore napíšeme, ktoré súbory má git ignorovať
+    Pripojíme pomocou git remote add <remote_nick> <remote_url>
 
-    Working tree - Aktuálne súbory na disku s ktorými pracujeme
-    Index/staging - Sada zmien, ktoré chceme zapísať do repozitára
-    git add - Do indexu pridáme zmeny pomocou 
-    git status - Stav repozitára zistíme príkazom 
+    Odoslanie zmien 
+    Prvý krát pomocou git push -u <remote_nick> <branch_name>
+    Následné posielania pomocou git push
+ 
+    Prijímanie zmien - git pull
 
-    Commit je zápis súboru zmien v repozitári. Obsahuje:
-    - Samotné zmeny v súboroch
-    - Krátka správa, čoho sa zmena týka
-    - Dátum zápisu
-    - Autora zápisu
-    - Unikátny identifikátor zmeny (hash)
-    - Odkaz na predchádzajúci commit
+    GitHub Issues - správa bugov, úloh a pod.
+    Každý issue má svoje číslo, odkazujeme na neho pomocou mriežky, napr. #2
 
-    git commit -m "popis zmien" - Zápis sady zmien 
-    git log - Zoznam posledných commitov
-    git diff - Prehľad zmien, ktoré nie sú ešte v indexe
-    gitk - GUI nástroj
-
-    Vetvy zmien
-    git checkout -b <branch_name> - vytvorenie novej vetvy
-    git checkout <branch_name> - prepnutie to inej vetvy
-    git merge <branch_name> - zlúčenie inej vetvy do aktuálnej
-    git branch -av - Zoznam všetkých vetiev
+    GitHub projects - tabuľky s rôznymi stavmi issues, napr. štýlu Kanban
+    
+    Pull requests - schvaľovanie zmien, ktoré sú v samostatných vetvách
+    Po kontrole vieme pull request zlúčiť do hlavnej vetvy, alebo vrátiť na prepracovanie
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
     Okruhy otázok na test:
 
-    - Čo je working tree
-    - Čo je index / staging area
-    - Čo obsahuje commit
-    - Základné príkazy na prácu s gitom
+    - Ako sa pripojí vzdialený repozitár
+    - Posielanie commitov do vzdialeného repozitára
+    - Prijímanie zmien so vzdialeného repozitára
+    - Na čo slúži GitHub issues
+    - Na čo slúži GitHub projects
+    - Na čo slúži GitHub pull requests
