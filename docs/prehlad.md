@@ -152,11 +152,27 @@ hide:
 <li>Obalené typy</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p05-pip">Správa knižníc</a> (<a href="../assets/p05w.pdf">pdf</a>)
+<ul>
+<li>pip, PyPI.org</li>
+<li>Virtuálne prostredie</li>
+<li>requirements.txt</li>
+<li>pyproject.toml</li>
+</ul>
+</td>
 </tr>
 <tr>
 <td width=10%>6</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../teoria-3/t06-operatory">Operátory</a> (<a href="../assets/t06w.pdf">pdf</a>)
+<ul>
+<li>Aritmetické operátory</li>
+<li>Priradenie a relačné operátory</li>
+<li>Bitové a logické operátory</li>
+<li>instanceof a poradie vykonávania</li>
+</ul>
+</td>
 <td width=30%>TODO</td>
 <td width=30%>
 <a href="../pokrocili-3/p06-agile">Agilný vývoj</a> (<a href="../assets/p06w.pdf">pdf</a>)

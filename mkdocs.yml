@@ -11,7 +11,7 @@ nav:
     - 3 - Identita, objekt: 'teoria-3/t03-objekt.md'
     - 4 - Trieda, balíky: 'teoria-3/t04-trieda.md'
     - 5 - Výnimky: 'teoria-3/t05-vynimky.md'    
-    #- 6 - Operátory: 'teoria-3/t06-operatory.md'    
+    - 6 - Operátory: 'teoria-3/t06-operatory.md'    
     #- 7 - Metódy: 'teoria-3/t07-metódy.md'    
     #- 8 - Inicializácia objektov: 'teoria-3/t08-konstruktor.md'
   - Cvičenia: 
