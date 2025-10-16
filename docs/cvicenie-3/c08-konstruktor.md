@@ -150,7 +150,7 @@ Vytvoríme si továrenskú metódu v triede `Slovnik`, ktorá nám vytvorí slov
 
     1. Importujte všetky novo používané triedy, IDE vám v tom vie pomôcť
 
-    1. Do triedy `Hra` pridajte statickú metódu `getSlovnikZvierat()`, ktorá vráti nový slovník jedál
+    1. Do triedy `Hra` pridajte statickú metódu `getSlovnikZvierat()`, ktorá vráti nový slovník zvierat
 
         ```java
         public static Slovnik getSlovnikZvierat() {
@@ -186,7 +186,7 @@ Ako ďalší typ slovníka si vyskúšame slovník, ktorý si zoznam slov stiahn
 
     1. Importujte všetky novo používané triedy, IDE vám v tom vie pomôcť
 
-    1. Do triedy `Hra` pridajte statickú metódu `getSlovnikVeci()`, ktorá vráti nový slovník jedál
+    1. Do triedy `Hra` pridajte statickú metódu `getSlovnikVeci()`, ktorá vráti nový slovník vecí
 
         ```java
         public static Slovnik getSlovnikVeci() {
