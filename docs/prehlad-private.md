@@ -234,9 +234,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c08-">Inicializacia a konstruktory</a> (<a href="../assets/c08w.pdf">pdf</a>)
+<a href="../cvicenie-3/c08-konstruktor">Inicializácia a konštruktory</a> (<a href="../assets/c08w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Slovník do hry Hangman</li>
+<li>Slovník v kóde</li>
+<li>Slovník zo súboru a z internetu</li>
+<li>Slovník z klávesnice</li>
 </ul>
 </td>
 <td width=30%>

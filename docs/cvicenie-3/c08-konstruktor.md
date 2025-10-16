@@ -1,107 +1,284 @@
-# Cvičenie 7: Metódy
+# Cvičenie 8: Inicializácia a konštruktory
 
-Na dnešnom cvičení si vyskúšame písanie metód. Aby sme robili aj niečo praktickejšie, naprogramujeme si jednoduchú textovú hru.
+Toto cvičenie budeme pokračovať vo vylepšovaní hry Hangman, ktorú ste si naprogramovali minulé cvičenie. Dnes si do hry pridáme slovník so slovami, aby sme hádané slovo nemuseli dávať manuálne.
 
-- slovnik defaultny
-- slovnik so slovami v konstruktore
-- tovarenska metoda s url
-- tovarenska metoda s cestou k suboru
+Ak nemáte projekt s hrou Hangman, môžete si ju stiahnuť príkazom `git clone https://github.com/wagjo/oop-hangman.git`
 
-- slova s medzerou
-- slova s makcenmi
 
-## Hangman
-
-Dnešným projektom bude naprogramovať hru Hangman - Obesenec. Ide o známu hru, kedy hráč musí na určitý počet pokusov uhádnuť všetky znaky v hádanom slove.
-
-![Hangman](../assets/hangman.jpg){width=400}
+## Slovník do hry Hangman
 
 Zadanie úlohy:
 
-- Hra obesenec v príkazovom riadku
-- Na začiatku hra požiada o slovo, ktoré sa bude hádať
-- Hráč zadá písmeno, hra ukáže uhádnuté znaky v slove
-- Hráč má 5 pokusov, potom hra končí
+- Namiesto načítania hádaného slova z klávesnice hra bude mať zoznam slov
+- Z tohto zoznamu slov hra na začiatku náhodne vyberie hádané slovo
+- Vyskúšame si rôzne spôsoby vytvárania slovníka
 
 Návrh riešenia:
 
-- Vytvoríme 3 triedy
-- Trieda `Stav` bude spravovať stav hry: hádané slovo, uhádnuté znaky a počet ostávajúcich pokusov
-- Trieda `TextoveUI` bude mať na starosť užívateľské rozhranie: výpis na obrazovku a načítavanie z klávesnice
-- Trieda `Hra` bude mať hlavnú logiku hry a vstupný bod programu
+- Nová trieda `Slovnik`, ktorá bude spravovať zoznam slov
+- Úprava triedy `TextoveUI` o pomocné metódy slovníka
+- Úprava triedy `Stav` tak, aby v konštruktore prijímala namiesto hádaného slova slovník slov
+- Úprava triedy `Hra` tak, aby namiesto získania hádaného slova vytvorila a použila slovník
 
-!!! example "Úloha 7.1: Nový projekt"
+!!! example "Úloha 8.1: Kontrola hry Hangman"
 
-    V IntelliJ IDEA si vytvoríme nový Java projekt s názvom `Hangman`. Pri vytváraní vypneme možnosť vytvorenia *Sample code*, ukážkového kódu.
+    V IntelliJ IDEA si otvorte projekt Hangman a spustite ho, aby ste vyskúšali funkčnosť programu. Ak projekt nemáte, stiahnite ho príkazom `git clone https://github.com/wagjo/oop-hangman.git`
 
-## Trieda `Stav`
 
-Začneme vytvorením triedy `Stav`. V triede budeme mať 4 atribúty, všetky privátne. Trieda bude mať jeden konštruktor, ktorý inicializuje jej atribúty. Hodnoty 2 atribútov, `ostavaPokusov` a `hadaneSlovo` zadáva volajúci pri vytváraní objektu.
+## Trieda `Slovnik`
 
-=== "Trieda `Stav` s atribútmi a konštruktorom"
+Začneme vytvorením triedy `Slovnik`. V triede budeme mať 3 atribúty, všetky privátne. Trieda bude mať jeden konštruktor, ktorý inicializuje jej atribúty. Hodnoty 2 atribútov, `kategoria` a `slova` zadáva volajúci pri vytváraní objektu.
+
+=== "Trieda `Slovnik` s atribútmi a konštruktorom"
 
     ```java
     package sk.spse.hangman;
 
-    import java.util.Arrays;
+    import java.util.Random;
 
-    public class Stav {
-        private boolean vyhra;
-        private int ostavaPokusov;
-        private String hadaneSlovo;
-        private char[] uhadnuteZnaky;
+    public class Slovnik {
+        private final String kategoria;
+        private final String[] slova;
+        private final Random rand = new Random();
 
-        public Stav(String hadaneSlovo, int pokusy) {
-            this.ostavaPokusov = pokusy;
-            this.hadaneSlovo = hadaneSlovo;
-            this.uhadnuteZnaky = new char[hadaneSlovo.length()];
-            Arrays.fill(uhadnuteZnaky, '_');
-            this.vyhra = false;
+        public Slovnik(String kategoria, String[] slova) {
+            this.kategoria = kategoria;
+            this.slova = slova;
         }
-    }
+    }    
     ```
 
 Popis atribútov:
 
-- `vyhra` nám bude hovoriť, či sme vyhrali, alebo nie
-- `ostavaPokusov` bude obsahovať počet zostávajúcich pokusov. Ak bude 0, hra končí
-- `hadaneSlovo` je slovo, ktoré má hráč uhádnuť
-- `uhadnuteZnaky` je pole znakov, do ktorého budeme vpisovať uhádnuté časti slova na daných pozíciach. Má takú istú dĺžku, ako hádané slovo. Na začiatku budú všetky prvky tohto poľa znaky `_` (podčiarník)
+- `kategoria` nám hovori o kategórii slov, ktoré máme v slovníku, napr. zvieratá, jedlá, veci, atď.
+- `slova` je pole so slovami
+- `rand` je pomocný objekt na získanie náhodného čísla
 
-Konštruktor prijíma 2 argumenty, hádané slovo a počet pokusov, na ktorý sa musí slovo uhádnuť. Ostatné atribúty konštruktor inicializuje na ich počiatočné hodnoty.
+Konštruktor prijíma 2 argumenty, kategória a slová. Atribút `rand` sa inicializuje priamo pri deklarácii atribútu.
 
-!!! example "Úloha 7.2: Trieda `Stav`"
+!!! example "Úloha 8.2: Trieda `Slovnik`"
 
-    Vytvorte novú triedu `sk.spse.hangman.Stav` a pridajte do nej atribúty a konštruktor podľa príkladu uvedeného vyššie.
+    Vytvorte novú triedu `sk.spse.hangman.Slovnik` a pridajte do nej atribúty a konštruktor podľa príkladu uvedeného vyššie.
 
-Keďže sú všetky atribúty privátne, mimo triedy Stav nevieme priamo zistiť ich hodnotu. Musíme teda vytvoriť **getter metódy**. Vytvoríme ich iba pre prípady, kedy naozaj potrebujeme zistiť nejakú hodnotu.
+V ďalšom kroku potrebujeme vytvoriť getter metódy, hlavne pre výber náhodného slova.
 
-!!! example "Úloha 7.3: Getter metódy"
+!!! example "Úloha 8.3: Getter metódy"
 
-    Vytvorte nasledovné getter metódy v triede Stav:
+    Vytvorte nasledovné getter metódy v triede Slovnik:
 
-    - `public boolean isVyhra()` - vráti hodnotu atribútu `vyhra`
-    - `public boolean isGameOver()` - vráti true, ak je počet pokusov menší ako 1 alebo ak sme vyhrali, ináč vráti false
-    - `public int getOstavaPokusov()` - vráti zostávajúci počet pokusov
-    - `public String getHadaneSlovo()` - vráti hádané slovo. *Bonus: slovo vráti, iba ak hra skončila, ináč vyhodí výnimku*
-    - `public String getSlovo()` - vráti slovo, ktoré sme zatiaľ uhádli. Kód tejto metódy musí vytvoriť reťazec String z poľa znakov `uhadnuteZnaky`. Môžete na to použiť statickú metódu `String.valueOf()`
+    - `public String getKategoria()` - vráti hodnotu atribútu `kategoria`
+    - `public int getSize()` - vráti počet slov v slovníku
+    - `public String getSlovo()` - vráti náhodné slovo so slovníka. Náhodné číslo získate z objektu `rand` pomocou `rand.nextInt(slova.length)`
 
-Vytvorili sme teda 5 getter metód. Getter metódy, ktoré vracajú boolean hodnotu sa zvyknú začínať slovom `is`, ostatné sa začínajú slovom `get`. Getter metóda nemusí vždy vracať iba priamu hodnotu atribútu. Ako vidíme v príklade metódy `getSlovo()`, getter metóda môže hodnoty atribútov vhodne upraviť tak, aby vyhovovali volajúcemu. Vnútornú implementáciu si potom môžeme zvoliť takú, aká vyhovuje vnútornej logike triedy.
+Základný slovník máme vytvorený, poďme ho použiť v hre. Ako prvé potrebujeme upraviť triedu `Stav` tak, aby v konštruktore prijímala namiesto slova slovník.
 
-Ostáva nám ešte napísať metódu, ktorá zmení stav hry podľa toho, aký znak hráč zadal.
+!!! example "Úloha 8.4: Úprava triedy `Stav`"
 
-!!! example "Úloha 7.4: Inštančná metóda"
+    Upravte konštruktor triedy `Stav` tak, aby namiesto argumentu `hadaneSlovo` prijímala slovník. 
+    
+    Samotné hádané slovo v konštruktori získajte pomocou metódy `getSlovo()`
 
-    V triede `Stav` vytvorte inštančnú metódu `public boolean hadaj(char tip)`, ktorá bude meniť stav hry podľa zadaného znaku `tip`. V tele metódy napíšte kód, ktorý urobí nasledovné:
-
-    - Vytvorí pomocnú `boolean` premennú `spravnyTip`, inicializuje ju na `false`
-    - V cykle prejdite všetky znaky hádaného slova, a ak sa znak zhoduje so znakom `tip`, pridajte tento znak do poľa `uhadnuteZnaky` na tú istú pozíciu, akú má v hľadanom slove. Ak sa znak zhoduje, nastavte premennú `spravnyTip` na `true` Pri porovnaní znakov použite metódu `Character.toLowerCase(char)`, aby sme pri nebrali ohľad na veľkosť písmen.
-    - Ak nenastal správny tip, dekrementuje atribút `ostavaPokusov`
-    - Ak je sme uhádli celé slovo, atribút `vyhra` nastaví na `true`. Uhádnutie zistite porovnaním hádaného slova zo slovom, ktoré vracia metóda `getSlovo()`
-    - Metóda vráti hodnotu premennej `spravnyTip`
+Teraz môžme v trieda `Hra` vytvoriť slovník a použiť ho v hre.
 
 
-Hotová trieda `Stav` teda bude mať 4 atribúty, jeden konštuktor a 6 metód. Triedu môžeme znázorniť nasledovným UML class diagramom.
+## Slovník zapísaný v kóde programu
+
+Najjednoduchší slovník vytvoríme tak, že mu priamo napíšeme zoznam slov. Trieda slovník má konštruktor, ktorý prijíma pole slov, takže stačí nám tento konštruktor vhodne zavolať.
+
+!!! example "Úloha 8.5: Slovník jedál priamo v kóde"
+
+    Do triedy `Hra` pridajte statickú metódu `getSlovnikJedal()`, ktorá vráti nový slovník jedál
+
+    ```java
+    public static Slovnik getSlovnikJedal() {
+        String[] slova = {"polievka", "ratatouille", "kebab", "surstromming", "hamburger"};
+        Slovnik slovnik = new Slovnik("jedla", slova);
+        return slovnik;
+    }
+    ```
+
+    Upravte metódu `novaTextovaHra()` tak, aby namiesto premennej `hadaneSlovo` použila slovník jedál.
+
+    Vyskúšajte spustiť program, mal by fungovať
+
+Teraz by sme mali mať funkčný program, ktorý bude používať náhodné slovo zo slovníka.
+
+Pred samotným hádaním by bolo dobré, aby program vypísal kategóriu slov, ktoré máme hádať. Pridajme teda novú vypisovaciu metódu.
+
+!!! example "Úloha 8.6: Intro text pre slovník"
+
+    Do triedy `TextoveUI` pridajte metódu `vypisIntroSlovnika` s nasledovným kódom
+
+    ```java
+    public void vypisIntroSlovnika(Slovnik slovnik) {
+        System.out.println("---------------------");
+        System.out.printf("Zameranie slovnika: %s\n", slovnik.getKategoria());
+        System.out.printf("Velkost slovnika: %d slov\n", slovnik.getSize());
+        System.out.println("---------------------");
+    }
+    ```
+
+    Upravte metódu `novaTextovaHra()` tak, aby na začiatku programu vypísal intro text slovníka
+
+
+## Slovník načítaný so súboru
+
+Mať dáta priamo v kóde nie je vždy najlepší nápad. Ak by sme dáta chceli zmeniť, museli by sme vytvoriť novú verziu programu. Vo väčšine prípadov je lepšie oddeliť dáta od kódu programu. Vyskúšame si teda vytvoriť slovník, ktorý načíta slová so súboru.
+
+Vytvoríme si továrenskú metódu v triede `Slovnik`, ktorá nám vytvorí slovník zo slov v súbore.
+
+!!! example "Úloha 8.7: Slovník so súboru"
+
+    1. Vytvorte si v projekte adresár `assets`
+
+    1. Do tohto adresára stiahnite súbor `zvierata.txt` so stránky [https://oop.wagjo.com/assets/zvierata.txt](https://oop.wagjo.com/assets/zvierata.txt)
+
+    1. Do triedy `Slovnik` pridajte továrenskú metódu `fromFile(String kategoria, String nazov)` s nasledovným kódom
+
+        ```java
+        public static Slovnik fromFile(String kategoria, String nazov) {
+            try {
+                Path subor = Path.of(nazov);
+                String text = Files.readString(subor);
+                String[] slova = text.split("\n");
+                return new Slovnik(kategoria, slova);
+            } catch (IOException e) {
+                throw new RuntimeException("Nepodarilo sa nacitat so suboru", e);
+            }
+        }
+        ```
+
+    1. Importujte všetky novo používané triedy, IDE vám v tom vie pomôcť
+
+    1. Do triedy `Hra` pridajte statickú metódu `getSlovnikZvierat()`, ktorá vráti nový slovník jedál
+
+        ```java
+        public static Slovnik getSlovnikZvierat() {
+            Slovnik slovnik = Slovnik.fromFile("zvierata", "assets/zvierata.txt");
+            return slovnik;
+        }
+        ```
+
+    1. Upravte metódu `novaTextovaHra()` tak, aby sa použil slovník zvierat.
+
+Vyskúšajte si zmenený program, mal by vám dávať hádať slová zvierat.
+
+
+## Slovník z internetu
+
+Ako ďalší typ slovníka si vyskúšame slovník, ktorý si zoznam slov stiahne z internetu. Bude to vyzerať dosť podobne ako pri predchádzajúcom slovníku.
+
+!!! example "Úloha 8.8: Slovník z internetu"
+
+    1. Do triedy `Slovnik` pridajte továrenskú metódu `fromUrl(String kategoria, String url)` s nasledovným kódom
+
+        ```java
+        public static Slovnik fromUrl(String kategoria, String url) {
+            try (Scanner sc = new Scanner(new URL(url).openStream())) {
+                String text = sc.useDelimiter("\\A").next();
+                String[] slova = text.split("\n");
+                return new Slovnik(kategoria, slova);
+            } catch (Exception e) {
+                throw new RuntimeException("Nepodarilo sa nacitat slovnik", e);
+            }
+        }
+        ```
+
+    1. Importujte všetky novo používané triedy, IDE vám v tom vie pomôcť
+
+    1. Do triedy `Hra` pridajte statickú metódu `getSlovnikVeci()`, ktorá vráti nový slovník jedál
+
+        ```java
+        public static Slovnik getSlovnikVeci() {
+            Slovnik slovnik = Slovnik.fromUrl("veci", "https://oop.wagjo.com/assets/veci.txt");
+            return slovnik;
+        }
+        ```
+
+    1. Upravte metódu `novaTextovaHra()` tak, aby sa použil slovník vecí.
+
+
+## Slovník zadaný z klávesnice
+
+Posledný typ slovníka, ktorý si dnes ukážeme, bude slovník, ktorý ručne napíšeme na začiatku programu. Tu nám bude treba vytvoriť pomocné metódy v triede `TextoveUI`. Vytvorenie tohto slovníka dáme do preťaženého konštruktora.
+
+!!! example "Úloha 8.9: Slovník zadaný z klávesnice"
+
+    1. Do triedy `TextoveUI` pridajte 2 nové metódy, jednu na získanie názvu kategórie a druhú na získanie samotných slov do slovníka
+
+        ```java
+         public String ziskajKategoriu() {
+            System.out.print("Zadaj kategoriu slovnika: ");
+            return scanner.nextLine();
+        }
+
+        public String[] ziskajSlova() {
+            System.out.println("Prazdnym riadkom ukoncis zadavanie!");
+            String[] slova = new String[1000];
+            int idx = 0;
+            while(true) {
+                System.out.print("Zadaj dalsie slovo: ");
+                String slovo = scanner.nextLine();
+                if (slovo.isBlank()) {
+                    break;
+                }
+                slova[idx] = slovo;
+                idx++;
+            }
+            return Arrays.copyOf(slova, idx);
+        }
+        ```
+
+    1. V triede `Slovnik` vytvorte nový defaultný konštruktor, ktorý bude načítavať dáta z klávesnice
+
+        ```java
+        public Slovnik() {
+            TextoveUI ui = new TextoveUI();
+            String kategoria = ui.ziskajKategoriu();
+            String[] slova = ui.ziskajSlova();
+            this.kategoria = kategoria;
+            this.slova = slova;
+        }
+        ```
+
+    1. Do triedy `Hra` pridajte statickú metódu `getSlovnikCustom()`, ktorá vráti nový ručne zadaný slovník
+
+        ```java
+        public static Slovnik getSlovnikCustom() {
+            Slovnik slovnik = new Slovnik();
+            return slovnik;
+        }
+        ```
+
+    1. Upravte metódu `novaTextovaHra()` tak, aby sa použil tento slovník
+
+Vyskúšajte si spustiť program a zadať zopár slov. Program by mal potom na hádanie vybrať jedno z nich.
+
+
+## Diagramy tried
+
+Hotová trieda `Slovnik` teda bude mať 3 atribúty, 2 konštuktory, 2 továrenské metódy a 3 getter metódy. Triedu môžeme znázorniť nasledovným UML class diagramom.
+
+```mermaid
+classDiagram
+direction BT
+class Slovnik {
+  - String kategoria
+  - String[] slova
+  - Random rand
+  + Slovnik(String, String[])
+  + Slovnik()   
+  + fromFile(String, String)$ Slovnik
+  + fromUrl(String, String)$ Slovnik
+  + getKategoria() String
+  + getSize() int
+  + getSlovo() String
+}
+```
+
+Keďže už máme viacero konštruktorov a spôsovov vytvárania objektov danej triedy, je dobré do class diagramu uviesť aj konštruktory. Konštruktory by sa mali v class diagrame uvádzať ako prvé z metód.
+
+Trieda `Stav` sa nám veľmi nezmenila, vymenili sme iba typ argumentu v konštruktore. 
 
 ```mermaid
 classDiagram
@@ -111,6 +288,7 @@ class Stav {
   - int ostavaPokusov
   - char[] uhadnuteZnaky
   - boolean vyhra
+  + Stav(Slovnik, int)
   + getHadaneSlovo() String
   + getOstavaPokusov() int
   + getSlovo() String
@@ -120,51 +298,7 @@ class Stav {
 }
 ```
 
-## Trieda `TextoveUI`
-
-Druhá trieda, ktorú si vytvoríme, bude mať na starosti užívateľské rozhranie. Nakoľko sme si ešte nevysvetlili prácu s grafikou a grafickýmí rozhraniami, ostaneme pri textovom rozhraní. V budúcnosti budeme môcť vytvoriť inú triedu pre grafické rozhranie a nebudeme musieť meniť kód stavu hry.
-
-!!! example "Úloha 7.5: Trieda `TextoveUI`"
-
-    Vytvorte novú triedu `sk.spse.hangman.TextoveUI` s nasledovným atribútom a konštruktorom:
-
-    ```java
-    package sk.spse.hangman;
-
-    import java.util.Scanner;
-
-    public class TextoveUI {
-        private Scanner scanner;
-
-        public TextoveUI() {
-            this.scanner = new Scanner(System.in);
-        }
-    }
-    ```
-
-Do triedy `TextoveUI` sme si pridali atribút `scanner`, ktorý budeme používať pri čítaní z klávesnice. O správnu inicializáciu atribútu sa postará konštruktor triedy.
-
-Do tejte našej triedy potrebujeme pridať 2 inštančné metódy, ktoré budú načítavať údaje z klávesnice. Potrebujeme totiž na začiatku hry zadať hľadané slovo a počas hry potrebujeme, aby nám hráč zadával písmená, ktoré chce hádať.
-
-!!! example "Úloha 7.6: Získanie vstupu"
-
-    Vytvorte nasledovné inštančné metódy v triede `TextoveUI`. V kóde týchto metód použite atribút `scanner` na načítanie hodnôt z klávesnice.
-
-    - `public char ziskajTip()` - vypíše na obrazovku text "Hádaj písmeno: " a načíta jeden znak z klávesnice. Použite metódu `scanner.nextLine()` a potom pomocou metódy `String#charAt()` vráťte prvý znak, ktorý užívateľ zadal.
-    - `public String ziskajHadaneSlovo()` - vypíše na obrazovku text "Zadaj slovo, ktoré sa má hádať: " a načíta slovo z klávesnice. Vráti načítané slovo. Po načítaní 'vyčistite' obrazovku napísaním veľkého množstva nových riadkov (znak '\n')
-
-Ostáva nám napísať zopár metód na vypísanie rôznych informácií na obrazovku
-
-!!! example "Úloha 7.7: Vypísanie informácii"
-
-    Vytvorte nasledovné inštančné metódy v triede `TextoveUI`.
-
-    - `public void vypisIntro()` - vypíše text "Vitaj v hre Obesenec!". Text môžete pekne orámovať, ak chcete.
-    - `public void vypisStavHry(Stav stav)` - do samostatného riadku vypíše "Slovo: " a za ním vypíše zatiaľ uhádnuté slovo `stav.getSlovo()`
-    - `public void vypisVysledokHry(Stav stav)` - Ak je `stav.isVyhra()` `true`, vypíše "Vyhral si!". V opačnom prípade vypíše "Prehral si, hľadané slovo bolo: " a vypíše hľadané slovo.
-    - `public void vypisVysledokHadania(char tip, boolean spravnyTip)` - ak je vstupny argument `spravnyTip` true, vypíše "Uhadol si dalsi znak!". V opačnom prípade vypíše "Znak %c sa v hľadanom slove nenachádza", pričom vypíše znak `tip`.
-
-Trieda `TextoveUI` bude teda mať 6 inštančných metód, 2 na čítanie a 4 na výpis. UML diagram tejto triedy by mohol vyzerať nasledovne:
+Trieda `TextoveUI` má 3 nové metódy.
 
 ```mermaid
 classDiagram
@@ -173,112 +307,55 @@ class TextoveUI {
   - Scanner scanner
   + ziskajTip() char
   + ziskajHadaneSlovo() String
+  + ziskajKategoriu() String
+  + ziskajSlova() String[]
   + vypisIntro() void
   + vypisStavHry(Stav) void
   + vypisVysledokHry(Stav) void
   + vypisVysledokHadania(char, boolean) void
+  + vypisIntroSlovnika(Slovnik) void
+
 }
 ```
 
-## Trieda `Hra`
-
-Ostáva nám napísať hlavnú logiku hry. To nebude zložité, nakoľko väčšinu logiky už máme implementovanú v triedach `Stav` a `TextoveUI`. Hlavná trieda `Hra` bude mať za úlohu tieto veci:
-
-- Vytvorí objekt triedy `TextoveUI`
-- Vypíše intro a načíta hádané slovo do pomocnej premennej
-- Vytvorí objekt triedy `Stav` a do konštruktora vloží hádané slovo. Počet pokusov nastaví na 5
-- Spustí cyklus, ktorý sa opakuje, kým nie je koniec hry (`stav.isGameOver()`)
-- V cykle vypíše stav hru, načíta tip, zavolá metódu `hadaj()` a vypíše výsledok hadania
-- Po skončení cyklu vypíše výsledok hry
-
-!!! example "Úloha 7.8: Hlavná trieda `Hra`"
-
-    Vytvorte triedu `sk.spse.hangman.Hra` s nasledovným kódom
-
-    ```java
-    package sk.spse.hangman;
-
-    public class Hra {
-        public static void novaTextovaHra() {
-            TextoveUI ui = new TextoveUI();
-            ui.vypisIntro();
-
-            String hadaneSlovo = ui.ziskajHadaneSlovo();
-
-            Stav stav = new Stav(hadaneSlovo, 5);
-
-            while(!stav.isGameOver()) {
-                ui.vypisStavHry(stav);
-                char tip = ui.ziskajTip();
-                boolean spravnyTip = stav.hadaj(tip);
-                ui.vypisVysledokHadania(tip, spravnyTip);
-            }
-
-            ui.vypisVysledokHry(stav);
-        }
-
-        public static void main(String[] args) {
-            novaTextovaHra();
-        }
-    }
-
-    ```
-
-Trieda hra je z hľadiska štruktúry jednoduchá, má iba 2 statické metódy a nemá žiaden atribút. **V UML Class diagrame sú statické metódy podčiarknuté**.
+Do triedy `Hra` nám pribudli statické metódy na vytváranie slovníkov
 
 ```mermaid
 classDiagram
 direction BT
 class Hra {
+  + getSlovnikJedal()$ Slovnik
+  + getSlovnikZvierat()$ Slovnik
+  + getSlovnikVeci()$ Slovnik
+  + getSlovnikCustom()$ Slovnik
   + novaTextovaHra()$ void
   + main(String[])$ void
 }
 ```
 
-Hra je hotová, spustite ju spustením triedy `Hra` a môžete začať hrať. Poproste vášho suseda, aby vám zadal hľadané slovo.
-
-![Doge blahoželá](../assets/doge-congrats.jpg){width=400}
-/// caption
-Blahoželáme k úspešnému naprogramovaniu hry. Nižšie nájdete bonusové úlohy.
-///
-
 
 ## Úlohy na precvičenie
 
-!!! example "Úloha 7.9: Hrajte znova"
+!!! example "Úloha 8.10: Podpora slov s medzerou"
 
-    Po skončení hry nevypnite program, ale spusťte hru znova. Pamätajte si počet výhier a prehier.
+    Upravte program tak, aby podporoval hádané výrazy z viacerých slov. 
+    
+    Hint: Stačí, ak pri vytváraní uhádnutých znakov v konštruktore triedy `Stav` nedáme všade znak podčiarníka, ale iba na tie miesta, ktoré chceme, aby hráť hádal. Teda na miesta kde je medzera dáme hneď na začiatku správny znak.
 
-!!! example "Úloha 7.10: Defaultný počet pokusov"
+!!! example "Úloha 8.11: Písmená s diakritikou"
 
-    Vytvorte konštantu `DEFAULT_POKUSY` v triede `Stav`. Vytvorte preťažený konštruktor, ktorý bude prijímať iba hľadané slovo a použite tento defaultný počet pokusov. Odstráňte magické číslo z triedy `Hra`
+    Upravte program tak, aby pri hádaní nerozlišoval diakritiku, teda ak hráč zadá písmeno `a`, vyplní to aj písmeno `á`.
 
-!!! example "Úloha 7.11: Defaultný zoznam slov"
+!!! example "Úloha 8.12: ASCII Obesenec"
 
-    Vytvorte konštantu pole slov `DEFAULT_SLOVA` v triede `Stav`. Dajte do neho 20 slov. Vytvorte preťažený konštruktor, ktorý nemá žiaden argument a použije náhodné slovo z tohto zoznamu.
-
-!!! example "Úloha 7.12: Ošetrenie vstupov"
-
-    Ošetrite vstupy do konštruktora, vyhoďte výnimky, ak sú nesprávne. Podobne ošetrite vstupy do metód a vstupy z klávesnice.
-
-!!! example "Úloha 7.13: Počet pokusov"
-
-    Pri výhre vypíšte, na ktorý pokus hráč vyhral
-
-!!! example "Úloha 7.14: Pamäť nesprávnych znakov"
-
-    Pamätajte si nesprávne znaky, ktoré hráč hádal. Pri vypísani stavu hry ich v každom kole vypíšte.
-
-!!! example "Úloha 7.15: Nepozornosť sa nevypláca"
-
-    Odoberte pokus, aj keď hráč zadá znak, ktorý je síce správny, ale už ho pred tým zadal.
+    V metóde `vypisStavHry()` vykreslite pomocou znakov obesenca, ktorý bude vyzerať ináč pri inom počte ostávajúcich pokusov.
 
 
 ## Zhrnutie cvičenia
 
-- [x] Vyriešte úlohy a naprogramujte textovú hru Obesenec
-- [x] Getter metódy, ktoré vracajú boolean hodnotu sa zvyknú začínať slovom `is`, ostatné sa začínajú slovom `get`.
-- [x] V UML Class diagrame sú statické metódy podčiarknuté
+- [x] Vyriešte úlohy a naprogramujte slovník do textovej hry Obesenec
+- [x] Na náhodné čisla používame triedu `java.util.Random`
+- [x] V UML Class diagrame sú konštruktory na prvom mieste v zozname metód
 
 !!! note "Poznámky do zošita"
     Toto cvičenie si do zošita nemusíte písať žiadne poznámky
@@ -287,5 +364,6 @@ Blahoželáme k úspešnému naprogramovaniu hry. Nižšie nájdete bonusové ú
 
     Okruhy otázok na test:
 
-    - Vedieť vytvoriť a použiť inštančné metódy
+    - Vedieť vytvoriť a použiť preťažené konštruktory a továrenské metódy
+    - Vedieť priamo inicializovať atribúty v triede
     

@@ -229,6 +229,8 @@ class Hra {
 
 Hra je hotová, spustite ju spustením triedy `Hra` a môžete začať hrať. Poproste vášho suseda, aby vám zadal hľadané slovo.
 
+Na budúcom cvičení pokračujeme v tomto projekte, pokiaľ ste niektoré úlohy nestihli na hodine, dokončte si ich do budúcej hodiny doma.
+
 ![Doge blahoželá](../assets/doge-congrats.jpg){width=400}
 /// caption
 Blahoželáme k úspešnému naprogramovaniu hry. Nižšie nájdete bonusové úlohy.
@@ -276,6 +278,8 @@ Blahoželáme k úspešnému naprogramovaniu hry. Nižšie nájdete bonusové ú
     Toto cvičenie si do zošita nemusíte písať žiadne poznámky
 
 !!! warning "Skúšanie a kontrola vedomostí"
+
+    Na budúcom cvičení pokračujeme v tomto projekte, pokiaľ ste niektoré úlohy nestihli na hodine, dokončte si ich do budúcej hodiny doma.
 
     Okruhy otázok na test:
 
