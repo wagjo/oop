@@ -20,7 +20,7 @@ nav:
     - 3 - Riadenie toku programu: 'cvicenie-3/c03-cykly.md'
     - 4 - Polia, varargs: 'cvicenie-3/c04-polia.md'
     - 5 - Obalené typy: 'cvicenie-3/c05-wrapper.md'
-    #- 6 - Reťazce znakov: 'cvicenie-3/c06-stringy.md'
+    - 6 - Reťazce znakov: 'cvicenie-3/c06-stringy.md'
     #- 7 - Hangman: 'cvicenie-3/c07-metody.md'
     #- 8 - Slovník: 'cvicenie-3/c08-konstruktor.md'
   - Pokročilí: 

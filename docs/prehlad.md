@@ -173,7 +173,14 @@ hide:
 <li>instanceof a poradie vykonávania</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c06-stringy">Reťazce</a> (<a href="../assets/c06w.pdf">pdf</a>)
+<ul>
+<li>String</li>
+<li>Metódy na prácu s reťazcami</li>
+<li>StringBuilder</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p06-agile">Agilný vývoj</a> (<a href="../assets/p06w.pdf">pdf</a>)
 <ul>

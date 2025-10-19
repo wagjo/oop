@@ -2,6 +2,16 @@
 
 Dnešné cvičenie si ukážeme, ako sa v Jave pracuje s reťazcami znakov. Ukážeme si spôsoby vytvárania a manipulácie s reťazcami. Taktiež si predstavíme rôzne pomocné metódy na vyhľadávanie a transformáciu reťazcov.
 
+!!! example "Domáca úloha"
+
+    Vytvorte triedu `sk.spse.util.Math` so statickou metódou `median()`, ktorá má premenlivý počet číselných argumentov a vráti ich mediánovú hodnotu.
+
+    Medián je číslo, ktoré leží presne v strede zoradeného zoznamu čísel. Ak je dĺžka zoznamu párna, mediánom je priemer dvoch stredných čísel.
+
+    Taktiež do tejto triedy pridajte statickú metódu `main()` ktorá načíta čísla z klávesnice a zavolá metódu `median()`.
+
+    Výsledný súbor s triedou **správne nazvite** a zašlite cez domácu úlohu v Edupage do budúceho cvičenia. Neposielajte zbalený súbor alebo viac súborov, či adresárov.
+
 ## String
 
 V Jave sú reťazce znakov reprezentované ako objekty triedy `String`. Táto trieda je definovaná v balíku `java.lang`.
