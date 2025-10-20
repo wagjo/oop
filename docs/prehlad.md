@@ -192,9 +192,25 @@ hide:
 </tr>
 <tr>
 <td width=10%>7</td>
+<td width=30%>
+<a href="../teoria-3/t07-metody">Metódy</a> (<a href="../assets/t07w.pdf">pdf</a>)
+<ul>
+<li>Statické a inštančné metódy</li>
+<li>Getter a Setter metódy</li>
+<li>Preťaženie metód</li>
+<li>Továrenské metódy</li>
+</ul>
+</td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p07-git">Git</a> (<a href="../assets/p07w.pdf">pdf</a>)
+<ul>
+<li>Git repozitár</li>
+<li>Working tree a index/staging area</li>
+<li>Zápis zmien do repozitára</li>
+<li>Vetvy zmien</li>
+</ul>
+</td>
 </tr>
 <tr>
 <td width=10%>8</td>
