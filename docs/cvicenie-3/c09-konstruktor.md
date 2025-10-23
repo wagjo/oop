@@ -1,4 +1,4 @@
-# Cvičenie 8: Inicializácia a konštruktory
+# Cvičenie 9: Inicializácia a konštruktory
 
 Toto cvičenie budeme pokračovať vo vylepšovaní hry Hangman, ktorú ste si naprogramovali minulé cvičenie. Dnes si do hry pridáme slovník so slovami, aby sme hádané slovo nemuseli dávať manuálne.
 
@@ -20,7 +20,7 @@ Návrh riešenia:
 - Úprava triedy `Stav` tak, aby v konštruktore prijímala namiesto hádaného slova slovník slov
 - Úprava triedy `Hra` tak, aby namiesto získania hádaného slova vytvorila a použila slovník
 
-!!! example "Úloha 8.1: Kontrola hry Hangman"
+!!! example "Úloha 9.1: Kontrola hry Hangman"
 
     V IntelliJ IDEA si otvorte projekt Hangman a spustite ho, aby ste vyskúšali funkčnosť programu. Ak projekt nemáte, stiahnite ho príkazom `git clone https://github.com/wagjo/oop-hangman.git`
 
@@ -56,13 +56,13 @@ Popis atribútov:
 
 Konštruktor prijíma 2 argumenty, kategória a slová. Atribút `rand` sa inicializuje priamo pri deklarácii atribútu.
 
-!!! example "Úloha 8.2: Trieda `Slovnik`"
+!!! example "Úloha 9.2: Trieda `Slovnik`"
 
     Vytvorte novú triedu `sk.spse.hangman.Slovnik` a pridajte do nej atribúty a konštruktor podľa príkladu uvedeného vyššie.
 
 V ďalšom kroku potrebujeme vytvoriť getter metódy, hlavne pre výber náhodného slova.
 
-!!! example "Úloha 8.3: Getter metódy"
+!!! example "Úloha 9.3: Getter metódy"
 
     Vytvorte nasledovné getter metódy v triede Slovnik:
 
@@ -72,7 +72,7 @@ V ďalšom kroku potrebujeme vytvoriť getter metódy, hlavne pre výber náhodn
 
 Základný slovník máme vytvorený, poďme ho použiť v hre. Ako prvé potrebujeme upraviť triedu `Stav` tak, aby v konštruktore prijímala namiesto slova slovník.
 
-!!! example "Úloha 8.4: Úprava triedy `Stav`"
+!!! example "Úloha 9.4: Úprava triedy `Stav`"
 
     Upravte konštruktor triedy `Stav` tak, aby namiesto argumentu `hadaneSlovo` prijímala slovník. 
     
@@ -85,7 +85,7 @@ Teraz môžme v trieda `Hra` vytvoriť slovník a použiť ho v hre.
 
 Najjednoduchší slovník vytvoríme tak, že mu priamo napíšeme zoznam slov. Trieda slovník má konštruktor, ktorý prijíma pole slov, takže stačí nám tento konštruktor vhodne zavolať.
 
-!!! example "Úloha 8.5: Slovník jedál priamo v kóde"
+!!! example "Úloha 9.5: Slovník jedál priamo v kóde"
 
     Do triedy `Hra` pridajte statickú metódu `getSlovnikJedal()`, ktorá vráti nový slovník jedál
 
@@ -105,7 +105,7 @@ Teraz by sme mali mať funkčný program, ktorý bude používať náhodné slov
 
 Pred samotným hádaním by bolo dobré, aby program vypísal kategóriu slov, ktoré máme hádať. Pridajme teda novú vypisovaciu metódu.
 
-!!! example "Úloha 8.6: Intro text pre slovník"
+!!! example "Úloha 9.6: Intro text pre slovník"
 
     Do triedy `TextoveUI` pridajte metódu `vypisIntroSlovnika` s nasledovným kódom
 
@@ -127,7 +127,7 @@ Mať dáta priamo v kóde nie je vždy najlepší nápad. Ak by sme dáta chceli
 
 Vytvoríme si továrenskú metódu v triede `Slovnik`, ktorá nám vytvorí slovník zo slov v súbore.
 
-!!! example "Úloha 8.7: Slovník so súboru"
+!!! example "Úloha 9.7: Slovník so súboru"
 
     1. Vytvorte si v projekte adresár `assets`
 
@@ -168,7 +168,7 @@ Vyskúšajte si zmenený program, mal by vám dávať hádať slová zvierat.
 
 Ako ďalší typ slovníka si vyskúšame slovník, ktorý si zoznam slov stiahne z internetu. Bude to vyzerať dosť podobne ako pri predchádzajúcom slovníku.
 
-!!! example "Úloha 8.8: Slovník z internetu"
+!!! example "Úloha 9.8: Slovník z internetu"
 
     1. Do triedy `Slovnik` pridajte továrenskú metódu `fromUrl(String kategoria, String url)` s nasledovným kódom
 
@@ -202,7 +202,7 @@ Ako ďalší typ slovníka si vyskúšame slovník, ktorý si zoznam slov stiahn
 
 Posledný typ slovníka, ktorý si dnes ukážeme, bude slovník, ktorý ručne napíšeme na začiatku programu. Tu nám bude treba vytvoriť pomocné metódy v triede `TextoveUI`. Vytvorenie tohto slovníka dáme do preťaženého konštruktora.
 
-!!! example "Úloha 8.9: Slovník zadaný z klávesnice"
+!!! example "Úloha 9.9: Slovník zadaný z klávesnice"
 
     1. Do triedy `TextoveUI` pridajte 2 nové metódy, jednu na získanie názvu kategórie a druhú na získanie samotných slov do slovníka
 
@@ -336,17 +336,17 @@ class Hra {
 
 ## Úlohy na precvičenie
 
-!!! example "Úloha 8.10: Podpora slov s medzerou"
+!!! example "Úloha 9.10: Podpora slov s medzerou"
 
     Upravte program tak, aby podporoval hádané výrazy z viacerých slov. 
     
     Hint: Stačí, ak pri vytváraní uhádnutých znakov v konštruktore triedy `Stav` nedáme všade znak podčiarníka, ale iba na tie miesta, ktoré chceme, aby hráť hádal. Teda na miesta kde je medzera dáme hneď na začiatku správny znak.
 
-!!! example "Úloha 8.11: Písmená s diakritikou"
+!!! example "Úloha 9.11: Písmená s diakritikou"
 
     Upravte program tak, aby pri hádaní nerozlišoval diakritiku, teda ak hráč zadá písmeno `a`, vyplní to aj písmeno `á`.
 
-!!! example "Úloha 8.12: ASCII Obesenec"
+!!! example "Úloha 9.12: ASCII Obesenec"
 
     V metóde `vypisStavHry()` vykreslite pomocou znakov obesenca, ktorý bude vyzerať ináč pri inom počte ostávajúcich pokusov.
 

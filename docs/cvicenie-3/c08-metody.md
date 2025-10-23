@@ -1,4 +1,4 @@
-# Cvičenie 7: Metódy
+# Cvičenie 8: Metódy
 
 Na dnešnom cvičení si vyskúšame písanie metód. Aby sme robili aj niečo praktickejšie, naprogramujeme si jednoduchú textovú hru.
 
@@ -22,7 +22,7 @@ Návrh riešenia:
 - Trieda `TextoveUI` bude mať na starosť užívateľské rozhranie: výpis na obrazovku a načítavanie z klávesnice
 - Trieda `Hra` bude mať hlavnú logiku hry a vstupný bod programu
 
-!!! example "Úloha 7.1: Nový projekt"
+!!! example "Úloha 8.1: Nový projekt"
 
     V IntelliJ IDEA si vytvoríme nový Java projekt s názvom `Hangman`. Pri vytváraní vypneme možnosť vytvorenia *Sample code*, ukážkového kódu.
 
@@ -62,13 +62,13 @@ Popis atribútov:
 
 Konštruktor prijíma 2 argumenty, hádané slovo a počet pokusov, na ktorý sa musí slovo uhádnuť. Ostatné atribúty konštruktor inicializuje na ich počiatočné hodnoty.
 
-!!! example "Úloha 7.2: Trieda `Stav`"
+!!! example "Úloha 8.2: Trieda `Stav`"
 
     Vytvorte novú triedu `sk.spse.hangman.Stav` a pridajte do nej atribúty a konštruktor podľa príkladu uvedeného vyššie.
 
 Keďže sú všetky atribúty privátne, mimo triedy Stav nevieme priamo zistiť ich hodnotu. Musíme teda vytvoriť **getter metódy**. Vytvoríme ich iba pre prípady, kedy naozaj potrebujeme zistiť nejakú hodnotu.
 
-!!! example "Úloha 7.3: Getter metódy"
+!!! example "Úloha 8.3: Getter metódy"
 
     Vytvorte nasledovné getter metódy v triede Stav:
 
@@ -82,7 +82,7 @@ Vytvorili sme teda 5 getter metód. Getter metódy, ktoré vracajú boolean hodn
 
 Ostáva nám ešte napísať metódu, ktorá zmení stav hry podľa toho, aký znak hráč zadal.
 
-!!! example "Úloha 7.4: Inštančná metóda"
+!!! example "Úloha 8.4: Inštančná metóda"
 
     V triede `Stav` vytvorte inštančnú metódu `public boolean hadaj(char tip)`, ktorá bude meniť stav hry podľa zadaného znaku `tip`. V tele metódy napíšte kód, ktorý urobí nasledovné:
 
@@ -116,7 +116,7 @@ class Stav {
 
 Druhá trieda, ktorú si vytvoríme, bude mať na starosti užívateľské rozhranie. Nakoľko sme si ešte nevysvetlili prácu s grafikou a grafickýmí rozhraniami, ostaneme pri textovom rozhraní. V budúcnosti budeme môcť vytvoriť inú triedu pre grafické rozhranie a nebudeme musieť meniť kód stavu hry.
 
-!!! example "Úloha 7.5: Trieda `TextoveUI`"
+!!! example "Úloha 8.5: Trieda `TextoveUI`"
 
     Vytvorte novú triedu `sk.spse.hangman.TextoveUI` s nasledovným atribútom a konštruktorom:
 
@@ -138,7 +138,7 @@ Do triedy `TextoveUI` sme si pridali atribút `scanner`, ktorý budeme používa
 
 Do tejte našej triedy potrebujeme pridať 2 inštančné metódy, ktoré budú načítavať údaje z klávesnice. Potrebujeme totiž na začiatku hry zadať hľadané slovo a počas hry potrebujeme, aby nám hráč zadával písmená, ktoré chce hádať.
 
-!!! example "Úloha 7.6: Získanie vstupu"
+!!! example "Úloha 8.6: Získanie vstupu"
 
     Vytvorte nasledovné inštančné metódy v triede `TextoveUI`. V kóde týchto metód použite atribút `scanner` na načítanie hodnôt z klávesnice.
 
@@ -147,7 +147,7 @@ Do tejte našej triedy potrebujeme pridať 2 inštančné metódy, ktoré budú 
 
 Ostáva nám napísať zopár metód na vypísanie rôznych informácií na obrazovku
 
-!!! example "Úloha 7.7: Vypísanie informácii"
+!!! example "Úloha 8.7: Vypísanie informácii"
 
     Vytvorte nasledovné inštančné metódy v triede `TextoveUI`.
 
@@ -183,7 +183,7 @@ Ostáva nám napísať hlavnú logiku hry. To nebude zložité, nakoľko väčš
 - V cykle vypíše stav hru, načíta tip, zavolá metódu `hadaj()` a vypíše výsledok hadania
 - Po skončení cyklu vypíše výsledok hry
 
-!!! example "Úloha 7.8: Hlavná trieda `Hra`"
+!!! example "Úloha 8.8: Hlavná trieda `Hra`"
 
     Vytvorte triedu `sk.spse.hangman.Hra` s nasledovným kódom
 
@@ -239,31 +239,31 @@ Blahoželáme k úspešnému naprogramovaniu hry. Nižšie nájdete bonusové ú
 
 ## Úlohy na precvičenie
 
-!!! example "Úloha 7.9: Hrajte znova"
+!!! example "Úloha 8.9: Hrajte znova"
 
     Po skončení hry nevypnite program, ale spusťte hru znova. Pamätajte si počet výhier a prehier.
 
-!!! example "Úloha 7.10: Defaultný počet pokusov"
+!!! example "Úloha 8.10: Defaultný počet pokusov"
 
     Vytvorte konštantu `DEFAULT_POKUSY` v triede `Stav`. Vytvorte preťažený konštruktor, ktorý bude prijímať iba hľadané slovo a použite tento defaultný počet pokusov. Odstráňte magické číslo z triedy `Hra`
 
-!!! example "Úloha 7.11: Defaultný zoznam slov"
+!!! example "Úloha 8.11: Defaultný zoznam slov"
 
     Vytvorte konštantu pole slov `DEFAULT_SLOVA` v triede `Stav`. Dajte do neho 20 slov. Vytvorte preťažený konštruktor, ktorý nemá žiaden argument a použije náhodné slovo z tohto zoznamu.
 
-!!! example "Úloha 7.12: Ošetrenie vstupov"
+!!! example "Úloha 8.12: Ošetrenie vstupov"
 
     Ošetrite vstupy do konštruktora, vyhoďte výnimky, ak sú nesprávne. Podobne ošetrite vstupy do metód a vstupy z klávesnice.
 
-!!! example "Úloha 7.13: Počet pokusov"
+!!! example "Úloha 8.13: Počet pokusov"
 
     Pri výhre vypíšte, na ktorý pokus hráč vyhral
 
-!!! example "Úloha 7.14: Pamäť nesprávnych znakov"
+!!! example "Úloha 8.14: Pamäť nesprávnych znakov"
 
     Pamätajte si nesprávne znaky, ktoré hráč hádal. Pri vypísani stavu hry ich v každom kole vypíšte.
 
-!!! example "Úloha 7.15: Nepozornosť sa nevypláca"
+!!! example "Úloha 8.15: Nepozornosť sa nevypláca"
 
     Odoberte pokus, aj keď hráč zadá znak, ktorý je síce správny, ale už ho pred tým zadal.
 

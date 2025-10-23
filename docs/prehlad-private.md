@@ -204,12 +204,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c07-metody">Metódy</a> (<a href="../assets/c07w.pdf">pdf</a>)
+<a href="../cvicenie-3/c07-triedy">Triedy a Metódy</a> (<a href="../assets/c07w.pdf">pdf</a>)
 <ul>
-<li>Hra Hangman</li>
-<li>Statické a inštančné metódy</li>
-<li>Getter a Setter metódy</li>
-<li>UML diagram tried</li>
+<li>Triedy s atribútmi</li>
+<li>Getter metódy</li>
+<li>toString</li>
+<li>Inštančné a statické metódy</li>
 </ul>
 </td>
 <td width=30%>
@@ -234,12 +234,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c08-konstruktor">Inicializácia a konštruktory</a> (<a href="../assets/c08w.pdf">pdf</a>)
+<a href="../cvicenie-3/c08-metody">Metódy</a> (<a href="../assets/c08w.pdf">pdf</a>)
 <ul>
-<li>Slovník do hry Hangman</li>
-<li>Slovník v kóde</li>
-<li>Slovník zo súboru a z internetu</li>
-<li>Slovník z klávesnice</li>
+<li>Hra Hangman</li>
+<li>Statické a inštančné metódy</li>
+<li>Getter a Setter metódy</li>
+<li>UML diagram tried</li>
 </ul>
 </td>
 <td width=30%>
@@ -262,9 +262,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c09-">x</a> (<a href="../assets/c09w.pdf">pdf</a>)
+<a href="../cvicenie-3/c09-konstruktor">Inicializácia a konštruktory</a> (<a href="../assets/c09w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Slovník do hry Hangman</li>
+<li>Slovník v kóde</li>
+<li>Slovník zo súboru a z internetu</li>
+<li>Slovník z klávesnice</li>
 </ul>
 </td>
 <td width=30%>
