@@ -271,9 +271,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p09-">x</a> (<a href="../assets/p09w.pdf">pdf</a>)
+<a href="../pokrocili-3/p09-oop">Triedy a metódy</a> (<a href="../assets/p09w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Trieda a konštruktor</li>
+<li>Inštančné metódy a atribúty</li>
+<li>Triedne metódy a atribúty</li>
+<li>Statické metódy</li>
 </ul>
 </td>
 </tr>
