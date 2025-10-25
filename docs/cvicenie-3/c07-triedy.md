@@ -29,7 +29,7 @@ Pravidlá:
 - Ak trieda nevracia žiadnu hodnotu, ako návratový typ uvedieme kľúčové slovo `void`
 - Metóda má svoj modifikátor prístupu (`public`, `private`, ...)
 - Statickú metódu deklarujeme s kľúčovým slovom `static`
-- Vnútri inštančnej metódy môžeme použiť `this` ako odkaz na aktuálny objekt. Statické metódy nemajú `this` k dospozícii.
+- Vnútri inštančnej metódy môžeme použiť `this` ako odkaz na aktuálny objekt. Statické metódy nemajú `this` k dispozícii.
 
 Pri písaní kódu v IntelliJ IDEA si môžeme pomôcť automatickým formátovaním, ktoré vykonáme klávesami ++"Ctrl"+"Alt"+"L"++.
 
@@ -75,7 +75,7 @@ Ak chceme hodnoty objektu vypisovať do konzoly, je vhodné v triede napísať m
 
 !!! example "Úloha 7.3: metóda toString"
 
-    V triede `sk.spse.strava.Potravina` vytvorte metodu `toString()`. 
+    V triede `sk.spse.strava.Potravina` vytvorte metódu `toString()`. 
     
     Táto metóda nech vráti reťazec tvaru `<nazov> (<cena>eur <kalorie> kcal)`
 
@@ -105,7 +105,7 @@ Podobne ako aj pri triede `Potravina` aj trieda `Jedalnicek` potrebuje metódu `
 
 !!! example "Úloha 7.5: metóda toString"
 
-    V triede `sk.spse.strava.Jedalnicek` vytvorte metodu `toString()`. 
+    V triede `sk.spse.strava.Jedalnicek` vytvorte metódu `toString()`. 
     
     Táto metóda nech vráti reťazec tvaru `Raňajky: <ranajky>\nObed: <obed>\nVečera: <večera>`.
 
