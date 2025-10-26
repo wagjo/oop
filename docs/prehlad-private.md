@@ -256,9 +256,12 @@ hide:
 <tr >
 <td width=10%>9</td>
 <td width=30%>
-<a href="../teoria-3/t09-">x</a> (<a href="../assets/t09w.pdf">pdf</a>)
+<a href="../teoria-3/t09-premenne">Premenné</a> (<a href="../assets/t09w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Viditeľnosť premenných</li>
+<li>Zatienenie atribútov</li>
+<li>Viditeľnosť premenných</li>
+<li>Názvy premenných</li>
 </ul>
 </td>
 <td width=30%>

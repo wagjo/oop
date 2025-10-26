@@ -6,12 +6,11 @@ Dnešné cvičenie je venované triedam a objektom v Pythone. Python podporuje p
 - triedne metódy, statické metódy
 - triedne atribúty
 - inštancia: vytváranie, mazanie, inštančné atribúty
-- __init__, __str__
 - _protected, __private
 
 ## Trieda
 
-Trieda sa v Pythone definuje kľúčovým slovom `class`. Pre názvy tried sa používa konvencia CamelCase, teda začínajú sa veľkým písmenom.
+Trieda sa v Pythone definuje kľúčovým slovom `class`. Pre názvy tried sa používa konvencia PascalCase, teda začínajú sa veľkým písmenom.
 
 === "Definícia triedy v Pythone"
 

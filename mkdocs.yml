@@ -14,6 +14,7 @@ nav:
     - 6 - Operátory: 'teoria-3/t06-operatory.md'    
     - 7 - Metódy: 'teoria-3/t07-metody.md'    
     #- 8 - Inicializácia objektov: 'teoria-3/t08-konstruktor.md'
+    #- 9 - Premenné a atribúty: 'teoria-3/t09-premenne.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
     - 2 - Prvý Java program: 'cvicenie-3/c02-hello.md'
