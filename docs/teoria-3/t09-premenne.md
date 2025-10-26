@@ -52,7 +52,7 @@ Viditeľnosť inštančných atribútov mimo metód jej triedy je daná modifik�
         }
     }
 
-    Example obj = new Examle();
+    Example obj = new Example();
     System.out.println(obj.instanceVar);
     ```
 

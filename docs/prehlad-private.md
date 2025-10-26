@@ -260,7 +260,7 @@ hide:
 <ul>
 <li>Viditeľnosť premenných</li>
 <li>Zatienenie atribútov</li>
-<li>Viditeľnosť premenných</li>
+<li>Inferencia typov</li>
 <li>Názvy premenných</li>
 </ul>
 </td>
