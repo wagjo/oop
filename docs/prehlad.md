@@ -201,7 +201,15 @@ hide:
 <li>Továrenské metódy</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c07-triedy">Triedy a Metódy</a> (<a href="../assets/c07w.pdf">pdf</a>)
+<ul>
+<li>Triedy s atribútmi</li>
+<li>Getter metódy</li>
+<li>toString</li>
+<li>Inštančné a statické metódy</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p07-git">Git</a> (<a href="../assets/p07w.pdf">pdf</a>)
 <ul>
