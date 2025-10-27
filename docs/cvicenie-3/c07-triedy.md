@@ -50,10 +50,10 @@ Pri písaní kódu v IntelliJ IDEA si môžeme pomôcť automatickým formátova
         // atribúty
         private String nazov;
         private double cena;
-        private double kalorie;
+        private int kalorie;
         
         // konštruktor
-        public Potravina(String nazov, double cena, double kalorie) {
+        public Potravina(String nazov, double cena, int kalorie) {
             this.nazov = nazov;
             this.cena = cena;
             this.kalorie = kalorie;
@@ -63,7 +63,7 @@ Pri písaní kódu v IntelliJ IDEA si môžeme pomôcť automatickým formátova
 
 Je zaužívaným pravidlom nemať atribúty verejné, ale radšej vytvoriť tzv. getter metódy, ktoré vrátia hodnotu atribútov triedy. Takto máme väčšiu kontrolu nad hodnotami atribútov a nad tým, kto môže s atribútmi pracovať.
 
-!!! example "Úloha 7.2: Getter atribúty"
+!!! example "Úloha 7.2: Getter metódy"
 
     V triede `sk.spse.strava.Potravina` vytvorte nasledovné getter metódy
 
