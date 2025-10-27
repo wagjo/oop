@@ -201,7 +201,7 @@ Máme vytvorené 2 triedy, ktoré nám reprezentujú potravinu a denný jedálni
 
     Zavolajte nutričného poradcu na každý deň týždenného jedálnička
 
-## Donmáca úloha
+## Domáca úloha
 
 !!! example "Domáca úloha"
 

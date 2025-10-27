@@ -13,7 +13,7 @@ nav:
     - 5 - Výnimky: 'teoria-3/t05-vynimky.md'    
     - 6 - Operátory: 'teoria-3/t06-operatory.md'    
     - 7 - Metódy: 'teoria-3/t07-metody.md'    
-    #- 8 - Inicializácia objektov: 'teoria-3/t08-konstruktor.md'
+    - 8 - Inicializácia objektov: 'teoria-3/t08-konstruktor.md'
     #- 9 - Premenné a atribúty: 'teoria-3/t09-premenne.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
@@ -33,7 +33,7 @@ nav:
     - 5 - Správa knižníc: 'pokrocili-3/p05-pip.md'
     - 6 - Agilný vývoj: 'pokrocili-3/p06-agile.md'
     - 7 - Git: 'pokrocili-3/p07-git.md'
-    #- 8 - GitHub: 'pokrocili-3/p08-github.md'
+    - 8 - GitHub: 'pokrocili-3/p08-github.md'
     #- 9 - Trieda a metódy: 'pokrocili-3/p09-oop.md'
   - Prehľad tém: 'prehlad.md'
   #- Ťahák: 'tahak.md'

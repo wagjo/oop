@@ -222,9 +222,24 @@ hide:
 </tr>
 <tr>
 <td width=10%>8</td>
+<td width=30%>
+<a href="../teoria-3/t08-konstruktor">Inicializácia a konštruktory</a> (<a href="../assets/t08w.pdf">pdf</a>)
+<ul>
+<li>Inicializácia objektu</li>
+<li>Konštruktory</li>
+<li>Statická inicializácia</li>
+</ul>
+</td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p08-github">GitHub</a> (<a href="../assets/p08w.pdf">pdf</a>)
+<ul>
+<li>Vzdialený repozitár</li>
+<li>GitHub Issues</li>
+<li>GitHub Projects</li>
+<li>GitHub Pull requests</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
