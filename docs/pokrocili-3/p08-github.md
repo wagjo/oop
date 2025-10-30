@@ -75,7 +75,7 @@ Ak si otvoríte tieto novo vytvorené issues, uvidíte ich popis a možete dopln
 
     Nájdite a otvorte issue `Aliasy v __init__.py`.
 
-    1. Priraďte mu lablel **enhancement**
+    1. Priraďte mu label **enhancement**
 
     1. Priraďte seba ako zodpovedného človeka k tomuto issue (Assignees - Assign yourself)
 

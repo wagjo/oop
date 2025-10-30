@@ -283,7 +283,7 @@ Problém s únikom referencií sa dá riešiť aj použitím nemenných objektov
 
     Zabalenie dát (atribútov) a metód do jednej komponenty - objektu
 
-    - Zvýšuje bezpečnosť
+    - Zvyšuje bezpečnosť
     - Zlepšuje modularitu
     - Jednoduchšie sa udržiava kód
 
