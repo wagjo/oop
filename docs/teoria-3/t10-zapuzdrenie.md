@@ -4,6 +4,9 @@ Dnes začíname preberať hlavné koncepty objektovo orientovaného programovani
 
 ## Zapuzdrenie
 
+<div class="md-has-sidebar" markdown>
+<main markdown>
+
 Zapuzdrenie je **zabalenie dát (atribútov) a metód do jednej komponenty** - objektu.
 
 Zapuzdrenie (anglicky *encapsulation*) je jeden zo základných princípov objektovo orientovaného programovania. V Jave sa zapuzdrenie používa na skrytie interných detailov objektu a ochranu jeho dát pred neoprávneným prístupom alebo modifikáciou.
@@ -20,7 +23,15 @@ Hlavné ciele zapuzdrenia:
 - Abstrakcia:  Vonkajší kód nemusí poznať vnútornú štruktúru triedy, iba jej verejné rozhranie (verejné metódy).
 - Flexibilita: Zmena internej implementácie bez ovplyvnenia vonkajšieho kódu.
 
-=== "Príklad zapuzdrenia atribútov"
+ </main>
+
+  <aside markdown>
+Koncept zapuzdrenia úzko súvisí s tzv. skrývaním informácií (anglicky information hiding), čo je princíp segregácie (oddelenia) častí programu, u ktorých je veľká pravdepodobnosť, že sa budú meniť. Tým sa iné časti programu ochránia pred prílišnými zmenami, v prípade, že sa zmení návrh alebo požiadavky na implementáciu.
+</aside>
+</div>
+
+
+=== "Príklad zapuzdrenia"
 
     ```java
     public class Osoba {
@@ -56,12 +67,15 @@ Hlavné ciele zapuzdrenia:
 Zapuzdrenie v Jave sa dosahuje kombináciou:
 
 - Prístupových modifikátorov (private, protected, public, prípadne defaultný prístup).
-- Getterov a settrov (metódy na čítanie a zápis dát).
+- Getterov a setterov (metódy na čítanie a zápis dát).
 - Skrytím implementačných detailov (interné dáta triedy sú prístupné iba cez definované rozhranie - verejné metódy)
 
 Pokročilejšie zapuzdrenie a väčšiu kontrolu nad stavom objektov vieme dosiahnuť tiež použitím privátnych konštruktorov a továrenských metód.
 
 ## Invarianty
+
+<div class="md-has-sidebar" markdown>
+<main markdown>
 
 Zapuzdrenie nám umožňuje vykonávať validáciu vstupných hodnôt a udržiavať **invarianty** objektu.
 
@@ -77,19 +91,28 @@ Medzi príklady invariantov patrí napr. že meno osoby musí byť neprázdne al
 
 V nasledujúcom príklade si zadefinujme invariant ako podmienku, že bankový účet musí mať nenulový zostatok. Všetky verejné metódy musia zaručiť, že sa invariant neporuší.
 
+ </main>
+
+  <aside markdown>
+Invarianty sú súčasťou prístupu softvérového návrhu s názvom [Design by Contract](https://en.wikipedia.org/wiki/Design_by_contract), v ktorom jednotlivé komponenty majú formálne definované vzájomné vzťahy a podmienky stavov a použitia. Niektoré objektovo orientované jazyky poskytujú priamu podporu pre techniky kontraktového návrhu.
+
+V Jave existujú rôzne nástroje a frameworky pre definovanie a kontrolu dodržiavania kontraktov, avšak tento prístup v súčasnosti nie je veľmi populárny a bol nahradený agilnými prístupmi a testami, ktoré nahradzujú formálne kontrakty.
+</aside>
+</div>
+
 === "Zapuzdrenie udržiava invarianty objektu"
 
     ```java
     public class BankovyUcet {
-        private double dostatok;
+        private double zostatok;
         private String cisloUctu;
 
-        public BankovyUcet(String cisloUctu, double pociatocnyZustatok) {
+        public BankovyUcet(String cisloUctu, double pociatocnyZostatok) {
             this.cisloUctu = cisloUctu;
             if (pociatocnyZostatok >= 0) {
                 this.zostatok = pociatocnyZostatok;
             } else {
-                throw new IllegalArgumentException("Počiatočný zostatok nemôže byť záporný!");
+                throw new IllegalArgumentException("Zostatok nemôže byť záporný!");
             }
         }
 
@@ -105,7 +128,7 @@ V nasledujúcom príklade si zadefinujme invariant ako podmienku, že bankový �
             if (suma > 0 && suma <= zostatok) {
                 zostatok -= suma;
             } else {
-                throw new IllegalArgumentException("Neplatná suma alebo málo prostriedkov!");
+                throw new IllegalArgumentException("Neplatná suma/malý zostatok!");
             }
         }
 
@@ -135,9 +158,14 @@ Takýto objekt je bezpečný na zdieľanie a vždy ostáva v konzistentnom stave
 Nemenný objekt môžeme dosiahnuť nasledovne:
 
 - Atribúty nemenného objektu budú konštanty (použitím kľúčového slova `final`)
-- Trieda nebude poskytovať žiadne setter metódy, alebo metódy, ktoré menia stav objektu
+- Trieda nebude poskytovať žiadne setter metódy, ani metódy, ktoré menia stav objektu
 
 Nemenná trieda je veľmi užitočná vec a uľahčuje návrh architektúry programu. Jednoduchšie sa testuje a používa. V Jave poznáme veľa nemenných tried, napr. `java.lang.String`, `java.time.LocalDate` atď.
+
+!!! tip "Učím sa s pomocou umelej inteligencie"
+
+    Som študent strednej školy, učím sa programovanie v Jave. [Uveď príklady nemenných tried v knižniciach Javy](https://grok.com/share/c2hhcmQtMg%3D%3D_3e0436cc-2628-4be8-8fd0-672583c78999)
+
 
 === "Príklad nemennej triedy"
 
@@ -210,6 +238,10 @@ Riešením je defenzívne kopírovanie, kde **vraciame vždy kópiu vnútornej h
 
 Problém s únikom referencií sa dá riešiť aj použitím nemenných objektov. Ak aj v nejakej metóde vrátime vnútorný objekt, ak je nemenný, vonkajší kód nemôže nijako zmeniť jeho hodnoty a porušiť tak invarianty našej triedy.
 
+!!! tip "Učím sa s pomocou umelej inteligencie"
+
+    Som študent strednej školy, učím sa programovanie v Jave. [Uveď príklady defenzívneho kopírovania](https://grok.com/share/c2hhcmQtMg%3D%3D_f32970db-84de-46dc-98e5-061d3f3eb48a)
+
 
 ## Zhrnutie teórie
 
@@ -262,7 +294,7 @@ Problém s únikom referencií sa dá riešiť aj použitím nemenných objektov
     - Getter a setter metódy
     - Skrytie implementačných detailov do súkromných metód
 
-    Invariant - podmienka alebo vlastnosť, ktorá musí byť pravdivá pre objekt počas jeho celého života.
+    Invariant - podmienka alebo vlastnosť, ktorá je pravdivá pre objekt počas jeho celého života
     - Platí po každom skončení konštruktora
     - Platí pred aj po každom verejnom volaní metódy
     - Môže byť dočasne porušený vo vnútri metódy, ale musí byť obnovený pred jej ukončením
