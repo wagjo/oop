@@ -287,9 +287,12 @@ hide:
 <tr >
 <td width=10%>10</td>
 <td width=30%>
-<a href="../teoria-3/t10-">x</a> (<a href="../assets/t10w.pdf">pdf</a>)
+<a href="../teoria-3/t10-zapuzdrenie">Zapuzdrenie</a> (<a href="../assets/t10w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Zapuzdrenie</li>
+<li>Triedny invariant</li>
+<li>Nemenný objekt</li>
+<li>Defenzívne kopírovanie</li>
 </ul>
 </td>
 <td width=30%>
@@ -300,6 +303,72 @@ hide:
 </td>
 <td width=30%>
 <a href="../pokrocili-3/p10-">x</a> (<a href="../assets/p10w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
+<tr >
+<td width=10%>11</td>
+<td width=30%>
+<a href="../teoria-3/t11-">x</a> (<a href="../assets/t11w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c11-">x</a> (<a href="../assets/c11w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p11-">x</a> (<a href="../assets/p11w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
+<tr >
+<td width=10%>12</td>
+<td width=30%>
+<a href="../teoria-3/t12-">x</a> (<a href="../assets/t12w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c12-">x</a> (<a href="../assets/c12w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p12-">x</a> (<a href="../assets/p12w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
+<tr >
+<td width=10%>13</td>
+<td width=30%>
+<a href="../teoria-3/t13-">x</a> (<a href="../assets/t13w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c13-">x</a> (<a href="../assets/c13w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p13-">x</a> (<a href="../assets/p13w.pdf">pdf</a>)
 <ul>
 <li>TODO</li>
 </ul>
