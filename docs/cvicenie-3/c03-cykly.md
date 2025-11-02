@@ -275,9 +275,6 @@ Cyklus for-each je jednoduchý, nepotrebujete v ňom spravovať index ako pri kl
 
     Máme pole čísel {10, 15, 20, 25, 30, 20, 88, 43, 77, 32}. Použi for-each cyklus na výpis iba párnych čísel.
 
-!!! example "Úloha 3.9: Výpis párnych čísel"
-
-    Máme pole čísel {10, 15, 20, 25, 30, 20, 88, 43, 77, 32}. Použi for-each cyklus na výpis iba párnych čísel.
 
 ## Zhrnutie cvičenia
 

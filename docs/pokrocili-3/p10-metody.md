@@ -1,129 +1,344 @@
-# Pokročílí 9: Triedy a objekty
+# Pokročílí 10: Metódy a JSON
 
-Dnešné cvičenie je venované triedam a objektom v Pythone. Python podporuje paradigmy objektovo orientovaného programovania, a umožňuje nám navrhnúť logiku programu pomocou tried a objektov.
+Dnes pokračujeme v objektovo orientovanom programovaní a vysvetlíme si aj prácu s dátovým formátom JSON.
 
-- trieda
-- triedne metódy, statické metódy
-- triedne atribúty
-- inštancia: vytváranie, mazanie, inštančné atribúty
-- _protected, __private
+## Súkromné atribúty
 
-## Trieda
+Python nemá moditikátory prístupu ako ich má napr. Java. Ak chceme deklarovať nejaký atribút alebo metódu ako súkromnú, robíme tak pomocou dohody a konvencie.
 
-Trieda sa v Pythone definuje kľúčovým slovom `class`. Pre názvy tried sa používa konvencia PascalCase, teda začínajú sa veľkým písmenom.
+**Názov začínajúci s jedným podčiarníkom** hovorí, že daný atribút alebo metóda je interná a nemá byť používaná mimo triedy. V Jave by sme pre takýto atribút použili modifikátor prístupu `protected`.
 
-=== "Definícia triedy v Pythone"
+```python
+class Osoba:
+    def __init__(self, meno, vek):
+        self._vek = vek       # interný podľa dohody
+        self.meno = meno
 
-    ```python
-    class Obdlznik:
-        pass
-    ```
+    def vek(self):
+        return self._vek
 
-Do vnútra triedy píšeme jej atribúty a metódy.
+o = Osoba("Eva", 25)
+print(o._vek)  # Dá sa k nemu dostať, ale nemalo by sa
+```
 
-## Konštruktor `__init__`
+Okrem toho v Pythone vieme použiť aj **názvy začínajúce s dvoma podčiarníkmi**, ktoré sa používajú pre súkromné atribúty a metódy. V Jave by sme pre nich použili modifikátor prístupu `private`.
+Pri týchto názvoch Python vykoná špeciálne premenovanie (anglicky name mangling), aby sme sa k nim ľahko nedostali a aby sa predišlo kolíziám v názvoch (shadowing) v podtriedach (o tom viac nabudúce)
 
-Konštruktor triedy má názov `__init__` a jeho prvý argument je referencia na vytváraný objekt. Je to podobné ako `this` v Jave, ale v Pythone sa to dáva ako prvý argument a jeho názov zvykne byť `self`.
+```python
+class Osoba:
+    def __init__(self, meno, vek):
+        self.__vek = vek    # súkromný s name manglingom
+        self.meno = meno
 
-=== "Trieda s konštruktorom"
+    def zobraz(self):
+        print(self.__vek)
 
-    ```python
-    class Obdlznik:
-        def __init__(self, x, y):
-            self.x = x
-            self.y = y
+o = Osoba("Eva", 25)
+o.zobraz()         # funguje
+# print(o.__vek)   # AttributeError
+``` 
 
-    maly_obdlznik = Obdlznik(2, 3)
-    ```
+## Vymazanie atribútov a metód
 
-Novú inštanciu triedy (nový objekt) vytvoríme volaním triedy ako metódy.
+V Pythone sa dajú vymazať atribúty a dokonca aj metódy. Či už ide o inštančné, triedne alebo statické metódy, v Pythone je ich možné vymazať pomocou príkazu `del`.
 
-## Inštančné metódy a atribúty
+```python
+class Osoba:
+    druh = "Clovek"
 
-Klasické inštančné atribúty vytvoríme jednoducho tak, že im priradíme hodnotu. Na rozdiel od Javy nie je potrebná ich deklarácia vopred.
+    def __init__(self, meno, vek):
+        self.meno = meno
+        self.vek = vek
 
-Inštančné metódy vytvoríme ako funkcie vnútri triedy, pričom prvý argument musí byť referencia na aktuálny objekt, podobne ako pri konštruktore.
+    def privitanie(self):
+        print(f"Ahoj, ja som {self.meno}")
 
-=== "Inštančné metódy a atribúty"
+p = Osoba("Fero", 30)
 
-    ```python
-    class Obdlznik:
-        def __init__(self, x, y):
-            self.x = x
-            self.y = y
+print(p.vek)   # 30
+del p.vek      # vymazanie atribútu vek
 
-        def obvod(self):
-            return 2 * (self.x + self.y)
+print(Osoba.druh)    # Clovek
+del Osoba.druh       # vymazanie triedneho atribútu druh
 
+p.privitanie()       # Ahoj, ja som Fero
+del Osoba.privitanie # Vymazanie metódy privitanie
+```
 
-    maly_obdlznik = Obdlznik(2, 3)
+Po vymazaní atribútu alebo metódy už nie je možné ich naďalej používať. Ak sa o to pokúsime, Python vyhodí výnimku AttributeError.
 
-    print(f"Obvod obdlznika: {maly_obdlznik.obvod()}")
-    ```
+Vymazanie atribútov nie je v Pythone častá vec, ale má svoje použitie:
 
-## Dunder inštančná metóda `__str__`
-
-V Pythone majú triedy veľké množstvo špeciálnych inštančných metód, ktoré upravujú chovanie triedy resp. jej objektov. Jednou z týchto metód je `__str__`, ktorá slúži na user-friendy (užívateľsky prívetivý) výpis objektu vo forme reťazca. Nasledujúci príklad demonštruje jej definíciu a použitie.
-
-=== "Dunder inštančná metóda `__str__` "
-
-    ```python
-    class Obdlznik:
-        def __init__(self, x, y):
-            self.x = x
-            self.y = y
-
-        def obvod(self):
-            return 2 * (self.x + self.y)
-
-        def __str__(self):
-            return f"{self.x}x{self.y}"
+- Uvoľnenie pamäti
+- Dynamická zmena správania triedy
+- Pokročilé techniky zapuzdrenia
+- Odstránenie testovacieho kódu a dát
+- Metaprogramovanie
 
 
-    maly_obdlznik = Obdlznik(2, 3)
+## Vymazanie objektu
 
-    print(f"Obvod obdlznika {maly_obdlznik}: {maly_obdlznik.obvod()}")
-    ```
+Pomocou príkazu `del` sa dajú odstrániť aj samotné objekty. Robí sa tak, ak je potrebné uvoľniť pamäť ešte pred tým, ako by sa objekt odstránil prirodzene (napr. po skončení funkcie, v ktorej bol objekt vytvorený).
 
-## Triedne atribúty a metódy
+```python
 
-Inštančné atribúty sú jedinečné pre každý objekt. Podobne ako v Jave, trieda môže obsahovať aj atribúty, ktoré patria triede a sú zdieľané všetkými objektami danej triedy. Takého atribúty sa v Pythone nazývajú **triedne atribúty** (anglicky class attributes).
+p = Osoba("Fero", 30)
+del p;
+```
 
-Python poskytuje taktiež možnosť definovať aj **triedne metódy**, čo sú metódy, ktoré majú prístup k triede ale nie ku konkrétnemu objektu. Tieto metódy začínajú anotáciou `@classmethod` a ako prvý argument majú referenciu na triedu, ktorá sa zvykne volať `cls`.
+Pri odstránení objektu pomocou `del` sa objekt hneď nevymaže. Na objekt totiž môže ukazovať aj nejaká iná premenná z iného miesta programu.
+Python sleduje, koľko premenných ukazuje na daný objekt, a ak na objekt už nebude ukazovaž žiadna premenná, potom ho Python môže vymazať.
 
-Triedne metódy sa používajú napr. na tvorbu továrenských metód.
+Tesne pred vymazaním sa v Pythone zavolá špeciálna metóda `__del__`, ktorá môže byť použitá na vlastné úpravy predtým, než sa objekt vymaže, napr. zatvorenie sieťového spojenia alebo súboru. Metóda, ktorá sa volá tesne pred vymazaním sa v objektovo orientovanom programovaní volá **deštruktor**
 
-=== "Triedne atribúty a metódy"
+```python
+class Demo:
+    def __del__(self):
+        print("Deštruktor sa zavolal!")
 
-    ```python
-    class Teplomer:
-        jednotka = "C"
+d = Demo()
+del d  # alebo keď skončí program
+```
 
-        def __init__(self, teplota):
-            self.teplota = teplota
+## Špeciálne metódy
 
-        @classmethod
-        def zmen_jednotku(cls, nova):
-            cls.jednotka = nova
-    ```
+Minule sme si ukázali špeciálnu metódu `__str__`, dnes si vysvetlíme ďalšie.
 
-## Statické metódy
+### Dunder metóda `__repr__`
 
-Python podporuje aj tzv. **statické metódy**, čo sú funkcie definované v triede, ktoré nemajú žiaden prístup ani k objektu ani ku triede. Pri ich definícii sa používa anotácia `@staticmethod`. Používajú sa na rôzne utilitky.
+Podobne ako špeciálna metóda `__str__`, aj `__repr__` je metóda, ktorá vracia textovú reprezentáciu objektu.
+Metóda `__repr__` však neslúži na vypísanie objektu pre človeka, ale o detailnú a technicky presnú reprezentáciu objektu, ideálne tak, aby sa z nej dal spätne vytvoriť rovnaký objekt.
 
-=== "Statické metódy v Pythone"
+Metóda `__repr__` sa zavolá pri volaní funkcie `repr`. Spätné vytvorenie objektu z textu je možné pomocou funkcie `eval`.
 
-    ```python
-    class Matematika:
-        @staticmethod
-        def sucet(a, b):
-            return a + b
+```python
+class Osoba:
+    def __init__(self, meno, vek):
+        self.meno = meno
+        self.vek = vek
 
-        @staticmethod
-        def mocnina(x):
-            return x * x
-    ```
+    def __repr__(self):
+        return f"Osoba(meno={self.meno!r}, vek={self.vek!r})"
 
+o = Osoba("Eva", 30)
+print(repr(o)) # Osoba(meno='Eva', vek=30)
+
+eval(repr(o))  # vytovrenie objektu z textovej reprezentácie
+```
+
+Pri formátovaných stringoch vieme povedať, aby sa jednotlivé hodnoty tak isto vypisovali pomocou ich vlastnej `__repr__` metódy a to tak, že uvedieme modifikátor `!r` (viď predošlý príklad)
+
+### Dunder metóda `__eq__`
+
+Ak chceme, aby sa objekty našej triedy porovnávali podľa hodnoty a nie podľa identity, je potrebné definovať dunder metódu `__eq__`, ktorá sa zavolá pri porovnaní objektov. Ak ju nemáme, Python bude porovnávať podľa identity.
+
+```python
+class Osoba:
+    def __init__(self, meno, vek):
+        self.meno = meno
+        self.vek = vek
+
+    def __eq__(self, other):
+        if not isinstance(other, Osoba):
+            return NotImplemented
+        return self.meno == other.meno and self.vek == other.vek
+
+a = Osoba("Eva", 30)
+b = Osoba("Eva", 30)
+c = Osoba("Adam", 30)
+
+print(a == b)  # True
+print(a == c)  # False
+print(a == 5)  # False, ale bez chyby
+```
+
+Pri implementácii si treba dávať pozor a na začiatku vždy skontrolovať, či je porovnávaný objekt tej istej triedy. Ak nie, je potrebné vrátiť hodnotu `NotImplemented`, ktorá Pythonu hovorí, že naša metóda to nevie porovnať a Python bude skúšať porovnať objekty inými spôsobmi.
+
+### Aritmetické a relačné dunder metódy
+
+Ak chceme, aby objekty našej triedy podporovali vybrané aritmetické a relačné operátory, je potrebné definovať príslušné dunder metódy. V nasledujúcej tabuľke je prehľad operátorov a ich dunder metód.
+
+| Operátor | Metóda        |
+| -------- | ------------- |
+| `+`      | `__add__`     |
+| `-`      | `__sub__`     |
+| `*`      | `__mul__`     |
+| `/`      | `__truediv__` |
+| `==`     | `__eq__`      |
+| `<`      | `__lt__`      |
+| `<=`     | `__le__`      |
+| `>`      | `__gt__`      |
+| `!=`     | `__ne__`      |
+
+```python
+class Bod:
+    def __init__(self, x, y):
+        self.x, self.y = x, y
+    def __add__(self, other):
+        return Bod(self.x + other.x, self.y + other.y)
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+    def __repr__(self):
+        return f"Bod({self.x}, {self.y})"
+
+print(Bod(1,2) + Bod(3,4))   # Bod(4, 6)
+print(Bod(1,2) == Bod(1,2))  # True
+```
+
+## Variabilný počet argumentov
+
+Funkcie a metódy v Pythone môžu prijímať premenlivý počet argumentov, podobne ako v Jave. Keďže Python podporuje aj kľúčové argumenty, problematika variabilného počtu argumentov je tu trošku zložitejšia.
+
+### Premenlivý počet pozičných argumentov
+
+Premenlivý počet pozičných argumentov deklarujeme pomocou hviezdičky, napr. `*args`. Vo vnútri funkcie budú argumenty v dátovom type **tuple**.
+
+```python
+def sucet(*args):
+    print(args)  # tuple všetkých argumentov
+    return sum(args)
+
+print(sucet(1, 2, 3))  # → 6
+print(sucet(10, 20))   # → 30
+```
+
+### Premenlivý počet kľúčových argumentov
+
+Premenlivý počet kľúčových argumentov dekladujeme pomocou dvoch hviezdičiek, napr. `**kwargs`. Vo vnútri funkcie budú argumenty v dátovom type **dict**
+
+```python
+def pozdrav(**kwargs):
+    for meno, vek in kwargs.items():
+        print(f"{meno} má {vek} rokov")
+
+pozdrav(Jozef=25, Anna=30)
+# Output:
+# Jozef má 25 rokov
+# Anna má 30 rokov
+```
+
+### Rozbalenie pri volaní funkcie
+
+Do argumentov funkcií môžeme rozbaliť hodnoty so zoznamu/tuple alebo aj celého slovnika (dict). Použijeme rovnaký symbol ako pri deklarácií premenlivého počtu argumentov.
+
+```python
+def add(x, y, z):
+    return x + y + z
+
+nums = [1, 2, 3]
+print(add(*nums))  # rozbali tuple/list → 6
+
+data = {"x": 10, "y": 20, "z": 5}
+print(add(**data))  # rozbali dict → 35
+```
+
+Rozbaľovanie môžeme kombinovať s premenlivými argumentami.
+
+```python
+def vypis_vsetko(*args):
+    for item in args:
+        print(item)
+
+zoznam = [1, 2, 3]
+vypis_vsetko(*zoznam)
+```
+
+## Práca s dátovým formátom JSON
+
+JSON (JavaScript Object Notation) je jednoduchý formát pre štruktúrované dáta, ktorý je čitateľný pre ľudí a jednoducho spracovateľný počítačom. Podporuje vnorené dáta a kolekcie, a je flexibilný. Patrí medzi najpopulárnejšie dátové formáty a je hojne používaný vo webových službách a aplikáciách.
+
+JSON je vlastne textový formát, ktorý reprezentuje dve základné štruktúry:
+
+1. Objekt (object) - pár kľúč-hodnota, podobne ako slovník v Pythone:
+
+```json
+{
+  "meno": "Jozef",
+  "vek": 25,
+  "student": true
+}
+```
+
+1. Zoznam (array) - usporiadaný zoznam, podobne ako list v Pythone:
+
+```json
+[1, 2, 3, 4, 5]
+```
+
+Z dátových typov JSON podporuje čísla, reťazce a boolean hodnoty
+
+Na čítanie JSON dát sa v pythone používa modul `json`.
+
+```python
+import json
+
+data = '{"meno": "Jozef", "vek": 25, "student": true}'
+
+# Konverzia textu na Python objekt (dict, list, atď.)
+obj = json.loads(data)
+
+print(obj)
+print(obj["meno"])  # → Jozef
+```
+
+Metóda `json.loads` načíta JSON z reťazca. Na priame načítanie JSON dát zo súboru máme metódu `json.load`.
+
+```python
+import json
+
+with open("data.json", "r", encoding="utf-8") as file:
+    data = json.load(file)
+
+print(data)
+print(data["meno"])
+```
+
+Pre zápis dát do formátu JSON sa používajú metódy `json.dump` a `json.dumps`
+
+```json
+{
+  "player": {
+    "room": "1"
+  },
+  "rooms": {
+    "1": {
+      "desc": "Stojíš na kraji čistinky, cez ktorú preteká zurčivý potôčik. Slniečko svieti a vo vzduchu cítiť rannú vôňu trávy. V strede čistinky je veľký pník a okolo neho rastú huby. Na západ vedie cesta do lesa. Cez potôčik ide drevená lávka, a po nej pokračuje chodník na východ.
+      
+      Môžeš ísť na: vychod, zapad",
+      "exits": {
+        "vychod": "2"
+      }
+    },
+    "2": {
+      "desc": "",
+      "exits": {
+        "zapad": "1"
+      }
+    }
+  }
+}```
+
+### Načítanie objektu z JSON dát
+
+Ak je štruktúra JSON dát známa a máme v našom programe triedu pre ich reprezentáciu, môžeme namiesto vytvorenia slovníkov a zoznamov z JSON dát vytvoriť objekty našich tried.
+
+```python
+import json
+
+class Osoba:
+    def __init__(self, meno, vek, student):
+        self.meno = meno
+        self.vek = vek
+        self.student = student
+
+    @classmethod
+    def from_json(cls, json_string):
+        data = json.loads(json_string)
+        return cls(**data)
+
+osoba = Osoba.from_json('{"meno": "Jozef", "vek": 25, "student": true}')
+print(osoba.meno)        
+```
 
 ## Zhrnutie cvičenia
 

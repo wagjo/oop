@@ -287,7 +287,7 @@ Keďže vararg argument je v skutočnosti pole hodnôt, vieme pri volaní takejt
 
     V balíku `sk.spse.util` vytvorte triedu `Math`. V tejto triede vytvorte statickú metódu `priemer`, ktorá má na vstupe pole čísel a vráti ich aritmetický priemer. Zavolaj ju z metódy `sk.spse.Main.main()`
 
-!!! example "Úloha 4.2: Číselné sústavy"
+!!! example "Úloha 4.2: Najdlhší reťazec"
 
     V balíku `sk.spse.util` vytvorte triedu `Pole`. V nej vytvorte statickú metódu `najdlhsiRetazec`, ktorá má na vstupe pole reťazcov a vráti najdlhší z nich.
 

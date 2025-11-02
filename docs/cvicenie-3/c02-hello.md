@@ -274,7 +274,7 @@ while (i < 5) {
 
 !!! example "Úloha 2.2: Výpočet obsahu a objemu valca"
 
-    Vytvorte metódu, ktorá na vstupe prijíma výšku a polomer a vypočíta obsah a objem valca. Výsledok vráťťe ako dict, a na vypísanie na obrazovku vytvorte samostatnú metódu.
+    Vytvorte metódu, ktorá na vstupe prijíma výšku a polomer a vypočíta obsah a objem valca. Výsledok vráťťe ako pole, a na vypísanie na obrazovku vytvorte samostatnú metódu.
 
 !!! example "Úloha 2.3: Výpočet faktoriálu"
 
