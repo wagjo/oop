@@ -251,19 +251,19 @@ JSON je vlastne textový formát, ktorý reprezentuje dve základné štruktúry
 
 1. Objekt (object) - pár kľúč-hodnota, podobne ako slovník v Pythone:
 
-```json
-{
-  "meno": "Jozef",
-  "vek": 25,
-  "student": true
-}
-```
+    ```json
+    {
+    "meno": "Jozef",
+    "vek": 25,
+    "student": true
+    }
+    ```
 
 1. Zoznam (array) - usporiadaný zoznam, podobne ako list v Pythone:
 
-```json
-[1, 2, 3, 4, 5]
-```
+    ```json
+    [1, 2, 3, 4, 5]
+    ```
 
 Z dátových typov JSON podporuje čísla, reťazce a boolean hodnoty
 
@@ -295,29 +295,6 @@ print(data["meno"])
 
 Pre zápis dát do formátu JSON sa používajú metódy `json.dump` a `json.dumps`
 
-```json
-{
-  "player": {
-    "room": "1"
-  },
-  "rooms": {
-    "1": {
-      "desc": "Stojíš na kraji čistinky, cez ktorú preteká zurčivý potôčik. Slniečko svieti a vo vzduchu cítiť rannú vôňu trávy. V strede čistinky je veľký pník a okolo neho rastú huby. Na západ vedie cesta do lesa. Cez potôčik ide drevená lávka, a po nej pokračuje chodník na východ.
-      
-      Môžeš ísť na: vychod, zapad",
-      "exits": {
-        "vychod": "2"
-      }
-    },
-    "2": {
-      "desc": "",
-      "exits": {
-        "zapad": "1"
-      }
-    }
-  }
-}```
-
 ### Načítanie objektu z JSON dát
 
 Ak je štruktúra JSON dát známa a máme v našom programe triedu pre ich reprezentáciu, môžeme namiesto vytvorenia slovníkov a zoznamov z JSON dát vytvoriť objekty našich tried.
@@ -340,61 +317,235 @@ osoba = Osoba.from_json('{"meno": "Jozef", "vek": 25, "student": true}')
 print(osoba.meno)        
 ```
 
+## Úlohy na precvičenie
+
+!!! example "Úloha 10.1: Trieda s utilitkami"
+
+    1. Do vášho projektu si nainštalujte knižnicu `psutil` napr. pomocou `pip install psutil`
+
+    1. Vytvorte si modul s názvom `movies`. Vložte do neho nasledovný kód triedy Utils:
+
+    ```python
+    import json
+    import urllib.request
+    import psutil
+
+    # pip install psutil
+    class Util:
+        @staticmethod
+        def get_memory_usage():
+            process = psutil.Process()
+            return f"{process.memory_info().rss / 1024 ** 2:.2f} MB"
+
+        @staticmethod
+        def read_url(url):
+            print("Downloading " + url + "...")
+            req = urllib.request.Request(url)
+            with urllib.request.urlopen(url) as response:
+                return response.read().decode('utf-8')
+
+        @staticmethod
+        def read_file(fname):
+            print("Reading " + fname + "...")
+            with open(fname, "r", encoding="utf-8") as file:
+                return file.read()
+    ```
+
+!!! example "Úloha 10.2: Trieda Movies"
+
+    1. Vytvorte triedu Movies s nasledovným kódom
+
+        ```python
+        class Movie:
+            def __init__(self, title, year, cast = None, genres = None, extract = None, **kwargs):
+                self._title = title
+                self._year = year
+                self._cast = cast
+                self._genres = genres
+                self._extract = extract
+
+            @classmethod
+            def from_dict(cls, data):
+                return cls(**data)
+        ```
+
+        Všimnite si použitie `**kwargs` a `**data`. **Prečo je nutný `**kwargs`, ak keď sa v konštruktore nepoužíva?**
+
+    1. Do triedy pridajte špeciálnu metódu `__str__` a naimplementujte ju
+
+!!! example "Úloha 10.3: Inšpekcia dát"
+
+    Vyskúšame si načítať dáta z JSON súboru a vytvoriť z nich objekty.
+
+    Použite nasledovný kód a skúste pochopiť akú štruktúru má JSON
+
+    ```python
+    url = "https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json"
+
+    s = Util.read_url(url)
+    print("Vstupny JSON:")
+    print(s[0:200])
+
+    print("Nacitane data:")
+    data = json.loads(s)
+    print(data[33420])
+
+    print("Objekt Movie:")
+    movies = [Movie.from_dict(item) for item in data]
+    print(movies[33420])
+    ```
+
+!!! example "Úloha 10.4: Trieda DB"
+
+    1. Vytvorte triedu DB, ktorá bude mať na vstupe konštruktora JSON string a ten zparsuje do dátových štruktúr pythonu.
+
+        Použite nasledovný kód:
+
+        ```python
+        class DB:
+            def __init__(self, movies_str):
+                self._raw = movies_str
+                movies = json.loads(movies_str)
+                self._movies = movies
+                # index podľa názvu
+                self._title_index = {}
+                for item in movies:
+                    title = item["title"]
+                    if title not in self._title_index:
+                        self._title_index[title] = []
+                    self._title_index[title].append(Movie.from_dict(item))
+        ```
+
+        V konštruktore triedy sme vytvorili slovník (dict), ktorý zaindexoval filmy podľa názvu
+
+    1. V triede vytvorte metódu `by_title`, ktorá vráti filmy podľa názvu z atribútu `_title_index`
+
+    1. Vyskúšajte si funkčnosť napr. nasledovným kódom
+
+        ```python
+        url = "https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json"
+        s = Util.read_url(url)
+        db = DB(s)
+        filmy = db.by_title("Up")
+        print(", ".join(str(film) for film in filmy))
+        ```
+
+!!! example "Úloha 10.5: Index podľa hercov"
+
+    1. Podobne ako máme index podľa hercov, tak upravte triedu DB tak, aby v konštruktore naviac
+    vytvoril atribút `_actor_index`, do ktorého zaindexuje filmy podľa hercov.
+
+    1. V triede DB vytvorte metódu `by_actor`, ktorá vráti filmy podľa herca z atribútu `_actor_index`
+
+    1. Vytvorte metódu `actors_movies`, ktorá vypíše všetky filmy, kde daný herec hral, každý na samostatný riadok
+
+    1. Vyskúšajte si funčnosť napr. nasledovným kódom
+
+        ```python
+        url = "https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json"
+        s = Util.read_url(url)
+        db = DB(s)
+        db.actors_movies("Leonardo DiCaprio")
+        ```
+
+!!! example "Úloha 10.6: Uvoľnenie pamäti"
+
+    Vyskúšame si zistiť, koľko pamäti zaberá náš program, a či sa po vymazaní niektorých atribútov uvoľní pamäť.
+
+    Vyskúšajte si nasledovný kód:
+
+    ```python
+    print(Util.get_memory_usage())
+    del db._raw
+    del s
+    print(Util.get_memory_usage())
+    del db._actor_index
+    print(Util.get_memory_usage())
+    del db._title_index
+    print(Util.get_memory_usage())
+    ```
+
+    Na základe hodnôt, ktoré sa vypíšu do konzoly skúste odhadnúť, koľko miesta v pamäti zaberali jednotlivé atribúty
+
+
+
 ## Zhrnutie cvičenia
 
-![git architecure](../assets/git-flow.png){.on-glb}
-/// caption
-Štruktúra `git` repozitára a základné príkazy
-///
-
-- [x] Vzdialený repozitár
-    * [ ] Pripojíme pomocou `git remote add <remote_nick> <remote_url>`
-- [x] Odoslanie zmien 
-    * [ ] Prvý krát pomocou `git push -u <remote_nick> <branch_name>`
-    * [ ] Následné posielania už iba pomocou `git push`
-- [x] Prijímanie zmien
-    * [ ] Pomocou `git pull`
-- [x] GitHub Issues
-    * [ ] Slúžia na správu bugov, úloh a pod.
-    * [ ] Každý issue má svoje číslo, v komentároch na neho odkazujeme pomocou mriežky, napr. #2
-- [x] GitHub projects 
-    * [ ] Umožňuje vytvoriť tabuľku s rôznymi stavmi issues, napr. štýlu Kanban
-- [x] Pull requests
-    * [ ] Nástroj na schvaľovanie zmien, ktoré sú v samostatných vetvách
-    * [ ] Pull request vytvoríme vybraním vetvy, ktorá obsahuje zmeny, ktoré chceme dať schváliť
-    * [ ] Človek, zodpovedný za schválenie vie pull request zlúčiť do hlavnej vetvy, alebo vrátiť na prepracovanie
+- [x] Súkromné atribúty - iba dohodou
+    * [ ] Názov začínajúci s jedným podčiarníkom hovorí, že daný atribút alebo metóda je interná a nemá byť používaná mimo triedy. 
+    * [ ] Názvy začínajúce s dvoma podčiarníkmi pre súkromné atribúty a metódy. Python vykoná špeciálne premenovanie (anglicky name mangling)
+- [x] Vymazanie atribútov a metód 
+    * [ ] Pomocou `del` sa v Pythone sa dajú vymazať atribúty a dokonca aj metódy.
+    * [ ] Využitie: Uvoľnenie pamäti, Dynamická zmena správania triedy, Odstránenie testovacieho kódu a dát
+- [x] Deštruktor
+    * [ ] Po zmazaní objektu a pri uvoľnení pamäti daného objektu sa zavolá deštruktor
+    * [ ] Vlastný deštruktor implementujeme pomocou špeciálnej metódy `__del__`
+- [x] Špeciálne metódy
+    * [ ] `__repr__` pre detailnú a technicky presnú reprezentáciu objektu vo forme reťazca
+    * [ ] Metóda `__repr__` sa zavolá pri volaní funkcie `repr`. Spätné vytvorenie objektu z textu je možné pomocou funkcie `eval`.
+    * [ ] `__eq__` je metóda, ktorá sa volá pri porovnávaní objektov. Ak ju nevytvoríme, objekty sa budú porovnávať podľa identity
+- [x] Aritmetické a relačné dunder metódy 
+    * [ ] `__add__`, `__sub__`, `__mul__`, `__lt__`, `__gt__`, ...
+- [x] Variabilný počet argumentov
+    * [ ] Premenlivý počet pozičných argumentov deklarujeme pomocou hviezdičky, napr. `*args`. Vo vnútri funkcie budú argumenty v dátovom type `tuple`.
+    * [ ] Premenlivý počet kľúčových argumentov dekladujeme pomocou dvoch hviezdičiek, napr. `**kwargs`. Vo vnútri funkcie budú argumenty v dátovom type `dict`
+    * [ ] Rozbalenie pri volaní funkcie: Do argumentov funkcií môžeme rozbaliť hodnoty so zoznamu/tuple alebo aj celého slovnika (dict). Použijeme rovnaký symbol ako pri deklarácií premenlivého počtu argumentov.
+- [x] Práca s dátovým formátom JSON
+    * JSON (JavaScript Object Notation) je jednoduchý formát pre štruktúrované dáta, ktorý je čitateľný pre ľudí a jednoducho spracovateľný počítačom.
+    * Na čítanie JSON dát sa v pythone používa modul `json`
+    * Metóda `json.loads` načíta JSON z reťazca. Na priame načítanie JSON dát zo súboru máme metódu `json.load`
+    * Pre zápis dát do formátu JSON sa používajú metódy `json.dump` a `json.dumps`
 
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    VZDIALENÝ REPOZITÁR
+    METÓDY
 
-    Pripojíme pomocou git remote add <remote_nick> <remote_url>
+    Súkromné atribúty - iba dohodou
+    - jeden podčiarník - atribút alebo metóda je interná a nemá byť používaná mimo triedy. 
+    - dva podčiarníky - súkromné atribúty. Vykoná sa špeciálne premenovanie (anglicky name mangling)
 
-    Odoslanie zmien 
-    Prvý krát pomocou git push -u <remote_nick> <branch_name>
-    Následné posielania pomocou git push
- 
-    Prijímanie zmien - git pull
+    Vymazanie atribútov a metód 
+    - Pomocou del sa v Pythone sa dajú vymazať atribúty a dokonca aj metódy.
+    - Využitie: Uvoľnenie pamäti, Dynamická zmena správania, Odstránenie testovacieho kódu
 
-    GitHub Issues - správa bugov, úloh a pod.
-    Každý issue má svoje číslo, odkazujeme na neho pomocou mriežky, napr. #2
+    Deštruktor
+    - Po zmazaní objektu a pri uvoľnení pamäti daného objektu sa zavolá deštruktor
+    - Vlastný deštruktor implementujeme pomocou špeciálnej metódy __del__
 
-    GitHub projects - tabuľky s rôznymi stavmi issues, napr. štýlu Kanban
+    Špeciálne metódy
+    __repr__ pre technicky presnú reprezentáciu objektu vo forme reťazca
+    __repr__ sa zavolá pri volaní funkcie repr. Spätné vytvorenie objektu pomocou funkcie eval.
+    __eq__ pre porovnávanie objektov. Ak ju nevytvoríme, objekty sa budú porovnávať podľa identity
     
-    Pull requests - schvaľovanie zmien, ktoré sú v samostatných vetvách
-    Po kontrole vieme pull request zlúčiť do hlavnej vetvy, alebo vrátiť na prepracovanie
+    Aritmetické a relačné dunder metódy 
+    - __add__, __sub__, __mul__, __lt__, __gt__, ...
+
+    VARARGS
+
+    Variabilný počet argumentov
+    - Premenlivý počet pozičných argumentov - *args - argumenty budú v tuple
+    - Premenlivý počet kľúčových argumentov - **kwargs - argumenty budú v dict
+    - Do argumentov funkcií môžeme rozbaliť hodnoty so zoznamu/tuple alebo aj celého slovnika (dict).
+    - Pre rozbaľovanie použijeme rovnaký symbol ako pri deklarácií varargs v metóde (*, **)
+
+    JSON
+
+    JSON je formát pre štruktúrované dáta, čitateľný pre ľudí a jednoducho spracovateľný počítačom.
+    - Metóda json.loads načíta JSON z reťazca, json.load so súboru
+    - Pre zápis dát do JSON sa používajú metódy json.dump a json.dumps
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
     Okruhy otázok na test:
 
-    - Ako sa pripojí vzdialený repozitár
-    - Posielanie commitov do vzdialeného repozitára
-    - Prijímanie zmien so vzdialeného repozitára
-    - Na čo slúži GitHub issues
-    - Na čo slúži GitHub projects
-    - Na čo slúži GitHub pull requests
+    - Pravidlá pre súkromné atribúty
+    - Vymazanie atribútov a metód
+    - Deštruktor
+    - Špeciálne metódy repr, eq, aritmetické a relačné
+    - Premenlivý počet argumentov
+    - Rozbalenie pri volaní funkcie
+    - Načítanie a zápis JSON dát

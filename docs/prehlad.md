@@ -241,5 +241,29 @@ hide:
 </ul>
 </td>
 </tr>
+
+<tr >
+<td width=10%>9</td>
+<td width=30%>
+<a href="../teoria-3/t09-premenne">Premenné</a> (<a href="../assets/t09w.pdf">pdf</a>)
+<ul>
+<li>Viditeľnosť premenných</li>
+<li>Zatienenie atribútov</li>
+<li>Inferencia typov</li>
+<li>Názvy premenných</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p09-oop">Triedy a metódy</a> (<a href="../assets/p09w.pdf">pdf</a>)
+<ul>
+<li>Trieda a konštruktor</li>
+<li>Inštančné metódy a atribúty</li>
+<li>Triedne metódy a atribúty</li>
+<li>Statické metódy</li>
+</ul>
+</td>
+</tr>
+
 </tbody>
 </table>

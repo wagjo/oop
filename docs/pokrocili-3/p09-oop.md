@@ -137,7 +137,7 @@ Názov statická metóda je síce podobný statickej metóde v Jave, avšak stat
 
     Vytvorte dunder metódu `__str__`.
 
-    Vo funkcii main v moduli Main vytvorte inštancie tejto triedy a vypíšte ich do konzoly.
+    Vo funkcii main v moduli main vytvorte inštancie tejto triedy a vypíšte ich do konzoly.
 
 !!! example "Úloha 9.2: Vklady a výbery"
 
@@ -174,7 +174,7 @@ Názov statická metóda je síce podobný statickej metóde v Jave, avšak stat
 
     Pre každý účet zapisujte históriu všetkých tranzakcií do inštančného atribútu `historia`, ktorý bude zoznam reťazcov.
 
-    Vytvorte metódu `zobraz_historiu`. Do histórie ukladajte aj neúspešné pokusz o výber z účtu, poplatky aj úrok
+    Vytvorte metódu `zobraz_historiu`. Do histórie ukladajte aj neúspešné pokusy o výber z účtu, poplatky aj úrok
 
 !!! example "Úloha 9.8: Reporty"
 

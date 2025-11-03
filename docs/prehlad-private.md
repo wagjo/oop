@@ -302,9 +302,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p10-">x</a> (<a href="../assets/p10w.pdf">pdf</a>)
+<a href="../pokrocili-3/p10-metody">Metódy a JSON</a> (<a href="../assets/p10w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Súkromné atribúty</li>
+<li>Vymazanie atribútov a objektov</li>
+<li>Špeciálne metódy</li>
+<li>JSON</li>
 </ul>
 </td>
 </tr>
