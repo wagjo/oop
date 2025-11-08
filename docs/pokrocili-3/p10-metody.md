@@ -4,7 +4,7 @@ Dnes pokračujeme v objektovo orientovanom programovaní a vysvetlíme si aj pr�
 
 ## Súkromné atribúty
 
-Python nemá moditikátory prístupu ako ich má napr. Java. Ak chceme deklarovať nejaký atribút alebo metódu ako súkromnú, robíme tak pomocou dohody a konvencie.
+Python nemá modifikátory prístupu ako ich má napr. Java. Ak chceme deklarovať nejaký atribút alebo metódu ako súkromnú, robíme tak pomocou dohody a konvencie.
 
 **Názov začínajúci s jedným podčiarníkom** hovorí, že daný atribút alebo metóda je interná a nemá byť používaná mimo triedy. V Jave by sme pre takýto atribút použili modifikátor prístupu `protected`.
 
@@ -123,7 +123,7 @@ class Osoba:
 o = Osoba("Eva", 30)
 print(repr(o)) # Osoba(meno='Eva', vek=30)
 
-eval(repr(o))  # vytovrenie objektu z textovej reprezentácie
+eval(repr(o))  # vytvorenie objektu z textovej reprezentácie
 ```
 
 Pri formátovaných stringoch vieme povedať, aby sa jednotlivé hodnoty tak isto vypisovali pomocou ich vlastnej `__repr__` metódy a to tak, že uvedieme modifikátor `!r` (viď predošlý príklad)
@@ -528,7 +528,7 @@ print(osoba.meno)
     Variabilný počet argumentov
     - Premenlivý počet pozičných argumentov - *args - argumenty budú v tuple
     - Premenlivý počet kľúčových argumentov - **kwargs - argumenty budú v dict
-    - Do argumentov funkcií môžeme rozbaliť hodnoty so zoznamu/tuple alebo aj celého slovnika (dict).
+    - Do argumentov funkcií môžeme rozbaliť hodnoty so zoznamu/tuple alebo aj celého slovníka (dict).
     - Pre rozbaľovanie použijeme rovnaký symbol ako pri deklarácií varargs v metóde (*, **)
 
     JSON

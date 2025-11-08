@@ -307,6 +307,7 @@ hide:
 <li>Súkromné atribúty</li>
 <li>Vymazanie atribútov a objektov</li>
 <li>Špeciálne metódy</li>
+<li>Variabilný počet argumentov</li>
 <li>JSON</li>
 </ul>
 </td>
