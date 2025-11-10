@@ -1,24 +1,6 @@
 # TODO OPG
 
 
-## C08
-
-- konstuktory
-- metody
-- viditelnost premennych, lokalne, globalne, overwriting, scope
-
-## T08
-
-- trieda v java api ktora nema public konstruktory, LocalDate???
-- konstruktory
-- inicializacia objektu
-- inicializacia cez referenciu/pomocou metody/pomocou konstruktora
-- konstruktory, pretazovanie
-
-## C08
-
-
-
 ## T09
 
 - interfaces
@@ -39,7 +21,6 @@
 - vlakna
 - diagram aktivit
 - Co je JRE
-- var keyword syntax sugar
 
 - Veľká úloha na cvičení: Vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci parametrizované (rôzne veľké) obrazce (štvorce, obdĺžniky, trojuholníky, bonus – kruhy) vyplnené i prázdne
 - record, beans

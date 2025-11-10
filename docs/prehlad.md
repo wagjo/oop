@@ -265,5 +265,30 @@ hide:
 </td>
 </tr>
 
+<tr >
+<td width=10%>10</td>
+<td width=30%>
+<a href="../teoria-3/t10-zapuzdrenie">Zapuzdrenie</a> (<a href="../assets/t10w.pdf">pdf</a>)
+<ul>
+<li>Zapuzdrenie</li>
+<li>Triedny invariant</li>
+<li>Nemenný objekt</li>
+<li>Defenzívne kopírovanie</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p10-metody">Metódy a JSON</a> (<a href="../assets/p10w.pdf">pdf</a>)
+<ul>
+<li>Súkromné atribúty</li>
+<li>Vymazanie atribútov a objektov</li>
+<li>Špeciálne metódy</li>
+<li>Variabilný počet argumentov</li>
+<li>JSON</li>
+</ul>
+</td>
+</tr>
+
+
 </tbody>
 </table>

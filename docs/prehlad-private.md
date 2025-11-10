@@ -316,9 +316,12 @@ hide:
 <tr >
 <td width=10%>11</td>
 <td width=30%>
-<a href="../teoria-3/t11-">x</a> (<a href="../assets/t11w.pdf">pdf</a>)
+<a href="../teoria-3/t11-dedicnost">Dedičnosť</a> (<a href="../assets/t11w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Dedenie triedy</li>
+<li>Prekrytie metód</li>
+<li>Zabránenie dedenia</li>
+<li>IS-A versus HAS-A</li>
 </ul>
 </td>
 <td width=30%>
