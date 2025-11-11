@@ -79,6 +79,28 @@ Dôležité vlastnosti dedenia:
     vypisOsobu(s);
     ```
 
+### Dedičnosť v UMl Class diagrame
+
+V UML Class diagrame sa dedičnosť znázorňuje pomocou uzatvorenej šípky, ktorá smeruje od podtriedy smerom ku nadtriede - rodičovi.
+
+```mermaid
+classDiagram
+direction LR
+    class Osoba {
+	    -String meno
+	    +getMeno()
+    }
+    class Student {
+	    -String skola
+	    +getSkola()
+    }
+
+    Osoba <|-- Student
+```
+/// caption
+UML Class diagram tried `Osoba` a `Student`
+///
+
 ## Konštruktory pri dedení
 
 Konštruktory sa nededia.
@@ -267,6 +289,31 @@ HAS-A (má) znamená, že trieda obsahuje inú triedu ako atribút. Vzniká komp
         }
     }
     ```
+
+### Kompozícia v UMl Class diagrame
+
+V UML Class diagrame sa kompozícia znázorňuje pomocou plného diamantu, ktorý je pri triede, ktorá "má" (has-a) iné triedy ako atribúty.
+
+```mermaid
+classDiagram
+direction LR
+    class Auto {
+	    -String znacka
+	    -String model
+	    +getZnacka()
+	    +getModel()
+    }
+    class Motor {
+	    -String objem
+	    -String palivo
+	    +getObjem()
+	    +getPalivo()
+    }
+    Auto *-- Motor
+```
+/// caption
+UML Class diagram kompozície tried `Auto` a `Motor`
+///
 
 ## Radšej niečo iné, ako Dedičnosť!
 

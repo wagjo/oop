@@ -132,7 +132,7 @@ V Jave existujú rôzne nástroje a frameworky pre definovanie a kontrolu dodrž
             }
         }
 
-        public double getZustatok() {
+        public double getZostatok() {
             return zostatok;
         }
 

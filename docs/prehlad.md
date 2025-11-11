@@ -278,7 +278,7 @@ hide:
 </td>
 <td width=30%>TODO</td>
 <td width=30%>
-<a href="../pokrocili-3/p10-metody">Metódy a JSON</a> (<a href="../assets/p10w.pdf">pdf</a>)
+Metódy a JSON (<a href="../assets/p10w.pdf">pdf</a>)
 <ul>
 <li>Súkromné atribúty</li>
 <li>Vymazanie atribútov a objektov</li>
