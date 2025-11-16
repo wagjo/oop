@@ -309,9 +309,50 @@ Pomocou generickej triedy sa typy HAS-A vzťahov tzv. parametrizujú, a každý 
     }
     ```
 
+=== "Generická trieda s viacerými parametrizovanými typmi"
+
+    Ak máme viac parametrizovaných typov, oddelíme ich čiarkami
+
+    ```java
+    public class Pair<T, U> {
+        T x;
+        U y;
+
+        Pair(T x, U y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public T getX() {
+            return x;
+        }
+
+        public U getY() {
+            return y;
+        }
+
+        public static void main(String[] args) {
+            Pair<String, Integer> p1 = new Pair<>("Hello", 3);
+            
+            String s = p1.getX();
+            int i = p2.getY();
+        }
+    }
+    ```
+
+<div class="md-has-sidebar" markdown>
+<main markdown>
+
 Generické typy sa v Jave používajú hlavne pri kolekciách, ako napríklad zoznamy, množiny, zásobníky, a pod. 
 
 Parametrizované typy v Jave existujú iba pri kompilácii, počas behu programu sa parametrizovaný typ nahradí typom `Object`. Toto nahradenie sa odborne volá **type erasure**, teda vymazanie typu. Počas behu programu teda nevieme zistiť konkrétnu triedu parametrizovaného typu.
+
+ </main>
+
+  <aside markdown>
+Parametrizované typy sa dajú ohraničiť, ak chceme obmädziť možné konktétne typy iba na určitú podmnožinu typov. Vymazanie typov by potom prebiehalo trochu ináč. Táto pokročilá technika však je nad rámec dnešnej lekcie.
+</aside>
+</div>
 
 ## Zhrnutie teórie
 
@@ -338,7 +379,7 @@ Parametrizované typy v Jave existujú iba pri kompilácii, počas behu programu
     * [ ] Dynamický polymorfizmus je mierne pomalší ako iné typy polymorfizmu alebo normálne volanie metód, kvôli tabuľke virtuálnych metód
 - [x] Parametrický polymorfizmus - generický polymorfizmus
     * [ ] Deje sa počas kompilácie
-    * [ ] Realizuje sa cez geenrické triedy, ktorý parametrizujú typy atribútov
+    * [ ] Realizuje sa cez generické triedy, ktorý parametrizujú typy atribútov
     * [ ] Používa v prípadoch, kedy klasický typ by bol príliš obmedzujúci a znemožňoval by znovupoužitie triedy
     * [ ] Sú situácie, kedy v triede pri HAS-A vzťahoch (atribúty triedy) je použitie konkrétnej triedy príliš obmedzujúce a použitie typu `Object` by malo za následok slabú typovú kontrolu
     * [ ] Parametrizovaný typ sa pri definícii triedy uvedie do lomených zátvoriek a pri vytváraní objektov a premenných sa potom do lomených zátvoriek uvedie, aký konkrétny typ sa použije pre daný objekt alebo premennú
@@ -351,7 +392,7 @@ Parametrizované typy v Jave existujú iba pri kompilácii, počas behu programu
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    POLYMORFIZMUS - mnohootvárnosť
+    POLYMORFIZMUS - mnohotvárnosť
     
     Metóda môže mať rôzne správanie v závislosti od triedy, teda typu objektu, ktorý bol pri volaní metódy použitý
 
@@ -380,8 +421,8 @@ Parametrizované typy v Jave existujú iba pri kompilácii, počas behu programu
     3. Parametrický polymorfizmus - generický polymorfizmus
 
     Deje sa počas kompilácie
-    Realizuje sa cez geenrické triedy, ktorý parametrizujú typy atribútov
-    Používa sa keď klasický typ je príliš obmedzujúci a znemožňoval by znovupoužitiu triedy
+    Realizuje sa cez generické triedy, ktorý parametrizujú typy atribútov
+    Používa sa keď klasický typ je príliš obmedzujúci a znemožňoval by znovupoužitie triedy
     Použitie typu Object by ale malo za následok slabú typovú kontrolu - radšej generickú triedu
     Parametrizovaný typ sa pri definícii triedy uvedie do lomených zátvoriek
     Pri vytváraní objektov sa do lomených zátvoriek uvedie, aký konkrétny typ sa použije
