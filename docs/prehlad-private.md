@@ -341,9 +341,11 @@ hide:
 <tr >
 <td width=10%>12</td>
 <td width=30%>
-<a href="../teoria-3/t12-">x</a> (<a href="../assets/t12w.pdf">pdf</a>)
+<a href="../teoria-3/t12-polymorfizmus">Polymorfizmus</a> (<a href="../assets/t12w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Statický polymorfizmus</li>
+<li>Dynamický polymorfizmus</li>
+<li>Parametrický polymorfizmus</li>
 </ul>
 </td>
 <td width=30%>

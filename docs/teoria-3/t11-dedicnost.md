@@ -290,7 +290,7 @@ HAS-A (má) znamená, že trieda obsahuje inú triedu ako atribút. Vzniká komp
     }
     ```
 
-### Kompozícia v UMl Class diagrame
+### Kompozícia v UML Class diagrame
 
 V UML Class diagrame sa kompozícia znázorňuje pomocou plného diamantu, ktorý je pri triede, ktorá "má" (has-a) iné triedy ako atribúty.
 
@@ -400,7 +400,7 @@ Najčastejší moderný pohľad je "favor composition over inheritance" – prin
 
     IS-A verzus HAS-A
     - IS-A (je) znamená, že trieda je špeciálnym prípadom inej triedy. Vtedy použijeme dedičnosť
-    - HAS-A (má) znamená, že trieda obsahuje inú triedu ako atribút. Vzniká kompozíciou alebo agregáciou
+    - HAS-A (má) znamená, že trieda obsahuje atribút inej triedy. Vzniká kompozíciou alebo agregáciou
     - Kompozícia používa atribúty
     - Auto je Vozidlo, ale Auto má Motor
     - Radšej zvoliť kompozíciu a rozhrania ako dedičnosť

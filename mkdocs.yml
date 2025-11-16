@@ -17,6 +17,7 @@ nav:
     - 9 - Premenné a atribúty: 'teoria-3/t09-premenne.md'
     - 10 - Zapuzdrenie: 'teoria-3/t10-zapuzdrenie.md'
     #- 11 - Dedičnosť: 'teoria-3/t11-dedicnost.md'
+    #- 11 - Dedičnosť: 'teoria-3/t12-polymorfizmus.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
     - 2 - Prvý Java program: 'cvicenie-3/c02-hello.md'
