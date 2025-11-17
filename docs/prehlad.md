@@ -278,7 +278,7 @@ hide:
 </td>
 <td width=30%>TODO</td>
 <td width=30%>
-Metódy a JSON (<a href="../assets/p10w.pdf">pdf</a>)
+<a href="../pokrocili-3/p10-metody">Metódy a JSON</a> (<a href="../assets/p10w.pdf">pdf</a>)
 <ul>
 <li>Súkromné atribúty</li>
 <li>Vymazanie atribútov a objektov</li>
@@ -289,6 +289,30 @@ Metódy a JSON (<a href="../assets/p10w.pdf">pdf</a>)
 </td>
 </tr>
 
+<tr >
+<td width=10%>11</td>
+<td width=30%>
+<a href="../teoria-3/t11-dedicnost">Dedičnosť</a> (<a href="../assets/t11w.pdf">pdf</a>)
+<ul>
+<li>Dedenie triedy</li>
+<li>Prekrytie metód</li>
+<li>Zabránenie dedenia</li>
+<li>IS-A versus HAS-A</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c11-">x</a> (<a href="../assets/c11w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p11-">x</a> (<a href="../assets/p11w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
 
 </tbody>
 </table>

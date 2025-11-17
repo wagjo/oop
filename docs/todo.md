@@ -35,6 +35,7 @@
 - iterator interface !!!
 - Object
 - Random
+- Liskov Substitution Principle
 
 - praca s datumami
 - regularne vyrazy

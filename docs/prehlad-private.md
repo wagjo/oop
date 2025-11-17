@@ -365,9 +365,11 @@ hide:
 <tr >
 <td width=10%>13</td>
 <td width=30%>
-<a href="../teoria-3/t13-">x</a> (<a href="../assets/t13w.pdf">pdf</a>)
+<a href="../teoria-3/t13-abstrakcia">Abstrakcia</a> (<a href="../assets/t13w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Abstrakcia</li>
+<li>Abstraktné triedy</li>
+<li>Rozhrania - interfaces</li>
 </ul>
 </td>
 <td width=30%>

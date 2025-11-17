@@ -347,6 +347,18 @@ Generické typy sa v Jave používajú hlavne pri kolekciách, ako napríklad zo
 
 Parametrizované typy v Jave existujú iba pri kompilácii, počas behu programu sa parametrizovaný typ nahradí typom `Object`. Toto nahradenie sa odborne volá **type erasure**, teda vymazanie typu. Počas behu programu teda nevieme zistiť konkrétnu triedu parametrizovaného typu.
 
+!!! info "Pokročilé techniky: Generické metódy"
+    
+    Okrem generických typov Java podporuje tiež generické metódy. Va takýchto prípadoch sa neparametrizuju typy v celej triede, ale iba argumenty a návratový typ v rámci jednej metódy.
+
+    ```java title="Príklad generickej metódy na výmenu dvoch prvokov v poli akéhokoľvek typu"
+    public static <T> void swap(T[] array, int i, int j) {
+        T temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    ```
+
  </main>
 
   <aside markdown>
