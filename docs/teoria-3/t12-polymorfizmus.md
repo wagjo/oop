@@ -362,7 +362,7 @@ Parametrizované typy v Jave existujú iba pri kompilácii, počas behu programu
  </main>
 
   <aside markdown>
-Parametrizované typy sa dajú ohraničiť, ak chceme obmädziť možné konktétne typy iba na určitú podmnožinu typov. Vymazanie typov by potom prebiehalo trochu ináč. Táto pokročilá technika však je nad rámec dnešnej lekcie.
+Parametrizované typy sa dajú ohraničiť, ak chceme obmedziť možné konktétne typy iba na určitú podmnožinu typov. Vymazanie typov by potom prebiehalo trochu ináč. Táto pokročilá technika však je nad rámec dnešnej lekcie.
 </aside>
 </div>
 

@@ -280,7 +280,7 @@ direction TB
 
 ## Abstraktná trieda Vs Rozhranie
 
-Rozhranie je jednoduchšie, flexibilnejšie a menej obmädzujúce, preto je vhodné ho uprednostniť pred abstraktnou triedou.
+Rozhranie je jednoduchšie, flexibilnejšie a menej obmedzujúce, preto je vhodné ho uprednostniť pred abstraktnou triedou.
 
 Abstraktnú triedu použijeme, ak máme kostru nejakého algoritmu alebo procesu, a detaily sa doplnia v podtriedach, ktoré určujú konkrétny spôsob fungovania procesu.
 
@@ -324,7 +324,7 @@ Obidve prístupy môžeme kombinovať. Podtrieda môže súčasne dediť z abstr
     * [ ] `Serializable`, `Cloneable` - serializácia a kopírovanie
     * [ ] `AutoCloseable` - zatvorenie zdrojov
 - [x] Abstraktná trieda Vs Rozhranie
-    * [ ] Rozhranie je jednoduchšie, flexibilnejšie a menej obmädzujúce
+    * [ ] Rozhranie je jednoduchšie, flexibilnejšie a menej obmedzujúce
     * [ ] Abstraktnú triedu použijeme, ak máme kostru nejakého algoritmu alebo procesu, detaily necháme na potomkov
     * [ ] Cieľom je zložitosť umenšovať a skrývať do implementácie, nie ju pridávať
     * [ ] Abstraktná trieda: Pre "je-a" vzťahy (napr. Pes je Zviera), zdieľa stav a správanie
@@ -340,7 +340,7 @@ Obidve prístupy môžeme kombinovať. Podtrieda môže súčasne dediť z abstr
     ABSTRAKCIA
     
     Abstrakcia je proces, pri ktorom skryjeme nepodstatné detaily a ponecháme iba dôležité veci
-    Cieľom je abz sa zverejnilo iba to, "čo" robí objekt, nie "ako" to robí
+    Cieľom je aby sa zverejnilo iba to, "čo" robí objekt, nie "ako" to robí
     To zjednodušuje kód, zvyšuje čitateľnosť a umožňuje lepšiu modularitu
 
     1. Abstraktné triedy
@@ -359,9 +359,10 @@ Obidve prístupy môžeme kombinovať. Podtrieda môže súčasne dediť z abstr
     Sústredí sa vyslovene na správanie, teda na schopnosti 
     Špeciálna trieda, ktorá nemá atribúty ani konštruktory
     Rozhranie je čistý dizajn, bez stavu a bez konkrétnej implementácie
-    Rozhranie definujeme s kľúčovým slovom `interface`
+    Rozhranie definujeme s kľúčovým slovom interface
     Podtrieda môže implementovať viacero rozhraní!
-    Rozhranie sa sústredí na schopnosti triedy, teda o CAN-DO "vie" vzťah. Lietadlo vie Lietat, Súbor vieme Zatvoriť
+    Rozhranie sa sústredí na schopnosti triedy, teda o CAN-DO "vie" vzťah. 
+    Lietadlo vie Lietat, Súbor vieme Zatvoriť
     Rozhrania v UML Class diagrame majú pred menom značku <<interface>>
     Od triedy, ktorá implementuje rozhranie, vedie prerušovaná uzatvorená šípka k danému rozhraniu.
 
@@ -372,7 +373,7 @@ Obidve prístupy môžeme kombinovať. Podtrieda môže súčasne dediť z abstr
     - AutoCloseable, Cloneable - zatvorenie a kopírovanie
 
     Abstraktná trieda Vs Rozhranie:
-    - Rozhranie je jednoduchšie, flexibilnejšie a menej obmädzujúce
+    - Rozhranie je jednoduchšie, flexibilnejšie a menej obmedzujúce
     - Cieľom je zložitosť umenšovať a skrývať do implementácie, nie ju pridávať
     - Abstraktná trieda: Pre "je-a" vzťahy (napr. Pes je Zviera), zdieľa stav a správanie
     - Rozhranie: Pre "môže-robiť" vzťahy (napr. Lietadlo môže Lietat), čisto o správaní

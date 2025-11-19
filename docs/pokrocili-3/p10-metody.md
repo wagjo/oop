@@ -432,7 +432,7 @@ print(osoba.meno)
 
 !!! example "Úloha 10.5: Index podľa hercov"
 
-    1. Podobne ako máme index podľa hercov, tak upravte triedu DB tak, aby v konštruktore naviac
+    1. Podobne ako máme index podľa názvu teraz upravte triedu DB tak, aby konštruktore naviac
     vytvoril atribút `_actor_index`, do ktorého zaindexuje filmy podľa hercov.
 
     1. V triede DB vytvorte metódu `by_actor`, ktorá vráti filmy podľa herca z atribútu `_actor_index`
