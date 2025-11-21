@@ -331,9 +331,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p11-">x</a> (<a href="../assets/p11w.pdf">pdf</a>)
+<a href="../pokrocili-3/p11-zapuzdrenie">Zapuzdrenie</a> (<a href="../assets/p11w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Zapuzdrenie</li>
+<li>Modifikátory prístupu</li>
+<li>Property</li>
 </ul>
 </td>
 </tr>
