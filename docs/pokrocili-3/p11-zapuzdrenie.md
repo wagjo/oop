@@ -129,7 +129,7 @@ Tento prístup je odporúčaný a budeme ho v našom kóde používať aj my.
 
 Dnes si vyskúšame vytvoriť jednoduchú textovú hru. V tejto hre budeme prechádzať medzi miestnosťami, komplikovanejšie veci si necháme na inokedy. 
 
-Hra čaká na náš príkaz. Príkazy sa zadávajú vo forme `sloveso podstatné_meno`, napr. `go vychod`, čo je príkaz na to, aby sme sa presunuli do miestnosti, ktorá je na východným smerom.
+Hra čaká na náš príkaz. Príkazy sa zadávajú vo forme `sloveso podstatné_meno`, napr. `go vychod`, čo je príkaz na to, aby sme sa presunuli do miestnosti, ktorá je východným smerom.
 
 Vytvoríme si balík `adventura` a 4 moduly s triedami:
 
@@ -479,7 +479,7 @@ Vstupný bod do hry bude v súbore `__main.py__`
     - getter - čitanie hodnoty atribútu
     - setter - zápis hodnoty do atribútu
     - deleter - zmazanie atribútu pomocou del
-    - používme atribut = property(fget, fset, fdel, doc)
+    - používame atribut = property(fget, fset, fdel, doc)
 
     Property dekorátor
     - @property, @atribut.setter, @atribut.deleter
