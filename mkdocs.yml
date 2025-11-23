@@ -27,7 +27,7 @@ nav:
     - 5 - Obalené typy: 'cvicenie-3/c05-wrapper.md'
     - 6 - Reťazce znakov: 'cvicenie-3/c06-stringy.md'
     - 7 - Triedy a metódy: 'cvicenie-3/c07-triedy.md'
-    #- 8 - Hangman: 'cvicenie-3/c08-metody.md'
+    - 8 - Hangman: 'cvicenie-3/c08-metody.md'
     #- 9 - Slovník: 'cvicenie-3/c09-konstruktor.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
@@ -41,6 +41,7 @@ nav:
     - 9 - Trieda a metódy: 'pokrocili-3/p09-oop.md'
     - 10 - Metódy a JSON: 'pokrocili-3/p10-metody.md'
     #- 11 - Zapuzdrenie: 'pokrocili-3/p11-zapuzdrenie.md'
+    #- 12 - Dedičnosť: 'pokrocili-3/p12-dedicnost.md'
   - Prehľad tém: 'prehlad.md'
   #- Ťahák: 'tahak.md'
   - Kontakt: 'autor.md'

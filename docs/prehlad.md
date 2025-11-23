@@ -230,7 +230,15 @@ hide:
 <li>Statická inicializácia</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c08-metody">Metódy</a> (<a href="../assets/c08w.pdf">pdf</a>)
+<ul>
+<li>Hra Hangman</li>
+<li>Statické a inštančné metódy</li>
+<li>Getter a Setter metódy</li>
+<li>UML diagram tried</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p08-github">GitHub</a> (<a href="../assets/p08w.pdf">pdf</a>)
 <ul>
