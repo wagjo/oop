@@ -17,7 +17,7 @@ nav:
     - 9 - Premenné a atribúty: 'teoria-3/t09-premenne.md'
     - 10 - Zapuzdrenie: 'teoria-3/t10-zapuzdrenie.md'
     - 11 - Dedičnosť: 'teoria-3/t11-dedicnost.md'
-    #- 12 - Polymorfizmus: 'teoria-3/t12-polymorfizmus.md'
+    - 12 - Polymorfizmus: 'teoria-3/t12-polymorfizmus.md'
     #- 13 - Abstrakcia: 'teoria-3/t13-abstrakcia.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
@@ -40,7 +40,7 @@ nav:
     - 8 - GitHub: 'pokrocili-3/p08-github.md'
     - 9 - Trieda a metódy: 'pokrocili-3/p09-oop.md'
     - 10 - Metódy a JSON: 'pokrocili-3/p10-metody.md'
-    #- 11 - Zapuzdrenie: 'pokrocili-3/p11-zapuzdrenie.md'
+    - 11 - Zapuzdrenie: 'pokrocili-3/p11-zapuzdrenie.md'
     #- 12 - Dedičnosť: 'pokrocili-3/p12-dedicnost.md'
   - Prehľad tém: 'prehlad.md'
   #- Ťahák: 'tahak.md'

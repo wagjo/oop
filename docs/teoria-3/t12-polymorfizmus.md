@@ -120,7 +120,7 @@ Dynamický, alebo **subtypový polymorfizmus** sa deje počas behu programu (ang
 
 Pri tomto type polymorfizmu sa využíva dedičnosť. Máme triedy rodičovské (superclass) a triedy potomkov (subclass), ktoré prekrývajú metódy svojich rodičov.
 
-V kóde síce vždy máme pri premennej uvedený aj jej typ, ale pri volaní polymorfickej metódy sa na typ uvedený v kóde neprihliada. Java sa počas behu programu pozrie na objekt a zavolá metódu, ktorá zodpovedá skutočnému typu objektu, na ktorým sa volá metóda.
+V kóde síce vždy máme pri premennej uvedený aj jej typ, ale pri volaní polymorfickej metódy sa na typ uvedený v kóde neprihliada. Java sa počas behu programu pozrie na objekt a zavolá metódu, ktorá zodpovedá skutočnému typu objektu, nad ktorým sa volá metóda.
 
 === "Dynamický polymorfizmus"
 

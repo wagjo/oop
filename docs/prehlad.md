@@ -308,19 +308,32 @@ hide:
 <li>IS-A versus HAS-A</li>
 </ul>
 </td>
+<td width=30%>TODO</td>
 <td width=30%>
-<a href="../cvicenie-3/c11-">x</a> (<a href="../assets/c11w.pdf">pdf</a>)
+<a href="../pokrocili-3/p11-zapuzdrenie">Zapuzdrenie</a> (<a href="../assets/p11w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
-</ul>
-</td>
-<td width=30%>
-<a href="../pokrocili-3/p11-">x</a> (<a href="../assets/p11w.pdf">pdf</a>)
-<ul>
-<li>TODO</li>
+<li>Zapuzdrenie</li>
+<li>Modifikátory prístupu</li>
+<li>Property</li>
 </ul>
 </td>
 </tr>
+
+<tr >
+<td width=10%>12</td>
+<td width=30%>
+<a href="../teoria-3/t12-polymorfizmus">Polymorfizmus</a> (<a href="../assets/t12w.pdf">pdf</a>)
+<ul>
+<li>Statický polymorfizmus</li>
+<li>Dynamický polymorfizmus</li>
+<li>Parametrický polymorfizmus</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
+
+
 
 </tbody>
 </table>
