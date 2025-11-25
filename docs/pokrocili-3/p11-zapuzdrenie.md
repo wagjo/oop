@@ -157,7 +157,7 @@ Vstupný bod do hry bude v súbore `__main.py__`
         ]
         ```
 
-    1. Vytvorte adresár `src/adventura` a v ňom súbor `__main.py__` s kódom `print("hello world!")`
+    1. Vytvorte adresár `src/adventura` a v ňom súbor `__main__.py` s kódom `print("hello world!")`
 
     1. Lokálne nainštalujte projekt pomocou `pip install -e .`
      
