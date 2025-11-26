@@ -190,7 +190,8 @@ Vstupný bod do hry bude v súbore `__main.py__`
             test_player.room_id = 2
             print("Test player.py: ", test_player.room_id)
 
-        test()
+        if __name__ == '__main__':
+            test()
         ```
 
 !!! example "Úloha 11.3: Modul miestnosti"
@@ -244,7 +245,8 @@ Vstupný bod do hry bude v súbore `__main.py__`
             print(test_room.exits)
             print(test_room.exit("zapad"))
 
-        test()
+        if __name__ == '__main__':
+            test()
         ```
 
 !!! example "Úloha 11.4: Modul stavu hry"
@@ -293,7 +295,8 @@ Vstupný bod do hry bude v súbore `__main.py__`
             print(test_hra.player.room_id)
             print(test_hra.active_room().label)
 
-        test()
+        if __name__ == '__main__':
+            test()
         ```
 
 !!! example "Úloha 11.5: Modul logiky hry"

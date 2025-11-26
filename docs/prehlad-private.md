@@ -357,9 +357,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p12-">x</a> (<a href="../assets/p12w.pdf">pdf</a>)
+<a href="../pokrocili-3/p12-dedicnost">Dedičnosť</a> (<a href="../assets/p12w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Dedičnosť</li>
+<li>super()</li>
+<li>Viacnásobná dedičnosť</li>
+<li>Duck typing</li>
 </ul>
 </td>
 </tr>

@@ -138,7 +138,7 @@ Dedenie teda častokrát nie je potrebné. Stačí, ak trieda implementuje danú
 
     ```python
     def zvuk_zvierata(zviera):
-        print(zviera.zvuk())          # Nezáleží, či je to Pes, Macka alebo Kacer Donald
+        print(zviera.zvuk()) # Nezáleží, či je to Pes, Macka alebo KacerDonald
 
     class Pes:
         def zvuk(self):
@@ -165,60 +165,36 @@ Duck typing je jedna z najkrajších a najsilnejších vlastností Pythonu. Keď
 
 ## Úlohy na hodine
 
-Dnes si vyskúšame vytvoriť jednoduchú textovú hru. V tejto hre budeme prechádzať medzi miestnosťami, komplikovanejšie veci si necháme na inokedy. 
+Dnes budeme vylepšovať hru adventura, ktorú sme si programovali na minulom cvičení. Zameriame sa na nasledovné funkcionality:
 
-Hra čaká na náš príkaz. Príkazy sa zadávajú vo forme `sloveso podstatné_meno`, napr. `go vychod`, čo je príkaz na to, aby sme sa presunuli do miestnosti, ktorá je východným smerom.
+- inventár hráča
+- príkaz na vloženie veci do inventára
+- použitie veci z inventára
 
-Vytvoríme si balík `adventura` a 4 moduly s triedami:
+!!! example "Úloha 12.1: Nová mapa"
 
-- Hráč - `player.py`
-- Miestnosť - `room.py`
-- Stav hry - `hra.py`
-- Logika hry - `engine.py`
+    1. Do adresára `assets` si stiahnite novú verziu mapy [hra12.json](http://oop.wagjo.com/assets/hra12.json)
 
-Vstupný bod do hry bude v súbore `__main.py__`
+    1. V súbore `__main__.py` zmeňte mapu z `hra11.json` na `hra12.json`
 
-
-!!! example "Úloha 11.1: Projekt adventúra"
-
-    1. Vytvorte si nový projekt s názvom `adventura`
-
-    1. Vytvorte adresár `assets` a stiahnite do neho súbor [hra11.json](http://oop.wagjo.com/assets/hra11.json)
-
-    1. Vytvorte súbor `pyproject.toml` s nasledovným obsahom
-
-        ```toml
-        [project]
-        name = "adventura"
-        version = "0.0.1"
-        dependencies = [
-        ]
-        ```
-
-    1. Vytvorte adresár `src/adventura` a v ňom súbor `__main.py__` s kódom `print("hello world!")`
-
-    1. Lokálne nainštalujte projekt pomocou `pip install -e .`
-     
-    1. Spustite projekt a overte, že funguje
-
-    1. Vytvorte súbor `.gitignore` s obsahom [Python.gitignore](https://github.com/github/gitignore/blob/main/Python.gitignore) súboru
-
-    1. Vytvorte si na svojom GitHube nový repozitár s názvom adventura
-
-    1. Vytvorte si lokálne git repozitár a prepojte ho s GitHubom. Nahrajte svoj kód na GitHub
+    1. Pozrite si obsah súboru s mapou a všimnite si nové atribúty `items` a `uses` v niektorých miestnostiach
 
 
-!!! example "Úloha 11.2: Modul hráča"
+!!! example "Úloha 12.2: Inventár hráča"
 
-    Hráča budeme reprezentovať triedou `Player`. Zatiaľ si do tejto triedy uložíme iba informáciu o tom, v ktorej miestnosti sa hráč nachádza.
+    Ideme naimplementovať inventár, ktorý bude predstavovaný slovníkom v tvare {"nazov", vec}. Do triedy `Player` potrebujeme urobiť tieto zmeny:
 
     1. Vytvorte modul `adventura/player.py`
 
-    1. V module vytvorte triedu `Player` s atribútom `_room_id`, ktorý sa načíta v konštruktore. Argument konštruktora nech sa volá `start_room_id`
+    1. Pridajte do triedy nový interný atribút `_inventory`, inicializujte ho na prázdny slovník `{}`, argumenty konštruktora nemeňte
 
-    1. Vytvorte getter a setter metódy `room_id` cez property dekorátor
+    1. Vytvorte getter metódu `inventory` pomovou @property dekorátora, ktorá vráti zoznam názvov vecí z inventára, teda zoznam kľúčov zo slovníka inventory
 
-    1. Vytvorte továrenskú metódu `from_dict(cls, data)`, ktorá vytvorí objekt zo slovníka `data` (pomocou rozbalenia parametrov ako sme si ukázali na minulej hodine)
+    1. Vytvorte nasledujúce metódy, ktoré budú pracovať s inventárom:
+
+        - `put_item(self, item_id, item)` - vloží vec `item` do slovníka `inventory` pod kľúčom `item_id`
+        - `del_item(self, item_id)` - vymaže vec z inventára podľa kľúča `item_id`
+        - `has_item(self, item_id)` - vráti true, ak `item_id` sa nachádza v inventári, inak vráti false
 
     1. Overte funkčnosť pomocou nasledovného kódu:
 
@@ -226,44 +202,44 @@ Vstupný bod do hry bude v súbore `__main.py__`
         def test():
             test_player = Player.from_dict({"start_room_id": 1})
             test_player.room_id = 2
-            print("Test player.py: ", test_player.room_id)
+            assert test_player.room_id == 2
+            test_player.put_item("kluc", {
+                "label": "kluc",
+                "desc": "Zdobený kľúč"
+                })
+            assert test_player.has_item("kluc")
+            assert test_player.inventory == ["kluc"]
+            test_player.del_item("kluc")
+            assert test_player.has_item("kluc") == False
+            print("player module test OK")
 
-        test()
+        if __name__ == '__main__':
+            test()
         ```
 
-!!! example "Úloha 11.3: Modul miestnosti"
+!!! example "Úloha 12.3: Úprava miestnosti"
 
-    Miestnoť budeme reprezentovať triedou `Room`. Každá miestnosť má nasledovné informácie:
+    Miestnoť bude mať novú funkcionalitu:
 
-    - `room_id` - id miestnosti
-    - `label` - názov miestnosti
-    - `desc` - popis miestnosti
-    - `exits` - list východov z miestnosti. Každý východ je dict s hodnotami `label` a `room_id`
-    - `game_over` - reťazec so správou o ukončení hry. Ak je prítomný, vstupom do tejto miestnosti sa hra končí
+    - V miestnosti sa môžu nachádzať veci, ukladať ich budeme do atribútu `items`
+    - V miestnosti sa budú môcť použiť veci z inventára. To, aké veci sa môžu použiť a aká zmena nastane budeme mať uložené v atribúte `uses`
 
     Postup:
 
-    1. Vytvorte modul `adventura/room.py`
+    1. Do triedy `Room` pridajte 2 atribúty, `_items` a `_uses`. Pridajte ich aj do argumentov konštruktora, ale dajte im defaultnú hodnotu None (`items=None, uses=None`)
 
-    1. V module vyvorte triedu `Room`, ktorá bude mať atribúty `_room_id`, `_label`, `_desc`, `_exits` a `_game_over`. Konštruktor nech má nasledovnú formu: `__init__(self, room_id, label, desc, exits=None, game_over=None)`
+    1. V argumentoch do konštruktora budú tieto vstupy zadané ako zoznam slovníkov, ale atribút potrebujeme mať ako index, podobne ako to máme urobené pre atribút `exits`. Vytvorte teda v konštruktore indexy pre `items` a `uses`
 
-    1. Vytvorte getter metódy `game_over`, `desc`, `label` pomocou dekorátorov
+        - uses budeme indexovať pomocou `item_id`
+        - items budeme indexovať pomocou `label`
 
-    1. Vytvorte továrenskú metódu `from_dict(cls, data)`, ktorá vytvorí objekt zo slovníka `data` 
+    1. Vytvorte getter metódu pre atribút `items` pomocou @getter dekorátora, s tým, že sa bude vraciať zoznam názvov vecí (kľúče slovníka)
 
-    1. Hodnoty `exits` upravte tak, aby sa v triede uložil nie zoznam východov, ale index východov podľa ich názvu (`label`)
+    1. Vytvorte metódy `get_item(self, item_id)` a `del_item(self, item_id)` pre prístup k a odstránenie veci
 
-        - V konštruktore upravte spracovanie vstupu `exists` nasledovne:
+    1. Vytvorte metódy `replace_exits(self, new_exits)` a `replace_desc(self, new_desc)`, ktoré prepíšu východy a popis miestnosti novými hodnotami. Pri exits urobte indexáciu podobne ako sa to robí v konštruktore.
 
-            ```python
-            if exits is None:
-                exits = []
-            self._exits = {exit["label"]: exit for exit in exits}    
-            ```
-
-        - Getter metóda `exits` má vrátiť iba zoznam názvov východov, teda `list(self._exits.keys())`
-
-        - Vytvorte metódu `exit(self, direction)`, ktorá vráti východ (celý dict) s daným názvom
+    1. Vytvorte metódu `item_use(self, item_id)`, ktorá vráti hodnotu zo slovníka `_uses` pre danú vec `item_id`
 
     1. Overte funkčnosť pomocou nasledovného kódu:
 
@@ -272,47 +248,93 @@ Vstupný bod do hry bude v súbore `__main.py__`
             test_room = Room.from_dict({"room_id": "1",
                                         "label": "Čistinka",
                                         "desc": "Stojíš na kraji čistinky",
+                                        "items": [
+                                            {
+                                                "label": "kluc",
+                                                "desc": "Zdobený kľúč"
+                                            }
+                                        ],
+                                        "uses": [
+                                            {
+                                                "item_id": "kluc",
+                                                "desc": "Kľúčom si odomkol dvere",
+                                            }
+                                        ],
                                         "exits": [{
                                             "label": "zapad",
                                             "room_id": "2"
                                         }, {
                                             "label": "vychod",
                                             "room_id": "3"}]})
-            print(test_room.label, test_room.desc, test_room.game_over)
-            print(test_room.exits)
-            print(test_room.exit("zapad"))
+            assert test_room.label == "Čistinka"
+            assert test_room.desc == "Stojíš na kraji čistinky"
+            assert test_room.game_over == None
+            assert test_room.exits == ["zapad", "vychod"]
+            assert test_room.exit("zapad") == {
+                                            "label": "zapad",
+                                            "room_id": "2"}
 
-        test()
+            assert test_room.items == ["kluc"]
+            assert test_room.get_item("kluc") == {
+                                                "label": "kluc",
+                                                "desc": "Zdobený kľúč"
+                                            }
+            test_room.del_item("kluc")
+            assert test_room.items == []
+            assert test_room.item_use("kluc") == {
+                                                "item_id": "kluc",
+                                                "desc": "Kľúčom si odomkol dvere",
+                                            }
+            test_room.replace_exits([{"label": "zapad",
+                                            "room_id": "2"
+                                        }])
+            test_room.replace_desc("Stojíš na kraji čistinky, prší")
+            assert test_room.desc == "Stojíš na kraji čistinky, prší"
+            assert test_room.exits == ["zapad"]
+            print("room module test OK")
+
+        if __name__ == '__main__':
+            test()
         ```
 
-!!! example "Úloha 11.4: Modul stavu hry"
+!!! example "Úloha 12.4: Úprava stavu hry"
 
-    Stav hry v sebe bude obsahovať slovník s miestnosťami, zaindexovaný podľa id miestnosti, a tiež atribút so stavom hráča.
+    Stav hry bude mať viac funkcionalít pomocou nasledovných metód:
 
-    1. Vytvorte modul `adventura/hra.py` a importnite v ňom  nasledovné triedy:
+    - `go(self, direction)` - zmení aktuálnu polohu hráča podľa smeru, ktorým sa vydal
+    - `take_item(self, item_id)` - zoberie vec z miestnosti a vloží do inventára hráča
+    - `use_item(self, item_id)` - použije vec z inventára a vykoná akciu. Potom vec vymaže z inventára. Akcia môže zmeniť východy alebo popis miestnosti.
 
-        ```python
-        from adventura.player import Player
-        from adventura.room import Room
+    Postup:
+
+    1. V triede Hra vytvorte metódu `go(self, direction)`, ktorá zmení aktuálnu polohu hráča podľa smeru, ktorým sa vydal. Ide viacmenej o kód, ktorý nájdete v metóde `action` v triede `Engine` v časti `verb == "go"`. Stačí ho mierne upraviť. Používajú sa tam metódy `active_room()`, `room.exit` a `player.room_id`
+
+    1. Vytvorte metódu `take_item(self, item_id)`, ktorá zoberie vec z miestnosti a vloží do inventára. Použite na to metódy `room.get_item`, `player.put_item` a `room.del_item`
+
+    1. Do triedy Hra vložte nasledovné 2 metódy:
+
+        ``` python
+        def _replace(self, to_replace):
+            room = self.active_room()
+            new_exits = to_replace.get('exits', [])
+            if new_exits:
+                room.replace_exits(new_exits)
+            new_desc = to_replace.get('desc', None)
+            if new_desc:
+                room.replace_desc(new_desc)
+
+        def use_item(self, item_id):
+            room = self.active_room()
+            player = self.player
+            if player.has_item(item_id):
+                use = room.item_use(item_id)
+                to_replace = use.get('replace', {})
+                self._replace(to_replace)
+                player.del_item(item_id)
+                return use.get("desc")
+            else:
+                raise ValueError("Neviem použiť " + item_id)
         ```
-
-    1. Vytvorte triedu `Hra` s atribútmi `_player` a `_rooms`. Argumenty konštruktora nech sú `player` a `rooms`.
-
-    1. Vytvorte getter metódu `player` pomocou property dekorátora
-
-    1. Vytvorte továrenskú metódu `from_dict` s nasledovným kódom. Všimnite si, ako sa vytvára index miestností podľa ich id.
-
-        ```python
-        @classmethod
-        def from_dict(cls, data):
-            player = Player.from_dict(data['player'])
-            rooms = {room["room_id"]: Room.from_dict(room) for room in data['rooms']}
-            return cls(player, rooms)
-        ```
-
-    1. Vytvorte metódu `active_room(self)`, ktorá vráti slovník miestnosti, v ktorej sa práve hráč nachádza
-
-    1. Vytvorte metódu `game_over(self)`, ktorá vráti hodnotu `game_over` z aktívnej miestnosti
 
     1. Overte funkčnosť pomocou nasledovného kódu:
 
@@ -322,55 +344,44 @@ Vstupný bod do hry bude v súbore `__main.py__`
                                     "rooms": [{"room_id": "1",
                                                 "label": "Čistinka",
                                                 "desc": "Stojíš na kraji čistinky",
-                                                "exits": [{
-                                                    "label": "zapad",
-                                                    "room_id": "2"
-                                                }, {
-                                                    "label": "vychod",
-                                                    "room_id": "3"}]}]})
-            print(test_hra.player.room_id)
-            print(test_hra.active_room().label)
+                                                "uses": [{
+                                                    "item_id": "maceta",
+                                                    "desc": "Použil si mačetu",
+                                                    "replace": {
+                                                        "desc": "Rozsekaná čistinka",
+                                                        "exits": [{
+                                                            "label": "zapad",
+                                                            "room_id": "10"
+                                                        }]}}],
+                                                "items": [{
+                                                    "label": "maceta",
+                                                    "desc": "Stará mačeta"
+                                                }],
+                                                "exits": []}]})
+            assert test_hra.player.room_id == "1"
+            assert test_hra.active_room().label == "Čistinka"
+            test_hra.take_item("maceta")
+            assert test_hra.active_room().items == []
+            assert test_hra.player.inventory == ["maceta"]
+            test_hra.use_item("maceta")
+            assert test_hra.player.inventory == []
+            assert test_hra.active_room().desc == "Rozsekaná čistinka"
+            assert test_hra.active_room().exits == ["zapad"]
+            test_hra.go("zapad")
+            assert test_hra.player.room_id == "10"
+            print("hra module test OK")
 
-        test()
+        if __name__ == '__main__':
+            test()
         ```
 
-!!! example "Úloha 11.5: Modul logiky hry"
+!!! example "Úloha 12.5: Modul logiky hry"
 
-    Logiku hry nám bude zabezpečovať modul engine
+    Modul engine musíme tiež mierne upraviť:
 
-    1. Vytvorte modul `adventura/engine.py` a importnite nasledovné veci
+    1. Do metódy `describe` pridajte výpis vecí v miestnosti a vecí v inventári hráča. Na samostatný riadok vypíšte `"Na zemi sa nachádza:"` a veci v miestnosti, a na ďalší riadok `"V inventári máš:"` a veci z inventára hráča.
 
-        ```python
-        import json
-        import textwrap
-
-        from adventura.hra import Hra
-        ```
-
-    1. Vytvorte triedu `Engine` s troma atribútmi, `_hra`, `_intro` a `_outro`. Argumenty konštruktora nazvite podobne.
-
-    1. Pridajte do triedy nasledovné továrenské metódy:
-
-        ```python
-        @classmethod
-        def from_dict(cls, data):
-            hra = Hra.from_dict(data)
-            return cls(hra, data['intro'], data['outro'])
-
-        @classmethod
-        def load_game(cls, json_path):
-            with open(json_path) as json_file:
-                data = json.load(json_file)
-                return Engine.from_dict(data)
-        ```
-
-    1. Vytvorte metódu `intro(self)`, ktorá vypíše hodnotu atribútu intro na obrazovku a potom počká na stlačenie klávesy pomocou príkazu `input()`
-
-    1. Vytvorte metódu `game_over(self, msg)`, ktorá vypíše "GAME OVER", potom vypíše msg a nakoniec vypíše hodnotu atribútu `outro`
-
-    1. Vytvorte metódu `describe(self)`, ktorá Vypíše "Nachádzaš sa: " a názov aktívnej miestnosti. Aktívnu miestnosť získate z atribútu `_hra` zavolaním metódy `active_room()`. Potom nech vypíše popis miestnosti (atribút mestnosti `desc`). Nakoniec nech vypíše "Môžeš ísť: " a zoznam východov z miestnosti.
-
-    1. Pridajte do triedy metódu `action` s nasledovným kódom
+    1. Metódu `action` nahraďte nasledovným kódom:
 
         ```python
         def action(self):
@@ -382,15 +393,24 @@ Vstupný bod do hry bude v súbore `__main.py__`
                     print()
                     print("!!!!!!!!!!!! HELP !!!!!!!!!!!!!!!!!!!!")
                     print("Pre ukončenie hry napíš exit")
-                    print("Z miestnosti sa vieš presunúť príkazom go a smer, napríklad go vychod.")
+                    print("Z miestnosti sa vieš presunúť príkazom go a smer, ktorým sa chceš ubrať, napríklad go vychod.")
+                    print("Zobrať vec zo zeme vieš pomocou príkazu take a vec, ktorú chceš zobrať, napríklad take doska.")
+                    print("Použiť vec vieš príkazom use a vec, ktorú chceš použiť.")
                     print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                 elif verb == "exit":
                     return True
                 elif verb == "go":
-                    room = self._hra.active_room()
-                    exit = room.exit(noun)
-                    new_room_id = exit['room_id']
-                    self._hra.player.room_id = new_room_id
+                    self._hra.go(noun)
+                elif verb == "take":
+                    self._hra.take_item(noun)
+                elif verb == "use":
+                    desc = self._hra.use_item(noun)
+                    print()
+                    print("!!!!!!!!!!!! AKCIA !!!!!!!!!!!!!!!!!!!!")
+                    print(desc)
+                    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                else:
+                    self._hra.go(verb)
             except KeyboardInterrupt as ex:
                 return True
             except Exception as ex:
@@ -400,136 +420,75 @@ Vstupný bod do hry bude v súbore `__main.py__`
                 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         ```
 
-    1. Pridajte do triedy metódu `play` s nasledovným kódom
-
-        ```python
-        def play(self):
-            self.intro()
-            while True:
-                self.describe()
-                game_over_msg = self._hra.game_over()
-                if game_over_msg:
-                    self.game_over(game_over_msg)
-                    break
-                should_quit = self.action()
-                if should_quit:
-                    self.game_over("Vzdal si to skôr ako si stihol nájsť poklad!")
-                    break
-        ```
-
-!!! example "Úloha 11.6: Vstupný bod programu"
-
-    Hra je takmer hotová, stačí pridať hlavný vstup programu.
-
-    1. Do súboru `__main__.py` pridajte nasledovný kód.
-
-        ```python
-        from adventura.engine import Engine
-
-        nova_hra_file = "assets/hra11.json"
-
-        engine = Engine.load_game(nova_hra_file)
-
-        engine.play()
-        ```
-
-    1. Nastavte konfiguráciu projektu tak, aby sa spúšťal modul adventura. Hore kliknite na `Edit Configuration`, vyberte `Python`, potom namiesto `script` vyberte `module` a názov modulu dajte `adventura`
-
-    1. Hra je pripravená, spustite ju a skúste ju dohrať tak, aby skončila s Game Over hláškou
+    Hotovo, skúste si zahrať hru a nájsť poklad!
 
 
 ## Úlohy na precvičenie
 
-!!! example "Úloha 11.7: Krajší výstup"
+!!! example "Úloha 12.6: Popis veci"
 
-    1. Upravte vypísanie popisu miestnosti tak, aby sa text zalomil na 70 znakov
+    Každá vec má svoj popis. 
+    
+    1. Vytvorte novú akciu `look vec`, ktorá vypíše popis veci v miestnosti.
 
-    1. Upravte text pri Game over tak, aby text vypisoval medzi riadkami výkričníkov, tak ako sa to vypisuje pri HELP
-
-    1. Upravte text v metóde `describe`, aby bol výpis prehľadnejší, napr. aby sa to vypisovalo takto:
-
-        ```
-        --------------------------------------------------------------------------
-        Nachádzaš sa: Čistinka
-        --------------------------------------------------------------------------
-        Stojíš na kraji čistinky, cez ktorú preteká zurčivý potôčik. Slniečko
-        svieti a vo vzduchu cítiť rannú vôňu trávy. V strede čistinky je veľký
-        pník a okolo neho rastú huby. Na západ vedie cesta do lesa. Cez
-        potôčik ide drevená lávka, a po nej pokračuje chodník na východ.
-
-        Môžeš ísť: zapad, vychod
-        --------------------------------------------------------------------------
-        Čo chceš urobiť?: _
-        ```
-
-!!! example "Úloha 11.8: Jednoduchší prechod medzi miestnosťami"
-
-    Na prechod medzi miestnosťami je potrebné napísať príkaz `go` a potom smer, ktorým sa chcem vydať, napríklad `go vychod`.
-
-    Upravte metódu action tak, aby sa naviac dalo prechádzať medzi miestnosťami iba tak, že sa napíše smer cesty, napr. `vychod`. Teda `go` sa bude dať použiť, ale pôjde to aj bez neho.
-
-!!! example "Úloha 11.9: Vlastný svet"
-
-    Miestnosti a ich prepojenia sa načítavaju zo súboru `hra11.json`. Vytvorte si vlastný súbor a vymyslite si aspon 5 prepojených miestností. Dajte hru zahrať svojmu susedovi.
+    1. Vytvorte novú akciu `inventory`, ktorá vypíše veci v inventári a ich popis
 
 
 ## Zhrnutie cvičenia
 
-- [x] V objektovo orientovanom programovaní máme 4 základné princípy: zapuzdrenie, dedičnosť, polymorfizmus a abstrakcia
-    * [ ] Objekt v sebe spája stav (atribúty) a správanie (metódy) do jedného celku
-- [x] Zapuzdrenie (anglicky encapsulation) sa používa na skrytie interných detailov objektu a ochranu jeho dát pred neoprávneným prístupom alebo modifikáciou.
-    * [ ] Základné zapuzdrenie je riešené pomocou obmedzenia prístupu k atribútom a metódam triedy
-    * [ ] Na vytvorenie interných (protected) a súkromných atribútov a metód v Pythone používame podčiarníky v názve
-- [x] Getter, Setter a Deleter
-    * [ ] Je zvykom atribúty nezverejňovať, ale mať ich súkromné (private)
-    * [ ] Na samotný prístup k hodnotám súkromných atribútov sa potom vytvárajú tvz. getter a setter metódy
-    * [ ] Getter a setter metódy si vieme naimplementovať pomocou obyčajných inštančných metód
-- [x] Property - elegantnejší spôsob definovania getter a setter metód
-    * [ ] Navonok sa bude poskytovať akoby priamy prístup k atribútu, ale v skutočnosti sa budú volať getter a setter metódy
-    * [ ] getter metóda - zavolá sa pri pokuse o čitanie hodnoty atribútu
-    * [ ] setter metóda - zavolá sa pri pokuse o zápis hodnoty do atribútu
-    * [ ] deleter metóda - zavolá sa pri pokuse o zmazanie atribútu pomocou del
-    * [ ] Na definovanie property v Pythone používme funkciu property(fget, fset, fdel, doc)
-- [x] Property dekorátor
-    * [ ] `@property`, `@atribut.setter`, `@atribut.deleter`
-    * [ ] Pri property metódach s dekorátormi musí byť v kóde prvá uvedená getter metóda
+- [x] Dedičnosť umožňuje vytvoriť novú triedu (podtriedu), ktorá preberá vlastnosti a metódy inej triedy (nadtriedy)
+    * [ ] Užitočné metódy `issubclass(Student, Osoba)` a `isinstance(d, Student)`
+- [x] super()
+    * [ ] Pomocou funkcie super() vieme pristupovať k objektu rodiča a volať jeho metódy a konštruktory a používať jeho atribúty
+    * [ ] volanie rodičovského konštruktora - aby sa dosiahla správna inicializácia atribútov
+    * [ ] volanie prepísanej (prekrytej) metódy - ak z nejakého dôvodu metóda v podtriede potrebuje zavolať prekrytú metódu
+- [x] Na rozdiel od Javy sa v Pythone dá použiť viacnásobná dedičnosť
+    * [ ] Pri viacnásobnej dedičnosti môže nastať problém, že niektoré triedy môžu byť dedené viackrát. Odborne sa tento problém volá diamantový problém, podľa tvaru aký má hierarchia tried pri viacnásobnom dedení
+    * [ ] Ak máme pri prekrytých metódach volanie rodičovských metód, u viacnásobného dedenia Python na určenie, ktorá metóda sa zavolá použije tzv. algoritmus MRO (Method Resolution Order)
+    * [ ] To, v akom poradí sa budú prehľadávať triedy vieme zistiť pomocou vstavanej metódy mro()
+- [x] Duck typing
+    * [ ] „Ak to chodí ako kačka a kváka ako kačka, tak to je kačka.“
+    * [ ] Pythonu nezáleží na type objektu, ale na tom, či má požadované metódy a atribúty.
+    * [ ] Dedenie teda častokrát nie je potrebné. Stačí, ak trieda implementuje danú metódu a jej objekty hneď vieme všade tam, kde sa táto metóda vyžaduje.
 
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    ZAPUZDRENIE
+    DEDIČNOSŤ
 
-    Objekt v sebe spája stav (atribúty) a správanie (metódy) do jedného celku
+    Umožňuje vytvoriť novú triedu (podtriedu), ktorá preberá vlastnosti a metódy inej triedy (nadtriedy)
 
-    Zapuzdrenie sa používa na skrytie interných detailov objektu
+    - issubclass(Student, Osoba) - zistenie, či je trieda potomkom
+    - isinstance(x, Student) - zistenie, či objekt x je inštanciou danej triedy alebo jej rodičov
 
-    Interné (protected) a súkromné (private) atribúty a metódy majú podčiarníky v názve
+    Pomocou funkcie super() vieme pristupovať k objektu rodiča a volať jeho metódy. 2 prípady:
 
-    Getter, Setter a Deleter
-    - Je zvykom atribúty nezverejňovať, ale mať ich súkromné (private)
-    - Na prístup k súkromným atribútom sa vytvárajú getter a setter metódy
-    - Vieme ich naimplementovať pomocou obyčajných inštančných metód
-    
-    Property - elegantnejší spôsob na getter a setter metódy
-    - Akoby priamy prístup k atribútu, ale v skutočnosti sa budú volať getter a setter metódy
-    - getter - čitanie hodnoty atribútu
-    - setter - zápis hodnoty do atribútu
-    - deleter - zmazanie atribútu pomocou del
-    - používame atribut = property(fget, fset, fdel, doc)
+    - volanie rodičovského konštruktora
+    - volanie prepísanej (prekrytej) metódy
 
-    Property dekorátor
-    - @property, @atribut.setter, @atribut.deleter
-    - V kóde musí byť prvá uvedená getter metóda!!!
+    Viacnásobná dedičnosť
+
+    Diamantový problém: niektoré triedy môžu byť dedené viackrát. Problém pri prekrytých metódach.
+
+    Python na určenie, ktorá metóda sa zavolá použije tzv. algoritmus MRO (Method Resolution Order)
+
+    To, v akom poradí sa budú prehľadávať triedy vieme zistiť pomocou vstavanej metódy mro()
+
+    Duck typing
+
+    „Ak to chodí ako kačka a kváka ako kačka, tak to je kačka.“
+
+    Pythonu nezáleží na type objektu, ale na tom, či má požadované metódy a atribúty.
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
     Okruhy otázok na test:
 
-    - Čo je zapuzdrenie, čo je jeho cieľom
-    - Modifikátory prístupu v Pythone
-    - Getter a Setter metódy
-    - Property funkcionalita
-    - Property dekorátor
+    - Čo je dedičnosť
+    - super() a jej využitie
+    - Viacnásobná dedičnosť
+    - MRO
+    - Duck Typing
