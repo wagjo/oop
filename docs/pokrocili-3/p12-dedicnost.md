@@ -458,7 +458,7 @@ Dnes budeme vylepšovať hru adventura, ktorú sme si programovali na minulom cv
     ```
     DEDIČNOSŤ
 
-    Umožňuje vytvoriť novú triedu (podtriedu), ktorá preberá vlastnosti a metódy inej triedy (nadtriedy)
+    Umožňuje vytvoriť triedu (podtriedu), ktorá preberá vlastnosti a metódy inej triedy (nadtriedy)
 
     - issubclass(Student, Osoba) - zistenie, či je trieda potomkom
     - isinstance(x, Student) - zistenie, či objekt x je inštanciou danej triedy alebo jej rodičov
