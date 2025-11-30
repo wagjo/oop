@@ -384,9 +384,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p13-">x</a> (<a href="../assets/p13w.pdf">pdf</a>)
+<a href="../pokrocili-3/p13-pygame">Pygame</a> (<a href="../assets/p13w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Pygame</li>
+<li>Rect, vykresľovanie</li>
+<li>Udalosti, stav klávesnice</li>
+<li>Herná slučka</li>
 </ul>
 </td>
 </tr>

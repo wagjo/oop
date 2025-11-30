@@ -28,7 +28,7 @@ nav:
     - 6 - Reťazce znakov: 'cvicenie-3/c06-stringy.md'
     - 7 - Triedy a metódy: 'cvicenie-3/c07-triedy.md'
     - 8 - Hangman: 'cvicenie-3/c08-metody.md'
-    #- 9 - Slovník: 'cvicenie-3/c09-konstruktor.md'
+    - 9 - Slovník: 'cvicenie-3/c09-konstruktor.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'
@@ -42,6 +42,7 @@ nav:
     - 10 - Metódy a JSON: 'pokrocili-3/p10-metody.md'
     - 11 - Zapuzdrenie: 'pokrocili-3/p11-zapuzdrenie.md'
     #- 12 - Dedičnosť: 'pokrocili-3/p12-dedicnost.md'
+    #- 13 - Pygame: 'pokrocili-3/p13-pygame.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'

@@ -261,7 +261,15 @@ hide:
 <li>Názvy premenných</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c09-konstruktor">Inicializácia a konštruktory</a> (<a href="../assets/c09w.pdf">pdf</a>)
+<ul>
+<li>Slovník do hry Hangman</li>
+<li>Slovník v kóde</li>
+<li>Slovník zo súboru a z internetu</li>
+<li>Slovník z klávesnice</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p09-oop">Triedy a metódy</a> (<a href="../assets/p09w.pdf">pdf</a>)
 <ul>
