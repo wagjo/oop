@@ -68,7 +68,7 @@ V ďalšom kroku potrebujeme vytvoriť getter metódy, hlavne pre výber náhodn
 
     - `public String getKategoria()` - vráti hodnotu atribútu `kategoria`
     - `public int getSize()` - vráti počet slov v slovníku
-    - `public String getSlovo()` - vráti náhodné slovo so slovníka. Náhodné číslo získate z objektu `rand` pomocou `rand.nextInt(slova.length)`
+    - `public String getSlovo()` - vráti náhodné slovo so slovníka. Náhodné číslo získate z objektu `rand` pomocou `rand.nextInt(slova.length)` Zo slova, ktoré budete vraciať ešte odstráňte pomocou metódy `strip()` medzery z konca a začiatku reťazca.
 
 Základný slovník máme vytvorený, poďme ho použiť v hre. Ako prvé potrebujeme upraviť triedu `Stav` tak, aby v konštruktore prijímala namiesto slova slovník.
 
