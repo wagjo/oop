@@ -338,6 +338,28 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p12-dedicnost">Dedičnosť</a> (<a href="../assets/p12w.pdf">pdf</a>)
+<ul>
+<li>Dedičnosť</li>
+<li>super()</li>
+<li>Viacnásobná dedičnosť</li>
+<li>Duck typing</li>
+</ul>
+</td>
+</tr>
+
+<tr >
+<td width=10%>13</td>
+<td width=30%>
+<a href="../teoria-3/t13-abstrakcia">Abstrakcia</a> (<a href="../assets/t13w.pdf">pdf</a>)
+<ul>
+<li>Abstrakcia</li>
+<li>Abstraktné triedy</li>
+<li>Rozhrania - interfaces</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
 <td width=30%>TODO</td>
 </tr>
 

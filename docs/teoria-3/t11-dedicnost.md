@@ -107,7 +107,7 @@ Konštruktory sa nededia.
 
 Rodičovský konštruktor vieme zavolať pomocou kľúčového slova `super()`.
 
-Volať nadradený konštruktor nie je nutné, ale je to dobré robiť. Ináč musíme inicializovať atribúty rodiča v triede potomka. Je dobré volať rodičovský konštruktor hneď na začiatku konštruktora podtriedy. (Do Javy 25 je to dokonca povinné)
+Volať nadradený konštruktor nie je vždy nutné. Ak to neurobíme, Java zavolá defaultný konštruktor nadradenej triedy. Ak taký nie je, kompilátor vyhodí chybu. Je dobré volať rodičovský konštruktor hneď na začiatku konštruktora podtriedy. (Do Javy 25 je to dokonca povinné)
 
 ## Rodičovská trieda `Object`
 
@@ -340,7 +340,7 @@ Najčastejší moderný pohľad je "favor composition over inheritance" – prin
 - [x] Konštruktory pri dedení
     * [ ] Konštruktory sa nededia
     * [ ] Rodičovský konštruktor vieme zavolať pomocou kľúčového slova `super()`
-    * [ ] Ak nezavoláme nadradený konštruktor, musíme inicializovať zdedené atribúty sami
+    * [ ] Ak nezavoláme nadradený konštruktor, Java zavolá defaultný konštruktor nadradenej triedy. Ak taký nie je, kompilátor vyhodí chybu.
 - [x] Rodičovská trieda Object
     * [ ] `java.lang.Object` je vrcholom hierarchie tried
     * [ ] definuje metódy `toString` a `equals`
@@ -380,7 +380,7 @@ Najčastejší moderný pohľad je "favor composition over inheritance" – prin
     Konštruktory pri dedení
     - Konštruktory sa nededia
     - Rodičovský konštruktor voláme pomocou super()
-    - Ak nezavoláme nadradený konštruktor, musíme inicializovať zdedené atribúty sami
+    - Ak nezavoláme nadradený konštruktor, Java zavolá defaultný konštruktor nadradenej triedy.
 
     Rodičovská trieda Object
     - java.lang.Object je vrcholom hierarchie tried
