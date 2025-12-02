@@ -184,7 +184,7 @@ Dnes budeme vylepšovať hru adventura, ktorú sme si programovali na minulom cv
 
     Ideme naimplementovať inventár, ktorý bude predstavovaný slovníkom v tvare {"nazov", vec}. Do triedy `Player` potrebujeme urobiť tieto zmeny:
 
-    1. Vytvorte modul `adventura/player.py`
+    1. Otvorte modul `adventura/player.py`
 
     1. Pridajte do triedy nový interný atribút `_inventory`, inicializujte ho na prázdny slovník `{}`, argumenty konštruktora nemeňte
 
