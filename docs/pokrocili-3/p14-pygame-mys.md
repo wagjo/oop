@@ -4,7 +4,7 @@ Pokračujeme v PyGame, dnes si vyskúšame ovládanie myšou a vykresľovanie ob
 
 ## Spracovanie myši
 
-Podobne ako pri klávesnici, vstupy z myši máme buď jednorázové - **eventy**, alebo máme **stavy**, v ktorých sa myš nachádza (tlačítko je stlačené, mýš sa nachádza na pozícii X, Y, ...)
+Podobne ako pri klávesnici, vstupy z myši máme buď jednorázové - **eventy**, alebo máme **stavy**, v ktorých sa myš nachádza (tlačítko je stlačené, myš sa nachádza na pozícii X, Y, ...)
 
 Udalosti si vieme odchytiť pomocou `pygame.event.get()`, tak ako pri klávesnici.
 
