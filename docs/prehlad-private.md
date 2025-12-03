@@ -394,5 +394,30 @@ hide:
 </td>
 </tr>
 
+<tr >
+<td width=10%>14</td>
+<td width=30%>
+<a href="../cvicenie-3/c14-">x</a> (<a href="../assets/c13w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../teoria-3/t14-">x</a> (<a href="../assets/t14w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p14-pygame-mys">Pygame 2</a> (<a href="../assets/p14w.pdf">pdf</a>)
+<ul>
+<li>Pygame</li>
+<li>Práca s myšou</li>
+<li>Vykresľovanie obrázkov atextu</li>
+<li>Tlačítka</li>
+</ul>
+</td>
+</tr>
+
 </tbody>
 </table>

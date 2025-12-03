@@ -105,14 +105,6 @@ Ak máme objekt s fontom, vieme vykresliť text pomocou `font.render` a potom je
     screen.blit(text, (X, Y))
     ```
 
-### Vykresľovanie obrázku
-
-Obrázok si viem načítať pomocou metódy `image = pygame.image.load("filename")`
-
-Po načítaní vieme zmeniť veľkosť obrázka pomocou `image = pygame.transform.scale(image, (sirka, vyska))`
-
-Samotné vykreslenie obrázku na obrazovku sa realizuje pomocou `screen.blit(image, rect)`
-
 ## Udalosti
 
 Počas hry môžu nastať rôzne udalosti, napríklad môže byť stlačená klávesa alebo tlačítko myšky. Takéto jednorázové udalosti je možné zachytiť pomocou modulu `pygame.event`.
@@ -123,9 +115,6 @@ Počas hry môžu nastať rôzne udalosti, napríklad môže byť stlačená kl�
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:  
-                # Left click
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 # stlačenie ESC
@@ -410,13 +399,9 @@ Dnes si vytvoríme hru Pong. Základné vlastnosti:
 - [x] Vykresľovanie textu pomocou `pygame.font`
     * [ ] Najpr je potrebné mať vytvorený font, pomocou `font = pygame.font.SysFont(nazov, size)`
     * [ ] Vykresliť text vieme pomocou `font.render` a potom je potrebné vykreslený text umiestniť na obrazovku pomocou `screen.blit`
-- [x] Vykresľovanie obrázku pomocou `pygame.image`
-    * [ ] Obrázok načítame pomocou `image = pygame.image.load("filename")`
-    * [ ] Veľkosť obrázka vieme zmeniž pomocou `image = pygame.transform.scale(image, (sirka, vyska))`
-    * [ ] Vykreslenie realizujeme pomocou `screen.blit(image, rect)`
 - [x] Udalosti - Jednorázové udalosti, napr. kliknutie myšou, stlačenie klávesy, ...
     * [ ] Udalosti je možné zachytiť pomocou modulu `pygame.event`
-    * [ ] Udalosti záskame pomocou `pygame.event.get()`
+    * [ ] Udalosti získame pomocou `pygame.event.get()`
 - [x] Držanie stlačenej klávesy - pretrvávajúce stavy
     * [ ] Stav stlačenia kláves zistíme pomocou `klavesy = pygame.key.get_pressed()`
 - [x] Hlavná herná slučka - hra beží v nekonečnom cykle
@@ -442,7 +427,6 @@ Dnes si vytvoríme hru Pong. Základné vlastnosti:
 
     Vykresľovanie tvarov: pygame.draw.rect, pygame.draw.ellipse, pygame.draw.line
     Vykresľovanie textu v 3 krokoch: pygame.font.SysFont, font.render, screen.blit
-    Vykresľovanie obrázku v 3 krokoch: pygame.image.load, pygame.transform.scale, screen.blit
 
     Jednorázové udalosti (klik myšou, stlačenie klávesy): pygame.event.get
     Stav klávesnice - pygame.key.get_pressed()
