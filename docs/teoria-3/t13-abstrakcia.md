@@ -225,7 +225,7 @@ Rozhranie tak isto už nepoužíva IS-A vzťah, ale sústredí sa iba na schopno
 
     Rozhrania v sebe môžu mať zadefinované konštanty. Ide však o veľmi špecifické prípady, kedy je vhodné ich tam mať a vo všeobecnosti sa do rozhrania neodporúča dávať nič iné okrem abstraktných metód.
 
-    V novších verziách Javy je možné v rozhraniach definovať aj tzv. *defaultné metódy*, ktoré majú implementáciu, a tak isto je možné do rozhrani dať aj privátne a statické metódy. Táto možnosť bola pridaná za účelom, aby sa do rozhraní mohli pridávať nové funkcionality bez nutnosti meniť existujúce triedy. Pri bežno používaní rozhraní nie je vhodné defualtné a statické metódy v rozhraniach definovať.
+    V novších verziách Javy je možné v rozhraniach definovať aj tzv. *defaultné metódy*, ktoré majú implementáciu, a tak isto je možné do rozhrani dať aj privátne a statické metódy. Táto možnosť bola pridaná za účelom, aby sa do rozhraní mohli pridávať nové funkcionality bez nutnosti meniť existujúce triedy. Pri bežnom používaní rozhraní nie je vhodné defaultné a statické metódy v rozhraniach definovať.
 
 ### Rozhrania v Jave
 

@@ -296,9 +296,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c10-">x</a> (<a href="../assets/c10w.pdf">pdf</a>)
+<a href="../cvicenie-3/c10-dedicnost">Dedičnosť</a>
 <ul>
-<li>TODO</li>
+<li>Dedičnosť a rozhrania</li>
+<li>Návrh programu pre správu tovaru v záložni</li>
+<li>Tvorba diagramu tried v nástroji Mermaid</li>
 </ul>
 </td>
 <td width=30%>
