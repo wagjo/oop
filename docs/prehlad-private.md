@@ -399,13 +399,16 @@ hide:
 <tr >
 <td width=10%>14</td>
 <td width=30%>
-<a href="../cvicenie-3/c14-">x</a> (<a href="../assets/c13w.pdf">pdf</a>)
+<a href="../teoria-3/t14-enum">Enumeračné typy</a> (<a href="../assets/t14w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Pomocou Stringov</li>
+<li>Pomocou celých čísel</li>
+<li>Pomocou tried a dedičnosti</li>
+<li>Trieda enum</li>
 </ul>
 </td>
 <td width=30%>
-<a href="../teoria-3/t14-">x</a> (<a href="../assets/t14w.pdf">pdf</a>)
+<a href="../cvicenie-3/c14-">x</a> (<a href="../assets/c13w.pdf">pdf</a>)
 <ul>
 <li>TODO</li>
 </ul>
