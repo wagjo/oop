@@ -30,7 +30,7 @@ nav:
     - 7 - Triedy a metódy: 'cvicenie-3/c07-triedy.md'
     - 8 - Hangman: 'cvicenie-3/c08-metody.md'
     - 9 - Slovník: 'cvicenie-3/c09-konstruktor.md'
-    #- 10 - Dedičnosť: 'cvicenie-3/c10-dedicnost.md'
+    - 10 - Dedičnosť: 'cvicenie-3/c10-dedicnost.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'

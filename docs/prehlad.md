@@ -292,7 +292,14 @@ hide:
 <li>Defenzívne kopírovanie</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c10-dedicnost">Dedičnosť</a>
+<ul>
+<li>Dedičnosť a rozhrania</li>
+<li>Návrh programu pre správu tovaru v záložni</li>
+<li>Tvorba diagramu tried v nástroji Mermaid</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p10-metody">Metódy a JSON</a> (<a href="../assets/p10w.pdf">pdf</a>)
 <ul>
