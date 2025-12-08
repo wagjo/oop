@@ -367,9 +367,30 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p13-pygame">Pygame</a> (<a href="../assets/p13w.pdf">pdf</a>)
+<ul>
+<li>Pygame</li>
+<li>Rect, vykresľovanie</li>
+<li>Udalosti, stav klávesnice</li>
+<li>Herná slučka</li>
+</ul>
+</td>
 </tr>
 
+<tr >
+<td width=10%>14</td>
+<td width=30%>
+<a href="../teoria-3/t14-enum">Enumeračné typy</a> (<a href="../assets/t14w.pdf">pdf</a>)
+<ul>
+<li>Pomocou Stringov</li>
+<li>Pomocou celých čísel</li>
+<li>Pomocou tried a dedičnosti</li>
+<li>Trieda enum</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+</tr>
 
 
 </tbody>
