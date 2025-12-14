@@ -431,6 +431,7 @@ hide:
 <ul>
 <li>OOP princípy - opakovanie</li>
 <li>Vzťahy medzi triedami</li>
+<li>Prevody typov</li>
 <li>Praktický príklad</li>
 </ul>
 </td>
