@@ -424,5 +424,29 @@ hide:
 </td>
 </tr>
 
+<tr >
+<td width=10%>15</td>
+<td width=30%>
+<a href="../teoria-3/t15-oop-opakovanie">Princípy OOP</a> (<a href="../assets/t15w.pdf">pdf</a>)
+<ul>
+<li>OOP princípy - opakovanie</li>
+<li>Vzťahy medzi triedami</li>
+<li>Praktický príklad</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c15-">x</a> (<a href="../assets/c15w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p15-">x</a> (<a href="../assets/p15w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
 </tbody>
 </table>
