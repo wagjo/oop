@@ -390,8 +390,31 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p14-pygame-mys">Pygame 2</a> (<a href="../assets/p14w.pdf">pdf</a>)
+<ul>
+<li>Pygame</li>
+<li>Práca s myšou</li>
+<li>Vykresľovanie obrázkov atextu</li>
+<li>Tlačítka</li>
+</ul>
+</td>
 </tr>
 
+<tr >
+<td width=10%>15</td>
+<td width=30%>
+<a href="../teoria-3/t15-oop-opakovanie">Princípy OOP</a> (<a href="../assets/t15w.pdf">pdf</a>)
+<ul>
+<li>OOP princípy - opakovanie</li>
+<li>Vzťahy medzi triedami</li>
+<li>Prevody typov</li>
+<li>Praktický príklad</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
 
 </tbody>
 </table>
