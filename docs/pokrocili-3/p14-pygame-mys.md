@@ -148,7 +148,7 @@ Ak nemáte predchádzajúcu verziu hry adventura, môžete si ju stiahnuť pomoc
                 self._outro = outro
                 self._message = intro
 
-                self._zoom = 2
+                self._zoom = 1
                 self.WIDTH, self.HEIGHT = 1200 * self._zoom, 800 * self._zoom
                 self._images = {}
                 self.ASSETS_DIR = "assets"
