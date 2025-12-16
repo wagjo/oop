@@ -98,7 +98,7 @@ Ak nemáte predchádzajúcu verziu hry adventura, môžete si ju stiahnuť pomoc
 
 !!! example "Úloha 14.1: Nová mapa a obrázky"
 
-    1. Do adresára `assets` si stiahnite novú verziu mapy [hra12.json](http://oop.wagjo.com/assets/hra14.json)
+    1. Do adresára `assets` si stiahnite novú verziu mapy [hra14.json](http://oop.wagjo.com/assets/hra14.json)
 
     1. Stiahnite si súbor [rooms.zip](http://oop.wagjo.com/assets/rooms.zip) a rozbaľte jeho obsah do adresára `assets`
 
