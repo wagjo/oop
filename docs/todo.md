@@ -1,5 +1,9 @@
 # TODO OPG
 
+- práca s jackson knižnicov
+- zoradenie objektov podľa atribútu
+
+
 - ENUM !!!!
 
 j01-01 - Vývojové diagramy

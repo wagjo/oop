@@ -327,9 +327,9 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c11-">x</a> (<a href="../assets/c11w.pdf">pdf</a>)
+<a href="../cvicenie-3/c11-projekt1">Polročný projekt</a>
 <ul>
-<li>TODO</li>
+<li>Zadania polročného projektu</li>
 </ul>
 </td>
 <td width=30%>
