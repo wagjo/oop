@@ -123,7 +123,7 @@ Pomocou IDEA vieme aj jednoducho vytvoriť JAR archív. Robí sa to v časti *Fi
     * [ ] Ak chceme použiť triedy z JAR archívu v našom programe, je potrebné ich pridať na classpath.
     * [ ] Príklad: `java -cp src:kniznica.jar sk.spse.aplikacia.Main` - používame JAR archív ako knižnicu - zdroj tried, nespúšťame ho
     * [ ] Pomocou IDEA vieme vytvoriť JAR archív v časti File - Project Structure, kde potom v sekcii Artifacts vieme pridať nový JAR artefakt.
-    * [ ] Po zbuildovaní projektu nájdeme výsledný JAR archív v priečincku `out/artifacts`
+    * [ ] Po zbuildovaní projektu nájdeme výsledný JAR archív v priečinku `out/artifacts`
 
 
 !!! note "Poznámky do zošita"
@@ -142,7 +142,7 @@ Pomocou IDEA vieme aj jednoducho vytvoriť JAR archív. Robí sa to v časti *Fi
     Zdrojové súbory sú v priečinkoch podľa ich balíkov
     Ostatné potrebné súboru - zdrojové dáta zvyčajne označujeme pojmom assets alebo resources, 
     majú vlastný priečinok
-    V IntelliJ označíme zdrojové adresáre pomocou pravého tlačíťka a Mark Directory As
+    V IntelliJ označíme zdrojové adresáre pomocou pravého tlačítka a Mark Directory As
 
     Kompilácia
     
@@ -172,10 +172,10 @@ Pomocou IDEA vieme aj jednoducho vytvoriť JAR archív. Robí sa to v časti *Fi
     Príklad vytvorenia pomocou nástroja jar: jar cfm app.jar manifest.txt -C out
     Spustenie programu s JAR archívu: java -jar app.jar
     Triedy z JAR archívu vieme pridať na classpath a použiť v inom programe
-    Príklad: `java -cp src:kniznica.jar sk.spse.aplikacia.Main` 
+    Príklad: java -cp src:kniznica.jar sk.spse.aplikacia.Main
     Vtedy používame JAR archív ako knižnicu - zdroj tried, nespúšťame ho
     
-    V IDEA vytvoríme JAR v časti File - Project Structure, Artifacts, kde prodáme JAR artefakt
+    V IDEA vytvoríme JAR v časti File - Project Structure, Artifacts, kde pridáme JAR artefakt
     Po zbuildovaní projektu nájdeme JAR archív v priečincku out/artifacts
     ```
 
