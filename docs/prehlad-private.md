@@ -442,7 +442,36 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p15-">x</a> (<a href="../assets/p15w.pdf">pdf</a>)
+<a href="../pokrocili-3/p15-testovanie">Testovanie</a> (<a href="../assets/p15w.pdf">pdf</a>)
+<ul>
+<li>Testovanie softvéru</li>
+<li>Pytest</li>
+<li>Fixtures, Mocking</li>
+<li>Generatívne testovanie</li>
+</ul>
+</td>
+</tr>
+
+
+<tr >
+<td width=10%>16</td>
+<td width=30%>
+<a href="../teoria-3/t16-build">Budovanie softvéru</a> (<a href="../assets/t16w.pdf">pdf</a>)
+<ul>
+<li>Písanie kódu, kompilácia</li>
+<li>Classpath</li>
+<li>Spustenie programu</li>
+<li>JAR archív</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c16-">x</a> (<a href="../assets/c16w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p16-">x</a> (<a href="../assets/p16w.pdf">pdf</a>)
 <ul>
 <li>TODO</li>
 </ul>
