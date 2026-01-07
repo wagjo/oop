@@ -178,7 +178,7 @@ Knižnica hypothesis (`pip install hypothesis`) nám vie vygenerovať kombináci
     def test_obvod_stvorca():
         assert obvod_stvorca(1) == 4
 
-    # geenratívny test
+    # generatívny test
     @given(st.integers())
     def test_obvod_stvorca_all(x):
         assert obvod_stvorca(x) == obvod_obdlznika(x, x)
@@ -377,7 +377,7 @@ TOTAL                     41      7    83%
     * [ ] V pytest sa mocking robí pomocou špeciálneho fixture mocker, ktorý nám umožňuje vytvárať mock objekty. 
     * [ ] Pomocou mocker objektu vieme v testovanom module nahradiť funkcie alebo triedy
 - [x] Generatívne testovanie - `pip install hypothesis`
-    * [ ] Umožňuje vytvoriť testy, ktoré otestujú všetky kobinácie vstupov a hraničných hodnôt
+    * [ ] Umožňuje vytvoriť testy, ktoré otestujú všetky kombinácie vstupov a hraničných hodnôt
     * [ ] Používa sa hlavne, keď si chceme otestovať, že daná funkcia nebude vyhadzovať výnimku alebo ak vieme jednoducho vypočítať očakávaný výstup pre rôzne vstupy. 
     * [ ] Hypothesis vie vygenerovať kombinácie čísel (`strategies.integers()`, `strategies.floats()`), reťazcov (`strategies.text()`), alebo aj iné zložitejšie dáta.
 - [x] Coverage - `pip install pytest-cov`
@@ -424,9 +424,9 @@ TOTAL                     41      7    83%
     Vieme v testovanom module nahradiť funkcie alebo triedy
 
     Generatívne testovanie - pip install hypothesis
-    Testy, ktoré otestujú všetky kobinácie vstupov a hraničných hodnôt
-    Vieme vygenerovať kombinácie čísel (`strategies.integers()`, `strategies.floats()`), 
-    reťazcov (`strategies.text()`), alebo aj iné zložitejšie dáta.
+    Testy, ktoré otestujú všetky kombinácie vstupov a hraničných hodnôt
+    Vieme vygenerovať kombinácie čísel (strategies.integers(), strategies.floats()), 
+    reťazcov (strategies.text()), alebo aj iné zložitejšie dáta.
 
     Coverage - pip install pytest-cov
     Prehľadný report o tom, ktoré časti nášho programu sú 'pokryté' testami
