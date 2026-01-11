@@ -323,7 +323,12 @@ hide:
 <li>IS-A versus HAS-A</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c11-projekt1">Polročný projekt</a>
+<ul>
+<li>Zadania polročného projektu</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p11-zapuzdrenie">Zapuzdrenie</a> (<a href="../assets/p11w.pdf">pdf</a>)
 <ul>

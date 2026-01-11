@@ -24,6 +24,7 @@ Odovzdanie projektu po termíne znamená zníženie známky z projektu. Nesplnen
 V rámci trojčlennej skupiny si medzi seba rozdeľte nasledovné zodpovednosti (Nie každé zadanie vyžaduje všetky zodpovednosti):
 
 - Modelovanie hlavnej logiky programu do tried a metód
+- Ošetrenie vstupných hodnôt, krajné a špeciálne prípady
 - Vstup a výstup do súboru a sťahovanie z internetu, formát a syntax súborov
 - Užívateľské rozhranie - Práca s konzolou, menu programu
 - UML Diagram tried, Vývojový diagram vybranej časti logiky programu
