@@ -121,7 +121,7 @@ Program na správu poznámok - TODO aplikácia.
 
 Funkcionality:
 
-- Možnosž spravovaž viacero TODO
+- Možnosť spravovať viacero TODO
 - Každé TODO ma názov a položky
 - Položka má názov, popis, flag či je splnená a či nie a optional deadline (dokedy je potrebné položku splniž).
 - Pomocou tried vhodne namodelovať vyššie uvedené koncepty.
