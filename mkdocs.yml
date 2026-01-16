@@ -34,6 +34,7 @@ nav:
     - 9 - Slovník: 'cvicenie-3/c09-konstruktor.md'
     - 10 - Dedičnosť: 'cvicenie-3/c10-dedicnost.md'
     - 11 - Polročný projekt: 'cvicenie-3/c11-projekt1.md'
+    - 12 - JSON a CSV: 'cvicenie-3/c12-json.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'
@@ -56,7 +57,7 @@ nav:
     - Python - Dedičnosť: 'zbierka-python/j05-04-dedicnost.md'
   #- Ťahák: 'tahak.md'
   - Kontakt: 'autor.md'
-copyright: Copyright © 2025, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+copyright: Copyright © 2025, 2026, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
 theme:
   name: material
   features:

@@ -353,9 +353,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c12-">x</a> (<a href="../assets/c12w.pdf">pdf</a>)
+<a href="../cvicenie-3/c12-json">JSON a CSV</a>
 <ul>
-<li>TODO</li>
+<li>Práca na polročnom projekte</li>
+<li>Knižnica Jackson</li>
+<li>Práca s JSON formátom</li>
+<li>Práca s CSV formátom</li>
 </ul>
 </td>
 <td width=30%>

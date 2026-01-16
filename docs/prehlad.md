@@ -349,7 +349,15 @@ hide:
 <li>Parametrický polymorfizmus</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c12-json">JSON a CSV</a>
+<ul>
+<li>Práca na polročnom projekte</li>
+<li>Knižnica Jackson</li>
+<li>Práca s JSON formátom</li>
+<li>Práca s CSV formátom</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p12-dedicnost">Dedičnosť</a> (<a href="../assets/p12w.pdf">pdf</a>)
 <ul>
