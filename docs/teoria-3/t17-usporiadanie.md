@@ -376,7 +376,7 @@ Všetky príklady uvedené na tejto hodine viete nájsť a vyskúšať v repozit
         int compare(T o1, T o2);
     }
 
-    Vlastné pravidlá usporiadania implementujú pomocou rozhrania java.util.Comparator
+    Vlastné pravidlá usporiadania sa implementujú pomocou rozhrania java.util.Comparator
     Comparator je malá trieda, ktorá vie porovnať dva objekty a povedať, ktorý má ísť skôr.
     Základom Comparatora je metóda compare, pomocou ktorej bude Java vedieť porovnať 2 objekty
 
