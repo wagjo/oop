@@ -12,7 +12,7 @@ Odovzdanie projektu po termíne znamená zníženie známky z projektu. Nesplnen
 - Dokumentácia v Markdowne, README.md súbor
 - Program spustiteľný v PyCharme
 - Hra v PyGame, podľa zadaní uvedených nižšie
-- Každý aspoň 3 netriviálne commity v troch rôznych dňoch (Jeden študent má mať aspoň 3 dni kedy urobil netriviálny commit na GitHub)
+- Každý aspoň 2 netriviálne commity v rôznych dňoch (Jeden študent má mať aspoň 2 dni kedy urobil netriviálny commit na GitHub)
 - Krátka prezentácia o štruktúre kódu a vlastnostiach hry
 - Kód musí používať objekty a triedy
 - Hra musí mať koniec - Game Over
@@ -34,7 +34,7 @@ Odovzdanie po termíne znižuje známku o 1 stupeň
 
 ## Zadania
 
-Vytvorte hru pomocou Pygame na motív jednej z nasledujúcich hier (Vaša hra môže byť oveľa jednoduchšia, uvedené hry slúžia pre motiváciu a inšpiráciu pre gameplay):
+Vytvorte hru pomocou Pygame buď podľa vlastného nápadu alebo na motív jednej z nasledujúcich hier (Vaša hra môže byť oveľa jednoduchšia, uvedené hry slúžia pre motiváciu a inšpiráciu pre gameplay):
 
 - Fly - [https://dos.zone/fly-1984/](https://dos.zone/fly-1984/) - hádate kde je mucha, ovládanie 1, 2, 3
 - Arcade Volleyball - [https://www.retrogames.cz/play_417-DOS.php](https://www.retrogames.cz/play_417-DOS.php) - volejbal pre 2 hráčov, ovládanie Z, X, C a 1 2 3 na numlocku

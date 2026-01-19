@@ -449,10 +449,27 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
-
+<td width=30%>
+<a href="../pokrocili-3/p16-projekt">Polročný projekt</a> 
+<ul>
+<li>Zadania polročného projektu</li>
+</ul>
+</td>
 </tr>
 
+<tr >
+<td width=10%>17</td>
+<td width=30%>
+<a href="../teoria-3/t17-usporiadanie">Usporiadanie</a> (<a href="../assets/t17w.pdf">pdf</a>)
+<ul>
+<li>Usporiadanie prvkov</li>
+<li>Prirodzené usporiadanie</li>
+<li>Comparator</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
 
 </tbody>
 </table>

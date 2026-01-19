@@ -22,7 +22,7 @@ nav:
     - 14 - Enumeračné typy: 'teoria-3/t14-enum.md'
     - 15 - Princípy OOP: 'teoria-3/t15-oop-opakovanie.md'
     - 16 - Budovanie softvéru: 'teoria-3/t16-build.md'
-    #- 17 - Usporiadanie: 'teoria-3/t17-usporiadanie.md'
+    - 17 - Usporiadanie: 'teoria-3/t17-usporiadanie.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
     - 2 - Prvý Java program: 'cvicenie-3/c02-hello.md'
@@ -52,7 +52,7 @@ nav:
     - 13 - Pygame: 'pokrocili-3/p13-pygame.md'
     - 14 - Pygame 2: 'pokrocili-3/p14-pygame-mys.md'
     - 15 - Testovanie: 'pokrocili-3/p15-testovanie.md'
-    #- 16 - Polročný projekt: 'pokrocili-3/p16-projekt.md'
+    - 16 - Polročný projekt: 'pokrocili-3/p16-projekt.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
