@@ -353,7 +353,7 @@ Všetky príklady uvedené na tejto hodine viete nájsť a vyskúšať v repozit
     * [ ] vráti 0 - rovnaké poradie
     * [ ] vráti číslo väčšie ako 0 ak o1 je „väčší“ ako o2
 - [x] Collator
-    * [ ] Pri porovnávaní textu obsahujúceho diakritiku je vhodné použiť Collator, ktorý porovná z ohľadom na špecifiká daného jazyka
+    * [ ] Pri porovnávaní textu obsahujúceho diakritiku je vhodné použiť Collator, ktorý porovná s ohľadom na špecifiká daného jazyka
 
 
 !!! note "Poznámky do zošita"
