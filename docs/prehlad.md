@@ -468,7 +468,13 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p17-pygame-zvuk">Zvuk a hudba v Pygame</a> 
+<ul>
+<li>Práca na polročnom projekte</li>
+<li>Zvuk a hudba v Pygame</li>
+</ul>
+</td>
 </tr>
 
 </tbody>

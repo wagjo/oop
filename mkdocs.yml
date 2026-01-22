@@ -53,6 +53,7 @@ nav:
     - 14 - Pygame 2: 'pokrocili-3/p14-pygame-mys.md'
     - 15 - Testovanie: 'pokrocili-3/p15-testovanie.md'
     - 16 - Polročný projekt: 'pokrocili-3/p16-projekt.md'
+    #- 17 - Zvuk a hudba: 'pokrocili-3/p17-pygame-zvuk.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'

@@ -498,9 +498,10 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p17-">x</a> (<a href="../assets/p17w.pdf">pdf</a>)
+<a href="../pokrocili-3/p17-pygame-zvuk">Zvuk a hudba v Pygame</a> 
 <ul>
-<li>TODO</li>
+<li>Práca na polročnom projekte</li>
+<li>Zvuk a hudba v Pygame</li>
 </ul>
 </td>
 </tr>
