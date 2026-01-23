@@ -1,10 +1,5 @@
 # TODO OPG
 
-- práca s jackson knižnicov
-- zoradenie objektov podľa atribútu
-
-
-- ENUM !!!!
 
 j01-01 - Vývojové diagramy
 j01-02 - Pseudokód
@@ -67,22 +62,17 @@ j06      Načítavanie zo súboru
 
 - vibe coding
 - carpathy
-- konzola: javac, java; 
-- javac, pustanie cez konzolu, -cp -m ...
-- jar, maven
 - vlakna
 - diagram aktivit
 - Co je JRE
 
-- Veľká úloha na cvičení: Vytvoriť program pre konzolu riadený pomocou menu a vykresľujúci parametrizované (rôzne veľké) obrazce (štvorce, obdĺžniky, trojuholníky, bonus – kruhy) vyplnené i prázdne
+
 - record, beans
 - praca so subormi input/output stream, reader/writer, closeable
 - praca s adresarmi
 - http client
-- json, csv
 - java.time
 - list, map, set
-- enum
 - inner classes
 - iterator interface !!!
 - Object
@@ -91,6 +81,9 @@ j06      Načítavanie zo súboru
 
 - praca s datumami
 - regularne vyrazy
+
+popularne kniznice
+
 
 # TODO OPGP
 
