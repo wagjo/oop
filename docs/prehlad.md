@@ -477,5 +477,21 @@ hide:
 </td>
 </tr>
 
+<tr >
+<td width=10%>18</td>
+<td width=30%>
+<a href="../teoria-3/t18-records">Records</a> (<a href="../assets/t18w.pdf">pdf</a>)
+<ul>
+<li>Records</li>
+<li>Chyby pri kompilácii</li>
+<li>Chyby pri behu programu</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
+
+
+
 </tbody>
 </table>
