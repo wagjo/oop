@@ -287,7 +287,7 @@ Všetky príklady uvedené na tejto hodine viete nájsť a vyskúšať v repozit
     Chyby pri behu aplikácie
     - Pri vyhodení výnimky program vypíše stacktrace
     - Stacktrace je výpis volaní metód, pomocou ktorého vieme nájsť zdroj chyby.
-    - Medzi najčastejšie výnimky počas behu probramu patria NullPointerException a ClassCastException.
+    - Medzi najčastejšie výnimky počas behu programu patria NullPointerException a ClassCastException.
     - Často v dokumentácii sa spomínajú výnimky, ktoré daná metóda môže vyhodiť a aj príčina. 
     ```
 
