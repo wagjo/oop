@@ -1,294 +1,307 @@
-# Teória 18: Records
+# Teória 19: GUI v Jave
  
-Na dnešnej hodine si predstavíme Java records a vysvetlíme si aj metódy nájdenia a opravy chýb v našom kóde.
+Podpora grafiky a grafického užívateľského rozhrania ma v Jave dlhú a bohatú históriu. Postupne si prejdeme a porovnáme knižnice AWT, Swing a JavaFX.
+Na tomto predmete budeme ďalej preberať knižnicu JavaFX.
 
-## Records
+Knižnice na kreslenie grafiky umožňujú kresliť rôzne tvary (čiary, obdĺžniky, kruhy), vypisovať text a pracovať s farbami. Ďalšou úrovňou sú GUI knižnice, ktoré poskytujú komponenty pre tvorbu užívateľského rozhrania (tlačidlá, textové polia, scrollbar, menu, tabuľky) a iné pokročilejšie funkcie. Nakoniec máme 3D knižnice, ktoré poskytujú nástroje na tvorbu 3D objektov a prostredí, vedia pracovať s textúrami a osvetlením.
 
-Records sú pomerne nová časť jazyka Java. Slúžia na uľahčenie písania tried, ktorých hlavným účelom je reprezentovať nejaké informácie.
+## AWT
 
-Record je špeciálny typ triedy určený na nesenie dát (data carrier). Nahrádza triedy, ktoré majú privátne nemenné atribúty, gettery a slúžia na modelovanie nejakých dát.
+AWT je prvá grafická knižnica v Jave (1996) poskytujúca GUI funkcionality. Neimplementuje vlastné komponenty, ale volá grafické knižnice daného operačného systému. Je to tzv. wrapper nad natívnym GUI.
 
-Records odstraňuje prebytočný kód (anglicky boilerplate), prináša jednoduchosť a zvyšuje spoľahlivosť kódu.
+Výhody
 
-=== "Základná syntax Records"
+- Natívny vzhľad
+- Jednoduchá architektúra
+- Rýchly štart
 
-    ```java
-    public record Osoba(String meno, String priezvisko,
-                        Pohlavie pohlavie, LocalDate datumNarodenia) {}
-    ```
+Zásadné problémy
 
-Tento jediný riadok automaticky generuje:
+- Nejednotné správanie na rôznych OS
+- Veľmi obmedzené možnosti kreslenia
+- Ťažko rozšíriteľné
+- Problémy s layoutmi a Z-orderom
 
-- private final atribúty
-- parametrický konštruktor
-- gettre (bez get prefixu)
-- metódy `equals()`, `hashCode()` a `toString()`
+O AWT sa hovorí, že používa tzv. heavyweight (ťažké, komplikované) komponenty, pretože vykresľovanie prenecháva operačnému systému, mimo Javu, a nekreslí si ich sama.
 
-Kompilátor z recordu automaticky vygeneruje triedu, ktorá má približne takýto kód:
+### Ukážka AWT kódu
 
-=== "Čo java vygeneruje z recordu Osoba"
+```java title="AwtCounter.java"
+public class AwtCounter extends Frame {
 
-    ```java
-    public class Osoba extends java.lang.Record {
+    private int counter = 0;
+    private TextField textField;
 
-        private final String meno;
-        private final String priezvisko;
-        private final Pohlavie pohlavie;
-        private final LocalDate datumNarodenia;
+    public AwtCounter() {
+        super("AWT Counter");
 
-        public SimpleOsoba(String meno, String priezvisko,
-                           Pohlavie pohlavie, LocalDate datumNarodenia) {
-            this.meno = meno;
-            this.priezvisko = priezvisko;
-            this.pohlavie = pohlavie;
-            this.datumNarodenia = datumNarodenia;
-        }
+        setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20)); 
 
-        public String meno() {
-            return meno;
-        }
+        Font bigFont = new Font("SansSerif", Font.PLAIN, 36);
 
-        public String priezvisko() {
-            return priezvisko;
-        }
+        Label label = new Label("Počítadlo:");
+        label.setFont(bigFont);
+        add(label);
 
-        public Pohlavie pohlavie() {
-            return pohlavie;
-        }
+        textField = new TextField("0", 5);
+        textField.setFont(bigFont);
+        add(textField);
 
-        public LocalDate datumNarodenia() {
-            return datumNarodenia;
-        }
+        Button button = new Button("Plus 1");
+        button.setFont(bigFont);
+        add(button);
+        button.addActionListener(e -> {
+            counter++;
+            textField.setText(String.valueOf(counter));
+        });
 
-        @Override
-        public boolean equals(Osoba other) {
-            return this.meno.equals(other.meno) 
-                && this.priezvisko.equals(other.priezvisko) 
-                && this.pohlavie.equals(other.pohlavie) 
-                && this.datumNarodenia.equals(other.datumNarodenia);
-        }
+        setSize(500, 180);
 
-        @Override
-        public int hashCode() {
-            return java.util.Objects.hash(meno, priezvisko, pohlavie, datumNarodenia);
-        }
-
-        @Override
-        public String toString() {
-            return "...výpis hodnôt";
-        }
-
-
-    }
-    ```
-
-### Vlastnosti recordov
-
-Gettre v recordoch nezačínajú slovkom `get`
-
-Recordy sú nemenné:
-
-- všetky polia sú `final`
-- neexistujú settre
-- stav objektu sa po vytvorení nemení
-
-Recordy sa nededia:
-
-- record je definovaný ako `final`
-- record dedí iba z triedy `java.lang.Record`
-- record ale môže implementovať akékoľvek rozhrania
-
-Do recordov môžete pridávať vlastné metódy a statické atribúty. Podporujú tiež vlastný konštruktor v tzv. kompaktom formáte, kedy nemusíme písať argumenty konštruktora:
-
-```java
-public record Interval(int od, int do) {
-    // kompaktný konštruktor
-    public Interval {
-        if (od > do) throw new IllegalArgumentException("od nesmie byť väčší ako do");
-    }
-
-    public int dlzka() {
-        return do - od + 1;
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+                System.exit(0);
+            }
+        });
+        setVisible(true);
     }
 }
 ```
 
+### Porovnanie GUI
 
-### Podpora serializácie
+Na nasledujúcich screenshotoch môžete porovnať AWT vo Windowse, Linuxe a Mac OS
 
-Keďže recordy sú nemenné objekty, podpora serializácie (uloženie hodnôt objektu mimo program) je pomerne jednoduchá. Recordy taktiež dobre spolupracujú s knižnicou Jackson, ktorá umožňuje načítať hodnoty z JSON alebo CSV súborov priamo do recordov. Jednoduché mapovanie si nevyžaduje žiadne zmeny v kóde, avšak môžete použiť Jackson anotácie, ak je potrebné namapovať hodnoty na iné atribúty.
+![AWT Windows](../assets/awt-windows.png){width=250}
 
-=== "Príklad použitia recordov pre načítanie JSON hodnôt"
+![AWT Linux](../assets/awt-linux.png){width=250}
 
-    ```java
-    @JsonPropertyOrder({"meno", "priezvisko", "titul", "pohlavie", "datumNarodenia"})
-    public record RecordOsoba (@JsonProperty("meno") String meno,
-                               @JsonProperty("priezvisko") String priezvisko,
-                               @JsonProperty("titul") String titul,
-                               @JsonProperty("pohlavie") Pohlavie pohlavie,
-                               @JsonProperty("datumNarodenia") LocalDate datumNarodenia,
-                               @JsonUnwrapped @JsonProperty("adresa") RecordAdresa adresa) {
-       
-        public String toString() {
-            return meno + " " + priezvisko + ", " + datumNarodenia() + ": " + adresa;
-        }
+![AWT Mac OS](../assets/awt-macos.png){width=250}
+
+### Java 2D
+
+Do knižnice AWT boli v roku 1998 pridané triedy pre vykresľovanie 2D grafiky, tzv. Java 2D. 
+
+Vlastnosti:
+
+- Vektorová grafika
+- Transformácie (rotate, scale, translate)
+- Anti-aliasing
+- Práca s fontami a obrázkami
+
+Java 2D sa dodnes hojne používa a je aj základom pre modernejšie GUI knižnice.
+
+Nevýhody:
+
+- Obmedzená hardwarová akcelerácia
+- Nevhodné pre moderné animácie
+
+## Swing
+
+Okrem Java 2D bol v roku 1998 predstavený aj Swing a stal sa nástupcom AWT pre GUI vývoj. Je postavený nad AWT, ale používa "ľahké" komponenty (lightweight components), ktoré sa kreslia priamo v Jave bez závislosti na natívnych widgetoch. Swing sa stal štandardom pre desktopové aplikácie na viac než 10 rokov
+
+Podporuje pokročilé komponenty ako stromy, tabuľky, editory a drag-and-drop. 
+
+Výhody:
+
+- Konzistentné správanie
+- Bohatá sada komponentov
+- Plná kontrola nad vykresľovaním
+
+Nevýhody:
+
+- Pomalšie vykresľovanie (CPU-based)
+- Zastaralý vzhľad
+- Komplikovaná architektúra
+
+
+### Ukážka Swing kódu
+
+```java title="SwingCounter.java"
+public class SwingCounter {
+
+    private int counter = 0;
+
+    public SwingCounter() {
+        JFrame frame = new JFrame("Swing Counter");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 20));
+
+        Font bigFont = new Font("SansSerif", Font.PLAIN, 36);
+
+        JLabel label = new JLabel("Počítadlo:");
+        label.setFont(bigFont);
+        panel.add(label);
+
+        JTextField textField = new JTextField("0", 5);
+        textField.setFont(bigFont);
+
+        panel.add(textField);
+
+        JButton button = new JButton("Plus 1");
+        button.setFont(bigFont);
+        button.addActionListener(e -> {
+            counter++;
+            textField.setText(String.valueOf(counter));
+        });
+        panel.add(button);
+
+        frame.setContentPane(panel);
+        frame.setSize(560, 170);
+        frame.setVisible(true);
     }
-    ```
-
-## Oprava chýb
-
-Pri písaní zdrojového kódu sa každému stane, že do kódu prinesie nejakú chybu. Ukážeme si typické prípady chýb a ako ich riešiť. 
-
-### Chyby pri kompilácii
-
-Veľké množstvo chýb nám dokáže odhaliť kompilátor a teda prídeme na nich ešte pred tým, ako sa program spustí.
-
-Najčastejším zdrojom týchto chýb je kopírovanie kódu z webových stránok alebo z asistentov umelej inteligencie. 
-
-Veľkým pomocníkom pri nájdení a oprave týchto chýb je IDE. Nástroj IntelliJ IDEA, ktorý používame v tomto predmete, nám identifikuje väčšinu kompilačných chýb a často ponúkne aj opravu.
-
-Ak nevieme nájsť zdroj problému, odporúčame vykonať automatické formátovanie kódu (Code-Reformat Code) pomocou `Ctrl-Alt-L`. Ak máme niekde v kóde zlé vnorenie alebo nám chýba nejaká zátvorka, toto formátovanie nám pomôže nájsť chybu.
-
-Typické kompilačné chyby:
-
-- Cannot find symbol - Chýba import triedy alebo sme v názve urobili preklep
-- class, interface, enum, or record expected - Máme niekde zátvorku navyše
-- reached end of file while parsing - Niekde nám zátvorka chýba
-- illegal start of expression - Chýbajúca zátvorka
-
-### Chyby pri behu aplikácie
-
-Java kompilátor nedokáže odhaliť všetky chyby. Niektoré sa ukážu až pri behu programu. V tom šťastnejšom prípade nám program pri chybe vyhodí výnimku a mi môžme začať skúmať, čo je príčinou. Štandardne program vypíše do konzoly tzv. stacktrace. Stacktrace je výpis volaní metód, pomocou ktorého vieme nájsť zdroj chyby.
-
-V tom horšom prípade program nevyhodí výnimku, ale aj tak nefunguje správne, nereaguje podľa očakávaní, alebo nevyprodukuje požadovaný výstup. Tu sa už odporúča použiť debugovacie nástroje IDE, alebo pridať do kódu stručný výpis pomocou `System.out.println` na tie miesta, kde tušíme chybu. Pomocou takýchto výpisov si vieme odsledovať, či program na danom mieste naozaj robí to, čo od neho čakáme.
-
-Medzi najčastejšie výnimky počas behu probramu patria NullPointerException a ClassCastException.
-
-#### NullPointerException
-
-Výnimka `NullPointerException` je spôsobená `null` hodnotou na mieste, kde sa očakáva objekt. Predísť takému typu chyby sa dá dôslednou kontrolou vstupov do metód. Často je zdrojom tejto výnimky vstup od užívateľa alebo zo súboru, ktorý má neočakávanú hodnotu. Príklad stacktrace pri takejto chybe:
-
-```
-Exception in thread "main" com.fasterxml.jackson.databind.JsonMappingException: Cannot invoke "String.toUpperCase()" because "this.priezvisko" is null (through reference chain: java.util.ArrayList[0]->sk.spse.jackson.Osoba["priezvisko"])
-	at com.fasterxml.jackson.databind.JsonMappingException.wrapWithPath(JsonMappingException.java:400)
-	at com.fasterxml.jackson.databind.JsonMappingException.wrapWithPath(JsonMappingException.java:359)
-	at com.fasterxml.jackson.databind.ser.std.StdSerializer.wrapAndThrow(StdSerializer.java:324)
-	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:765)
-	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:183)
-	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serializeContents(IndexedListSerializer.java:119)
-	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:79)
-	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:18)
-	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:503)
-	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:342)
-	at com.fasterxml.jackson.databind.ObjectMapper._writeValueAndClose(ObjectMapper.java:4926)
-	at com.fasterxml.jackson.databind.ObjectMapper.writeValue(ObjectMapper.java:4088)
-	at sk.spse.jackson.Json.main(Json.java:42)
-Caused by: java.lang.NullPointerException: Cannot invoke "String.toUpperCase()" because "this.priezvisko" is null
-	at sk.spse.jackson.Osoba.getPriezvisko(Osoba.java:50)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:688)
-	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:760)
-	... 9 more
+}
 ```
 
-Pri hľadaní príčiny sa treba zamerať na:
+### Porovnanie GUI
 
-- riadky, ktoré sú z našich tried (Osoba.java)
-- prvé riadky začínajúce s `at`
-- skutočná príčína je často v sekcii `Caused by`, ktorá obsahuje výpis vnorenej výnimky
+Na nasledujúcich screenshotoch môžete porovnať Swing vo Windowse, Linuxe a Mac OS
 
-#### ClassCastException
+![SWING Windows](../assets/swing-windows.png){width=250}
 
-Ďalšou častou výnimkou je `ClassCastExeption`, ktorý vznikne pri downcastingu, teda pri pretypovaní s rodičovskej triedy na triedu potomka, pričom v skutočnosti objekt nie je daným potomkom. Príklad takejto výnimky:
+![SWING Linux](../assets/swing-linux.png){width=250}
 
+![SWING Mac OS](../assets/swing-macos.png){width=250}
+
+## JavaFX
+
+JavaFX bol vytvorený ako moderný nástupca Swingu. Jeho prvá verzia vyšla v roku 2008.
+Je ľahší na učenie pre web developerov vďaka CSS. Poskytuje modernejší dizajn a ponúka aj podporu 3D grafiky. 
+JavaFX je dnes najlepšia voľba pre nové Java desktop GUI. Pomocou pluginov sa dá JavaFX aplikácia spustiť aj na Androide a iOS.
+
+Výhody:
+
+- Moderný vzhľad
+- GPU akcelerácia, podpora animácií a efektov
+- Podpora CSS
+- Scene graph - ako DOM v prehliadačoch
+- FXML - ako HTML v prehliadačoch
+
+Nevýhody:
+
+- Nie je štandardnou súčasťou Javy
+- Menší ekosystém než Swing
+- Vhodný hlavne pre desktopové aplikácie
+
+### Ukážka JavaFX kódu
+
+```java title="FxCounterApplication.java"
+public class FxCounterApplication extends Application {
+
+    private int counter = 0;
+
+    public void start(Stage stage) {
+
+        Label label = new Label("Počítadlo:");
+        label.setStyle("-fx-font-size: 18px;");
+
+        TextField textField = new TextField("0");
+        textField.setPrefColumnCount(4);
+        textField.setStyle("-fx-font-size: 18px;");
+
+        Button button = new Button("Plus 1");
+        button.setStyle("-fx-font-size: 18px;");
+
+        button.setOnAction(e -> {
+            counter++;
+            textField.setText(String.valueOf(counter));
+        });
+
+        HBox root = new HBox(20, label, textField, button);
+        root.setPadding(new Insets(20));
+
+        Scene scene = new Scene(root);
+        stage.setTitle("JavaFX Counter");
+        stage.setScene(scene);
+        stage.show();
+    }
+}
 ```
-Exception in thread "main" java.lang.ClassCastException: class sk.spse.jackson.Osoba cannot be cast to class sk.spse.jackson.Adresa (sk.spse.jackson.Osoba and sk.spse.jackson.Adresa are in unnamed module of loader 'app')
-	at sk.spse.jackson.Json.main(Json.java:34)
-```
 
-### Ostatné typy výnimiek
+### Porovnanie GUI
 
-Pri iných typoch výnimiek často pomôže dokumentácia. Po tom, čo nájdeme riadok v kóde, ktorý skutočne vyhodil výnimku, pozrieme sa na metódu a nájdeme si dokumentáciu k danej triede a metóde. Často v dokumentácii sa spomínajú výnimky, ktoré daná metóda môže vyhodiť a aj príčina. To nám môže veľmi pomôcť pri oprave danej chyby.
+Na nasledujúcich screenshotoch môžete porovnať JavaFX vo Windowse, Linuxe a Mac OS
+
+![JavaFX Windows](../assets/javafx-windows.png){width=250}
+
+![JavaFX Linux](../assets/javafx-linux.png){width=250}
+
+![JavaFX Mac OS](../assets/javafx-macos.png){width=250}
+
 
 ## Zhrnutie teórie
 
-Všetky príklady uvedené na tejto hodine viete nájsť a vyskúšať v repozitári na adrese [https://github.com/wagjo/opg-jackson](https://github.com/wagjo/opg-jackson)
+Všetky príklady uvedené na tejto hodine viete nájsť a vyskúšať v repozitári na adrese [https://github.com/wagjo/opg-gui](https://github.com/wagjo/opg-gui)
 
-- [x] Records
-    * [ ] Uľahčenie písania tried, ktorých hlavným účelom je reprezentovať nejaké informácie
-    * [ ] Record je špeciálny typ triedy určený na nesenie dát (data carrier). Nahrádza triedy, ktoré majú privátne nemenné atribúty, gettery a slúžia na modelovanie nejakých dát.
-    * [ ] `public record Osoba(String meno, String priezvisko, Pohlavie pohlavie, LocalDate datumNarodenia) {}`
-    * [ ] Records odstraňuje prebytočný kód (anglicky boilerplate), prináša jednoduchosť a zvyšujú spoľahlivosť kódu.
-- [x] Records automaticky generuje
-    * [ ] private final atribúty
-    * [ ] parametrický konštruktor
-    * [ ] gettre (bez get prefixu)
-    * [ ] metódy `equals()`, `hashCode()` a `toString()`
-- [x] Recordy sú nemenné:
-    * [ ] všetky polia sú final
-    * [ ] neexistujú settre
-    * [ ] stav objektu sa po vytvorení nemení
-- [x] Recordy sa nededia:
-    * [ ] record je definovaný ako final
-    * [ ] record dedí iba z triedy java.lang.Record
-    * [ ] record ale môže implementovať akékoľvek rozhrania
-- [x] Chyby pri kompilácii
-    * [ ] Najčastejším zdrojom týchto chýb je kopírovanie kódu z webových stránok alebo z asistentov umelej inteligencie. 
-    * [ ] Automatické formátovanie kódu (Code-Reformat Code) pomocou Ctrl-Alt-L nám pomôže nájsť chybu.
-    * [ ] Cannot find symbol - Chýba import triedy alebo sme v názve urobili preklep
-    * [ ] class, interface, enum, or record expected - Máme niekde zátvorku navyše
-    * [ ] reached end of file while parsing - Niekde nám zátvorka chýba
-    * [ ] illegal start of expression - Chýbajúca zátvorka
-- [x] Chyby pri behu aplikácie
-    * [ ] Pri vyhodení výnimky program vypíše stacktrace
-    * [ ] Stacktrace je výpis volaní metód, pomocou ktorého vieme nájsť zdroj chyby.
-    * [ ] Niekedy nevyhodí výnimku, ale aj tak nefunguje správne, nereaguje podľa očakávaní, alebo nevyprodukuje požadovaný výstup
-    * [ ] Vtedy sa odporúča použiť debugovacie nástroje IDE, alebo pridať do kódu stručný výpis pomocou System.out.println na tie miesta, kde tušíme chybu
-    * [ ] Medzi najčastejšie výnimky počas behu probramu patria NullPointerException a ClassCastException.
-    * [ ] Často v dokumentácii sa spomínajú výnimky, ktoré daná metóda môže vyhodiť a aj príčina. 
-- [x] Hľadanie príčine v stacktrace
-    * [ ] riadky, ktoré sú z našich tried (`Osoba.java`)
-    * [ ] prvé riadky začínajúce s `at`
-    * [ ] skutočná príčína je často v sekcii `Caused by`, ktorá obsahuje výpis vnorenej výnimky
+- [x] Grafické knižnice
+    * [ ] 2D grafika - tvary (čiary, obdĺžniky, kruhy), text, farby, ...
+    * [ ] GUI - komponenty pre tvorbu užívateľského rozhrania (tlačidlá, textové polia, scrollbar, menu, tabuľky)
+    * [ ] 3D - textúry, polygony, scéna, osvetlenie, kamera
+- [x] AWT
+    * [ ] Prvá GUI knižnica v Jave (1996). Volá grafické knižnice daného operačného systému. Je to tzv. wrapper nad natívnym GUI.
+    * [ ] Rýchly štart, jednoduchá architektúra
+    * [ ] Natívny vzhľad, ale nejednotné správanie na rôznych OS
+    * [ ] Veľmi obmedzené možnosti kreslenia, málo komponentov
+    * [ ] Používa tzv. heavyweight (ťažké, komplikované) komponenty, pretože vykresľovanie prenecháva operačnému systému, mimo Javu, a nekreslí si ich sama
+- [x] Java 2D
+    * [ ] Do knižnice AWT boli v roku 1998 pridané triedy pre vykresľovanie 2D grafiky, tzv. Java 2D. 
+    * [ ] Java 2D sa dodnes hojne používa a je aj základom pre modernejšie GUI knižnice.
+    * [ ] Vektorová grafika, Transformácie (rotate, scale, translate)
+    * [ ] Anti-aliasing, Práca s fontami a obrázkami
+    * [ ] Obmedzená hardwarová akcelerácia
+    * [ ] Nevhodné pre moderné animácie
+- [x] Swing
+    * [ ] Okrem Java 2D bol v roku 1998 predstavený aj Swing a stal sa nástupcom AWT pre GUI vývoj.
+    * [ ] Je postavený nad AWT, ale používa "ľahké" komponenty (lightweight components), ktoré sa kreslia priamo v Jave bez závislosti na natívnych widgetoch. 
+    * [ ] Podporuje pokročilé komponenty ako stromy, tabuľky, editory a drag-and-drop. 
+    * [ ] Konzistentné správanie naprieč OS, bohatá sada komponentov, plná kontrola nad vykresľovaním
+    * [ ] Pomalšie vykresľovanie (CPU-based)
+    * [ ] Zastaralý vzhľad, komplikovaná architektúra
+- [x] JavaFX
+    * [ ] JavaFX bol vytvorený ako moderný nástupca Swingu. Jeho prvá verzia vyšla v roku 2008.
+    * [ ] Je ľahší na učenie pre web developerov vďaka CSS. Poskytuje modernejší dizajn a ponúka aj podporu 3D grafiky. 
+    * [ ] JavaFX je dnes najlepšia voľba pre nové Java desktop GUI. Pomocou pluginov sa dá JavaFX aplikácia spustiť aj na Androide a iOS.
+    * [ ] Moderný vzhľad, GPU akcelerácia, podpora animácií a efektov
+    * [ ] Podpora CSS, scene graph - ako DOM v prehliadačoch
+    * [ ] FXML - ako HTML v prehliadačoch
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    RECORDS
+    GUI V JAVE
 
-    Record je špeciálny typ triedy určený na nesenie dát (data carrier)
+    2D grafika - tvary (čiary, obdĺžniky, kruhy), text, farby, ...
+    GUI - komponenty pre tvorbu užívateľského rozhrania (tlačidlá, textové polia, scrollbar, menu)
+    3D - textúry, polygony, scéna, osvetlenie, kamera
 
-    public record Osoba(String meno, String priezvisko, Pohlavie pohlavie, LocalDate datumNarodenia) {}
+    AWT
+    - Prvá GUI knižnica v Jave (1996)
+    - Rýchly štart, jednoduchá architektúra
+    - Natívny vzhľad, ale nejednotné správanie na rôznych OS
+    - Veľmi obmedzené možnosti kreslenia, málo komponentov
+    - heavyweight (ťažké, komplikované) komponenty, pretože vykresľovanie prenecháva OS
+
+    Java 2D
+    - 1998, pre vykresľovanie 2D grafiky, nie GUI
+    - Vektorová grafika, Transformácie (rotate, scale, translate)
+    - Práca s fontami a obrázkami
+    - Obmedzená hardwarová akcelerácia
     
-    Records odstraňuje prebytočný kód (anglicky boilerplate), prináša jednoduchosť a zvyšujú spoľahlivosť kódu.    
+    Swing
+    - Nástupca AWT pre GUI vývoj (1998)
+    - používa "ľahké" komponenty (lightweight components), ktoré sa kreslia priamo v Jave, nie cez OS
+    - pokročilé komponenty ako stromy, tabuľky, editory a drag-and-drop. 
+    - Konzistentné správanie naprieč OS
+    - Zastaralý vzhľad, komplikovaná architektúra
 
-    Records automaticky generuje
-    - private final atribúty
-    - parametrický konštruktor
-    - gettre (bez get prefixu)
-    - metódy equals(), hashCode() a toString()
-
-    Recordy sú nemenné:
-    - všetky polia sú final
-    - neexistujú settre
-    - stav objektu sa po vytvorení nemení
-
-    Recordy sa nededia:
-    - record je definovaný ako final
-    - record dedí iba z triedy java.lang.Record
-    - record ale môže implementovať akékoľvek rozhrania
-
-    Chyby pri kompilácii
-    - Najčastejším zdrojom týchto chýb je kopírovanie kódu z webových stránok alebo z umelej inteligencie. 
-    - (Code-Reformat Code) pomocou Ctrl-Alt-L nám pomôže nájsť chybu.
-
-    Chyby pri behu aplikácie
-    - Pri vyhodení výnimky program vypíše stacktrace
-    - Stacktrace je výpis volaní metód, pomocou ktorého vieme nájsť zdroj chyby.
-    - Medzi najčastejšie výnimky počas behu programu patria NullPointerException a ClassCastException.
-    - Často v dokumentácii sa spomínajú výnimky, ktoré daná metóda môže vyhodiť a aj príčina. 
+    JavaFX
+    - moderný nástupca Swingu. (2008)
+    - ľahší na učenie pre web developerov vďaka CSS
+    - Moderný vzhľad, GPU akcelerácia, podpora animácií a efektov
+    - Podpora CSS, scene graph - niečo ako DOM v prehliadačoch
+    - FXML - niečo ako HTML v prehliadačoch    
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
@@ -299,8 +312,8 @@ Všetky príklady uvedené na tejto hodine viete nájsť a vyskúšať v repozit
 
     Okruhy otázok na test:
 
-    - Čo je record, na čo slúži
-    - Vlastnosti record
-    - Obmedzenia record
-    - Chyby pri kompilácii, ako ich riešiť
-    - Chyby pri behu programu a ako ich riešiť
+    - Aké typy krafických knižníc poznáme
+    - Čo je AWT, aké má vlastnosti, výhody, nevýhody
+    - Čo je Java 2D, aké má vlastnosti, výhody, nevýhody
+    - Čo je Swing, aké má vlastnosti, výhody, nevýhody
+    - Čo je JavaFX, aké má vlastnosti, výhody, nevýhody
