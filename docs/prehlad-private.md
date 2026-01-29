@@ -530,5 +530,29 @@ hide:
 </td>
 </tr>
 
+<tr >
+<td width=10%>19</td>
+<td width=30%>
+<a href="../teoria-3/t19-gui">GUI knižnice</a> (<a href="../assets/t19w.pdf">pdf</a>)
+<ul>
+<li>Grafické knižnice</li>
+<li>AWT, Java2D</li>
+<li>Swing, JavaFX</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c19-">x</a> (<a href="../assets/c19w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p19-">x</a>  (<a href="../assets/p19w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
 </tbody>
 </table>
