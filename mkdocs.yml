@@ -59,6 +59,7 @@ nav:
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
     - Python - Dedičnosť: 'zbierka-python/j05-04-dedicnost.md'
+    - Python - Testovanie: 'zbierka-python/j07-01-testovanie.md'
   #- Ťahák: 'tahak.md'
   - Kontakt: 'autor.md'
 copyright: Copyright © 2025, 2026, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
