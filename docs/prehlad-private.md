@@ -383,9 +383,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c13-">x</a> (<a href="../assets/c13w.pdf">pdf</a>)
+<a href="../cvicenie-3/c13-javafx">JavaFX</a> 
 <ul>
-<li>TODO</li>
+<li>JavaFX</li>
+<li>FXML</li>
+<li>Scene Builder</li>
 </ul>
 </td>
 <td width=30%>

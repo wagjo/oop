@@ -491,6 +491,20 @@ hide:
 <td width=30%>TODO</td>
 </tr>
 
+<tr >
+<td width=10%>19</td>
+<td width=30%>
+<a href="../teoria-3/t19-gui">GUI knižnice</a> (<a href="../assets/t19w.pdf">pdf</a>)
+<ul>
+<li>Grafické knižnice</li>
+<li>AWT, Java2D</li>
+<li>Swing, JavaFX</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
+
 
 
 </tbody>
