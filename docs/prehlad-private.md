@@ -556,5 +556,29 @@ hide:
 </td>
 </tr>
 
+<tr >
+<td width=10%>19</td>
+<td width=30%>
+<a href="../teoria-3/t20-gui">JavaFX základy</a> (<a href="../assets/t20w.pdf">pdf</a>)
+<ul>
+<li>Application, Stage, Scene</li>
+<li>Hierarchia okien, štýly okna</li>
+<li>Modalita</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c20-">x</a> (<a href="../assets/c20w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p20-">x</a>  (<a href="../assets/p20w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
 </tbody>
 </table>
