@@ -38,19 +38,29 @@ Modality
 
 https://openjfx.io/javadoc/21/javafx.graphics/javafx/stage/Stage.html
 
+vyska, sirka, x, y, maximized, ..., resizable
+
+Z ordering
+
 - kinosala
 
 ## Scene
+
+Ten isty stage moze prepinat medzi viacerymi scene
 
 https://openjfx.io/javadoc/21/javafx.graphics/javafx/scene/Scene.html
 
 - premietanie filmu
 
+Scene musi mat 1 root node, korenovy uzol
 
+Drzi v sebe zoznam Nodov, uzlov, UI komponentov
 
+Nody na rozlozenie
 Parent
 HBox
 
+Nody s ovladacimi prvkami
 TextField
 Button
 Label
