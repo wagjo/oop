@@ -149,9 +149,9 @@ V repozitári na adrese [https://github.com/wagjo/opg-gui](https://github.com/wa
     * [ ] `stage.setMaxWidth()` a pod. - nastavenie max a min veľkosti okna
     * [ ] `stage.setResizable(true)` - Nastavenie, či užívateľ môže meniť veľkosť okna
 - [x] Hierarchia okien
-    * [ ] Ak má naša aplikácia okien viacero, ostatné okná si už vytvoríme ručne a pridáme ich ako vedľajšie okná do aplikáce.
+    * [ ] Ak má naša aplikácia okien viacero, ostatné okná si už vytvoríme ručne a pridáme ich ako vedľajšie okná do aplikácie.
     * [ ] Každé okno okrem hlavného musí mať svojho vlastníka, teda nejaké nadradené okno, pod ktoré patrí. 
-    * [ ] `stage.initOwner(ownerStage)` - prepojenie vedľajšieho okna z hlavným.
+    * [ ] `stage.initOwner(ownerStage)` - prepojenie vedľajšieho okna s hlavným.
     * [ ] Ak sa zatvorí okno tak JavaFX automaticky zatvorí aj všetky jeho podradené okná. Ak sa zatvorí hlavné okno, celá JavaFX aplikácia končí.
 - [x] Štýl okna
     * [ ] `stage.initStyle(style)` - nastaví štýl, defaulne `StageStyle.DECORATED`
