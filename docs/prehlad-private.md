@@ -557,7 +557,7 @@ hide:
 </tr>
 
 <tr >
-<td width=10%>19</td>
+<td width=10%>20</td>
 <td width=30%>
 <a href="../teoria-3/t20-javafx-stage">JavaFX základy</a> (<a href="../assets/t20w.pdf">pdf</a>)
 <ul>
@@ -574,6 +574,30 @@ hide:
 </td>
 <td width=30%>
 <a href="../pokrocili-3/p20-">x</a>  (<a href="../assets/p20w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
+<tr >
+<td width=10%>21</td>
+<td width=30%>
+<a href="../teoria-3/t21-javafx-komponenty">JavaFX komponenty</a> (<a href="../assets/t21w.pdf">pdf</a>)
+<ul>
+<li>Ovládacie prvky</li>
+<li>Komponenty pre rozmiestňovanie</li>
+<li>Scene Graph, Z-Order</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c21-">x</a> (<a href="../assets/c21w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p21-">x</a>  (<a href="../assets/p21w.pdf">pdf</a>)
 <ul>
 <li>TODO</li>
 </ul>
