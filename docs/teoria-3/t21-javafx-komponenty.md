@@ -1,243 +1,320 @@
-# Teória 20: JavaFX - základné triedy
+# Teória 21: JavaFX - komponenty
 
-TODO:
+Táto časť je venovaná vykresľovaniu do okna aplikácie. JavaFX umožňuje vykresľovanie rôznych typov prvkov. Dnes sa povenujem dvom hlavným kategóriam:
 
-scene graph
-Z ordering
-komponenty na rozlozenie
-komponenty ovladacie
-komponenty graficke
+- **Ovládacie prvky** - Controls
+- **Komponenty pre rozmiestňovanie** - Layout Containers
 
+Do scény sa typicky umiestní jedna alebo viac komponent pre rozmiestňovanie, a do nich sa potom vložia ovládacie prvky, ktoré sa vykreslia do okna aplikácie.
 
-Scene musi mat 1 root node, korenovy uzol
- 
-+Drzi v sebe zoznam Nodov, uzlov, UI komponentov
- 
-+Nody na rozlozenie
- Parent
- HBox
- 
-+Nody s ovladacimi prvkami
- TextField
- Button
- Label
+## Ovládacie prvky
 
- 
+Ovládacie prvky slúžia pre interakciu s používateľom a je ich veľké množstvo. Uvedieme si najpoužívanejšie:
 
-Dnes si začneme vysvetľovať základné koncepty knižnice JavaFX. Ako prvé si ukážeme, akým spôsobom JavaFX reprezentuje okná operačného systému. 
+- [`Label`](https://openjfx.io/javadoc/21/javafx.controls/javafx/scene/control/Label.html) - Textový popis bez interakcie.
+- [`Button`](https://openjfx.io/javadoc/21/javafx.controls/javafx/scene/control/Button.html) - Klikateľné tlačidlo.
+- [`CheckBox`](https://openjfx.io/javadoc/21/javafx.controls/javafx/scene/control/CheckBox.html) - Prepínač (true / false).
+- [`RadioButton`](https://openjfx.io/javadoc/21/javafx.controls/javafx/scene/control/RadioButton.html) - Prepínač v skupine (len jedna možnosť).
+- [`Slider`](https://openjfx.io/javadoc/21/javafx.controls/javafx/scene/control/Slider.html) - Posuvník s hodnotou (horizontálny alebo vertikálny).
+- [`Separator`](https://openjfx.io/javadoc/21/javafx.controls/javafx/scene/control/Separator.html) - Oddeľovač (horizontálny alebo vertikálny).
+- [`TextField`](https://openjfx.io/javadoc/21/javafx.controls/javafx/scene/control/TextField.html) - Jednoriadkové textové pole. (`TextArea` - Viacriadkové textové pole)
+- [`PasswordField`](https://openjfx.io/javadoc/21/javafx.controls/javafx/scene/control/PasswordField.html) - Textové pole so skrytým obsahom.
 
-Oficiálna dokumentácia knižnice JavaFX je na stránke [https://openjfx.io/javadoc/21/](https://openjfx.io/javadoc/21/)
-
-![Aplikácia Word](../assets/word-okna.png){.on-glb}
-/// caption
-Aplikácia Word s troma oknami
+![Controls](../assets/controls.png){width=400}
+///caption
+Ukážka ovládacích prvkov
 ///
 
-Aplikácia sa štandardne skladá z jedného alebo viacerých okien. 
-Okná môžu mať rôzne vlastnosti a štýly. Do vnútra okna si aplikácia vykresľuje rôzne grafické a ovládacie prvky.
+=== "Ukážka použitia ovládacích prvkov v kóde"
 
-Pre všetky tieto koncepty má knižnica JavaFX vlastné triedy. Dnes si predstavíme 3 základné triedy JavaFX:
+    ```java
+    Button button = new Button("Klikni ma");
 
-- `Application` - predstavuje hlavnú triedu aplikácie
-- `Stage` - reprezentuje jedno okno aplikácie
-- `Scene` - má na starosti vnútro okna - čo sa do neho bude vykresľovať
+    button.setOnAction(event -> {
+        System.out.println("Button bol kliknutý");
+    });
+    ```
 
-Každý JavaFX program musí mať práve jeden objekt triedy `Application` ale môže mať viacero objektov `Stage` a `Scene`, podľa toho, koľko okien naša aplikácia potrebuje.
+## Komponenty pre rozmiestňovanie
 
+Tieto tzv. layout komponenty, alebo kontajnery, nám definujú, ako budú jednotlivé prvky v okne rozložené. Existuje desiatok druhov takýchto kontajnerov, my si ukážeme najpoužívanejšie z nich.
 
-## Application
+### HBox (Horizontal Box)
 
-Trieda [`javafx.application.Application`](https://openjfx.io/javadoc/21/javafx.graphics/javafx/application/Application.html) je abstraktná trieda, ktorá reprezentuje hlavnú triedu aplikácie. Náš JavaFX program musí mať práve jednu triedu, ktorá dedí z `Application` a implementuje abstraktnú metódu `void start(Stage primaryStage)`
+HBox je definovaný v triede [javafx.scene.layout.HBox](https://openjfx.io/javadoc/21/javafx.graphics/javafx/scene/layout/HBox.html)
 
-Hlavná JavaFX logika má byť umiestnená do metódy `start`, ktorá sa automaticky zavolá po spustení programu. Táto metóda má jeden vstupný argument, a tým je hlavné okno aplikácie. Hlavné okno sa teda vytvorí automaticky a je našou úlohou správne ho nastaviť a zobraziť.
+Tento kontajner rozmiestni prvky horizontálne v jednom riadku.
 
-V metóde `start` sa štandardne robia nasledovné veci:
+![HBox](../assets/hbox.png){width=600}
 
-- Nastaví sa titulok hlavného okna
-- Nastaví sa štýl hlavného okna
-- K hlavnému oknu sa pripojí konkrétna scéna s ovládacími a grafickými komponentami
-- Dá sa pokyn na zobrazenie hlavného okna
+Ako príklad použitie HBoxu si môžeme uviesť náš príklad s počítadlom, kde sú 3 ovládacie prvky umiestnené do jedného riadku.
 
+![Counter](../assets/javafx-windows.png){width=350}
 
-## Stage
+=== "Ukážka použitia HBox v kóde"
 
-Trieda [`javafx.stage.Stage`](https://openjfx.io/javadoc/21/javafx.graphics/javafx/stage/Stage.html) reprezentuje konkrétne okno aplikácie.
+    ```java
+    HBox hbox = new HBox(20);
+    hbox.setAlignment(Pos.CENTER);
+    hbox.getChildren().addAll(
+         new Label("Lorem ipsum"),
+         new Button("Close"));
+    ```
 
-Každá JavaFX aplikácia má práve jedno hlavné okno, ktoré sa vytvorí automaticky. Nie je teda potrebné vytvárať objekt triedy `Stage` ručne.
+### VBox (Vertical Box)
 
-Všetky zmeny do vlastností okna je potrebné robiť pred jeho samotným zobrazením. Zobrazenie okna sa robí pomocou metódy `stage.show()`
+VBox je definovaný v triede [javafx.scene.layout.VBox](https://openjfx.io/javadoc/21/javafx.graphics/javafx/scene/layout/VBox.html)
 
-Titulok okna sa nastaví pomocou metódy `stage.setTitle("Titulok")`
+VBox je kontajner, ktorý rozmiestni prvky vertikálne pod sebou
 
-Medzi ďalšie užitočné nastavenia patria nastavenie minimálnej a maximálnej veľkosti okna (napr. `setMaxWidth()`) a nastavenie, či chceme aby užívateľ mohol meniť veľkosť okna (`setResizable()`). Stage v sebe taktiež obsahuje informácie o tom, či je okno maximalizované, minimalizované a či je full screen.
+![VBox](../assets/vbox.png){width=300}
 
-Do okna sa nedávajú grafické komponenty priamo, ale oknu sa priradí konkrétna scéna, ktorá obsahuje samotné komponenty. Priradenie scény do okna sa robí pomocou metódy `stage.setScene(scene)`
+Nasledujúci príklad používa VBox na rozmiestnenie prvkov do riadkov.
 
-### Hierarchia okien
-
-Ak má naša aplikácia okien viacero, ostatné okná si už vytvoríme ručne a pridáme ich ako vedľajšie okná do aplikáce.
-
-Každé okno okrem hlavného musí mať svojho vlastníka, teda nejaké nadradené okno, pod ktoré patrí. Týmto sa vytvára stromová hierarchia okien. Prepojenie vedľajšieho okna s hlavným robíme pomocou metódy `stage.initOwner(ownerStage)`.
-
-Ak sa zatvorí okno tak JavaFX automaticky zatvorí aj všetky jeho podradené okná. Ak sa zatvorí hlavné okno, celá JavaFX aplikácia končí.
-
-### Štýl okna
-
-Okno môže mať viacero štýlov. Pre štýly má JavaFX enum `StageStyle`. Ukážeme si dva najzákladnejšie.
-
-- `StageStyle.DECORATED` - klasické okno s titulkom, okrajom a ovládacími prvkami na vrchu (zatvorenie okna, maximalizácia, minimalizácia)
-- `StageStyle.UNDECORATED` - okno bez okraja a bez ovládacích prvkov, štandardne používané na tzv. **splash screen**
-
-![Decorated](../assets/decorated-stage.png){.on-glb width=500}
-/// caption
-Klasické okno
-///
-
-![Roblox](../assets/splash-screen.png){.on-glb width=500}
-/// caption
-Splash screen hry Roblox
-///
-
-Nastavenie štýlu okna vykonáme pomocou metódy `stage.initStyle(style)`. Ak chceme klasický DECORATED štýl, nemusíme nič nastavovať, v JavaFX je nastavený defaultne.
+![VBox example](../assets/vbox-example.png){width=350}
 
 
-### Modalita okna
+### BorderPane
 
-Pre vedľajšie okná vieme nastaviť tzv. **modalitu okna**. Modalita určije, ako veľmi vedľajšie okno blokuje interakciu s ostatnými oknami aplikácie. Inak povedané: ktoré okná môže používateľ ovládať, kým je dané okno otvorené
+BorderPane je definovaný v triede [javafx.scene.layout.BorderPane](https://openjfx.io/javadoc/21/javafx.graphics/javafx/scene/layout/BorderPane.html)
 
-Ak je okno modálne, ostatné okná aplikácie sú "zamknuté", kým sa modálne okno nazavrie.
+Ide o zložitejší kontajner, ktorý vytvára priestor pre hlavičku a pätu okna a taktiež umožňuje vložiť prvky na ľavý a pravý okraj.
 
-Poznáme tri druhy modality:
+![BorderPane](../assets/borderpane.png){width=600}
 
-- `Modality.NONE` - Žiadna modalita, okno neblokuje nič, používateľ môže klikať na všetky ostatné okná.
-- `Modality.WINDOW_MODAL` - Okno blokuje svoje rodičovské okno. Ostatné okná aplikácie sú klikateľné.
-- `Modality.APPLICATION_MODAL` - Najsilnejšia modalita, blokované sú všetky okná aplikácie.
+=== "Ukážka použitia BorderPane v kóde"
 
-Klasická modalita sa využíva pri tzv. Dialog oknách, napr. pri oknách s nastaveniami.
+    ```java
+    HBox menu = new HBox(
+            new Button("Súbor"),
+            new Button("Upraviť"),
+            new Button("Pomoc")
+    );
 
-Okná bez modality sa používajú hlavne pre pomocné panely, okná nástrojov a náhľadové okná.
+    BorderPane root = new BorderPane();
+    root.setTop(menu); // horná časť
+    root.setBottom(new Label("BOTTOM - pätička")); // spodná časť
+    root.setLeft(new Button("LEFT")); // ľavá časť   
+    root.setRight(new Button("RIGHT")); // pravá časť
+    root.setCenter(new Button("CENTER - hlavný obsah")); // stred
+    ```
 
-Silná modalita sa používa hlavne pre potvrdenia (Chcete ukončiť aplikáciu?), prihlasovanie, otváranie súboru, a chybové hlášky.
+### Ostatné
 
-Modalita okna sa nastavuje pomocou metódy `stage.initModality(modality)`. Defaultne je nastavaná na `Modality.NONE`.
+Okrem týchto kontajnerov existujú aj iné:
+
+- `GridPane` - Tabuľkové rozloženie (riadky a stĺpce).
+- `StackPane` - Prvky sú nad sebou (vrstvy).
+- `FlowPane` - Tokové rozloženie – zalamuje prvky podľa šírky.
+- `AnchorPane` - Ukotvenie prvkov k okrajom kontajnera.
+- `TilePane` - Prvky majú rovnakú veľkosť v mriežke.
+- `Pane` - Kontajner bez automatického rozloženia, grafické prvky musia mať uvedenú presnú polohu a veľkosť
+
+![Panes](../assets/panes.png){width=700}
+
+## Scene Graph
+
+Všetky komponenty, ktoré chceme zobraziť v okne sa vkladajú do scény (objekt triedy `Scene`), ktorá sa potom pripojí na okno aplikácie (objekt triedy `Stage`). Komponenty sa do scény vkladajú tak, že z komponentov si urobíme stromovú štruktúru s jedným koreňovým komponentom. Do neho postupne vkladáme ďalšie a tak si vytvoríme celú scénu. Táto stromová štruktúra sa volá **scene graph**.
+
+Ak máme hotový scene graph, **do scény sa potom priamo vloží iba koreňový komponent**. Všetky ostatné komponenty sú priamo alebo nepriamo vnorené v tomto koreňovom uzle.
+
+Ako príklad si ukážeme scene graph pre naše počítadlo s menšou úpravou. Pridáme do neho ešte separátor a tlačidlo na zatvorenie aplikácie.
+
+![Counter scene graph](../assets/pocitadlo-scene-graph.png){width=300}
+
+Takúto scénu vieme vytvoriť pomocou VBox a HBox komponentov. Výsledný strom komponentov je nasledovný:
+
+```mermaid
+flowchart TD
+    VBox --> HBox1[HBox]
+    VBox --> Separator
+    VBox --> HBox2[HBox]
+    HBox1 --> Label
+    HBox1 --> TextField
+    HBox1 --> Button1[Button]
+    HBox2 --> Button2[Button]
+```
+
+=== "Ukážka kódu vytvorenie scene graphu"
+
+    ```java
+    // Hlavný kontajner
+    VBox root = new VBox(10);
+
+    // Horný riadok s počítadlom
+    HBox counterRow = new HBox(20);
+    Label label = new Label("Počítadlo:");
+    TextField counterField = new TextField("0");
+    Button btnPlus = new Button("Plus 1");
+    btnPlus.setOnAction(e -> incrementCounter());
+    counterRow.getChildren().addAll(label, counterField, btnPlus);
+
+    // Oddelovač
+    Separator separator = new Separator();
+
+    // Spodný riadok - tlačidlo Zavrieť
+    HBox bottomRow = new HBox();
+    bottomRow.setAlignment(Pos.CENTER_RIGHT); // detské komponenty posunúť doprava
+    Button btnClose = new Button("Zavrieť program");
+    btnClose.setOnAction(e -> primaryStage.close());
+    bottomRow.getChildren().add(btnClose);
+
+    // Všetko dáme dokopy
+    root.getChildren().addAll(counterRow, separator, bottomRow);
+    Scene scene = new Scene(root, 380, 220);
+    ```
 
 
-## Scene
+## Z-order
 
-Do samotného okna nevykresľujeme priamo, ale všetky grafické prvky a ovládacie komponenty vkladáme to tzv. scény. Scéna je objekt triedy [`javafx.scene.Scene`](https://openjfx.io/javadoc/21/javafx.graphics/javafx/scene/Scene.html). Pri vytváraní scény si určujeme aj konkrétne rozmery okna.
+Všetky dnes spomínané komponenty sú dvojrozmerné - 2D. Majú šírku a výšku a X,Y pozíciu na obrazovke. Niekedy sa však pri vykresľovaní stáva, že sa komponenty prekrývajú. V takýchto prípadoch je nutné vedieť, ktorý prvok má byť navrchu a ktorý pod ním.
 
-Pripojenie scény do okna robíme pomocou metódy `stage.setScene(scene)`. Pomocou tejto metódy môžeme v okne aj prepínať medzi scénami, ak chceme v okne začať zobrazovať niečo iné.
+Pojem Z-ordering znamená poradie vykresľovania grafických a ovládacích prvkov - teda ktorý prvok je „hore“ a ktorý „dole“, keď sa prekrývajú.
 
-O štruktúre scény a konkrétnych grafických a ovládacích prvkoch si bližšie povieme na budúcej hodine.
+Počas vykresľovania na obrazovke štandardne používame 2 osy, X a Y. X nám udáva vzdialenosť od ľavého kraja a Y od kraja horného. Pozícia 0,0 je teda v ľavom hornom rohu. Pri Z orderingu máme akoby ďalšiu os, nazývanú Z, ktorá ide kolmo od obrazovky. Podľa hodnoty na osi Z vieme určiť, ktorý prvok má byť na vrchu.
 
-## JavaFX aplikácia ako kino Cinemax
+V rámci JavaFX sa Z-ordering nepoužíva priamo, ale Z-order poradie sa určuje na základe pozície prvku v strome uzlov - scene graphu
 
-Na lepšie pochopenie princípov JavaFX aplikácie si vieme dať tieto 3 hlavné triedy do analógie s multikinom Cinemax.
+- Ako prvý sa vykresľuje koreňový uzol a potom sa vykresľujú jeho deti. 
+- Deti sa vykresľujú v poradí, v akom sú do kontajnera umiestnené. To znamená, že ak by sa detské komponenty prekrývali, posledný komponent bude úplne navrchu.
 
-Objekt JavaFX `Application` reprezentuje našu aplikáciu - kino Cinemax v Novume v Prešove.
+Zmenu poradia Z-order vieme vykonať premiestnením komponentov v rámci scene graphu, či už na iné miesto v strome alebo na inú pozíciu v rámci zoznamu detských komponentov.
 
-Tak ako má Cinemax viacero kinosál, tak aj naša aplikácia môže mať viacero okien. Jedna kinosála - JavaFX okno, je reprezentované objektom triedy `Stage`.
+Nasledujúci príklad ukazuje použitie kontajnera s pevným rozložením a prekrytými komponentami.
 
-Do okna vie naša JavaFX aplikácia vykresľovať rôzne komponenty a grafické objekty. To, čo sa práve do okna vykresľuje sa v JavaFX nazýva `Scene`. V našej analógii s Cinemax to zodpovedá filmu, ktorý sa v danej kinosále premieta.
+![Z order example](../assets/zorder.png){width=300px}
 
-Tak ako v kinosále vieme premietať aj iný film, tak aj v `Stage` okne vieme meniť rôzne `Scene` - to, čo sa v okne aktuálne zobrazuje. 
+Scene graph takéhoto programu by vyzeral nasledovne:
 
+```mermaid
+flowchart TD
+    Pane --> B1[Button]
+    Pane --> B2[Button]
+    Pane --> B3[Button]
+```
 
-## Launcher
+=== "Ukážka kódu s prekrytými tlačidlami"
 
-Ak spúšťame JavaFX aplikáciu klasicky cez vstupný bod programu `main`, je vhodné pre tento main vytvoriť samostatnú triedu a nedávať ju do triedy aplikácie. JavaFX má totiž často s tým problém a samostatná trieda je bezpečnejšie riešenie. 
+    ```java
+    // Kontajner s pevným rozložením
+    Pane pane = new Pane();
 
-Túto triedu si môžeme nazvať napr. `Launcher` alebo podobne. V samotnej `main` metóde potom spustenie JavaFX aplikácie vykonáme pomocou príkazu `MyApplication.launch(MyApplication.class, args)`, kde `MyApplication` je názov triedy s aplikáciou a args sú vstupné argumenty z `main` metódy.
+    // Tlačidlo 1 – najspodnejšie
+    Button btn1 = new Button("Tlačidlo 1 (najspodnejšie)");
+    btn1.setPrefSize(220, 80);
+    btn1.setLayoutX(20);
+    btn1.setLayoutY(20);
+
+    // Tlačidlo 2 – uprostred
+    Button btn2 = new Button("Tlačidlo 2 (stred)");
+    btn2.setPrefSize(200, 90);
+    btn2.setLayoutX(50);
+    btn2.setLayoutY(70);
+
+    // Tlačidlo 3 – najvrchnejšie
+    Button btn3 = new Button("Tlačidlo 3 (najvrchnejšie)");
+    btn3.setPrefSize(180, 100);
+    btn3.setLayoutX(80);
+    btn3.setLayoutY(120);
+
+    // Tu sa rozhodne, ktorý prvok bude navrchu
+    // Pridávame v poradí odspodu nahor
+    pane.getChildren().addAll(btn1, btn2, btn3);
+
+    Scene scene = new Scene(pane, 300, 240);
+    ```
 
 
 ## Zhrnutie teórie
 
 V repozitári na adrese [https://github.com/wagjo/opg-gui](https://github.com/wagjo/opg-gui) máte ukážku práce s triedami `Scene`, `Stage` a `Application`. Ide o triedy `FxStageExampleApplication` a `FxStageExampleMain`, pomocou ktorej viete aplikáciu spustiť.
 
-- [x] JavaFX aplikácia
-    * [ ] Trieda `Application` - predstavuje hlavnú triedu aplikácie
-    * [ ] Trieda `Stage` - reprezentuje jedno okno aplikácie
-    * [ ] Trieda `Scene` - má na starosti vnútro okna - čo sa do neho bude vykresľovať
-    * [ ] Každý JavaFX program musí mať práve jeden objekt triedy Application ale môže mať viacero objektov Stage a Scene, podľa toho, koľko okien naša aplikácia potrebuje.
-- [x] javafx.application.Application
-    * [ ] Náš JavaFX program musí mať práve jednu triedu, ktorá dedí z `Application` a implementuje abstraktnú metódu void `start(Stage primaryStage)`
-    * [ ] Hlavná JavaFX logika má byť umiestnená do metódy `start`, ktorá sa automaticky zavolá po spustení programu.
-    * [ ] Metóda `start` má jeden vstupný argument, a tým je automaticky vytvorené hlavné okno aplikácie
-    * [ ] V metóde `start` sa nastavuje titulok a štýl okna, pripája sa scéna a nakoniec sa dá pokyn na zobrazenie hlavného okna
-- [x] javafx.stage.Stage
-    * [ ] Okno aplikácie
-    * [ ] Každá JavaFX aplikácia má práve jedno hlavné okno, ktoré sa vytvorí automaticky
-    * [ ] Všetky zmeny do vlastností okna je potrebné robiť pred jeho samotným zobrazením.
-    * [ ] `stage.show()` - zobrazenie okna
-    * [ ] `stage.setTitle("Titulok")` - nastavenie titulku
-    * [ ] `stage.setMaxWidth()` a pod. - nastavenie max a min veľkosti okna
-    * [ ] `stage.setResizable(true)` - Nastavenie, či užívateľ môže meniť veľkosť okna
-- [x] Hierarchia okien
-    * [ ] Ak má naša aplikácia okien viacero, ostatné okná si už vytvoríme ručne a pridáme ich ako vedľajšie okná do aplikáce.
-    * [ ] Každé okno okrem hlavného musí mať svojho vlastníka, teda nejaké nadradené okno, pod ktoré patrí. 
-    * [ ] `stage.initOwner(ownerStage)` - prepojenie vedľajšieho okna z hlavným.
-    * [ ] Ak sa zatvorí okno tak JavaFX automaticky zatvorí aj všetky jeho podradené okná. Ak sa zatvorí hlavné okno, celá JavaFX aplikácia končí.
-- [x] Štýl okna
-    * [ ] `stage.initStyle(style)` - nastaví štýl, defaulne `StageStyle.DECORATED`
-    * [ ] `StageStyle.DECORATED` - klasické okno s titulkom, okrajom a ovládacími prvkami na vrchu (zatvorenie okna, maximalizácia, minimalizácia)
-    * [ ] `StageStyle.UNDECORATED` - okno bez okraja a bez ovládacích prvkov, štandardne používané na tzv. splash screen
-- [x] Modalita okna
-    * [ ] Modalita určije, **ako veľmi vedľajšie okno blokuje interakciu s ostatnými oknami** aplikácie.
-    * [ ] `stage.initModality(modality)` - nastaví modalitu, defaultne `Modality.NONE`
-    * [ ] `Modality.NONE` - Žiadna modalita, okno neblokuje nič, používateľ môže klikať na všetky ostatné okná.
-    * [ ] `Modality.WINDOW_MODAL` - Okno blokuje svoje rodičovské okno. Ostatné okná aplikácie sú klikateľné.
-    * [ ] `Modality.APPLICATION_MODAL` - Najsilnejšia modalita, blokované sú všetky okná aplikácie.
-- [x] javafx.scene.Scene
-    * [ ] Do samotného okna nevykresľujeme priamo, ale všetky grafické prvky a ovládacie komponenty vkladáme to tzv. scény. 
-    * [ ] Pri vytváraní scény si určujeme aj konkrétne rozmery okna.
-    * [ ] `stage.setScene(scene)` pripojenie scény k oknu
-- [x] JavaFX aplikácia ako kino Cinemax
-    * [ ] Cinemax v Novume - objekt triedy `Application`
-    * [ ] Konkrétna kinosála v Cinemaxe - objekt triedy `Stage`
-    * [ ] Film, ktorý sa práve premieta v kinosále - objekt triedy `Scene` pripojený k oknu aplikácie
-    * [ ] Tak ako má Cinemax viacero kinosál, tak aj naša aplikácia môže mať viacero okien
-    * [ ] Tak ako v kinosále vieme premietať aj iný film, tak aj v Stage okne vieme meniť rôzne Scene - to, čo sa v okne aktuálne zobrazuje. 
-- [x] Launcher
-    * [ ] Vstupný bod programu metódu `main` je dobré mať v samostatnej triede, mimo triedu `Application`
-    * [ ] Spustenie JavaFX aplikácie vykonáme pomocou príkazu `MyApplication.launch(MyApplication.class, args)`
+- [x] JavaFX komponenty
+    * [ ] **Ovládacie prvky** - Controls
+    * [ ] **Komponenty pre rozmiestňovanie** - Layout Containers
+- [x] Ovládacie prvky
+    * [ ] Ovládacie prvky slúžia pre interakciu s používateľom a je ich veľké množstvo. Uvedieme si najpoužívanejšie
+    * [ ] `Label` - Textový popis bez interakcie.
+    * [ ] `Button` - Klikateľné tlačidlo.
+    * [ ] `CheckBox` - Prepínač (true / false).
+    * [ ] `RadioButton` - Prepínač v skupine (len jedna možnosť).
+    * [ ] `Slider` - Posuvník s hodnotou (horizontálny alebo vertikálny).
+    * [ ] `Separator` - Oddeľovač (horizontálny alebo vertikálny).
+    * [ ] `TextField` - Jednoriadkové textové pole. (TextArea - Viacriadkové textové pole)
+    * [ ] `PasswordField` - Textové pole so skrytým obsahom.
+- [x] Komponenty pre rozmiestňovanie
+    * [ ] `HBox` - rozmiestni prvky horizontálne v jednom riadku.
+    * [ ] `VBox` - rozmiestni prvky horizontálne v jednom stĺpci pod sebou.
+    * [ ] `BorderPane` - vytvára priestor pre hlavičku a pätu okna a taktiež umožňuje vložiť prvky na ľavý a pravý okraj.
+    * [ ] `GridPane` - Tabuľkové rozloženie (riadky a stĺpce).
+    * [ ] `StackPane` - Prvky sú nad sebou (vrstvy).
+    * [ ] `FlowPane` - Tokové rozloženie – zalamuje prvky podľa šírky.
+    * [ ] `AnchorPane` - Ukotvenie prvkov k okrajom kontajnera.
+    * [ ] `TilePane` - Prvky majú rovnakú veľkosť v mriežke.
+    * [ ] `Pane` - Kontajner bez automatického rozloženia, grafické prvky musia mať uvedenú presnú polohu a veľkosť
+- [x] Scene Graph
+    * [ ] Všetky komponenty, ktoré chceme zobraziť v okne sa vkladajú do scény (objekt triedy Scene), ktorá sa potom pripojí na okno aplikácie (objekt triedy Stage). 
+    * [ ] Komponenty sa do scény vkladajú tak, že z komponentov si urobíme stromovú štruktúru s jedným koreňovým komponentom.
+    * [ ] Do koreňového kontajnera postupne vkladáme ďalšie a tak si vytvoríme celú scénu. Táto stromová štruktúra sa volá scene graph.
+    * [ ] Ak máme hotový scene graph, do scény sa potom priamo vloží iba koreňový komponent. Všetky ostatné komponenty sú priamo alebo nepriamo vnorené v tomto koreňovom uzle.
+- [x] Z-order
+    * [ ] Z-ordering znamená poradie vykresľovania grafických a ovládacích prvkov - teda ktorý prvok je „hore“ a ktorý „dole“, keď sa prekrývajú.
+    * [ ] Počas vykresľovania na obrazovke štandardne používame 2 osy, X a Y. X nám udáva vzdialenosť od ľavého kraja a Y od kraja horného. Pozícia 0,0 je teda v ľavom hornom rohu. 
+    * [ ] Pri Z orderingu máme akoby ďalšiu os, nazývanú Z, ktorá ide kolmo od obrazovky. Podľa hodnoty na osi Z vieme určiť, ktorý prvok má byť na vrchu.
+    * [ ] V rámci JavaFX sa Z-ordering nepoužíva priamo, ale Z-order poradie sa určuje na základe pozície prvku v strome uzlov - scene graphu
+    * [ ] Ako prvý sa vykresľuje koreňový uzol a potom sa vykresľujú jeho deti. 
+    * [ ] Deti sa vykresľujú v poradí, v akom sú do kontajnera umiestnené. To znamená, že ak by sa detské komponenty prekrývali, posledný komponent bude úplne navrchu.
+    * [ ] Zmenu poradia Z-order vieme vykonať premiestnením komponentov v rámci scene graphu, či už na iné miesto v strome alebo na inú pozíciu v rámci zoznamu detských komponentov.
+
+
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    JavaFX aplikácia - 3 základné triedy:
-    - Application - hlavná trieda aplikácie
-    - Stage - reprezentuje jedno okno aplikácie
-    - Scene - má na starosti vnútro okna - čo sa do neho bude vykresľovať
+    JavaFX komponenty
+    1. Ovládacie prvky - Controls
+    2. Komponenty pre rozmiestňovanie - Layout Containers
 
-    Hlavná JavaFX logika sa píše do metódy start v triede dediacej od Application
+    Ovládacie prvky
+    Slúžia pre interakciu s používateľom
+    - Label - Textový popis bez interakcie.
+    - Button - Klikateľné tlačidlo.
+    - CheckBox - Prepínač (true / false).
+    - RadioButton - Prepínač v skupine (len jedna možnosť).
+    - Slider - Posuvník s hodnotou (horizontálny alebo vertikálny).
+    - Separator - Oddeľovač (horizontálny alebo vertikálny).
+    - TextField - Jednoriadkové textové pole. (TextArea - Viacriadkové textové pole)
+    - PasswordField - Textové pole so skrytým obsahom.
 
-    Stage - Okno aplikácie
-    - Aplikácia má jedno hlavné okno, ktoré sa vytvorí automaticky
-    - Všetky zmeny je potrebné robiť pred zobrazením okna.
-    - stage.show() - zobrazenie okna
-    - stage.setTitle("Titulok") - nastavenie titulku
+    Komponenty pre rozmiestňovanie
+    HBox - rozmiestni prvky horizontálne v jednom riadku.
+    VBox - rozmiestni prvky horizontálne v jednom stĺpci pod sebou.
+    BorderPane - vytvára priestor pre hlavičku a pätu okna a taktiež umožňuje vložiť prvky na okraje.
+    GridPane - Tabuľkové rozloženie (riadky a stĺpce).
+    StackPane - Prvky sú nad sebou (vrstvy).
+    FlowPane - Tokové rozloženie – zalamuje prvky podľa šírky.
+    AnchorPane - Ukotvenie prvkov k okrajom kontajnera.
+    TilePane - Prvky majú rovnakú veľkosť v mriežke.
+    Pane - Kontajner bez automatického rozloženia, grafické prvky musia mať uvedenú polohu a veľkosť
 
-    Hierarchia okien
-    - Každé okno okrem hlavného musí mať svojho vlastníka, teda nadradené okno, pod ktoré patrí. 
-    - stage.initOwner(ownerStage) - prepojenie vedľajšieho okna s hlavným.
+    Scene Graph
+    Komponenty sa vkladajú do scény (Scene), ktorá sa pripojí na okno aplikácie (Stage). 
+    Z komponentov sa vytvorí stromová štruktúra s jedným koreňovým komponentom. 
+    Táto stromová štruktúra sa volá scene graph.
+    Do scény sa potom priamo vloží iba koreňový komponent. 
+    Ostatné komponenty sú priamo alebo nepriamo vnorené v tomto koreňovom uzle.
 
-    Štýl okna
-    - stage.initStyle(style) - nastaví štýl
-    - StageStyle.DECORATED - klasické okno s titulkom, okrajom a ovládacími prvkami na vrchu
-    - StageStyle.UNDECORATED` - okno bez okraja a bez ovládacích prvkov, používané na splash screen
-
-    Modalita okna
-    - Určuje ako veľmi vedľajšie okno blokuje interakciu s ostatnými oknami aplikácie.
-    - stage.initModality(modality) - nastaví modalitu
-    - Modality.NONE - Žiadna modalita, okno neblokuje nič
-    - Modality.WINDOW_MODAL - okno blokuje svoje rodičovské okno
-    - Modality.APPLICATION_MODAL - najsilnejšia modalita, blokované sú všetky okná aplikácie.
-
-    Scene - čo sa do okna vykreslí
-    - Do okna nevykresľujeme priamo, ale ovládacie komponenty vkladáme to scény. 
-    - Pri vytváraní scény si určujeme aj konkrétne rozmery okna.
-    - stage.setScene(scene) - pripojenie scény k oknu
+    Z-order
+    Z-ordering znamená poradie vykresľovania grafických prvkov - čo je navrchu a čo naspodku
+    Štandardne používame 2 osy, X a Y. Pozícia 0,0 je v ľavom hornom rohu. 
+    Prekrytie je určene treťou osou, Z, ktorá ide kolmo od obrazovky.
+    JavaFX určuje Z-order poradie na základe pozície prvku v strome uzlov - scene graphu
+    Ako prvý sa vykresľuje koreňový uzol a potom sa vykresľujú jeho deti. 
+    Deti sa vykresľujú v poradí, v akom sú do kontajnera umiestnené. 
+    Teda posledný komponent bude úplne navrchu.
+    Zmenu poradia vieme vykonať premiestnením komponentov v rámci scene graphu, 
+    či už na iné miesto v strome alebo na inú pozíciu v rámci zoznamu detských komponentov.    
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
@@ -248,7 +325,9 @@ V repozitári na adrese [https://github.com/wagjo/opg-gui](https://github.com/wa
 
     Okruhy otázok na test:
 
-    - Triedy Application, Stage a Scene - význam a použitie
-    - Základné metódy triedy Stage
-    - Aké štýly okna poznáme, na čo sa používajú
-    - Čo je modalita a aké druhy poznáme, použitie
+    - Ako delíme JavaFX komponenty
+    - Základné ovládacie prvky
+    - Základné komponenty pre rozmiestňovanie
+    - Čo je scene graph, čo ho tvorí a ako sa vkladá do scény
+    - Čo je Z-order, ako JavaFX rozhoduje, ktorý komponent je navrchu
+    - Ako sa dá meniť prekrytie komponentov
