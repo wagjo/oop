@@ -413,9 +413,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c14-">x</a> (<a href="../assets/c13w.pdf">pdf</a>)
+<a href="../cvicenie-3/c14-javafx-komponenty">JavaFX komponenty</a> 
 <ul>
-<li>TODO</li>
+<li>5 úloh na GUI aplikáciu</li>
+<li>Deklaratívne verzie (FXML)</li>
+<li>Procedurálne verzie (Prvky vytvorené v kóde)</li>
 </ul>
 </td>
 <td width=30%>
