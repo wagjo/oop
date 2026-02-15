@@ -527,9 +527,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p18-">x</a>  (<a href="../assets/p18w.pdf">pdf</a>)
+<a href="../pokrocili-3/p18-udp">UDP</a>  (<a href="../assets/p18w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>UDP - User Datagram Protocol</li>
+<li>Posielanie a prijímanie UDP správ v Pythone</li>
+<li>Server/Client, threading</li>
 </ul>
 </td>
 </tr>
@@ -608,3 +610,4 @@ hide:
 
 </tbody>
 </table>
+  

@@ -409,7 +409,14 @@ hide:
 <li>Trieda enum</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c14-javafx-komponenty">JavaFX komponenty</a> 
+<ul>
+<li>5 úloh na GUI aplikáciu</li>
+<li>Deklaratívne verzie (FXML)</li>
+<li>Procedurálne verzie (Prvky vytvorené v kóde)</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p14-pygame-mys">Pygame 2</a> (<a href="../assets/p14w.pdf">pdf</a>)
 <ul>

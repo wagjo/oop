@@ -41,7 +41,7 @@ nav:
     - 11 - Polročný projekt: 'cvicenie-3/c11-projekt1.md'
     - 12 - JSON a CSV: 'cvicenie-3/c12-json.md'
     - 13 - JavaFX: 'cvicenie-3/c13-javafx.md'
-    #- 14 - JavaFX Komponenty: 'cvicenie-3/c14-javafx-komponenty.md'
+    - 14 - JavaFX Komponenty: 'cvicenie-3/c14-javafx-komponenty.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'
@@ -60,6 +60,7 @@ nav:
     - 15 - Testovanie: 'pokrocili-3/p15-testovanie.md'
     - 16 - Polročný projekt: 'pokrocili-3/p16-projekt.md'
     - 17 - Zvuk a hudba: 'pokrocili-3/p17-pygame-zvuk.md'
+    #- 19 - UDP základy: 'pokrocili-3/p18-udp.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
