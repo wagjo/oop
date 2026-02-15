@@ -274,7 +274,7 @@ Scene Builder je samostatná aplikácia, ktorú treba stiahnuť a nainštalovať
 
     1. Stiahnite si Scene Builder zo stránky [https://gluonhq.com/products/scene-builder/#download](https://gluonhq.com/products/scene-builder/#download)
 
-    2. Nainštalujte Scene Builder do svojho počítača. POZOR!!!: Zapamätajte si presnú cestu, kde sa Scene Builder nainsštaloval
+    2. Nainštalujte Scene Builder do svojho počítača. POZOR!!!: Zapamätajte si presnú cestu, kde sa Scene Builder nainštaloval
 
     3. Choďte do nastavení (Settings) IntelliJ IDEA a nastavte cestu do Scene Buildera v menu `Language & Frameworks - JavaFX - Path to Scene Builder`
 
