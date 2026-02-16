@@ -4,7 +4,7 @@ Na tomto cvičení si budeme vytvárať rôzne typy scén a GUI programov
 
 ## OPG GUI repozitár
 
-Na adrese [https://github.com/wagjo/opg-gui](https://github.com/wagjo/opg-gui) máte repozitár, do ktorého budete robiť dnešné úlohy.
+Na adrese [https://github.com/wagjo/opg-gui-ulohy](https://github.com/wagjo/opg-gui-ulohy) máte repozitár, do ktorého budete robiť dnešné úlohy.
 
 1. Vytvorte si svoju vlastnú kópiu tohto repozitára pomocou tlačítka `Fork` na GitHub stránke.
 1. Potom si repozitár stiahnite do svojho počítača
