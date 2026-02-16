@@ -502,7 +502,14 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p18-udp">UDP</a>  (<a href="../assets/p18w.pdf">pdf</a>)
+<ul>
+<li>UDP - User Datagram Protocol</li>
+<li>Posielanie a prijímanie UDP správ v Pythone</li>
+<li>Server/Client, threading</li>
+</ul>
+</td>
 </tr>
 
 <tr >
@@ -519,6 +526,19 @@ hide:
 <td width=30%>TODO</td>
 </tr>
 
+<tr >
+<td width=10%>20</td>
+<td width=30%>
+<a href="../teoria-3/t20-javafx-stage">JavaFX základy</a> (<a href="../assets/t20w.pdf">pdf</a>)
+<ul>
+<li>Application, Stage, Scene</li>
+<li>Hierarchia okien, štýly okna</li>
+<li>Modalita</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
 
 
 </tbody>

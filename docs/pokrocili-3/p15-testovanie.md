@@ -212,7 +212,7 @@ TOTAL                     41      7    83%
 
 !!! example "Úloha 15.1: Projekt s utilitkami"
 
-    Vytvorte si nový projekt a do adresára `src` umiesnite balík `spse` s nasledovnými modulmi:
+    Vytvorte si nový projekt a do adresára `src` umiestnite balík `spse` s nasledovnými modulmi:
 
     ```python title="src/spse/json.py"
     import json

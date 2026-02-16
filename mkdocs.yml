@@ -25,7 +25,7 @@ nav:
     - 17 - Usporiadanie: 'teoria-3/t17-usporiadanie.md'
     - 18 - Records: 'teoria-3/t18-records.md'
     - 19 - GUI knižnice: 'teoria-3/t19-gui.md'
-    #- 20 - JavaFX Stage: 'teoria-3/t20-javafx-stage.md'
+    - 20 - JavaFX Stage: 'teoria-3/t20-javafx-stage.md'
     #- 21 - JavaFX komponenty: 'teoria-3/t21-javafx-komponenty.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
@@ -60,7 +60,7 @@ nav:
     - 15 - Testovanie: 'pokrocili-3/p15-testovanie.md'
     - 16 - Polročný projekt: 'pokrocili-3/p16-projekt.md'
     - 17 - Zvuk a hudba: 'pokrocili-3/p17-pygame-zvuk.md'
-    #- 19 - UDP základy: 'pokrocili-3/p18-udp.md'
+    - 19 - UDP základy: 'pokrocili-3/p18-udp.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
