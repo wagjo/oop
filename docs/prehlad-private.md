@@ -553,9 +553,9 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p19-udp">UDP broadcast a multicast</a>  (<a href="../assets/p19w.pdf">pdf</a>)
+<a href="../pokrocili-3/p19-udp-multicast">UDP broadcast a multicast</a>  (<a href="../assets/p19w.pdf">pdf</a>)
 <ul>
-<li>Schémy posielania</li>
+<li>Metódy smerovaina správ</li>
 <li>Broadcast, multicast</li>
 <li>Anycast</li>
 </ul>

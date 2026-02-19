@@ -4,9 +4,9 @@ Pokračujeme v UDP a ukážeme si, ako vieme v UDP poslať správu naraz viacer�
 
 Na minulej hodine sme si vysvetlili základy posielania správ pomocou UDP protokolu. Všetky druhy (sender/listener, peer, client/server), ktoré sme si vyskúšali, pracovali tak, že správa bola súčasne posielana iba jednému zariadeniu. Takýto typ posielania správ sa nazýva **unicast**.
 
-## Schémy posielania
+## Typy smerovania správ
 
-Existujú 4 druhy schém posielania správ:
+Existujú 4 druhy schém smerovania správ:
 
 ![routing](../assets/routing.svg){width=350 align=right}
 
@@ -190,7 +190,7 @@ Anycast je úplne transparentný pre klienta - nastavuje sa iba na strane server
 
 ## Zhrnutie cvičenia
 
-- [x] Schémy posielania
+- [x] Metódy smerovania správ
     * [ ] Unicast - one-to-one - správa je posielaná jednému zariadeniu, ktoré je identifikované IP adresou a portom. Je to najčastejší typ posielania a je využívaný v client/server a peer-to-peer komunikácii.
     * [ ] Broadcast - one-to-all - správa je poslaná všetkým zariadeniam v sieti
     * [ ] Multicast - one-to-many - správa je poslaná viacerým zariadeniam a to tým, ktoré sa sami prihlásia na odber
@@ -221,7 +221,7 @@ Anycast je úplne transparentný pre klienta - nastavuje sa iba na strane server
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    Schémy posielania
+    Typy smerovania správ
     
     - Unicast - one-to-one - client/server a peer-to-peer komunikácia.
     - Broadcast - one-to-all - všetkým zariadeniam v sieti
@@ -233,7 +233,7 @@ Anycast je úplne transparentný pre klienta - nastavuje sa iba na strane server
     Správy nie sú routrami prenášané na iné podsiete. 
     Nie je možné poslať broadcast správu celému "internetu"
     Používa sa ak zariadenia ešte nepoznajú IP adresy iných zariadení v podsieti
-    Je potrebné to expliticne povoliť socket.SO_BROADCAST
+    Je potrebné expliticne povoliť socket.SO_BROADCAST
     Cieľová IP adresa je 255.255.255.255, alebo <broadcast>.
     Pri directed broadcast sa uvedie presná adresa podsiete, napr. 192.168.1.255. 
     Router môže directed broadcast správu preposlať ďalej, 
