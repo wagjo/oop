@@ -60,7 +60,8 @@ nav:
     - 15 - Testovanie: 'pokrocili-3/p15-testovanie.md'
     - 16 - Polročný projekt: 'pokrocili-3/p16-projekt.md'
     - 17 - Zvuk a hudba: 'pokrocili-3/p17-pygame-zvuk.md'
-    - 19 - UDP základy: 'pokrocili-3/p18-udp.md'
+    - 18 - UDP základy: 'pokrocili-3/p18-udp.md'
+    #- 19 - UDP broadcast a multicast: 'pokrocili-3/p19-udp-multicast.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
