@@ -1,0 +1,3022 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oop.wagjo.com/pokrocili-3/p13-pygame/">
+      
+      
+        <link rel="prev" href="../p12-dedicnost/">
+      
+      
+        <link rel="next" href="../p14-pygame-mys/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>13 - Pygame - Objektovo Orientované Programovanie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/tufte-sidebars.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pokrocili-13-pygame" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-header__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Objektovo Orientované Programovanie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              13 - Pygame
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Úvod
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../teoria-3/t01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Teória
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cvicenie-3/c01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Cvičenia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../p01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Pokročilí
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../prehlad/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Prehľad tém
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../zbierka-java/j05-04-dedicnost/" class="md-tabs__link">
+          
+  
+  
+  Zbierka úloh
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../autor/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kontakt
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-nav__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Objektovo Orientované Programovanie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Úvod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teória
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teória
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod a motivácia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t02-typy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Algoritmus, dátové typy a premenné
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t03-objekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Identita, objekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t04-trieda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Trieda, balíky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t05-vynimky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Výnimky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t06-operatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Operátory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t07-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t08-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Inicializácia objektov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t09-premenne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Premenné a atribúty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t10-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t11-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t12-polymorfizmus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Polymorfizmus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t13-abstrakcia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Abstrakcia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t14-enum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Enumeračné typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t15-oop-opakovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Princípy OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t16-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Budovanie softvéru
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t17-usporiadanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Usporiadanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t18-records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t19-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - GUI knižnice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t20-javafx-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - JavaFX Stage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cvičenia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cvičenia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, vývojový diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c02-hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Prvý Java program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c03-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Riadenie toku programu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c04-polia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Polia, varargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c05-wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Obalené typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c06-stringy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Reťazce znakov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c07-triedy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Triedy a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c08-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Hangman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c09-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Slovník
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c10-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c11-projekt1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c12-json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - JSON a CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c13-javafx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - JavaFX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c14-javafx-komponenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - JavaFX Komponenty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pokročilí
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pokročilí
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, premenné, vstup a výstup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p02-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Vetvenie, cykly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p03-rekurzia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Rekurzia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p04-moduly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Moduly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p05-pip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Správa knižníc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p06-agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Agilný vývoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p07-git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p08-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p09-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Trieda a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p10-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Metódy a JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p11-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p12-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Pygame
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Pygame
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pygame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pygame
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vytvorenie-hlavneho-okna" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vytvorenie hlavného okna
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#farby" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Farby
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trieda-rect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trieda Rect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trieda Rect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detekcia-kolizie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detekcia kolízie
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vykreslovanie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vykresľovanie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vykresľovanie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vykreslovanie-tvarov" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vykresľovanie tvarov
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vykreslovanie-textu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vykresľovanie textu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#udalosti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Udalosti
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Udalosti">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drzanie-stlacenej-klavesy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Držanie stlačenej klávesy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hlavna-herna-slucka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hlavná herná slučka
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ulohy-na-hodine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Úlohy na hodine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ulohy-na-precvicenie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Úlohy na precvičenie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zhrnutie-cvicenia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zhrnutie cvičenia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p14-pygame-mys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Pygame 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p15-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p16-projekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p17-pygame-zvuk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Zvuk a hudba
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p18-udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - UDP základy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prehlad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prehľad tém
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zbierka úloh
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Zbierka úloh
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-java/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j07-01-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kontakt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pokrocili-13-pygame">Pokročílí 13: Pygame<a class="headerlink" href="#pokrocili-13-pygame" title="Permanent link">¶</a></h1>
+<p>Dnes si vysvetlíme základy knižnice Pygame a vytvoríme si jednoduchú 2D hru</p>
+<h2 id="pygame">Pygame<a class="headerlink" href="#pygame" title="Permanent link">¶</a></h2>
+<p>Pygame je knižnica pre tvorbu 2D hier v Pythone. Stránka tohto projektu je <a href="https://www.pygame.org">https://www.pygame.org</a>. Obsahuje dokumentáciu a množstvo návodov.</p>
+<p>Knižnicu Pygame vieme nainštalovať klasicky pomocou <code>pip install pygame</code></p>
+<p>Funkcionality tejto knižnice sú prístupné v module <code>pygame</code>. Pred prvým použitím knižnice je potrebné spustiť inicializáciu pomocou <code>pygame.init()</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Inicializácia Pygame</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="vytvorenie-hlavneho-okna">Vytvorenie hlavného okna<a class="headerlink" href="#vytvorenie-hlavneho-okna" title="Permanent link">¶</a></h2>
+<p>V Pygame pracujeme s oknom, do ktorého budeme vykresľovať grafiku hry. Pri vytvorení okna je potrebné zadať jeho veľkosť. Premennú s objektom okna je potrebné si zapamätať, pretože funkcie na vykresľovanie vyžadujú okno ako prvý argument.</p>
+<ul>
+<li>okno vytvoríme pomocou <code>screen = pygame.display.set_mode((SIRKA, VYSKA))</code></li>
+<li>titulok okna zadefinujeme pomocou <code>pygame.display.set_caption("Titulok")</code></li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Vytvorenie okna</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">SIRKA</span> <span class="o">=</span> <span class="mi">800</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">VYSKA</span> <span class="o">=</span> <span class="mi">600</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">SIRKA</span><span class="p">,</span> <span class="n">VYSKA</span><span class="p">))</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">"Hra"</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="farby">Farby<a class="headerlink" href="#farby" title="Permanent link">¶</a></h2>
+<p>Farby sú reprezentované ako <code>tuple</code> s tromi alebo štyrmi hodnotami (RGB alebo RGBA). Hodnoty sú v rozsahu 0 až 255, pričom <code>(0, 0, 0)</code> predstavuje čiernu farbu a <code>(255, 255, 255)</code> predstavuje bielu farbu.</p>
+<p>Prvý prvok je červená zložka, druhý zložka zelená a tretí zložka modrá. (Štvrty prvok je alfa zložka, ktorá určuje priehľadnosť farby)</p>
+<h2 id="trieda-rect">Trieda Rect<a class="headerlink" href="#trieda-rect" title="Permanent link">¶</a></h2>
+<p>Väčšina vecí v 2D hrách funguje na princípe obdĺžnikov. Či už ide o vykresľovanie, hitbox alebo písanie textu, väčšinou je k tomu potrebné mať obdĺžnik, ktorý určuje miesto na obrazovke.</p>
+<p>V Pygame na reprezentáciu obdĺžnikov máme triedu <code>Rect</code>.</p>
+<p>Vytvorenie nového rect objektu robíme pomocou konštruktora <code>pygame.Rect(x, y, width, height)</code>. Táto trieda nám poskytuje rôzne atribúty, pomocou ktorých môžeme zistiť ale aj meniť jeho vlastnosti:</p>
+<table>
+<thead>
+<tr>
+<th>Atribút</th>
+<th>Typ</th>
+<th>Popis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>int</td>
+<td>X-ová súradnica ľavého okraja.</td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td>int</td>
+<td>Y-ová súradnica horného okraja.</td>
+</tr>
+<tr>
+<td><code>width (w)</code></td>
+<td>int</td>
+<td>Šírka obdĺžnika.</td>
+</tr>
+<tr>
+<td><code>height (h)</code></td>
+<td>int</td>
+<td>Výška obdĺžnika.</td>
+</tr>
+<tr>
+<td><code>topleft</code></td>
+<td>(x, y)</td>
+<td>Horný-ľavý roh.</td>
+</tr>
+<tr>
+<td><code>topright</code></td>
+<td>(x, y)</td>
+<td>Horný-pravý roh.</td>
+</tr>
+<tr>
+<td><code>bottomleft</code></td>
+<td>(x, y)</td>
+<td>Dolný-ľavý roh.</td>
+</tr>
+<tr>
+<td><code>bottomright</code></td>
+<td>(x, y)</td>
+<td>Dolný-pravý roh.</td>
+</tr>
+<tr>
+<td><code>center</code></td>
+<td>(x, y)</td>
+<td>Stred obdĺžnika.</td>
+</tr>
+<tr>
+<td><code>centerx</code></td>
+<td>int</td>
+<td>X-ová súradnica stredu.</td>
+</tr>
+<tr>
+<td><code>centery</code></td>
+<td>int</td>
+<td>Y-ová súradnica stredu.</td>
+</tr>
+<tr>
+<td><code>top</code></td>
+<td>int</td>
+<td>Y-ová súradnica hornej hrany.</td>
+</tr>
+<tr>
+<td><code>bottom</code></td>
+<td>int</td>
+<td>Y-ová súradnica spodnej hrany.</td>
+</tr>
+<tr>
+<td><code>left</code></td>
+<td>int</td>
+<td>X-ová súradnica ľavej hrany.</td>
+</tr>
+<tr>
+<td><code>right</code></td>
+<td>int</td>
+<td>X-ová súradnica pravej hrany.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="detekcia-kolizie">Detekcia kolízie<a class="headerlink" href="#detekcia-kolizie" title="Permanent link">¶</a></h3>
+<p>Trieda <code>Rect</code> nám poskytuje metódy na detekciu kolízie dvoch obdĺžnikov.</p>
+<ul>
+<li><code>rect.colliderect(other_rect)</code> vráti true, ak sa obdĺžniky prekrývajú</li>
+<li><code>rect.contains(other_rect)</code> vráti true, ak je obdĺžnik <code>other_rect</code> celý vo vnútri obdĺžnika</li>
+<li><code>rect.collidepoint(x, y)</code> vráti true, ak je bod <code>(x, y)</code> vo vnútri obdĺžnika</li>
+</ul>
+<h2 id="vykreslovanie">Vykresľovanie<a class="headerlink" href="#vykreslovanie" title="Permanent link">¶</a></h2>
+<h3 id="vykreslovanie-tvarov">Vykresľovanie tvarov<a class="headerlink" href="#vykreslovanie-tvarov" title="Permanent link">¶</a></h3>
+<p>Vykresľovanie rôznych tvarov sa robí pomocou modulu <code>pygame.draw</code></p>
+<ul>
+<li><code>pygame.draw.rect(screen, color, rect)</code> - vykreslí obdĺžnik</li>
+<li><code>pygame.draw.ellipse(screen, color, rect)</code> - vykreslí elipsu</li>
+<li><code>pygame.draw.line(screen, color, start_pos, end_pos, width = 1)</code> - vykreslí čiaru</li>
+</ul>
+<h3 id="vykreslovanie-textu">Vykresľovanie textu<a class="headerlink" href="#vykreslovanie-textu" title="Permanent link">¶</a></h3>
+<p>Vykresľovanie textu sa robí pomocou modulu <code>pygame.font</code>. Najpr je potrebné mať vytvorený font.</p>
+<ul>
+<li><code>font = pygame.font.SysFont(None, size)</code> vráti defaultný systémový font</li>
+<li><code>font = pygame.font.SysFont(nazov, size)</code> vráti systémový font s daným názvom, napr. "Times New Roman" alebo "Arial"</li>
+</ul>
+<p>Ak máme objekt s fontom, vieme vykresliť text pomocou <code>font.render</code> a potom je potrebné vykreslený text umiestniť na obrazovku pomocou <code>screen.blit</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Vykreslenie textu</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">text</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">"Hello World!"</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">))</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="udalosti">Udalosti<a class="headerlink" href="#udalosti" title="Permanent link">¶</a></h2>
+<p>Počas hry môžu nastať rôzne udalosti, napríklad môže byť stlačená klávesa alebo tlačítko myšky. Takéto jednorázové udalosti je možné zachytiť pomocou modulu <code>pygame.event</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Spracovanie udalostí</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_ESCAPE</span><span class="p">:</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            <span class="c1"># stlačenie ESC</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="drzanie-stlacenej-klavesy">Držanie stlačenej klávesy<a class="headerlink" href="#drzanie-stlacenej-klavesy" title="Permanent link">¶</a></h3>
+<p>Okrem jednorázových udalostí je často potrebné vedieť, či je aktuálne nejaká klávesa stlačená alebo nie. To sa dá zistiť pomocou modulu <code>pygame.key</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Spracovanie stavu klávesnice</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">klavesy</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">if</span> <span class="n">klavesy</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">]:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">hrac</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="n">rychlost</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">if</span> <span class="n">klavesy</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">]:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">hrac</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">rychlost</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="hlavna-herna-slucka">Hlavná herná slučka<a class="headerlink" href="#hlavna-herna-slucka" title="Permanent link">¶</a></h2>
+<p>Hra zvyčajne beží v nekonečnom cykle. Jedna iterácia je jeden tick alebo frame - snímka. Aby sa herná slučka neopakovala veľmi rýchlo, je potrebné nastaviť počet snímkov za sekundu (FPS - frames per second) a použiť triedu <code>Clock</code>, ktorá nám spomalí hlavnú slučku na požadované FPS.</p>
+<p>Úloha hlavnej slučky je zachytiť a spracovať udalosti, aktualizovať stav sveta hry a potom vykresliť hru na obrazovku.</p>
+<p>Všetko ostatné je potrebné si pripraviť vopred. Je zbytočné vytvárať fonty a načítavať obrázky v každej iterácii slučky, v každom frame. Spomaľuje to vykresľovanie a môže to zaplniť pamäť alebo vnútorné úložisko zdrojov. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Hlavná herná slučka</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="c1"># 1. Spracovanie udalosti</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>            <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="o">...</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="c1"># 2. Aktualizácia stavu hry, napr. pohyb objektov</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">update</span><span class="p">()</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="c1"># 3. Vyčistiť obraz</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="c1"># 4. Vykresliť tvary, text a obrázky</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="n">draw</span><span class="p">()</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="c1"># 5. Zobraziť na obrazovku</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    <span class="c1"># 6. Spomaliť na dané FPS</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="ulohy-na-hodine">Úlohy na hodine<a class="headerlink" href="#ulohy-na-hodine" title="Permanent link">¶</a></h2>
+<p>Dnes si vytvoríme hru Pong. Základné vlastnosti:</p>
+<ul>
+<li>hra pre dvoch hráčov</li>
+<li>každý hráč ovláda dosku na kraji obrazovky, ľavom a pravom</li>
+<li>hráč vie doskou pohybovať hore a dole</li>
+<li>po obrazovke lieta lopta a odráža sa od hornej a dolnej steny a od dosiek</li>
+<li>cieľom je dostať loptu za súperovú dosku, dať gól</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Úloha 13.1: Hra Pong</p>
+<ol>
+<li>
+<p>V novom alebo v existujúcom projekte si nainštalujeme pygame pomocou <code>pip install pygame</code></p>
+</li>
+<li>
+<p>Vytvoríme si modul <code>pong.py</code></p>
+</li>
+<li>
+<p>V module si importneme modul <code>pygame</code> a zavoláme metódu <code>pygame.init()</code></p>
+</li>
+<li>
+<p>V moduli si zadefinujeme nasledovné konštanty:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">FPS</span> <span class="o">=</span> <span class="mi">60</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">WHITE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">BLACK</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></code></pre></div>
+</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 13.2: Trieda Paddle</p>
+<p>Vytvoríme si triedu Paddle, ktorá bude reprezentovať dosku. Táto trieda bude mať metódy na vykreslenie a na aktualizáciu stavu - pohyb - podľa toho, ktorá klávesa je stlačená</p>
+<ol>
+<li>
+<p>Vytvorte triedu <code>Paddle</code> a v nej konštruktor s parametrami <code>x</code>, <code>y</code>, <code>sirka</code>, <code>vyska</code>, <code>rychlost</code>. Niektorým parametrom dajte defaultné hodnoty: <code>sirka=15</code>, <code>vyska=100</code>, <code>rychlost=8</code>. Trieda nech má 2 atribúty: <code>rychlost</code> a obdĺžnik <code>rect</code>, ktorý vytvoríte zo vstupných argumentov konštruktora.</p>
+</li>
+<li>
+<p>Vytvorte metódu <code>draw(self, screen)</code>, ktorý vykreslí biely (WHITE) obdĺžnik <code>rect</code> na obrazovku pomocou <code>pygame.draw</code>.</p>
+</li>
+<li>
+<p>Vložte do triedy nasledovnú metódu na aktualizáciu stavu:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">up_key</span><span class="p">,</span> <span class="n">down_key</span><span class="p">):</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">up_key</span><span class="p">]</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">top</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rychlost</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">down_key</span><span class="p">]</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">bottom</span> <span class="o">&lt;</span> <span class="n">HEIGHT</span><span class="p">:</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rychlost</span>
+</span></code></pre></div>
+</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 13.3: Trieda Ball</p>
+<p>Vytvoríme si triedu Ball, ktorá bude reprezentovať loptu. Táto trieda bude mať metódy na vykreslenie a na aktualizáciu stavu - pohyb, a taktiež metódu na resetovanie lopty po góle</p>
+<ol>
+<li>
+<p>Vytvorte triedu <code>Ball</code> a v nej konštruktor s parametrami <code>velkost</code> a <code>rychlost</code>. Parametrom dajte defaultné hodnoty: <code>velkost=25</code>, <code>rychlost=6</code>. Trieda nech má 2 atribúty: <code>rychlost</code> a štvorec <code>rect</code>, ktorý bude mať veľkosť podľa vstupného argumentu. Na konci konštruktora zavolajte metódu <code>reset</code>, ktorú si vložíme v ďalšom bode</p>
+</li>
+<li>
+<p>Importujte si modul <code>random</code> a vložte do triedy nasledovnú metódu na resetovanie stavu:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">speed_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rychlost</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">speed_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rychlost</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Vytvorte metódu <code>draw(self, screen)</code>, ktorý vykreslí biely (WHITE) kruh na mieste štvorca <code>rect</code> na obrazovku pomocou <code>pygame.draw.ellipse</code>.</p>
+</li>
+<li>
+<p>Vytvorte metódu <code>move(self)</code>, ktorá pripočíta k atribútom <code>x</code> a <code>y</code> štvorce <code>rect</code> hodnoty <code>speed_x</code> a `speed_y</p>
+</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 13.4: Trieda PongGame</p>
+<ol>
+<li>
+<p>Vytvorte triedu <code>PongGame</code> s nasledovným kódom:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PongGame</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">))</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">"Pong - OPGP"</span><span class="p">)</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        <span class="c1"># Game objects</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="n">paddle_y</span> <span class="o">=</span> <span class="n">HEIGHT</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">50</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">left_paddle</span> <span class="o">=</span> <span class="n">Paddle</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">paddle_y</span><span class="p">)</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">right_paddle</span> <span class="o">=</span> <span class="n">Paddle</span><span class="p">(</span><span class="n">WIDTH</span> <span class="o">-</span> <span class="mi">45</span><span class="p">,</span> <span class="n">paddle_y</span><span class="p">)</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ball</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">()</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">handle_collision</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>        <span class="c1"># Top/Bottom walls</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">bottom</span> <span class="o">&gt;=</span> <span class="n">HEIGHT</span><span class="p">:</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">speed_y</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>        <span class="c1"># Paddle collisions</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">left_paddle</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">speed_x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">speed_x</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">right_paddle</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">speed_x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">speed_x</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">check_scoring</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">left</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">right</span> <span class="o">&gt;=</span> <span class="n">WIDTH</span><span class="p">:</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</span><span id="__span-9-30"><a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
+</span><span id="__span-9-31"><a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-9-32"><a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-9-33"><a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>            <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+</span><span id="__span-9-34"><a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+</span><span id="__span-9-35"><a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>                    <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>                    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>
+</span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>            <span class="c1"># Move</span>
+</span><span id="__span-9-39"><a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>            <span class="c1">## TODO</span>
+</span><span id="__span-9-40"><a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>
+</span><span id="__span-9-41"><a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>            <span class="c1"># Update</span>
+</span><span id="__span-9-42"><a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">handle_collision</span><span class="p">()</span>
+</span><span id="__span-9-43"><a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">check_scoring</span><span class="p">()</span>
+</span><span id="__span-9-44"><a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>
+</span><span id="__span-9-45"><a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>            <span class="c1"># Draw</span>
+</span><span id="__span-9-46"><a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>            <span class="c1">## TODO</span>
+</span><span id="__span-9-47"><a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>
+</span><span id="__span-9-48"><a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>            <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</span><span id="__span-9-49"><a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="n">FPS</span><span class="p">)</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>V časti <code># Move</code> je potrebné doplniť pohyb objektov nasledovne</p>
+<ul>
+<li>zavolajte metódu pohybu ľavej dosky s klávesami <code>pygame.K_w</code> a <code>pygame.K_s</code> (pozrite si, ako je metóda na pohyb naimplementovaná)</li>
+<li>zavolajte metódu pohybu pravej dosky s klávesami <code>pygame.K_UP</code>, <code>pygame.K_DOWN</code></li>
+<li>zavolajte metódu pohybu lopty</li>
+</ul>
+</li>
+<li>
+<p>V časti <code># Draw</code> je potrebné doplniť vykresľovanie objektov nasledovne</p>
+<ul>
+<li>vyčistite obrazovku pomocou <code>self.screen.fill</code></li>
+<li>vykreslite ľavú dosku</li>
+<li>vykreslite pravú dosku</li>
+<li>vykreslite loptu</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 13.5: Spustenie hry</p>
+<p>Hru vieme spustiť tak, že vytvoríme objekt triedy <code>PongGame</code> a zavoláme jeho metódu <code>run</code>.</p>
+<p>Hru si môžete zahrať. Ak je príliš náročná alebo naopak ľahká, zmeňte rýchlosti a dĺžky dosiek. </p>
+<p>Hra je funkčná, ale chýba jej veľa vecí. V ďalších úlohách ju vylepšíme.</p>
+</div>
+<h2 id="ulohy-na-precvicenie">Úlohy na precvičenie<a class="headerlink" href="#ulohy-na-precvicenie" title="Permanent link">¶</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Úloha 13.6: Pridanie stredovej čiary</p>
+<ol>
+<li>
+<p>V triede <code>PongGame</code> vytvorte metódu <code>draw_center_line</code> s nasledovným kódom:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">40</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">,</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">10</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Zavolajte túto metódu v hlavnej slučke pri vykresľovaní</p>
+</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 13.7: Počítanie skóre</p>
+<p>Vytvoríme triedu, ktorá bude uchovávať skóre a vykresľovať ho na obrazovku.</p>
+<ol>
+<li>
+<p>Vytvorte triedu <code>Score</code> s atribútmi <code>left_score</code> a <code>right_score</code>. Obe inicializujte na 0. V konštruktore tiež vytvorte atribút <code>font</code>, ktorý inicializujte na <code>pygame.font.SysFont(None, 74)</code></p>
+</li>
+<li>
+<p>Vytvorte metódy goal_left() a goal_right(), ktoré budú zvyšovať skóre odpovedajúcej strany.</p>
+</li>
+<li>
+<p>Vložte do triedy nasledovnú metódu na vykresľovanie:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screen</span><span class="p">):</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">left_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">left_score</span><span class="p">),</span> <span class="kc">True</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="n">right_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">right_score</span><span class="p">),</span> <span class="kc">True</span><span class="p">,</span> <span class="n">WHITE</span><span class="p">)</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">left_text</span><span class="p">,</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">right_text</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">WIDTH</span> <span class="o">//</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>V konštruktore triedy <code>PongGame</code> si vytvorte atribút <code>score</code> s objektom triedy <code>Score</code>. V hlavnej slučke zavolajte vykresľovanie skóre.</p>
+</li>
+<li>
+<p>V metóde <code>check_scoring</code> zavolajte metódu <code>goal_left()</code> alebo <code>goal_right()</code> podľa toho, kto vyhral</p>
+</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 13.8: Zmena uhla lopty</p>
+<p>Lopta letí stále pod rovnakým uhlom. Tento uhol teraz zmeníme tak, že uhol bude závisieť od toho, v akom bode dosky sa lopta odrazila. Ak sa odrazila bližšie pri strede, uhol bude menší. Ak pri okraji, uhol bude väčší.</p>
+<ol>
+<li>
+<p>Pridajte do triedy <code>PongGame</code> nasledovnú metódu:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">apply_spin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paddle</span><span class="p">):</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="c1"># Add spin based on where the ball hits the paddle</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="n">relative_intersect_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">paddle</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">centery</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">centery</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="n">normalized</span> <span class="o">=</span> <span class="n">relative_intersect_y</span> <span class="o">/</span> <span class="p">(</span><span class="n">paddle</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">speed_y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">8</span> <span class="o">*</span> <span class="n">normalized</span>  <span class="c1"># Max spin effect</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Zavolajte túto metódu v metóde <code>handle_collision</code> v situáciách, keď lopta narazila a otáča sa</p>
+</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 13.9: Game Over</p>
+<p>Hra nemá koniec. Upravte kód tak, aby sa hra skončila ak niektorý z hráčov dosiahne určité skóre. Na konci vypíšte "Game Over" a kto hru vyhral.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 13.10: Hra pre troch hráčov</p>
+<p>Upravte hru tak, aby bola pre troch hráčov. Tretí hráč bude mať dosku v dolnej časti obrazovky.</p>
+</div>
+<h2 id="zhrnutie-cvicenia">Zhrnutie cvičenia<a class="headerlink" href="#zhrnutie-cvicenia" title="Permanent link">¶</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Pygame, knižnica na tvorbu 2D hier, https://www.pygame.org<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Inštalácia pomocou <code>pip install pygame</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Modul <code>pygame</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Pred prvým použitím knižnice je potrebné spustiť inicializáciu pomocou <code>pygame.init()</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Hlavné okno<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Okno vytvoríme pomocou <code>screen = pygame.display.set_mode((SIRKA, VYSKA))</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Titulok okna zadefinujeme pomocou <code>pygame.display.set_caption("Titulok")</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Farby<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Farby sú reprezentované ako tuple s tromi alebo štyrmi hodnotami (RGB alebo RGBA)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Hodnoty sú v rozsahu 0 až 255, pričom (0, 0, 0) predstavuje čiernu farbu a (255, 255, 255) predstavuje bielu farbu.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Prvý prvok je červená zložka, druhý zložka zelená a tretí zložka modrá</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Trieda Rect - obdĺžnik<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Vytvorenie nového rect objektu robíme pomocou konštruktora <code>pygame.Rect(x, y, width, height)</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Trieda poskytuje rôzne atribúty ako napr. <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code>, ...</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Detekcia kolízie pomocou <code>rect.collidepoint(x, y)</code> a <code>rect.colliderect(other_rect)</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vykresľovanie tvarov pomocou <code>pygame.draw</code><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>pygame.draw.rect(screen, color, rect)</code> - vykreslí obdĺžnik</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>pygame.draw.ellipse(screen, color, rect)</code> - vykreslí elipsu</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>pygame.draw.line(screen, color, start_pos, end_pos, width = 1)</code> - vykreslí čiaru</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vykresľovanie textu pomocou <code>pygame.font</code><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Najpr je potrebné mať vytvorený font, pomocou <code>font = pygame.font.SysFont(nazov, size)</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Vykresliť text vieme pomocou <code>font.render</code> a potom je potrebné vykreslený text umiestniť na obrazovku pomocou <code>screen.blit</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Udalosti - Jednorázové udalosti, napr. kliknutie myšou, stlačenie klávesy, ...<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Udalosti je možné zachytiť pomocou modulu <code>pygame.event</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Udalosti získame pomocou <code>pygame.event.get()</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Držanie stlačenej klávesy - pretrvávajúce stavy<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Stav stlačenia kláves zistíme pomocou <code>klavesy = pygame.key.get_pressed()</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Hlavná herná slučka - hra beží v nekonečnom cykle<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Jedna iterácia je jeden tick alebo frame - snímka</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Trieda <code>pygame.time.Clock</code> umožňuje spomaliť cyklus na požadované FPS</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Úloha hlavnej slučky je zachytiť a spracovať udalosti, aktualizovať stav sveta hry a potom vykresliť hru na obrazovku.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Všetko ostatné je potrebné si pripraviť vopred. Je zbytočné vytvárať fonty a načítavať obrázky v každej iterácii slučky, v každom frame</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Poznámky do zošita</p>
+<p>V zošite je potrebné mať napísané aspoň tieto poznámky:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>PYGAME
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Knižnica na tvorbu 2D hier, https://www.pygame.org
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Inicializácia pomocou pygame.init()
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Okno pomocou pygame.display.set_mode((SIRKA, VYSKA))
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>Farby sú reprezentované ako tuple (R, G, B) v intervaloch 0-255
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>Trieda Rect - obdĺžnik, pygame.Rect(x, y, width, height)
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>Detekcia kolízie pomocou rect.colliderect(other_rect)
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>Vykresľovanie tvarov: pygame.draw.rect, pygame.draw.ellipse, pygame.draw.line
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>Vykresľovanie textu v 3 krokoch: pygame.font.SysFont, font.render, screen.blit
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>Jednorázové udalosti (klik myšou, stlačenie klávesy): pygame.event.get
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>Stav klávesnice - pygame.key.get_pressed()
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>Hlavná herná slučka - hra beží v nekonečnom cykle
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>Jedna iterácia je jeden tick alebo frame - snímka
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>pygame.time.Clock umožňuje spomaliť cyklus na požadované FPS
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>Úloha hlavnej slučky je zachytiť a spracovať udalosti, 
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>aktualizovať stav sveta hry a potom vykresliť hru na obrazovku.
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>Všetko ostatné je potrebné si pripraviť vopred. 
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>Je zbytočné vytvárať fonty a načítavať obrázky v každej iterácii slučky, v každom frame
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Skúšanie a kontrola vedomostí</p>
+<p>Okruhy otázok na test:</p>
+<ul>
+<li>Čo je pygame a na čo slúži</li>
+<li>Na čo je trieda Rect</li>
+<li>Čo je hlavná slučka a aké má použitie</li>
+<li>Čo sú udalosti a ako sa dajú spracovať</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025, 2026, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.top", "toc.follow", "navigation.tabs", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

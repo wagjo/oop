@@ -1,0 +1,2654 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oop.wagjo.com/pokrocili-3/p06-agile/">
+      
+      
+        <link rel="prev" href="../p05-pip/">
+      
+      
+        <link rel="next" href="../p07-git/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>6 - Agilný vývoj - Objektovo Orientované Programovanie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/tufte-sidebars.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pokrocili-6-agilny-vyvoj-verziovacie-systemy-sprava-vyvoja" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-header__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Objektovo Orientované Programovanie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6 - Agilný vývoj
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Úvod
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../teoria-3/t01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Teória
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cvicenie-3/c01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Cvičenia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../p01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Pokročilí
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../prehlad/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Prehľad tém
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../zbierka-java/j05-04-dedicnost/" class="md-tabs__link">
+          
+  
+  
+  Zbierka úloh
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../autor/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kontakt
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-nav__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Objektovo Orientované Programovanie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Úvod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teória
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teória
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod a motivácia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t02-typy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Algoritmus, dátové typy a premenné
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t03-objekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Identita, objekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t04-trieda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Trieda, balíky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t05-vynimky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Výnimky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t06-operatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Operátory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t07-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t08-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Inicializácia objektov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t09-premenne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Premenné a atribúty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t10-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t11-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t12-polymorfizmus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Polymorfizmus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t13-abstrakcia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Abstrakcia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t14-enum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Enumeračné typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t15-oop-opakovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Princípy OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t16-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Budovanie softvéru
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t17-usporiadanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Usporiadanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t18-records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t19-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - GUI knižnice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t20-javafx-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - JavaFX Stage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cvičenia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cvičenia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, vývojový diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c02-hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Prvý Java program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c03-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Riadenie toku programu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c04-polia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Polia, varargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c05-wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Obalené typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c06-stringy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Reťazce znakov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c07-triedy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Triedy a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c08-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Hangman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c09-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Slovník
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c10-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c11-projekt1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c12-json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - JSON a CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c13-javafx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - JavaFX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c14-javafx-komponenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - JavaFX Komponenty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pokročilí
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pokročilí
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, premenné, vstup a výstup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p02-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Vetvenie, cykly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p03-rekurzia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Rekurzia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p04-moduly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Moduly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p05-pip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Správa knižníc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Agilný vývoj
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Agilný vývoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agilny-vyvoj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agilný vývoj
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Agilný vývoj">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kanban
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ostatne-techniky" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ostatné techniky
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verziovacie-systemy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verziovacie systémy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verziovacie systémy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprava-vyvoja" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Správa vývoja
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zhrnutie-cvicenia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zhrnutie cvičenia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p07-git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p08-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p09-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Trieda a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p10-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Metódy a JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p11-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p12-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p13-pygame/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Pygame
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p14-pygame-mys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Pygame 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p15-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p16-projekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p17-pygame-zvuk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Zvuk a hudba
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p18-udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - UDP základy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prehlad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prehľad tém
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zbierka úloh
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Zbierka úloh
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-java/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j07-01-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kontakt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pokrocili-6-agilny-vyvoj-verziovacie-systemy-sprava-vyvoja">Pokročílí 6: Agilný vývoj, verziovacie systémy, správa vývoja<a class="headerlink" href="#pokrocili-6-agilny-vyvoj-verziovacie-systemy-sprava-vyvoja" title="Permanent link">¶</a></h1>
+<p>Ak softvér vyvíja tím ľudí, dohodnú sa na spôsobe spolupráce aby si navzájom rozumeli a nevznikal chaos. Metódy a princípy pri tvorbe softvéru sa s rokmi menili. V súčasnosti je zaužívaný tzv. agilný prístup k vývoju softvéru. Dnes si ho bližšie priblížime.</p>
+<h2 id="agilny-vyvoj">Agilný vývoj<a class="headerlink" href="#agilny-vyvoj" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Agilný vývoj softvéru vznikol ako reakcia programátorov na skostnatelé metodiky v korporáciách. S touto filozofiou prišli samotní programátori a zo začiatku boli agilné princípy oslobodzujúce, prinášali viac kreativity a flexibility. Ako na agilné princípy postupne prechádzali veľké firmy a korporácie, stali sa hlavným prístupom vývoja softvéru. Urobil sa z toho však veľký biznis a agilné metodiky sa začali príliš formalizovať, stali sa povrchnými rituálmi a prestali plniť svoju pôvodnú funkciu. Takýmto iba naoko agilným metodikám sa hovorí Agilné divadlo, anglicky <em>Agile theater</em>. </p>
+<div class="admonition tip">
+<p class="admonition-title">Učím sa s pomocou umelej inteligencie</p>
+<p><a href="https://grok.com/share/c2hhcmQtMg%3D%3D_b57203e2-b196-4e8c-b868-abef7380a961">Kritický pohľad na históriu agilných metodík vývoja softvéru a aký je súčasný stav</a></p>
+</div>
+</main>
+<aside>
+<p>Pred agilným prístupom bol v oblasti softvérového vývoja zaužívaný tzv. <em>waterfall model</em>, ktorý mal lineárny proces zberu požiadaviek, návrhu, implementácii, testovania a nasadenia. Kým sa však dostal do bodu nasadenia, jeho oneskorenie bolo často také veľké, že bol softvér nepoužiteľný. Požiadavky sa totiž v čase menia a konkurencieschopná firma musí vedieť reagovať na zmeny.  </p>
+</aside>
+</div>
+<div class="md-has-sidebar">
+<main>
+<p>Aj napriek súčasenému častému zneužívaniu agilných metodík v korporáciách a veľkých firmách majú tieto prístupy stále veľký prínos, samozrejme iba ak sa používajú správne. Základné princípy agilného vývoja sú vyjadrené v <a href="https://agilemanifesto.org/iso/sk/manifesto.html">Manifeste agilného vývoja softvéru</a>:</p>
+<ul>
+<li><strong>Ľudia a komunikácia</strong> sú viac než procesy a nástroje</li>
+<li><strong>Funkčný softvér</strong> je viac než vyčerpávajúca dokumentácia</li>
+<li><strong>Spolupráca so zákazníkom</strong> je viac než dojednávanie zmluvy</li>
+<li><strong>Radšej reagovať na zmenu</strong> než sa držať plánu.</li>
+</ul>
+<p><em>Aj keď časť napravo je dôležitá, viac si ceníme ľavú časť.</em></p>
+</main>
+<aside>
+<p>Príkladom úspešného používania agilných prístupov vo veľkých korporáciách sú Tesla a SpaceX, firmy Elona Muska a firma Valve, ktorú vlastní Gabe Newell. Prečítajte si ich <a href="https://www.valvesoftware.com/en/publications">príručku pre nových zamestnancov</a> </p>
+<p><img alt="valve" src="../../assets/valve.png" width="200">
+  </p>
+</aside>
+</div>
+<div class="md-has-sidebar">
+<main>
+<p>V centre agilného vývoja je teda flexibilita kvôli lepšiemu reagovaniu na zmeny na trhu a krátke iterácie kvôli lepšiemu pochopeniu potrebám zákazníkov. Tento prístup má však aj niekoľko podstatných nedostatkov, ktoré sa musíme snažiť pri svojej práci čo najviac eliminovať.</p>
+<ul>
+<li><strong>Nedostatok dokumentácie a plánovania</strong>, dôsledkom častých zmien a rýchlej iterácii. Vedie k nedostatku štruktúry projektu a veľmi ťažkému prijímaniu nových ľudí (onboarding)</li>
+<li>Scope creep - <strong>neustále pridávanie nových funkcionalít</strong>. Zákazníci často sami nevedia, čo potrebujú. Bez jasnej vízie sa projekt rýchlo nafúkne</li>
+<li><strong>Prílišná byrokracia</strong>, ceremónia a rituály - manažment zneužíva agilné postupy na tvorbu výkonnostných metrík a deadline-ov </li>
+</ul>
+<p>Väčšina z nedostatkov agilného prístupu sa dá eliminovať, ak má projekt <strong>jasnú víziu</strong>, <strong>lídra</strong> a ľudia v tíme majú <strong>možnosť vlastniť</strong> (anglicky own) nejakú časť projektu, teda mať <strong>autonómiu</strong>, <strong>možnosť rozhodovať</strong> ale aj <strong>byť zodpovedný</strong> sa nejakú konkrétnu časť.</p>
+</main>
+<aside>
+<p>Pri vyzretejších a stabilnejších projektoch sa v súčasnosti používajú hybridné prístupy, kombinujúce agilnú metodiku s waterfall modelom. Pre nové startupové a výskumné projekty sú však správne agilné prístupy stále tou najlepšou alternatívou.</p>
+</aside>
+</div>
+<p>Programovací jazyk Python je svojou dynamickou povahou a veľkou open source komunitou veľmi vhodný na použitie agilných prístupov. Rýchlo sa v ňom tvoria a overujú nové nápady, má výbornú podporu pre automatizované testovanie a nástroje pre priebežné nasadzovanie softvéru.</p>
+<p>V oblasti softvérového vývoja sa osvedčilo niekoľko nástrojov a techník, ktoré pomáhajú a uľahčujú používanie agilných prístupov.</p>
+<h3 id="kanban">Kanban<a class="headerlink" href="#kanban" title="Permanent link">¶</a></h3>
+<p>Prvou technikou je <strong>Kanban</strong>, v ktorom si úlohy rozdelíme do rôznych stĺpcov, ktoré reprezentujú stav, v akom sa úloha nachádza. Tradičné kategórie sú <em>"Backlog"</em>, <em>"To Do"</em>, <em>"In development"</em>, <em>"QA"</em> a <em>"Done"</em>. Ako sa na úlohe postupne pracuje, tak sa úloha presúva medzi stĺpcami. Populárnymi nástrojmi pre Kanban sú nástroje GitHub Projects, Trello alebo Jira.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/github-zenhub.png" data-desc-position="bottom"><img alt="Kanban" class="on-glb" src="../../assets/github-zenhub.png"></a></p>
+<figcaption>
+<p>Ukážka nástroja používajúceho Kanban</p>
+</figcaption>
+</figure>
+<h3 id="scrum">Scrum<a class="headerlink" href="#scrum" title="Permanent link">¶</a></h3>
+<div class="md-has-sidebar">
+<main>
+<p>Asi najpopulárnejšou sadou techník pri agilnom programovaní je <strong>Scrum</strong>, ktorý zavádza určité konkrétne roly a postupy v rámci tímu:</p>
+<ul>
+<li><strong>Sprint</strong> - mesačné alebo dvojtýždňové iterácie návrhu, vývoja a vyhodnotenia</li>
+<li><strong>Daily Standup</strong> - pravidelná krátka tímová porada</li>
+<li><strong>Product Owner</strong> - človek zodpovedný za dodržanie vízie projektu</li>
+<li><strong>Scrum Master</strong> - asistent, ktorý pomáha, aby v tíme fungovali agilné prístupy </li>
+</ul>
+<p>Nesprávne použitie techník Scrum však vedie k mikromanažmentu, plytvaniu času, frustrácii a vyhoreniu programátorov. Mnohí vývojári tvrdia, že Scrum premieňa skvelých developerov na priemerných a ignoruje individuálne silné stránky.</p>
+</main>
+<aside>
+<p><img alt="scrum meme" src="../../assets/scrum-meme.jpg"></p>
+</aside>
+</div>
+<p>Najpopulárnejším nástrojom pre podporu techník SCRUM je Jira, ktorá je však často príliš komplikovaná a práca v Jire zaberá veľa času a energie. Pre menšie tímy sú často vhodnejšie agilné nástroje platformy GitHub.</p>
+<div class="admonition tip">
+<p class="admonition-title">Učím sa s pomocou umelej inteligencie</p>
+<p>Prečo sú <a href="https://grok.com/share/c2hhcmQtMg%3D%3D_4895e7b3-2a6b-428e-a467-7e32ed8df77e">Scrum a techniky Extrémneho programovania často kontroverzné</a> pri ich použití v rámci agilného softvérového vývoja? Ako vieme eliminovať ich nevýhody? Vedela by metodológia Lean software development pomôcť?</p>
+</div>
+<h3 id="ostatne-techniky">Ostatné techniky<a class="headerlink" href="#ostatne-techniky" title="Permanent link">¶</a></h3>
+<div class="md-has-sidebar">
+<main>
+<p>V rámci nasadenia agilných prístupov v softvérovom vývoji často používajú techniky tzv. extrémneho programovania. Ide hlavne o párové programovanie, a Test Driven Development, ktorý dáva dôraz na podrobné testovanie. Prínos týchto techník je však diskutabilný, nakoľko sú pomerne náročné na čas a energiu a tak ich použitie treba dobre zvážiť.</p>
+<p>Oproti súčastným metodikám agilného vývoja pomocou techník Scrum sa hlavne v malých tímoch používa tzv. <em>Lean software development</em>. Lean software development je filozofia vývoja softvéru založená na princípoch štíhlej výroby, ktorá sa zameriava na maximalizáciu hodnoty pre zákazníka a minimalizáciu plytvania. Opiera sa o princípy ako rýchle doručovanie, spätnú väzbu, oddialenie rozhodnutí, rešpekt k ľuďom a optimalizáciu celého procesu.
+ </p>
+</main>
+<aside>
+<p>So zvačšujúcim sa využívaním umelej inteligencie pri návrhu a tvorbe softvéru sa menia aj techniky agilného programovania. Ak nám umelá inteligencia umožní mať menšie tímy ľudí, možno nebudeme potrebovať techniky ako Scrum ale agilné praktiky sa posunú viacej smerom k technikám <em>Lean software development</em></p>
+</aside>
+</div>
+<h2 id="verziovacie-systemy">Verziovacie systémy<a class="headerlink" href="#verziovacie-systemy" title="Permanent link">¶</a></h2>
+<p>Či už programujete sám alebo v rámci nejakého tímu, nástroje na správu verzií sú jedny z najdôležitejších nástrojov pri softvérovom vývoji. </p>
+<p>Verziovacie systémy (VCS – Version Control Systems) sú nástroje, ktoré umožňujú <strong>sledovať zmeny v zdrojových súboroch</strong> počas softvérového vývoja. Pomocou nich sa vieme <strong>vrátiť k starším verziám</strong>, sledovať kto čo zmenil, riešiť konflikty, a efektívne spolupracovať v tíme.</p>
+<p>V súčasnosti sú populárne distribuovaný verziovacie systémy, kedy každý jeden programátor má na svojom počítači svoju <strong>vlastnú kópiu projektu z celou jeho históriou</strong>. Pomocou distribuovaných verziovacích systémov si programátori vedia tieto svoje jednotlivé kópie ľahko <strong>synchronizovať a zdieľať</strong>.</p>
+<p>Vlastnosti distribuovaných VCS:</p>
+<ul>
+<li><strong>História zmien</strong>, kedykoľvek sa viem vrátiť späť</li>
+<li>Nie je nutný server, celý repozitár mám na svojom počítači</li>
+<li>Vetvenie - <strong>branching</strong> - pre skúšanie nových vecí, experimentovanie a opravu bugov</li>
+<li>Zlučovanie - <strong>merging</strong> - zlúčenie zmien z iných vetiev alebo od iných ľudí</li>
+<li>Tagovanie - <strong>tagging</strong> - označenie konkrétnych bodov v histórii napr. verziou softvéru</li>
+<li>Distribuovaná spolupráca - zdieľanie súborov s inými</li>
+</ul>
+<h3 id="git">git<a class="headerlink" href="#git" title="Permanent link">¶</a></h3>
+<p><img align="left" alt="git logo" src="../../assets/git-logo.svg" width="200"></p>
+<p>Najpopulárnejším nástrojom na správu verzií je <strong>git</strong>. Stal sa z neho de facto štandard verzionovania a budeme ho používať aj my. Práci s nástrojom git sa bližšie budeme venovať inokedy, nateraz si však tento nástroj nainštalujte do svojho počítača.</p>
+<p>Do svojho počítača si zo stránky <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> stiahnite a nainštalujte git do svojho počítača. Pri inštalácii máte možnosť detailne nastaviť chovanie programu. Odporúčame <strong>ponechať všetky nastavenia</strong> na odporúčaných hodnotách.</p>
+<p>Či máme git správne nainštalovaný zistíme cez príkazový riadok nasledovným spôsobom</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Zistenie verzii nástroja <code>git</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>~$<span class="w"> </span>git<span class="w"> </span>--version
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>version<span class="w"> </span><span class="m">2</span>.51.0
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">¶</a></h3>
+<p><img align="left" alt="github logo" src="../../assets/github-mark.svg" width="100"></p>
+<p>Platforma GitHub poskytuje zdarma nástroje agilného programovania a umožňuje zdieľať git repozitár medzi viacerými vývojármi. Poskytuje tiež Kanban tabuľku, a issues na evidenciu bugov a featurov.</p>
+<p>Vytvorte si konto na stránke <a href="https://github.com">github.com</a> a cez edupage mi zašlite svoje užívateľské meno, aby som vás vedel pridať do projektov, na ktorých budeme pracovať.</p>
+<p>GitHub nie je jediný nástroj na správu vývoja softvéru nad git repozitárom. Jeho hlavnou konkurenciou je <a href="https://gitlab.com">GitLab</a>, ktorý si vieme zadarmo nainštalovať ak máme svoj vlastný server.</p>
+<h2 id="sprava-vyvoja">Správa vývoja<a class="headerlink" href="#sprava-vyvoja" title="Permanent link">¶</a></h2>
+<p>Okrem správy verzií máme k dispozícii aj iné nástroje na správu rôznych aspektov softvérového vývoja. </p>
+<p>Na <em>správu úloh a sprintov</em> v agilnom programovní vieme využiť Kanban tabuľku a správu ticketov a pull requestov na platforme GitHub. Pull requesty sú žiadosti o pridanie zmien do hlavného kódu, ktoré vieme vyhodnotiť a schváliť alebo odmietnuť. Tickety nám slúžia na evidenciu chýb a požiadaviek na nové funkcionality.</p>
+<p><em>Komunikácie v tíme</em> často prebieha online formou, a medzi nástroje na takúto komunikáciu patria Slack a Microsoft Teams.</p>
+<div class="md-has-sidebar">
+<main>
+<p><em>Dokumentácia</em> sa zvykne často písať v textovom formáte a pridáva sa priamo ku zdrojovým súborom. Vie ju potom ľahko manažovať nástroj na správu verzií a tým sa ľahšie udržiava aktuálna. Populárny formát na písanie dokumentácie je syntax <a href="https://www.markdownguide.org/">Markdown</a>.</p>
+<p>Pre písanie dokumentácie v Pythone sa však väčšinou používa syntax <a href="https://docutils.sourceforge.io/rst.html">reStructuredText</a>, ktorý je viac podporovaný dokumentačnými nástrojmi v Python ekosystéme.</p>
+</main>
+<aside>
+<p>Tieto učebné texty sú tak isto napísané pomocou Markdownu</p>
+</aside>
+</div>
+<p>Aby sme vedeli čítať kód napísaný inými programátormi, je vhodné dodržiavať určité štandardy kvality. V Pythone sú tieto štandardy spísané v <a href="https://peps.python.org/pep-0008/">príručke PEP 8 - Sprievodca štýlom</a>. IDE PyCharm nás často automaticky upozorní, keď tieto štandardy nedodržiavame.</p>
+<p>Medzi pokročilé nástroje správy vývoja softvéru patrí automatizované testovanie a nasadzovanie aplikácie, anglicky CI/CD, Continuous Integration/Continuous Deployment. V tomto nám tiež vie pomôcť GitHub so svojím GitHub Actions, alebo iné nástroje ako napríklad Jenkins a CircleCI. Testovanie v Pythone sa často realizuje pomocou nástroja <a href="https://docs.pytest.org/en/stable/#">pytest</a>.</p>
+<h2 id="zhrnutie-cvicenia">Zhrnutie cvičenia<a class="headerlink" href="#zhrnutie-cvicenia" title="Permanent link">¶</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Manifesto agilného vývoja softvéru<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <strong>Ľudia a komunikácia</strong> sú viac než procesy a nástroje</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <strong>Funkčný softvér</strong> je viac než vyčerpávajúca dokumentácia</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <strong>Spolupráca so zákazníkom</strong> je viac než dojednávanie zmluvy</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <strong>Radšej reagovať na zmenu</strong> než sa držať plánu.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Nevýhody agilného prístupu<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Nedostatok dokumentácie a plánovania</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Scope creep - neustále pridávanie nových funkcionalít</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Prílišná byrokracia, ceremónia a rituály</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Scrum pojmy<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <strong>Sprint</strong> - mesačné alebo dvojtýždňové iterácie návrhu, vývoja a vyhodnotenia</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <strong>Daily Standup</strong> - pravidelná krátka tímová porada</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <strong>Product Owner</strong> - človek zodpovedný za dodržanie vízie projektu</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <strong>Scrum Master</strong> - asistent, ktorý pomáha, aby v tíme fungovali agilné prístupy </li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Verziovacie systémy (VCS – Version Control Systems) sú nástroje, ktoré umožňujú <strong>sledovať zmeny v zdrojových súboroch</strong> počas softvérového vývoja<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <strong>História zmien</strong>, kedykoľvek sa viem vrátiť späť</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Nie je nutný server, celý repozitár mám na svojom počítači</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Vetvenie - <strong>branching</strong> - pre skúšanie nových vecí, experimentovanie a opravu bugov</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Zlučovanie - <strong>merging</strong> - zlúčenie zmien z iných vetiev alebo od iných ľudí</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Tagovanie - <strong>tagging</strong> - označenie konkrétnych bodov v histórii napr. verziou softvéru</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Distribuovaná spolupráca - zdieľanie súborov s inými</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> <strong>git</strong> - najpopulárnejší nástroj na správu verzií<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Stiahnuť a nainštalovať zo stránky <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> <strong>GitHub</strong> - Platforma na správu softvérového vývoja a git repozitára<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Vytvoriť si konto na <a href="https://github.com">github.com</a> a zaslať mi vaše užívateľské meno</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Ostatné nástroje na správu softvérového vývoja<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Kanban - Rozdelenie úloh do stĺpcov podľa stavu - GitHub projects</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Tickety a Pull requesty - GitHub</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Virtuálna komunikácia pomocou Slack alebo Microsoft Teams</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Dokumentácia pomocou textových súborov vo formáte MarkDown alebo reStructuredText - GitHub vie pekne zobraziť</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Dodržiavanie štýlov programovania - PEP 8</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> CI/CD, Continuous Integration/Continuous Deployment pomocou GitHub Actions</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Testovanie pomocou pytest - často súčasť CI/CD</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Poznámky do zošita</p>
+<p>V zošite je potrebné mať napísané aspoň tieto poznámky:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>AGILNÝ VÝVOJ
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Manifesto agilného vývoja softvéru
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>- Ľudia a komunikácia sú viac než procesy a nástroje
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>- Funkčný softvér je viac než vyčerpávajúca dokumentácia
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>- Spolupráca so zákazníkom je viac než dojednávanie zmluvy
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>- Radšej reagovať na zmenu než sa držať plánu.
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Riziká
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Nedostatok dokumentácie a plánovania
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Scope creep - neustále pridávanie nových funkcionalít
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>Prílišná byrokracia, ceremónia a rituály
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>Scrum pojmy
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>- Sprint - 1-4 týždňové opakovanie návrhu, vývoja a vyhodnotenia
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>- Daily Standup - pravidelná krátka tímová porada
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>- Product Owner - človek zodpovedný za dodržanie vízie projektu
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>- Scrum Master - asistent, ktorý pomáha, aby v tíme fungovali agilné prístupy 
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>Verziovacie systémy
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>- História zmien
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>- Celý repozitár na svojom počítači
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>- Vetvenie - branching - experimentovanie a oprava bugov
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>- Zlučovanie - merging - zakomponovanie zmien
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>- Tagovanie - tagging - označenie bodov v histórii napr. verziou
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>- Distribuovaná spolupráca - zdieľanie súborov s inými
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>Kanban - Rozdelenie úloh do stĺpcov podľa stavu - GitHub projects
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>Dokumentácia - formát MarkDown alebo reStructuredText
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>Štýly programovania - PEP 8
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Skúšanie a kontrola vedomostí</p>
+<p>Do budúcej hodiny:</p>
+<ul>
+<li>Nainštalovať si git na svojom počítačí</li>
+<li>Vytvoriť si konto na GitHube a zaslať mi užívateľské meno</li>
+</ul>
+<p>Okruhy otázok na test:</p>
+<ul>
+<li>Aké sú princípy agilného vývoja</li>
+<li>Riziká agilného vývoja</li>
+<li>Scrum pojmy</li>
+<li>Vlastnosti verziovacích systémov</li>
+<li>Čo je Kanban</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025, 2026, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.top", "toc.follow", "navigation.tabs", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

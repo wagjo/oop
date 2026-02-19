@@ -1,0 +1,2698 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oop.wagjo.com/pokrocili-3/p05-pip/">
+      
+      
+        <link rel="prev" href="../p04-moduly/">
+      
+      
+        <link rel="next" href="../p06-agile/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>5 - Správa knižníc - Objektovo Orientované Programovanie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/tufte-sidebars.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pokrocili-5-sprava-kniznic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-header__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Objektovo Orientované Programovanie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5 - Správa knižníc
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Úvod
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../teoria-3/t01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Teória
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cvicenie-3/c01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Cvičenia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../p01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Pokročilí
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../prehlad/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Prehľad tém
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../zbierka-java/j05-04-dedicnost/" class="md-tabs__link">
+          
+  
+  
+  Zbierka úloh
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../autor/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kontakt
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-nav__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Objektovo Orientované Programovanie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Úvod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teória
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teória
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod a motivácia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t02-typy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Algoritmus, dátové typy a premenné
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t03-objekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Identita, objekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t04-trieda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Trieda, balíky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t05-vynimky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Výnimky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t06-operatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Operátory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t07-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t08-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Inicializácia objektov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t09-premenne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Premenné a atribúty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t10-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t11-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t12-polymorfizmus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Polymorfizmus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t13-abstrakcia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Abstrakcia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t14-enum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Enumeračné typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t15-oop-opakovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Princípy OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t16-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Budovanie softvéru
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t17-usporiadanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Usporiadanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t18-records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t19-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - GUI knižnice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t20-javafx-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - JavaFX Stage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cvičenia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cvičenia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, vývojový diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c02-hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Prvý Java program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c03-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Riadenie toku programu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c04-polia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Polia, varargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c05-wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Obalené typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c06-stringy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Reťazce znakov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c07-triedy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Triedy a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c08-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Hangman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c09-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Slovník
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c10-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c11-projekt1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c12-json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - JSON a CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c13-javafx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - JavaFX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c14-javafx-komponenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - JavaFX Komponenty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pokročilí
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pokročilí
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, premenné, vstup a výstup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p02-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Vetvenie, cykly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p03-rekurzia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Rekurzia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p04-moduly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Moduly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Správa knižníc
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Správa knižníc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sprava-distribucnych-balikov-pomocou-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Správa distribučných balíkov pomocou pip
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualne-prostredie-venv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtuálne prostredie .venv
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verejny-repozitar-balikov-pypiorg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verejný repozitár balíkov PyPI.org
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprava-zavislosti-pomocou-requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Správa závislostí pomocou requirements.txt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konfiguracia-projektu-pomocou-pyprojecttoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Konfigurácia projektu pomocou pyproject.toml
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ulohy-na-precvicenie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Úlohy na precvičenie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zhrnutie-cvicenia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zhrnutie cvičenia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p06-agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Agilný vývoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p07-git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p08-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p09-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Trieda a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p10-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Metódy a JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p11-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p12-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p13-pygame/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Pygame
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p14-pygame-mys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Pygame 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p15-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p16-projekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p17-pygame-zvuk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Zvuk a hudba
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p18-udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - UDP základy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prehlad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prehľad tém
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zbierka úloh
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Zbierka úloh
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-java/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j07-01-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kontakt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pokrocili-5-sprava-kniznic">Pokročílí 5: Správa knižníc<a class="headerlink" href="#pokrocili-5-sprava-kniznic" title="Permanent link">¶</a></h1>
+<p>V programovaní pod pojmom knižnica rozumieme sadu funkcií a tried, ktoré riešia nejakú špecifickú úlohu a vieme ich použiť vo svojich programoch. Python poskytuje bohatú štadardnú knižnicu, v ktorej máme k dispozícii množstvo modulov s užitočnými funkciami.</p>
+<p>Pri programovaní však nie sme odkázaní iba na štandardnú knižnicu, ale vieme si stiahnuť a použiť tisíce knižníc, ktoré vytvorili iní programátori. Python nám poskytuje rôzne nástroje na správu, používanie a aj vytváranie takýchto knižníc. Dnes sa im povenujeme bližšie.</p>
+<h2 id="sprava-distribucnych-balikov-pomocou-pip">Správa distribučných balíkov pomocou <code>pip</code><a class="headerlink" href="#sprava-distribucnych-balikov-pomocou-pip" title="Permanent link">¶</a></h2>
+<p><code>pip</code> je najpopulárnejší nástroj na spravovanie knižníc v Pythone. Tento nástroj sa nainštaluje automaticky spolu s Pythonom, preto ho má každý používateľ Pythonu k dispozícii.</p>
+<p>Knižnica spravovaná pomocou <code>pip</code> sa anglicky volá <em>distribution package</em>, teda distribučný balík, ale ide o iný druh "balíka", ako sme si vysvetľovali minule keď sme preberali <code>import</code> balíkov. Preto <code>pip</code> "distribučné balíky" budeme ďalej niekedy nazývať jednoducho <em>knižnice</em>.</p>
+<p>Distribučné balíky v <code>pip</code> majú svoje jedinečné meno a obsahujú ľubovoľný počet balíkov a modulov, ktoré po nainštalovaní budeme mať k dispozícii. Okrem mena má každá knižnica aj svoju verziu. Väčšina <code>pip</code> knižníc používa sémantické verzionovanie.</p>
+<p>Nástroj <code>pip</code> sa používa z príkazového riadku. Ak chceme zistiť, aké <code>pip</code> distribučné balíky máme vo svojom počítači nainštalované, použijeme na to príkaz <code>pip list</code>. Program nám do konzoly vypíše všetky nainštalované knižnice a aj ktorú verziu máme nainštalovanú.</p>
+<div class="md-has-sidebar">
+<main>
+<p>Inštaláciu knižnice vykonáme pomocou príkazu <code>pip install &lt;nazov&gt;</code>. Existuje napríklad populárna knižnica na vytvorenie webového servera s názvom Flask. Do svojho počítača ju vieme nainštalovať pomocou príkazu <code>pip install flask</code>, ktorý spustíme z príkazového riadku.</p>
+</main>
+<aside>
+<p>Knižnicu odinštalujeme príkazom <code>pip uninstall &lt;nazov&gt;</code>.
+  </p>
+</aside>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Inštalácia konkrétnej verzie knižnice</p>
+<p>Niekedy je potrebné mať nainštalovanú nie najnovšiu, ale nejakú konkrétnu verziu knižnice. Verziu vieme špecifikovať pri inštalácii a to pomocou <code>pip install &lt;nazov&gt;==&lt;verzia&gt;</code>, teda napr.<code>pip install flask==3.0.1</code></p>
+</div>
+<div class="md-has-sidebar">
+<main>
+<p>Ak na svojom počítači už máme knižnicu nainštalovanú, ale medzitým vyšla nová verzia, je potrebné knižnicu aktualizovať. To vieme urobiť pomocou príkazu <code>pip install --upgrade &lt;nazov&gt;</code>.</p>
+<p><strong><code>pip</code> knižnice sa v Pythone inštalujú globálne</strong>, teda nainštalujem ju raz a môžem ju používať vo všetkých svojich Python programoch. Toto je niekedy zdroj nepríjemných problémov, keď máme 2 python programy, ktoré potrebujú tú istú knižnicu, ale rozdielne verzie. Ešte raz, knižnice sa v Pythone inštalujú do celého systému, ich inštalácia nie je obmedzená iba pre daný Python projekt. Nemôžeme mať naraz nainštalované 2 verzie tej istej knižnice.</p>
+<p>Na vyriešenie tohto problému sa v Pythone používa virtuálne prostredie, anglicky virtual environment.</p>
+</main>
+<aside>
+<div class="admonition info">
+<p class="admonition-title">Moderné nástroje na správu knižníc</p>
+<p>Modernou alternatívou k <code>pip</code> je nástroj <a href="https://docs.astral.sh/uv/"><code>uv</code></a>, ktorý nahrádza <code>pip</code> a aj ďalšie iné Python nástroje. Oproti <code>pip</code> je 10-100x rýchlejší a ponpka viac funkcionalít</p>
+</div>
+</aside>
+</div>
+<h2 id="virtualne-prostredie-venv">Virtuálne prostredie <code>.venv</code><a class="headerlink" href="#virtualne-prostredie-venv" title="Permanent link">¶</a></h2>
+<p>Virtuálne prostredie v Pythone poskytuje izolovaný priestor pre programátorov, v ktorom majú vlastnú sadu knižníc a vlastnú verziu jazyka Python. Knižnice nainštalované pomocou <code>pip</code> v rámci jedného virtuálneho prostredia neovplyvňujú iné virtuálne prostredia a nie sú viditeľné ani zo systému.</p>
+<p>Virtuálne prostredie má na disku svoj vlastný adresár, do ktorého ukladá svoje nastavenia a nainštalované distribučné balíky. Väčšinou je tento adresár umiestnený v adresári daného Python projektu a jeho názov je <code>.venv</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Správa virtuálneho prostredie cez príkazový riadok</p>
+<p>Ak používame príkazový riadok, tak s virtuálnym prostredím vieme pracovať nasledovne.</p>
+<ul>
+<li>Virtuálne prostredie pred prvým použitím vytvoríme pomocou príkazu <code>python -m venv .venv</code>, ktorý vytvorí virtuálne prostredie do adresára <code>.venv</code></li>
+<li>Aktivujeme virtuálne prostredie pomocou príkazu <code>.venv\scripts\activate</code> </li>
+<li>Vo vnútri virtuálneho prostredia mám zmenený príkazový riadok, na ktorého začiatku mi bude ukazovať <code>(.venv)</code></li>
+<li>Po skončení práce s virtuálnym prostredím ho ukončím pomocou príkazu <code>deactivate</code></li>
+</ul>
+</div>
+<p>Vývojové prostredie PyCharm vie spravovať a používať virtuálne prostredia a štandardne vám ho aj vytvorí pre každý váš projekt. Ak ho chcete znovu vytvoriť, stačí zmazať adresár <code>.venv</code> vo vašom projekte a potom kliknutím na menu vpravo dole si viete vytvoriť nové virtuálne prostredie.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/pycharm-venv1.png" data-desc-position="bottom"><img alt="Vytvorenie virtuálneho prostredia v IDE PyCharm" class="on-glb" src="../../assets/pycharm-venv1.png"></a></p>
+<figcaption>
+<p>Vytvorenie virtuálneho prostredia pomocou možnosti <code>Add new interpreter</code></p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/pycharm-venv2.png" data-desc-position="bottom"><img alt="Vytvorenie virtuálneho prostredia v IDE PyCharm" class="on-glb" src="../../assets/pycharm-venv2.png"></a></p>
+<figcaption>
+<p>Vytvorenie nového virtuálneho prostredia z existujúceho Pythonu</p>
+</figcaption>
+</figure>
+<div class="admonition info">
+<p class="admonition-title">Visual Studio Code</p>
+<p>Ak používate Visual Studio Code, pozrite si <a href="https://code.visualstudio.com/docs/python/environments">príručku pre prácu s virtuálnym prostredím</a></p>
+</div>
+<p>To, či náš projekt máme spustený vo virtuálnom prostredí si vieme overiť tak, že si v Pythone otvoríme terminál, pomocou ikonky vľavo dole, alebo pomocou kláves <span class="keys"><kbd>Alt</kbd><span>+</span><kbd>F12</kbd></span>. Príkazový riadok v tomto termináli musí začínať značkou virtuálneho prostredia <code>(.venv)</code></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/pycharm-venv3.png" data-desc-position="bottom"><img alt="Vytvorenie virtuálneho prostredia v IDE PyCharm" class="on-glb" src="../../assets/pycharm-venv3.png"></a></p>
+<figcaption>
+<p>Virtuálne prostredie je aktívne, príkazový riadok začína textom <code>(.venv)</code></p>
+</figcaption>
+</figure>
+<p>Ak v tomto termináli teraz nainštalujeme nejakú knižnicu pomocou príkazu <code>pip install</code>, tak bude viditeľná iba v rámci tohto virtuálneho prostredia. Tak isto príkaz <code>pip list</code> bude ukazovať iba knižnice nainštalované do tohto virtuálneho prostredia.</p>
+<h2 id="verejny-repozitar-balikov-pypiorg">Verejný repozitár balíkov <code>PyPI.org</code><a class="headerlink" href="#verejny-repozitar-balikov-pypiorg" title="Permanent link">¶</a></h2>
+<p>Všetky knižnice, ktoré si vieme stiahnuť a používať pomocou nástroja <code>pip</code> sú zverejnené vo verejnom repozitári Python Package Index (PyPI) na adrese <a href="https://pypi.org">https://pypi.org</a>. Pomocou tejto stránky vieme knižnice vyhľadávať a prečítať si ich dokumentáciu. Napríklad vyššie spomínaná knižnica Flask má svoju stránku na <a href="https://pypi.org/project/Flask/">https://pypi.org/project/Flask/</a></p>
+<p>Do repozitára PyPI si vieme zadarmo uložiť aj svoje vlastné knižnice alebo celé Python programy. Musia byť licencované Open Source licenciou a nesmú byť príliš veľké. Jediné čo treba urobiť je zaregistrovať sa na ich stránke a vygenerovať si API token, pomocou ktorého budete vedieť nahrať váš distribučný balíček do repozitára.</p>
+<h2 id="sprava-zavislosti-pomocou-requirementstxt">Správa závislostí pomocou <code>requirements.txt</code><a class="headerlink" href="#sprava-zavislosti-pomocou-requirementstxt" title="Permanent link">¶</a></h2>
+<p>Táto sekcia popisuje starší (ale stále často používaný) spôsob správy projektových závislostí. Moderný spôsob si uvedieme v ďalšej sekcii.</p>
+<div class="md-has-sidebar">
+<main>
+<p>Keď používame nejakú knižnicu v našom Python programe, musíme ju mať nainštalovanú pomocou <code>pip</code> nástroja. Ak vytvárame projekt, ktorý má používať niekto iný, tak ten človek si po stiahnutí nášho projektu musí všetky tieto knižnice nainštalovať. Aby sme mu nemuseli hovoriť, ktorú knižnicu a v akej verzii si musí nainštalovať, tak v Pythone existuje dohoda, že názvy všetkých knižníc, ktoré náš projekt potrebuje, sa dajú do súbora <code>requirements.txt</code>. Tento súbor sa umiestni do nášho projektu a ktokoľvek bude chcieť náš projekt používať, bude mať prehľad o požiadavkách nášho projektu na cudzie knižnice.</p>
+<p>Súbor <code>requirements.txt</code> je obyčajný textový subor, do ktorého na samostatné riadky uvedieme názvy knižníc, ktoré náš projekt vyžaduje.</p>
+</main>
+<aside>
+<p>Vygenerovať súbor so závislosťami si vieme aj automaticky pomocou príkazu <strong><code>pip freeze &gt; requirements.txt</code></strong>. Tento príkaz nám vloží do súboru závislosti na všetky aktuálne nainštalované knižnice a uvedie aj ich konkrétnu verziu. Súbor následne môžeme ďalej manuálne upraviť a spresniť naše závislosti.
+  </p>
+</aside>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Ukážka súboru <code>requirements.txt</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>blinker==1.9.0
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>click&gt;=8.3.0
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Flask~=3.1.2
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>itsdangerous&lt;=2.2.0
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>MarkupSafe
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Jinja2&gt;3.1.6
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Ak má projekt takýto súbor, potom všetky jeho <strong>závislosti vieme nainštalovať jedným príkazom <code>pip install -r requirements.txt</code></strong></p>
+<p>V súbore <code>requirements.txt</code> vidíme, že verzie vieme písať rôznymi spôsobmi. Ak verziu distribučného balíka neuvedieme, nainštaluje sa najnovšia verzia. Pomocou operátora <code>==</code> nainštalujeme konkrétnu verziu, a pomocou operátorov <code>&gt;=</code>, <code>&lt;=</code>, <code>&gt;</code> a <code>&lt;</code> vieme uviesť, aké verzie vyžadujeme. Operátor <code>~=</code> bude akceptovať iba kompatibilné verzie podľa sémentického verzionovania, napr. <code>~=2.2</code> bude akceptovať verzie <code>2.2.1</code>, <code>2.2.9</code>, <code>2.3</code>, ale nie <code>2.1</code> alebo <code>3.0</code>.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Dokumentácia</p>
+<p>Kompletný popis rôznych možností deklarovania závislostí a ich verzií môžeme nájsť v <a href="https://packaging.python.org/en/latest/specifications/version-specifiers/#id5">dokumentácii špecifikácie verzií distribučných balíkov Pythonu</a></p>
+</div>
+<h2 id="konfiguracia-projektu-pomocou-pyprojecttoml">Konfigurácia projektu pomocou <code>pyproject.toml</code><a class="headerlink" href="#konfiguracia-projektu-pomocou-pyprojecttoml" title="Permanent link">¶</a></h2>
+<p>Súbor <code>requirements.txt</code> nám umožňuje uviesť závislosti, nič viac. Na detailnejšiu konfiguráciu Python projektov slúži súbor <code>pyproject.toml</code>. Poskytuje modernejšiu alternatívu k suboru <code>requirements.txt</code> a viem do neho dať všetky nastavenia môjho projektu.</p>
+<p>V súbore <code>pyproject.toml</code> musím uviesť minimálne názov môjho projektu a verziu. Všetky ostatné nastavenia sú voliteľné. Závislosti na knižniciach uvádzam do atribútu <code>dependencies</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Príklad súboru <code>pyproject.toml</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[project]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"moj-projekt"</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"0.0.1"</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="s2">"flask"</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="s2">"ascii-announcers==0.0.2"</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">]</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ak uvediem závislosti (dependencies) v súbore <code>pyproject.toml</code>, súbor <code>requirements.txt</code> nepotrebujem</strong></p>
+<p>Súbor <code>pyproject.toml</code> umiestňujeme do adresára s projektom. Všetky zdrojové moduly a balíky odporúčame dať to adresára <code>src</code>, podľa konvencie <a href="https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/">src layout</a></p>
+<p>V PyCharm vieme potom adresár <code>src</code> označiť ako zdrojový tak, že na neho klikneme pravým tlačítkom a vyberieme <code>Mark Directory as -&gt; Sources root</code>.</p>
+<p>Takto vytvorený projekt potom vieme lokálne nainštalovať príkazom <code>pip install -e .</code>, ktorý spustím vo virtuálnom prostredí, napríklad pomocou terminálu v PyCharme. Tým sa nainštalujú všetky závislosti zo súboru <code>pyproject.toml</code> a naviac budeme mať lokálne k dispozícii všetky balíky a moduly z adresára <code>src</code>, takže ich budeme vedieť spúšťať pomocou príkazu <code>python -m balik.modul</code></p>
+<h2 id="ulohy-na-precvicenie">Úlohy na precvičenie<a class="headerlink" href="#ulohy-na-precvicenie" title="Permanent link">¶</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Úloha 5.1: Základný projekt</p>
+<ol>
+<li>Vytvorte v PyCharm nový projekt s názvom "cowsay", tak aby mal virtuálne prostredie</li>
+<li>Vytvorte v ňom súbor <code>pyproject.toml</code> s nasledovným obsahom
+<div class="language-toml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[project]</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"cowsay"</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"0.0.1"</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="s2">"colored"</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="s2">"ascii-announcers==0.0.2"</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">]</span>
+</span></code></pre></div></li>
+<li>Vytvorte nasledovné adresáre a súbory
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>src
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a> └── cowsay
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>       └── __init__.py
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>       └── __main__.py
+</span></code></pre></div></li>
+<li>Adresár <code>src</code> v PyCharme označte ako "Sources root"</li>
+<li>V súbore <code>__main__.py</code> napíšte jednoduchý Hello World
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>print("Hello World!")
+</span></code></pre></div></li>
+<li>V terminály lokálne nainštalujte tento projekt pomocou <code>pip install -e .</code></li>
+<li>Projekt spustite pomocou <code>python -m cowsay</code></li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 5.2: Farebný výpis argumentov</p>
+<p>Upravte projekt z úlohy 5.1 nasledovne.</p>
+<ul>
+<li>prečítajte vstupné argumenty programu pomocou premennej <code>sys.argv</code> a vypíšte prvý argument na obrazovku. Príklad spustenia
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">cowsay</span> <span class="s2">"Hello there!"</span>
+</span></code></pre></div></li>
+<li>použite knižnicu <code>colored</code> na zmenu farby textu. Príklad
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">colored</span><span class="w"> </span><span class="kn">import</span> <span class="n">Style</span><span class="p">,</span> <span class="n">fore</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">color</span><span class="o">=</span><span class="s2">"red"</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">fore</span><span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"Hello World!"</span> <span class="o">+</span> <span class="n">Style</span><span class="o">.</span><span class="n">reset</span><span class="p">)</span>
+</span></code></pre></div></li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 5.3: Zvieratko</p>
+<p>Upravte projekt z úlohy 5.2 nasledovne</p>
+<ul>
+<li>použite knižnicu <code>ascii-announcers</code> na zobrazenie ASCII zvieratka. Príklad
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ascii_announcers</span><span class="w"> </span><span class="kn">import</span> <span class="n">announcers</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">announcers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"cow"</span><span class="p">))</span>
+</span></code></pre></div></li>
+<li>Vypíšte farebný text z predchádzajúceho zadania a pod ním vykreslite zvieratko</li>
+<li>Vyskúšajte iné zvieratká, ktoré sú uložené v premennej <code>announcers</code></li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 5.4: Orámovaný text</p>
+<p>Upravte projekt z úlohy 5.3 nasledovne</p>
+<ul>
+<li>Použite knižnicu <code>textwrap</code> na zalomenie textu do viacerých riadkov</li>
+<li>Orámujte text, ktorý vypisujete</li>
+<li>Vyskúšajte použiť farby</li>
+</ul>
+<p>Príklad výstupu:
+</p><div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a> ________________________________ 
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>/ Hello there! I hope you have a \
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>\      nice day today sir!       /
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a> -------------------------------- 
+</span></code></pre></div><p></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 5.5: Cowsay</p>
+<p>Upravte projekt z úlohy 5.4 nasledovne</p>
+<ul>
+<li>Zo zvieratka nakreslite čiaru ku rámčeku, aby bolo jasné, že to hovorí zvieratko. Príklad:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a> ________________________________ 
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>/ Hello there! I hope you have a \
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>\      nice day today sir!       /
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a> -------------------------------- 
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>   \  ^__^
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    \ (oo)\_______
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>      (__)\       )\/\
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>          ||----w |
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>          ||     ||
+</span></code></pre></div></li>
+<li>Urobte to tak, aby to fungovalo s akýmkoľvek zvieratkom</li>
+</ul>
+</div>
+<h2 id="zhrnutie-cvicenia">Zhrnutie cvičenia<a class="headerlink" href="#zhrnutie-cvicenia" title="Permanent link">¶</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> <code>pip</code> je nástroj na spravovanie distribučných balíkov<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>pip</code> knižnice sa v Pythone inštalujú globálne</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Nemôžeme mať naraz nainštalované 2 verzie tej istej knižnice</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>pip list</code> - zoznam nainštalovaných knižníc</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>pip install &lt;nazov&gt;</code> - nainštalovanie najnovšej verzie knižnice</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>pip install &lt;nazov&gt;==&lt;verzia&gt;</code> - nainštalovanie konkrétnej verzie knižnice</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>pip install --upgrage &lt;nazov&gt;</code> - aktualizácia knižnice</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>pip uninstall &lt;nazov&gt;</code> - odinštalovanie knižnice</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Virtuálne prostredie <code>.venv</code><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Izolovaný priestor pre programátorov, ktorý má vlastnú sadu knižníc a vlastnú verziu jazyka Python</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Knižnice z jedného virtuálneho prostredia neovplyvňujú iné virtuálne prostredia a nie sú viditeľné ani zo systému.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Virtuálne prostredie potrebuje svoj vlastný adresár, väčšinou je to <code>.venv</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Verejný repozitár balíkov PyPI.org<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Python Package Index (PyPI) na adrese https://pypi.org</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>pip</code> balíky sa sťahujú práve z tohto repozitára</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Do repozitára PyPI si vieme zadarmo uložiť aj svoje vlastné knižnice alebo celé Python programy</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Správa závislostí pomocou requirements.txt<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Starý spôsob</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Textový súbor <code>requirements.txt</code> na samostatných riadkoch obsahuje názvy knižníc, ktoré náš projekt vyžaduje.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Ak má projekt takýto súbor, potom všetky jeho závislosti vieme nainštalovať jedným príkazom <code>pip install -r requirements.txt</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Okrem názvu vieme uviesť, akú verziu potrebujeme. Vieme na to použiť operátory <code>==</code>, <code>~=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> a iné</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Konfigurácia projektu pomocou pyproject.toml<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Moderný spôsob</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> V súbore <code>pyproject.toml</code> musím uviesť minimálne názov môjho projektu a verziu.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Závislosti na knižniciach uvádzam do atribútu <code>dependencies</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Ak uvediem závislosti (dependencies) v súbore <code>pyproject.toml</code>, súbor <code>requirements.txt</code> nepotrebujem</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Súbor pyproject.toml umiestňujeme do adresára s projektom. Všetky zdrojové moduly a balíky odporúčame dať to adresára <code>src</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Projekt viem lokálne nainštalovať príkazom <code>pip install -e .</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Projekt budem vedieť spúšťať pomocou príkazu <code>python -m balik.modul</code></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Poznámky do zošita</p>
+<p>V zošite je potrebné mať napísané aspoň tieto poznámky:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>PIP
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>pip je nástroj na spravovanie distribučných balíkov
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>pip knižnice sa v Pythone inštalujú globálne
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Nemôžeme mať naraz nainštalované 2 verzie tej istej knižnice
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>pip list
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>pip install
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>pip install --upgrade
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>VIRTUÁLNE PROSTREDIE
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>Izolovaný priestor, ktorý má vlastnú sadu knižníc
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>Knižnice z jedného virtuálneho prostredia neovplyvňujú iné virtuálne prostredia
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>a nie sú viditeľné ani zo systému.
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>Virtuálne prostredie potrebuje svoj vlastný adresár, väčšinou je to .venv
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>PYPI.ORG
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>Python Package Index (PyPI) na adrese https://pypi.org
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>pip balíky sa sťahujú práve z tohto repozitára
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>Viem v ňom zverejniť zadarmo aj svoje balíky
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>requirements.txt
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>Starý spôsob písania závislostí, do textového súboru
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>Okrem názvu knižnice vieme uviesť verziu.
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>Vieme na to použiť operátory ==, ~=, &gt;, &gt;=, &lt;, &lt;= a iné
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>Ak mám súbor requirements.txt, závislosti nainštalujem pomocou pip install -r requirements.txt
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>pyproject.toml
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>Moderný spôsob konfigurácie projektu
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>V súbore musím uviesť minimálne názov môjho projektu a verziu.
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>Závislosti na knižniciach uvádzam do atribútu dependencies
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>Lokálne nainštalujem príkazom pip install -e .
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Skúšanie a kontrola vedomostí</p>
+<p>Okruhy otázok na test:</p>
+<ul>
+<li>Čo je nástroj pip, ako sa používa</li>
+<li>Čo je virtuálne prostredie v Pythone, na čo sa používa</li>
+<li>Stránka pypi.org, na čo slúži</li>
+<li>Súbor requirements.txt, na čo slúži</li>
+<li>Ako sa píšu závislosti na knižniciach</li>
+<li>Ako nainštalujem závislosti zo súboru requirements.txt</li>
+<li>pyproject.toml, na čo slúži, aké má minimálne atribúty</li>
+<li>Ako zapíšem závislosti do súboru pyproject.toml</li>
+<li>Ako nainštalujem lokálne projekt, ktorý má pyproject.toml</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025, 2026, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.top", "toc.follow", "navigation.tabs", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

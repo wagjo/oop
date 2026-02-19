@@ -1,0 +1,3046 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oop.wagjo.com/cvicenie-3/c01-uvod/">
+      
+      
+        <link rel="prev" href="../../teoria-3/t20-javafx-stage/">
+      
+      
+        <link rel="next" href="../c02-hello/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>1 - Úvod, vývojový diagram - Objektovo Orientované Programovanie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/tufte-sidebars.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cvicenie-1-uvod-do-predmetu-vyvojovy-diagram" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-header__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Objektovo Orientované Programovanie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 - Úvod, vývojový diagram
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Úvod
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../teoria-3/t01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Teória
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Cvičenia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pokrocili-3/p01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Pokročilí
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../prehlad/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Prehľad tém
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../zbierka-java/j05-04-dedicnost/" class="md-tabs__link">
+          
+  
+  
+  Zbierka úloh
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../autor/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kontakt
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-nav__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Objektovo Orientované Programovanie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Úvod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teória
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teória
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod a motivácia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t02-typy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Algoritmus, dátové typy a premenné
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t03-objekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Identita, objekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t04-trieda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Trieda, balíky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t05-vynimky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Výnimky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t06-operatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Operátory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t07-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t08-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Inicializácia objektov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t09-premenne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Premenné a atribúty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t10-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t11-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t12-polymorfizmus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Polymorfizmus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t13-abstrakcia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Abstrakcia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t14-enum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Enumeračné typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t15-oop-opakovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Princípy OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t16-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Budovanie softvéru
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t17-usporiadanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Usporiadanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t18-records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t19-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - GUI knižnice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t20-javafx-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - JavaFX Stage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cvičenia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cvičenia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, vývojový diagram
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, vývojový diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opakovanie-z-minulych-rokov" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opakovanie z minulých rokov
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-development-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java Development Kit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vyvojovy-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vývojový diagram
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vývojový diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zakladne-bloky-vyvojoveho-diagramu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Základné bloky vývojového diagramu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zbierka-prikladov-vyvojovych-diagramov" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zbierka príkladov vývojových diagramov
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagramy-ako-kod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagramy ako kód
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudokod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pseudokód
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zhrnutie-cvicenia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zhrnutie cvičenia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c02-hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Prvý Java program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c03-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Riadenie toku programu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c04-polia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Polia, varargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c05-wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Obalené typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c06-stringy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Reťazce znakov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c07-triedy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Triedy a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c08-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Hangman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c09-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Slovník
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c10-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c11-projekt1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c12-json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - JSON a CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c13-javafx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - JavaFX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c14-javafx-komponenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - JavaFX Komponenty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pokročilí
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pokročilí
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, premenné, vstup a výstup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p02-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Vetvenie, cykly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p03-rekurzia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Rekurzia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p04-moduly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Moduly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p05-pip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Správa knižníc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p06-agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Agilný vývoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p07-git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p08-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p09-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Trieda a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p10-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Metódy a JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p11-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p12-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p13-pygame/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Pygame
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p14-pygame-mys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Pygame 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p15-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p16-projekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p17-pygame-zvuk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Zvuk a hudba
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pokrocili-3/p18-udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - UDP základy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prehlad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prehľad tém
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zbierka úloh
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Zbierka úloh
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-java/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j07-01-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kontakt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cvicenie-1-uvod-do-predmetu-vyvojovy-diagram">Cvičenie 1: Úvod do predmetu, vývojový diagram<a class="headerlink" href="#cvicenie-1-uvod-do-predmetu-vyvojovy-diagram" title="Permanent link">¶</a></h1>
+<p>Úvodné cvičenie je venované príprave vášho počítača, inštalácii potrebných nástrojov a programov a praktickému úvodu do ekosystému Java. Okrem toho sa na tomto a na nasledujúcich cvičeniach stručne zopakujú témy programovania, ktoré ste preberali v predchádzajúcich rokoch. Vysvetlí sa tiež, ktoré znalosti by už študent mal ovládať, nakoľko tento predmet nie je úvodným predmetom pre programovanie ako také. </p>
+<div class="md-has-sidebar">
+<main>
+<p>Na cvičení si taktiež zopakujeme návrh a tvorbu jednoduchých vývojových diagramov. Klasické vývojové diagramy sú používané hlavne pri výuke. Ich pochopenie vám však neskôr pomôže pri vytváraní iných typov diagramov. Tie sa v praxi hojne používajú na vysvetlenie procesov prebiehajúcich v počítačovom systéme či aplikácii. Pri zložitejšej architektúre, práci vo väčšom tíme ľudí alebo pri komunikácii s manažérmi sú diagramy často lepšie riešenie ako text, odrážky, či ukážka kódu.
+  </p>
+</main>
+<aside>
+<p>Farebný diagram pekne vyznie aj vo vašej projektovej alebo záverečnej práci a zvýši vám počet strán. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81M17 10h-4V9h4z"></path></svg></span>
+  </p>
+</aside>
+</div>
+<p><img alt="Typy vývojových diagramov v nástroji mermaidchart.com" src="../../assets/flowchart.png"></p>
+<h2 id="opakovanie-z-minulych-rokov">Opakovanie z minulých rokov<a class="headerlink" href="#opakovanie-z-minulych-rokov" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Tento predmet nie je úvodom do programovania ako takého, preto sa od vás očakáva, že už ovládate základy programovania a algoritmizácie. Na úvodných cvičeniach si zopakujeme veci z programovania, ktoré ste brali v minulých rokoch. Porovnáme si kód v Jave z kódom, ktorý ste písali v jazyku Python. Ak si však z predchádzajúcich rokov už veľa nepamätáte, oprášte si doma staré zošity a učebnice.</p>
+<p>Okrem úplných základov programovania a algoritmizácie si zopakujte aj zložené dátové štruktúry ako polia, množiny a slovníky, a taktiež základné triediace a vyhľadávacie algoritmy.</p>
+<p>V rámci tohto predmetu budeme používať okrem <abbr title="Integrated Development Environment">IDE</abbr> aj konzolu a príkazový riadok, preto ak používate na svojom počítači operačný systém Windows, odporúčam vám <a href="https://aka.ms/powershell-release?tag=stable">nainštalovať si PowerShell</a>. Ak to však s programovaním myslíte vážne, pouvažujte nad operačným systémom Linux. Pre seriózne programovanie je vo väčšine prípadov Linux tým najlepším riešením.</p>
+<div class="admonition tip">
+<p class="admonition-title">Učím sa s pomocou Umelej Inteligencie</p>
+<p>Som študent strednej školy. Vysvetli mi jednoduchým spôsobom, ako funguje:</p>
+<ul>
+<li><a href="https://grok.com/share/c2hhcmQtMg%3D%3D_04b3627f-6f2d-4869-ad90-7ffbc532171b">Triediaci algoritmus Bubble Sort</a></li>
+<li><a href="https://grok.com/share/c2hhcmQtMg%3D%3D_f9683f65-b3d4-433a-a350-d308f461b67d">Rekurzia</a></li>
+<li><a href="https://grok.com/share/c2hhcmQtMg%3D%3D_94026252-0da8-4476-838b-f72158d34ddd">Zložené dátové typy</a></li>
+</ul>
+<p>Sú tieto odpovede, ktoré nám dala umelá inteligencia, správne? Dôverovali by ste umelej inteligencii pri témach, o ktorých vôbec nič neviete?</p>
+</div>
+</main>
+<aside>
+<p>Medzi základné koncepty algoritmizácie patrí analýza problému, rozdelenie na menšie kroky a návrh algoritmu. Vetvenie algoritmu pomocou podmienok, použitie cyklov na opakovanie kódu, základné logické a matematické operácie sú takisto veci, ktoré by ste už mali vedieť ovládať.</p>
+<p>Z konceptov programovania by ste už mali vedieť základy premenných a dátových typov, ako napr. čísla, reťazce a booleovské hodnoty. Očakáva sa tiež, že vám nebude robiť problém definovanie a používanie vlastných funkcií/procedúr a použitie parametrov a návratových hodnôt pri volaní funkcií.
+  </p>
+</aside>
+</div>
+<h2 id="java-development-kit">Java Development Kit<a class="headerlink" href="#java-development-kit" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Java nie je iba programovací jazyk, ale aj celá platforma a sada programov a nástrojov na vývoj a spúšťanie programov napísaných pre túto platformu. Štandardne ak si stiahnete do svojho počítača 'Javu', tak ide iba o nástroje na spúšťanie programov vytvorených pre platformu Java. Táto sada programov sa volá <em>Java Runtime Environment (JRE)</em> a vlastné programy v takejto 'Jave' nebudete môcť písať. </p>
+<p>Na to, aby ste mohli aj programy aj tvoriť potrebujete tzv. <em>Java Development Kit (JDK)</em>. Ide o väčšiu sadu nástrojov, ktorá okrem JRE v sebe obsahuje aj nástroje pre programátorov. Táto JDK sada však nie je iba jedna, ale existuje veľké množstvo tzv. <em>distribúcii JDK</em> od rôznych inštitúcii a firiem. </p>
+<p>V rámci tohto predmetu budeme používať distribúciu <em>Temurin</em> vytvorenú nadáciou Eclipse. Ide o open source distribúciu, ktorá je vhodná na bežné použitie ako pri výuke, tak aj pri komerčnom nasadení Javy. Stiahnite si teda a nainštalujte do svojho počítača <strong>JDK Temurin vo verzii 21 <abbr title="Long term support">LTS</abbr></strong> z oficálnej stránky <a href="https://adoptium.net/">https://adoptium.net/</a>
+  </p>
+</main>
+<aside>
+    Java má za sebou dlhú históriu a prešla viacerými zmenami, preto je niekedy dosť komplikované vyznať sa, čo sa ako volá a načo to slúži. Aj samotný programovací jazyk prešiel značnou modernizáciou a vylepšeniami, preto neodporúčame učiť sa zo starých kníh a neaktuálnych webových stránok, ktoré vás môžu často popliesť.
+  </aside>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Ktorú verziu Javy použiť?</p>
+<p>Nová verzia Javy vychádza každých 6 mesiacov. Pre bežné použitie však nie je dobré používať vždy tú najnovšiu, ale radšej použite verziu <abbr title="Long term support">LTS</abbr> (long-term support), ktorá vychádza každé dva roky. Je stabilnejšia a má dlhú podporu aktualizácii opráv chýb a bezpečnostných záplat.</p>
+<p>Verzie Javy z podporou <abbr title="Long term support">LTS</abbr> sú verzie 17, 21 a 25. Pre viac informácii pozri stránku o <a href="https://en.wikipedia.org/wiki/Java_version_history">histórii verzií Javy</a></p>
+</div>
+<p>Po úspešnej inštalácii si funkčnosť overte tak, že si otvorte nové okno konzoly a v príkazovom riadku spusťte príkaz <code>java --version</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Zistenie verzie Javy</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>~$ java --version
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>openjdk 21.0.6 2025-01-21 LTS
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>OpenJDK Runtime Environment Temurin-21.0.6+7 (build 21.0.6+7-LTS)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>OpenJDK 64-Bit Server VM Temurin-21.0.6+7 (build 21.0.6+7-LTS, mixed mode, sharing)
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="ide"><abbr title="Integrated Development Environment">IDE</abbr><a class="headerlink" href="#ide" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p><img align="right" alt="IntelliJ IDEA" src="../../assets/IntelliJ_IDEA_Icon.svg" width="150"></p>
+<p>Pre komfortné programovanie v Jave je vhodné, aby ste používali vývojové prostredie, po anglicky Integrated Development Environment (<abbr title="Integrated Development Environment">IDE</abbr>). Na tomto predmete budeme pracovať vo vývojovom prostredí <em>IntelliJ IDEA</em> od firmy JetBrains. Ide o najpopulárnejšie a najviac premakané vývojové prostredie pre jazyk Java. </p>
+<p>Program ItelliJ IDEA si stiahnite a nainštalujte z oficiálnej stránky <a href="https://www.jetbrains.com/idea/download">https://www.jetbrains.com/idea/download</a>. K dispozícii je bezplatná verzia <em>Community Edition</em> a platená verzia <em>Ultimate</em>. Ako študenti SPŠE v Prešove máte jedinečnú možnosť používať platenú verziu Ultimate úplne zadarmo. </p>
+<div class="admonition info">
+<p class="admonition-title">Ako si aktivovať IntelliJ IDEA Ultimate</p>
+<p>Pre aktiváciu platenej verzie je potrebné</p>
+<ul>
+<li>zaregistrovať sa na stránke <a href="https://account.jetbrains.com/signup">https://account.jetbrains.com/signup</a> s použitím svojej školskej e-mailovej adresy.</li>
+<li>požiadať o školskú licenciu na stránke <a href="https://www.jetbrains.com/shop/eform/students">https://www.jetbrains.com/shop/eform/students</a>. Vyplnenie formulára a potvrdenie e-mailovej adresy vám zaberie 3 minúty a školskú licenciu získate automaticky ihneď po zaslaní žiadosti.</li>
+<li>prihlásiť sa do vyššie vytvoreného konta v programe IntelliJ IDEA. Prihlásenie urobíte v okne <em>Manage Subscriptions</em> ktoré nájdete v sekcii Help, alebo v úvodnom okne po stlačení na ikonku <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97s-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1s.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64z"></path></svg></span> vľavo dole.
+</li>
+</ul>
+</div>
+</main>
+<aside>
+<p>Za vývojovým prostredím IntelliJ IDEA stojí celkom zaujímavá firma. Spoločnosť JetBrains s.r.o. bola založená v Českej republike, troma Ruskými programátormi. Našich susedov si vybrali, aby mohli ľahšie obchodovať v rámci Európskej únie a Ameriky. Postupne vyvinuli množstvo ďalších produktov a medzi ich najznámejší prínos do sveta programovania patrí vytvorenie jazyka <em>Kotlin</em>. Tento jazyk sa stal hlavným programovacím jazykom pre vývoj aplikácii pre OS Android. </p>
+<p>Jazyk Kotlin beží nad platformou Java, dá sa použiť všade tam, kde aj jazyk Java a ponúka modernú alternatívu s množstvom vylepšení. Syntax jazyka je podobný Jave, a zruční Java programátori sa ho dokážu naučiť za pár dní. Hlavným a najpopulárnejším vývojovým prostredím pre jazyk Kotlin je opäť IntelliJ IDEA.
+  </p>
+</aside>
+</div>
+<p>IntelliJ IDEA nie je zďaleka jediné vývojové prostredie pre jazyk Java. Medzi ďalšie populárne <abbr title="Integrated Development Environment">IDE</abbr>-čka patria programy <em>Netbeans</em> a <em>Eclipse <abbr title="Integrated Development Environment">IDE</abbr></em>.
+Veľa programátorov má tiež v obľube používať nástroj <a href="https://code.visualstudio.com/">Visual Studio Code</a>, čo je taký univerzálny editor pre veľké množstvo jazykov, a zvláda celkom dobre aj Javu. Medzi jeho najväčšie výhody patrí jednoduchosť, rýchlosť, veľké množstvo rozšírení a <em>výborná podpora pre nástroje umelej inteligencie</em>.</p>
+<h2 id="vyvojovy-diagram">Vývojový diagram<a class="headerlink" href="#vyvojovy-diagram" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Použitie diagramov pri tvorbe softvéru prešlo turbulentnou históriou. V súčasnom modernom spôsobe programovania sa v posledných rokoch prestali používať príliš formálne a komplexné diagramy. Neprinášali želaný úžitok, stratilo sa pri nich veľa času a rýchlo sa stali zastaralými. Namiesto nich do popredia prišli ľahké tzv. "lightweight" diagramy, ktoré sú praktickejšie, jednoduchšie a rýchlejšie sa prispôsobia zmenám. Často sa dokonca dajú vytvoriť aj automaticky, priamo zo zdrojového kódu aplikácie.</p>
+<p>Moderným prístupom ku tvorbe diagramov sa budeme venovať aj na tomto predmete. Pred tým však je vhodné zopakovať si vývojové diagramy. Tie majú stále svoje uplatnenie, či už ide o popis jednoduchých a priamočiarych procesov, alebo pri popise algoritmov. Okrem použitia vývojových diagramov vo výuke nájdeme ich využitie v praxi stále aj dnes. Ozrejmia nám poradie krokov v danom procese, pomáhajú zorientovať sa v algoritme a pomocou nich vieme skontrolovať, či sme pri implementácii na nič nezabudli.</p>
+<div class="admonition tip">
+<p class="admonition-title">Učím sa s pomocou Umelej Inteligencie</p>
+<p>Som študent strednej školy. Chcem vedieť, <a href="https://chatgpt.com/share/68b2c1fd-aefc-8011-819b-73cfec407b22">aké sú súčasné trendy používania diagramov pri softvérovom vývoji.</a></p>
+</div>
+<p><img align="left" alt="Treba prečitať" src="../../assets/pointing5l.png" width="150"></p>
+<p>Návrh vývojového diagramu netreba komplikovať. Často je vhodné použiť iba minimálny počet blokov, prepojením šípkami určiť ich poradie a bloky zrozumiteľne označiť. Pri popise blokov je najlepšie zamerať sa na vyjadrenie akcie, ktorú daný blok vykonáva. Zložitejšie časti procesu je vhodné rozdeliť do viacerých menších diagramov a na tie sa potom v hlavnom diagrame odkazovať.</p>
+<p>V nasledujúcej časti si pripomenieme základné bloky vývojového diagramu, ktoré sa používajú pri popise algoritmov a na konkrétnych príkladoch si ukážeme ich využitie.</p>
+</main>
+<aside>
+<p>Programovanie je často o riešení problémov a úloh, s ktorými sa na vás obrátia vaši klienti alebo nadriadení. Vtedy je samotné písanie kódu vedľajšie a zákazníkom je jedno, koľko kódu napíšete. Tiež im bude jedno, či ho napíšete vy, alebo umelá inteligencia. Vašou pridanou hodnotou má byť schopnosť daný problém alebo úlohu správne analyzovať a vytvoriť návrh riešenia. Potom môžete zvoliť vhodné nástroje a techniky na vytvorenie softvéru, ktorý problémy vášho klienta pomôže vyriešiť.</p>
+<p>Ak je úloha zložitejšia, alebo pracujete v rámci tímu, je častokrát vhodné návrh riešenia zapísať vo forme diagramu. Pomocou diagramu sa viete zamerať na podstatné časti úlohy a nemusíte myslieť na zložitosť a pridané problémy, ktoré vám vždy do vášho riešenia prinesie programovací jazyk, framework, knižnica alebo iný nástroj, ktorý vo výsledku použijete.</p>
+<div class="admonition tip">
+<p class="admonition-title">Hot Take</p>
+<p>Umelá inteligencia, povedz mi  <a href="https://grok.com/share/c2hhcmQtMg%3D%3D_9be19082-4ce7-4525-bb30-0bcbd99405d6">prečo UML diagramy pohoreli a čo z nich nakoniec ostalo?</a></p>
+</div>
+</aside>
+</div>
+<h3 id="zakladne-bloky-vyvojoveho-diagramu">Základné bloky vývojového diagramu<a class="headerlink" href="#zakladne-bloky-vyvojoveho-diagramu" title="Permanent link">¶</a></h3>
+<table>
+<tbody><tr><th> Príklad </th> <th> Typ symbolu </th><th> Popis </th></tr>
+<tr><td align="center" width="30%"> 
+<pre class="mermaid"><code>flowchart TD
+    A([Štart])</code></pre>
+</td><td>Terminál</td><td>Označuje začiatok a koniec procesu. Niekedy nazývaný aj terminátor.</td></tr><tr><td align="center"> 
+<pre class="mermaid"><code>flowchart TD
+    A[/Načítaj číslo i/]</code></pre>
+</td><td>Vstup/Výstup</td><td>Vstup a výstup dát, napr. načítanie čísla, vypísanie výsledku, ...</td></tr><tr><td align="center"> 
+<pre class="mermaid"><code>flowchart TD
+    A[x = i * y]</code></pre>
+</td><td>Operácia, proces</td><td>Bežný príkaz, operácia alebo iný konkrétny krok procesu</td></tr><tr><td align="center"> 
+<pre class="mermaid"><code>flowchart TD
+    A{x &gt; 10}</code></pre>
+</td><td>Rozhodovanie</td><td>Rozhodovacia funkcia, podmienka. Má viacero výstupov, označených podľa toho, aký výsledok rozhodovania môže nastať.</td></tr><tr><td align="center"> 
+<pre class="mermaid"><code>flowchart TD
+    A[[Rozklad na prvočísla]]</code></pre>
+</td><td>Podproces</td><td>Podprogram, metóda alebo funkcia, ktorej proces je zakreslený na inom mieste vývojového diagramu</td></tr></tbody></table>
+
+<div class="md-has-sidebar">
+<main>
+<p>Jednotlivé časti vývojového diagramu sú spojené čiarami so šípkami <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span>, ktoré určujú smer toku, teda v akom poradí sa bude daný proces alebo algoritmus vykonávať.</p>
+<p>Okrem vyššie uvedených symbolov vývojového diagramu existujú ďalšie symboly s rôznymi významami, napríklad existuje špeciálny typ symbolu pre manuálny vstup dát, alebo symbol pre krok prípravy. V bežnej praxi však tieto symboly nie sú veľmi rozšírené a väčšinou si kľudne vystačíme so základnymi symbolmi.
+  </p>
+</main>
+<aside>
+<p>Ak je čiara medzi symbolmi veľmi dlhá alebo neprehľadná, môžeme ju za pomoci symbolov kruhu <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13"></path></svg></span> rozdeliť a zprehľadniť tým diagram. Tento symbol sa nazýva spojka, alebo konektor.
+  </p>
+</aside>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Príklad 1.1: Súčet dvoch čísel</p>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; Input1[/Prečítať číslo1/]
+    Input1 --&gt; Input2[/Prečítať číslo2/]
+    Input2 --&gt; Sum[súčet = číslo1 + číslo2]
+    Sum --&gt; Output[/Vypísať súčet/]
+    Output --&gt; End([Koniec])</code></pre>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Príklad 1.2: Delenie dvoch čísel</p>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; Input1[/Prečítať delenec/]
+    Input1 --&gt; Input2[/Prečítať deliteľ/]
+    Input2 --&gt; Test{deliteľ == 0}
+    Test --&gt; |Áno|Error[/Vypísať "Nulou sa nedá deliť"/]
+    Test --&gt; |Nie|Div[podiel = delenec / deliteľ]
+    Div --&gt; Output[/Vypísať podiel/]
+    Output --&gt; End([Koniec])
+    Error --&gt; End</code></pre>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Príklad 1.3: Kalkulačka</p>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; Prompt[/Vypísať menu s možnosťami: S, P, A, X/]
+    Prompt --&gt; Read[/Vstup: voľba užívateľa/]
+    Read --&gt; Choice{Čo si užívateľ vybral?}
+    Choice --&gt; |S|Add[[Súčet]]
+    Choice --&gt; |P|Div[[Podiel]]
+    Choice --&gt; |A|Abs[[Absolútna hodnota]]
+    Choice --&gt; |X|End([Koniec])
+    Add --&gt; Prompt
+    Div --&gt; Prompt
+    Abs --&gt; Prompt
+    AStart([Absolútna hodnota]) --&gt; Input1[/Prečítať číslo/]
+    Input1 --&gt; Test{číslo &lt; 0}
+    Test --&gt; |Áno|Inv[číslo = číslo * -1]
+    Test --&gt; |Nie|Output[/Vypísať číslo/]
+    Inv --&gt; Output
+    Output --&gt; AEnd([Koniec])
+    classDef empty width:0px</code></pre>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Príklad 1.4: Praženica na cibuľke</p>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; InitEgg[[Pripraviť vajíčka]]
+    InitEgg --&gt; S0[Dať panvicu na sporák]
+    S0 --&gt; InitOnion[[Opražiť cibuľu]]
+    InitOnion --&gt; S1[Vyliať vajíčka do panvice s opraženou cibuľou]
+    S1 --&gt; S2[Miešať]
+    S2 --&gt; Test{praženica == riedka}
+    Test --&gt; |true|S2
+    Test --&gt; |false|S3[Vypnúť sporák]
+    S3 --&gt; S4[Dať praženicu na tanier a podávať]
+    S4 --&gt; End([Koniec])
+    AStart([Pripraviť vajíčka]) --&gt; A1[/Vybrať vajíčka/]
+    A1 --&gt; AP1[Rozbiť vajíčka a vyliať do misky]
+    AP1 --&gt; AP2[Rozmiešať]
+    AP2 --&gt; AEnd([Koniec])
+
+    BStart([Opražiť cibuľu]) --&gt; B1[/Vybrať cibuľu, olej a korenie/]
+    B1 --&gt; BP1[Očistiť a pokrájať cibuľu]
+    BP1 --&gt; BP2[Dať do panvice olej a cibuľu, zapnúť sporák]
+    BP2 --&gt; BP3[Miešať]
+    BP3 --&gt; BTest{cibuľa == opražená}
+    BTest --&gt; |true|BKor[Pridať korenie a soľ]
+    BKor --&gt; BEnd([Koniec])
+    BTest --&gt; |false|BP3</code></pre>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Príklad 1.5: Pracovný tok (Workflow) predajcu áut</p>
+<pre class="mermaid"><code>flowchart LR
+    Start([Štart]) --&gt; Test{Nové alebo jazdené auto?}
+    Test --&gt; |Nové|New[Nakonfigurovať nové vozidlo]
+    Test --&gt; |Jazdené|Old[Vybrať auto zo skladových zásob]
+    New --&gt; P1[Ponúknuť zimné pneumatiky]
+    Old --&gt; P1
+    P1 --&gt; O1((A ))
+    O2(( A)) --&gt; P3[Ponúknuť poistenie]
+    P3 --&gt; P4[Ponúknuť predĺženie záruky]
+    P4 --&gt; P5[Ponúknuť vernostný program]
+    P5 --&gt; End([Koniec])</code></pre>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Úloha do zošita: Vývojový diagram</p>
+<p>Do zošita si zakreslite jeden jednoduchý vývojový diagram a jeden diagram s rozhodovacím blokom.</p>
+<p>Splnenie úlohy vám budeme kontrolovať.</p>
+</div>
+<h3 id="zbierka-prikladov-vyvojovych-diagramov">Zbierka príkladov vývojových diagramov<a class="headerlink" href="#zbierka-prikladov-vyvojovych-diagramov" title="Permanent link">¶</a></h3>
+<p>V tejto časti uvádzame zopár úloh pre tvorbu vývojových diagramov. Po kliknití na príklad sa vám ukáže daný diagram.</p>
+<details class="example">
+<summary>Príklad 1.6: Zistenie väčšieho z dvoch čísel</summary>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; Vstup[/Načítaj čísla: x, z/]
+    Vstup --&gt; Test{x &gt; y}
+    Test --&gt;|true|A[/Výstup: x/]
+    Test --&gt;|false|B[/Výstup: y/]
+    A --&gt; End([Koniec])
+    B --&gt; End</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Doplňujúce otázky</p>
+<ul>
+<li>Čo sa stane, ak sú čisla rovnaké?</li>
+<li>Ako by ste upravili diagram tak, aby pokrýval všetky možnosti?</li>
+</ul>
+</div>
+</details>
+<details class="example">
+<summary>Príklad 1.7: Výpis radu čísel</summary>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; Vstup[/Načítaj čísla: from, to/]
+    Vstup --&gt; P[i = from]
+    P --&gt; Test{i &lt;= to}
+    Test --&gt;|false| End([Koniec])
+    Test --&gt;|true|Print[/Výstup: i/]
+    Print --&gt; Step[i = i + 1]
+    Step --&gt; Test</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Doplňujúce otázky</p>
+<ul>
+<li>Funguje tento algoritmus pre akúkoľvek dvojicu čísel?</li>
+<li>Vypíše sa aj číslo <code>to</code>?</li>
+</ul>
+</div>
+</details>
+<details class="example">
+<summary>Príklad 1.8: Hľadanie čísla</summary>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; Prompt[/Uhádni na aké číslo myslím/]
+    Prompt --&gt; R[y = random_integer]
+    R --&gt; Vstup[/Načítaj číslo x/]
+    Vstup --&gt; EQ{x == y}
+    EQ --&gt;|true| WIN[/Uhádol si, bolo to číslo Y/]
+    WIN --&gt; End([Koniec])
+    EQ --&gt;|false|CMP{x &gt; y}
+    CMP --&gt;|true| BIG[/Hľadané čislo je menšie, hádaj znova/]
+    BIG --&gt; Vstup
+    CMP --&gt;|false| SMOL[/Hľadané čislo je väčšie, hádaj znova/]
+    SMOL --&gt; Vstup</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Doplňujúce otázky</p>
+<ul>
+<li>Ako by vyzeral vývojový diagram, ak by mal súťažiaci iba 10 pokusov?</li>
+<li>Čo by trebalo pridať, aby vo výslednom výpise sa uviedlo, na koľko pokusov bolo číslo uhádnuté</li>
+</ul>
+</div>
+</details>
+<details class="example">
+<summary>Príklad 1.9: Výpočet aritmetického priemeru</summary>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; Init[počet = 0, súčet = 0]
+    Init --&gt; Prompt[/Zadaj ďalšie číslo, alebo 'X' ak hotovo/]
+    Prompt --&gt; Hotovo{vstup == 'X'}
+    Hotovo --&gt;|true| Print[[Výpis priemeru]]
+    Print --&gt; END([Koniec])
+    Hotovo --&gt;|false| P1[počet = počet + 1]
+    P1 --&gt; P2[súčet = súčet + vstup]
+    P2 --&gt; Prompt
+    AStart([Výpis priemeru])
+    AStart --&gt; P3[priemer = súčet / počet]
+    P3 --&gt; Out[/Vypíš priemer/]
+    Out --&gt; AEnd([Koniec])</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Doplňujúce otázky</p>
+<ul>
+<li>Čo sa stane, ak nezadáme žiadne číslo?</li>
+<li>Čo sa stane, ak zadáme písmeno iné ako 'X'?</li>
+</ul>
+</div>
+</details>
+<details class="example">
+<summary>Príklad 1.10: Zoradenie poľa algoritmom Bubble Sort</summary>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; InitV[/"Vstup: pole čísel"/]
+    InitV --&gt; N["n = length(pole)"]
+    N --&gt; InitSwap["swapped = false"]
+    InitSwap --&gt; Loop["i = 1"]
+    Loop --- C1[ ]:::empty
+    C1 --&gt; Test{"pole[i - 1] &gt; pole[i]"}
+    Test --&gt; |true|Swap["prehoď_prvky(i-1, i)"]
+    Test --&gt; |false|Step
+    Swap --&gt; SetSwapped["swapped = true"]
+    SetSwapped --&gt; Step["i = i + 1"]
+    Step --&gt; TestLoop{"i &lt; n"}
+    TestLoop --&gt;|true| C1
+    TestLoop --&gt;|false| TestSwapped{"swapped == true"}
+    TestSwapped --&gt;|true| InitSwap
+    TestSwapped --&gt;|false| End([Koniec])
+    classDef empty width:0px</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Doplňujúce otázky</p>
+<ul>
+<li>Prečo vnútorný cyklus začína od čísla 1 a nie od čísla 0?</li>
+<li>Algoritmus by sa dal optimalizovať, ako?</li>
+</ul>
+</div>
+<p>Vývojový diagram s použitím neštandardného symbolu cyklu for, vytvorený v programe draw.io</p>
+<p><img alt="Bubble sort flowchart" src="../../assets/bubble-sort.drawio.png"></p>
+</details>
+<details class="example">
+<summary>Príklad 1.11: Výpočet faktoriálu pomocou iterácie</summary>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; Vstup[/Načítaj číslo/]
+    Vstup --&gt; Init[i = 1, výsledok = 1]
+    Init --&gt; Test{i &lt;= číslo}
+    Test --&gt;|false| Out[/Vypíš výsledok/]
+    Test --&gt;|true| P[výsledok = výsledok * i]
+    P --&gt; P2[i = i + 1]
+    P2 --&gt; Test
+    Out --&gt; End([Koniec])</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Doplňujúce otázky</p>
+<ul>
+<li>Aké najväčšie číslo by váš program vedel spracovať?</li>
+</ul>
+</div>
+</details>
+<details class="example">
+<summary>Príklad 1.12: Výpočet faktoriálu pomocou rekurzie</summary>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; Vstup[/Načítaj číslo n/]
+    Vstup --&gt; FN[["výsledok = faktorial(n)"]]
+    FN --&gt; Out[/Vypíš výsledok/]
+    Out --&gt; End([Koniec])
+
+    AStart(["faktorial(x)"]) --&gt; Test{x == 0}
+    Test --&gt; |true| P1[výsledok = 1]
+    Test --&gt; |false| P2[["výsledok = x * faktorial(x-1)"]]
+    P1 --&gt; AEnd([return výsledok])
+    P2 --&gt; AEnd</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Doplňujúce otázky</p>
+<ul>
+<li>Ktorá verzia algoritmu je ľahšia na pochopenie?</li>
+<li>Ktorá verzia algoritmu je ľahšia na programovanie?</li>
+</ul>
+</div>
+</details>
+<details class="example">
+<summary>Príklad 1.13: Súčet prvých N prirodzených čísel</summary>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; Init[výsledok = 0]
+    Init --&gt; Vstup[/Načítaj číslo n/]
+    Vstup --&gt; Test{n == 0}
+    Test --&gt;|true|Print[/Výstup: výsledok/]
+    Print --&gt; End([Koniec])
+    Test --&gt;|false|P[výsledok = výsledok + n]
+    P --&gt; P1[n = n - 1]
+    P1 --&gt; Test</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Doplňujúce otázky</p>
+<ul>
+<li>Aký bude priebeh algoritmu, ak zadáme číslo, ktoré nie je prorodzené?</li>
+<li>Ako by ste upravili algoritmus tak, aby pokrýval všetky možnosti vstupu?</li>
+</ul>
+</div>
+</details>
+<details class="example">
+<summary>Príklad 1.14: Povrch a objem valca</summary>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; VstupR[/Načítaj polomer/]
+    VstupR --&gt; VstupV[/Načítaj výšku/]
+    VstupV --&gt; S1[[Povrch valca]]
+    S1 --&gt; S2[[Objem valca]]
+    S2 --&gt; End([Koniec])
+
+    PStart([Objem valca]) --&gt; PP1["SP = 3.14 \* polomer \* polomer"]
+    PP1 --&gt; PP2[objem = SP * výška]
+    PP2 --&gt; PV[/Výstup: objem/]
+    PV --&gt; PEnd([Koniec])
+
+    VStart([Povrch valca]) --&gt; VP1["SP = 3.14 \* polomer \* polomer"]
+    VP1 --&gt; VP2["SPL = 2 \* 3.14 \* polomer \* výška"]
+    VP2 --&gt; VP3[povrch = 2 * SP + SPL]
+    VP3 --&gt; VV[/Výstup: povrch/]
+    VV --&gt; VEnd([Koniec])</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Doplňujúce otázky</p>
+<ul>
+<li>Algoritmus zbytočne počíta jednu časť dvakrát. Ako by ste upravili diagram tak, aby sa počítala iba raz?</li>
+</ul>
+</div>
+</details>
+<details class="example">
+<summary>Príklad 1.15: Nájdenie čísla v poli</summary>
+<pre class="mermaid"><code>flowchart TD
+    Start([Štart]) --&gt; InitV[/"Vstup: pole čísel"/]
+    InitV --&gt; InitX[/Vstup: hľadané číslo x/]
+    InitX --&gt; P["i = 0"]
+    P --&gt; P2["n = length(pole)"]
+    P2 --&gt; Test{i &lt; n}
+    Test --&gt; |false|Fail[/Výstup: číslo sa nenašlo/]
+    Test --&gt; |true|Test2{"pole[i] == x"}
+    Test2 --&gt; |true|Win[/Výstup: číslo sa nachádza na pozícii i/]
+    Test2 --&gt; |false|Step["i = i + 1"]
+    Step --&gt; Test
+    Fail --&gt; End([Koniec])
+    Win --&gt; Koniec</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Doplňujúce otázky</p>
+<ul>
+<li>Čo ak sa v poli nachádza hľadané číslo viac krát? Ako upraviť algoritmus, aby vypísal všetky nájdenia?</li>
+<li>Ak by boli čísla v poli zoradené, dal by sa algoritmus optimalizovať?</li>
+</ul>
+</div>
+</details>
+<h3 id="diagramy-ako-kod">Diagramy ako kód<a class="headerlink" href="#diagramy-ako-kod" title="Permanent link">¶</a></h3>
+<p>Súčasným trendom v moderných prístupoch ku tvorbe diagramov je technika Diagrams as Code (<abbr title="Diagrams as Code">DaC</abbr>). Ide o postup, pri ktorom sa diagram nekreslí v grafickom editore, ale pomocou na to určenej syntaxe sa zapíše do textového súboru, často priamo do dokumentácie alebo komentárov zdrojového kódu. Výsledný obrázok sa potom automaticky vygeneruje pomocou dokumentačného nástroja. </p>
+<p>Takéto diagramy sa dajú ľahko upraviť a verzionovať spolu s kódom a jednoducho sa vložia do dokumentácie a webových stránok. Veľkou výhodou je taktiež možnosť použitia umelej inteligencie, ktorá vie takéto diagramy písať a synchronizovať so zmenami v zdrojovóm kóde programu.</p>
+<p>Medzi nevýhody prístupu Diagrams as Code patrí nevyzrelosť nástrojov na písanie takýchto diagramov, nemožnosť precízne určiť polohu a tvar blokov a šípiek, a pri automatickom písaní diagramov aj nižšia pridaná hodnota <em>(low signal)</em> oproti ručne písaným diagramom. Netechnický ľudia môžu mať taktiež problém s písaním takéhoto diagramu, nakoľko ide vlastne o špeciálny programovací jazyk <em>(Domain-specific Language, DSL)</em></p>
+<div class="md-has-sidebar">
+<main>
+<p>Jedným z najpopulárnejších <abbr title="Diagrams as Code">DaC</abbr> nástrojov na tvorbu diagramov je <a href="https://mermaid.js.org/">Mermaid</a>, ktorý rýchlo a bezplatne umožňuje vytvoriť vývojový diagram zo stručného textového zápisu jednotlivých blokov a prepojení.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Príklad zápisu vývojového diagramu <em>1.1: Súčet dvoch čísel</em> v syntaxe Mermaid</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>flowchart TD
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    Start([Štart])
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    Input1[/Prečítať číslo1/]
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    Input2[/Prečítať číslo2/]
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    Sum[súčet = číslo1 + číslo2]
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    Output[/Vypísať súčet/]
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    End([Koniec])
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    Start --&gt; Input1
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    Input1 --&gt; Input2
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    Input2 --&gt; Sum
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    Sum --&gt; Output
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    Output --&gt; End
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>V textovom zápise vývojového diagramu stačí uviesť bloky, ktoré chcete zobraziť a napísať prepojenia jednotlivých blokov. Typy blokov sa definuje pomocou rôznych druhov zátvoriek, do ktorých sa napíše text, ktorý chcete v bloku zobraziť, napr. <code>Start([Štart])</code>. Prepojenie blokov sa napíše pomocou textu <code>--&gt;</code>. </p>
+</main>
+<aside>
+<p>Nástroj Mermaid je založený ja Javascriptovej knižnici <a href="https://github.com/mermaid-js/mermaid">mermaid.js</a>, ktorá umožňuje generovať diagramy na vašej stránke alebo vo vašom frontent programe. Diagramy na tejto stránke, ktorú práve čítate, boli automaticky vygenerované práve pomocou tento knižnice a autor nemusel použiť žiadny špeciálny editor na tvorbu diagramov. <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 10c0 1.38-2.12 2.5-3.5 2.5s-2.75-1.12-2.75-2.5h-1.5c0 1.38-1.37 2.5-2.75 2.5S5 11.38 5 10h-.75c-.16.64-.25 1.31-.25 2a8 8 0 0 0 8 8 8 8 0 0 0 8-8c0-.69-.09-1.36-.25-2zm-7-6C9.04 4 6.45 5.61 5.07 8h13.86C17.55 5.61 14.96 4 12 4m10 8a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-10 5.23c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"></path></svg></span></p>
+<div class="admonition tip">
+<p class="admonition-title">Pracujem s pomocou Umelej Inteligencie</p>
+<p>Pracujem na dokumentácii k môjmu projektu. Vytvor mi <a href="https://grok.com/share/c2hhcmQtMg%3D%3D_b29dbc6f-2b61-4b68-91c5-24bd75d1f10b">kód v jazyku Mermaid na zápis vývojového diagramu pre nájdene väčšieho z dvoch čísel</a></p>
+<details>
+<summary>Vygenerovaný vývojový diagram</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>flowchart TD
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    A[Začiatok] --&gt;|Vstup| B["Zadaj prvé číslo (a)"]
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    B --&gt; C["Zadaj druhé číslo (b)"]
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    C --&gt; D{a &gt; b ?}
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    D --&gt;|Áno| E["Výstup: Väčšie číslo je a"]
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    D --&gt;|Nie| F{a == b ?}
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    F --&gt;|Áno| G["Výstup: Čísla sú rovnaké"]
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    F --&gt;|Nie| H["Výstup: Väčšie číslo je b"]
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    E --&gt; I[Koniec]
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    G --&gt; I
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    H --&gt; I
+</span></code></pre></div>
+</details>
+</div>
+</aside>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Praktická úloha na cvičení</p>
+<p>Otvorte si na vašom prehliadači stránku <a href="https://mermaid.live">https://mermaid.live</a>. Vytvorte v ňom jednoduchý vývojový diagram.</p>
+<p>V časti <strong>Actions</strong> si vyexportujte váš vývojový diagram do formátu .png a <strong>pošlite ho vášmu učiteľovi na EduPage</strong> do konca vyučovacej hodiny.</p>
+</div>
+<p>Okrem vývojových diagramov nástroj Mermaid umožňuje vytvoriť aj iné typy diagramov používaných pri návrhu a vývoji softvéru. <em>Tento nástroj vám môže pomôcť, ak budete potrebovať vytvoriť diagramy do svojej práce či zadania a nebude sa vám chcieť kresliť ich ručne.</em></p>
+<div class="admonition warning">
+<p class="admonition-title">Upozornenie</p>
+<p>Nástroj Mermaid má niektoré nedostatky, ktoré v niektorých prípadoch komplikujú tvorbu vývojových diagramov. Najväčší problém majú so šípkami smerom späť a pri symbole cyklusu for (ktorého použitie je neštandardné a využíva sa hlavne pri výuke). Ak je potrebná formálna presnosť je lepšie použiť grafický editor diagramov ako napr. <a href="https://draw.io">draw.io</a>.</p>
+</div>
+<h2 id="pseudokod">Pseudokód<a class="headerlink" href="#pseudokod" title="Permanent link">¶</a></h2>
+<p>Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programovaciemu, ale bez striktnej syntaxe. Pomáha plánovať kód. Taktiež pomáha vysvetliť, ako daný algoritmus funguje. Pseudokód je určený hlavne na zápis algoritmov a podobá sa na zdrojový kód. Pre písanie pseudokódu neexistujú žiadne pravidlá a väčšinou sa pseudokód podobá na programovací jazyk, ktorý daný autor chce použiť na implementáciu svojho algoritmu.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Príklad pseudokódu pre súčet dvoch čísel</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Začať
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Prečítať číslo1
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Prečítať číslo2
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>súčet = číslo1 + číslo2
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Vypísať súčet
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Koniec
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Úloha do zošita: Pseudokód</p>
+<p>Do zošita si napíšte pseudokód pre aspoň jeden z vašich vývojových diagramov, ktoré máte v zošite zakreslené.</p>
+<p>Splnenie úlohy vám budeme kontrolovať.</p>
+</div>
+<h2 id="zhrnutie-cvicenia">Zhrnutie cvičenia<a class="headerlink" href="#zhrnutie-cvicenia" title="Permanent link">¶</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Zopakovať si základy programovania z minulých rokov</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Ak používam Windows, nainštalovať si <a href="https://aka.ms/powershell-release?tag=stable">PowerShell</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Nainštalovať si Javu JDK 21 <abbr title="Long term support">LTS</abbr> v distribúcii <a href="https://adoptium.net/">Temurin</a><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Overiť si, či Java beží správne pomocou <code>java --version</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Nainštalovať si vývojové prostredie <a href="https://www.jetbrains.com/idea/download">IntelliJ IDEA</a><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Aktivovať si školskú licenciu pre bezplatné použitie verzie Ultimate</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Zopakovať si 5 základných symbolov vývojového diagramu<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Ovál - Terminál</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Rovnobežník - Vstup/Výstup</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Obdĺžnik - Operácia, proces</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Kosoštvorec - Rozhodovanie</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Obdĺžnik so zvislými čiarami - Podproces</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vytvoriť jednoduchý vývojový diagram </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vytvoriť vývojový diagram s rozhodovaním</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vytvoriť vývojový diagram v editore <a href="https://mermaid.live">Mermaid Live</a><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Exportovať diagram do formátu .png</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Zaslať vyexportovaný diagram učiteľovi na EduPage</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vytvoriť pseudokód daného algoritmu</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Poznámky do zošita</p>
+<p>V zošite je potrebné mať napísané aspoň tieto poznámky:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Učebnica na stránke oop.wagjo.com
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>PRÍPRAVA
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Pre programovanie je potrebné mať Javu JDK (Java Development Kit).
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Odporúčaná je distribúcia Temurin.
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>Akú Javu máme:
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>- príkaz: java --version
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>- nová verzia vychádza každých 6m
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>- posledné stabilné verzie Javy sú 17, 21 a 25
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>IDE (Integrated Development Environment):
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>- vývojové prostredie
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>- uľahčuje programovanie
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>- IntelliJ IDEA
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>ÚVOD DO DIAGRAMOV
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>Vývojový diagram znázorňuje kroky procesu alebo algoritmu. 
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>V praxi sa používa v zjednodušenej forme.
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>Dopĺňa iné typy diagramov.
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>&gt;&gt; zapísať tabuľku so základnými typmi symbolov vývojového diagramu.
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>&gt;&gt; nakresliť jeden jednoduchý vývojový diagram a jeden diagram s rozhodovacím blokom
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>DIAGRAMY AKO KÓD
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>"Diagram as Code" alebo DaC sú diagramy vo forme textu.
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>Vieme ich dať do dokumentácie alebo zdrojového kódu.
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>Používame nástroj http://mermaid.live
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>Vlastnosti:
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>- generované automaticky z textu
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>- ľahšie sa udržiava aktuálny
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>- vie ho vytvárať a meniť AI
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>Nevýhody:
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a>- nezrelosť nástrojov
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a>- musíte vedieť špecifickú syntax
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>- strata precíznej kontroly vizuálu
+</span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>
+</span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a>
+</span><span id="__span-4-48"><a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a>PSEUDOKÓD
+</span><span id="__span-4-49"><a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a>
+</span><span id="__span-4-50"><a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a>Pseudokód je zápis algoritmu v prirodzenom jazyku, bez pravidiel. 
+</span><span id="__span-4-51"><a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a>Pomáha nám vysvetliť algoritmus a plánovať kód.
+</span><span id="__span-4-52"><a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a>
+</span><span id="__span-4-53"><a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>&gt;&gt; zapísať pseudokód jedného z vývojových diagramov
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Skúšanie a kontrola vedomostí</p>
+<p>Na ďalšej hodine budeme kontrolovať nasledovné veci:</p>
+<ul>
+<li>Správne nainštalovaná Java JDK 21</li>
+<li>Správne nainštalovaný program IntelliJ IDEA</li>
+<li>Zapísané poznámky z hodiny vo vašom zošite</li>
+</ul>
+<p>Ústne skúšanie alebo krátka 5-minútovka:</p>
+<ul>
+<li>Základné symboly vývojového diagramu a ich význam</li>
+<li>Vedieť čo je Diagram as Code, uviesť jeho výhody a nevýhody</li>
+<li>Vytvorenie vývojového diagramu pre danú úlohu</li>
+<li>Vytvorenie pseudokódu danej úlohy alebo algoritmu</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025, 2026, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.top", "toc.follow", "navigation.tabs", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

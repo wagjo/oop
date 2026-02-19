@@ -1,0 +1,2910 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oop.wagjo.com/pokrocili-3/p07-git/">
+      
+      
+        <link rel="prev" href="../p06-agile/">
+      
+      
+        <link rel="next" href="../p08-github/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>7 - Git - Objektovo Orientované Programovanie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/tufte-sidebars.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pokrocili-7-verziovaci-nastroj-git" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-header__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Objektovo Orientované Programovanie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7 - Git
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Úvod
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../teoria-3/t01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Teória
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cvicenie-3/c01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Cvičenia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../p01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Pokročilí
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../prehlad/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Prehľad tém
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../zbierka-java/j05-04-dedicnost/" class="md-tabs__link">
+          
+  
+  
+  Zbierka úloh
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../autor/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kontakt
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-nav__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Objektovo Orientované Programovanie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Úvod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teória
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teória
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod a motivácia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t02-typy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Algoritmus, dátové typy a premenné
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t03-objekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Identita, objekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t04-trieda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Trieda, balíky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t05-vynimky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Výnimky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t06-operatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Operátory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t07-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t08-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Inicializácia objektov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t09-premenne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Premenné a atribúty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t10-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t11-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t12-polymorfizmus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Polymorfizmus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t13-abstrakcia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Abstrakcia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t14-enum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Enumeračné typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t15-oop-opakovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Princípy OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t16-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Budovanie softvéru
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t17-usporiadanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Usporiadanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t18-records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t19-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - GUI knižnice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t20-javafx-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - JavaFX Stage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cvičenia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cvičenia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, vývojový diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c02-hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Prvý Java program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c03-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Riadenie toku programu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c04-polia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Polia, varargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c05-wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Obalené typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c06-stringy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Reťazce znakov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c07-triedy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Triedy a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c08-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Hangman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c09-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Slovník
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c10-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c11-projekt1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c12-json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - JSON a CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c13-javafx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - JavaFX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c14-javafx-komponenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - JavaFX Komponenty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pokročilí
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pokročilí
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, premenné, vstup a výstup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p02-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Vetvenie, cykly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p03-rekurzia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Rekurzia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p04-moduly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Moduly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p05-pip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Správa knižníc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p06-agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Agilný vývoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Git
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        git
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vytvorenie-git-repozitara" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vytvorenie git repozitára
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-tree-a-indexstaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working tree a index/staging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zapis-zmien-do-repozitara" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zápis zmien do repozitára
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pridanie-dalsich-commitov" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pridanie ďalších commitov
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zmeny-ktore-nechceme-sledovat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zmeny, ktoré nechceme sledovať
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vetvy-zmien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vetvy zmien
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struktura-git-repozitara" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Štruktúra git repozitára
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#podpora-git-v-nastroji-pycharm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Podpora git v nástroji PyCharm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zhrnutie-cvicenia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zhrnutie cvičenia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p08-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p09-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Trieda a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p10-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Metódy a JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p11-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p12-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p13-pygame/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Pygame
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p14-pygame-mys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Pygame 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p15-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p16-projekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p17-pygame-zvuk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Zvuk a hudba
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p18-udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - UDP základy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prehlad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prehľad tém
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zbierka úloh
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Zbierka úloh
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-java/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j07-01-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kontakt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pokrocili-7-verziovaci-nastroj-git">Pokročílí 7: Verziovací nástroj git<a class="headerlink" href="#pokrocili-7-verziovaci-nastroj-git" title="Permanent link">¶</a></h1>
+<p>Dnes sa naučíme pracovať s najpopulárnejším distribuovaným verziovacím nástrojom <code>git</code>. Najprv si ukážeme základné príkazy tohto nástroja a na konci cvičenia si vyskúšame, ako nástroj PyCharm integruje prácu s verziami v rámci svojho IDE.</p>
+<h2 id="git">git<a class="headerlink" href="#git" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Nástroj git je open source distribuovaný verziovací nástroj. Spravuje históriu vášho projektu a ukladá ju celú na vašom disku, takže na prácu s ním nie je potrebný žiaden server alebo internetové pripojenie.</p>
+<p>git bol vytvorený Linusom Torvaldsom, známym fínskym programátorom, ktorý je aj tvorca operačného systému Linux. Názvom tohto nástroja (git je britská mierne vulgárna nadávka) chcel poukázať na svoju komplikovanú povahu.</p>
+<p>Nástroj git si môžete stiahnuť a nainštalovať zo stránky <a href="https://git-scm.com/">https://git-scm.com/</a>.</p>
+<p>Po úspešnej inštalácii je potrebné nakonfigurovať vaše meno a emailovú adresu pomocou príkazu <code>git config</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Úloha 7.1</p>
+<p>V príkazovom riadku si nastavte vaše meno a e-mailovú adresu pomocou nasledovných príkazov</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span>Janko<span class="w"> </span>Mrkvicka
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>janko.mrkvicka@gmail.com<span class="w"> </span>
+</span></code></pre></div>
+</div>
+</main>
+<aside>
+<p>Linus Torvalds <a href="https://www.youtube.com/watch?v=iYWzMvlj2RQ">nie je spokojný</a>, ako slabo Nvidia podporuje grafické karty v Linuxe</p>
+<p><img alt="Linus" src="../../assets/linus.webp"></p>
+<p>Konfiguráciu nástroja git robíme pomocou príkazu <br><code>git config</code></p>
+</aside>
+</div>
+<h2 id="vytvorenie-git-repozitara">Vytvorenie git repozitára<a class="headerlink" href="#vytvorenie-git-repozitara" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Celá história vášho projektu sa ukladá do tzv. git repozitára. Štandardne je tento repozitár umiestnený v adresári vášho projektu v samostatnom podadresári s názvom <code>.git</code>.</p>
+<p>Existujú 2 možnosti, ako vytvoriť git repozitár.</p>
+<p>Ak mám projekt a chcem v ňom vytvoriť git repozitár, v adresári môjho projektu spustím príkaz <code>git init</code>. Tento príkaz nám vytvorí prázdny repozitár v našom projekte.</p>
+<p>Druhá možnosť je, ak chceme stiahnuť projekt spolu s git repozitárom, ktorý je na nejakom serveri. Na to vieme použiť prízaz <code>git clone</code> a URL adresu repozitára, napr. <code>git clone https://github.com/wagjo/cowsay.git</code>. Tento príkaz nám vytvorí adresár s projektom a do neho umiestni aj git repozitár s kompletnou históriou.</p>
+<div class="admonition example">
+<p class="admonition-title">Úloha 7.2</p>
+<ol>
+<li>V IDE PyCharm vytvorte nový projekt s názvom <code>opgp7</code>. </li>
+<li>V tomto projekte vytvorte súbor <code>main.py</code> a v ňom príkaz <code>print("hello world")</code></li>
+<li>Otvorte v PyCharme terminál a spustite v ňom príkaz <code>git init</code></li>
+<li>Úspešné vytvorenie repozitára skontrolujte pomocou príkazu <code>git status</code></li>
+</ol>
+</div>
+</main>
+<aside>
+<p>Repozitár vytvoríme pomocou príkazu <br><code>git init</code></p>
+<p>Existujúci repozitár stiahneme pomocou príkazu <br><code>git clone &lt;repo_url&gt;</code></p>
+</aside>
+</div>
+<h2 id="working-tree-a-indexstaging">Working tree a index/staging<a class="headerlink" href="#working-tree-a-indexstaging" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Všetky súbory, ktoré práve máme reálne na disku v našom projekte sa v gite volajú <strong>working tree</strong>. Ide o skutočné súbory na disku, s ktorými pracujeme, do ktorých píšeme kód programu alebo dokumentáciu.</p>
+<p>git sleduje zmeny, ktoré v našich súboroch vytvárame, a umožňuje nám zapísať stav našich súborov do repozitára. Nakoľko nie všetky zmeny chceme zapísať do histórie, musíme vždy určiť, ktoré zmeny chceme zapísať. To sa robí pomocou príkazu <code>git add</code>. V tomto príkaze uvedieme, zmeny v ktorých súboroch sa majú zapísať. Ak chceme zapísať zmeny vo všetkých súboroch, použijeme príkaz <code>git add .</code></p>
+<div class="admonition example">
+<p class="admonition-title">Úloha 7.3</p>
+<p>V termináli spustite príkaz <code>git add .</code>, pridanie nových súborov overíme pomocou príkazu <code>git status</code>.</p>
+</div>
+<p><strong>Súbory pridané pomocou <code>git add</code> sa nám ešte nazapíšu do histórie</strong>. Zmeny v týchto súboroch sa pridali do tzv. indexu, alebo "staging area", teda "javiskového priestoru". V tomto indexe si vieme postupne popridávať súbory a vytvoriť si tak sadu zmien, ktoré chceme zapísať do histórie.</p>
+</main>
+<aside>
+<p>Do indexu pridáme zmeny pomocou príkazu <br><code>git add</code></p>
+<p>Stav repozitára zistíme príkazom <br><code>git status</code></p>
+</aside>
+</div>
+<h2 id="zapis-zmien-do-repozitara">Zápis zmien do repozitára<a class="headerlink" href="#zapis-zmien-do-repozitara" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Ak máme prichystané zmeny v indexe (staging area), vieme vytvoriť zápis zmien do repozitára. Robí sa tak pomocou príkazu <code>git commit</code>.</p>
+<p>Zápis do repozitára nazývame jednoducho <strong>commit</strong>. Každý commit má tieto údaje:</p>
+<ul>
+<li>Samotné zmeny v súboroch nášho projektu</li>
+<li>Krátka správa s popisom, čoho sa zmena týka</li>
+<li>Dátum, kedy zápis zmien nastal</li>
+<li>Autora, ktorý zápis urobil</li>
+<li>unikátny identifikátor zmeny, nazývaný hash (napríklad <code>e3a1f5b7c2d4</code>)</li>
+<li>odkaz na predchádzajúci commit, aby sme vedeli vyskladať postupnosť zmien</li>
+</ul>
+<p>Nakoľko je správa s popisom povinná, píše sa často rovno do príkazu ako <code>git commit -m "Krátky popis zmien"</code></p>
+<div class="admonition example">
+<p class="admonition-title">Úloha 7.4</p>
+<p>V termináli vykonajte zápis zmien pomocou <code>git commit -m "Prvý commit"</code>. Vykonanie zápisu si overíme pomocou príkazu <code>git log</code>. Overenie, že sa všetko pridalo vykonáme príkazom <code>git status</code>.</p>
+</div>
+</main>
+<aside>
+<p>Zápis sady zmien do repozitára urobíme príkazom <br><code>git commit -m "popis zmien"</code></p>
+<p>Zoznam posledných commitov vypíšeme pomocou príkazu <br><code>git log</code></p>
+</aside>
+</div>
+<h2 id="pridanie-dalsich-commitov">Pridanie ďalších commitov<a class="headerlink" href="#pridanie-dalsich-commitov" title="Permanent link">¶</a></h2>
+<p>Teraz si vyskúšame urobiť zopár ďalších commitov</p>
+<div class="admonition example">
+<p class="admonition-title">Úloha 7.5</p>
+<ol>
+<li>
+<p>V projekte si vytvorte balík <code>tvary</code> a v ňom 2 súbory s nasledovným obsahom</p>
+<div class="language-python highlight"><span class="filename">tvary/obdlznik.py</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">obvod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">return</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">obsah</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+</span></code></pre></div>
+<div class="language-python highlight"><span class="filename">tvary/stvorec.py</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">obvod</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">return</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">obsah</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Do súboru main.py pridajte nasledujúci kód:</p>
+<div class="language-python highlight"><span class="filename">main.py</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tvary</span><span class="w"> </span><span class="kn">import</span> <span class="n">stvorec</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Obvod štvorca o veľkosti 10 je </span><span class="si">{</span><span class="n">stvorec</span><span class="o">.</span><span class="n">obvod</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Vykonané zmeny pridajte do indexu pomocou <code>git add .</code>, ktorý spustíte v terminály nástroja PyCharm</p>
+</li>
+<li>
+<p>Pridanie si overte pomocou príkazu <code>git status</code>. Mal by vypísať niečo také:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>On branch master
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Changes to be committed:
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>(use "git restore --staged &lt;file&gt;..." to unstage)
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    modified:   main.py
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    new file:   tvary/__init__.py
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    new file:   tvary/obdlznik.py
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    new file:   tvary/stvorec.py
+</span></code></pre></div>
+</li>
+<li>
+<p>Vytvorenie commitu a zápis zmien vykonajte pomocou príkazu <code>git commit -m "Moduly stvorec a obdlznik"</code></p>
+</li>
+</ol>
+</div>
+<div class="md-has-sidebar">
+<main>
+<div class="admonition example">
+<p class="admonition-title">Úloha 7.6</p>
+<ol>
+<li>
+<p>Urobte zmeny v nasledovnom súbore:</p>
+<div class="language-python highlight"><span class="filename">tvary/stvorec.py</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">obdlznik</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">obvod</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">return</span> <span class="n">obdlznik</span><span class="o">.</span><span class="n">obvod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">obsah</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="k">return</span> <span class="n">obdlznik</span><span class="o">.</span><span class="n">obsah</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Pridajte do súboru <code>main.py</code> nasledovný kód</p>
+<div class="language-python highlight"><span class="filename">main.py</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tvary</span><span class="w"> </span><span class="kn">import</span> <span class="n">obdlznik</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Obvod obdĺžnika o veľkosti 10 x 15 je </span><span class="si">{</span><span class="n">obdlznik</span><span class="o">.</span><span class="n">obvod</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Príkazom <code>git status</code> zisite, ktoré súbory sú zmenené</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>On branch master
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Changes not staged for commit:
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>(use "git add &lt;file&gt;..." to update what will be committed)
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>(use "git restore &lt;file&gt;..." to discard changes in working directory)
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        modified:   main.py
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        modified:   tvary/stvorec.py
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>no changes added to commit (use "git add" and/or "git commit -a")
+</span></code></pre></div>
+</li>
+<li>
+<p>Príkazom <code>git diff</code> zistíme presne, ktoré zmeny v súboroch nastali</p>
+<div class="language-diff highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gh">diff --git a/main.py b/main.py</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="gh">index 11d92c3..1b6341f 100644</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="gd">--- a/main.py</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="gi">+++ b/main.py</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="gu">@@ -1,4 +1,7 @@</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>print("hello world")
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>from tvary import stvorec
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="gd">-print(f"Obvod štvorca o veľkosti 10 je {stvorec.obvod(10)}")</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>\ No newline at end of file
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="gi">+print(f"Obvod štvorca o veľkosti 10 je {stvorec.obvod(10)}")</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="gi">+</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="gi">+from tvary import obdlznik</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="gi">+print(f"Obvod obdĺžnika o veľkosti 10 x 15 je {obdlznik.obvod(10, 15)}")</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="gh">diff --git a/tvary/stvorec.py b/tvary/stvorec.py</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="gh">index 9396a0e..74b6490 100644</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="gd">--- a/tvary/stvorec.py</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="gi">+++ b/tvary/stvorec.py</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="gu">@@ -1,5 +1,7 @@</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="gi">+from . import obdlznik</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="gi">+</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>def obvod(a):
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="gd">-    return 4 * a</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="gi">+    return obdlznik.obvod(a, a)</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>def obsah(a):
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="gd">-    return a * a</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>\ No newline at end of file
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="gi">+    return obdlznik.obsah(a, a)</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Vykonané zmeny pridajte do indexu pomocou <code>git add .</code></p>
+</li>
+<li>
+<p>Vytvorenie commitu a zápis zmien vykonajte pomocou príkazu <code>git commit -m "Uprava modulu tvary.stvorec"</code></p>
+</li>
+</ol>
+</div>
+</main>
+<aside>
+<p>Prehľad zmien, ktoré neboli pridané do indexu si vieme zobraziť pomocou <br><code>git diff</code></p>
+<p>GUI nástroj na prehľad zmien a histórie spustíme príkazom <code>gitk</code></p>
+</aside>
+</div>
+<p>V našom repozitári teraz máme 3 commity. Ich zoznam si môžeme zobraziť pomocou príkazu <code>git log</code></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>commit a6fef76e8d7b2378e907f98c65ac458f321b0969 (HEAD -&gt; master)
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Author: Jozef Wagner &lt;jozef.wagner@gmail.com&gt;
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Date:   Wed Oct 8 16:06:56 2025 +0200
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    Uprava modulu tvary.stvorec
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>commit 9f2f95b115ef916b6867a9a663518ab264fa0183
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>Author: Jozef Wagner &lt;jozef.wagner@gmail.com&gt;
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>Date:   Wed Oct 8 15:57:50 2025 +0200
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    Moduly stvorec a obdlznik
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>commit 64ea0e111f59922819e46632062d069999ef48f3
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>Author: Jozef Wagner &lt;jozef.wagner@gmail.com&gt;
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>Date:   Tue Oct 7 21:24:25 2025 +0200
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    Prvý commit
+</span></code></pre></div>
+<p>Git obsahuje aj GUI nástroj na vizualizáciu histórie a zmien v git repozitári. Spustíme ho príkazom <code>gitk</code>.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/gitk.png" data-desc-position="bottom"><img alt="Nástroj gitk" class="on-glb" src="../../assets/gitk.png"></a></p>
+<figcaption>
+<p>Grafické rozhranie pre zobrazenie histórie a zmien</p>
+</figcaption>
+</figure>
+<h2 id="zmeny-ktore-nechceme-sledovat">Zmeny, ktoré nechceme sledovať<a class="headerlink" href="#zmeny-ktore-nechceme-sledovat" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Pri programovaní sa často stáva, že pri kompilácii alebo spúšťaní programu sa objavia nejaké súbory, ktoré sú dočasné alebo pomocné a nechceme ukladať ich históriu do git repozitára. V našom príklade si nástroj PyCharm vytvára adresár <code>__pycache__</code> s pomocnými súbormi. Tento adresár je dobré pridať do zoznamu ignorovaných súborov.</p>
+<p>Súbory, ktoré má git ignorovať sa píšu do súboru <code>.gitignore</code> (názov súboru začína bodkou).</p>
+<div class="admonition example">
+<p class="admonition-title">Úloha 7.7</p>
+<ol>
+<li>
+<p>V adresári projektu vytvorte nový súbor s názvom <code>.gitignore</code></p>
+</li>
+<li>
+<p>Do súboru vložte text <code>__pycache__</code> a súbor uložte</p>
+</li>
+<li>
+<p>Súbor pridajte do git indexu pomocou <code>git add .</code></p>
+</li>
+<li>
+<p>Zapíšte zmenu do repozitára pomocou <code>git commit -m "gitignore"</code></p>
+</li>
+</ol>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Dokumentácia</p>
+<p>V súbore <code>.gitignore</code> môžeme používať wildcards znak <code>*</code> ak chceme ignorovať skupinu súborov. Viac si môžete prečítať v <a href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore">príkladoch použitia</a></p>
+</div>
+<p>Na internete vieme nájsť predpripravené <code>.gitignore</code> súbory pre daný programovací jazyk. Pre Python vieme použiť prepripravený súbor z adresy <a href="https://github.com/github/gitignore/blob/main/Python.gitignore">https://github.com/github/gitignore/blob/main/Python.gitignore</a>. Buď si skopírujte jeho obsah do svojho <code>.gitignore</code> súboru alebo si ho stiahnite a premenujte.</p>
+</main>
+<aside>
+<p>Súbor <code>.gitignore</code> obsahuje názvy súborov a adresárov, ktoré má git nástroj ignorovať</p>
+</aside>
+</div>
+<h2 id="vetvy-zmien">Vetvy zmien<a class="headerlink" href="#vetvy-zmien" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Nástroj git nám umožňuje spravovať viacero vetiev kódu, každú so svojou vlastnou históriou a zmenami. Hlavná vetva, to ktorej sme zapisovali všetky naše doterajšie commity sa volá <code>master</code>.</p>
+<p>Nové vetvy si vieme vytvárať ak chceme opraviť zložitejšiu chybu, experimentovať, alebo vykonať náročnejšie zmeny. Pre ľahšie pochopenie sa niekedy používajú diagramy, kde kruhy sú commity a šípky predstavujú postupnosť zápisu zmien. Rôzne verzie sú na rôznych riadkoch resp. majú inú farbu commitov.</p>
+<p><img alt="Príklad viacvetvovej histórie" src="../../assets/git-graph.webp"></p>
+<p>Vyskúšame si teraz vytvoriť novú vetvu, do ktorej pridáme novú funkcionalitu, ktorú ešte nechcem mať na hlavnej vetve. </p>
+</main>
+<aside>
+<p>Novú vetvu vytvoríme pomocou príkazu <br><code>git checkout -b &lt;branch_name&gt;</code></p>
+<p>Do inej vetvy sa prepneme príkazom <br><code>git checkout &lt;branch_name&gt;</code></p>
+<p>Inú vetvu zlúčime do aktuálne otvorenej pomocou <br><code>git merge &lt;branch_name&gt;</code></p>
+<p>Zoznam všetkých vetiev zobrazíme príkazom <br><code>git branch -av</code></p>
+</aside>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 7.8</p>
+<ol>
+<li>
+<p>Vytvorme novú vetvu s názvom kruh pomocou príkazu <code>git checkout -b kruh</code></p>
+</li>
+<li>
+<p>Do balíka tvary pridajte modul <code>kruh</code></p>
+<div class="language-python highlight"><span class="filename">tvary/kruh.py</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">PI</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">obvod</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">r</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">obsah</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="k">return</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">r</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Pridajte nasledovný kód do súboru <code>main.py</code></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tvary.kruh</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Obvod kruhu o veľkosti 10 je </span><span class="si">{</span><span class="n">tvary</span><span class="o">.</span><span class="n">kruh</span><span class="o">.</span><span class="n">obvod</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Zmeny pridajte do indexu pomocou <code>git add .</code></p>
+</li>
+<li>
+<p>Vytvorte nový commit pomocou <code>git commit -m "Modul kruh"</code></p>
+</li>
+</ol>
+</div>
+<p>Modul kruh sme si pridali vo vetve <code>kruh</code>, v hlavnej vetve sa tento modul nebude nachádzať. Zoznam všetkých vetiev, ktoré máme v repozitári si vypíšeme príkazom <code>git branch -av</code>. Ak chceme vetvu kruh zlúčiť s hlavnou vetvou, použijeme na to príkaz <code>git merge</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Úloha 7.9</p>
+<ol>
+<li>
+<p>Prepite sa do hlavnej vetvy príkazom <code>git checkout master</code></p>
+</li>
+<li>
+<p>To, na ktorej vetve sme, zistíme príkazom <code>git status</code> alebo <code>git branch</code></p>
+</li>
+<li>
+<p>Všimnite si, že súbor tvary/kruh.py zmizol, a commit v ktorom sme ho pridali nie je viditeľný ani cez <code>git log</code> ani cez <code>gitk</code></p>
+</li>
+<li>
+<p>Zlúčte vetvu kruh do hlavnej vetvy príkazom <code>git merge kruh</code></p>
+</li>
+<li>
+<p>Modul kruh už budeme mať opäť k dispozícii</p>
+</li>
+</ol>
+</div>
+<h2 id="struktura-git-repozitara">Štruktúra git repozitára<a class="headerlink" href="#struktura-git-repozitara" title="Permanent link">¶</a></h2>
+<p>Na dnešnom cvičení sme si ukázali prácu s git indexom a vetvami. Nabudúce si ukážeme prácu s vetvami uloženými mimo náš repozitár, ktoré môžu byť na počítačoch našich kolegov alebo napríklad na GitHube.</p>
+<p>Nasledujúci diagram ukazuje rôzne typy git úložísk a príkazy, pomocou ktorých do nich vieme pridávať nové zmeny a commity.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/git-flow.png" data-desc-position="bottom"><img alt="git architecure" class="on-glb" src="../../assets/git-flow.png"></a></p>
+<figcaption>
+<p>Štruktúra <code>git</code> repozitára a základné príkazy</p>
+</figcaption>
+</figure>
+<h2 id="podpora-git-v-nastroji-pycharm">Podpora git v nástroji PyCharm<a class="headerlink" href="#podpora-git-v-nastroji-pycharm" title="Permanent link">¶</a></h2>
+<p>Nástroj PyCharm automaticky detekuje git repozitár a umožňuje nám robiť väčšinu operácií bez použitia príkazového riadku. Hlavné menu pre správu verzií je vľavo hore. Pomocou neho sa vieme prepínať medzi vetvami.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/pycharm-git.png" data-desc-position="bottom"><img alt="git v PyCharme" class="on-glb" src="../../assets/pycharm-git.png"></a></p>
+<figcaption>
+<p>Menu správy verzií v nástroji PyCharm</p>
+</figcaption>
+</figure>
+<p>Akúkoľvek zmenu, ktorú sme nezapísali do commitu PyCharm detekuje a súbor so zmenou v projektovom okne v ľavom stĺpci označí modrou farbou. Červenou farbou označí súbory, ktoré nie sú pridané do repozitára. </p>
+<p>Nástroj PyCharm umožňuje vykonať pridanie do indexu a vytvorenie commitu pomocou panela Commit v ľavom stĺpci programu. V ňom si jednoducho vyklikáme aké zmeny majú byť súčasťou nového commitu a dole napíšeme popis nového commitu.</p>
+<p>Históriu repozitára vieme zobraziť v nástroji PyCharm v paneli Git, ktorý je v ľavom dolnom stĺpci.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/pycharm-git2.png" data-desc-position="bottom"><img alt="git v PyCharme" class="on-glb" src="../../assets/pycharm-git2.png"></a></p>
+<figcaption>
+<p>Panel Commit, panel Git a diff zmeny v hlavnom okne</p>
+</figcaption>
+</figure>
+<div class="admonition example">
+<p class="admonition-title">Úloha 7.10</p>
+<ol>
+<li>
+<p>Do projektu pridajte modul <code>util.py</code></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">faktorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">faktorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">obrat</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="n">s</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">obrat</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"V tomto module su nasledovné funkcie:"</span><span class="p">)</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- Faktoriál (faktoriál čísla 30 je </span><span class="si">{</span><span class="n">faktorial</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- Fibonacciho číslo (fibonacci na pozícii 30 je </span><span class="si">{</span><span class="n">fib</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- Obrátenie reťazca (</span><span class="si">{</span><span class="n">obrat</span><span class="p">(</span><span class="s2">"Obrátenie reťazca"</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>    <span class="n">main</span><span class="p">()</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Pomocou PyCharmu ho pridajte do indexu a vytvorte nový commit s popisom "Modul util.py"</p>
+</li>
+</ol>
+</div>
+<h2 id="zhrnutie-cvicenia">Zhrnutie cvičenia<a class="headerlink" href="#zhrnutie-cvicenia" title="Permanent link">¶</a></h2>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/git-cheatsheet.png" data-desc-position="bottom"><img alt="Git cheatsheet" class="on-glb" src="../../assets/git-cheatsheet.png"></a></p>
+<figcaption>
+<p>Ťahák s najpoužívanejšími <code>git</code> príkazmi</p>
+</figcaption>
+</figure>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Nástroj git - distribuovaný systém kontroly verzií<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Konfiguráciu nástroja git robíme pomocou príkazu <code>git config</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>git config --global user.name Janko Mrkvicka</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <code>git config --global user.email janko.mrkvicka@gmail.com</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vytvorenie git repozitára<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Repozitár vytvoríme pomocou príkazu <code>git init</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Existujúci repozitár stiahneme pomocou príkazu <code>git clone &lt;repo_url&gt;</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Súbor <code>.gitignore</code> obsahuje názvy súborov a adresárov, ktoré má git nástroj ignorovať</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Working tree a index/staging<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Working tree - Aktuálne súbory na disku s ktorými pracujeme</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Index/staging - Sada zmien, ktoré chceme zapísať do repozitára</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Do indexu pridáme zmeny pomocou príkazu <code>git add</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Stav repozitára zistíme príkazom <code>git status</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Commit je zápis súboru zmien v repozitári. Obsahuje:<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Samotné zmeny v súboroch nášho projektu</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Krátka správa s popisom, čoho sa zmena týka</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Dátum, kedy zápis zmien nastal</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Autora, ktorý zápis urobil</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Unikátny identifikátor zmeny, nazývaný hash (napríklad e3a1f5b7c2d4)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Odkaz na predchádzajúci commit, aby sme vedeli vyskladať postupnosť zmien</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Zápis zmien do repozitára<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Zápis sady zmien do repozitára urobíme príkazom <code>git commit -m "popis zmien"</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Zoznam posledných commitov vypíšeme pomocou príkazu <code>git log</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Prehľad zmien, ktoré neboli pridané do indexu si vieme zobraziť pomocou <code>git diff</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> GUI nástroj na prehľad zmien a histórie spustíme príkazom <code>gitk</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vetvy zmien<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Novú vetvu vytvoríme pomocou príkazu <code>git checkout -b &lt;branch_name&gt;</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Do inej vetvy sa prepneme príkazom <code>git checkout &lt;branch_name&gt;</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Inú vetvu zlúčime do aktuálne otvorenej pomocou <code>git merge &lt;branch_name&gt;</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Zoznam všetkých vetiev zobrazíme príkazom <code>git branch -av</code></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Poznámky do zošita</p>
+<p>V zošite je potrebné mať napísané aspoň tieto poznámky:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>GIT
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Konfiguráciu robíme pomocou git config
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Repozitár vytvoríme pomocou git init
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Existujúci repo stiahneme pomocou git clone &lt;repo_url&gt;
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Do súboru .gitignore napíšeme, ktoré súbory má git ignorovať
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>Working tree - Aktuálne súbory na disku s ktorými pracujeme
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>Index/staging - Sada zmien, ktoré chceme zapísať do repozitára
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>git add - Do indexu pridáme zmeny pomocou 
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>git status - Stav repozitára zistíme príkazom 
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>Commit je zápis súboru zmien v repozitári. Obsahuje:
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>- Samotné zmeny v súboroch
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>- Krátka správa, čoho sa zmena týka
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>- Dátum zápisu
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>- Autora zápisu
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>- Unikátny identifikátor zmeny (hash)
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>- Odkaz na predchádzajúci commit
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>git commit -m "popis zmien" - Zápis sady zmien 
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>git log - Zoznam posledných commitov
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>git diff - Prehľad zmien, ktoré nie sú ešte v indexe
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>gitk - GUI nástroj
+</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>
+</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>Vetvy zmien
+</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>git checkout -b &lt;branch_name&gt; - vytvorenie novej vetvy
+</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>git checkout &lt;branch_name&gt; - prepnutie to inej vetvy
+</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>git merge &lt;branch_name&gt; - zlúčenie inej vetvy do aktuálnej
+</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>git branch -av - Zoznam všetkých vetiev
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Skúšanie a kontrola vedomostí</p>
+<p>Okruhy otázok na test:</p>
+<ul>
+<li>Čo je working tree</li>
+<li>Čo je index / staging area</li>
+<li>Čo obsahuje commit</li>
+<li>Základné príkazy na prácu s gitom</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025, 2026, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.top", "toc.follow", "navigation.tabs", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

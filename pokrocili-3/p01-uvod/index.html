@@ -1,0 +1,2875 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oop.wagjo.com/pokrocili-3/p01-uvod/">
+      
+      
+        <link rel="prev" href="../../cvicenie-3/c14-javafx-komponenty/">
+      
+      
+        <link rel="next" href="../p02-cykly/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>1 - Úvod, premenné, vstup a výstup - Objektovo Orientované Programovanie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/tufte-sidebars.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pokrocili-1-uvod-do-predmetu-premenne-vstup-a-vystup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-header__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Objektovo Orientované Programovanie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 - Úvod, premenné, vstup a výstup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Úvod
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../teoria-3/t01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Teória
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cvicenie-3/c01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Cvičenia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Pokročilí
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../prehlad/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Prehľad tém
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../zbierka-java/j05-04-dedicnost/" class="md-tabs__link">
+          
+  
+  
+  Zbierka úloh
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../autor/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kontakt
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-nav__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Objektovo Orientované Programovanie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Úvod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teória
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teória
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod a motivácia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t02-typy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Algoritmus, dátové typy a premenné
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t03-objekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Identita, objekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t04-trieda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Trieda, balíky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t05-vynimky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Výnimky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t06-operatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Operátory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t07-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t08-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Inicializácia objektov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t09-premenne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Premenné a atribúty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t10-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t11-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t12-polymorfizmus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Polymorfizmus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t13-abstrakcia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Abstrakcia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t14-enum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Enumeračné typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t15-oop-opakovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Princípy OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t16-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Budovanie softvéru
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t17-usporiadanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Usporiadanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t18-records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t19-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - GUI knižnice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t20-javafx-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - JavaFX Stage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cvičenia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cvičenia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, vývojový diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c02-hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Prvý Java program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c03-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Riadenie toku programu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c04-polia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Polia, varargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c05-wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Obalené typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c06-stringy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Reťazce znakov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c07-triedy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Triedy a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c08-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Hangman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c09-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Slovník
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c10-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c11-projekt1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c12-json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - JSON a CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c13-javafx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - JavaFX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c14-javafx-komponenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - JavaFX Komponenty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pokročilí
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pokročilí
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, premenné, vstup a výstup
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, premenné, vstup a výstup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jazyk-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jazyk Python
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Jazyk Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semantic-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic versioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pycharm-python-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PyCharm - Python IDE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kompilovany-vs-interpretovany-jazyk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kompilovaný vs. Interpretovaný jazyk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaktivne-programovanie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaktívne programovanie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-skripty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python skripty
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standardny-vystup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Štandardný výstup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standardny-vstup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Štandardný vstup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatovane-retazce-f-stringy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formátované reťazce, f-stringy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zhrnutie-cvicenia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zhrnutie cvičenia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p02-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Vetvenie, cykly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p03-rekurzia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Rekurzia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p04-moduly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Moduly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p05-pip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Správa knižníc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p06-agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Agilný vývoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p07-git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p08-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p09-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Trieda a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p10-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Metódy a JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p11-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p12-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p13-pygame/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Pygame
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p14-pygame-mys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Pygame 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p15-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p16-projekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p17-pygame-zvuk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Zvuk a hudba
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p18-udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - UDP základy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prehlad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prehľad tém
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zbierka úloh
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Zbierka úloh
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-java/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j07-01-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kontakt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pokrocili-1-uvod-do-predmetu-premenne-vstup-a-vystup">Pokročílí 1: Úvod do predmetu, premenné, vstup a výstup<a class="headerlink" href="#pokrocili-1-uvod-do-predmetu-premenne-vstup-a-vystup" title="Permanent link">¶</a></h1>
+<p>Na tomto voliteľnom predmete budeme preberať pokročilejšie témy z oblasti objektovo orientovaného programovania. Pôjdeme viac do hĺbky a ukážeme si pokročilejšie nástroje používané pri vývoji softvéru. Tak isto si ukážeme viacero praktických aplikačných využití.</p>
+<p>Hlavným programovacím jazykom, ktorý budeme na tomto predmete používať je Python. Nakoľko ste s týmto jazykom už pracovali, očakávame od vás, že v ňom viete už ako tak programovať. V každom prípade prvé cvičenia budú venované opakovaniu.</p>
+<p>Požiadavky na softvér a počítač sú podobné ako na klasických cvičeniach z predmetu objektovo orientované programovanie. V tomto predmete budete naviac potrebovať mať nainštalovaný programovací jazyk Python a IDE.</p>
+<h2 id="jazyk-python">Jazyk Python<a class="headerlink" href="#jazyk-python" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p><img align="left" alt="Python logo" src="../../assets/python-logo.svg" width="100">
+Python je interpretovaný programovací jazyk na všeobecné použitie. Patrí medzi najpopulárnejšie programovacie jazyky a je hojne používaný v oblasti umelej inteligencie, strojového učenia a dátovej analýzy. Názov jazyka bol inšpirovaný populárnymi britskými komikmi <a href="https://www.youtube.com/watch?v=YI8yGeaPm1U">Monty Python</a>. Má dynamickú kontrolu typov a podporuje viacero programovacích paradigiem. </p>
+<p><img align="right" alt="Python batteries included" src="../../assets/python-batteries.jpg" width="300">
+Snaží sa o jednoduchú syntax, aby s jazykom vedel pracovať aj nováčik resp. aby jazyk pre svoje potreby vedeli používať aj ne-programátori. Python v sebe obsahuje všetko, čo k základnému programovaniu potrebujete. Nemusíte tak hľadať a inštalovať nejakú knižnicu. Tento prístup je reprezentovaný jeho mottom <em>"Batteries included"</em>.
+  </p>
+</main>
+<aside>
+<p>Základná filozofia jazyka Python je zhrnutá v 19 dizajnových princípoch nazývaných <a href="https://pep20.org">Zen of Python</a>.
+  </p>
+</aside>
+</div>
+<p>Python si nainštalujte z jeho oficiálnej stránky <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>. Najnovšia verzia jazyka Python je verzia 3.13. <strong>Pri inštalácii v <abbr title="Operačný systém">OS</abbr> Windows zaškrtnite možnosť <code>Add python.exe to PATH</code>.</strong> Po úspešnej inštalácii si funkčnosť overte tak, že si otvorte nové okno konzoly a v príkazovom riadku spusťte príkaz <code>python --version</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Zistenie verzie Pythonu</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>~$ python --version
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Python 3.13.7
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="semantic-versioning">Semantic versioning<a class="headerlink" href="#semantic-versioning" title="Permanent link">¶</a></h3>
+<p>Populárny spôsobom v programovaní, ako označovať nové verzie softvéru a knižníc je použitie tzv. <a href="https://semver.org/lang/sk/">sémantického verzionovania</a>. Príklad sémantickéj verzie je 2.1.4. Ide o číslovanie verzií programu vo formáte MAJOR.MINOR.PATCH, kde zväčšujeme číslo:</p>
+<ul>
+<li>MAJOR verzie, keď sme spravili zmeny, ktoré nie sú spätne kompatibilné,</li>
+<li>MINOR verzie, keď sme pridali funkcionalitu so zachovaním spätnej kompatibility,</li>
+<li>PATCH verzie, keď sme opravili chyby a ostala zachovaná spätná kompatibilita.</li>
+</ul>
+<div class="md-has-sidebar">
+<main>
+<p>Ak sa teda objaví program s novou MAJOR verziou, takmer isto nebude kompatibilný so staršími verziami. Nová verzia MINOR alebo PATCH by mala fungovať aj so staršími súbormi. Väčšina knižníc a nástrojov v jazyku Python, Java alebo Javascript používa tento spôsob verzionovania.</p>
+<div class="admonition warning">
+<p class="admonition-title">Jazyk Python sémantické verzionovanie iba predstiera</p>
+<p>Jazyk Python samotný má čisla verzií veľmi podobné sémantickému, avšak sémantické verzionovanie často porušuje. Za jeho históriu sa stalo niekoľkokrát, že aj nová MINOR verzia priniesla zmeny, ktoré neboli kompatibilné so staršími verziami. Preto si treba dávať pozor, ak aktualizujete verziu jazyka a prečítať si dokumentáciu, či náhodou nebude treba váš program upraviť, aby mohol na novšej verzii jazyka bežať.</p>
+</div>
+</main>
+<aside>
+<p>Inou populárnou formov tvorenia verzií ja <a href="https://calver.org/">Kalendárové verzionovanie, tzv. CalVer</a>, pri ktorom sa verzia softvéru odvodzuje od roka a mesiaca, v ktorom bola verzia vydaná. Známym príkladom použitia takého spôsobu je IDE Pycharm alebo IntelliJ IDEA, ktoré má verziu napr. 2025.2.1
+  </p>
+</aside>
+</div>
+<h2 id="pycharm-python-ide">PyCharm - Python IDE<a class="headerlink" href="#pycharm-python-ide" title="Permanent link">¶</a></h2>
+<p><img align="right" alt="PyCharm" src="../../assets/PyCharm_Icon.svg" width="150"></p>
+<p>Pre komfortné programovanie v Pythone je vhodné, aby ste používali vývojové prostredie, po anglicky Integrated Development Environment (IDE). Na tomto predmete budeme pracovať vo vývojovom prostredí <em>PyCharm</em> od firmy JetBrains. Ide o najpopulárnejšie a najviac premakané vývojové prostredie pre jazyk Python. </p>
+<p>Program PyCharm si stiahnite a nainštalujte z oficiálnej stránky <a href="https://www.jetbrains.com/pycharm/download">https://www.jetbrains.com/pycharm/download</a>. K dispozícii je bezplatná verzia a platená verzia <em>Pro</em>. Ako študenti SPŠE v Prešove máte jedinečnú možnosť používať platenú verziu úplne zadarmo. Pre aktiváciu si pozrite návod v prvom cvičení objektovo orientovaného programovania.</p>
+<div class="admonition tip">
+<p class="admonition-title">Učím sa s pomocou umelej inteligencie</p>
+<p>Som študent strednej školy a učím sa používať jazyk Python</p>
+<ul>
+<li><a href="https://grok.com/share/c2hhcmQtMg%3D%3D_f2f3cc74-b06a-4d3b-a25a-31444d65233f">Uveď stručnú históriu, kto ho používa a na aké účely</a></li>
+<li><a href="https://grok.com/share/c2hhcmQtMg%3D%3D_dc6ff17b-96c6-40f7-a1bf-e37a2844577c">Aké sú populárne vývojové prostredia pre Python</a></li>
+</ul>
+</div>
+<h2 id="kompilovany-vs-interpretovany-jazyk">Kompilovaný vs. Interpretovaný jazyk<a class="headerlink" href="#kompilovany-vs-interpretovany-jazyk" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Na začiatku sme spomínali, že Python je interpretovaný jazyk. Čo to znamená?</p>
+<p>Pri interpretovaných jazykoch sa zdrojový kód programu, ktorý napíšete, <em>analyzuje a vykonáva priamo za behu programu</em>. Na to musí byť na danom počítačí nainštalovaný tzv. interpreter, inak program nespustíte. Výhodou takýchto jazykov ja dynamickosť a interaktivita. Ich nevýhodou je pomalší výkon. Typickým príkladom interpretovaných jazykov sú Python, Javascript a PHP.</p>
+<p>Naproti tomu sú kompilované jazyky, ktoré sa musia pred spustením tzv. skompilovať, teda previesť do strojového kódu daného počítača. Výsledný súbor (vo Windowse je to väčšinou .exe súbor) potom vieme spúšťať bez toho, aby sme na počítač museli hocičo inštalovať. Takéto programy sú potom často výkonnejšie a zaberajú menej pamäte. Nevýhodou tohto prístupu je, že musíte skompilovať program zvlášť pre každý typ operačného systému a procesora. Príkladom kompilovaných jazykov je C, C++, Rust a Swift.</p>
+<figure>
+<p><a href="https://xkcd.com/303/"><img alt="Compiling" src="../../assets/compiling.png"></a></p>
+<figcaption>
+<p>Kompilovanie, <a href="https://xkcd.com/303/">xkcd 303</a></p>
+</figcaption>
+</figure>
+<p>Pre tvorbu bežného softvéru je viacmenej jedno, či je jazyk kompilovaný alebo interpretovaný. V nasledujúcej tabuľke je zhrnuté porovnanie týchto dvoch prístupov.</p>
+</main>
+<aside>
+<p>Striktné čierno-biele delenie na interpretovaný a kompilovaný jazyk dnes už často neplatí. Interpretované jazyky zvyknú používať rôzne finty, ako zvýšiť ich efektivitu, napr. automatickým kompilovaním na pozadí (Just In Time compiler).</p>
+<p>Podobne aj kompilované jazyky niekedy majú svoj vlastný virtuálny stroj, na ktorom beží ich skompilovaný program. Tým sa vyhnú problémom s rôznymi procesormi a <abbr title="Operačný systém">OS</abbr>. Typický príklad jazyka s takým virtuálnym strojom je jazyk Java, ktorého virtuálny stroj JVM vykonáva programy skompilované do tzv. bytekódu tohto stroja.
+  </p>
+</aside>
+</div>
+<table>
+<thead>
+<tr>
+<th>Vlastnosť</th>
+<th>Interpretovaný jazyk</th>
+<th>Kompilovaný jazyk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interaktivita</td>
+<td>Dajú sa písať interaktívne, často sa používajú pre rôzne skripty</td>
+<td>Bez interaktivity, pred spustením treba čakať, kým sa celý program skompiluje</td>
+</tr>
+<tr>
+<td>Dynamickosť</td>
+<td>Veľmi dynamický, program sa dá ľahko meniť aj počas jeho behu</td>
+<td>Nedá sa upraviť, každá zmena sa musí nanovo skompilovať</td>
+</tr>
+<tr>
+<td>Výkon programu</td>
+<td>Pomalší, horšia správa pamäti</td>
+<td>Vysoký výkon, efektívne využitie procesora</td>
+</tr>
+<tr>
+<td>Spustenie programu</td>
+<td>Všade tam, kde je nainštalovaný interpreter</td>
+<td>Musíte získať skompilovanú verziu pre daný <abbr title="Operačný systém">OS</abbr> a procesor</td>
+</tr>
+<tr>
+<td>Kontrola chýb</td>
+<td>Počas behu programu</td>
+<td>Počas kompilácie</td>
+</tr>
+<tr>
+<td>Špeciálne využitie</td>
+<td>Skripty, Web</td>
+<td>Hry, Výkonný software</td>
+</tr>
+<tr>
+<td>Príklad</td>
+<td>Javascript, Python, PHP</td>
+<td>C, C++, Rust, Swift</td>
+</tr>
+</tbody>
+</table>
+<h2 id="interaktivne-programovanie">Interaktívne programovanie<a class="headerlink" href="#interaktivne-programovanie" title="Permanent link">¶</a></h2>
+<div class="md-has-sidebar">
+<main>
+<p>Na začiatok si v Pythone vyskúšame interaktívne programovanie. To znamená, že Pythonu budeme písať príkazy a on nám bude hneď odpovedať. Pre začatie interaktívneho programovanie je potrebné spustiť si konzolu s príkazovým riadkom. </p>
+<p>Vo Windowse odporúčame použiť Windows PowerShell. Po spustení konzoly PowerShell spustíme Python v interaktívnom móde napísaním príkazu <code>python</code> a stlačením klávesy <span class="keys"><kbd>Enter</kbd></span>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Spustenie Pythonu v interaktívnom móde</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>~$ python
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Python 3.13.7 (main, Sep  3 2025, 18:25:04) [GCC 13.3.0] on linux
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Type "help", "copyright", "credits" or "license" for more information.
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&gt;&gt;&gt; 
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>S Pythonom následne komunikujeme tak, že do príkazového riadku napíšeme príkaz, ktorý chceme vykonať a stlačíme kláves <span class="keys"><kbd>Enter</kbd></span>. Python príkaz vykoná a ak výsledkom príkazu je nejaká hodnota, tak ju Python do konzoly vypíše. </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Výrazové príkazy v interaktívnom móde</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">37</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="mi">37</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="mi">3</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="mi">125</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">-</span> <span class="mi">3</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="mi">7</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="o">&gt;&gt;&gt;</span> <span class="s1">'Ahoj '</span> <span class="o">+</span> <span class="s1">'Fero'</span> <span class="c1"># (1)!</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="s1">'Ahoj Fero'</span>
+</span></code></pre></div>
+<ol>
+<li>Operátor sčítania <code>+</code> sa dá v Pythone použiť nie len pre čísla</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+<aside>
+<p>Interaktívne programovanie pomocou konzoly sa nazýva REPL, a znamená <em>read–eval–print loop</em>. Je výsadou interaktívnych jazykov a umožňuje meniť program za jeho behu a dokonca opraviť aj komplikované chyby bez toho, aby sa program musel reštartovať. Svetovo známym príkladom je ako NASA pomocou REPL opravila kritickú chyby vo vesmírnej sonde <a href="https://susam.net/very-remote-debugging.html">Deep Space 1</a>, ktorá bola od zeme vzdialená 100 miliónov kilometrov.
+  </p>
+</aside>
+</div>
+<p>Nie všetky príkazy vo výsledku vyprodukujú nejakú hodnotu. V nasledujúcom príklade vytvoríme premennú a priradíme jej rôzne hodnoty. </p>
+<div class="admonition info">
+<p class="admonition-title">Premenná</p>
+<p>Premenná v Pythone je taká šípka s menom, ktorá ukazuje na nejakú hodnotu. Túto šípku potom môžeme kedykoľvek zmeniť a ukázať na inú hodnotu.</p>
+<p><strong>Presnejšie povedané, premenná má názov a ukazuje na nejaký objekt uložený v pamäti počítača. To, na akú vec bude ukazovať, vieme počas programu kedykoľvek meniť.</strong> Celkom odborne povedané, premenná je pomenovaná referencia na objekt.</p>
+<p>Keďže je Python dynamicko typovaný jazyk, premenné nemajú žiadny dátový typ a vieme do nich priradzovať hodnoty rôznych typov. To je zásadný rozdiel v porovnaní s jazykom Java, kde každá premenná má svoj dátový typ a kompilátor kontroluje, či to program dodržiava.</p>
+<p>Názov premennej musí začínať písmenom alebo <code>_</code>, a môže obsahovať len písmená, číslice a <code>_</code>.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Príkazy v interaktívnom móde</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># (1)!</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="c1"># (2)!</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="mi">10</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">5</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="mi">15</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># (3)!</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">5</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="mi">25</span>
+</span></code></pre></div>
+<ol>
+<li>Príkaz priradenia premennej nevracia žiadnu hodnotu, preto sa v interaktívnom móde po zadaní takého príkazu nič nezobrazí. Premenná sa však vytvorí a môžeme ju v ďalších príkazoch použiť.</li>
+<li>Ak napíšeme iba premennú, nič sa do nej nepriradí a takýto príkaz vráti jej aktuálnu hodnotu</li>
+<li>Hodnotu premennej zmeníme a nasledujúce príkazy už budú pracovať s novou hodnotou</li>
+</ol>
+</div>
+</div>
+</div>
+<p>Ak chceme interaktívny mód opustiť, do príkazového riadku napíšeme <code>exit</code> a stlačíme <span class="keys"><kbd>Enter</kbd></span></p>
+<h2 id="python-skripty">Python skripty<a class="headerlink" href="#python-skripty" title="Permanent link">¶</a></h2>
+<p>Interaktívne programovanie má svoj význam pri oprave chýb za behu programu alebo na jednoduché vyskúšanie nejakej vecičky. Pre bežné použitie je lepšie vytvoriť tzv. skript. </p>
+<p>Skript je textový súbor, do ktorého napíšeme kód nášho programu. Takýto skript potom vieme dať Pythonu a ten potom skript spustí a program sa vykoná.</p>
+<p>Pre vytváranie skriptu budeme používať IDE PyCharm. Ak už máme otvorený projekt, do hlavného okna PyCharm sa môžeme dostať pomocou voľby <code>File - Close Project</code>.</p>
+<p>Z hlavného okna PyCharmu vyberieme možnosť <strong><code>New Script</code></strong>. Otvorí sa nám súbor <code>script.py</code>, v ktorom budeme mať vzorový kód. Ten môžeme kľudne nahradiť svojim.</p>
+<p>Ak chceme v PyCharme spusiť aktuálne otvorený skript, stlačíme <span class="keys"><kbd>Shift</kbd><span>+</span><kbd>F10</kbd></span> alebo klikneme na zelenú šípku play v hornej časti aplikácie.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/pycharm-script.png" data-desc-position="bottom"><img alt="PyCharm script" class="on-glb" src="../../assets/pycharm-script.png"></a></p>
+<figcaption>
+<p>Nový skript v prostredí PyCharm</p>
+</figcaption>
+</figure>
+<p>Po spustení skriptu sa nám v dolnej časti aplikácie objaví konzolové okno programu, v ktorom vidíme všetko, čo náš program vypísal a pomocou ktorého môžeme do nášho programu vložiť aj vstup z klávesnice.</p>
+<div class="admonition info">
+<p class="admonition-title">Spúšťanie skriptov bez IDE</p>
+<p>Pre reálne použitie sa skripty nepúšťajú cez IDE, ale vieme ich spustiť priamo cez príkazový riadok. Stačí uviesť názov súboru. Príklad spustenia skriptu <code>python script.py</code></p>
+</div>
+<p>Nasledujúce príklady vložte do skriptu a spusťte v prostredí PyCharm IDE</p>
+<h2 id="standardny-vystup">Štandardný výstup<a class="headerlink" href="#standardny-vystup" title="Permanent link">¶</a></h2>
+<p>Spustenie skriptu v Pythone prebieha ináč ako pri interaktívnom programovaní. Príkazy v skripte sa vykonávajú riadok po riadku. <strong>Pri skripte sa na rozdiel od interaktívneho módu nevypisuje výsledok príkazu, ktorý sa vykonal</strong>. Ak chceme do konzoly vypísať nejakú hodnotu, musíme na to použiť funkciu <code>print()</code></p>
+<div class="admonition example">
+<p class="admonition-title">Príklad 1.1: Použitie výstupu</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">r</span> <span class="o">=</span> <span class="mi">30</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">obvod</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">r</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Obvod je"</span><span class="p">,</span> <span class="n">obvod</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">Obvod je 188.4 </span>
+</span></code></pre></div>
+</div>
+<div class="md-has-sidebar">
+<main>
+<div class="admonition info">
+<p class="admonition-title">Konštanty</p>
+<p>Pri výpočtoch často potrebujeme použiť nejaké nemenné hodnoty, napríklad matematické konštanty. Je veľmi zlou praxou písať tieto hodnoty priamo do kódu, bez toho aby sme ozrejmili, čo dané číslo znamená. </p>
+<p>Oveľa lepšou možnosťou je zadefinovať takého hodnoty ako konštanty. Takéto <strong>nemenné hodnoty v Pythone vyjadríme pomocou obyčajnej premennej, ktorá však má svoje celé meno napísane veľkými písmenami</strong>.</p>
+<p>Vo vyššie uvedenom príklade sme takto zadefinovali konštantu <code>PI</code>. Zápis konštanty je však iba konvenciou, teda dohodou programátorov, že to tak budú robiť a že takúto konštantu nebudú vo svojich programoch meniť. Samotný jazyk Python bohužiaľ neponúka žiadne špeciálne možnosti pre vytvorenie konštánt. V takej Jave sa to dá.</p>
+</div>
+</main>
+<aside>
+<p>Zapisovanie číselných konštánt priamo do kódu bez ozrejmenia, o čo ide, je škaredý zlozvyk mnohých programátorov. Takáto nejasná hodnota v programovaní sa volá <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)">Magic Number</a>
+  </p>
+</aside>
+</div>
+<h2 id="standardny-vstup">Štandardný vstup<a class="headerlink" href="#standardny-vstup" title="Permanent link">¶</a></h2>
+<p>Tak ako vieme do konzoly niečo vypísať, vieme aj požiadať o nejaký vstup od užívateľa. Nasledujúci príklad ukáže použitie vstupu pomocou funkcie <code>input()</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Príklad 1.2: Použitie vstupu</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Dobrý deň, ako sa voláš?"</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">meno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># (1)!</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Ahoj"</span><span class="p">,</span> <span class="n">meno</span><span class="p">,</span> <span class="s2">"Rád ťa tu vidím"</span><span class="p">)</span>
+</span></code></pre></div>
+<ol>
+<li>Funkcia <code>input()</code> počká, kým užívateľ zadá vstup z klávesnice, stlačí <span class="keys"><kbd>Enter</kbd></span> a potom táto funkcia vráti reťazec znakov (string)</li>
+</ol>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">Dobrý deň, ako sa voláš?</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">Fero</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="go">Ahoj Fero Rád ťa tu vidím</span>
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Upozornenie</p>
+<p>Po spustení tohto programu v PyCharm je niekedy nutné myškou kliknúť do okna konzoly, a až potom zadávať vstup z klávesnice.</p>
+</div>
+<h2 id="formatovane-retazce-f-stringy">Formátované reťazce, f-stringy<a class="headerlink" href="#formatovane-retazce-f-stringy" title="Permanent link">¶</a></h2>
+<p>Ak pred reťazec vložíme znak <code>f</code>, môžeme do tohto reťazca pomocou zložených zátvoriek vložiť premenné a nemusíme krkolome spájať reťazce a premennými.</p>
+<div class="admonition example">
+<p class="admonition-title">Príklad 1.3: Použitie vstupu</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Dobrý deň, ako sa voláš?"</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">meno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"V akej obci bývaš?"</span><span class="p">)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">obec</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Ahoj </span><span class="si">{</span><span class="n">meno</span><span class="si">}</span><span class="s2"> z obce </span><span class="si">{</span><span class="n">obec</span><span class="si">}</span><span class="s2">, rád ťa tu vidím!"</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="go">Dobrý deň, ako sa voláš?</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">Fero</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">V akej obci bývaš?</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="go">Prešov</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="go">Ahoj Fero z obce Prešov, rád ťa tu vidím!</span>
+</span></code></pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Učím sa s pomocou umelej inteligencie</p>
+<p>Som študent strednej školy, učím sa Python. Napíš 3 nie zložité príklady na:</p>
+<ul>
+<li><a href="https://grok.com/s/c2hhcmQtMg%3D%3D_b34d50b3-4fc3-4793-8677-67feae0ff42f">použitie premenných a konštánt</a></li>
+<li><a href="https://grok.com/s/c2hhcmQtMg%3D%3D_f6804dbb-58b4-49e2-acb9-57ef35db5f6b">použitie funkcií input() a print()</a></li>
+<li><a href="https://grok.com/s/c2hhcmQtMg%3D%3D_e52c28f4-60e6-4909-92d8-d83ab4844f2b">prácu s formátovanými reťazcomi f-string</a></li>
+</ul>
+</div>
+<h2 id="zhrnutie-cvicenia">Zhrnutie cvičenia<a class="headerlink" href="#zhrnutie-cvicenia" title="Permanent link">¶</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Nainštalovať si Python 3.13 zo stránky <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Overiť si, či Python beží správne pomocou <code>python --version</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Nainštalovať si vývojové prostredie <a href="https://www.jetbrains.com/pycharm/download">PyCharm</a><ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Aktivovať si školskú licenciu pre bezplatné použitie verzie Pro</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vedieť, čo je sémantické verzionovanie<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Číselná verzia programu vo formáte MAJOR.MINOR.PATCH</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> MAJOR sa inkrementuje, keď sme spravili zmeny, ktoré nie sú spätne kompatibilné,</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> MINOR sa inkrementuje, keď sme pridali funkcionalitu so zachovaním spätnej kompatibility,</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> PATCH sa inkrementuje, keď sme opravili chyby a ostala zachovaná spätná kompatibilita.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vedieť rozdiel medzi interpretovaným a kompilovaným jazykom<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Interpretovaný je dynamický a interaktívny</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Kompilovaný je výkonnejší </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Interpretovaný program potrebuje mať nainštalovaný interpreter</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Kompilovaný program beží iba pre jednu konkrétnu verziu <abbr title="Operačný systém">OS</abbr> a procesora</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Python je interpretovaný</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vedieť spustiť Python v interaktívnom móde<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Otvoriť konzolu a spustiť príkaz <code>python</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Vedieť vytvoriť a spustiť skript<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Pomocou <code>New Script</code> v programe PyCharm</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Spustím pomocou <code>SHIFT-F10</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Čo je premenná<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Premenná v Pythone je šípka (referencia) s menom, ktorá ukazuje na nejakú hodnotu (objekt)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> To, na akú vec bude ukazovať, vieme počas programu kedykoľvek meniť.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Premennú vytvárame a meníme pomocou operácie priradenia, napr. <code>a = 10</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Premenná v Pythone nemá dátový typ, môže ukazovať na hocičo</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Čo je konštanta<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Konštanta je ako premenná, ale jej hodnota sa nemá meniť</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Pre názov konštanty sa používajú veľké písmená</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Je to iba dohoda, Python nekontroluje, či konštantu meníme</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Štandardný vstup a výstup<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Do konzoly vypíšeme pomocou funkcie <code>print()</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Z klávesnice načítame pomocou funkcie <code>input()</code></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked><span class="task-list-indicator"></span></label> Formátovaný reťazec, f-string<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Umožňuje nám vkladať do reťazca premenné</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> Príklad: <code>f"Ahoj {meno} z obce {obec}, rád ťa tu vidím!"</code></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Poznámky do zošita</p>
+<p>V zošite je potrebné mať napísané aspoň tieto poznámky:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Učebnica na stránke https://oop.wagjo.com/
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>JAZYK PYTHON
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Vlastnosti:
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>- interpretovaný jazyk 
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>- všeobecné použitie
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>- dynamické typovanie
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>Použitie:
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>- umelá inteligencia
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>- strojové učenie
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>- dátová analytika a dátová veda
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>Novšie verzie sú často nekompatibilné so starými a je nutná migrácia
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>SEMANTIC VERSIONING
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>Vytváranie verzií vo formáte MAJOR.MINOR.PATCH
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>Používané napr. v knižniciach v Javascripte, Pythone a Jave.
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>Príklad: 3.13.7, 1.0.0
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>- MAJOR sa zvýši: veľké a nekompatibilné zmeny
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>- MINOR sa zvýši: nová funkcionalita, spätne kompatibilná
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>- PATCH sa zvýši: oprava chýb, spätne kompatibiliná
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>KOMPILOVANÝ VS INTERPRETOVANÝ JAZYK
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>Interpretovaný jazyk: 
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>- interaktívny, skriptovací, pomalší
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>- potrebuje interpreter
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>- Python, PHP, Javascript
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>Kompilovaný jazyk: 
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>- rýchly, program spustím až keď ho skompilujem
+</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>- chyby nájde ešte pred spustením programu
+</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>- špeciálna verzia pre každý typ OS a CPU
+</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>- C, C++, Rust, Swift
+</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>
+</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>Java je hybrid, kód sa skompiluje do bytekódu a ten sa interpretuje cez JVM
+</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a>
+</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>
+</span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>INTERAKTÍVNE PROGRAMOVANIE
+</span><span id="__span-10-47"><a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>
+</span><span id="__span-10-48"><a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>V konzole spustím program python.
+</span><span id="__span-10-49"><a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>Zadávam príkaz a python mi vypíše jeho výsledok.
+</span><span id="__span-10-50"><a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a>Vhodné na skúšanie vecí a opravu chýb.
+</span><span id="__span-10-51"><a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a>
+</span><span id="__span-10-52"><a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a>
+</span><span id="__span-10-53"><a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a>SKRIPTY
+</span><span id="__span-10-54"><a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a>
+</span><span id="__span-10-55"><a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a>Skript je súbor s príponou .py, v ktorom je kód programu.
+</span><span id="__span-10-56"><a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a>Skript vytvorím pomocou PyCharm. Spúšťam pomocou SHIFT-F10.
+</span><span id="__span-10-57"><a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a>
+</span><span id="__span-10-58"><a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a>
+</span><span id="__span-10-59"><a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a>PREMENNÁ
+</span><span id="__span-10-60"><a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a>
+</span><span id="__span-10-61"><a id="__codelineno-10-61" name="__codelineno-10-61" href="#__codelineno-10-61"></a>Python premenná je pomenovaná referencia na objekt uložený v pamäti počítača.
+</span><span id="__span-10-62"><a id="__codelineno-10-62" name="__codelineno-10-62" href="#__codelineno-10-62"></a>Vytvárame a meníme pomocou operácie priradenia, napr. a = 10.
+</span><span id="__span-10-63"><a id="__codelineno-10-63" name="__codelineno-10-63" href="#__codelineno-10-63"></a>Premenná v Pythone nemá dátový typ, môže ukazovať na hocičo.
+</span><span id="__span-10-64"><a id="__codelineno-10-64" name="__codelineno-10-64" href="#__codelineno-10-64"></a>
+</span><span id="__span-10-65"><a id="__codelineno-10-65" name="__codelineno-10-65" href="#__codelineno-10-65"></a>
+</span><span id="__span-10-66"><a id="__codelineno-10-66" name="__codelineno-10-66" href="#__codelineno-10-66"></a>KONŠTANTA
+</span><span id="__span-10-67"><a id="__codelineno-10-67" name="__codelineno-10-67" href="#__codelineno-10-67"></a>
+</span><span id="__span-10-68"><a id="__codelineno-10-68" name="__codelineno-10-68" href="#__codelineno-10-68"></a>Konštanta je ako premenná, ale jej hodnota sa nemá meniť.
+</span><span id="__span-10-69"><a id="__codelineno-10-69" name="__codelineno-10-69" href="#__codelineno-10-69"></a>Pre názov konštanty sa používajú veľké písmená.
+</span><span id="__span-10-70"><a id="__codelineno-10-70" name="__codelineno-10-70" href="#__codelineno-10-70"></a>Je to iba dohoda, Python nekontroluje, či konštantu meníme.
+</span><span id="__span-10-71"><a id="__codelineno-10-71" name="__codelineno-10-71" href="#__codelineno-10-71"></a>
+</span><span id="__span-10-72"><a id="__codelineno-10-72" name="__codelineno-10-72" href="#__codelineno-10-72"></a>
+</span><span id="__span-10-73"><a id="__codelineno-10-73" name="__codelineno-10-73" href="#__codelineno-10-73"></a>VSTUP A VÝSTUP
+</span><span id="__span-10-74"><a id="__codelineno-10-74" name="__codelineno-10-74" href="#__codelineno-10-74"></a>
+</span><span id="__span-10-75"><a id="__codelineno-10-75" name="__codelineno-10-75" href="#__codelineno-10-75"></a>- do konzoly vypíšeme pomocou funkcie print()
+</span><span id="__span-10-76"><a id="__codelineno-10-76" name="__codelineno-10-76" href="#__codelineno-10-76"></a>- z klávesnice načítame pomocou funkcie input()
+</span><span id="__span-10-77"><a id="__codelineno-10-77" name="__codelineno-10-77" href="#__codelineno-10-77"></a>
+</span><span id="__span-10-78"><a id="__codelineno-10-78" name="__codelineno-10-78" href="#__codelineno-10-78"></a>
+</span><span id="__span-10-79"><a id="__codelineno-10-79" name="__codelineno-10-79" href="#__codelineno-10-79"></a>F-STRING
+</span><span id="__span-10-80"><a id="__codelineno-10-80" name="__codelineno-10-80" href="#__codelineno-10-80"></a>
+</span><span id="__span-10-81"><a id="__codelineno-10-81" name="__codelineno-10-81" href="#__codelineno-10-81"></a>Umožňuje nám vkladať do reťazca premenné.    
+</span><span id="__span-10-82"><a id="__codelineno-10-82" name="__codelineno-10-82" href="#__codelineno-10-82"></a>Príklad: f"Ahoj {meno} z obce {obec}, rád ťa tu vidím!"
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Skúšanie a kontrola vedomostí</p>
+<p>Na ďalšej hodine budeme kontrolovať nasledovné veci:</p>
+<ul>
+<li>Správne nainštalovaný Python 3.13</li>
+<li>Správne nainštalovaný program PyCharm</li>
+<li>Zapísané poznámky z hodiny vo vašom zošite</li>
+</ul>
+<p>Ústne skúšanie alebo krátka 5-minútovka:</p>
+<ul>
+<li>Čo je sémantické verzionovanie, popíš na príklade</li>
+<li>Aké sú rozdiely medzi interpretovaným a kompilovaným jazykom?</li>
+<li>Čo je premenná, uveď príklad kódu</li>
+<li>Čo je konštanta, ako sa v Pythone zapisuje</li>
+<li>Ako vypíšeme niečo do konzoly</li>
+<li>Ako načítame vstup z klávesnice</li>
+<li>Čo je f-string, na čo sa používa, uveď príklad</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025, 2026, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.top", "toc.follow", "navigation.tabs", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
