@@ -523,7 +523,15 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p19-udp-multicast">UDP broadcast a multicast</a>  (<a href="../assets/p19w.pdf">pdf</a>)
+<ul>
+<li>Metódy smerovaina správ</li>
+<li>Broadcast, multicast</li>
+<li>Anycast</li>
+</ul>
+</td>
+
 </tr>
 
 <tr >
@@ -540,6 +548,19 @@ hide:
 <td width=30%>TODO</td>
 </tr>
 
+<tr >
+<td width=10%>21</td>
+<td width=30%>
+<a href="../teoria-3/t21-javafx-komponenty">JavaFX komponenty</a> (<a href="../assets/t21w.pdf">pdf</a>)
+<ul>
+<li>Ovládacie prvky</li>
+<li>Komponenty pre rozmiestňovanie</li>
+<li>Scene Graph, Z-Order</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
 
 </tbody>
 </table>
