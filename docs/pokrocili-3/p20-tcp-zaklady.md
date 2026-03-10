@@ -207,7 +207,7 @@ sock.close()
     - nepodporuje broadcast/multicast
 
     Fázy spojenia
-    1. Nadviazanie spojenia - používame funkcie `listen()`, `connect()` a `accept()`
+    1. Nadviazanie spojenia - používame funkcie listen(), connect() a accept()
     2. Prenos dát - používame sendall() a recv()
     3. Ukončenie spojenia - používame shutdown() a close()
 
