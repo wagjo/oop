@@ -579,9 +579,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p20-">x</a>  (<a href="../assets/p20w.pdf">pdf</a>)
+<a href="../pokrocili-3/p20-tcp-zaklady">TCP</a>  (<a href="../assets/p20w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Transmission Control Protocol</li>
+<li>Fázy spojenia</li>
+<li>Nadviazanie spojenia - Three-way handshake</li>
 </ul>
 </td>
 </tr>

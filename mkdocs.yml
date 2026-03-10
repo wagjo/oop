@@ -62,6 +62,7 @@ nav:
     - 17 - Zvuk a hudba: 'pokrocili-3/p17-pygame-zvuk.md'
     - 18 - UDP základy: 'pokrocili-3/p18-udp.md'
     - 19 - UDP broadcast a multicast: 'pokrocili-3/p19-udp-multicast.md'
+    #- 20 - TCP základy: 'pokrocili-3/p20-tcp-zaklady.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
