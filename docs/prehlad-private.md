@@ -612,6 +612,30 @@ hide:
 </td>
 </tr>
 
+<tr >
+<td width=10%>22</td>
+<td width=30%>
+<a href="../teoria-3/t22-javafx-eventz">JavaFX udalosti</a> (<a href="../assets/t22w.pdf">pdf</a>)
+<ul>
+<li>Typy udalostí a ich spracovanie</li>
+<li>Capturing, Bubbling, Consuming</li>
+<li>Udalosti v FXML</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c22-">x</a> (<a href="../assets/c22w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p22-">x</a>  (<a href="../assets/p22w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
 </tbody>
 </table>
   
