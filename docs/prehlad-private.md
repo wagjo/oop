@@ -615,7 +615,7 @@ hide:
 <tr >
 <td width=10%>22</td>
 <td width=30%>
-<a href="../teoria-3/t22-javafx-eventz">JavaFX udalosti</a> (<a href="../assets/t22w.pdf">pdf</a>)
+<a href="../teoria-3/t22-javafx-eventy">JavaFX udalosti</a> (<a href="../assets/t22w.pdf">pdf</a>)
 <ul>
 <li>Typy udalostí a ich spracovanie</li>
 <li>Capturing, Bubbling, Consuming</li>

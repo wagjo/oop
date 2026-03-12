@@ -213,7 +213,7 @@ Ak používame FXML, teda deklaratívny spôsob tvorby JavaFX aplikácie, ošetr
     ```
     JavaFX udalosti - eventy
     
-    Udalosť - kliknitue myšou, stlačenie klávesy, zmena veľkosti okna, ...
+    Udalosť - kliknutie myšou, stlačenie klávesy, zmena veľkosti okna, ...
     Udalosť je objekt dediaci z triedy javafx.event.Event
     Príklady tried: DragEvent, KeyEvent, MouseEvent a ScrollEvent
 
@@ -238,7 +238,8 @@ Ak používame FXML, teda deklaratívny spôsob tvorby JavaFX aplikácie, ošetr
     - Udalosť je odoslaná zo stage a prechádza cestou až k cieľu.
     - Počas toho sa udalosť filtruje. Ak má uzol v ceste zaregistrovaný filter, tak sa vykoná. 
     - Využitie na logovanie a blokovanie
-    - Filter funkciu, zaregistrujeme pomocou metódy addEventFilter v komponente, cez ktorú udalosť prechádza
+    - Filter funkciu, zaregistrujeme pomocou metódy addEventFilter v komponente, 
+      cez ktorú udalosť prechádza
     - Source v udalosti ukazuje na uzol, na ktorom sa filter nachádza. 
     - Cieľ sa nemení a je stále nastavený na cieľový objekt
 
@@ -247,7 +248,7 @@ Ak používame FXML, teda deklaratívny spôsob tvorby JavaFX aplikácie, ošetr
     - Ak má uzol zaregistrovaný handler udalostí, tento handler sa vykoná.
     - Väčšinou sa registruje handler na cieľovom prvku
     - Registrujeme pomocou metódy addEventHandler
-    - Pomocné metódy na registráciu začínajú názvom setOn, napr. setOnMouseClicked, setOnKeyTyped atď. 
+    - Pomocné metódy na registráciu začínajú názvom setOn, napr. setOnMouseClicked, setOnKeyTyped 
 
     Skonzumovanie udalosti - consuming
     - event.consume()
