@@ -545,7 +545,14 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p20-tcp-zaklady">TCP</a>  (<a href="../assets/p20w.pdf">pdf</a>)
+<ul>
+<li>Transmission Control Protocol</li>
+<li>Fázy spojenia</li>
+<li>Nadviazanie spojenia - Three-way handshake</li>
+</ul>
+</td>
 </tr>
 
 <tr >
@@ -561,6 +568,21 @@ hide:
 <td width=30%>TODO</td>
 <td width=30%>TODO</td>
 </tr>
+
+<tr >
+<td width=10%>22</td>
+<td width=30%>
+<a href="../teoria-3/t22-javafx-eventy">JavaFX udalosti</a> (<a href="../assets/t22w.pdf">pdf</a>)
+<ul>
+<li>Typy udalostí a ich spracovanie</li>
+<li>Capturing, Bubbling, Consuming</li>
+<li>Udalosti v FXML</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
+
 
 </tbody>
 </table>
