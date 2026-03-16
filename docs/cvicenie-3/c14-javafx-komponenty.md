@@ -77,6 +77,7 @@ Vašou úlohou bude zmeniť kód v jednotlivých úlohách tak, aby spĺňal zad
     - Tlačítko `Close` ukončí program pomocou `Platform.exit()`
     - Tlačítko `Randomize` nech zmení farby pozadí na náhodné
     - Obrázky sa budú umiestňovať do `TilePane` a to takto:
+    - Ako obrázok použite súbor [soup2.png](../assets/soup2.png)
     - Každý prvok v `TilePane` nech je VBox, do ktorého potom dáte `ImageView`
     - Každý VBox nech má svoj atribút v Controlleri a farby potom môžete zmeniť pomocou nasledovného kódu
 
