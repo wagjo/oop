@@ -605,9 +605,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p21-">x</a>  (<a href="../assets/p21w.pdf">pdf</a>)
+<a href="../pokrocili-3/p21-tcp-prenos">TCP Prenos dát</a>  (<a href="../assets/p21w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Prúd údajov, Segmentácia</li>
+<li>Posuvné okno, Retransmisia</li>
+<li>Flow control, Congestion control</li>
 </ul>
 </td>
 </tr>

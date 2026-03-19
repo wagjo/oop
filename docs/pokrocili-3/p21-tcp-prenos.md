@@ -132,7 +132,7 @@ Segment s číslom 100 sa stratí, Stanica B posiela ACK 100, aj keď prišli ď
 Pri strate TCP segmentu odosielateľ odošle pôvodny segment ešte raz. Bude ho odosielať až kým prijímateľ nepotvrdí, že ho dostal. Tento proces sa nazýva retransmisia. To, že došlo k strate segmentu odosielateľ zistí dvoma spôsobmi:
 
 - Segment je považovaný za stratený, ak neprišla ACK odpoveď do určitého času (**timeout**).
-- Prijímateľ poslal tri rovnaké ACK odpovede (**tri duplikáty**). To znamená, že mu nejaký segment neprišiel a žiada o opätovné odoslanie
+- Prijímateľ poslal štyri rovnaké ACK odpovede (**tri duplikáty**). To znamená, že mu nejaký segment neprišiel a žiada o opätovné odoslanie
 
 ## Flow control
 
@@ -233,7 +233,7 @@ Congestion contol s režimom Slow Start a Congestion Avoidance
     * [ ] Pri strate TCP segmentu odosielateľ odošle pôvodny segment ešte raz. Bude ho odosielať až kým prijímateľ nepotvrdí, že ho dostal. To sa nazýva retransmisia. 
     * [ ] To, že došlo k strate segmentu odosielateľ zistí dvoma spôsobmi:
     * [ ] 1. Segment je stratený, ak neprišla ACK odpoveď do určitého času (timeout).
-    * [ ] 2. Prijímateľ poslal tri rovnaké ACK odpovede (tri duplikáty). Chýba mu segment
+    * [ ] 2. Prijímateľ poslal štyri rovnaké ACK odpovede (tri duplikáty). Chýba mu segment
 - [x] Flow control (riadenie toku dát) - riadi prijímateľ
     * [ ] Je to mechanizmus, ktorý zabezpečuje, aby odosielateľ (sender) neposielal dáta rýchlejšie, než ich dokáže príjemca (receiver) spracovať.
     * [ ] Príjemca v každom ACK pakete informuje, koľko bajtov je ešte chopný prijať (koľko má miesta vo svojom receive bufferi).
@@ -266,7 +266,7 @@ Congestion contol s režimom Slow Start a Congestion Avoidance
     Pri strate TCP segmentu odosielateľ znova odošle pôvodny segment
     Segment je stratený:
     1. Ak neprišla ACK odpoveď do určitého času (timeout).
-    2. Ak prijímateľ poslal tri rovnaké ACK odpovede (tri duplikáty). Chýba mu segment
+    2. Ak prijímateľ poslal štyri rovnaké ACK odpovede (tri duplikáty). Chýba mu segment
 
     Flow control (riadenie toku dát)
     
