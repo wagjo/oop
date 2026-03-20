@@ -638,6 +638,31 @@ hide:
 </td>
 </tr>
 
+
+<tr >
+<td width=10%>23</td>
+<td width=30%>
+<a href="../teoria-3/t23-javafx-styly">JavaFX štýly</a> (<a href="../assets/t23w.pdf">pdf</a>)
+<ul>
+<li>CSS v JavaFX</li>
+<li>Inline štýl, externý CSS súbor</li>
+<li>CSS selektory: id, triedy</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c23-">x</a> (<a href="../assets/c23w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p23-">x</a>  (<a href="../assets/p23w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
 </tbody>
 </table>
   
