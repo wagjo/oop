@@ -566,7 +566,14 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p21-tcp-prenos">TCP Prenos dát</a>  (<a href="../assets/p21w.pdf">pdf</a>)
+<ul>
+<li>Prúd údajov, Segmentácia</li>
+<li>Posuvné okno, Retransmisia</li>
+<li>Flow control, Congestion control</li>
+</ul>
+</td>
 </tr>
 
 <tr >
@@ -577,6 +584,20 @@ hide:
 <li>Typy udalostí a ich spracovanie</li>
 <li>Capturing, Bubbling, Consuming</li>
 <li>Udalosti v FXML</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
+
+<tr >
+<td width=10%>23</td>
+<td width=30%>
+<a href="../teoria-3/t23-javafx-styly">JavaFX štýly</a> (<a href="../assets/t23w.pdf">pdf</a>)
+<ul>
+<li>CSS v JavaFX</li>
+<li>Inline štýl, externý CSS súbor</li>
+<li>CSS selektory: id, triedy</li>
 </ul>
 </td>
 <td width=30%>TODO</td>

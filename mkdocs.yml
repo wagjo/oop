@@ -28,7 +28,7 @@ nav:
     - 20 - JavaFX Stage: 'teoria-3/t20-javafx-stage.md'
     - 21 - JavaFX komponenty: 'teoria-3/t21-javafx-komponenty.md'
     - 22 - JavaFX udalosti: 'teoria-3/t22-javafx-eventy.md'
-    #- 23 - JavaFX štýly: 'teoria-3/t23-javafx-styly.md'
+    - 23 - JavaFX štýly: 'teoria-3/t23-javafx-styly.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
     - 2 - Prvý Java program: 'cvicenie-3/c02-hello.md'
@@ -65,7 +65,7 @@ nav:
     - 18 - UDP základy: 'pokrocili-3/p18-udp.md'
     - 19 - UDP broadcast a multicast: 'pokrocili-3/p19-udp-multicast.md'
     - 20 - TCP základy: 'pokrocili-3/p20-tcp-zaklady.md'
-    #- 21 - TCP prenos: 'pokrocili-3/p21-tcp-prenos.md'
+    - 21 - TCP prenos: 'pokrocili-3/p21-tcp-prenos.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
