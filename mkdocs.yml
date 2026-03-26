@@ -67,6 +67,7 @@ nav:
     - 19 - UDP broadcast a multicast: 'pokrocili-3/p19-udp-multicast.md'
     - 20 - TCP základy: 'pokrocili-3/p20-tcp-zaklady.md'
     - 21 - TCP prenos: 'pokrocili-3/p21-tcp-prenos.md'
+    #- 22 - TCP rámcovanie: 'pokrocili-3/p22-tcp-framing.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'

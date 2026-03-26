@@ -633,9 +633,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p22-">x</a>  (<a href="../assets/p22w.pdf">pdf</a>)
+<a href="../pokrocili-3/p22-tcp-framing">TCP rámcovanie</a>  (<a href="../assets/p22w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Rámcovanie správ nad TCP</li>
+<li>S pevnou dĺžkou správy</li>
+<li>S oddeľovacím znakom</li>
+<li>S dĺžkou správy v hlavičke</li>
 </ul>
 </td>
 </tr>
