@@ -671,7 +671,7 @@ hide:
 <tr >
 <td width=10%>24</td>
 <td width=30%>
-<a href="../teoria-3/t24-javafx-styly">JavaFX sledovanie zmien</a> (<a href="../assets/t24w.pdf">pdf</a>)
+<a href="../teoria-3/t24-javafx-observable">JavaFX sledovanie zmien</a> (<a href="../assets/t24w.pdf">pdf</a>)
 <ul>
 <li>Sledovanie zmien hodnôt</li>
 <li>ObservableValue a addListener()</li>
