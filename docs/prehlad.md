@@ -439,7 +439,14 @@ hide:
 <li>Praktický príklad</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c15-javafx-styly">JavaFX štýly</a> 
+<ul>
+<li>Najpoužívanejšie CSS atribúty</li>
+<li>Úlohy na inline štýly</li>
+<li>Úlohy na externý súbor s CSS štýlmi</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p15-testovanie">Testovanie</a> (<a href="../assets/p15w.pdf">pdf</a>)
 <ul>

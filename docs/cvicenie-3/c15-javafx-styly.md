@@ -85,7 +85,6 @@ Na teórii sme si vysvetlili základy štýlovania a CSS selektory. Ostáva nám
     - Farby: green, red, brown a blue
     - Font family: Serif
     - Radius: 7px
-    - Obrázok pozadia [calculator.jpeg](../assets/calculator.jpeg)
 
 !!! example "Úloha 15.3: Oznam"
 

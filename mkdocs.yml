@@ -45,7 +45,7 @@ nav:
     - 12 - JSON a CSV: 'cvicenie-3/c12-json.md'
     - 13 - JavaFX: 'cvicenie-3/c13-javafx.md'
     - 14 - JavaFX Komponenty: 'cvicenie-3/c14-javafx-komponenty.md'
-    #- 15 - JavaFX Štýly: 'cvicenie-3/c15-javafx-styly.md'
+    - 15 - JavaFX Štýly: 'cvicenie-3/c15-javafx-styly.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'
