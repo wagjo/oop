@@ -594,7 +594,15 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p22-tcp-framing">TCP rámcovanie</a>  (<a href="../assets/p22w.pdf">pdf</a>)
+<ul>
+<li>Rámcovanie správ nad TCP</li>
+<li>S pevnou dĺžkou správy</li>
+<li>S oddeľovacím znakom</li>
+<li>S dĺžkou správy v hlavičke</li>
+</ul>
+</td>
 </tr>
 
 <tr >
@@ -610,6 +618,31 @@ hide:
 <td width=30%>TODO</td>
 <td width=30%>TODO</td>
 </tr>
+
+<tr >
+<td width=10%>24</td>
+<td width=30%>
+<a href="../teoria-3/t24-javafx-observable">JavaFX sledovanie zmien</a> (<a href="../assets/t24w.pdf">pdf</a>)
+<ul>
+<li>Sledovanie zmien hodnôt</li>
+<li>ObservableValue a addListener()</li>
+<li>property objekt</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c24-">x</a> (<a href="../assets/c24w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p24-">x</a>  (<a href="../assets/p24w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
 
 
 </tbody>
