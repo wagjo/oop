@@ -692,6 +692,30 @@ hide:
 </td>
 </tr>
 
+<tr >
+<td width=10%>25</td>
+<td width=30%>
+<a href="../teoria-3/t25-javafx-property">JavaFX property</a> (<a href="../assets/t25w.pdf">pdf</a>)
+<ul>
+<li>Property object</li>
+<li>Prepojenie - binding</li>
+<li>Transformácia propperty objektov</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c25-">x</a> (<a href="../assets/c25w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p25-">x</a>  (<a href="../assets/p25w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
 </tbody>
 </table>
   
