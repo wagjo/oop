@@ -661,9 +661,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p23-">x</a>  (<a href="../assets/p23w.pdf">pdf</a>)
+<a href="../pokrocili-3/p23-http">HTTP</a>  (<a href="../assets/p23w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>HTTP a jeho vlastnosti</li>
+<li>Response a request správy</li>
+<li>HTTP Metódy a Statusové kódy</li>
 </ul>
 </td>
 </tr>

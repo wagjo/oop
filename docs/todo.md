@@ -103,3 +103,8 @@ popularne kniznice
 
 - viditelnost premennych, scope, global, nonlocal, inner funkcie
 
+MIME
+JSON/API
+ROUTING
+AUTH
+
