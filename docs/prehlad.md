@@ -469,7 +469,13 @@ hide:
 <li>JAR archív</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c16-projekt2">Ročníkový projekt</a>
+<ul>
+<li>Zadania ročníkových projektov</li>
+<li>Pokyny na vypracovanie</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p16-projekt">Polročný projekt</a> 
 <ul>
@@ -616,7 +622,14 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p23-http">HTTP</a>  (<a href="../assets/p23w.pdf">pdf</a>)
+<ul>
+<li>HTTP a jeho vlastnosti</li>
+<li>Response a request správy</li>
+<li>HTTP Metódy a Statusové kódy</li>
+</ul>
+</td>
 </tr>
 
 <tr >
@@ -629,18 +642,22 @@ hide:
 <li>property objekt</li>
 </ul>
 </td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+</tr>
+
+<tr >
+<td width=10%>25</td>
 <td width=30%>
-<a href="../cvicenie-3/c24-">x</a> (<a href="../assets/c24w.pdf">pdf</a>)
+<a href="../teoria-3/t25-javafx-property">JavaFX property</a> (<a href="../assets/t25w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>Property object</li>
+<li>Prepojenie - binding</li>
+<li>Transformácia propperty objektov</li>
 </ul>
 </td>
-<td width=30%>
-<a href="../pokrocili-3/p24-">x</a>  (<a href="../assets/p24w.pdf">pdf</a>)
-<ul>
-<li>TODO</li>
-</ul>
-</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
 </tr>
 
 
