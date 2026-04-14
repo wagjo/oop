@@ -132,7 +132,7 @@ HTTP statusové kódy sa skladajú z troch číslic a delíme ich do nasledujúc
     - www.faqs.org, cesta /, port 80
 
     Vyskúšajte iné servery (školskú stránku?) alebo cesty a analyzujte odpovede serverov
-    ```
+    
 
 !!! example "Úloha 23.2: HTTP server"
 
@@ -147,7 +147,7 @@ HTTP statusové kódy sa skladajú z troch číslic a delíme ich do nasledujúc
     Po spustení servera sa na neho pripojte pomocou svojho prehliadača, napr. [localhost:8080](http://localhost:8080)
 
     Vyskúšajte iné druhy odpovede a tela odpovede, napr. 404, 403, 504, 303, atď. Čo urobí prehliadač?
-    ```
+    
 
 ## Zhrnutie cvičenia
 
