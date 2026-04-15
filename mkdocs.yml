@@ -30,7 +30,7 @@ nav:
     - 22 - JavaFX udalosti: 'teoria-3/t22-javafx-eventy.md'
     - 23 - JavaFX štýly: 'teoria-3/t23-javafx-styly.md'
     - 24 - JavaFX sledovanie zmien: 'teoria-3/t24-javafx-observable.md'
-    - 25 - JavaFX property: 'teoria-3/t25-javafx-property.md'
+    #- 25 - JavaFX property: 'teoria-3/t25-javafx-property.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
     - 2 - Prvý Java program: 'cvicenie-3/c02-hello.md'
@@ -48,6 +48,7 @@ nav:
     - 14 - JavaFX Komponenty: 'cvicenie-3/c14-javafx-komponenty.md'
     - 15 - JavaFX Štýly: 'cvicenie-3/c15-javafx-styly.md'
     - 16 - Ročníkový projekt: 'cvicenie-3/c16-projekt2.md'
+    #- 17 - Property objekty: 'cvicenie-3/c17-javafx-property.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'

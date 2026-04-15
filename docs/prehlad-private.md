@@ -474,9 +474,10 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c16-">x</a> (<a href="../assets/c16w.pdf">pdf</a>)
+<a href="../cvicenie-3/c16-projekt2">Ročníkový projekt</a>
 <ul>
-<li>TODO</li>
+<li>Zadania ročníkových projektov</li>
+<li>Pokyny na vypracovanie</li>
 </ul>
 </td>
 <td width=30%>
@@ -498,9 +499,9 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c17-">x</a> (<a href="../assets/c17w.pdf">pdf</a>)
+<a href="../cvicenie-3/c17-javafx-property">JavaFX property objekty</a> 
 <ul>
-<li>TODO</li>
+<li>Použitie property objektov</li>
 </ul>
 </td>
 <td width=30%>
