@@ -73,6 +73,7 @@ nav:
     - 21 - TCP prenos: 'pokrocili-3/p21-tcp-prenos.md'
     - 22 - TCP rámcovanie: 'pokrocili-3/p22-tcp-framing.md'
     - 23 - HTTP: 'pokrocili-3/p23-http.md'
+    #- 24 - Routovanie: 'pokrocili-3/p24-routing.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'

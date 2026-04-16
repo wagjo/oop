@@ -68,7 +68,7 @@ Začneme kódom pre klienta. Jeho úlohou je požiadať o spojenie, poslať a pr
 import socket
 
 # Pre TCP použijeme typ socket.SOCK_STREAM
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM);
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # 1. Nadviazanie spojenia - CONNECT (THREE-WAY HANDSHAKE)
 sock.connect(('127.0.0.1', 65432))

@@ -499,7 +499,7 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c17-javafx-property">JavaFX property objekty</a> 
+<a href="../cvicenie-3/c17-javafx-property">JavaFX property objekty</a>
 <ul>
 <li>Použitie property objektov</li>
 </ul>
@@ -688,9 +688,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p24-">x</a>  (<a href="../assets/p24w.pdf">pdf</a>)
+<a href="../pokrocili-3/p24-routing">URL a routovanie</a>  (<a href="../assets/p24w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>URL</li>
+<li>Routovanie</li>
+<li>Flask</li>
 </ul>
 </td>
 </tr>
