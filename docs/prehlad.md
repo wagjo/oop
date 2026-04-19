@@ -494,7 +494,12 @@ hide:
 <li>Comparator</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c17-javafx-property">JavaFX property objekty</a>
+<ul>
+<li>Použitie property objektov</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p17-pygame-zvuk">Zvuk a hudba v Pygame</a> 
 <ul>
