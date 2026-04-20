@@ -30,7 +30,7 @@ nav:
     - 22 - JavaFX udalosti: 'teoria-3/t22-javafx-eventy.md'
     - 23 - JavaFX štýly: 'teoria-3/t23-javafx-styly.md'
     - 24 - JavaFX sledovanie zmien: 'teoria-3/t24-javafx-observable.md'
-    #- 25 - JavaFX property: 'teoria-3/t25-javafx-property.md'
+    - 25 - JavaFX property: 'teoria-3/t25-javafx-property.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
     - 2 - Prvý Java program: 'cvicenie-3/c02-hello.md'
@@ -73,7 +73,7 @@ nav:
     - 21 - TCP prenos: 'pokrocili-3/p21-tcp-prenos.md'
     - 22 - TCP rámcovanie: 'pokrocili-3/p22-tcp-framing.md'
     - 23 - HTTP: 'pokrocili-3/p23-http.md'
-    #- 24 - Routovanie: 'pokrocili-3/p24-routing.md'
+    - 24 - Routovanie: 'pokrocili-3/p24-routing.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'

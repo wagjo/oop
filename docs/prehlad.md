@@ -648,7 +648,14 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p24-routing">URL a routovanie</a>  (<a href="../assets/p24w.pdf">pdf</a>)
+<ul>
+<li>URL</li>
+<li>Routovanie</li>
+<li>Flask</li>
+</ul>
+</td>
 </tr>
 
 <tr >
