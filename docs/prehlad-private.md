@@ -524,9 +524,10 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../cvicenie-3/c18-">x</a> (<a href="../assets/c18w.pdf">pdf</a>)
+<a href="../cvicenie-3/c18-javafx-mvc">MVC Architektúra</a>
 <ul>
-<li>TODO</li>
+<li>MVC Architektúra</li>
+<li>Aplikácia na zobrazenie predpovede počasia</li>
 </ul>
 </td>
 <td width=30%>
