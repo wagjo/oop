@@ -183,7 +183,7 @@ Controller tak už nebude používať slider ako hlavný prvok aplikácie, ale v
     Definuje tri spolupracujúce vrstvy, umožňuje oddelenie zodpovedností (separation of concerns).
 
     Ciele MVC
-    - ľahšie testovanie, udržiavanue a rozšíriteľnosť
+    - ľahšie testovanie, udržiavanie a rozšíriteľnosť
     - lepšia spolupráva v rámci tímu
     - znížiť prelínanie (coupling) medzi vrstvami
 
