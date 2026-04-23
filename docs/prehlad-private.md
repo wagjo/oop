@@ -722,6 +722,30 @@ hide:
 </td>
 </tr>
 
+<tr >
+<td width=10%>26</td>
+<td width=30%>
+<a href="../teoria-3/t26-javafx-mvc">JavaFX MVC</a> (<a href="../assets/t26w.pdf">pdf</a>)
+<ul>
+<li>Model-View-Controller</li>
+<li>Ciele a vlastnosti MVC</li>
+<li>MVC v JavaFX</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c26-">x</a> (<a href="../assets/c26w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p26-">x</a>  (<a href="../assets/p26w.pdf">pdf</a>)
+<ul>
+<li>TODO</li>
+</ul>
+</td>
+</tr>
+
 </tbody>
 </table>
   
