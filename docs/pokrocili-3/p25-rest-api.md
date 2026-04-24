@@ -142,7 +142,7 @@ Na vytvorenie a odoslanie HTTP requestov vieme využiť tiež nástroj `curl`. I
 Príklad vytvorenia a odoslania HTTP requestov: 
 
 ```curl
-curl -X GET http://127.0.0.1:5000/api/books/1 | jq`
+curl -X GET http://127.0.0.1:5000/api/books/1 | jq
 
 curl -X POST http://127.0.0.1:5000/api/books \
      -H "Content-Type: application/json" \
