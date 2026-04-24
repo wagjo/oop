@@ -715,9 +715,11 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p25-">x</a>  (<a href="../assets/p25w.pdf">pdf</a>)
+<a href="../pokrocili-3/p25-rest-api">REST API</a> (<a href="../assets/p25w.pdf">pdf</a>)
 <ul>
-<li>TODO</li>
+<li>API</li>
+<li>Webové API</li>
+<li>REST API</li>
 </ul>
 </td>
 </tr>
