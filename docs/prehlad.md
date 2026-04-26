@@ -519,7 +519,13 @@ hide:
 <li>Chyby pri behu programu</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c18-javafx-mvc">MVC Architektúra</a>
+<ul>
+<li>MVC Architektúra</li>
+<li>Aplikácia na zobrazenie predpovede počasia</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p18-udp">UDP</a>  (<a href="../assets/p18w.pdf">pdf</a>)
 <ul>

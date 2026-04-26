@@ -50,7 +50,7 @@ nav:
     - 15 - JavaFX Štýly: 'cvicenie-3/c15-javafx-styly.md'
     - 16 - Ročníkový projekt: 'cvicenie-3/c16-projekt2.md'
     - 17 - Property objekty: 'cvicenie-3/c17-javafx-property.md'
-    #- 18 - MVC architektúra: 'cvicenie-3/c18-javafx-mvc.md'
+    - 18 - MVC architektúra: 'cvicenie-3/c18-javafx-mvc.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'
