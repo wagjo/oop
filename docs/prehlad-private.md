@@ -741,9 +741,10 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<a href="../pokrocili-3/p26-">x</a>  (<a href="../assets/p26w.pdf">pdf</a>)
+<a href="../pokrocili-3/p26-projekt2">Ročníkový projekt</a> 
 <ul>
-<li>TODO</li>
+<li>Ročníkový projekt</li>
+<li>Pokyny a zadania</li>
 </ul>
 </td>
 </tr>

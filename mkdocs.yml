@@ -31,7 +31,7 @@ nav:
     - 23 - JavaFX štýly: 'teoria-3/t23-javafx-styly.md'
     - 24 - JavaFX sledovanie zmien: 'teoria-3/t24-javafx-observable.md'
     - 25 - JavaFX property: 'teoria-3/t25-javafx-property.md'
-    #- 26 - JavaFX MVC: 'teoria-3/t26-javafx-mvc.md'
+    - 26 - JavaFX MVC: 'teoria-3/t26-javafx-mvc.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
     - 2 - Prvý Java program: 'cvicenie-3/c02-hello.md'
@@ -76,7 +76,8 @@ nav:
     - 22 - TCP rámcovanie: 'pokrocili-3/p22-tcp-framing.md'
     - 23 - HTTP: 'pokrocili-3/p23-http.md'
     - 24 - Routovanie: 'pokrocili-3/p24-routing.md'
-    #- 25 - REST API: 'pokrocili-3/p25-rest-api.md'
+    - 25 - REST API: 'pokrocili-3/p25-rest-api.md'
+    - 26 - Ročníkový projekt: 'pokrocili-3/p26-projekt2.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'

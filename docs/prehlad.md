@@ -675,8 +675,36 @@ hide:
 </ul>
 </td>
 <td width=30%>TODO</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p25-rest-api">REST API</a> (<a href="../assets/p25w.pdf">pdf</a>)
+<ul>
+<li>API</li>
+<li>Webové API</li>
+<li>REST API</li>
+</ul>
+</td>
 </tr>
+
+<tr >
+<td width=10%>26</td>
+<td width=30%>
+<a href="../teoria-3/t26-javafx-mvc">JavaFX MVC</a> (<a href="../assets/t26w.pdf">pdf</a>)
+<ul>
+<li>Model-View-Controller</li>
+<li>Ciele a vlastnosti MVC</li>
+<li>MVC v JavaFX</li>
+</ul>
+</td>
+<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p26-projekt2">Ročníkový projekt</a> 
+<ul>
+<li>Ročníkový projekt</li>
+<li>Pokyny a zadania</li>
+</ul>
+</td>
+</tr>
+
 
 
 
