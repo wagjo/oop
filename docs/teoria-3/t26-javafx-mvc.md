@@ -1,4 +1,4 @@
-# Teória 25: Model-View-Controller architekrúra
+# Teória 26: Model-View-Controller architektúra
 
 Na minulej hodine sme si ukázali, ako sa property objekty dajú vzájomne prepojiť, aby sa hodnoty na ovládacích prvkoch automaticky aktualizovali.
 
@@ -184,7 +184,7 @@ Controller tak už nebude používať slider ako hlavný prvok aplikácie, ale v
 
     Ciele MVC
     - ľahšie testovanie, udržiavanie a rozšíriteľnosť
-    - lepšia spolupráva v rámci tímu
+    - lepšia spolupráca v rámci tímu
     - znížiť prelínanie (coupling) medzi vrstvami
 
     Model - dáta a biznis logiku aplikácie (validácia hodnôt, výpočty, komunikácia s databázou)
@@ -194,9 +194,9 @@ Controller tak už nebude používať slider ako hlavný prvok aplikácie, ale v
     Fungovanie MVC
     1. Užívateľ vykoná akciu vo View (napr. klik myšou).
     2. Controller zachytí udalosť.
-    4. Controller zavolá metódy na Modeli (napr. model.saveUser()).
-    5. Model vykoná logiku a zmení svoj stav.
-    6. View sa aktualizuje s novými hodnotami Modelu.
+    3. Controller zavolá metódy na Modeli (napr. model.saveUser()).
+    4. Model vykoná logiku a zmení svoj stav.
+    5. View sa aktualizuje s novými hodnotami Modelu.
 
     Vlastnosti MVC
     - Pri malých aplikáciách je MVC príliš komplikovaný
