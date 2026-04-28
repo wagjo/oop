@@ -1,0 +1,3131 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oop.wagjo.com/pokrocili-3/p23-http/">
+      
+      
+        <link rel="prev" href="../p22-tcp-framing/">
+      
+      
+        <link rel="next" href="../p24-routing/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>23 - HTTP - Objektovo Orientované Programovanie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/tufte-sidebars.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pokrocili-23-http" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-header__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Objektovo Orientované Programovanie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              23 - HTTP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Úvod
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../teoria-3/t01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Teória
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cvicenie-3/c01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Cvičenia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../p01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Pokročilí
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../prehlad/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Prehľad tém
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../zbierka-java/j05-04-dedicnost/" class="md-tabs__link">
+          
+  
+  
+  Zbierka úloh
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../autor/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kontakt
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-nav__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Objektovo Orientované Programovanie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Úvod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teória
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teória
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod a motivácia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t02-typy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Algoritmus, dátové typy a premenné
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t03-objekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Identita, objekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t04-trieda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Trieda, balíky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t05-vynimky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Výnimky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t06-operatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Operátory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t07-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t08-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Inicializácia objektov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t09-premenne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Premenné a atribúty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t10-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t11-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t12-polymorfizmus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Polymorfizmus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t13-abstrakcia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Abstrakcia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t14-enum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Enumeračné typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t15-oop-opakovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Princípy OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t16-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Budovanie softvéru
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t17-usporiadanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Usporiadanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t18-records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t19-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - GUI knižnice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t20-javafx-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - JavaFX Stage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t21-javafx-komponenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 - JavaFX komponenty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t22-javafx-eventy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 - JavaFX udalosti
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t23-javafx-styly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 - JavaFX štýly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t24-javafx-observable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 - JavaFX sledovanie zmien
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t25-javafx-property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 - JavaFX property
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t26-javafx-mvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 - JavaFX MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cvičenia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cvičenia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, vývojový diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c02-hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Prvý Java program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c03-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Riadenie toku programu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c04-polia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Polia, varargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c05-wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Obalené typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c06-stringy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Reťazce znakov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c07-triedy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Triedy a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c08-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Hangman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c09-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Slovník
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c10-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c11-projekt1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c12-json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - JSON a CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c13-javafx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - JavaFX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c14-javafx-komponenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - JavaFX Komponenty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c15-javafx-styly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - JavaFX Štýly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c16-projekt2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Ročníkový projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c17-javafx-property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Property objekty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c18-javafx-mvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - MVC architektúra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pokročilí
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pokročilí
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, premenné, vstup a výstup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p02-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Vetvenie, cykly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p03-rekurzia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Rekurzia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p04-moduly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Moduly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p05-pip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Správa knižníc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p06-agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Agilný vývoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p07-git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p08-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p09-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Trieda a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p10-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Metódy a JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p11-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p12-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p13-pygame/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Pygame
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p14-pygame-mys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Pygame 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p15-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p16-projekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p17-pygame-zvuk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Zvuk a hudba
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p18-udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - UDP základy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p19-udp-multicast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - UDP broadcast a multicast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p20-tcp-zaklady/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - TCP základy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p21-tcp-prenos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 - TCP prenos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p22-tcp-framing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 - TCP rámcovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 - HTTP
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 - HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historia-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        História HTTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struktura-http-komunikacie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Štruktúra HTTP komunikácie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Štruktúra HTTP komunikácie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-metody" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Metódy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-statusove-kody" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Statusové Kódy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ulohy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Úlohy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zhrnutie-cvicenia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zhrnutie cvičenia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p24-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 - Routovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p25-rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 - REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p26-projekt2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 - Ročníkový projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prehlad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prehľad tém
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zbierka úloh
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Zbierka úloh
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-java/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j07-01-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kontakt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pokrocili-23-http">Pokročílí 23: HTTP<a class="headerlink" href="#pokrocili-23-http" title="Permanent link">¶</a></h1>
+<p>Minule sme si ukazovali, ako rôzne vieme nad protokolom TCP vytvoriť vlastný aplikačný protokol, ktorý rozdelí TCP stream na správy. Dnes si predstavíme najpoužívanejší webový protokol, HTTP.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Protokol HTTP prešiel dlhou históriou a obsahuje v sebe veľa vylepšení, ktoré ho robia rýchlym a efektívnym. My si dnes pre jednoduchosť predstavíme iba jeho základnú verziu.</p>
+</div>
+<h2 id="http">HTTP<a class="headerlink" href="#http" title="Permanent link">¶</a></h2>
+<p>HTTP (HyperText Transfer Protocol) je protokol na aplikačnej vrstve. Primárnym <strong>cieľom HTTP protokolu je umožnenie prenosu tzv. hypertextových dokumentov</strong> a iných súborov cez internet. Tento protokol tvorí základ pre dnešný web a nad ním postavené technológie.</p>
+<p>Ak si v prehliadači otvoríme nejakú webovú stránku, prehliadač sa správa ako HTTP client, a cez TCP spojenie posiela požiadavky (requests) na daný HTTP server, ktorý mu odpovedá a posiela späť HTML dokumenty, obrázky alebo iné súbory.</p>
+<p>Vlastnosti HTTP:</p>
+<ul>
+<li><strong>textový protokol</strong>: údaje posielané po TCP sú zakódované vo forme reťazcov, preto je jednoducho čitateľný aj ľuďom</li>
+<li><strong>request-response</strong> model: funguje na základe princípu pošli požiadavku (request) a dostaneš odpoveď (response)</li>
+<li><strong>client-server</strong> komunikácia: spojenie 1-1, kde klient pošle žiadosť a server odpovedá</li>
+<li><strong>bezstavový (stateless)</strong>: medzi dvoma požiadavkami (requestami) neexistuje spojitosť. Každý request je samostatný a nezávislý</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>HTTP neposkytuje žiadnu ochranu proti 'špehovaniu', preto nie je vhodný pre súkromné informácie ako heslá, bankové údaje a pod. Väčšina dnešného webu je dnes už šifrovaná pomocou HTTPS (HTTP + TLS/SSL) - prehliadače označujú obyčajné HTTP ako „Not secure“.</p>
+</div>
+<p>Predvolený port pre HTTP je <code>80</code> a pre HTTPS <code>443</code></p>
+<h2 id="historia-http">História HTTP<a class="headerlink" href="#historia-http" title="Permanent link">¶</a></h2>
+<p><img align="right" alt="OG web developer" src="../../assets/tim.jpg" width="400"></p>
+<p>HTTP vznikol v roku 1991. Webové technológie vrátane HTTP vymyslel <strong>Tim Berners-Lee</strong> v roku 1989 v CERN-e (pôvodne na zdieľanie vedeckých dokumentov). </p>
+<p>Okrem HTTP Berners-Lee vymyslel aj HTML (Hypertext Transfer Protocol) a URL (Uniform Resource Locator).</p>
+<p>Počas jeho histórie bolo vydaných niekoľko verzií HTTP protokolu:</p>
+<ul>
+<li>HTTP/0.9 (1991) mal iba jeden riadok: GET /index.html a server poslal HTML (žiadne hlavičky).</li>
+<li>HTTP/1.0 (1996) viac funkcionalít, každý request mal svoje vlastné TCP spojenie</li>
+<li><strong>HTTP/1.1</strong> (1997) prvý HTTP štandard, tak ako ho poznáme dnes</li>
+<li><strong>HTTP/2</strong> (2015) je binárny (nie textový) - rýchlejší, podporuje multiplexovanie (viac requestov naraz na jednom TCP spojeni).</li>
+<li><strong>HTTP/3</strong> (2022) už nepoužíva TCP, ale QUIC (cez UDP) - rieši problém „head-of-line blocking“.</li>
+</ul>
+<p>Dnes sa používajú iba posledné 3 verzie (1.1, 2, 3). My si budeme vysvetľovať základné funkcionality verzie 1.1.</p>
+<h2 id="struktura-http-komunikacie">Štruktúra HTTP komunikácie<a class="headerlink" href="#struktura-http-komunikacie" title="Permanent link">¶</a></h2>
+<p>HTTP komunikuje na základe správ, ktoré sú buď request (požiadavka od klienta) alebo response (odpoveď servera). </p>
+<p>Na oddelenie jednotlivých častí v správe sa používa reťazec <code>CRLF</code> (Carriage Return + Line Feed), v Pythone <code>"\r\n"</code>. </p>
+<p>Request správa sa skladá z 3 častí:</p>
+<ol>
+<li><strong>Request riadok</strong> - obsahuje <strong>HTTP metódu</strong>, cestu a HTTP verziu</li>
+<li><strong>Hlavička</strong> - nastavenia a parametre, viacero <code>attribút: hodnota</code> párov, oddelených <code>CRLF</code></li>
+<li><strong>Telo požiadavky</strong> - len niekedy</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Príklad HTTP Request správy</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-http highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">GET</span> <span class="nn">/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">www.example.com</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">User-Agent</span><span class="o">:</span> <span class="l">curl/8.7.1</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="na">Connection</span><span class="o">:</span> <span class="l">close</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="na">Accept</span><span class="o">:</span> <span class="l">*/*</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Response správa sa skladá tiež z 3 častí:</p>
+<ol>
+<li><strong>Statusový riadok</strong> - HTTP verzia, <strong>HTTP kód</strong> a textový popis kódu</li>
+<li><strong>Hlavička</strong> - podobne ako v requeste, obsahuje parametre a nastavenia</li>
+<li><strong>Telo požiadavky</strong> - len niekedy, obsahuje samotný dokument alebo iné dáta</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Príklad HTTP Response správy obsahujúcej telo</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-http highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">Date</span><span class="o">:</span> <span class="l">Thu, 02 Apr 2026 12:23:14 GMT</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/html</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="na">Connection</span><span class="o">:</span> <span class="l">close</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">Server</span><span class="o">:</span> <span class="l">cloudflare</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="na">Last-Modified</span><span class="o">:</span> <span class="l">Tue, 24 Mar 2026 22:06:31 GMT</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="na">Allow</span><span class="o">:</span> <span class="l">GET, HEAD</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="na">Accept-Ranges</span><span class="o">:</span> <span class="l">bytes</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="na">Age</span><span class="o">:</span> <span class="l">7106</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="na">cf-cache-status</span><span class="o">:</span> <span class="l">HIT</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="na">CF-RAY</span><span class="o">:</span> <span class="l">9e5fcdba6e7984ce-VIE</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="cp">&lt;!doctype html&gt;</span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;&lt;</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Example<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;&lt;/</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="http-metody">HTTP Metódy<a class="headerlink" href="#http-metody" title="Permanent link">¶</a></h3>
+<p>Klient vie poslať rôzne typy požiadaviek, podľa toho, čo potrebuje. Tieto rôzne druhy správ sa nazývajú <strong>HTTP metódy</strong>. Názov metódy sa musí vždy poslať v prvom riadku požiadavky. Medzi základné HTTP metódy patria:</p>
+<ul>
+<li><strong>GET</strong>: Klient chce len čítať data zo serveru, nič nezapisuje</li>
+<li><strong>POST</strong>: Klient chce poslať dáta serveru, napr. formulár s údajmi</li>
+<li><strong>PUT</strong>: Klient chce odoslať nový alebo aktualizovaný súbor alebo dáta</li>
+<li><strong>DELETE</strong>: Klient požaduje odstrániť dáta alebo súbor na serveri</li>
+</ul>
+<p>Okrem týchto metód existujú aj ďalšie (napr. <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>) pre pokročilejšiu prácu so serverom.</p>
+<h3 id="http-statusove-kody">HTTP Statusové Kódy<a class="headerlink" href="#http-statusove-kody" title="Permanent link">¶</a></h3>
+<p>Server na základe požiadavky klienta odošle naspať odpoveď - response. Nie vždy sa podarí splniť požiadavku klienta, preto má <strong>odpoveď v sebe tzv. statusový kód</strong>, ktorý informuje klienta o tom, čo server vykonal. </p>
+<p>HTTP statusové kódy sa skladajú z troch číslic a delíme ich do nasledujúcich skupín:</p>
+<ul>
+<li><strong>1xx Informovanie</strong> - bežne nepoužívané</li>
+<li><strong>2xx Úspech</strong> - napr. <code>200 OK</code>, najbežnejší typ odpovede</li>
+<li><strong>3xx Presmerovanie</strong> - napr. <code>301 Moved Permanently</code> pri zmene adresy alebo názvu súboru</li>
+<li><strong>4xx Chyba klienta</strong> - napr. <code>404 Not Found</code> ak sa dokument nenašiel, <code>403 Forbidden</code> ak klient nie je prihlásený, atď.</li>
+<li><strong>5xx Chyba servera</strong> - napr. <code>503 Service Unavailable</code> pri poruche servera, <code>504 Gateway Timeout</code> pri preťažení, atď</li>
+</ul>
+<h2 id="ulohy">Úlohy<a class="headerlink" href="#ulohy" title="Permanent link">¶</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Úloha 23.1: HTTP klient</p>
+<p>Vytvorte jednoduchého HTTP klienta v Pythone, ktorý bude robiť nasledovné:</p>
+<ul>
+<li>pripojí sa na server pomocou TCP</li>
+<li>odošle HTTP request</li>
+<li>načíta HTTP response</li>
+<li>vypíše odpoveď do konzoly</li>
+</ul>
+<p>Pri poslaní v hlavičke nezabudnite uviesť <code>Connection: close</code>, aby po poslaní odpovede server zatvoril spojenie. Uľahčí to načítavanie odpovede.</p>
+<p>Pripojte sa na nasledovné servery:</p>
+<ul>
+<li>www.example.com, cesta /, port 80</li>
+<li>www.faqs.org, cesta /faqs/, port 80</li>
+<li>www.faqs.org, cesta /, port 80</li>
+</ul>
+<p>Vyskúšajte iné servery (školskú stránku?) alebo cesty a analyzujte odpovede serverov</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 23.2: HTTP server</p>
+<p>Vytvorte jednoduchý HTTP server v Pythone, ktorý bude robiť nasledovné :</p>
+<ul>
+<li>bude akceptovať TCP spojenia</li>
+<li>prijme HTTP request</li>
+<li>vypíše request do konzoly</li>
+<li>odošle HTTP response 200 s nejakým HTML obsahom</li>
+<li>ukončí spojenie</li>
+</ul>
+<p>Po spustení servera sa na neho pripojte pomocou svojho prehliadača, napr. <a href="http://localhost:8080">localhost:8080</a></p>
+<p>Vyskúšajte iné druhy odpovede a tela odpovede, napr. 404, 403, 504, 303, atď. Čo urobí prehliadač?</p>
+</div>
+<h2 id="zhrnutie-cvicenia">Zhrnutie cvičenia<a class="headerlink" href="#zhrnutie-cvicenia" title="Permanent link">¶</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> HTTP (HyperText Transfer Protocol) - webový protokol na prenos dokumentov<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> textový protokol: údaje posielané po TCP sú zakódované vo forme reťazcov, preto je jednoducho čitateľný aj ľuďom</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> request-response model: funguje na základe princípu pošli požiadavku (request) a dostaneš odpoveď (response)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> client-server komunikácia: spojenie 1-1, kde klient pošle žiadosť a server odpovedá</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> bezstavový (stateless): medzi dvoma požiadavkami (requestami) neexistuje spojitosť. Každý request je samostatný a nezávislý</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> História HTTP<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Vytvoril ho v roku 1991 Tim Berners-Lee, OG Web Developer</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> HTTP/0.9 (1991) mal iba jeden riadok: GET /index.html a server poslal HTML (žiadne hlavičky).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> HTTP/1.0 (1996) viac funkcionalít, každý request mal svoje vlastné TCP spojenie</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> HTTP/1.1 (1997) prvý HTTP štandard, tak ako ho poznáme dnes</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> HTTP/2 (2015) je binárny (nie textový) - rýchlejší, podporuje multiplexovanie (viac requestov naraz na jednom TCP spojeni).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> HTTP/3 (2022) už nepoužíva TCP, ale QUIC (cez UDP) - rieši problém „head-of-line blocking“.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> Štruktúra HTTP komunikácie<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> HTTP komunikuje na základe správ, ktoré sú buď request (požiadavka od klienta) alebo response (odpoveď servera).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Na oddelenie jednotlivých častí v správe sa používa reťazec CRLF (Carriage Return + Line Feed), v Pythone "\r\n". </li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> Request správa sa skladá z 3 častí:<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Request riadok - obsahuje HTTP metódu, cestu a HTTP verziu</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Hlavička - nastavenia a parametre, viacero attribút: hodnota párov, oddelených CRLF</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Telo požiadavky - len niekedy</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> Response správa sa skladá tiež z 3 častí:<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Statusový riadok - HTTP verzia, HTTP kód a textový popis kódu</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Hlavička - podobne ako v requeste, obsahuje parametre a nastavenia</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Telo požiadavky - len niekedy, obsahuje samotný dokument alebo iné dáta</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> HTTP Metódy<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Názov metódy sa musí vždy poslať v prvom riadku požiadavky. Definuje typ požiadavky</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> GET: Klient chce len čítať data zo serveru, nič nezapisuje</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> POST: Klient chce poslať dáta serveru, napr. formulár s údajmi</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> PUT: Klient chce odoslať nový alebo aktualizovaný súbor alebo dáta</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> DELETE: Klient požaduje odstrániť dáta alebo súbor na serveri</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> HTTP Statusové Kódy<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Odpoveď v sebe tzv. statusový kód, ktorý informuje klienta o tom, čo server vykonal. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> 1xx Informovanie - bežne nepoužívané</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> 2xx Úspech - napr. 200 OK, najbežnejší typ odpovede</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> 3xx Presmerovanie - napr. 301 Moved Permanently pri zmene adresy alebo názvu súboru</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> 4xx Chyba klienta - napr. 404 Not Found ak sa dokument nenašiel, 403 Forbidden ak klient nie je prihlásený, atď.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> 5xx Chyba servera - napr. 503 Service Unavailable pri poruche servera, 504 Gateway Timeout pri preťažení, atď</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Poznámky do zošita</p>
+<p>V zošite je potrebné mať napísané aspoň tieto poznámky:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>HTTP - HyperText Transfer Protocol
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>- textový protokol: správy vo forme reťazcov, ľahko čitateľné
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>- request-response model: pošli požiadavku a dostaneš odpoveď
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>- client-server komunikácia: spojenie 1-1, klient žiada a server odpovedá
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>- bezstavový (stateless): každý request je samostatný a nezávislý, neexistuje spojitosť
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Autor HTTP je Tim Berners-Lee, tvorca webu
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>- HTTP/1.1 (1997) prvý HTTP štandard, stále používaný
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>- HTTP/2 (2015) binárny (nie textový)
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>- HTTP/3 (2022) používa QUIC (cez UDP), nie TCP
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Používa oddeľovací reťazec CRLF (Carriage Return + Line Feed), v Pythone "\r\n". 
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Request správa:
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>- Request riadok - HTTP metóda, cesta a HTTP verzia
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>- Hlavička - páry attribút: hodnota, oddelené pomocou CRLF
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>- Telo požiadavky - len niekedy
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>Response správa:
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>- Statusový riadok - HTTP verzia, HTTP kód a textový popis kódu
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>- Hlavička - podobne ako v requeste
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>- Telo požiadavky - len niekedy, obsahuje samotné dáta
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>HTTP Metóda - typ požiadavky
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>- GET: len čítať data zo serveru
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>- POST: poslať dáta serveru, napr. formulár s údajmi
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>- PUT: odoslať nový alebo aktualizovaný súbor alebo dáta
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>- DELETE: odstrániť dáta alebo súbor na serveri
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>HTTP Statusové Kódy - 3 ciferné číslo, udáva čo server vykonal
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>- 1xx Informovanie - bežne nepoužívané
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>- 2xx Úspech - napr. 200 OK, najčastejší typ odpovede
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>- 3xx Presmerovanie - napr. 301 Moved Permanently pri zmene adresy alebo názvu súboru
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>- 4xx Chyba klienta - napr. 404 Not Found, 403 Forbidden
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>- 5xx Chyba servera - napr. 503 Service Unavailable, 504 Gateway Timeout
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Skúšanie a kontrola vedomostí</p>
+<p>Okruhy otázok na test:</p>
+<ul>
+<li>Na čo slúži protokol HTTP</li>
+<li>Vlastnosti HTTP</li>
+<li>Formát Request správy</li>
+<li>Formát Response správy</li>
+<li>HTTP Metódy - na čo slúžia, uveďte najpoužívanejšie</li>
+<li>HTTP Status Kódy - na čo slúžia, uveďte najpoužívanejšie</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025, 2026, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.top", "toc.follow", "navigation.tabs", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

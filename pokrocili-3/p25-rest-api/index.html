@@ -1,0 +1,3176 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oop.wagjo.com/pokrocili-3/p25-rest-api/">
+      
+      
+        <link rel="prev" href="../p24-routing/">
+      
+      
+        <link rel="next" href="../p26-projekt2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>25 - REST API - Objektovo Orientované Programovanie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/tufte-sidebars.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pokrocili-25-webove-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-header__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Objektovo Orientované Programovanie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              25 - REST API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Úvod
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../teoria-3/t01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Teória
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cvicenie-3/c01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Cvičenia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../p01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Pokročilí
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../prehlad/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Prehľad tém
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../zbierka-java/j05-04-dedicnost/" class="md-tabs__link">
+          
+  
+  
+  Zbierka úloh
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../autor/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kontakt
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-nav__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Objektovo Orientované Programovanie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Úvod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teória
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teória
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod a motivácia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t02-typy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Algoritmus, dátové typy a premenné
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t03-objekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Identita, objekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t04-trieda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Trieda, balíky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t05-vynimky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Výnimky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t06-operatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Operátory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t07-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t08-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Inicializácia objektov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t09-premenne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Premenné a atribúty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t10-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t11-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t12-polymorfizmus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Polymorfizmus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t13-abstrakcia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Abstrakcia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t14-enum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Enumeračné typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t15-oop-opakovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Princípy OOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t16-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Budovanie softvéru
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t17-usporiadanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Usporiadanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t18-records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Records
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t19-gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - GUI knižnice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t20-javafx-stage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - JavaFX Stage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t21-javafx-komponenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 - JavaFX komponenty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t22-javafx-eventy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 - JavaFX udalosti
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t23-javafx-styly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 - JavaFX štýly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t24-javafx-observable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 - JavaFX sledovanie zmien
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t25-javafx-property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 - JavaFX property
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t26-javafx-mvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 - JavaFX MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cvičenia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cvičenia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, vývojový diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c02-hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Prvý Java program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c03-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Riadenie toku programu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c04-polia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Polia, varargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c05-wrapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Obalené typy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c06-stringy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Reťazce znakov
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c07-triedy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Triedy a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c08-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - Hangman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c09-konstruktor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Slovník
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c10-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c11-projekt1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c12-json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - JSON a CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c13-javafx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - JavaFX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c14-javafx-komponenty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - JavaFX Komponenty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c15-javafx-styly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - JavaFX Štýly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c16-projekt2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Ročníkový projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c17-javafx-property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Property objekty
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c18-javafx-mvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - MVC architektúra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pokročilí
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pokročilí
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, premenné, vstup a výstup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p02-cykly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Vetvenie, cykly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p03-rekurzia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 - Rekurzia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p04-moduly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 - Moduly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p05-pip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 - Správa knižníc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p06-agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 - Agilný vývoj
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p07-git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 - Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p08-github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 - GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p09-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 - Trieda a metódy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p10-metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Metódy a JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p11-zapuzdrenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Zapuzdrenie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p12-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p13-pygame/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Pygame
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p14-pygame-mys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Pygame 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p15-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p16-projekt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Polročný projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p17-pygame-zvuk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Zvuk a hudba
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p18-udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - UDP základy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p19-udp-multicast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - UDP broadcast a multicast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p20-tcp-zaklady/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - TCP základy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p21-tcp-prenos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 - TCP prenos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p22-tcp-framing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 - TCP rámcovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p23-http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 - HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p24-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 - Routovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 - REST API
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 - REST API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#webove-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webové API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pristup-k-webovemu-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prístup k webovému API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volne-dostupne-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voľne dostupné API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voľne dostupné API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kurz-mien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kurz mien
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predpoved-pocasia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predpoveď počasia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#klinicke-studie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Klinické štúdie
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ulohy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Úlohy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zhrnutie-cvicenia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zhrnutie cvičenia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p26-projekt2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 - Ročníkový projekt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prehlad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prehľad tém
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zbierka úloh
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Zbierka úloh
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-java/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j05-04-dedicnost/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Dedičnosť
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zbierka-python/j07-01-testovanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python - Testovanie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kontakt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pokrocili-25-webove-api">Pokročílí 25: Webové API<a class="headerlink" href="#pokrocili-25-webove-api" title="Permanent link">¶</a></h1>
+<p>Softvérová aplikácia poskytuje svoje funkcionality rôznymi spôsobmi. Najčastejšie má aplikácia nejaké užívateľské rozhranie (UI - User Interface), pomocou ktorého vie človek - užívateľ, používať danú aplikáciu.</p>
+<p>Často chceme, aby náš softvér mohli využívať nie len ľudia, ale aj iné počítačové programy. Rozhranie, ktoré umožňuje jednej aplikácii využívať funkcie alebo dáta inej aplikácie, sa nazýva API - Aplication Programming Interface.</p>
+<p><strong>API (Application Programming Interface – aplikačné programovacie rozhranie) je súbor pravidiel, protokolov a nástrojov, ktoré umožňujú dvom rôznym softvérovým aplikáciám spolu komunikovať a vymieňať si dáta.</strong></p>
+<p>Poznáme viacero druhov API:</p>
+<ul>
+<li><em>knižničné API</em> - súbor funkcií a dátových štruktúr, ktorými používame softvérovú knižnicu v našom programe</li>
+<li><em>sieťové API</em> - sada definovaných pravidiel a protokolov pre komunikáciu medzi aplikáciami po sieti</li>
+<li><em>webové API</em> - typ sieťového API, ktoré je postavené nad webovými protokolmi, hlavne nad protokolom HTTP</li>
+</ul>
+<h2 id="webove-api">Webové API<a class="headerlink" href="#webove-api" title="Permanent link">¶</a></h2>
+<p>Webové API (Application Programming Interface) je rozhranie, ktoré umožňuje rôznym aplikáciám a systémom komunikovať cez internet pomocou protokolov ako HTTP. Slúži ako most, ktorý dovoľuje jednej aplikácii vyžiadať si dáta alebo funkcie od inej (napr. mobilná aplikácia získavajúca počasie), pričom sa používajú formáty ako JSON či XML. </p>
+<p>Príklady použitia:</p>
+<ul>
+<li>Integrácia služieb: Prihlásenie cez Google/Facebook, platobné brány (PayPal, Stripe) alebo integrácia máp (Google Maps) do vlastného webu</li>
+<li>Automatizácia a dáta: Automatické nahrávanie fotiek do cloudu, získavanie predpovede počasia alebo aktualizácia skladových zásob.</li>
+<li>Komunikácia systémov: Mobilné aplikácie alebo webové stránky si sťahujú dáta zo servera pomocou AJAX dotazov.</li>
+</ul>
+<p>Výhodou webových API je, že vývojári nemusia poznať internú štruktúru cudzieho systému, stačí im poznať pravidlá komunikácie cez API.</p>
+<p>Webové API zvyknú používať protokol HTTP a komunikáciu vo forme request-response. API sú zverejnené na presne definovanej URL webovej adrese, ktorá sa volá <strong>endpoint</strong>. Jednotlivé funkcionality sú potom dostupné na rôznych cestách na tejto URL adrese. Dáta, ktoré sú prenášané medzi aplikáciami sú zakódované väčšinou pomocou štandardizovaných formátov ako napr. JSON, XML alebo CSV.</p>
+<p>Webové API vieme ďalej rozdeliť do rôznych typov. V súčastnosti najpoužívanejší typ je REST API.</p>
+<h2 id="rest-api">REST API<a class="headerlink" href="#rest-api" title="Permanent link">¶</a></h2>
+<p>REST je populárny druh webového API, ktoré má jednoduchú štruktúru, založenú na prístupe k dátovým zdrojom (web resource). </p>
+<p>Používa HTTP metódy GET, POST, PUT a DELETE, a jednotlivé URL webové adresy sú orientované na zdroje a dáta, s ktorými chceme pracovať. REST API je podobne ako HTTP bezstavové a ako dátový formát používa väčšinou JSON.</p>
+<p>URL endpoint k REST API je väčšinou verzionovaný, aby sa zaručila spätná kompatibilita. (napr. <code>https://api.example.com/v1/</code>)</p>
+<p>Príklad REST API:</p>
+<ul>
+<li><code>GET /users</code> - vráti zoznam všetkých užívateľov</li>
+<li><code>GET /users/1</code> - vráti informácie o užívateľovi s ID 1</li>
+<li><code>POST /users/1</code> - zmení vlastnosti užívateľa s ID 1</li>
+</ul>
+<p>REST API sa dá jednoducho vytvoriť aj v bežnom webovom frameworku pomocou routovania a JSON knižnice. Ako ukážku si uvedieme API v Pythone pomocou Flask:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Web API vo Flasku</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">jsonify</span><span class="p">,</span> <span class="n">request</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Fake databáza (v reálnom projekte by bola SQL/NoSQL)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">books</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"1984"</span><span class="p">,</span> <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"George Orwell"</span><span class="p">},</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Duna"</span><span class="p">,</span> <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"Frank Herbert"</span><span class="p">}</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">]</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># 1. GET – vráti všetky knihy</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/api/books'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'GET'</span><span class="p">])</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_books</span><span class="p">():</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">books</span><span class="p">),</span> <span class="mi">200</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># 2. GET – vráti jednu knihu podľa ID</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/api/books/&lt;int:book_id&gt;'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'GET'</span><span class="p">])</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_book</span><span class="p">(</span><span class="n">book_id</span><span class="p">):</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="n">book</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">books</span> <span class="k">if</span> <span class="n">b</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="o">==</span> <span class="n">book_id</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="k">if</span> <span class="n">book</span><span class="p">:</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">book</span><span class="p">),</span> <span class="mi">200</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"Kniha nenájdená"</span><span class="p">}),</span> <span class="mi">404</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="c1"># 3. POST – pridá novú knihu</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/api/books'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'POST'</span><span class="p">])</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="k">def</span><span class="w"> </span><span class="nf">add_book</span><span class="p">():</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"title"</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"author"</span><span class="p">):</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"Chýbajú title alebo author"</span><span class="p">}),</span> <span class="mi">400</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    <span class="n">new_book</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>        <span class="s2">"id"</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">books</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        <span class="s2">"title"</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s2">"title"</span><span class="p">],</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>        <span class="s2">"author"</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s2">"author"</span><span class="p">]</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    <span class="p">}</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    <span class="n">books</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_book</span><span class="p">)</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">new_book</span><span class="p">),</span> <span class="mi">201</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="c1"># 4. DELETE – vymaže knihu</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/api/books/&lt;int:book_id&gt;'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'DELETE'</span><span class="p">])</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="k">def</span><span class="w"> </span><span class="nf">delete_book</span><span class="p">(</span><span class="n">book_id</span><span class="p">):</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    <span class="k">global</span> <span class="n">books</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    <span class="n">books</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">books</span> <span class="k">if</span> <span class="n">b</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="o">!=</span> <span class="n">book_id</span><span class="p">]</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s2">"message"</span><span class="p">:</span> <span class="s2">"Kniha bola vymazaná"</span><span class="p">}),</span> <span class="mi">200</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="pristup-k-webovemu-api">Prístup k webovému API<a class="headerlink" href="#pristup-k-webovemu-api" title="Permanent link">¶</a></h2>
+<p>Na rozdiel od webových stránok si webové API nevieme jednoducho "otvoriť" alebo prezrieť v prehliadači. Našťastie však máme množstvo nástrojov, pomocou ktorých si vieme API vyskúšať. </p>
+<div class="admonition info">
+<p class="admonition-title">Web API dokumentácia</p>
+<p>Tak ako aj softvérové knižnice aj webové API by mali mať kvalitnú dokumentáciu. Tá je zvyčajne umiestnená na samostatnej webovej adrese. </p>
+<p>Pre tvorbu webových API existuje veľké množstvo nástrojov na tvorbu dokumentácie ako napr. Swagger, Scalar alebo Stoplight. Väčšinou však ide o komerčné nástroje. </p>
+</div>
+<p>Na jednoduché otestovanie a vyskúšanie webových API budeme používať open source nástroj <a href="https://hoppscotch.io/">https://hoppscotch.io/</a></p>
+<p>V praxi ku webovému API pristupuje iný program a nie človek. Nakoľko ide o webový protokol, na komunikáciu vieme použiť bežného HTTP klienta. Uvedieme si jednoduchú ukážku použitia API vytvoreného v predchádzajúcom príklade.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Volanie webového API</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">"http://127.0.0.1:5000/api"</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="c1"># GET všetky</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/books"</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Všetky knihy:"</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="c1"># POST nová</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/books"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Pán prsteňov"</span><span class="p">,</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"J.R.R. Tolkien"</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="p">})</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Vytvorená:"</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="c1"># DELETE</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/books/1"</span><span class="p">)</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Delete status:"</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="n">main</span><span class="p">()</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Na vytvorenie a odoslanie HTTP requestov vieme využiť tiež nástroj <code>curl</code>. Ide o populárny a veľmi silný nástroj, pomocou ktorého vieme v príkazovom riadku vytvoriť a odoslať akýkoľvek HTTP request.</p>
+<p>Príklad vytvorenia a odoslania HTTP requestov: </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl -X GET http://127.0.0.1:5000/api/books/1 | jq
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>curl -X POST http://127.0.0.1:5000/api/books \
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>     -H "Content-Type: application/json" \
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>     -d '{
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>           "title": "Hobit",
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>           "author": "J.R.R. Tolkien"
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>         }'
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>curl -X DELETE http://127.0.0.1:5000/api/books/1
+</span></code></pre></div>
+<h2 id="volne-dostupne-api">Voľne dostupné API<a class="headerlink" href="#volne-dostupne-api" title="Permanent link">¶</a></h2>
+<p>Tak ako máme obrovské množstvo voľne dostupných webových stránok, tak existuje aj veľa voľne dostupných webových API, ktoré môžeme využívať vo svojich programoch.</p>
+<p>Celkom dobrý zoznam takýchto API nájdete na stránkach <a href="https://free-apis.github.io/#/">free-apis.github.io</a>, <a href="https://www.freepublicapis.com/">www.freepublicapis.com</a> alebo <a href="https://publicapis.dev/">publicapis.dev</a></p>
+<p>Aby sa predišlo príliš častému volaniu API, pri väčšine z nich sa musíte zaregistrovať a pri volaní používať autentifikačný token. Dnes si však ukážeme niekoľko verejných API, ktoré sú k dispozícii aj bez registrácie.</p>
+<h3 id="kurz-mien">Kurz mien<a class="headerlink" href="#kurz-mien" title="Permanent link">¶</a></h3>
+<p>Pre zistenie aktuálneho alebo historického kurzu svetových mien vieme použiť api na stránke <a href="https://frankfurter.dev/">https://frankfurter.dev/</a></p>
+<ul>
+<li>Aktuálny kurz EUR/USD a EUR/GBP: <a href="https://api.frankfurter.dev/v2/rates?base=EUR&amp;quotes=USD,GBP"><code>https://api.frankfurter.dev/v2/rates?base=EUR&amp;quotes=USD,GBP</code></a></li>
+<li>Historický kurz EUR/USD od začiatku roka 2026: <a href="https://api.frankfurter.dev/v2/rates?from=2026-01-01&amp;base=EUR&amp;quotes=USD"><code>https://api.frankfurter.dev/v2/rates?from=2026-01-01&amp;base=EUR&amp;quotes=USD</code></a></li>
+</ul>
+<h3 id="predpoved-pocasia">Predpoveď počasia<a class="headerlink" href="#predpoved-pocasia" title="Permanent link">¶</a></h3>
+<p>Stránka <a href="https://open-meteo.com">open-meteo.com</a> ponúka API na získanie predpovede počasia pre akékoľvek miesto na Zemi.</p>
+<ul>
+<li>Získanie polohy podľa názvu mesta: <a href="https://open-meteo.com/en/docs/geocoding-api">https://open-meteo.com/en/docs/geocoding-api</a> - napr. <a href="https://geocoding-api.open-meteo.com/v1/search?name=Berlin&amp;count=10&amp;language=en&amp;format=json"><code>https://geocoding-api.open-meteo.com/v1/search?name=Berlin&amp;count=10&amp;language=en&amp;format=json</code></a></li>
+<li>Získanie predpovede počasie pre danú polohu: <a href="https://open-meteo.com/en/docs">https://open-meteo.com/en/docs</a> - napr. <a href="https://api.open-meteo.com/v1/forecast?latitude=52.52&amp;longitude=13.41&amp;hourly=temperature_2m&amp;past_days=0&amp;forecast_days=7"><code>https://api.open-meteo.com/v1/forecast?latitude=52.52&amp;longitude=13.41&amp;hourly=temperature_2m&amp;past_days=0&amp;forecast_days=7</code></a></li>
+</ul>
+<h3 id="klinicke-studie">Klinické štúdie<a class="headerlink" href="#klinicke-studie" title="Permanent link">¶</a></h3>
+<p>Americká vláda povinne zverejňuje dáta o všetkých medicínskych štúdiách v USA na stránke <a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a>. K týmto štúdiám je možné pristupovať aj pomocou webového API. Dokumentácia je k dispozícii na stránke <a href="https://clinicaltrials.gov/data-api/api#extapi">https://clinicaltrials.gov/data-api/api#extapi</a></p>
+<ul>
+<li>Nájdenie ID klinických štúdií, ktoré sa venujú určitej chorobe alebo syndrómu: <a href="https://clinicaltrials.gov/api/v2/studies?query.cond=lung+cancer&amp;sort=%40relevance"><code>https://clinicaltrials.gov/api/v2/studies?query.cond=lung+cancer&amp;sort=%40relevance</code></a></li>
+<li>Získanie detailov o konkrétnej štúdii na základe jej ID: <a href="https://clinicaltrials.gov/api/v2/studies/NCT05817110"><code>https://clinicaltrials.gov/api/v2/studies/NCT05817110</code></a></li>
+</ul>
+<h2 id="ulohy">Úlohy<a class="headerlink" href="#ulohy" title="Permanent link">¶</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Úloha 25.1: Voľne dostupné API</p>
+<p>Prejdite si voľne 3 dostupné API uvedené v predchádzajúcej kapitole.</p>
+<ul>
+<li>Prehliadnite si dokumentácie k jednotlivým API</li>
+<li>Vyskúšajte vzorové requesty v prehliadači</li>
+<li>Vyskúšajte vzorové requesty v nástroji <a href="https://hoppscotch.io/">https://hoppscotch.io/</a></li>
+<li>Vytvorte vlastné requesty podľa dokumentácie</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 25.2: Webový server pomocou Flask</p>
+<p>Vytvorte v Pythone webový server pomocou frameworku Flask, s nasledovnými routes a API endpointami:</p>
+<ul>
+<li><code>GET /</code> - Hlavná HTML stránka, ktorá vypíše zoznam všetkých uložených kníh</li>
+<li><code>GET /api/books</code> - Vráti JSON obsah so zoznamom všetkých uložených kníh</li>
+<li><code>POST /api/books/&lt;id&gt;</code> - Vloží do zoznamu novú knihu alebo upraví hodnoty existujúcej knihy</li>
+<li><code>DELETE /api/books/&lt;id&gt;</code> - Vymaže zo zoznamu knihu s daným ID</li>
+</ul>
+<p>Pri vytváraní novej knihy posielajte JSON objekt s parametrami <code>title</code>, <code>author</code> a <code>year</code></p>
+<p>Vyskúšajte vaše endpointy pomocou webového prehliadača a pomocou nástroja <a href="https://hoppscotch.io/">https://hoppscotch.io/</a></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 25.3: Webová stránka s kurzom mien</p>
+<p>Vytvorte v Pythone webovú aplikáciu pomocou frameworku Flask, ktorá bude ponúkať webovú stránku s kurzami svetových mien.</p>
+<p>Vaša webová aplikácia nech ponúkne html stránku, na ktorej sa bude zobrazovať 5 vybraných kurzov mien. Užívateľ bude mať možnosť zmeniť hlavnú menu, voči ktorej sa budú počítať kurzy.</p>
+<p>Na zistenie výmenného kurzu použite API služby <a href="https://frankfurter.dev/">https://frankfurter.dev/</a></p>
+</div>
+<h2 id="zhrnutie-cvicenia">Zhrnutie cvičenia<a class="headerlink" href="#zhrnutie-cvicenia" title="Permanent link">¶</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> API (Application Programming Interface) je súbor pravidiel, protokolov a nástrojov, ktoré umožňujú dvom rôznym softvérovým aplikáciám spolu komunikovať a vymieňať si dáta.<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> knižničné API - súbor funkcií a dátových štruktúr, ktorými používame softvérovú knižnicu v našom programe</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> sieťové API - sada definovaných pravidiel a protokolov pre komunikáciu medzi aplikáciami po sieti</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> webové API - typ sieťového API, ktoré je postavené nad webovými protokolmi, hlavne nad protokolom HTTP</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> Webové API<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Umožňuje rôznym aplikáciám a systémom komunikovať cez internet pomocou protokolov ako HTTP</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> API sú zverejnené na presne definovanej URL webovej adrese, ktorá sa volá endpoint. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Jednotlivé funkcionality sú potom dostupné na rôznych cestách na tejto URL adrese. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Dáta, ktoré sú prenášané medzi aplikáciami sú zakódované väčšinou pomocou štandardizovaných formátov ako napr. JSON, XML alebo CSV.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> REST API<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> REST je populárny druh webového API, ktoré má jednoduchú štruktúru, založenú na prístupe k dátovým zdrojom (web resource).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Používa HTTP metódy GET, POST, PUT a DELETE</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Jednotlivé URL webové adresy sú orientované na zdroje a dáta, s ktorými chceme pracovať. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> REST API je podobne ako HTTP bezstavové a ako dátový formát používa väčšinou JSON.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> URL endpoint k REST API je väčšinou verzionovaný, aby sa zaručila spätná kompatibilita. (napr. https://api.example.com/v1/)</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> Prístup k webovému API<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Pomocou webového prehliadača</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> CLI nástroj curl</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Open source nástroj https://hoppscotch.io/</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> Voľne dostupné API<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> free-apis.github.io, www.freepublicapis.com, publicapis.dev</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Pre zistenie aktuálneho alebo historického kurzu svetových mien vieme použiť api na stránke https://frankfurter.dev/</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Stránka open-meteo.com ponúka API na získanie predpovede počasia pre akékoľvek miesto na Zemi.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Informácie o klinických štúdiách získame pomocou API na stránke https://clinicaltrials.gov/data-api/api#extapi</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Poznámky do zošita</p>
+<p>V zošite je potrebné mať napísané aspoň tieto poznámky:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>API - súbor pravidiel, protokolov a nástrojov, aby mohli aplikácie navzájom komunikovať
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>- knižničné API - softvérové knižnice
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>- sieťové API - komunikácia medzi aplikáciami po sieti
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>- webové API - sieťové API postavené nad webovými protokolmi
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>REST API
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Má jednoduchú štruktúru, založenú na prístupe k dátovým zdrojom (web resource).
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>HTTP metódy GET, POST, PUT a DELETE
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>URL webové adresy sú orientované na zdroje a dáta, s ktorými chceme pracovať. 
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>URL endpoint je väčšinou verzionovaný, napr. https://api.example.com/v1/
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>Prístup k webovému API
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>- Pomocou webového prehliadača
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>- CLI nástroj curl
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>- Open source nástroj https://hoppscotch.io/
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>Voľne dostupné API - free-apis.github.io, www.freepublicapis.com, publicapis.dev
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Skúšanie a kontrola vedomostí</p>
+<p>Okruhy otázok na test:</p>
+<ul>
+<li>Čo je a na čo slúži API</li>
+<li>Aké druhy API poznáme</li>
+<li>Vlastnosti webových API a REST API</li>
+<li>Ako vieme k webovým API pristupovať</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025, 2026, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.top", "toc.follow", "navigation.tabs", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
