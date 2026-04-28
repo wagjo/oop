@@ -196,7 +196,7 @@ Americká vláda povinne zverejňuje dáta o všetkých medicínskych štúdiác
 
 !!! example "Úloha 25.2: Webový server pomocou Flask"
 
-    Vytvorte v Pythone webový server pomocou frameworku Flask, z nasledovnými routes a API endpointami:
+    Vytvorte v Pythone webový server pomocou frameworku Flask, s nasledovnými routes a API endpointami:
 
     - `GET /` - Hlavná HTML stránka, ktorá vypíše zoznam všetkých uložených kníh
     - `GET /api/books` - Vráti JSON obsah so zoznamom všetkých uložených kníh
