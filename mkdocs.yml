@@ -78,6 +78,8 @@ nav:
     - 24 - Routovanie: 'pokrocili-3/p24-routing.md'
     - 25 - REST API: 'pokrocili-3/p25-rest-api.md'
     - 26 - Ročníkový projekt: 'pokrocili-3/p26-projekt2.md'
+    - 27 - Web Scraping: 'pokrocili-3/p27-scraping.md'
+    - 28 - Web Scraping - ochrana: 'pokrocili-3/p28-scraping2.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'

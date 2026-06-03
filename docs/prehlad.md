@@ -705,6 +705,32 @@ hide:
 </td>
 </tr>
 
+<tr >
+<td width=10%>27</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p27-scraper">Web Scraper</a> (<a href="../assets/p27w.pdf">pdf</a>)
+<ul>
+<li>Nástroje pre web scraping</li>
+<li>Platforma Apify</li>
+</ul>
+</td>
+</tr>
+
+<tr >
+<td width=10%>28</td>
+<td width=30%>TODO</td>
+<td width=30%>TODO</td>
+<td width=30%>
+<a href="../pokrocili-3/p22-scraper2">Ochrana pred scrapovaním</a> (<a href="../assets/p28w.pdf">pdf</a>)
+<ul>
+<li>Dáta ako konkurenčná výhoda</li>
+<li>Ochrana pred scrapingom</li>
+</ul>
+</td>
+</tr>
+
 
 
 
