@@ -1,6 +1,6 @@
 # Pokročílí 27: Web Scraping
 
-Web scraping je názov pre programy, ktoré systematicky prehľadávajú webovú lokalitu a sťahujú z nej dáta. Viac o problematike web scrapovania si povieme nabudúce, dnes si vyskúšame web scraper naprogramovať.
+Web scraper je názov pre programy, ktoré systematicky prehľadávajú webovú lokalitu a sťahujú z nej dáta. Viac o problematike web scrapovania si povieme nabudúce, dnes si vyskúšame web scraper naprogramovať.
 
 ## Princíp fungovania scrapera
 
