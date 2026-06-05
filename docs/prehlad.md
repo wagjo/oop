@@ -546,7 +546,14 @@ hide:
 <li>Swing, JavaFX</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c19-databazy">Databázy</a> (<a href="../assets/c19w.pdf">pdf</a>)
+<ul>
+<li>Použitie databáz v Jave</li>
+<li>JDBC</li>
+<li>SQLite</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p19-udp-multicast">UDP broadcast a multicast</a>  (<a href="../assets/p19w.pdf">pdf</a>)
 <ul>
@@ -707,7 +714,14 @@ hide:
 
 <tr >
 <td width=10%>27</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../teoria-3/t27-databazy">Databázy</a> (<a href="../assets/t27w.pdf">pdf</a>)
+<ul>
+<li>Použitie databáz v Jave</li>
+<li>JDBC</li>
+<li>SQLite</li>
+</ul>
+</td>
 <td width=30%>TODO</td>
 <td width=30%>
 <a href="../pokrocili-3/p27-scraper">Web Scraper</a> (<a href="../assets/p27w.pdf">pdf</a>)
