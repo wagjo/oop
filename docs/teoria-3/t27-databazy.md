@@ -198,7 +198,7 @@ Kedy SQLite nepoužívať?:
 
 Túto databázu budeme používať aj my v našich ďalších úlohách.
 
-## Zhrnutie cvičenia
+## Zhrnutie teórie
 
 - [x] Prečo databázy v Jave?
     * [ ] Dlhodobé uloženie dát (aj po reštarte aplikácie)

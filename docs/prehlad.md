@@ -734,10 +734,17 @@ hide:
 
 <tr >
 <td width=10%>28</td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../teoria-3/t28-orm">ORM</a> (<a href="../assets/t28w.pdf">pdf</a>)
+<ul>
+<li>Object-Relational Mapping</li>
+<li>Entity anotácie</li>
+<li>Hibernate</li>
+</ul>
+</td>
 <td width=30%>TODO</td>
 <td width=30%>
-<a href="../pokrocili-3/p22-scraping2">Ochrana pred scrapovaním</a> (<a href="../assets/p28w.pdf">pdf</a>)
+<a href="../pokrocili-3/p28-scraping2">Ochrana pred scrapovaním</a> (<a href="../assets/p28w.pdf">pdf</a>)
 <ul>
 <li>Dáta ako konkurenčná výhoda</li>
 <li>Ochrana pred scrapingom</li>
