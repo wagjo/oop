@@ -54,6 +54,7 @@ nav:
     - 17 - Property objekty: 'cvicenie-3/c17-javafx-property.md'
     - 18 - MVC architektúra: 'cvicenie-3/c18-javafx-mvc.md'
     - 19 - Databázy: 'cvicenie-3/c19-databazy.md'
+    - 20 - ORM: 'cvicenie-3/c20-orm.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'

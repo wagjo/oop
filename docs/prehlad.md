@@ -575,7 +575,14 @@ hide:
 <li>Modalita</li>
 </ul>
 </td>
-<td width=30%>TODO</td>
+<td width=30%>
+<a href="../cvicenie-3/c20-orm">ORM</a>
+<ul>
+<li>Mapovanie tried s databázou</li>
+<li>Použitie Hibernate</li>
+<li>HQL/JPQL</li>
+</ul>
+</td>
 <td width=30%>
 <a href="../pokrocili-3/p20-tcp-zaklady">TCP</a>  (<a href="../assets/p20w.pdf">pdf</a>)
 <ul>
