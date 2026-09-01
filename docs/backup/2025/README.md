@@ -7,14 +7,22 @@ Táto zložka ostáva v repozitári, ale **nie je v živej navigácii** webu
 (`exclude_docs: backup/**` v `mkdocs.yml`). Text tu zámerne ostáva v znení
 predchádzajúceho roku — neupravujte tu verzie jazykov ani školský rok.
 
-## Obsah
+## Čo je skopírované tu
 
-- `teoria-3/` — všetky markdown hodiny teórie (t01–t28)
-- `cvicenie-3/` — všetky markdown cvičenia (c01–c20)
-- `pokrocili-3/` — všetky markdown hodiny pre pokročilých (p01–p28)
-- `index.md`, `osnovy.md`, `osnovy-new.md`, `prehlad.md`, `prehlad-private.md`
-- `mkdocs.yml` — snímka navigácie a konfigurácie webu
-- `MANIFEST.txt` — zoznam skopírovaných súborov s blob SHA z `main`
+- `teoria-3/t01-uvod.md` — originál prvej hodiny teórie (2025/2026)
+- `index.md`, `osnovy.md`, `osnovy-new.md`, `mkdocs.yml`
+- `MANIFEST.txt` — zoznam všetkých markdown hodín s blob SHA z `main`
+  (t01–t28, c01–c20, p01–p28)
+
+## Čo ostáva na živých cestách / v histórii `main`
+
+Ostatné markdown hodiny teórie, cvičení a pokročilých **neboli duplicitne
+kopírované** (limit GitHub Contents API pri vzdialenom pushi). Sú nezmenené
+na živých cestách `docs/teoria-3/`, `docs/cvicenie-3/`, `docs/pokrocili-3/`
+okrem upravených prvých hodín t01, c01 a p01. Kompletne obnoviteľné z
+commitu `2794115b`; SHA sú v `MANIFEST.txt`.
+
+`prehlad.md` a `prehlad-private.md` ostávajú na živých cestách (nezmenené).
 
 ## Prezentácie (pptx)
 
