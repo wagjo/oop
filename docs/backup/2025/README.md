@@ -9,20 +9,18 @@ predchádzajúceho roku — neupravujte tu verzie jazykov ani školský rok.
 
 ## Čo je skopírované tu
 
-- `teoria-3/t01-uvod.md` — originál prvej hodiny teórie (2025/2026)
+Kompletný markdown hodín školského roku 2025/2026 teraz žije v tejto zálohe:
+
+- `teoria-3/` — t01–t28
+- `cvicenie-3/` — c01–c20
+- `pokrocili-3/` — p01–p28
+- `prehlad.md`, `prehlad-private.md` — plná 28-týždňová tabuľka z 2025/2026
 - `index.md`, `osnovy.md`, `osnovy-new.md`, `mkdocs.yml`
-- `MANIFEST.txt` — zoznam všetkých markdown hodín s blob SHA z `main`
-  (t01–t28, c01–c20, p01–p28)
+- `MANIFEST.txt` — zoznam markdown hodín s blob SHA z `main`
 
-## Čo ostáva na živých cestách / v histórii `main`
-
-Ostatné markdown hodiny teórie, cvičení a pokročilých **neboli duplicitne
-kopírované** (limit GitHub Contents API pri vzdialenom pushi). Sú nezmenené
-na živých cestách `docs/teoria-3/`, `docs/cvicenie-3/`, `docs/pokrocili-3/`
-okrem upravených prvých hodín t01, c01 a p01. Kompletne obnoviteľné z
-commitu `2794115b`; SHA sú v `MANIFEST.txt`.
-
-`prehlad.md` a `prehlad-private.md` ostávajú na živých cestách (nezmenené).
+Živá stránka na školský rok **2026/2027** publikuje len prvé hodiny
+(`t01`, `c01`, `p01`). Neskoršie hodiny z 2025/2026 sem boli presunuté
+a z živej navigácie aj deployu odstránené.
 
 ## Prezentácie (pptx)
 
