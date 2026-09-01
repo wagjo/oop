@@ -9,7 +9,7 @@ Tento predmet na škole vyučujeme už viacero rokov. Oblasť softvérového vý
 
 ## Nahradia nás AI agenti?
 
-S príchodom asistentov a agentov založených na umelej inteligencii sa od základov mení veľa veci, ktoré boli desaťročia zaužívanou praxou. Začíname to vidieť v roku 2025 už aj na Slovensku. Väčšina veľkých IT korporácií prepúšťa a preškoľuje zamestnancov na používanie umelej inteligencie. Niektoré pracovné pozície sa zlučujú, iné zanikajú. Ktorá organizácia sa tomuto trendu neprispôsobí, bude za pár rokov predbehnutá start-upmi, ktoré budú AI naplno využívať vo svojich flexibilných tímoch.
+S príchodom asistentov a agentov založených na umelej inteligencii sa od základov mení veľa vecí, ktoré boli desaťročia zaužívanou praxou. Vidíme to od roku 2025 už aj na Slovensku. Väčšina veľkých IT korporácií prepúšťa a preškoľuje zamestnancov na používanie umelej inteligencie. Niektoré pracovné pozície sa zlučujú, iné zanikajú. Ktorá organizácia sa tomuto trendu neprispôsobí, bude za pár rokov predbehnutá start-upmi, ktoré budú AI naplno využívať vo svojich flexibilných tímoch.
 
 <div class="md-has-sidebar" markdown>
   <main markdown>
@@ -45,7 +45,7 @@ Paradigma určuje spôsoby, akým by sa malo riešenie danej úlohy - *implement
 * *Procedurálne programovanie* - rozdelenie kódu na podprogramy či funkcie, ktoré sa vedia navzájom volať 
 * *Objektovo orientované programovanie* - používanie objektov, zapuzdrenia a polymorfizmu
 * *Funkcionálne programovanie* - funkcie bez názvu, schopnosť funkciu posielať ako argument, alebo návratovú hodnotu
-* *Súbežné programovanie* - rozdelenie programu do častí, ktoré sú vykonávane súbežne, teda úlohy sú vykonávané súčasne naraz
+* *Súbežné programovanie* - rozdelenie programu do častí, ktoré sú vykonávané súbežne, teda úlohy sú vykonávané súčasne naraz
 
 <div class="md-has-sidebar" markdown>
   <main markdown>
@@ -63,7 +63,7 @@ Cieľom zavedenia objektovo orientovaného programovania je tiež zlepšenie org
   </main>
 
   <aside markdown>
-Objektové programovanie sa stalo populárnym v 90tych rokov minulého storočia a dlhú dobu bolo hlavným spôsobom tvorby softvéru. Jeho používanie pretrvalo dodnes a má svoje reálne uplatnenie. Niektoré jeho aspekty sa však po rokoch ukázali ako príliš zložité alebo nevhodné a v dnešnom modernom programovaní sa prestávajú používať. 
+Objektové programovanie sa stalo populárnym v 90. rokoch minulého storočia a dlhú dobu bolo hlavným spôsobom tvorby softvéru. Jeho používanie pretrvalo dodnes a má svoje reálne uplatnenie. Niektoré jeho aspekty sa však po rokoch ukázali ako príliš zložité alebo nevhodné a v dnešnom modernom programovaní sa prestávajú používať. 
 
 V prípadoch, kde je použitie OOP príliš rozvláčne alebo pridáva zbytočnú zložitosť sa v súčasnosti využívajú iné paradigmy ako napríklad programovanie funkcionálne, deklaratívne alebo sa použijú malé doménovo špecifické jazyky (DSL)
   </aside>
@@ -117,7 +117,7 @@ Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vy
     * [ ] Používa statické typovanie, kde typy premenných sú známe a kontrolované už pri kompilácii
     * [ ] Dlhodobo stabilný a kompatibilný, s vysokou bezpečnosťou
     * [ ] Virtuálny stroj Java Virtual Machine (JVM) umožňuje spúšťať programy nezávisle od operačného systému alebo hardvéru
-    * [ ] Ponúka mohutnú sada knižníc, nástrojov a štandardizované Java API
+    * [ ] Ponúka mohutnú sadu knižníc, nástrojov a štandardizované Java API
     * [ ] Dominuje v podnikových aplikáciách a v prostredí Android
 
 !!! note "Poznámky do zošita"
@@ -127,13 +127,13 @@ Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vy
     Učebnica na stránke oop.wagjo.com
 
 
-    DIGITÁLNY ASISTENTI
+    DIGITÁLNI ASISTENTI
 
     AI Asistent - reaktívny, odpovedá na otázky, jednoduché úlohy
     AI Agent - proaktívny, autonómny, zložité viackrokové úlohy
 
     AI Prompting - vytváranie inštrukcií pre AI
-    AI Verifikácia - kontrola presnosti, spoľahlovosti a kvality výstupu
+    AI Verifikácia - kontrola presnosti, spoľahlivosti a kvality výstupu
                    - vždy riadená človekom
 
     AI Slop - odpad, vznikne ak AI slepo dôverujem
@@ -160,13 +160,13 @@ Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vy
     - objektovo orientovaný
     - univerzálny
     - platformovo nezávislý 
-    - staticko typovaný: typy premenných sú kontrolované pri kompilácii 
+    - staticky typovaný: typy premenných sú kontrolované pri kompilácii 
 
     Použitie:
     - veľké podnikové systémy
     - webový back-end
     - Android aplikácie (jazyk Kotlin)
-    - cloudové a distrubuované systémy
+    - cloudové a distribuované systémy
 
     Platformová nezávislosť:
     - kód sa kompiluje do bytecode a beží nad JVM
