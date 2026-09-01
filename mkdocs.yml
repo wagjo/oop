@@ -2,6 +2,15 @@ site_name: Objektovo Orientované Programovanie
 site_url: https://oop.wagjo.com
 exclude_docs: |
   backup/**
+  teoria-3/t0[2-9]-*.md
+  teoria-3/t1[0-9]-*.md
+  teoria-3/t2[0-8]-*.md
+  cvicenie-3/c0[2-9]-*.md
+  cvicenie-3/c1[0-9]-*.md
+  cvicenie-3/c20-*.md
+  pokrocili-3/p0[2-9]-*.md
+  pokrocili-3/p1[0-9]-*.md
+  pokrocili-3/p2[0-8]-*.md
 plugins:
   - glightbox:
       manual: true
@@ -9,83 +18,10 @@ nav:
   - Úvod: 'index.md'
   - Teória: 
     - 1 - Úvod a motivácia: 'teoria-3/t01-uvod.md'
-    - 2 - Algoritmus, dátové typy a premenné: 'teoria-3/t02-typy.md'
-    - 3 - Identita, objekt: 'teoria-3/t03-objekt.md'
-    - 4 - Trieda, balíky: 'teoria-3/t04-trieda.md'
-    - 5 - Výnimky: 'teoria-3/t05-vynimky.md'    
-    - 6 - Operátory: 'teoria-3/t06-operatory.md'    
-    - 7 - Metódy: 'teoria-3/t07-metody.md'    
-    - 8 - Inicializácia objektov: 'teoria-3/t08-konstruktor.md'
-    - 9 - Premenné a atribúty: 'teoria-3/t09-premenne.md'
-    - 10 - Zapuzdrenie: 'teoria-3/t10-zapuzdrenie.md'
-    - 11 - Dedičnosť: 'teoria-3/t11-dedicnost.md'
-    - 12 - Polymorfizmus: 'teoria-3/t12-polymorfizmus.md'
-    - 13 - Abstrakcia: 'teoria-3/t13-abstrakcia.md'
-    - 14 - Enumeračné typy: 'teoria-3/t14-enum.md'
-    - 15 - Princípy OOP: 'teoria-3/t15-oop-opakovanie.md'
-    - 16 - Budovanie softvéru: 'teoria-3/t16-build.md'
-    - 17 - Usporiadanie: 'teoria-3/t17-usporiadanie.md'
-    - 18 - Records: 'teoria-3/t18-records.md'
-    - 19 - GUI knižnice: 'teoria-3/t19-gui.md'
-    - 20 - JavaFX Stage: 'teoria-3/t20-javafx-stage.md'
-    - 21 - JavaFX komponenty: 'teoria-3/t21-javafx-komponenty.md'
-    - 22 - JavaFX udalosti: 'teoria-3/t22-javafx-eventy.md'
-    - 23 - JavaFX štýly: 'teoria-3/t23-javafx-styly.md'
-    - 24 - JavaFX sledovanie zmien: 'teoria-3/t24-javafx-observable.md'
-    - 25 - JavaFX property: 'teoria-3/t25-javafx-property.md'
-    - 26 - JavaFX MVC: 'teoria-3/t26-javafx-mvc.md'
-    - 27 - Databázy: 'teoria-3/t27-databazy.md'
-    - 28 - ORM: 'teoria-3/t28-orm.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
-    - 2 - Prvý Java program: 'cvicenie-3/c02-hello.md'
-    - 3 - Riadenie toku programu: 'cvicenie-3/c03-cykly.md'
-    - 4 - Polia, varargs: 'cvicenie-3/c04-polia.md'
-    - 5 - Obalené typy: 'cvicenie-3/c05-wrapper.md'
-    - 6 - Reťazce znakov: 'cvicenie-3/c06-stringy.md'
-    - 7 - Triedy a metódy: 'cvicenie-3/c07-triedy.md'
-    - 8 - Hangman: 'cvicenie-3/c08-metody.md'
-    - 9 - Slovník: 'cvicenie-3/c09-konstruktor.md'
-    - 10 - Dedičnosť: 'cvicenie-3/c10-dedicnost.md'
-    - 11 - Polročný projekt: 'cvicenie-3/c11-projekt1.md'
-    - 12 - JSON a CSV: 'cvicenie-3/c12-json.md'
-    - 13 - JavaFX: 'cvicenie-3/c13-javafx.md'
-    - 14 - JavaFX Komponenty: 'cvicenie-3/c14-javafx-komponenty.md'
-    - 15 - JavaFX Štýly: 'cvicenie-3/c15-javafx-styly.md'
-    - 16 - Ročníkový projekt: 'cvicenie-3/c16-projekt2.md'
-    - 17 - Property objekty: 'cvicenie-3/c17-javafx-property.md'
-    - 18 - MVC architektúra: 'cvicenie-3/c18-javafx-mvc.md'
-    - 19 - Databázy: 'cvicenie-3/c19-databazy.md'
-    - 20 - ORM: 'cvicenie-3/c20-orm.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
-    - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'
-    - 3 - Rekurzia: 'pokrocili-3/p03-rekurzia.md'
-    - 4 - Moduly: 'pokrocili-3/p04-moduly.md'
-    - 5 - Správa knižníc: 'pokrocili-3/p05-pip.md'
-    - 6 - Agilný vývoj: 'pokrocili-3/p06-agile.md'
-    - 7 - Git: 'pokrocili-3/p07-git.md'
-    - 8 - GitHub: 'pokrocili-3/p08-github.md'
-    - 9 - Trieda a metódy: 'pokrocili-3/p09-oop.md'
-    - 10 - Metódy a JSON: 'pokrocili-3/p10-metody.md'
-    - 11 - Zapuzdrenie: 'pokrocili-3/p11-zapuzdrenie.md'
-    - 12 - Dedičnosť: 'pokrocili-3/p12-dedicnost.md'
-    - 13 - Pygame: 'pokrocili-3/p13-pygame.md'
-    - 14 - Pygame 2: 'pokrocili-3/p14-pygame-mys.md'
-    - 15 - Testovanie: 'pokrocili-3/p15-testovanie.md'
-    - 16 - Polročný projekt: 'pokrocili-3/p16-projekt.md'
-    - 17 - Zvuk a hudba: 'pokrocili-3/p17-pygame-zvuk.md'
-    - 18 - UDP základy: 'pokrocili-3/p18-udp.md'
-    - 19 - UDP broadcast a multicast: 'pokrocili-3/p19-udp-multicast.md'
-    - 20 - TCP základy: 'pokrocili-3/p20-tcp-zaklady.md'
-    - 21 - TCP prenos: 'pokrocili-3/p21-tcp-prenos.md'
-    - 22 - TCP rámcovanie: 'pokrocili-3/p22-tcp-framing.md'
-    - 23 - HTTP: 'pokrocili-3/p23-http.md'
-    - 24 - Routovanie: 'pokrocili-3/p24-routing.md'
-    - 25 - REST API: 'pokrocili-3/p25-rest-api.md'
-    - 26 - Ročníkový projekt: 'pokrocili-3/p26-projekt2.md'
-    - 27 - Web Scraping: 'pokrocili-3/p27-scraping.md'
-    - 28 - Web Scraping - ochrana: 'pokrocili-3/p28-scraping2.md'
   - Prehľad tém: 'prehlad.md'
   - Zbierka úloh: 
     - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
