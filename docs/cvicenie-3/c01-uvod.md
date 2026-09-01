@@ -71,7 +71,7 @@ V rámci tohto predmetu budeme používať distribúciu *Temurin* vytvorenú nad
 
     *[LTS]: Long term support
 
-Po úspešnej inštalácii si funkčnosť overte tak, že si otvorte nové okno konzoly a v príkazovom riadku spusťte príkaz `java --version`.
+Po úspešnej inštalácii si funkčnosť overte tak, že si otvorte nové okno konzoly a v príkazovom riadku spustite príkaz `java --version`.
 
 
 === "Zistenie verzie Javy"
@@ -117,7 +117,7 @@ Veľa programátorov má tiež v obľube používať nástroj [Visual Studio Cod
 
 <div class="md-has-sidebar" markdown >
   <main markdown>
-Použitie diagramov pri tvorbe softvéru prešlo turbulentnou históriou. V súčasnom modernom spôsobe programovania sa v posledných rokoch prestali používať príliš formálne a komplexné diagramy. Neprinášali želaný úžitok, stratilo sa pri nich veľa času a rýchlo sa stali zastaralými. Namiesto nich do popredia prišli ľahké tzv. "lightweight" diagramy, ktoré sú praktickejšie, jednoduchšie a rýchlejšie sa prispôsobia zmenám. Často sa dokonca dajú vytvoriť aj automaticky, priamo zo zdrojového kódu aplikácie.
+Použitie diagramov pri tvorbe softvéru prešlo turbulentnou históriou. V súčasnom modernom spôsobe programovania sa v posledných rokoch prestali používať príliš formálne a komplexné diagramy. Neprinášali želaný užitok, stratilo sa pri nich veľa času a rýchlo sa stali zastaralými. Namiesto nich do popredia prišli ľahké tzv. "lightweight" diagramy, ktoré sú praktickejšie, jednoduchšie a rýchlejšie sa prispôsobia zmenám. Často sa dokonca dajú vytvoriť aj automaticky, priamo zo zdrojového kódu aplikácie.
 
 Moderným prístupom ku tvorbe diagramov sa budeme venovať aj na tomto predmete. Pred tým však je vhodné zopakovať si vývojové diagramy. Tie majú stále svoje uplatnenie, či už ide o popis jednoduchých a priamočiarych procesov, alebo pri popise algoritmov. Okrem použitia vývojových diagramov vo výuke nájdeme ich využitie v praxi stále aj dnes. Ozrejmia nám poradie krokov v danom procese, pomáhajú zorientovať sa v algoritme a pomocou nich vieme skontrolovať, či sme pri implementácii na nič nezabudli.
 
@@ -125,7 +125,7 @@ Moderným prístupom ku tvorbe diagramov sa budeme venovať aj na tomto predmete
 
     Som študent strednej školy. Chcem vedieť, [aké sú súčasné trendy používania diagramov pri softvérovom vývoji.](https://chatgpt.com/share/68b2c1fd-aefc-8011-819b-73cfec407b22)
 
-![Treba prečitať](../assets/pointing5l.png){align=left width=150}
+![Treba prečítať](../assets/pointing5l.png){align=left width=150}
 
 Návrh vývojového diagramu netreba komplikovať. Často je vhodné použiť iba minimálny počet blokov, prepojením šípkami určiť ich poradie a bloky zrozumiteľne označiť. Pri popise blokov je najlepšie zamerať sa na vyjadrenie akcie, ktorú daný blok vykonáva. Zložitejšie časti procesu je vhodné rozdeliť do viacerých menších diagramov a na tie sa potom v hlavnom diagrame odkazovať.
 
@@ -441,13 +441,13 @@ V tejto časti uvádzame zopár úloh pre tvorbu vývojových diagramov. Po klik
         S1 --> S2[[Objem valca]]
         S2 --> End([Koniec])
 
-        PStart([Objem valca]) --> PP1["SP = 3.14 \\* polomer \\* polomer"]
+        PStart([Objem valca]) --> PP1["SP = 3.14 \* polomer \* polomer"]
         PP1 --> PP2[objem = SP * výška]
         PP2 --> PV[/Výstup: objem/]
         PV --> PEnd([Koniec])
 
-        VStart([Povrch valca]) --> VP1["SP = 3.14 \\* polomer \\* polomer"]
-        VP1 --> VP2["SPL = 2 \\* 3.14 \\* polomer \\* výška"]
+        VStart([Povrch valca]) --> VP1["SP = 3.14 \* polomer \* polomer"]
+        VP1 --> VP2["SPL = 2 \* 3.14 \* polomer \* výška"]
         VP2 --> VP3[povrch = 2 * SP + SPL]
         VP3 --> VV[/Výstup: povrch/]
         VV --> VEnd([Koniec])
@@ -549,7 +549,7 @@ Okrem vývojových diagramov nástroj Mermaid umožňuje vytvoriť aj iné typy 
 
 ## Pseudokód
 
-Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programovaciemu, ale bez striktnej syntaxe. Pomáha plánovať kód. Taktiež pomáha vysvetliť, ako daný algoritmus funguje. Pseudokód je určený hlavne na zápis algoritmov a podobá sa na zdrojový kód. Pre písanie pseudokódu neexistujú žiadne pravidlá a väčšinou sa pseudokód podobá na programovací jazyk, ktorý daný autor chce použiť na implementáciu svojho algoritmu.
+Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programovaciemu, ale bez striktnéj syntaxe. Pomáha plánovať kód. Taktiež pomáha vysvetliť, ako daný algoritmus funguje. Pseudokód je určený hlavne na zápis algoritmov a podobá sa na zdrojový kód. Pre písanie pseudokódu neexistujú žiadne pravidlá a väčšinou sa pseudokód podobá na programovací jazyk, ktorý daný autor chce použiť na implementáciu svojho algoritmu.
 
 === "Príklad pseudokódu pre súčet dvoch čísel"
 
