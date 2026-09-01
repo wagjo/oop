@@ -1,0 +1,25 @@
+# Záloha školského roku 2025/2026
+
+Snímka materiálov predmetu OOP pred prípravou na **2026/2027**.
+Zdroj: vetva `main`, commit `2794115b28f3a3d5ce1e7a6bf5b871a181f407a2`.
+
+Táto zložka ostáva v repozitári, ale **nie je v živej navigácii** webu
+(`exclude_docs: backup/**` v `mkdocs.yml`). Text tu zámerne ostáva v znení
+predchádzajúceho roku — neupravujte tu verzie jazykov ani školský rok.
+
+## Obsah
+
+- `teoria-3/` — všetky markdown hodiny teórie (t01–t28)
+- `cvicenie-3/` — všetky markdown cvičenia (c01–c20)
+- `pokrocili-3/` — všetky markdown hodiny pre pokročilých (p01–p28)
+- `index.md`, `osnovy.md`, `osnovy-new.md`, `prehlad.md`, `prehlad-private.md`
+- `mkdocs.yml` — snímka navigácie a konfigurácie webu
+- `MANIFEST.txt` — zoznam skopírovaných súborov s blob SHA z `main`
+
+## Prezentácie (pptx)
+
+Binárne súbory z `prezentacie/` sem neboli kopírované (limit GitHub Contents API).
+Prvé prezentácie `t01.pptx`, `t01w.pptx`, `c01.pptx`, `c01w.pptx`, `p01.pptx`
+a `p01w.pptx` ostávajú v `prezentacie/` na živej vetve **bez úpravy**.
+Celú sadu pptx k školskému roku 2025/2026 nájdete v histórii `main` na commite
+`2794115b`.
