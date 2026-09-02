@@ -18,7 +18,7 @@ Farebný diagram pekne vyznie aj vo vašej projektovej alebo záverečnej práci
 
 <div class="md-has-sidebar" markdown>
   <main markdown>
-Tento predmet nie je úvodom do programovania ako takého, preto sa od vás očakáva, že už ovládate základy programovania a algoritmizácie. Na úvodných cvičeniach si zopakujeme veci z programovania, ktoré ste brali v minulých rokoch. Porovnáme si kód v Jave z kódom, ktorý ste písali v jazyku Python. Ak si však z predchádzajúcich rokov už veľa nepamätáte, oprášte si doma staré zošity a učebnice.
+Tento predmet nie je úvodom do programovania ako takého, preto sa od vás očakáva, že už ovládate základy programovania a algoritmizácie. Na úvodných cvičeniach si zopakujeme veci z programovania, ktoré ste brali v minulých rokoch. Porovnáme si kód v Jave s kódom, ktorý ste písali v jazyku Python. Ak si však z predchádzajúcich rokov už veľa nepamätáte, oprášte si doma staré zošity a učebnice.
 
 Okrem úplných základov programovania a algoritmizácie si zopakujte aj zložené dátové štruktúry ako polia, množiny a slovníky, a taktiež základné triediace a vyhľadávacie algoritmy.
 
@@ -52,9 +52,9 @@ Z konceptov programovania by ste už mali vedieť základy premenných a dátov�
   <main markdown>
 Java nie je iba programovací jazyk, ale aj celá platforma a sada programov a nástrojov na vývoj a spúšťanie programov napísaných pre túto platformu. Štandardne ak si stiahnete do svojho počítača 'Javu', tak ide iba o nástroje na spúšťanie programov vytvorených pre platformu Java. Táto sada programov sa volá *Java Runtime Environment (JRE)* a vlastné programy v takejto 'Jave' nebudete môcť písať. 
 
-Na to, aby ste mohli aj programy aj tvoriť potrebujete tzv. *Java Development Kit (JDK)*. Ide o väčšiu sadu nástrojov, ktorá okrem JRE v sebe obsahuje aj nástroje pre programátorov. Táto JDK sada však nie je iba jedna, ale existuje veľké množstvo tzv. *distribúcii JDK* od rôznych inštitúcii a firiem. 
+Na to, aby ste mohli aj programy aj tvoriť potrebujete tzv. *Java Development Kit (JDK)*. Ide o väčšiu sadu nástrojov, ktorá okrem JRE v sebe obsahuje aj nástroje pre programátorov. Táto JDK sada však nie je iba jedna, ale existuje veľké množstvo tzv. *distribúcií JDK* od rôznych inštitúcii a firiem. 
 
-V rámci tohto predmetu budeme používať distribúciu *Temurin* vytvorenú nadáciou Eclipse. Ide o open source distribúciu, ktorá je vhodná na bežné použitie ako pri výuke, tak aj pri komerčnom nasadení Javy. Stiahnite si teda a nainštalujte do svojho počítača **JDK Temurin vo verzii 21 LTS** z oficálnej stránky [https://adoptium.net/](https://adoptium.net/)
+V rámci tohto predmetu budeme používať distribúciu *Temurin* vytvorenú nadáciou Eclipse. Ide o open source distribúciu, ktorá je vhodná na bežné použitie ako pri výuke, tak aj pri komerčnom nasadení Javy. Stiahnite si teda a nainštalujte do svojho počítača **JDK Temurin vo verzii 25 LTS** z oficiálnej stránky [https://adoptium.net/](https://adoptium.net/)
   </main>
 
   <aside>
@@ -78,9 +78,9 @@ Po úspešnej inštalácii si funkčnosť overte tak, že si otvorte nové okno 
 
     ```
     ~$ java --version
-    openjdk 21.0.6 2025-01-21 LTS
-    OpenJDK Runtime Environment Temurin-21.0.6+7 (build 21.0.6+7-LTS)
-    OpenJDK 64-Bit Server VM Temurin-21.0.6+7 (build 21.0.6+7-LTS, mixed mode, sharing)
+    openjdk 25.0.4 2026-07-21 LTS
+    OpenJDK Runtime Environment Temurin-25.0.4+7 (build 25.0.4+7-LTS)
+    OpenJDK 64-Bit Server VM Temurin-25.0.4+7 (build 25.0.4+7-LTS, mixed mode, sharing)
     ```
 
 ## IDE
@@ -92,7 +92,7 @@ Po úspešnej inštalácii si funkčnosť overte tak, že si otvorte nové okno 
 
 Pre komfortné programovanie v Jave je vhodné, aby ste používali vývojové prostredie, po anglicky Integrated Development Environment (IDE). Na tomto predmete budeme pracovať vo vývojovom prostredí *IntelliJ IDEA* od firmy JetBrains. Ide o najpopulárnejšie a najviac premakané vývojové prostredie pre jazyk Java. 
 
-Program ItelliJ IDEA si stiahnite a nainštalujte z oficiálnej stránky [https://www.jetbrains.com/idea/download](https://www.jetbrains.com/idea/download). K dispozícii je bezplatná verzia *Community Edition* a platená verzia *Ultimate*. Ako študenti SPŠE v Prešove máte jedinečnú možnosť používať platenú verziu Ultimate úplne zadarmo. 
+Program IntelliJ IDEA si stiahnite a nainštalujte z oficiálnej stránky [https://www.jetbrains.com/idea/download](https://www.jetbrains.com/idea/download). K dispozícii je bezplatná verzia *Community Edition* a platená verzia *Ultimate*. Ako študenti SPŠE v Prešove máte jedinečnú možnosť používať platenú verziu Ultimate úplne zadarmo. 
 
 !!! info "Ako si aktivovať IntelliJ IDEA Ultimate"
 
@@ -104,7 +104,7 @@ Program ItelliJ IDEA si stiahnite a nainštalujte z oficiálnej stránky [https:
   </main>
 
   <aside markdown>
-Za vývojovým prostredím IntelliJ IDEA stojí celkom zaujímavá firma. Spoločnosť JetBrains s.r.o. bola založená v Českej republike, troma Ruskými programátormi. Našich susedov si vybrali, aby mohli ľahšie obchodovať v rámci Európskej únie a Ameriky. Postupne vyvinuli množstvo ďalších produktov a medzi ich najznámejší prínos do sveta programovania patrí vytvorenie jazyka *Kotlin*. Tento jazyk sa stal hlavným programovacím jazykom pre vývoj aplikácii pre OS Android. 
+Za vývojovým prostredím IntelliJ IDEA stojí celkom zaujímavá firma. Spoločnosť JetBrains s.r.o. bola založená v Českej republike, troma ruskými programátormi. Našich susedov si vybrali, aby mohli ľahšie obchodovať v rámci Európskej únie a Ameriky. Postupne vyvinuli množstvo ďalších produktov a medzi ich najznámejší prínos do sveta programovania patrí vytvorenie jazyka *Kotlin*. Tento jazyk sa stal hlavným programovacím jazykom pre vývoj aplikácií pre OS Android. 
     
 Jazyk Kotlin beží nad platformou Java, dá sa použiť všade tam, kde aj jazyk Java a ponúka modernú alternatívu s množstvom vylepšení. Syntax jazyka je podobný Jave, a zruční Java programátori sa ho dokážu naučiť za pár dní. Hlavným a najpopulárnejším vývojovým prostredím pre jazyk Kotlin je opäť IntelliJ IDEA.
   </aside>
@@ -180,7 +180,7 @@ flowchart TD
   <main markdown>
 Jednotlivé časti vývojového diagramu sú spojené čiarami so šípkami :octicons-arrow-right-24:, ktoré určujú smer toku, teda v akom poradí sa bude daný proces alebo algoritmus vykonávať.
 
-Okrem vyššie uvedených symbolov vývojového diagramu existujú ďalšie symboly s rôznymi významami, napríklad existuje špeciálny typ symbolu pre manuálny vstup dát, alebo symbol pre krok prípravy. V bežnej praxi však tieto symboly nie sú veľmi rozšírené a väčšinou si kľudne vystačíme so základnymi symbolmi.
+Okrem vyššie uvedených symbolov vývojového diagramu existujú ďalšie symboly s rôznymi významami, napríklad existuje špeciálny typ symbolu pre manuálny vstup dát, alebo symbol pre krok prípravy. V bežnej praxi však tieto symboly nie sú veľmi rozšírené a väčšinou si kľudne vystačíme so základnými symbolmi.
   </main>
 
   <aside markdown>
@@ -284,7 +284,7 @@ Ak je čiara medzi symbolmi veľmi dlhá alebo neprehľadná, môžeme ju za pom
 
 ### Zbierka príkladov vývojových diagramov
 
-V tejto časti uvádzame zopár úloh pre tvorbu vývojových diagramov. Po kliknití na príklad sa vám ukáže daný diagram.
+V tejto časti uvádzame zopár úloh pre tvorbu vývojových diagramov. Po kliknutí na príklad sa vám ukáže daný diagram.
 
 ??? example "Príklad 1.6: Zistenie väčšieho z dvoch čísel"
     ```mermaid
@@ -297,7 +297,7 @@ V tejto časti uvádzame zopár úloh pre tvorbu vývojových diagramov. Po klik
         B --> End
     ```
     !!! question "Doplňujúce otázky"
-        - Čo sa stane, ak sú čisla rovnaké?
+        - Čo sa stane, ak sú čísla rovnaké?
         - Ako by ste upravili diagram tak, aby pokrýval všetky možnosti?
 
 ??? example "Príklad 1.7: Výpis radu čísel"
@@ -325,14 +325,14 @@ V tejto časti uvádzame zopár úloh pre tvorbu vývojových diagramov. Po klik
         EQ -->|true| WIN[/Uhádol si, bolo to číslo Y/]
         WIN --> End([Koniec])
         EQ -->|false|CMP{x > y}
-        CMP -->|true| BIG[/Hľadané čislo je menšie, hádaj znova/]
+        CMP -->|true| BIG[/Hľadané číslo je menšie, hádaj znova/]
         BIG --> Vstup
-        CMP -->|false| SMOL[/Hľadané čislo je väčšie, hádaj znova/]
+        CMP -->|false| SMOL[/Hľadané číslo je väčšie, hádaj znova/]
         SMOL --> Vstup
     ```
     !!! question "Doplňujúce otázky"
         - Ako by vyzeral vývojový diagram, ak by mal súťažiaci iba 10 pokusov?
-        - Čo by trebalo pridať, aby vo výslednom výpise sa uviedlo, na koľko pokusov bolo číslo uhádnuté
+        - Čo by bolo treba pridať, aby vo výslednom výpise sa uviedlo, na koľko pokusov bolo číslo uhádnuté
 
 ??? example "Príklad 1.9: Výpočet aritmetického priemeru"
     ```mermaid
@@ -429,7 +429,7 @@ V tejto časti uvádzame zopár úloh pre tvorbu vývojových diagramov. Po klik
         P1 --> Test
     ```
     !!! question "Doplňujúce otázky"
-        - Aký bude priebeh algoritmu, ak zadáme číslo, ktoré nie je prorodzené?
+        - Aký bude priebeh algoritmu, ak zadáme číslo, ktoré nie je prirodzené?
         - Ako by ste upravili algoritmus tak, aby pokrýval všetky možnosti vstupu?
 
 ??? example "Príklad 1.14: Povrch a objem valca"
@@ -480,7 +480,7 @@ V tejto časti uvádzame zopár úloh pre tvorbu vývojových diagramov. Po klik
 
 Súčasným trendom v moderných prístupoch ku tvorbe diagramov je technika Diagrams as Code (DaC). Ide o postup, pri ktorom sa diagram nekreslí v grafickom editore, ale pomocou na to určenej syntaxe sa zapíše do textového súboru, často priamo do dokumentácie alebo komentárov zdrojového kódu. Výsledný obrázok sa potom automaticky vygeneruje pomocou dokumentačného nástroja. 
 
-Takéto diagramy sa dajú ľahko upraviť a verzionovať spolu s kódom a jednoducho sa vložia do dokumentácie a webových stránok. Veľkou výhodou je taktiež možnosť použitia umelej inteligencie, ktorá vie takéto diagramy písať a synchronizovať so zmenami v zdrojovóm kóde programu.
+Takéto diagramy sa dajú ľahko upraviť a verzionovať spolu s kódom a jednoducho sa vložia do dokumentácie a webových stránok. Veľkou výhodou je taktiež možnosť použitia umelej inteligencie, ktorá vie takéto diagramy písať a synchronizovať so zmenami v zdrojovom kóde programu.
 
 Medzi nevýhody prístupu Diagrams as Code patrí nevyzrelosť nástrojov na písanie takýchto diagramov, nemožnosť precízne určiť polohu a tvar blokov a šípiek, a pri automatickom písaní diagramov aj nižšia pridaná hodnota *(low signal)* oproti ručne písaným diagramom. Netechnický ľudia môžu mať taktiež problém s písaním takéhoto diagramu, nakoľko ide vlastne o špeciálny programovací jazyk *(Domain-specific Language, DSL)*
 
@@ -511,7 +511,7 @@ V textovom zápise vývojového diagramu stačí uviesť bloky, ktoré chcete zo
 
   </main>
   <aside markdown>
-Nástroj Mermaid je založený ja Javascriptovej knižnici [mermaid.js](https://github.com/mermaid-js/mermaid), ktorá umožňuje generovať diagramy na vašej stránke alebo vo vašom frontent programe. Diagramy na tejto stránke, ktorú práve čítate, boli automaticky vygenerované práve pomocou tento knižnice a autor nemusel použiť žiadny špeciálny editor na tvorbu diagramov. :material-emoticon-cool-outline:
+Nástroj Mermaid je založený na JavaScriptovej knižnici [mermaid.js](https://github.com/mermaid-js/mermaid), ktorá umožňuje generovať diagramy na vašej stránke alebo vo vašom frontent programe. Diagramy na tejto stránke, ktorú práve čítate, boli automaticky vygenerované práve pomocou tejto knižnice a autor nemusel použiť žiadny špeciálny editor na tvorbu diagramov. :material-emoticon-cool-outline:
 
 !!! tip "Pracujem s pomocou Umelej Inteligencie"
 
@@ -544,7 +544,7 @@ Okrem vývojových diagramov nástroj Mermaid umožňuje vytvoriť aj iné typy 
 
 !!! warning "Upozornenie"
 
-    Nástroj Mermaid má niektoré nedostatky, ktoré v niektorých prípadoch komplikujú tvorbu vývojových diagramov. Najväčší problém majú so šípkami smerom späť a pri symbole cyklusu for (ktorého použitie je neštandardné a využíva sa hlavne pri výuke). Ak je potrebná formálna presnosť je lepšie použiť grafický editor diagramov ako napr. [draw.io](https://draw.io).
+    Nástroj Mermaid má niektoré nedostatky, ktoré v niektorých prípadoch komplikujú tvorbu vývojových diagramov. Najväčší problém majú so šípkami smerom späť a pri symbole cyklu for (ktorého použitie je neštandardné a využíva sa hlavne pri výuke). Ak je potrebná formálna presnosť je lepšie použiť grafický editor diagramov ako napr. [draw.io](https://draw.io).
 
 
 ## Pseudokód
@@ -572,7 +572,7 @@ Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programov
 
 - [x] Zopakovať si základy programovania z minulých rokov
 - [x] Ak používam Windows, nainštalovať si [PowerShell](https://aka.ms/powershell-release?tag=stable)
-- [x] Nainštalovať si Javu JDK 21 LTS v distribúcii [Temurin](https://adoptium.net/)
+- [x] Nainštalovať si Javu JDK 25 LTS v distribúcii [Temurin](https://adoptium.net/)
     * [ ] Overiť si, či Java beží správne pomocou `java --version`
 - [x] Nainštalovať si vývojové prostredie [IntelliJ IDEA](https://www.jetbrains.com/idea/download)
     * [ ] Aktivovať si školskú licenciu pre bezplatné použitie verzie Ultimate
@@ -654,7 +654,7 @@ Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programov
 
     Na ďalšej hodine budeme kontrolovať nasledovné veci:
 
-    - Správne nainštalovaná Java JDK 21
+    - Správne nainštalovaná Java JDK 25
     - Správne nainštalovaný program IntelliJ IDEA
     - Zapísané poznámky z hodiny vo vašom zošite
 

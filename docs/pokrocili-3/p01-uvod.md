@@ -1,10 +1,10 @@
-# Pokročílí 1: Úvod do predmetu, premenné, vstup a výstup
+# Pokročilí 1: Úvod do predmetu, premenné, vstup a výstup
 
-Na tomto voliteľnom predmete budeme preberať pokročilejšie témy z oblasti objektovo orientovaného programovania. Pôjdeme viac do hĺbky a ukážeme si pokročilejšie nástroje používané pri vývoji softvéru. Tak isto si ukážeme viacero praktických aplikačných využití.
+Na tomto voliteľnom predmete budeme preberať pokročilejšie témy z oblasti objektovo orientovaného programovania. Pôjdeme viac do hĺbky a ukážeme si pokročilejšie nástroje používané pri vývoji softvéru. Takisto si ukážeme viacero praktických aplikačných využití.
 
 Hlavným programovacím jazykom, ktorý budeme na tomto predmete používať je Python. Nakoľko ste s týmto jazykom už pracovali, očakávame od vás, že v ňom viete už ako tak programovať. V každom prípade prvé cvičenia budú venované opakovaniu.
 
-Požiadavky na softvér a počítač sú podobné ako na klasických cvičeniach z predmetu objektovo orientované programovanie. V tomto predmete budete naviac potrebovať mať nainštalovaný programovací jazyk Python a IDE.
+Požiadavky na softvér a počítač sú podobné ako na klasických cvičeniach z predmetu objektovo orientované programovanie. V tomto predmete budete navyše potrebovať mať nainštalovaný programovací jazyk Python a IDE.
 
 *[OS]: Operačný systém
 
@@ -23,18 +23,18 @@ Základná filozofia jazyka Python je zhrnutá v 19 dizajnových princípoch naz
   </aside>
 </div>
 
-Python si nainštalujte z jeho oficiálnej stránky [https://www.python.org/downloads/](https://www.python.org/downloads/). Najnovšia verzia jazyka Python je verzia 3.13. **Pri inštalácii v OS Windows zaškrtnite možnosť `Add python.exe to PATH`.** Po úspešnej inštalácii si funkčnosť overte tak, že si otvorte nové okno konzoly a v príkazovom riadku spusťte príkaz `python --version`.
+Python si nainštalujte z jeho oficiálnej stránky [https://www.python.org/downloads/](https://www.python.org/downloads/). Najnovšia verzia jazyka Python je verzia 3.14. **Pri inštalácii v OS Windows zaškrtnite možnosť `Add python.exe to PATH`.** Po úspešnej inštalácii si funkčnosť overte tak, že si otvorte nové okno konzoly a v príkazovom riadku spusťte príkaz `python --version`.
 
 === "Zistenie verzie Pythonu"
 
     ```
     ~$ python --version
-    Python 3.13.7
+    Python 3.14.7
     ```
 
 ### Semantic versioning
 
-Populárny spôsobom v programovaní, ako označovať nové verzie softvéru a knižníc je použitie tzv. [sémantického verzionovania](https://semver.org/lang/sk/). Príklad sémantickéj verzie je 2.1.4. Ide o číslovanie verzií programu vo formáte MAJOR.MINOR.PATCH, kde zväčšujeme číslo:
+Populárnym spôsobom v programovaní, ako označovať nové verzie softvéru a knižníc je použitie tzv. [sémantického verzionovania](https://semver.org/lang/sk/). Príklad sémantickej verzie je 2.1.4. Ide o číslovanie verzií programu vo formáte MAJOR.MINOR.PATCH, kde zväčšujeme číslo:
 
 * MAJOR verzie, keď sme spravili zmeny, ktoré nie sú spätne kompatibilné,
 * MINOR verzie, keď sme pridali funkcionalitu so zachovaním spätnej kompatibility,
@@ -46,11 +46,11 @@ Ak sa teda objaví program s novou MAJOR verziou, takmer isto nebude kompatibiln
 
 !!! warning "Jazyk Python sémantické verzionovanie iba predstiera"
 
-    Jazyk Python samotný má čisla verzií veľmi podobné sémantickému, avšak sémantické verzionovanie často porušuje. Za jeho históriu sa stalo niekoľkokrát, že aj nová MINOR verzia priniesla zmeny, ktoré neboli kompatibilné so staršími verziami. Preto si treba dávať pozor, ak aktualizujete verziu jazyka a prečítať si dokumentáciu, či náhodou nebude treba váš program upraviť, aby mohol na novšej verzii jazyka bežať.
+    Jazyk Python samotný má čísla verzií veľmi podobné sémantickému, avšak sémantické verzionovanie často porušuje. Za jeho históriu sa stalo niekoľkokrát, že aj nová MINOR verzia priniesla zmeny, ktoré neboli kompatibilné so staršími verziami. Preto si treba dávať pozor, ak aktualizujete verziu jazyka a prečítať si dokumentáciu, či náhodou nebude treba váš program upraviť, aby mohol na novšej verzii jazyka bežať.
 
   </main>
   <aside markdown>
-Inou populárnou formov tvorenia verzií ja [Kalendárové verzionovanie, tzv. CalVer](https://calver.org/), pri ktorom sa verzia softvéru odvodzuje od roka a mesiaca, v ktorom bola verzia vydaná. Známym príkladom použitia takého spôsobu je IDE Pycharm alebo IntelliJ IDEA, ktoré má verziu napr. 2025.2.1
+Inou populárnou formou tvorenia verzií je [Kalendárové verzionovanie, tzv. CalVer](https://calver.org/), pri ktorom sa verzia softvéru odvodzuje od roka a mesiaca, v ktorom bola verzia vydaná. Známym príkladom použitia takého spôsobu je IDE Pycharm alebo IntelliJ IDEA, ktoré má verziu napr. 2026.2.1
   </aside>
 </div>
 
@@ -75,7 +75,7 @@ Program PyCharm si stiahnite a nainštalujte z oficiálnej stránky [https://www
   <main markdown>
 Na začiatku sme spomínali, že Python je interpretovaný jazyk. Čo to znamená?
 
-Pri interpretovaných jazykoch sa zdrojový kód programu, ktorý napíšete, *analyzuje a vykonáva priamo za behu programu*. Na to musí byť na danom počítačí nainštalovaný tzv. interpreter, inak program nespustíte. Výhodou takýchto jazykov ja dynamickosť a interaktivita. Ich nevýhodou je pomalší výkon. Typickým príkladom interpretovaných jazykov sú Python, Javascript a PHP.
+Pri interpretovaných jazykoch sa zdrojový kód programu, ktorý napíšete, *analyzuje a vykonáva priamo za behu programu*. Na to musí byť na danom počítači nainštalovaný tzv. interpreter, inak program nespustíte. Výhodou takýchto jazykov je dynamickosť a interaktivita. Ich nevýhodou je pomalší výkon. Typickým príkladom interpretovaných jazykov sú Python, Javascript a PHP.
 
 Naproti tomu sú kompilované jazyky, ktoré sa musia pred spustením tzv. skompilovať, teda previesť do strojového kódu daného počítača. Výsledný súbor (vo Windowse je to väčšinou .exe súbor) potom vieme spúšťať bez toho, aby sme na počítač museli hocičo inštalovať. Takéto programy sú potom často výkonnejšie a zaberajú menej pamäte. Nevýhodou tohto prístupu je, že musíte skompilovať program zvlášť pre každý typ operačného systému a procesora. Príkladom kompilovaných jazykov je C, C++, Rust a Swift.
 
@@ -116,7 +116,7 @@ Vo Windowse odporúčame použiť Windows PowerShell. Po spustení konzoly Power
 
     ```
     ~$ python
-    Python 3.13.7 (main, Sep  3 2025, 18:25:04) [GCC 13.3.0] on linux
+    Python 3.14.7 (main, Aug  5 2026, 18:25:04) [GCC 13.3.0] on linux
     Type "help", "copyright", "credits" or "license" for more information.
     >>> 
     ```
@@ -142,7 +142,7 @@ S Pythonom následne komunikujeme tak, že do príkazového riadku napíšeme pr
 
 </main>
   <aside markdown>
-Interaktívne programovanie pomocou konzoly sa nazýva REPL, a znamená *read–eval–print loop*. Je výsadou interaktívnych jazykov a umožňuje meniť program za jeho behu a dokonca opraviť aj komplikované chyby bez toho, aby sa program musel reštartovať. Svetovo známym príkladom je ako NASA pomocou REPL opravila kritickú chyby vo vesmírnej sonde [Deep Space 1](https://susam.net/very-remote-debugging.html), ktorá bola od zeme vzdialená 100 miliónov kilometrov.
+Interaktívne programovanie pomocou konzoly sa nazýva REPL, a znamená *read–eval–print loop*. Je výsadou interaktívnych jazykov a umožňuje meniť program za jeho behu a dokonca opraviť aj komplikované chyby bez toho, aby sa program musel reštartovať. Svetovo známym príkladom je ako NASA pomocou REPL opravila kritickú chybu vo vesmírnej sonde [Deep Space 1](https://susam.net/very-remote-debugging.html), ktorá bola od zeme vzdialená 100 miliónov kilometrov.
   </aside>
 </div>
 
@@ -187,7 +187,7 @@ Pre vytváranie skriptu budeme používať IDE PyCharm. Ak už máme otvorený p
 
 Z hlavného okna PyCharmu vyberieme možnosť **`New Script`**. Otvorí sa nám súbor `script.py`, v ktorom budeme mať vzorový kód. Ten môžeme kľudne nahradiť svojim.
 
-Ak chceme v PyCharme spusiť aktuálne otvorený skript, stlačíme ++"Shift"+"F10"++ alebo klikneme na zelenú šípku play v hornej časti aplikácie.
+Ak chceme v PyCharme spustiť aktuálne otvorený skript, stlačíme ++"Shift"+"F10"++ alebo klikneme na zelenú šípku play v hornej časti aplikácie.
 
 ![PyCharm script](../assets/pycharm-script.png){ .on-glb }
 /// caption
@@ -264,7 +264,7 @@ Tak ako vieme do konzoly niečo vypísať, vieme aj požiadať o nejaký vstup o
 
 ## Formátované reťazce, f-stringy
 
-Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložených zátvoriek vložiť premenné a nemusíme krkolome spájať reťazce a premennými.
+Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložených zátvoriek vložiť premenné a nemusíme krkolome spájať reťazce s premennými.
 
 !!! example "Príklad 1.3: Použitie vstupu"
 
@@ -294,7 +294,7 @@ Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložen�
 
 ## Zhrnutie cvičenia
 
-- [x] Nainštalovať si Python 3.13 zo stránky [https://www.python.org/downloads/](https://www.python.org/downloads/)
+- [x] Nainštalovať si Python 3.14 zo stránky [https://www.python.org/downloads/](https://www.python.org/downloads/)
     * [ ] Overiť si, či Python beží správne pomocou `python --version`
 - [x] Nainštalovať si vývojové prostredie [PyCharm](https://www.jetbrains.com/pycharm/download)
     * [ ] Aktivovať si školskú licenciu pre bezplatné použitie verzie Pro
@@ -357,11 +357,11 @@ Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložen�
     Vytváranie verzií vo formáte MAJOR.MINOR.PATCH
     Používané napr. v knižniciach v Javascripte, Pythone a Jave.
 
-    Príklad: 3.13.7, 1.0.0
+    Príklad: 3.14.7, 1.0.0
 
     - MAJOR sa zvýši: veľké a nekompatibilné zmeny
     - MINOR sa zvýši: nová funkcionalita, spätne kompatibilná
-    - PATCH sa zvýši: oprava chýb, spätne kompatibiliná
+    - PATCH sa zvýši: oprava chýb, spätne kompatibilná
 
 
     KOMPILOVANÝ VS INTERPRETOVANÝ JAZYK
@@ -424,7 +424,7 @@ Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložen�
 
     Na ďalšej hodine budeme kontrolovať nasledovné veci:
 
-    - Správne nainštalovaný Python 3.13
+    - Správne nainštalovaný Python 3.14
     - Správne nainštalovaný program PyCharm
     - Zapísané poznámky z hodiny vo vašom zošite
 

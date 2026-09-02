@@ -9,7 +9,7 @@ Tento predmet na škole vyučujeme už viacero rokov. Oblasť softvérového vý
 
 ## Nahradia nás AI agenti?
 
-S príchodom asistentov a agentov založených na umelej inteligencii sa od základov mení veľa vecí, ktoré boli desaťročia zaužívanou praxou. Vidíme to od roku 2025 už aj na Slovensku. Väčšina veľkých IT korporácií prepúšťa a preškoľuje zamestnancov na používanie umelej inteligencie. Niektoré pracovné pozície sa zlučujú, iné zanikajú. Ktorá organizácia sa tomuto trendu neprispôsobí, bude za pár rokov predbehnutá start-upmi, ktoré budú AI naplno využívať vo svojich flexibilných tímoch.
+S príchodom asistentov a agentov založených na umelej inteligencii sa od základov mení veľa veci, ktoré boli desaťročia zaužívanou praxou. Začíname to vidieť v roku 2025 už aj na Slovensku. Väčšina veľkých IT korporácií prepúšťa a preškoľuje zamestnancov na používanie umelej inteligencie. Niektoré pracovné pozície sa zlučujú, iné zanikajú. Ktorá organizácia sa tomuto trendu neprispôsobí, bude za pár rokov predbehnutá start-upmi, ktoré budú AI naplno využívať vo svojich flexibilných tímoch.
 
 <div class="md-has-sidebar" markdown>
   <main markdown>
@@ -63,7 +63,7 @@ Cieľom zavedenia objektovo orientovaného programovania je tiež zlepšenie org
   </main>
 
   <aside markdown>
-Objektové programovanie sa stalo populárnym v 90. rokoch minulého storočia a dlhú dobu bolo hlavným spôsobom tvorby softvéru. Jeho používanie pretrvalo dodnes a má svoje reálne uplatnenie. Niektoré jeho aspekty sa však po rokoch ukázali ako príliš zložité alebo nevhodné a v dnešnom modernom programovaní sa prestávajú používať. 
+Objektové programovanie sa stalo populárnym v 90tych rokov minulého storočia a dlhú dobu bolo hlavným spôsobom tvorby softvéru. Jeho používanie pretrvalo dodnes a má svoje reálne uplatnenie. Niektoré jeho aspekty sa však po rokoch ukázali ako príliš zložité alebo nevhodné a v dnešnom modernom programovaní sa prestávajú používať. 
 
 V prípadoch, kde je použitie OOP príliš rozvláčne alebo pridáva zbytočnú zložitosť sa v súčasnosti využívajú iné paradigmy ako napríklad programovanie funkcionálne, deklaratívne alebo sa použijú malé doménovo špecifické jazyky (DSL)
   </aside>
@@ -99,7 +99,7 @@ Pre ekosystém a platformu Java sú typické nasledovné vlastnosti:
 
 Java sa dnes využíva hlavne vo veľkých enterprise systémoch, webových back-endoch, cloudových aplikáciách a finančných systémoch. Je taktiež aj dominantnou platformou na vývoj mobilných Android aplikácií. Tam je populárnym jazyk Kotlin, ktorý beží nad platformou Java a ponúka jednoduchšiu syntax.
 
-Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vyššia spotreba pamäte. Ďalej je to "verbózna", teda príliš ukecaná syntax, kedy často aj jednoduchá vec je zapísaná na desiatkách riadkov. Z dôvodu použitia JVM majú programy v Jave pomalší štart aplikácií (to sa však dnes dá riešiť špeciálnym kompilátorom). Statické typovanie a mohutnosť jazyka, knižníc a nástrojov sú často pre začínajúcich programátorov zložité na pochopenie.
+Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vyššia spotreba pamäte. Ďalej je to "verbózna", teda príliš ukecaná syntax, kedy často aj jednoduchá vec je zapísaná na desiatkach riadkov. Z dôvodu použitia JVM majú programy v Jave pomalší štart aplikácií (to sa však dnes dá riešiť špeciálnym kompilátorom). Statické typovanie a mohutnosť jazyka, knižníc a nástrojov sú často pre začínajúcich programátorov zložité na pochopenie.
 
 ## Zhrnutie teórie
 
@@ -117,7 +117,7 @@ Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vy
     * [ ] Používa statické typovanie, kde typy premenných sú známe a kontrolované už pri kompilácii
     * [ ] Dlhodobo stabilný a kompatibilný, s vysokou bezpečnosťou
     * [ ] Virtuálny stroj Java Virtual Machine (JVM) umožňuje spúšťať programy nezávisle od operačného systému alebo hardvéru
-    * [ ] Ponúka mohutnú sadu knižníc, nástrojov a štandardizované Java API
+    * [ ] Ponúka mohutnú sada knižníc, nástrojov a štandardizované Java API
     * [ ] Dominuje v podnikových aplikáciách a v prostredí Android
 
 !!! note "Poznámky do zošita"
@@ -127,13 +127,13 @@ Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vy
     Učebnica na stránke oop.wagjo.com
 
 
-    DIGITÁLNI ASISTENTI
+    DIGITÁLNY ASISTENTI
 
     AI Asistent - reaktívny, odpovedá na otázky, jednoduché úlohy
     AI Agent - proaktívny, autonómny, zložité viackrokové úlohy
 
     AI Prompting - vytváranie inštrukcií pre AI
-    AI Verifikácia - kontrola presnosti, spoľahlivosti a kvality výstupu
+    AI Verifikácia - kontrola presnosti, spoľahlovosti a kvality výstupu
                    - vždy riadená človekom
 
     AI Slop - odpad, vznikne ak AI slepo dôverujem
@@ -160,13 +160,13 @@ Hlavné nevýhody Javy sú nižší výkon v porovnaní s low-level jazykmi a vy
     - objektovo orientovaný
     - univerzálny
     - platformovo nezávislý 
-    - staticky typovaný: typy premenných sú kontrolované pri kompilácii 
+    - staticko typovaný: typy premenných sú kontrolované pri kompilácii 
 
     Použitie:
     - veľké podnikové systémy
     - webový back-end
     - Android aplikácie (jazyk Kotlin)
-    - cloudové a distribuované systémy
+    - cloudové a distrubuované systémy
 
     Platformová nezávislosť:
     - kód sa kompiluje do bytecode a beží nad JVM
