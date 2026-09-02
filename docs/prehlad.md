@@ -32,8 +32,8 @@ hide:
 <li>Inštalácia JDK</li>
 <li>Inštalácia IDE</li>
 <li>Vývojový diagram</li>
-<li>Diagramy ako kód</li>
 <li>Pseudokód</li>
+<li>Diagramy ako kód</li>
 </ul>
 </td>
 <td width=30%>

@@ -1,6 +1,14 @@
 # Cvičenie 1: Úvod do predmetu, vývojový diagram
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Úvodné cvičenie je venované príprave vášho počítača, inštalácii potrebných nástrojov a programov a praktickému úvodu do ekosystému Java. Okrem toho sa na tomto a na nasledujúcich cvičeniach stručne zopakujú témy programovania, ktoré ste preberali v predchádzajúcich rokoch. Vysvetlí sa tiež, ktoré znalosti by už študent mal ovládať, nakoľko tento predmet nie je úvodným predmetom pre programovanie ako také. 
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/c01w.pdf">c01w.pdf</a></i>
+  </aside>
+</div>
 
 <div class="md-has-sidebar" markdown>
   <main markdown>
