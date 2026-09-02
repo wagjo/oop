@@ -476,6 +476,28 @@ V tejto časti uvádzame zopár úloh pre tvorbu vývojových diagramov. Po klik
         - Ak by boli čísla v poli zoradené, dal by sa algoritmus optimalizovať?
 
 
+## Pseudokód
+
+Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programovaciemu, ale bez striktnej syntaxe. Pomáha plánovať kód. Taktiež pomáha vysvetliť, ako daný algoritmus funguje. Pseudokód je určený hlavne na zápis algoritmov a podobá sa na zdrojový kód. Pre písanie pseudokódu neexistujú žiadne pravidlá a väčšinou sa pseudokód podobá na programovací jazyk, ktorý daný autor chce použiť na implementáciu svojho algoritmu.
+
+=== "Príklad pseudokódu pre súčet dvoch čísel"
+
+    ```
+    Začať
+    Prečítať číslo1
+    Prečítať číslo2
+    súčet = číslo1 + číslo2
+    Vypísať súčet
+    Koniec
+    ```
+
+!!! abstract "Úloha do zošita: Pseudokód"
+
+    Do zošita si napíšte pseudokód pre aspoň jeden z vašich vývojových diagramov, ktoré máte v zošite zakreslené.
+
+    Splnenie úlohy vám budeme kontrolovať.
+
+
 ### Diagramy ako kód
 
 Súčasným trendom v moderných prístupoch ku tvorbe diagramov je technika Diagrams as Code (DaC). Ide o postup, pri ktorom sa diagram nekreslí v grafickom editore, ale pomocou na to určenej syntaxe sa zapíše do textového súboru, často priamo do dokumentácie alebo komentárov zdrojového kódu. Výsledný obrázok sa potom automaticky vygeneruje pomocou dokumentačného nástroja. 
@@ -547,27 +569,6 @@ Okrem vývojových diagramov nástroj Mermaid umožňuje vytvoriť aj iné typy 
     Nástroj Mermaid má niektoré nedostatky, ktoré v niektorých prípadoch komplikujú tvorbu vývojových diagramov. Najväčší problém majú so šípkami smerom späť a pri symbole cyklu for (ktorého použitie je neštandardné a využíva sa hlavne pri výuke). Ak je potrebná formálna presnosť je lepšie použiť grafický editor diagramov ako napr. [draw.io](https://draw.io).
 
 
-## Pseudokód
-
-Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programovaciemu, ale bez striktnej syntaxe. Pomáha plánovať kód. Taktiež pomáha vysvetliť, ako daný algoritmus funguje. Pseudokód je určený hlavne na zápis algoritmov a podobá sa na zdrojový kód. Pre písanie pseudokódu neexistujú žiadne pravidlá a väčšinou sa pseudokód podobá na programovací jazyk, ktorý daný autor chce použiť na implementáciu svojho algoritmu.
-
-=== "Príklad pseudokódu pre súčet dvoch čísel"
-
-    ```
-    Začať
-    Prečítať číslo1
-    Prečítať číslo2
-    súčet = číslo1 + číslo2
-    Vypísať súčet
-    Koniec
-    ```
-
-!!! abstract "Úloha do zošita: Pseudokód"
-
-    Do zošita si napíšte pseudokód pre aspoň jeden z vašich vývojových diagramov, ktoré máte v zošite zakreslené.
-
-    Splnenie úlohy vám budeme kontrolovať.
-
 ## Zhrnutie cvičenia
 
 - [x] Zopakovať si základy programovania z minulých rokov
@@ -584,83 +585,73 @@ Pseudokód je spôsob zápisu algoritmu v prirodzenom jazyku, podobnom programov
     * [ ] Obdĺžnik so zvislými čiarami - Podproces
 - [x] Vytvoriť jednoduchý vývojový diagram 
 - [x] Vytvoriť vývojový diagram s rozhodovaním
+- [x] Vytvoriť pseudokód daného algoritmu
 - [x] Vytvoriť vývojový diagram v editore [Mermaid Live](https://mermaid.live)
     * [ ] Exportovať diagram do formátu .png
     * [ ] Zaslať vyexportovaný diagram učiteľovi na EduPage
-- [x] Vytvoriť pseudokód daného algoritmu
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    Učebnica na stránke oop.wagjo.com
+    JAVA
 
+    JRE - Java Runtime Environment - na spúšťanie Java programov
+    JDK - Java Development Kit - na programovanie
 
-    PRÍPRAVA
-
-    Pre programovanie je potrebné mať Javu JDK (Java Development Kit).
-    Odporúčaná je distribúcia Temurin.
-
-    Akú Javu máme:
-    - príkaz: java --version
-    - nová verzia vychádza každých 6m
-    - posledné stabilné verzie Javy sú 17, 21 a 25
-
-    IDE (Integrated Development Environment):
-    - vývojové prostredie
-    - uľahčuje programovanie
-    - IntelliJ IDEA
+    nová verzia každých 6m, stabilné sú 17, 21 a 25
+    java --version
 
 
     ÚVOD DO DIAGRAMOV
 
     Vývojový diagram znázorňuje kroky procesu alebo algoritmu. 
-    V praxi sa používa v zjednodušenej forme.
-    Dopĺňa iné typy diagramov.
 
     >> zapísať tabuľku so základnými typmi symbolov vývojového diagramu.
 
     >> nakresliť jeden jednoduchý vývojový diagram a jeden diagram s rozhodovacím blokom
 
 
-    DIAGRAMY AKO KÓD
-
-    "Diagram as Code" alebo DaC sú diagramy vo forme textu.
-    Vieme ich dať do dokumentácie alebo zdrojového kódu.
-    Používame nástroj http://mermaid.live
-
-    Vlastnosti:
-    - generované automaticky z textu
-    - ľahšie sa udržiava aktuálny
-    - vie ho vytvárať a meniť AI
-
-    Nevýhody:
-    - nezrelosť nástrojov
-    - musíte vedieť špecifickú syntax
-    - strata precíznej kontroly vizuálu
-
-
     PSEUDOKÓD
 
-    Pseudokód je zápis algoritmu v prirodzenom jazyku, bez pravidiel. 
-    Pomáha nám vysvetliť algoritmus a plánovať kód.
+    Zápis algoritmu v prirodzenom jazyku, bez pravidiel. 
+    Pomáha vysvetliť algoritmus a plánovať.
 
     >> zapísať pseudokód jedného z vývojových diagramov
 
+
+    DIAGRAMY AKO KÓD - DaC
+
+    Diagramy vo forme textu, vkladáme ich do dokumentácie alebo zdrojového kódu.
+    Používame nástroj http://mermaid.live
+
+    Vlastnosti:
+    - generované automaticky z textu, AI friendly
+    - ľahšie sa udržiava aktuálny
+
+    Nevýhody:
+    - musíte vedieť špecifickú syntax
+    - strata precíznej kontroly vizuálu
     ```
 
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Na ďalšej hodine budeme kontrolovať nasledovné veci:
+    Na ďalšej hodine budeme kontrolovať:
 
-    - Správne nainštalovaná Java JDK 25
+    - Správne nainštalovanú Java JDK 25
     - Správne nainštalovaný program IntelliJ IDEA
     - Zapísané poznámky z hodiny vo vašom zošite
 
-    Ústne skúšanie alebo krátka 5-minútovka:
+    Ústne skúšanie:
 
+    - Rozdiel medzi JDK a JRE, čo dané skratky znamenajú
     - Základné symboly vývojového diagramu a ich význam
     - Vedieť čo je Diagram as Code, uviesť jeho výhody a nevýhody
-    - Vytvorenie vývojového diagramu pre danú úlohu
-    - Vytvorenie pseudokódu danej úlohy alebo algoritmu
+
+    Praktické skúšanie:
+
+    - V nástroji Mermaid vytvorte vývojový diagram pre výpočet absolútnej hodnoty čísla
+    - V nástroji Mermaid vytvorte vývojový diagram pre zistenie menšieho z dvoch čísel
+    - V nástroji Mermaid vytvorte vývojový diagram pre výpočet prepony pravouhlého trojuholníka na základe jeho odvesien
+    - Vytvorenie pseudokódu vyššie uvedených úloh

@@ -5,7 +5,6 @@ hide:
 
 # Prehľad tém
 
-Ďalšie hodiny pribudnú priebežne, ako budú pripravené na školský rok 2026/2027. Materiály z roku 2025/2026 sú v zálohe v repozitári (`docs/backup/2025/`), nie na živej stránke.
 
 <table >
 <thead>
