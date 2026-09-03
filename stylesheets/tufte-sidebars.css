@@ -1,0 +1,46 @@
+.md-has-sidebar {
+  /* compensate article margin */
+  display: block;
+}
+
+.md-has-sidebar aside {
+  font-size: .64rem;
+}
+
+/* Same breakpoint as .sidebar--secondary: https://github.com/squidfunk/mkdocs-material/blob/4c8620c6ee6b7ace11121b8d7f52373f4dea2cff/src/assets/stylesheets/main/layout/_sidebar.scss#L96-L120 */
+@media screen and (min-width: 60em) {
+  .md-typeset > :not(.md-has-sidebar) {
+    /* 100% - sidebar width - sidebar gap + existing article margin */
+    max-width: calc(100% - 12.1rem - 1.2rem + .8rem);
+  }
+
+  .md-typeset ol, .md-typeset ul {
+    margin-inline-start: 0 !important;
+    padding-inline-start: 0.625em;
+  }
+
+  .md-has-sidebar {
+    /* compensate article margin */
+    display: flex;
+    margin-right: -.8rem;
+    flex-direction: row;
+    gap: 1.2rem;
+  }
+
+  .md-has-sidebar main {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .md-has-sidebar main :first-child {
+    margin-block-start: 0;
+  }
+
+  .md-has-sidebar aside {
+    flex-basis: 12.1rem;
+    padding-inline: .6rem;
+    /* color: var(--md-default-fg-color--light); */
+    font-size: .64rem;
+  }
+}
+
