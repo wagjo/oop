@@ -16,13 +16,13 @@ plugins:
       manual: true
 nav:
   - Úvod: 'index.md'
-  - Teória: 
-    - 1 - Úvod a motivácia: 'teoria-3/t01-uvod.md'
+#  - Teória: 
+#    - 1 - Úvod a motivácia: 'teoria-3/t01-uvod.md'
   - Cvičenia: 
     - 1 - Úvod, vývojový diagram: 'cvicenie-3/c01-uvod.md'
-  - Pokročilí: 
-    - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
-  - Prehľad tém: 'prehlad.md'
+#  - Pokročilí: 
+#    - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
+#  - Prehľad tém: 'prehlad.md'
 #  - Zbierka úloh: 
 #    - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
 #    - Python - Dedičnosť: 'zbierka-python/j05-04-dedicnost.md'
