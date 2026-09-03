@@ -21,7 +21,7 @@ hide:
 <td width=30%>
 <a href="../teoria-3/t01-uvod">Úvod a motivácia</a> (<a href="../assets/t01w.pdf">pdf</a>)
 <ul>
-<li>Digitálni asistenti</li>
+<li>AI v programovaní</li>
 <li>Objektovo orientované programovanie</li>
 <li>Jazyk Java</li>
 </ul>
