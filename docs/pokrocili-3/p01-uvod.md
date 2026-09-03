@@ -335,33 +335,27 @@ Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložen�
     V zošite je potrebné mať napísané aspoň tieto poznámky:
 
     ```
-    Učebnica na stránke https://oop.wagjo.com/
-
-    JAZYK PYTHON
+    PYTHON
 
     Vlastnosti:
-    - interpretovaný jazyk 
+    - interpretovaný
     - všeobecné použitie
     - dynamické typovanie
 
     Použitie:
     - umelá inteligencia
-    - strojové učenie
-    - dátová analytika a dátová veda
-
-    Novšie verzie sú často nekompatibilné so starými a je nutná migrácia
+    - dátová analytika
 
 
     SEMANTIC VERSIONING
 
-    Vytváranie verzií vo formáte MAJOR.MINOR.PATCH
-    Používané napr. v knižniciach v Javascripte, Pythone a Jave.
+    Verzia MAJOR.MINOR.PATCH
 
     Príklad: 3.14.7, 1.0.0
 
-    - MAJOR sa zvýši: veľké a nekompatibilné zmeny
-    - MINOR sa zvýši: nová funkcionalita, spätne kompatibilná
-    - PATCH sa zvýši: oprava chýb, spätne kompatibilná
+    - MAJOR: veľké a nekompatibilné zmeny
+    - MINOR: nová funkcionalita, spätne kompatibilná
+    - PATCH: oprava chýb
 
 
     KOMPILOVANÝ VS INTERPRETOVANÝ JAZYK
@@ -377,46 +371,19 @@ Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložen�
     - špeciálna verzia pre každý typ OS a CPU
     - C, C++, Rust, Swift
 
-    Java je hybrid, kód sa skompiluje do bytekódu a ten sa interpretuje cez JVM
+
+    PYTHON PROGRAM
+    - Interaktívne programovanie - zadám príkaz a python vypíše výsledok.
+    - Skript - príkazy v súbore s príponou .py
 
 
-    INTERAKTÍVNE PROGRAMOVANIE
+    OPAKOVANIE
 
-    V konzole spustím program python.
-    Zadávam príkaz a python mi vypíše jeho výsledok.
-    Vhodné na skúšanie vecí a opravu chýb.
-
-
-    SKRIPTY
-
-    Skript je súbor s príponou .py, v ktorom je kód programu.
-    Skript vytvorím pomocou PyCharm. Spúšťam pomocou SHIFT-F10.
-
-
-    PREMENNÁ
-
-    Python premenná je pomenovaná referencia na objekt uložený v pamäti počítača.
-    Vytvárame a meníme pomocou operácie priradenia, napr. a = 10.
-    Premenná v Pythone nemá dátový typ, môže ukazovať na hocičo.
-
-
-    KONŠTANTA
-
-    Konštanta je ako premenná, ale jej hodnota sa nemá meniť.
-    Pre názov konštanty sa používajú veľké písmená.
-    Je to iba dohoda, Python nekontroluje, či konštantu meníme.
-
-
-    VSTUP A VÝSTUP
-    
-    - do konzoly vypíšeme pomocou funkcie print()
-    - z klávesnice načítame pomocou funkcie input()
-
-
-    F-STRING
-    
-    Umožňuje nám vkladať do reťazca premenné.    
-    Príklad: f"Ahoj {meno} z obce {obec}, rád ťa tu vidím!"
+    Premenná - pomenovaná referencia na objekt v pamäti počítača, a = 10
+    Konštanta - hodnota sa nemá meniť, názov veľkými písmenami, MAX = 20
+    Štandardný výstup - print()
+    Štandardný vstup - input()
+    F-String - Vkladanie premenných do reťazca, f"Ahoj {meno} z obce {obec}!"
     ```
 
 
@@ -425,11 +392,13 @@ Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložen�
     Na ďalšej hodine budeme kontrolovať nasledovné veci:
 
     - Správne nainštalovaný Python 3.14
-    - Správne nainštalovaný program PyCharm
+    - Správne nainštalovaný program PyCharm vo verzii 2026
+    - Aktivovaná školská JetBrains licencia
     - Zapísané poznámky z hodiny vo vašom zošite
 
-    Ústne skúšanie alebo krátka 5-minútovka:
+    Ústne skúšanie:
 
+    - Vlastnosti a použitie Pythonu
     - Čo je sémantické verzionovanie, popíš na príklade
     - Aké sú rozdiely medzi interpretovaným a kompilovaným jazykom?
     - Čo je premenná, uveď príklad kódu
@@ -437,3 +406,11 @@ Ak pred reťazec vložíme znak `f`, môžeme do tohto reťazca pomocou zložen�
     - Ako vypíšeme niečo do konzoly
     - Ako načítame vstup z klávesnice
     - Čo je f-string, na čo sa používa, uveď príklad
+
+    Praktické skúšanie:
+
+    - Spusť python v interaktívnom režime a vykonaj 5 príkazov. Použi premennú
+    - Vytvor skript na výpočet obsahu kruhu. Priemer kruhu načítaj z klávesnice a výsledok vypíš do konzoly
+    - Vytvor skript na výpočet obsahu štvorca. Rozmer štvorca načítaj z klávesnice a výsledok vypíš do konzoly
+    - Vytvor skript na výpočet obvodu štvorca. Rozmer štvorca načítaj z klávesnice a výsledok vypíš do konzoly
+    - Vytvor skript na výpočet podielu dvoch čísel. Hodnoty načítaj z klávesnice a výsledok vypíš do konzoly

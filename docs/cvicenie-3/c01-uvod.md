@@ -648,7 +648,8 @@ Okrem vývojových diagramov nástroj Mermaid umožňuje vytvoriť aj iné typy 
     Na ďalšej hodine budeme kontrolovať:
 
     - Správne nainštalovanú Java JDK 25
-    - Správne nainštalovaný program IntelliJ IDEA
+    - Správne nainštalovaný program IntelliJ IDEA vo verzii 2026
+    - Aktivovaná školská JetBrains licencia
     - Zapísané poznámky z hodiny vo vašom zošite
 
     Ústne skúšanie:
