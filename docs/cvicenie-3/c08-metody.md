@@ -73,9 +73,9 @@ Keďže sú všetky atribúty privátne, mimo triedy Stav nevieme priamo zistiť
     Vytvorte nasledovné getter metódy v triede Stav:
 
     - `public boolean isVyhra()` - vráti hodnotu atribútu `vyhra`
-    - `public boolean isGameOver()` - vráti true, ak je počet pokusov menší ako 1 alebo ak sme vyhrali, ináč vráti false
+    - `public boolean isGameOver()` - vráti true, ak je počet pokusov menší ako 1 alebo ak sme vyhrali, inak vráti false
     - `public int getOstavaPokusov()` - vráti zostávajúci počet pokusov
-    - `public String getHadaneSlovo()` - vráti hádané slovo. *Bonus: slovo vráti, iba ak hra skončila, ináč vyhodí výnimku*
+    - `public String getHadaneSlovo()` - vráti hádané slovo. *Bonus: slovo vráti, iba ak hra skončila, inak vyhodí výnimku*
     - `public String getSlovo()` - vráti slovo, ktoré sme zatiaľ uhádli. Kód tejto metódy musí vytvoriť reťazec String z poľa znakov `uhadnuteZnaky`. Môžete na to použiť statickú metódu `String.valueOf()`
 
 Vytvorili sme teda 5 getter metód. Getter metódy, ktoré vracajú boolean hodnotu sa zvyknú začínať slovom `is`, ostatné sa začínajú slovom `get`. Getter metóda nemusí vždy vracať iba priamu hodnotu atribútu. Ako vidíme v príklade metódy `getSlovo()`, getter metóda môže hodnoty atribútov vhodne upraviť tak, aby vyhovovali volajúcemu. Vnútornú implementáciu si potom môžeme zvoliť takú, aká vyhovuje vnútornej logike triedy.
@@ -216,7 +216,7 @@ Ostáva nám napísať hlavnú logiku hry. To nebude zložité, nakoľko väčš
 
     ```
 
-Trieda hra je z hľadiska štruktúry jednoduchá, má iba 2 statické metódy a nemá žiaden atribút. **V UML Class diagrame sú statické metódy podčiarknuté**.
+Trieda hra je z hľadiska štruktúry jednoduchá, má iba 2 statické metódy a nemá žiadny atribút. **V UML Class diagrame sú statické metódy podčiarknuté**.
 
 ```mermaid
 classDiagram
@@ -241,7 +241,7 @@ Blahoželáme k úspešnému naprogramovaniu hry. Nižšie nájdete bonusové ú
 
 !!! example "Úloha 8.9: Hrajte znova"
 
-    Po skončení hry nevypnite program, ale spusťte hru znova. Pamätajte si počet výhier a prehier.
+    Po skončení hry nevypnite program, ale spustite hru znova. Pamätajte si počet výhier a prehier.
 
 !!! example "Úloha 8.10: Defaultný počet pokusov"
 
@@ -249,7 +249,7 @@ Blahoželáme k úspešnému naprogramovaniu hry. Nižšie nájdete bonusové ú
 
 !!! example "Úloha 8.11: Defaultný zoznam slov"
 
-    Vytvorte konštantu pole slov `DEFAULT_SLOVA` v triede `Stav`. Dajte do neho 20 slov. Vytvorte preťažený konštruktor, ktorý nemá žiaden argument a použije náhodné slovo z tohto zoznamu.
+    Vytvorte konštantu pole slov `DEFAULT_SLOVA` v triede `Stav`. Dajte do neho 20 slov. Vytvorte preťažený konštruktor, ktorý nemá žiadny argument a použije náhodné slovo z tohto zoznamu.
 
 !!! example "Úloha 8.12: Ošetrenie vstupov"
 
