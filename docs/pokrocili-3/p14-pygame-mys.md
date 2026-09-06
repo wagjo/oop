@@ -315,7 +315,7 @@ Ak nemáte predchádzajúcu verziu hry adventura, môžete si ju stiahnuť pomoc
 
 !!! example "Úloha 14.7: Prehľadnejšie UI"
     
-    Ak hráč nemá nič v inventári alebo nie je v miestnosti žiaden predmet, nevypisujte zbytočne na obrazovku text "V miestnosti sa nachádza:" a pod.
+    Ak hráč nemá nič v inventári alebo nie je v miestnosti žiadny predmet, nevypisujte zbytočne na obrazovku text "V miestnosti sa nachádza:" a pod.
 
 !!! example "Úloha 14.8: Zreteľnejšie zmeny"
     
