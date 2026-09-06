@@ -37,9 +37,9 @@ def faktorial(n):
     return n * faktorial(n - 1)  # Rekurzívny prípad
 ```
 
-## Porovnanie rekurzia a iterácie
+## Porovnanie rekurzie a iterácie
 
-Každý algoritmus v rekurzívnom tvare sa dá prepísať na tvar iteratívny. Iteratívna verzia je obvykle efektívnejšia - je rýchlejšia a zaberá menej pamäti. Rekurziu používame hlavne kôli jej elegancii a jednoduchosti pri niektorých prípadoch.
+Každý algoritmus v rekurzívnom tvare sa dá prepísať na tvar iteratívny. Iteratívna verzia je obvykle efektívnejšia - je rýchlejšia a zaberá menej pamäti. Rekurziu používame hlavne kvôli jej elegancii a jednoduchosti pri niektorých prípadoch.
 
 | Vlastnosť | Rekurzia | Iterácia |
 |-------------|-----------|-----------|
@@ -81,7 +81,7 @@ sys.setrecursionlimit(2000)     # limit vieme zvýšiť, ale hrozí zaplnenie pa
 
 !!! info "Tail Call Optimization"
 
-    Veľa programovacích jazykov podporuje optimalizáciu rekurzie v prípadoch, kedy je rekurzívne volanie poslednou vecou vo funkcii. Pri takejto optimalizícii by sa do zásobníka neuložili nové hodnoty, ale by sa ibe prepísali tie existujúce. Jazyk Python však bohužiaľ túto optimalizáciu nepodporuje.
+    Veľa programovacích jazykov podporuje optimalizáciu rekurzie v prípadoch, kedy je rekurzívne volanie poslednou vecou vo funkcii. Pri takejto optimalizácii by sa do zásobníka neuložili nové hodnoty, ale by sa iba prepísali tie existujúce. Jazyk Python však bohužiaľ túto optimalizáciu nepodporuje.
 
 
 ## Úlohy na precvičenie
@@ -109,7 +109,7 @@ print(f"Čas funkcie: {cas:.6f} sekúnd ({opakovania} opakovaní)")
 
 !!! example "Úloha 3.1: Fibonacciho postupnosť"
 
-    Vytvorte program na vypis n-tého prvku Fibonacciho postupnosti pomocou rekurzívnej a iteratívnej metódy
+    Vytvorte program na výpis n-tého prvku Fibonacciho postupnosti pomocou rekurzívnej a iteratívnej metódy
 
 !!! example "Úloha 3.2: Mocnina"
 
@@ -156,7 +156,7 @@ print(f"Čas funkcie: {cas:.6f} sekúnd ({opakovania} opakovaní)")
 
     Rekurzia pri veľkom počte vnorení zaplní zásobník, nastane stack overflow
 
-    Python má limit na rekurziu, mení sa pomocu sys.setrecursionlimit()
+    Python má limit na rekurziu, mení sa pomocou sys.setrecursionlimit()
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
@@ -166,4 +166,3 @@ print(f"Čas funkcie: {cas:.6f} sekúnd ({opakovania} opakovaní)")
     - Rozdiel medzi rekurziou a iteráciou
     - 2 časti rekurzívnej funkcie
     - Čo je zásobník volaní, ako súvisí s rekurziou
-
