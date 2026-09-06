@@ -108,7 +108,7 @@ Triedne metódy sa používajú napr. na tvorbu továrenských metód. K triedny
 
 ## Statické metódy
 
-Python podporuje aj tzv. **statické metódy**, čo sú funkcie definované v triede, ktoré nemajú žiaden prístup ani k objektu ani ku triede. Pri ich definícii sa používa anotácia `@staticmethod`. Používajú sa na rôzne utilitky.
+Python podporuje aj tzv. **statické metódy**, čo sú funkcie definované v triede, ktoré nemajú žiadny prístup ani k objektu ani ku triede. Pri ich definícii sa používa anotácia `@staticmethod`. Používajú sa na rôzne utilitky.
 
 Názov statická metóda je síce podobný statickej metóde v Jave, avšak statické metódy a atribúty v Jave sa v Pythone volajú triedne metódy a atribúty.
 
@@ -201,7 +201,7 @@ Názov statická metóda je síce podobný statickej metóde v Jave, avšak stat
 - [x] Triedne metódy a atribúty
     * [ ] Triedne metódy majú anotáciu `@classmethod` a metódy majú prvý argument `cls`
 - [x] Statické metódy
-    * [ ] Majú anotáciu `@staticmethod` a nemajú žiaden prístup k triede alebo objektu
+    * [ ] Majú anotáciu `@staticmethod` a nemajú žiadny prístup k triede alebo objektu
 - [x] Dunder metódy
     * [ ] `__str__` - user friendly výpis triedy do reťazca
 
@@ -222,7 +222,7 @@ Názov statická metóda je síce podobný statickej metóde v Jave, avšak stat
     - Triedne metódy majú anotáciu @classmethod a metódy majú prvý argument cls
 
     Statické metódy
-    - Majú anotáciu @staticmethod a nemajú žiaden prístup k triede alebo objektu
+    - Majú anotáciu @staticmethod a nemajú žiadny prístup k triede alebo objektu
 
     Dunder metódy
     - __str__ - user friendly výpis triedy do reťazca
