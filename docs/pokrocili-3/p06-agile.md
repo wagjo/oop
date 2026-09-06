@@ -263,7 +263,7 @@ Medzi pokročilé nástroje správy vývoja softvéru patrí automatizované tes
 
     Do budúcej hodiny:
 
-    - Nainštalovať si git na svojom počítačí
+    - Nainštalovať si git na svojom počítači
     - Vytvoriť si konto na GitHube a zaslať mi užívateľské meno
 
     Okruhy otázok na test:
