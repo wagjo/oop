@@ -59,7 +59,7 @@ Ak chceme niekomu poslať správu, musíme vedieť jeho presnú adresu. UDP na a
 ("127.0.0.1", 5000)
 ```
 
-IP predstavuje cieľový počítač, na ktorý sa posiela správa. Port určuje konkrétnu aplikáciu, ktorá beží na počítačí (lebo na jednom počítači môže byť viac spustených aplikácií, ktoré chcú nejako používať UDP).
+IP predstavuje cieľový počítač, na ktorý sa posiela správa. Port určuje konkrétnu aplikáciu, ktorá beží na počítači (lebo na jednom počítači môže byť viac spustených aplikácií, ktoré chcú nejako používať UDP).
 
 Číslo portu sa delí do troch kategórií:
 
@@ -105,7 +105,7 @@ Pri prijatí správy sa okrem dát prijme aj adresa (IP + port), z ktorej sme sp
 
 Odosielanie správy sa realizuje pomocou funkcie `sendto`.
 
-Na odoslanie správy potrebujeme vedieť IP adresu a port adresáta. Správu musíme naviac zakódovať do poľa bajtov. Ak by sme napr. chceli poslať reťazec načítaný z klávesnice, vieme to urobiť nasledovne:
+Na odoslanie správy potrebujeme vedieť IP adresu a port adresáta. Správu musíme navyše zakódovať do poľa bajtov. Ak by sme napr. chceli poslať reťazec načítaný z klávesnice, vieme to urobiť nasledovne:
 
 === "Príklad odoslania UDP správy"
 
@@ -267,7 +267,7 @@ Ak chceme v našom  programe naraz dáta prijímať aj odosielať, je potrebné 
     * [ ] Toto prijímanie a spracovanie správ sa väčšinou robí v nekonečnom cykle
 - [x] Odoslanie správy - pomocou funkcie `sendto`
     * [ ] Na odoslanie správy potrebujeme vedieť IP adresu a port adresáta. 
-    * [ ] Správu musíme naviac zakódovať do poľa bajtov
+    * [ ] Správu musíme navyše zakódovať do poľa bajtov
     * [ ] `sock.sendto(message.encode('utf-8'), (IP, PORT))`
     * [ ] Ak chceme v našom programe naraz dáta prijímať aj odosielať, je potrebné prijímanie dát nechať bežať na samostatnom vlákne
     * [ ] Na prácu s vláknami vieme použiť štandardný modul `threading`
