@@ -20,7 +20,7 @@ Viac informácií o zapuzdrení nájdete v [teórii 10](../teoria-3/t10-zapuzdre
 
 ## Modifikátory prístupu
 
-Základné zapuzdrenie je riešené pomocou obmedzenia prístupu k atribútom a metódam triedy. V Jave na to máme špeciálne kľúčové slová `public`, `protected` a `private`, v Pythone je to však riešené ináč.
+Základné zapuzdrenie je riešené pomocou obmedzenia prístupu k atribútom a metódam triedy. V Jave na to máme špeciálne kľúčové slová `public`, `protected` a `private`, v Pythone je to však riešené inak.
 
 Atribúty a metódy sú štandardne verejné, nie je potrebné to nijako špeciálne definovať. Na vytvorenie interných (protected) a súkromných atribútov a metód v Pythone používame podčiarníky v názve, tak ako sme si to vysvetlili na minulej hodine. Automatické premenovanie pri súkromných názvoch pomáha chrániť pred kolíziou mien pri dedení (o tom viac nabudúce).
 
@@ -32,7 +32,7 @@ Atribúty a metódy sú štandardne verejné, nie je potrebné to nijako špeci�
 
 ## Getter, Setter a Deleter
 
-Atribúty (inštančné premenné) uchovávajú stav daného objektu. Ich zverejnenie však nie je väčšinou žiadúce, nakoľko trieda prestáva mať kontrolu nad tým, aké hodnoty tieto atribúty budú mať. Preto je zvykom atribúty nezverejňovať, ale mať ich súkromné (private).
+Atribúty (inštančné premenné) uchovávajú stav daného objektu. Ich zverejnenie však nie je väčšinou žiaduce, nakoľko trieda prestáva mať kontrolu nad tým, aké hodnoty tieto atribúty budú mať. Preto je zvykom atribúty nezverejňovať, ale mať ich súkromné (private).
 
 Na samotný prístup k hodnotám súkromných atribútov sa potom vytvárajú tvz. getter a setter metódy. V týchto metódach môže trieda ošetriť hodnoty a mať tak kontrolu nad stavom svojich atribútov. Ak trieda nezverejní setter metódu, používatelia triedy nebudú môcť priamo zmeniť daný atribút triedy.
 
@@ -431,7 +431,7 @@ Vstupný bod do hry bude v súbore `__main.py__`
 
     Na prechod medzi miestnosťami je potrebné napísať príkaz `go` a potom smer, ktorým sa chcem vydať, napríklad `go vychod`.
 
-    Upravte metódu action tak, aby sa naviac dalo prechádzať medzi miestnosťami iba tak, že sa napíše smer cesty, napr. `vychod`. Teda `go` sa bude dať použiť, ale pôjde to aj bez neho.
+    Upravte metódu action tak, aby sa navyše dalo prechádzať medzi miestnosťami iba tak, že sa napíše smer cesty, napr. `vychod`. Teda `go` sa bude dať použiť, ale pôjde to aj bez neho.
 
 !!! example "Úloha 11.9: Vlastný svet"
 
