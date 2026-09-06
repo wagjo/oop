@@ -124,7 +124,7 @@ Ako posledný krok inicializácie sa zavolá konštruktor triedy. Konštruktor j
 
 **Konštruktor sa zavolá vždy**. Konštruktorov môžeme mať viac, vyberie a zavolá sa ten, ktorý sa najlepšie hodí argumentom, ktoré boli uvedené pri volaní operátora `new`.
 
-V triede nemusíme mať napísaný žiaden konštruktor. Ak v kóde triedy nie je žiaden konštruktor, Java automaticky vytvorí konštruktor bez parametrov.
+V triede nemusíme mať napísaný žiadny konštruktor. Ak v kóde triedy nie je žiadny konštruktor, Java automaticky vytvorí konštruktor bez parametrov.
 
 ### Pravidlá inicializácie
 
@@ -149,7 +149,7 @@ Podľa typu argumentov rozdeľujeme konštruktory nasledovne:
 - *kopírovací konštruktor* - má jeden argument, typu svojej triedy. Používa sa na kopírovanie objektu
 - *parametrizovaný konštruktor* - má jeden alebo viac argumentov
 
-**Ak v kóde triedy nemáme napísaný žiaden konštruktor, Java automaticky vygeneruje defaultný konštruktor**. 
+**Ak v kóde triedy nemáme napísaný žiadny konštruktor, Java automaticky vygeneruje defaultný konštruktor**. 
 
 !!! tip "Učím sa s pomocou umelej inteligencie"
 
@@ -331,7 +331,7 @@ Podobne ako pri inštančných inicializátoroch, aj statické inicializátory s
     * [ ] Defaultný konštruktor (nulárny konštruktor) - nemá žiadne argumenty
     * [ ] Kopírovací konštruktor - má jeden argument, typu svojej triedy
     * [ ] Parametrizovaný konštrutor - má jeden alebo viac argumentov
-    * [ ] Ak v kóde triedy nemáme napísaný žiaden konštruktor, Java automaticky vygeneruje defaultný konštruktor
+    * [ ] Ak v kóde triedy nemáme napísaný žiadny konštruktor, Java automaticky vygeneruje defaultný konštruktor
     * [ ] Konštruktor má modifikátor prístupu. Ak je `private`, vytvorenie objektu musí prebehnúť vnútri továrenskej metódy
 - [x] Statická inicializácia triedy, v nasledovnom poradí
     * [ ] Priama inicializácia statických atribútov
@@ -359,7 +359,7 @@ Podobne ako pri inštančných inicializátoroch, aj statické inicializátory s
     Defaultný konštruktor (nulárny konštruktor) - bez argumentov
     Kopírovací konštruktor - má jeden argument, typu svojej triedy
     Parametrizovaný konštrutor - má jeden alebo viac argumentov
-    Ak v kóde triedy nemáme napísaný žiaden konštruktor, vytvorí sa automaticky defaultný konštruktor
+    Ak v kóde triedy nemáme napísaný žiadny konštruktor, vytvorí sa automaticky defaultný konštruktor
     Konštruktor má modifikátor prístupu. Ak je private, musíme mať továrenskú metódu
 
     Statická inicializácia triedy - inicializuje statické atribúty, v tomto poradí:
