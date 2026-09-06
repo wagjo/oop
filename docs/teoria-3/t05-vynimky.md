@@ -1,1 +1,1 @@
-__LOAD_FILE__:/workspace/oop-grammar/fixed/t05-vynimky.md
+@file:///workspace/oop-grammar/fixed/t05-vynimky.md
