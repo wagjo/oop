@@ -43,7 +43,7 @@ riadkov"""
 </div>
 V Pythone každý **literál vytvorí nový objekt v pamäti počítača**. Výnimku tvoria malé nemenné objekty, ktoré Python môže, ak chce, vytvoriť v pamäti iba raz, a znovupoužiť ich. 
 
-Na rozdiel of Javy Python nemá primitívne dátové typy, každá hodnota je objekt. Teda aj hodnoty všetkých dátových typov sú objekty. Či už máme číslo `4` alebo zoznam `[1, 2, 3]`, obidve sú v pamäti uložené ako objekty.
+Na rozdiel od Javy Python nemá primitívne dátové typy, každá hodnota je objekt. Teda aj hodnoty všetkých dátových typov sú objekty. Či už máme číslo `4` alebo zoznam `[1, 2, 3]`, obidve sú v pamäti uložené ako objekty.
 
 ### None
 
@@ -122,9 +122,9 @@ Takúto funkciu potom vieme v ďalšom kóde volať.
     sucet(1, 2)
     ```
 
-Kedže Python interpretuje kód riadok po riadku, funkciu môžem zavolať až po tom, čo ju zadefinujem. To je rozdiel od napr. Javy, kde poradie nehrá úlohu.
+Keďže Python interpretuje kód riadok po riadku, funkciu môžem zavolať až po tom, čo ju zadefinujem. To je rozdiel od napr. Javy, kde poradie nehrá úlohu.
 
-Ak má funkcia parameter, pri jej volaní musím do týchto parametrov dať nejaké hodnoty, v takom pradí, v akom boli zadefinované. Ináč nastane chyba. V definícii funkcie mám ale možnosť niektorým parametrom priradiť *defaultnú hodnotu*, ktorá sa použije, ak pri volaní funkcie tento parameter nevyplním.
+Ak má funkcia parameter, pri jej volaní musím do týchto parametrov dať nejaké hodnoty, v takom poradí, v akom boli zadefinované. Inak nastane chyba. V definícii funkcie mám ale možnosť niektorým parametrom priradiť *defaultnú hodnotu*, ktorá sa použije, ak pri volaní funkcie tento parameter nevyplním.
 
 === "Príklad funkcie s defaultnými parametrami"
 
@@ -218,7 +218,7 @@ Do podmienky vieme vložiť akýkoľvek výraz. Často sa v podmienkach použív
 </div>
 
 
-  V pythone existuje aj tzv. ternárny operátor, čo je podmienka, ktorú môžeme zapísať do jedného riadku a predstavuje výraz a nie príkaz, teda môžme je použiť v rámci iného kódu.
+  V Pythone existuje aj tzv. ternárny operátor, čo je podmienka, ktorú môžeme zapísať do jedného riadku a predstavuje výraz a nie príkaz, teda môžeme ju použiť v rámci iného kódu.
 
 === "Ternárny operátor"
 
@@ -232,7 +232,7 @@ Do podmienky vieme vložiť akýkoľvek výraz. Často sa v podmienkach použív
 
 Cykly slúžia na opakovanie nejakej časti kódu. Poznáme dva hlavné fory cyklov
 
-`for` cyklus sa používa sa na iterovanie cez kolekcie (zoznamy, reťazce, množiny, atď.) alebo rozsahy čísel. Používame ho keď vieme, koľko iterácií nastane alebo keď potrebujeme iterovať cez nejakú kolekciu.
+`for` cyklus sa používa na iterovanie cez kolekcie (zoznamy, reťazce, množiny, atď.) alebo rozsahy čísel. Používame ho keď vieme, koľko iterácií nastane alebo keď potrebujeme iterovať cez nejakú kolekciu.
 
 === "Cyklus for"
 
@@ -252,7 +252,7 @@ Cykly slúžia na opakovanie nejakej časti kódu. Poznáme dva hlavné fory cyk
         print(kluc, ":", hodnota)
     ```
 
-`while` cyklus sa opakuje, kým platí podmienka (hodnota je `True` alebo true like). Používame ho keď dopredu nevieme, koľko krát sa cyklus má opakovať.
+`while` cyklus sa opakuje, kým platí podmienka (hodnota je `True` alebo true like). Používame ho keď dopredu nevieme, koľkokrát sa cyklus má opakovať.
 
 === "Cyklus while"
 
@@ -263,7 +263,7 @@ Cykly slúžia na opakovanie nejakej časti kódu. Poznáme dva hlavné fory cyk
         x += 1
     ```
 
-Python má naviac špeciálne príkazy, ktoré menia správanie cyklov. `break` ukončí celý cyklus a `continue` preskočí aktuálnu iteráciu a pokračuje ďalšou.
+Python má navyše špeciálne príkazy, ktoré menia správanie cyklov. `break` ukončí celý cyklus a `continue` preskočí aktuálnu iteráciu a pokračuje ďalšou.
 
 === "Riadenie cyklu"
 
@@ -358,7 +358,7 @@ def faktorial(n):
 
 - [x] Literál je zápis konkrétneho údaja priamo v kóde
     * [ ] Každý literál vytvorí nový objekt v pamäti počítača
-- [x] `None` je špeciálna hodnota, ktorá signalizuje, že žiaden údaj nie je k dispozícii
+- [x] `None` je špeciálna hodnota, ktorá signalizuje, že žiadny údaj nie je k dispozícii
 - [x] Príkaz, anglicky statement, je časť kódu, ktorý vykoná nejakú akciu.
     * [ ] Príklad: `=`, `if`, `while`, `return`, `break`
 - [x] Výraz, anglicky expression, čo je časť kódu, ktorá vracia hodnotu a môže byť súčasťou iných výrazov alebo aj príkazov.
@@ -367,13 +367,13 @@ def faktorial(n):
     * [ ] `int`, `float`, `str`, `bool`, `list`, `tuple`, `set`, `dict`
 - [x] Funkcia v Pythone je blok kódu, ktorému priradíme nejaké meno. Funkciu zadefinujeme slovíčkom `def`
     * [ ] Nezabudnúť na dvojbodku na konci hlavičky funkcie!
-    * [ ] V definícii funkcie môžme parametrom priradiť defaultnú hodnotu
+    * [ ] V definícii funkcie môžeme parametrom priradiť defaultnú hodnotu
     * [ ] Kľúčové zadávanie parametrov je také, kde uvediem názov premennej
 - [x] Vetvenie programu pomocou `if`, `elif`, `else`
     * [ ] `if` a aj iné rozhodovacie bloky môžem ľubovoľne vnárať
     * [ ] ternárny operátor je podmienka, ktorú môžeme zapísať do jedného riadku a predstavuje výraz
 - [x] Cykly slúžia na opakovanie nejakej časti kódu. Poznáme dva hlavné fory cyklov
-    * [ ] `for` cyklus sa používa sa na iterovanie cez kolekcie alebo rozsahy čísel.
+    * [ ] `for` cyklus sa používa na iterovanie cez kolekcie alebo rozsahy čísel.
     * [ ] `while` cyklus sa opakuje, kým platí podmienka
     * [ ] `break` ukončí celý cyklus
     * [ ] `continue` preskočí aktuálnu iteráciu a pokračuje ďalšou
