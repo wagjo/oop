@@ -96,7 +96,7 @@ Na reprezentáciu enumeračných hodnôt môžeme použiť aj nástroje objektov
 - hodnôt nie je veľa
 - k hodnotám je potrebné priradiť dodatočnú logiku alebo stav/dáta
 
-Ako príklad môžme uviesť spôsob platby alebo doručenia tovaru, kedy niektoré typy doručenia potrebujú uchovávať dodatočné informácie:
+Ako príklad môžeme uviesť spôsob platby alebo doručenia tovaru, kedy niektoré typy doručenia potrebujú uchovávať dodatočné informácie:
 
 === "Použitie tried a dedičnosti pre enumeračné typy"
 
