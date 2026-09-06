@@ -172,7 +172,7 @@ Ako ste si isto všimli, názov balíka pripomína webovú doménu. V Jave sa st
 
 !!! info
 
-    Existuje veľké množstvo open source Java knižníc, zdrojové kódy ktorých môžete študovať a spoznávať tak princípy a zásady tvoby programov v Jave. Pre lepšie pochopenie usporiadania tried a balíkov odporúčame pozrieť si [zdrojový kód knižnice jsoup](https://github.com/jhy/jsoup/tree/master/src/main/java/org/jsoup), ktorý sa nachádza na GitHube a predstavuje dobrý príklad ako vytvárať triedy a balíky.
+    Existuje veľké množstvo open source Java knižníc, zdrojové kódy ktorých môžete študovať a spoznávať tak princípy a zásady tvorby programov v Jave. Pre lepšie pochopenie usporiadania tried a balíkov odporúčame pozrieť si [zdrojový kód knižnice jsoup](https://github.com/jhy/jsoup/tree/master/src/main/java/org/jsoup), ktorý sa nachádza na GitHube a predstavuje dobrý príklad ako vytvárať triedy a balíky.
 
 ## Modifikátory prístupu - úvod
 
@@ -236,7 +236,7 @@ Podobne je to aj pri atribútoch a metódach. Použitie modifikátorov prístupu
     * [ ] Názov balíka pripomína webovú doménu
 - [x] Modifikátory prístupu (access modifiers)
     * [ ] `public` - triedu, atribúty alebo metódy je možné používať z iných tried a balíkov
-    * [ ] `private` - atribúty alebo metódy sa môžu používaž iba v rámci tej istej triedy
+    * [ ] `private` - atribúty alebo metódy sa môžu používať iba v rámci tej istej triedy
     * [ ] *bez modifikátora* - triedu, atribúty alebo metódy je možné používať iba v rámci toho istého balíka
     
 
