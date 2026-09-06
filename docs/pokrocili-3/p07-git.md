@@ -8,7 +8,7 @@ Dnes sa naučíme pracovať s najpopulárnejším distribuovaným verziovacím n
 <main markdown>
 
 
-Nástroj git je open source distribuovaný verziovací nástroj. Spravuje históriu vášho projektu a ukladá ju celú na vašom disku, takže na prácu s ním nie je potrebný žiaden server alebo internetové pripojenie.
+Nástroj git je open source distribuovaný verziovací nástroj. Spravuje históriu vášho projektu a ukladá ju celú na vašom disku, takže na prácu s ním nie je potrebný žiadny server alebo internetové pripojenie.
 
 git bol vytvorený Linusom Torvaldsom, známym fínskym programátorom, ktorý je aj tvorca operačného systému Linux. Názvom tohto nástroja (git je britská mierne vulgárna nadávka) chcel poukázať na svoju komplikovanú povahu.
 
