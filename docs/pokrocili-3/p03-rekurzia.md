@@ -166,3 +166,4 @@ print(f"Čas funkcie: {cas:.6f} sekúnd ({opakovania} opakovaní)")
     - Rozdiel medzi rekurziou a iteráciou
     - 2 časti rekurzívnej funkcie
     - Čo je zásobník volaní, ako súvisí s rekurziou
+
