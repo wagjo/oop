@@ -1,10 +1,21 @@
 # Pokročilí 1: Úvod do predmetu, premenné, vstup a výstup
 
+
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Na tomto voliteľnom predmete budeme preberať pokročilejšie témy z oblasti objektovo orientovaného programovania. Pôjdeme viac do hĺbky a ukážeme si pokročilejšie nástroje používané pri vývoji softvéru. Takisto si ukážeme viacero praktických aplikačných využití.
 
 Hlavným programovacím jazykom, ktorý budeme na tomto predmete používať je Python. Nakoľko ste s týmto jazykom už pracovali, očakávame od vás, že v ňom viete už ako tak programovať. V každom prípade prvé cvičenia budú venované opakovaniu.
 
 Požiadavky na softvér a počítač sú podobné ako na klasických cvičeniach z predmetu objektovo orientované programovanie. V tomto predmete budete navyše potrebovať mať nainštalovaný programovací jazyk Python a IDE.
+
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/p01w.pdf">p01w.pdf</a></i>
+  </aside>
+</div>
+
 
 *[OS]: Operačný systém
 

@@ -286,7 +286,7 @@ Ak je čiara medzi symbolmi veľmi dlhá alebo neprehľadná, môžeme ju za pom
     
 !!! abstract "Úloha do zošita: Vývojový diagram"
 
-    Do zošita si zakreslite jeden jednoduchý vývojový diagram a jeden diagram s rozhodovacím blokom.
+    Do zošita si zakreslite jeden jednoduchý vývojový diagram s rozhodovacím blokom.
 
     Splnenie úlohy vám budeme kontrolovať.
 
@@ -591,7 +591,6 @@ Okrem vývojových diagramov nástroj Mermaid umožňuje vytvoriť aj iné typy 
     * [ ] Obdĺžnik - Operácia, proces
     * [ ] Kosoštvorec - Rozhodovanie
     * [ ] Obdĺžnik so zvislými čiarami - Podproces
-- [x] Vytvoriť jednoduchý vývojový diagram 
 - [x] Vytvoriť vývojový diagram s rozhodovaním
 - [x] Vytvoriť pseudokód daného algoritmu
 - [x] Vytvoriť vývojový diagram v editore [Mermaid Live](https://mermaid.live)
@@ -617,7 +616,7 @@ Okrem vývojových diagramov nástroj Mermaid umožňuje vytvoriť aj iné typy 
 
     >> zapísať tabuľku so základnými typmi symbolov vývojového diagramu.
 
-    >> nakresliť jeden jednoduchý vývojový diagram a jeden diagram s rozhodovacím blokom
+    >> nakresliť jeden jednoduchý vývojový diagram s rozhodovacím blokom
 
 
     PSEUDOKÓD
