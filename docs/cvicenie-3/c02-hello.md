@@ -27,7 +27,7 @@ Metóda `main` prijíma vstupné argumenty, ktoré užívateľ zadal pri volaní
 Podobne ako pri premenných, v Jave musíme explicitne uviesť dátové typy všetkých argumentov danej metódy. 
 Ba čo viac, musíme tak isto uviesť dátový typ výstupu metódy, teda výsledku, ktorý metóda vracia.
 
-Ak metóda nevracia žiaden výsledok, použijeme špeciálne kľúčové slovo `void`. Vidieť to môžme aj v našej metóde `main`.
+Ak metóda nevracia žiadny výsledok, použijeme špeciálne kľúčové slovo `void`. Vidieť to môžeme aj v našej metóde `main`.
 
 ## Volanie metód
 
@@ -87,7 +87,7 @@ Prečo také komplikované meno? Trieda `System` je trieda štandardnej knižnic
 
 ### Formátovanie výstupu
 
-Ak chceme výstup formátovať, použijeme metódu `System.out.printf()`. Vo formátovácom reťazci na miesto, kde chcem vypísať hodnotu uvediem kľúčové slovo začínajúce percentom. Dané hodnoty potom uvediem podľa poradia ako argumenty za formátovací reťazec.
+Ak chceme výstup formátovať, použijeme metódu `System.out.printf()`. Vo formátovacom reťazci na miesto, kde chcem vypísať hodnotu uvediem kľúčové slovo začínajúce percentom. Dané hodnoty potom uvediem podľa poradia ako argumenty za formátovací reťazec.
 
 !!! example "Príklad 2.2: Vypísanie aktuálneho dátumu"
 
@@ -135,8 +135,8 @@ import java.util.*; // Import všetky triedy z balíka
 
 ## Štandardný vstup
 
-Na načítanie údajov so štandardného vstupu sa najčastejšie používa trieda `Scanner` z balíka `java.util`.
-Pomocou tento triedy sa napojíme na vstup (`System.in`) a čítame z neho údaje. Čítať môžme aj iné údaje ako reťazce znakov.
+Na načítanie údajov zo štandardného vstupu sa najčastejšie používa trieda `Scanner` z balíka `java.util`.
+Pomocou tejto triedy sa napojíme na vstup (`System.in`) a čítame z neho údaje. Čítať môžeme aj iné údaje ako reťazce znakov.
 
 
 <div class="md-has-sidebar" markdown>
@@ -298,7 +298,7 @@ while (i < 5) {
 - [x] Statické metóda main je vstupným bodom programu a keď táto metóda skončí, skončí sa aj celý program.
 - [x] Otypovanie metód
     * [ ] musíme explicitne uviesť dátové typy všetkých argumentov a aj výstupu danej metódy
-    * [ ] Ak metóda nevracia žiaden výsledok, použijeme špeciálne kľúčové slovo void
+    * [ ] Ak metóda nevracia žiadny výsledok, použijeme špeciálne kľúčové slovo void
 - [x] Volanie metód
     * [ ] Statickú metódu v rámci rovnakej triedy volám tak, že napíšem jej názov
     * [ ] Ak je však metóda v inej triede, musím pred meno metódy uviesť aj meno tejto triedy a dať bodku.
@@ -313,7 +313,7 @@ while (i < 5) {
 - [x] Vstup a výstup
     * [ ] Na vypísanie textu do konzoly používame metódu System.out.println
     * [ ] Ak chceme výstup formátovať, použijeme podobnú metódu System.out.printf
-    * [ ] Štandardný vstup prečítame použítím triedy Scanner z balíka java.util. 
+    * [ ] Štandardný vstup prečítame použitím triedy Scanner z balíka java.util. 
 - [x] Podmienky a cykly
     * [ ] Pre rozhodovanie sa v jave používa príkaz if a else
     * [ ] Cyklus pomocou for sa používa, keď dopredu vieme, koľkokrát sa má cyklus opakovať.

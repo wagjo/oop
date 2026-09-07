@@ -4,7 +4,7 @@ Na tomto cvičení sa hlbšie ponoríme do spôsobov, akými sa v Jave dá riadi
 
 ## Podmienka switch
 
-Na minulom cvičaní sme si ukázali podmienku `if-else`. Ide o najčastejšie používaný typ podmienky a vo svojich programoch ho budete často používať. Okrem tejto podmienky má však Java aj príkaz `switch`.
+Na minulom cvičení sme si ukázali podmienku `if-else`. Ide o najčastejšie používaný typ podmienky a vo svojich programoch ho budete často používať. Okrem tejto podmienky má však Java aj príkaz `switch`.
 
 `switch` je podmienka, ktorá sa zvykne používať, ak mám na výber z viacerých možností. Ak nenastane ani jeden z `case` prípadov, nastane možnosť `default`.
 
@@ -29,7 +29,7 @@ switch (den) {
 
 Podmienka v príkaze `switch` musí mať vo výsledku primitívnu hodnotu, `String`, alebo musí byť tzv. `enum` (o tom niekedy inokedy)
 
-Všimnite si použitie príkazu `break`. Ak by v nejakej možnosti `break` nebol, vykonávanie programu by pokračovalo ďalšou možnosťou! Niekedy je to žiadúce, a takýto spôsob sa volá **fall-through**. Uvedieme si ho v nasledovných príkladoch:
+Všimnite si použitie príkazu `break`. Ak by v nejakej možnosti `break` nebol, vykonávanie programu by pokračovalo ďalšou možnosťou! Niekedy je to žiaduce, a takýto spôsob sa volá **fall-through**. Uvedieme si ho v nasledovných príkladoch:
 
 ??? example "Switch kedy viacero možností má rovnaký kód"
 
@@ -66,7 +66,7 @@ Všimnite si použitie príkazu `break`. Ak by v nejakej možnosti `break` nebol
     }
     ```
 
-??? example "Switch s fall through kedy niektoré možnosti obshujú aj tie nasledovné"
+??? example "Switch s fall through kedy niektoré možnosti obsahujú aj tie nasledovné"
 
     ```java
     int accessCode = 2;
@@ -96,7 +96,7 @@ Všimnite si použitie príkazu `break`. Ak by v nejakej možnosti `break` nebol
     ```
 
 
-V nových verzíách Javy existuje moderná verzia `switch`, ktorá je už ako výraz, a jednotlivé možnosti môžu byť zložitejšie. `break` sa už nepoužíva a fall through nenastáva.
+V nových verziách Javy existuje moderná verzia `switch`, ktorá je už ako výraz, a jednotlivé možnosti môžu byť zložitejšie. `break` sa už nepoužíva a fall through nenastáva.
 
 <div class="md-has-sidebar" markdown>
 <main markdown>
@@ -141,7 +141,7 @@ Ak je vo `switch` zápise šípka `->` tak ide o moderný switch výraz.</aside>
 
 Na minulom cvičení sme si ukázali cykly `for` a `while`. Prvý bol pre prípady, kedy vieme dopredu počet opakovaní, alebo chceme iterovať cez nejakú kolekciu alebo rozsah hodnôt. Cyklus `while` opakuje kód dovtedy kým je splnená podmienka.
 
-Na riadenie toku cyklov existujú dva špeciálne príkazy. Príkaz `break` ukončí predčasne cyklus, a príkaz `continue` preskočí aktuálnu iteráciu pokračuje ďalšou.
+Na riadenie toku cyklov existujú dva špeciálne príkazy. Príkaz `break` ukončí predčasne cyklus, a príkaz `continue` preskočí aktuálnu iteráciu a pokračuje ďalšou.
 
 ```java title="Príklad použitie break a continue"
 for (int i = 0; i < 10; i++) {
@@ -228,7 +228,7 @@ Rozdiel medzi while a do-while
 
 ## Cyklus for-each
 
-Štvrtým typom cyklu v Jave je tzv. for-each cyklus. Ide o cyklus ktorý iteruje naprieč nejakou kolekciou alebo iným objektom, ktorý sa dá iterovať. Používa sa, ak chcete jednoducho spracovať každý prvok bez manuálnej správy indexu alebo iterácie.
+Štvrtým typom cyklu v Jave je tzv. for-each cyklus. Ide o cyklus, ktorý iteruje naprieč nejakou kolekciou alebo iným objektom, ktorý sa dá iterovať. Používa sa, ak chcete jednoducho spracovať každý prvok bez manuálnej správy indexu alebo iterácie.
 
 ```java title="Príklad použitie for-each"
 int[] cisla = {1, 2, 3, 4, 5};
@@ -280,12 +280,12 @@ Cyklus for-each je jednoduchý, nepotrebujete v ňom spravovať index ako pri kl
 
 - [x] Podmienka `switch` sa zvykne používať, ak mám na výber z viacerých možností
     * [ ] Podmienka v príkaze `switch` musí mať vo výsledku primitívnu hodnotu, `String`, alebo musí byť tzv. `enum`
-    * [ ] Ak nevyhovuje žiadna možnosť, vyberie sa prípad `default`, ake je definovaný
+    * [ ] Ak nevyhovuje žiadna možnosť, vyberie sa prípad `default`, ak je definovaný
     * [ ] Ak v možnosti neuvediem `break`, nastáva *fall-through* a vykoná sa aj nasledujúca možnosť
     * [ ] Moderná verzia `switch`, ktorá je už ako výraz, nepoužíva fall-through a jeden prípad môže mať viacero možností
 - [x] Na riadenie toku cyklov
     * [ ] Príkaz `break` ukončí predčasne cyklus
-    * [ ] Príkaz `continue` preskočí aktuálnu iteráciu pokračuje ďalšou
+    * [ ] Príkaz `continue` preskočí aktuálnu iteráciu a pokračuje ďalšou
 - [x] V Jave máme 4 typy cyklov: `for`, `while`, `do-while` a `for-each`
 - [x] Cyklus `do-while`
     * [ ] Je podobný cyklu `while`, ale vždy sa vykoná aspoň jedenkrát
@@ -307,7 +307,7 @@ Cyklus for-each je jednoduchý, nepotrebujete v ňom spravovať index ako pri kl
 
     Riadenie toku cyklov
     - break ukončí predčasne cyklus
-    - continue  preskočí aktuálnu iteráciu pokračuje ďalšou
+    - continue  preskočí aktuálnu iteráciu a pokračuje ďalšou
 
     V Jave máme 4 typy cyklov: for, while, do-while a for-each
 

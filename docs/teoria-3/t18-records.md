@@ -158,7 +158,7 @@ Typické kompilačné chyby:
 
 ### Chyby pri behu aplikácie
 
-Java kompilátor nedokáže odhaliť všetky chyby. Niektoré sa ukážu až pri behu programu. V tom šťastnejšom prípade nám program pri chybe vyhodí výnimku a mi môžme začať skúmať, čo je príčinou. Štandardne program vypíše do konzoly tzv. stacktrace. Stacktrace je výpis volaní metód, pomocou ktorého vieme nájsť zdroj chyby.
+Java kompilátor nedokáže odhaliť všetky chyby. Niektoré sa ukážu až pri behu programu. V tom šťastnejšom prípade nám program pri chybe vyhodí výnimku a my môžeme začať skúmať, čo je príčinou. Štandardne program vypíše do konzoly tzv. stacktrace. Stacktrace je výpis volaní metód, pomocou ktorého vieme nájsť zdroj chyby.
 
 V tom horšom prípade program nevyhodí výnimku, ale aj tak nefunguje správne, nereaguje podľa očakávaní, alebo nevyprodukuje požadovaný výstup. Tu sa už odporúča použiť debugovacie nástroje IDE, alebo pridať do kódu stručný výpis pomocou `System.out.println` na tie miesta, kde tušíme chybu. Pomocou takýchto výpisov si vieme odsledovať, či program na danom mieste naozaj robí to, čo od neho čakáme.
 
@@ -196,7 +196,7 @@ Pri hľadaní príčiny sa treba zamerať na:
 
 - riadky, ktoré sú z našich tried (Osoba.java)
 - prvé riadky začínajúce s `at`
-- skutočná príčína je často v sekcii `Caused by`, ktorá obsahuje výpis vnorenej výnimky
+- skutočná príčina je často v sekcii `Caused by`, ktorá obsahuje výpis vnorenej výnimky
 
 #### ClassCastException
 
@@ -250,7 +250,7 @@ Všetky príklady uvedené na tejto hodine viete nájsť a vyskúšať v repozit
 - [x] Hľadanie príčine v stacktrace
     * [ ] riadky, ktoré sú z našich tried (`Osoba.java`)
     * [ ] prvé riadky začínajúce s `at`
-    * [ ] skutočná príčína je často v sekcii `Caused by`, ktorá obsahuje výpis vnorenej výnimky
+    * [ ] skutočná príčina je často v sekcii `Caused by`, ktorá obsahuje výpis vnorenej výnimky
 
 !!! note "Poznámky do zošita"
     V zošite je potrebné mať napísané aspoň tieto poznámky:

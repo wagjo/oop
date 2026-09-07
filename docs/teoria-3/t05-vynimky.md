@@ -17,7 +17,7 @@ Každá výnimka má svoj typ - triedu. Tieto triedy tvoria hierarchiu a všetky
 
 1. **Errors** - Veľmi vážne chyby programu, ktoré nemá zmysel zachytávať a ošetrovať, program by sa mal ukončiť
 2. **Unchecked Exceptions** - Bežné chyby pri programovaní, ktoré môžeme alebo nemusíme ošetriť
-3. **Checked Exceptions** - Vážnejšie chyby, ktoré musíme ošetriť, ináč sa náš program ani neskompiluje a nespustí
+3. **Checked Exceptions** - Vážnejšie chyby, ktoré musíme ošetriť, inak sa náš program ani neskompiluje a nespustí
 
  </main>
 
@@ -119,7 +119,7 @@ try {
 
 ## Deklarovanie checked výnimiek
 
-Ak niektorá časť kódu môže v našej metóde vyhodiť checked výnimku a sami ju neošetrujeme, musíme túto výnimku uviesť v deklarácii metódy. Checked výnimky sú považované za vážnejšie chyby a preto musíme ich explicitne uviesť, ak ich nezachytávame. Ináč kompilátor vyhodí chybu a my nebudeme schopný program spustiť. Deklarácia výnimiek sa robí pomocou kľúčového slova `throws` hneď za argumentami metódy.
+Ak niektorá časť kódu môže v našej metóde vyhodiť checked výnimku a sami ju neošetrujeme, musíme túto výnimku uviesť v deklarácii metódy. Checked výnimky sú považované za vážnejšie chyby a preto musíme ich explicitne uviesť, ak ich nezachytávame. Inak kompilátor vyhodí chybu a my nebudeme schopný program spustiť. Deklarácia výnimiek sa robí pomocou kľúčového slova `throws` hneď za argumentami metódy.
 
 ```java
 public void readFile(String filePath) throws IOException {
@@ -239,7 +239,7 @@ Môžeme dokonca uviesť viacero takýchto zdrojov, ktoré sa majú automaticky 
 - [x] Kategórie výnimiek
     * [ ] *Errors* - Veľmi vážne chyby programu, program by sa mal ukončiť
     * [ ] *Unchecked Exceptions* - Bežné chyby pri programovaní
-    * [ ] *Checked Exceptions* - Vážnejšie chyby, ktoré musíme ošetriť, ináč sa náš program ani neskompiluje a nespustí
+    * [ ] *Checked Exceptions* - Vážnejšie chyby, ktoré musíme ošetriť, inak sa náš program ani neskompiluje a nespustí
 - [x] Error sú výnimky dediace z triedy `Error`
 - [x] Unchecked Exceptions sú výnimky dediace z triedy `RuntimeException`
 - [x] Zachytenie výnimiek
@@ -272,7 +272,7 @@ Môžeme dokonca uviesť viacero takýchto zdrojov, ktoré sa majú automaticky 
       - Errors - Veľmi vážne chyby programu, neošetrujeme, program by sa mal ukončiť
       - Unchecked Exceptions - Bežné chyby pri programovaní
       - Checked Exceptions - Vážnejšie chyby, ktoré musíme ošetriť, 
-        ináč sa program ani neskompiluje a nespustí
+        inak sa program ani neskompiluje a nespustí
 
     Zachytenie výnimiek 
       - Pomocou try-catch blokov

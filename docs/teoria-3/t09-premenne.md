@@ -148,7 +148,7 @@ Konštantné atribúty a premenné sa po inicializícii už viac nedajú meniť.
 
 ## Lokálna inferencia typov
 
-Nakoľko je Java staticko typovaný jazyk, pri definícii premennej je potrebné uviesť jej typ. Od Java 10 je možné definovať premenú bez typu, ak kompilátor vie jednoznačne typ prideliť. Na takéto automatické pridelenie typu sa používa kľúčové slovo `var`.
+Nakoľko je Java staticky typovaný jazyk, pri definícii premennej je potrebné uviesť jej typ. Od Java 10 je možné definovať premenú bez typu, ak kompilátor vie jednoznačne typ prideliť. Na takéto automatické pridelenie typu sa používa kľúčové slovo `var`.
 
 === "Lokálna inferencia typu"
 

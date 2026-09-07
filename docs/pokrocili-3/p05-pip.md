@@ -154,7 +154,7 @@ Súbor `pyproject.toml` umiestňujeme do adresára s projektom. Všetky zdrojov�
 
 V PyCharm vieme potom adresár `src` označiť ako zdrojový tak, že na neho klikneme pravým tlačítkom a vyberieme `Mark Directory as -> Sources root`.
 
-Takto vytvorený projekt potom vieme lokálne nainštalovať príkazom `pip install -e .`, ktorý spustím vo virtuálnom prostredí, napríklad pomocou terminálu v PyCharme. Tým sa nainštalujú všetky závislosti zo súboru `pyproject.toml` a naviac budeme mať lokálne k dispozícii všetky balíky a moduly z adresára `src`, takže ich budeme vedieť spúšťať pomocou príkazu `python -m balik.modul`
+Takto vytvorený projekt potom vieme lokálne nainštalovať príkazom `pip install -e .`, ktorý spustím vo virtuálnom prostredí, napríklad pomocou terminálu v PyCharme. Tým sa nainštalujú všetky závislosti zo súboru `pyproject.toml` a navyše budeme mať lokálne k dispozícii všetky balíky a moduly z adresára `src`, takže ich budeme vedieť spúšťať pomocou príkazu `python -m balik.modul`
 
 
 ## Úlohy na precvičenie

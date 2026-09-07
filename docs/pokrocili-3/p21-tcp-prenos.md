@@ -81,7 +81,7 @@ Dáta, ktoré chceme poslať sme si teda zabalili do segmentov a máme tak zozna
 Dáta vo forme očíslovaných segmentov
 ///
 
-Odosielateľ zoberie každý jeden segment a postupne ich posiela druhej strane. Keďže TCP protokol zaručuje spoľahlovosť, **druhá strana na každý jeden prijatý segment musí odpovedať ACK správou**, ktorá informuje odosielateľa, že segment bol úspešne doručený!
+Odosielateľ zoberie každý jeden segment a postupne ich posiela druhej strane. Keďže TCP protokol zaručuje spoľahlivosť, **druhá strana na každý jeden prijatý segment musí odpovedať ACK správou**, ktorá informuje odosielateľa, že segment bol úspešne doručený!
 
 ## Posuvné okno
 
@@ -164,7 +164,7 @@ Pri flow control nám prijímateľ povedal, koľko dát vie zvládnuť a vedel t
 
 Čo však, ak prijímateľ je veľmi rýchly a výkonný, a je schopný prijímať veľké množstvo segmentov. Môžeme ho vždy poslúchnuť? 
 
-Pre efektívne posielanie o rýchlosti nerozhoduje iba prijímateľ, ale aj stav danej siete. Niekedy je sieť pomalšia ako prijímateľ, môže byť zahltená, alebo ináč poškodená. Ak by sme vždy počúvali prijímateľa, mohli by sme takúto sieť zahltiť segmentami, a kým by prišli k prijímateľovi, ubehlo by veľa času a nastal by timeout. Odosielateľ by si myslel, že sa segmenty stratili a poslal by ich znova. Tým by zahltil sieť ešte viac a situácia by sa iba zhoršila.
+Pre efektívne posielanie o rýchlosti nerozhoduje iba prijímateľ, ale aj stav danej siete. Niekedy je sieť pomalšia ako prijímateľ, môže byť zahltená, alebo inak poškodená. Ak by sme vždy počúvali prijímateľa, mohli by sme takúto sieť zahltiť segmentami, a kým by prišli k prijímateľovi, ubehlo by veľa času a nastal by timeout. Odosielateľ by si myslel, že sa segmenty stratili a poslal by ich znova. Tým by zahltil sieť ešte viac a situácia by sa iba zhoršila.
 
 Na ochranu pred zahltením a na kontrolu efektívneho posielania zo strany odosielateľa sa využíva tzv. *Congestion control*. Ten má dve hlavné časti:
 

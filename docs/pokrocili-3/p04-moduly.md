@@ -52,7 +52,7 @@ Prečo sa to volá modul a nie jednoducho súbor? Moduly totižto nemusia byť i
         main()
     ```
 
-Modul má svoj vlastný izolovaný priestor na premenné a funkcie, takže veci zadefinované v module sú oddelené od iných modulov a navzájom sa neovplyvňujú. Ináč povedané, **každý modul má svoj vlastný priestor mien** *(namespace)* – teda slovník premenných a funkcií, ktoré sú v ňom definované.
+Modul má svoj vlastný izolovaný priestor na premenné a funkcie, takže veci zadefinované v module sú oddelené od iných modulov a navzájom sa neovplyvňujú. Inak povedané, **každý modul má svoj vlastný priestor mien** *(namespace)* – teda slovník premenných a funkcií, ktoré sú v ňom definované.
 
 ### Používanie modulov
 
@@ -123,7 +123,7 @@ Niekedy sa stane, že vo svojom programe už máme funkciu s rovnakým názvom, 
 
 ### Spúšťanie 'modulárnych' projektov
 
-Ak mám už svoj program napísaný vo forme viacerých modulov, má sa už spúšťať ináč ako keď som mal iba jeden súbor (skript). Pri spúšťaní takého projektu mám zvyčajne jeden "hlavný" modul, ktorý obsahuje vstupný bod programu. Na spustenie tohto modulu použijem príkaz `python -m` a názov modulu, ktorý chcem spustiť, teda napr. `python -m main`. Všimnite si, že som už nenapísal názov súboru s príponou, ale názov modulu a použil som voľbu `-m`, ktorá hovorí, že spúšťam modul a nie skript.
+Ak mám už svoj program napísaný vo forme viacerých modulov, má sa už spúšťať inak ako keď som mal iba jeden súbor (skript). Pri spúšťaní takého projektu mám zvyčajne jeden "hlavný" modul, ktorý obsahuje vstupný bod programu. Na spustenie tohto modulu použijem príkaz `python -m` a názov modulu, ktorý chcem spustiť, teda napr. `python -m main`. Všimnite si, že som už nenapísal názov súboru s príponou, ale názov modulu a použil som voľbu `-m`, ktorá hovorí, že spúšťam modul a nie skript.
 
 ```
 # Python v interaktívnom móde

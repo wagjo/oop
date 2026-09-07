@@ -168,7 +168,7 @@ Metóda `next()` posúva kurzor na ďalší riadok výsledku. Najčastejšie pou
 ## SQLite
 
 SQLite je najrozšírenejšia embedovaná relačná databáza na svete. Embedovaná znamená, že nepotrebujeme
-žiaden samostatný server, ale databáza beží priamo v našom programe.
+žiadny samostatný server, ale databáza beží priamo v našom programe.
 
 Celá databáza je **jeden súbor** na disku. SQLite je napísaná v jazyku C, je veľmi rýchla a malá. Podporuje väčšinu SQL-92 + niektoré rozšírenia.
 
@@ -225,7 +225,7 @@ Túto databázu budeme používať aj my v našich ďalších úlohách.
     * [ ] Objekt triedy Statement alebo PreparedStatement slúži na vykonávanie SQL príkazov.
     * [ ] Objekt triedy ResultSet obsahuje výsledok SQL dotazu.
 - [x] SQLite
-    * [ ] Populárna embedovaná relačná databáza. Nepotrebujeme žiaden samostatný server, ale databáza beží priamo v našom programe.
+    * [ ] Populárna embedovaná relačná databáza. Nepotrebujeme žiadny samostatný server, ale databáza beží priamo v našom programe.
     * [ ] Celá databáza je jeden súbor na disku. 
     * [ ] Oblasti použitia: Desktopové aplikácie, Mobilné aplikácie, IoT / embedded systémy
     * [ ] Nie je vhodná v týchto prípadoch: Vysoká konkurencia zápisov, veľké dáta a komplexná analytika alebo Distribuované systémy s viacerými nodmi

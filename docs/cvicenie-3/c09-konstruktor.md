@@ -78,7 +78,7 @@ Základný slovník máme vytvorený, poďme ho použiť v hre. Ako prvé potreb
     
     Samotné hádané slovo v konštruktori získajte pomocou metódy `getSlovo()`
 
-Teraz môžme v trieda `Hra` vytvoriť slovník a použiť ho v hre.
+Teraz môžeme v triede `Hra` vytvoriť slovník a použiť ho v hre.
 
 
 ## Slovník zapísaný v kóde programu
@@ -348,7 +348,7 @@ class Hra {
 
 !!! example "Úloha 9.12: ASCII Obesenec"
 
-    V metóde `vypisStavHry()` vykreslite pomocou znakov obesenca, ktorý bude vyzerať ináč pri inom počte ostávajúcich pokusov.
+    V metóde `vypisStavHry()` vykreslite pomocou znakov obesenca, ktorý bude vyzerať inak pri inom počte ostávajúcich pokusov.
 
 
 ## Zhrnutie cvičenia

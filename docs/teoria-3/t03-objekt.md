@@ -19,7 +19,7 @@ Identita (anglicky identity) reprezentuje jedinečnosť danej veci, jej výnimo�
 
 Identita je veľmi dôležitá vec. Ak máme v triede dvoch "Ferov", identita je to, čo nám pomôže rozlíšiť medzi nimi. Podobne je to aj v programovaní. Niekedy pracujeme s hodnotou, a niekedy potrebujeme porovnať identitu daných vecí.
 
-Všetky **primitívne dátove typy v Jave majú hodnoty bez identity**. Ak vytvoríme premennú typu int, hodnoty tejto premennej nemajú identitu a nevieme sa opýtať, ktorá päťka to je.
+Všetky **primitívne dátové typy v Jave majú hodnoty bez identity**. Ak vytvoríme premennú typu int, hodnoty tejto premennej nemajú identitu a nevieme sa opýtať, ktorá päťka to je.
 
 ```java title="Porovnanie primitívnych hodnôt"
   int a = 5;
@@ -55,7 +55,7 @@ Objekt v Jave je vec, ktorá
 <div class="md-has-sidebar" markdown>
 <main markdown>
 
-Všetky **neprimitívne dátove typy vytvárajú objekty**. Ak vytvoríme dva rôzne objekty rovnakého typu, s rovnakou hodnotou, budú mať rozdielnu identitu.
+Všetky **neprimitívne dátové typy vytvárajú objekty**. Ak vytvoríme dva rôzne objekty rovnakého typu, s rovnakou hodnotou, budú mať rozdielnu identitu.
 
 ```java title="Porovnanie objektov"
 String s1 = new String("Fero");
@@ -141,14 +141,14 @@ Niektoré príkazy majú špeciálnu výrazovú formu. Napríklad príkaz `if` m
 
 - [x] Identita (anglicky identity) reprezentuje jedinečnosť danej veci, jej výnimočnosť
     * [ ] Identita veci sa v čase nemení, ale hodnota (anglicky value) danej veci sa meniť môže
-    * [ ] Všetky primitívne dátove typy v Jave majú hodnoty bez identity
+    * [ ] Všetky primitívne dátové typy v Jave majú hodnoty bez identity
     * [ ] Hodnoty primitívnych typov porovnávame pomocou operátora ==
 - [x] Objekt v Jave je základný stavebný blok, ktorý
     * [ ] má svoju identitu - je jedinečná entita
     * [ ] nesie stav - má svoje konkrétne hodnoty - atribúty
     * [ ] poskytuje správanie - poskytuje metódy, ktoré môžeme nad objektom volať
     * [ ] je inštanciou triedy (class) - je konkrétnym výtvorom z abstraktného návrhu triedy
-- [x] Všetky neprimitívne dátove typy vytvárajú objekty
+- [x] Všetky neprimitívne dátové typy vytvárajú objekty
     * [ ] Objekty vytvárame pomocou operátora new
     * [ ] Identitu objektov porovnávame pomocou operátora ==
     * [ ] Hodnoty objektov porovnávame pomocou metódy equals()    

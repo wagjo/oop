@@ -108,7 +108,7 @@ Doplňme teda ošetrenie udalosti z klávesnice `onKeyReleased` a do aplikácie 
 
 Kód sa nám začína mierne komplikovať. Obidve ošetrenia udalosti slidera robia tú istú vec, preto sme to dali do samostatnej metódy `updatujSlider`.
 
-Čo však udalosti z tlačidiel `+10` a `-10`? Musia urobiť podobnú vec, získať hodnotu zo slidera, zmeniť ju a potom aktualizovať všetky komponenty. Tieto udalosti však robia jednu vec naviac. Aktualizujú aj hodnotu samotného slidera, pretože sme zmenu nevykonali akciou na slideri, ale kliknitím na tlačidlo.
+Čo však udalosti z tlačidiel `+10` a `-10`? Musia urobiť podobnú vec, získať hodnotu zo slidera, zmeniť ju a potom aktualizovať všetky komponenty. Tieto udalosti však robia jednu vec navyše. Aktualizujú aj hodnotu samotného slidera, pretože sme zmenu nevykonali akciou na slideri, ale kliknitím na tlačidlo.
 
 Ak by sme aplikáciu testovali dôsledne, zistili sme, že sme opäť na niečo zabudli. Kliknutie myšou na slider vie zmeniť jeho hodnotu. Túto udalosť však nemáme ošetrenú, preto v takomto prípade by naša aplikácia nefungovala správne. Musíme pridať tretiu udalosť...
 

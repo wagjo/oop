@@ -20,13 +20,13 @@ Známy teoretický informatik Donald Knuth definuje tieto vlastnosti, ktoré alg
 - *Efektívnosť*: Má sa uskutočniť v čo najkratšom čase a s využitím čo najmenšieho množstva prostriedkov
 
 
-## Dáta v počítačí
+## Dáta v počítači
 
 <div class="md-has-sidebar" markdown>
   <main markdown>
 Ako sme si povedali vyššie, algoritmus prijíma nejakú vstupnú hodnotu a riešením algoritmu je jeho výstup, opäť nejaká hodnota. Tak isto aj každý počítačový program pracuje s nejakými údajmi - dátami. Tieto dáta môžu byť rôzneho typu: čísla, znaky, súbory, obrázky, videá, ...
 
-Údaje sú v počítačí uložené v jeho pamäti, napr. RAMke, disku, USB kľúči a pod. Počítačová pamäť tieto dáta uchováva vo forme sekvencie bajtov. Čím väčšie dáta, tým viac bajtov v pamäti počítača zaberajú. Dnes je bežné mať súbory veľkosti niekoľkých megabajtov alebo gigabajtov.
+Údaje sú v počítači uložené v jeho pamäti, napr. RAMke, disku, USB kľúči a pod. Počítačová pamäť tieto dáta uchováva vo forme sekvencie bajtov. Čím väčšie dáta, tým viac bajtov v pamäti počítača zaberajú. Dnes je bežné mať súbory veľkosti niekoľkých megabajtov alebo gigabajtov.
 
 !!! info "Čo je bajt?"
 
@@ -38,7 +38,7 @@ Ako sme si povedali vyššie, algoritmus prijíma nejakú vstupnú hodnotu a rie
   <aside markdown>
 ![CD-Rom](../assets/cdrom.jpg)
 
-Pohľad cez mikroskop na bajty vypálene do CD-čka. Laser číta dáta po riadkoch a vypálené miesta predstavujú binárnu 1 a nevypálené miesta sú 0. (Dlhšia "čiarka" znamená, že za sebou ide viac jedničiek).
+Pohľad cez mikroskop na bajty vypálené do CD-čka. Laser číta dáta po riadkoch a vypálené miesta predstavujú binárnu 1 a nevypálené miesta sú 0. (Dlhšia "čiarka" znamená, že za sebou ide viac jedničiek).
   </aside>
 </div>
 
@@ -56,7 +56,7 @@ Pamäť počítača ako očíslované skrinky v šatni
 
 ## Dáta v Jave
 
-V jazyku Java delíme dátove typy na dve veľké skupiny: **Primitívne dátové typy** a **neprimitívne dátové typy**
+V jazyku Java delíme dátové typy na dve veľké skupiny: **Primitívne dátové typy** a **neprimitívne dátové typy**
 
 ### Primitívne dátové typy
 
@@ -64,7 +64,7 @@ V jazyku Java delíme dátove typy na dve veľké skupiny: **Primitívne dátov�
   <main markdown>
 Primitívne dátové typy píšeme malými písmenami. Java má 8 primitívnych dátových typov: `boolean`, `byte`, `char`, `short`, `int`, `long`, `float` a `double`.
 
-Pomocou primitívnych dátových typoch si vieme určiť, koľko bajtov má daná hodnota zaberať v pamäti počítača. Java nám týmto spôsobom dáva možnosť optimalizovať naše algoritmy tak, aby nezaberali príliš veľa miesta a boli efektívnejšie.
+Pomocou primitívnych dátových typov si vieme určiť, koľko bajtov má daná hodnota zaberať v pamäti počítača. Java nám týmto spôsobom dáva možnosť optimalizovať naše algoritmy tak, aby nezaberali príliš veľa miesta a boli efektívnejšie.
   </main>
 
   <aside markdown>
@@ -117,7 +117,7 @@ Neprimitívna hodnota v pamäti počítača. (Obrázok je zjednodušený. Dátum
 
 <div class="md-has-sidebar" markdown>
   <main markdown>
-Keďže Java je staticko typovaný jazyk, pri deklarácii (vytváraní) premennej *musíme počítaču povedať, aký dátový typ má premenná obsahovať*. Podľa toho potom Java vie, koľko miesta v pamäti počítača má pre danú premennú obsadiť (koľko skriniek v šatni).
+Keďže Java je staticky typovaný jazyk, pri deklarácii (vytváraní) premennej *musíme počítaču povedať, aký dátový typ má premenná obsahovať*. Podľa toho potom Java vie, koľko miesta v pamäti počítača má pre danú premennú obsadiť (koľko skriniek v šatni).
 
 === "Príklad vytvorenia primitívnych premenných v Jave - declaration"
 
@@ -274,7 +274,7 @@ Preto majú neprimitívne konštanty využitie hlavne v prípadoch, kedy aj samo
     * [ ] *Vstup:* Pracuje so vstupnými hodnotami, ktoré sú mu odovzdané pred začatím jeho vykonávania
     * [ ] *Výstup alebo Rezultatívnosť:* Algoritmus musí riešiť zadaný problém a dať výsledok
     * [ ] *Efektívnosť:* Má sa uskutočniť v čo najkratšom čase a s využitím čo najmenšieho množstva prostriedkov
-- [x] Dáta v počítačí
+- [x] Dáta v počítači
     * [ ] Počítačová pamäť uchováva dáta vo forme sekvencie bajtov
     * [ ] Pamäť počítača je ako očíslované skrinky v šatni - každý bajt má svoju adresu
     * [ ] Bajt je jednotka informácie, môže nadobúdať 2^8^ = 256 rôznych hodnôt
