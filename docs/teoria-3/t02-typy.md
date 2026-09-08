@@ -1,7 +1,15 @@
 # Teória 2: Algoritmus, dátové typy a premenné
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Keďže sa na tomto predmete budeme oháňať pojmom algoritmus, dnes si ho zadefinujeme. Povenujeme sa tiež dátovým typom v Jave, premenným a konštantám. Ukážeme si, ako sú tieto veci reprezentované v pamäti počítača. Je to nutné pre správne pochopenie správania týchto konceptov.
 
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/t02w.pdf">t02w.pdf</a></i>
+  </aside>
+</div>
 
 ## Algoritmus
 
@@ -309,17 +317,9 @@ Preto majú neprimitívne konštanty využitie hlavne v prípadoch, kedy aj samo
 
     Postupnosť presne definovaných krokov na dosiahnutie výsledku. 
     
-    Algoritmus musí mať tieto vlastnosti:
-    - Konečnosť
-    - Determinovanosť
-    - Vstup
-    - Výstup
-    - Efektívnosť
-
-
     DÁTOVÉ TYPY V JAVE
 
-    Java má 8 primitívnych dátových typov
+    8 primitívnych
     - boolean
     - byte, short, int, long
     - float a double
@@ -333,8 +333,8 @@ Preto majú neprimitívne konštanty využitie hlavne v prípadoch, kedy aj samo
 
     PREMENNÉ
 
-    Premenná je pomenovanie alebo názov nejakého miesta 
-    v pamäti počítača, na ktoré potom môžem ukladať údaje
+    Pomenovanie nejakého miesta v pamäti počítača, 
+    na ktoré potom môžem ukladať údaje
 
     Vlastnosti:
     - Premenná má typ, názov a hodnotu
@@ -347,7 +347,6 @@ Preto majú neprimitívne konštanty využitie hlavne v prípadoch, kedy aj samo
     - Deklarujeme ich pomocou slovíčka final
     - Ak chceme neprimitívnu konštantu, objekt musí byť nemenný
     - Príklad: final double PI = 3.1415;
-
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
@@ -356,7 +355,7 @@ Preto majú neprimitívne konštanty využitie hlavne v prípadoch, kedy aj samo
 
     - Zapísané poznámky z hodiny vo vašom zošite
 
-    Ústne skúšanie alebo krátka 5-minútovka:
+    Ústne skúšanie:
 
     - Čo je algoritmus? Aké vlastnosti musí spĺňať?
     - Ako delíme dátové typy v Jave?

@@ -1,6 +1,15 @@
 # Cvičenie 2: Prvý Java program
 
-Na tomto cvičení začneme pracovať vo vývojovom prostredí IntelliJ IDEA a vytvoríme si náš prvý projekt. Ukážeme si, ako sa spúšťa a naučíme sa pracovať so štandardným vstupom a výstupom. Taktiež na tomto cvičení budeme mať úvod do znakových reťazcov, podmienok a cyklov.
+
+<div class="md-has-sidebar" markdown>
+  <main markdown>
+Na tomto cvičení začneme pracovať vo vývojovom prostredí IntelliJ IDEA a vytvoríme si náš prvý projekt. Ukážeme si, ako sa spúšťa a naučíme sa pracovať so štandardným vstupom a výstupom. Taktiež na tomto cvičení budeme mať úvod do znakových reťazcov, podmienok a cyklov. 
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/c02w.pdf">c02w.pdf</a></i>
+  </aside>
+</div>
 
 ## Metódy
 
@@ -19,6 +28,7 @@ public class Main {
     }
 }
 ```
+
 
 Metóda `main` prijíma vstupné argumenty, ktoré užívateľ zadal pri volaní programu.
 
@@ -81,7 +91,7 @@ Prečo také komplikované meno? Trieda `System` je trieda štandardnej knižnic
 
 !!! abstract "Dokumentácia"
 
-    Zoznam metód, ktoré vieme volať nad `System.out` nájdeme v [dokumentácii triedy `PrintStream`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/PrintStream.html#method-summary)
+    Zoznam metód, ktoré vieme volať nad `System.out` nájdeme v [dokumentácii triedy `PrintStream`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/PrintStream.html#method-summary)
 
 
 
@@ -114,7 +124,7 @@ Základné druhy formátovania
 
 !!! abstract "Dokumentácia"
 
-    Podrobný návod ako sa v metóde `printf` formátujú reťazce nájdeme v [dokumentácii triedy `Formatter`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Formatter.html#syntax)
+    Podrobný návod ako sa v metóde `printf` formátujú reťazce nájdeme v [dokumentácii triedy `Formatter`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Formatter.html#syntax)
 
 
 ## Importovanie tried
@@ -130,7 +140,7 @@ import java.util.*; // Import všetky triedy z balíka
 
 !!! info "Automaticky importované triedy"
 
-    Trieda `System` je automaticky importovaná, preto sme ju nemuseli pridávať manuálne. Java automaticky importuje všetky triedy z balíka [`java.lang`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/package-summary.html#class-summary)
+    Trieda `System` je automaticky importovaná, preto sme ju nemuseli pridávať manuálne. Java automaticky importuje všetky triedy z balíka [`java.lang`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/package-summary.html#class-summary)
 
 
 ## Štandardný vstup
@@ -172,7 +182,7 @@ Väčšinou ak skončíte prácu s objektom `Scanner`, mali by ste tento objekt 
 
 !!! abstract "Dokumentácia"
 
-    Detaily ohľadom metód a použitia triedy Scanner nájdete v [dokumentácii triedy `Scanner`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Scanner.html)
+    Detaily ohľadom metód a použitia triedy Scanner nájdete v [dokumentácii triedy `Scanner`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Scanner.html)
 
 ## Reťazce znakov
 
@@ -186,7 +196,7 @@ System.out.println(pozdrav);  // Ahoj Fero!
 
 !!! abstract "Dokumentácia"
 
-    Detaily ohľadom reťazcov nájdete v [dokumentácii triedy `String`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html)
+    Detaily ohľadom reťazcov nájdete v [dokumentácii triedy `String`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html)
 
 Od Jave verzia 13 je k díspozícii aj viacriadkový reťazec, podobne ako v Pythone:
 
@@ -274,7 +284,7 @@ while (i < 5) {
 
 !!! example "Úloha 2.2: Výpočet obsahu a objemu valca"
 
-    Vytvorte metódu, ktorá na vstupe prijíma výšku a polomer a vypočíta obsah a objem valca. Výsledok vráťťe ako pole, a na vypísanie na obrazovku vytvorte samostatnú metódu.
+    Vytvorte metódu, ktorá na vstupe prijíma výšku a polomer a vypočíta obsah a objem valca.
 
 !!! example "Úloha 2.3: Výpočet faktoriálu"
 
@@ -349,11 +359,15 @@ while (i < 5) {
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Ústne skúšanie alebo krátka 5-minútovka:
+    Ústne skúšanie:
 
-    - Vedieť napísať statickú metódu
     - Vedieť napísať cyklus a podmienku, vysvetliť ich časti
     - Ternárny operátor, čo to je?
     - Ako načítame vstup z klávesnice?
     - Ako vypíšeme niečo na obrazovku?
     - Základné spôsoby formátovania výstupu
+
+    Praktické skúšanie:
+
+    - Vytvorte Java program v IDEA, ktorý vypočíta faktoriál zadaného čísla
+    - Vytvorte Java program v IDEA, ktorý zistí, či je zadané číslo prvočíslom
