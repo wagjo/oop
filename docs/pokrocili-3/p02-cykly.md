@@ -1,6 +1,14 @@
 # Pokročílí 2: Vetvenie, cykly
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Na tomto cvičení pokračujeme v opakovaní základov Pythonu. Pripomenieme si základné dátové typy a tvorbu funkcií. Zopakujeme si tiež vetvenia, cykly a výnimky.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/p02w.pdf">p02w.pdf</a></i>
+  </aside>
+</div>
 
 ## Literál
 
@@ -390,14 +398,14 @@ def faktorial(n):
     ```
     Literál je zápis údaja priamo v kóde
     Príkaz vykoná akciu, je samostatný
-    Výraz vracia hodnotu a môže byť súčasťou iných výrazov a príkazov
+    Výraz vracia hodnotu a môže byť v iných výrazoch a príkazoch
 
     Základné dátové typy v Pythone:
     - int, float, str, bool, list, tuple, set, dict
 
-    Funkciu vytvorím pomocou def
-    - parametrom môžem priradiť defaultnú hodnotu
-    - vieme použiť aj kľúčové zadávanie parametrov
+    def - funkcia
+    - parametre môžu mať defaultnú hodnotu
+    - pozičné vs kľúčové parametre
 
     Vetvenie programu:
     - if, elif, else
@@ -415,9 +423,17 @@ def faktorial(n):
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Ústne skúšanie alebo krátka 5-minútovka:
+    Ústne skúšanie:
 
-    - Vedieť napísať funkciu
-    - Vedieť ošetriť výnimku
-    - Vedieť napísať cyklus a podmienku
-    - Ternárny operátor
+    - Rozdiel medzi príkazom a výrazom, príklad
+    - Rozdiel medzi kľúčovými a pozičnými parametrami, príklad
+    - Čo je a ako funguje ternárny operátor, príklad
+    - Na čo slúžia výnimky, príklad
+
+    Praktické skúšanie:
+
+    - Napíš funkciu, ktorá načíta 2 čísla a vypíše výsledok podielu. Vstupy ošetrite pomocou výnimiek. Napíšte príklady použitia.
+    - Napíš funkciu, ktorá na základe vstupného počtu percent vráti známku.
+    - Napíš funkciu najdi_max(zoznam), ktorá prejde zoznam cyklom a vráti najväčšie číslo. Nepouži max().
+    - Napíš funkciu sucet_parnych(n), ktorá vráti súčet všetkých párnych čísel od 1 po n (vrátane).
+    - Napíš funkciu filtruj, ktorá má parametre zoznam, minimum a maximum. Funkcia nech vráti počet prvkov zoznamu, ktoré sú v danom intervale. Parametre minimum a maximum nech sú kľúčové. Napíšte príklady použitia.
