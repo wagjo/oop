@@ -436,4 +436,4 @@ def faktorial(n):
     - Napíš funkciu, ktorá na základe vstupného počtu percent vráti známku.
     - Napíš funkciu najdi_max(zoznam), ktorá prejde zoznam cyklom a vráti najväčšie číslo. Nepouži max().
     - Napíš funkciu sucet_parnych(n), ktorá vráti súčet všetkých párnych čísel od 1 po n (vrátane).
-    - Napíš funkciu filtruj, ktorá má parametre zoznam, minimum a maximum. Funkcia nech vráti počet prvkov zoznamu, ktoré sú v danom intervale. Parametre minimum a maximum nech sú kľúčové. Napíšte príklady použitia.
+    - Napíš funkciu filtruj, ktorá má parametre zoznam, minimum a maximum. Funkcia nech vráti počet prvkov zoznamu, ktoré sú v danom intervale. Parametre minimum a maximum nech majú defaultné hodnoty. Napíšte príklady použitia.
