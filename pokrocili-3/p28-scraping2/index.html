@@ -1,0 +1,810 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://oop.wagjo.com/pokrocili-3/p28-scraping2/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Pokročílí 28: Web Scraping - ochrana - Objektovo Orientované Programovanie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/tufte-sidebars.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pokrocili-28-web-scraping-ochrana" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-header__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Objektovo Orientované Programovanie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pokročílí 28: Web Scraping - ochrana
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Úvod
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../teoria-3/t01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Teória
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cvicenie-3/c01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Cvičenia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../p01-uvod/" class="md-tabs__link">
+          
+  
+  
+  Pokročilí
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../autor/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kontakt
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Objektovo Orientované Programovanie" class="md-nav__button md-logo" aria-label="Objektovo Orientované Programovanie" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Objektovo Orientované Programovanie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Úvod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teória
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teória
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria-3/t01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod a motivácia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cvičenia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cvičenia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, vývojový diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cvicenie-3/c02-hello/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 - Prvý Java program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pokročilí
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pokročilí
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../p01-uvod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 - Úvod, premenné, vstup a výstup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kontakt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pokrocili-28-web-scraping-ochrana">Pokročílí 28: Web Scraping - ochrana<a class="headerlink" href="#pokrocili-28-web-scraping-ochrana" title="Permanent link">¶</a></h1>
+<p>Internet nám umožňuje zdieľať informácie. Prístup k dátam a ich sťahovanie je technicky riešené pomocou HTTP protokolu, ktorý sme preberali na minulých hodinách.</p>
+<p>Každý internetový zdroj je identifikovateľný pomocou URL adresy. Ak chce užívateľ daný zdroj (webovú stránku, súbor, obrázok, video) stiahnuť, zašle HTTP požiadavku. Server, ktorý hostuje daný zdroj, mu dáta v HTTP odpovedi (HTTP response) vráti. Toto sťahovanie sa väčšinou vykonáva pomocou webového prehliadača.</p>
+<h2 id="informacie-ako-konkurencna-vyhoda">Informácie ako konkurenčná výhoda<a class="headerlink" href="#informacie-ako-konkurencna-vyhoda" title="Permanent link">¶</a></h2>
+<p>Pre väčšinu firiem a organizácií sú dáta jednou z jej najväčších konkurenčných výhod. Zoznam klientov alebo dodávateľov, dáta užívateľov, dokumenty alebo iné informácie sú veľmi cenené. A tak na jednej strane stojí firma, ktorá si chce svoje dáta strážiť a na druhej strane je klient alebo konkurenčná firma, ktorá sa chce k dátam dostať.</p>
+<p>V dnešnej dobe je už väčšina dát na webových stránkach prístupná iba po prihlásení, alebo za poplatok. Facebook, LinkedIn, Twitter, všetky tieto stránky boli kedysi otvorené a umožňovali prístup aj neprihláseným užívateľom. Dnešný internet smeruje čoraz viac k uzavretým ekosystémom, tzv. walled garden. Tento proces sa s nástupom AI iba urýchľuje.</p>
+<p>Na ochranu a speňaženie dát sa používajú nasledovné prístupy:</p>
+<ul>
+<li><strong>Právne prístupy</strong> (Ochrana autorských práv, GDPR, DMCA). Tieto prístupy sa zaoberajú hlavne ochranou osobných údajov a nedovoleným zdieľaním cudzích dát.</li>
+<li>Prístup k dátam po zaplatení, tzv. <strong>Paywall</strong>. Túto techniku využívajú napr. vydavateľstvá odborných článkov (Elsevier), alebo internetové denníky (New York Times, HNonline, ...)</li>
+<li><strong>Zobrazovanie reklamy</strong>. Stránka k dátam síce prístup nezakáže, ale do obsahu pridá reklamy.</li>
+<li>Povolenie prístupu <strong>iba zaregistrovaným a prihláseným</strong> - Pre akýkoľvek prístup k dátam musíte byť prihlásený</li>
+<li><strong>Časové a objemové limity</strong> - Klienti majú limitovaný počet alebo množstvo dát, ktoré môžu za istý čas stiahnuť alebo zobraziť.</li>
+<li><strong>Obmedzenie dosahu</strong> (reach) užívateľa - Prístup je obmedzený iba pre určitú podmnožinu dát. To sa využíva hlavne v sociálnych sieťach. Facebook alebo Instagram napr. umožňuje prístup iba ku contentu vašich priateľov (pokiaľ ho sami nedajú zverejniť pre všetkých).</li>
+</ul>
+<h2 id="automatizovane-ziskavanie-dat">Automatizované získavanie dát<a class="headerlink" href="#automatizovane-ziskavanie-dat" title="Permanent link">¶</a></h2>
+<p>Na opačnej strane máme ľudí a firmy, ktoré chcú získať čo najviac dát. Niekedy sú dôvody opodstatnené a legálne, niekedy je to šedá zóna, kedy sa síce porušujú pravidlá danej stránky alebo služby, ale trestné to nie je. Niekedy však ide o ilegálnu činnosť, ako napr. firemná spionáž, alebo snaha získať osobné údaje užívateľov.</p>
+<p>Ako najvýraznejší príklad legálnosti automatizovaného získavania dát sú vyhľadávače ako napr. Google. Bez toho, aby Google automaticky nesťahoval verejne dostupné stránky a dokumenty, by vyhľadávač nefungoval a o mnohých stránkach by sme nevedeli.</p>
+<p>Automatizované získavanie dát z internetu sa nazýva <strong>Web Scraping</strong>. Ide o program - bot - ktorý prechádza web stránky (<em>web crawling</em>), spracováva ich a získava URL adresy ďalších stránok alebo súborov. Takto systematicky prejde celú webovú lokalitu, a získa a stiahne veľké množstvo dát, o ktoré ma jeho tvorca záujem.</p>
+<p>Takýto web scraping sa zvykne robiť <strong>jednorázovo</strong>, alebo aj <strong>opakovane</strong>, ak chceme získať nové alebo aktualizované dáta.</p>
+<h3 id="ochrana-pred-web-scrapingom">Ochrana pred Web Scrapingom<a class="headerlink" href="#ochrana-pred-web-scrapingom" title="Permanent link">¶</a></h3>
+<p>Keďže web scraping vie veľmi rýchlo vygenerovať veľké množstvo požiadaviek, jeho použitie predstavuje pre server značnú záťaž. Zle napísaný web scraping môže niekedy byť na nerozoznanie od cieleného útoku na server. Preto sa servery väčšinou web scrapingu bránia, snažia sa ho rozpoznať a zablokovať. </p>
+<p>Tých 'slušnejších' botov, napr. web crawlerov Google, pustia, a niekedy im poskytnú pravidlá správania v tzv. <code>robots.txt</code> súbore. V ňom uvedú zoznam URL ciest, ktoré sú pre prehľadávať zaujímavé a zoznam ciest, ktoré stránka nechce, aby bot prechádzal. Je už na slušnosti daného bota, či to dodrží, alebo nie.</p>
+<p>Spôsoby detekcie webového bota:</p>
+<ul>
+<li>Vysoká frekvencia HTTP requestov z jednej IP adresy</li>
+<li>Systematické zasielanie HTTP requestov v poradí, napr. <code>/page1</code>, <code>/page2</code>, <code>/page3</code>, atď.</li>
+<li>Neštandardná HTTP hlavička, nepodobajúca sa na prehliadač</li>
+<li>Podozrivý browser fingerprinting. Nepodporovanie Javascriptu.</li>
+<li>Nachytanie na tzv. Honeypot adresách, na ktoré bežný užívateľ nepríde</li>
+</ul>
+<p>Ako najefektívnejšia ochrana proti web scrapingu je často poskytnutie rozhrania API. Pomocou neho si užívatelia budú môcť jednoducho stiahnuť dáta bez potreby scrapovania HTML stránok, a ušetria vám tak serverové zdroje. Tieto API môžete spoplatniť a budete mať tak ďalší zdroj príjmu. (Samozrejme za predpokladu, že takéto sprístupnenie neohrozí váš hlavný biznis.)</p>
+<p>Hlavne štátne a verejné inštitúcie, ktoré z princípu musia dáta poskytovať verejne, by mali tieto svoje (naše) dáta poskytovať otvoreným spôsobom, pomocou tzv. konceptu Open Data - otvorených dát.</p>
+<div class="admonition warning">
+<p class="admonition-title">Dôležité</p>
+<p>Web scraping je legálny nástroj, ale jeho zneužitie môže mať právne následky. Vždy postupujte eticky a zodpovedne.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 28.1: Ochrana pred scrapingom</p>
+<p>Úlohy:</p>
+<ol>
+<li>Skúste nájsť súbory <code>robots.txt</code> pre populárne stránky. Porovnajte ich obsah</li>
+<li>Zistiti si váš browser fingerprint na stránke <a href="https://amiunique.org/">https://amiunique.org/</a> a na stránke <a href="https://coveryourtracks.eff.org/">https://coveryourtracks.eff.org/</a>. Ste jedinečný?</li>
+<li>Zistite, aké zákony a predpisy ohľadom Web Scrapingu platia na Slovensku a v EÚ</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 28.2: Ochrana pred AI</p>
+<p>Umelá inteligencia pre svoju prácu potrebuje prehľadávať veľké množstvo stránok. Ide tak isto o automatizované prehľadávanie a získavanie dát, 
+pričom reklamy sa míňaju účinku. Narastajú tak poplatky za hostingové služby a príjmy majiteľov stránok sa nezvyšujú.</p>
+<ol>
+<li>Zistite, aké typy ochrany pred AI existujú</li>
+<li>Skúste zistiť, čo je Dataset poisoning a aké nástroje existujú</li>
+<li>Prezrite si nástroj <a href="https://anubis.techaro.lol/">https://anubis.techaro.lol/</a> a skúste nájsť informácie o tom, ako funguje.</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 28.3: Lokálny scraper</p>
+<p>Vytvorte scraper, ktorý bude bežať z vášho PC a stiahne aktuality zo školskej stránky, podobne ako sme to robili na minulom cvičení.</p>
+<p>Stiahnite 50 noviniek a vypíšte ich titulky do konzoly.</p>
+<ul>
+<li>Použite nástroj Crawlee - <a href="https://crawlee.dev/python">https://crawlee.dev/python</a></li>
+<li>Ak to bude potrebné, môžete použiť tiež knižnice Requests a BeautifulSoup</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Úloha 28.4: Scraper pre stránku https://toscrape.com/</p>
+<p>Vytvorte scraper, ktorý bude sťahovať dáta zo stránky <a href="https://toscrape.com/">https://toscrape.com/</a></p>
+</div>
+<h2 id="zhrnutie-cvicenia">Zhrnutie cvičenia<a class="headerlink" href="#zhrnutie-cvicenia" title="Permanent link">¶</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> Informácie ako konkurenčná výhoda<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Pre väčšinu firiem a organizácií sú dáta jednou z jej najväčších konkurenčných výhod. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Zoznam klientov alebo dodávateľov, dáta užívateľov, dokumenty alebo iné informácie sú veľmi cenené.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> V dnešnej dobe je už väčšina dát na webových stránkach prístupná iba po prihlásení, alebo za poplatok. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Dnešný internet smeruje čoraz viac k uzavretým ekosystémom, tzv. walled garden. Tento proces sa s nástupom AI iba urýchľuje.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> Na ochranu a speňaženie dát sa používajú nasledovné prístupy:<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Právne prístupy (Ochrana autorských práv, GDPR, DMCA). Tieto prístupy sa zaoberajú hlavne ochranou osobných údajov a nedovoleným zdieľaním cudzích dát.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Prístup k dátam po zaplatení, tzv. Paywall. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Zobrazovanie reklamy</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Povolenie prístupu iba zaregistrovaným a prihláseným</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Časové a objemové limity - Klienti majú limitovaný počet alebo množstvo dát, ktoré môžu za istý čas stiahnuť alebo zobraziť.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Obmedzenie dosahu (reach) užívateľa - Prístup je obmedzený iba pre určitú podmnožinu dát. </li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> Automatizované získavanie dát<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Dôvody na získanie dát sú niekedy opodstatnené a legálne, inokedy je to šedá zóna, kedy sa síce porušujú pravidlá danej stránky alebo služby, ale trestné to nie je</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Niekedy však ide o ilegálnu činnosť, ako napr. firemná spionáž, alebo snaha získať osobné údaje užívateľov.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Web crawler - program, ktorý prechádza web stránky a získava URL adresy</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Web scraping - Systematicky prechádza celú webovú lokalitu a získa a stiahne veľké množstvo dát, o ktoré ma jeho tvorca záujem.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Zvykne sa robiť jednorázovo, alebo aj opakovane, ak chceme získať nové alebo aktualizované dáta.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> Ochrana pred Web Scrapingom<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Použitie scrapera predstavuje pre server značnú záťaž. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Zle napísaný web scraping môže niekedy byť na nerozoznanie od cieleného útoku na server. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Aj preto sa servery väčšinou web scrapingu bránia, snažia sa ho rozpoznať a zablokovať.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Tých 'slušnejších' botov, napr. web crawlerov Google, pustia, a niekedy im poskytnú pravidlá správania v tzv. robots.txt súbore. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> V ňom uvedú zoznam URL ciest, ktoré sú pre prehľadávať zaujímavé a zoznam ciest, ktoré stránka nechce, aby bot prechádzal.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled="" checked=""><span class="task-list-indicator"></span></label> Spôsoby detekcie webového bota<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Vysoká frekvencia HTTP requestov z jednej IP adresy</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Systematické zasielanie HTTP requestov v poradí, napr. <code>/page1</code>, <code>/page2</code>, <code>/page3</code>, atď.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Neštandardná HTTP hlavička, nepodobajúca sa na prehliadač</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Podozrivý browser fingerprinting. Nepodporovanie Javascriptu.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled=""><span class="task-list-indicator"></span></label> Nachytanie na tzv. Honeypot adresách, na ktoré bežný užívateľ nepríde</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025–2027, Jozef Wagner. Licencované v rámci <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["toc.integrate", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.top", "toc.follow", "navigation.tabs", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
