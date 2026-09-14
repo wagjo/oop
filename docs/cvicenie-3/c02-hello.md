@@ -47,7 +47,7 @@ Každá verejná trieda musí byť vo svojom vlastnom súbore s príponou `.java
 
 !!! example "Príklad 2.1: Ukážka volania statických metód"
 
-    ```java title="Súbor Vypocet.java"
+    ```java title="Súbor Vypocty.java"
     public class Vypocty {
         public static int sucetInt(int a, int b) {
             return a + b;
