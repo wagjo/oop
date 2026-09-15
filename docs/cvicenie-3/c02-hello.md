@@ -17,7 +17,7 @@ Klasické funkcie v Jave musia byť vždy súčasťou nejakej triedy (anglicky c
 
 Metódy môžu pracovať s konkrétnym objektom, alebo môžu byť tzv. statické, teda nezávislé na objekte, a môžeme ich volať kedykoľvek. Statické metódy sa pri definícii označujú slovom `static`.
 
-## Statické metóda main
+## Statická metóda main
 
 Každý Java program musí mať miesto, ktoré sa začne vykonávať ako prvé po spustení programu. Toto miesto predstavuje statická metóda s názvom `main`. Táto metóda je vstupným bodom programu a keď táto metóda skončí, skončí sa aj celý program.
 

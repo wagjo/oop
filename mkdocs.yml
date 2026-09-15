@@ -16,8 +16,9 @@ nav:
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'
-#  - Prehľad tém: 'prehlad.md'
-#  - Zbierka úloh: 
+  - Prehľad tém: 'prehlad.md'
+  - Zbierka úloh: 
+     - Výukové platformy: 'zbierka-java/platformy.md'
 #    - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
 #    - Python - Dedičnosť: 'zbierka-python/j05-04-dedicnost.md'
 #    - Python - Testovanie: 'zbierka-python/j07-01-testovanie.md'

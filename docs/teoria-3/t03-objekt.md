@@ -1,6 +1,15 @@
 # Teória 3: Identita, Objekt
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
+
 Dnes si začneme vysvetľovať základné pojmy z objektovo orientovaného programovania. Ako prvé si vysvetlíme, čo je objekt. Okrem toho si povieme niečo o veciach ako identita, príkaz vs výraz a ukážeme si základné operátory v Jave.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/t03w.pdf">t03w.pdf</a></i>
+  </aside>
+</div>
 
 
 ## Identita a Hodnota
@@ -196,14 +205,10 @@ Niektoré príkazy majú špeciálnu výrazovú formu. Napríklad príkaz `if` m
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Na ďalšej hodine budeme kontrolovať nasledovné veci:
+    Ústne skúšanie:
 
-    - Zapísané poznámky z hodiny vo vašom zošite
-
-    Ústne skúšanie alebo krátka 5-minútovka:
-
-    - Rozdiel medzi identitou a hodnotou
-    - Ako vieme porovnať primitívne hodnoty?
+    - Rozdiel medzi identitou a hodnotou. Majú v Jave identitu všetky dátové typy?
+    - Ako vieme porovnať primitívne hodnoty? 
     - Ako vieme porovnať neprimitívne objekty?
-    - 4 Vlastnosti objektu
-    - Rozdiel medzi príkazom a výrazom
+    - 4 vlastnosti objektu
+    - Rozdiel medzi príkazom a výrazom. Uveďte príklad.

@@ -1,6 +1,16 @@
 # Pokročílí 3: Rekurzia
 
-Táto časť sa venuje rekurzii. Ak chcete viac informácií, nájdete ju na stránke o [rekurzii](https://oop.wagjo.com/pokrocili-3/p03-rekurzia/)
+
+<div class="md-has-sidebar" markdown>
+  <main markdown>
+Táto časť sa venuje rekurzii. Ak chcete viac informácií, nájdete ju na stránke o [rekurzii](https://oop.wagjo.com/pokrocili-3/p03-rekurzia/).
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/p03w.pdf">p03w.pdf</a></i>
+  </aside>
+</div>
+
 
 ## Iterácia
 
@@ -161,9 +171,14 @@ print(f"Čas funkcie: {cas:.6f} sekúnd ({opakovania} opakovaní)")
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Ústne skúšanie alebo krátka 5-minútovka:
+    Ústne skúšanie:
 
     - Rozdiel medzi rekurziou a iteráciou
     - 2 časti rekurzívnej funkcie
     - Čo je zásobník volaní, ako súvisí s rekurziou
 
+    Praktické skúšanie:
+
+    - Napíš funkciu `faktorial(n)`, ktorá rekurzívne vypočíta **n!**
+    - Napíš funkciu `je_palindrom(s)`, ktorá vráti `True`, ak je reťazec palindróm
+    - Napíš rekurzívnu funkciu, ktorá vyrieši problém Hanojských veží pre `n` diskov. Funkcia vypíše kroky na presun diskov z jedného kolíka (A) na druhý (C) s použitím pomocného kolíka (B).
