@@ -92,14 +92,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<!--
 <a href="../cvicenie-3/c03-cykly">Riadenie toku programu</a> (<a href="../assets/c03w.pdf">pdf</a>)
 <ul>
 <li>Vetvenie - switch</li>
 <li>Cykly - do-while, for-each</li>
 <li>Prerušenie toku - break, continue</li>
 </ul>
--->
 </td>
 <td width=30%>
 <a href="../pokrocili-3/p03-rekurzia">Rekurzia</a> (<a href="../assets/p03w.pdf">pdf</a>)
@@ -107,6 +105,36 @@ hide:
 <li>Iterácia</li>
 <li>Rekurzia</li>
 <li>Zásobník volaní</li>
+</ul>
+</td>
+</tr>
+
+<td width=10%>4</td>
+<td width=30%>
+<a href="../teoria-3/t04-trieda">Trieda, balíky</a> (<a href="../assets/t04w.pdf">pdf</a>)
+<ul>
+<li>Trieda</li>
+<li>Diagram tried</li>
+<li>Balíky</li>
+<li>Modifikátory prístupu</li>
+</ul>
+</td>
+<td width=30%>
+<!--
+<a href="../cvicenie-3/c04-polia">Polia, varargs</a> (<a href="../assets/c04w.pdf">pdf</a>)
+<ul>
+<li>Polia - Arrays</li>
+<li>varargs</li>
+<li>Rozdelenie kódu do viacerých tried a balíkov</li>
+</ul>
+-->
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p04-moduly">Moduly</a> (<a href="../assets/p04w.pdf">pdf</a>)
+<ul>
+<li>Modul</li>
+<li>Balík</li>
+<li>Špeciálne atribúty a súbory</li>
 </ul>
 </td>
 </tr>

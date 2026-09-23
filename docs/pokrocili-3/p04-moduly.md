@@ -1,6 +1,14 @@
 # Pokročílí 4: Moduly
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Ak máme väčší program, je vhodné zdrojový kód rozdeliť do viacerých súborov. Na dnešnom cvičení si vysvetlíme, akým spôsobom Python umožňuje spravovať väčšie projekty.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/p04w.pdf">p04w.pdf</a></i>
+  </aside>
+</div>
 
 Na zopakovanie si pripomenieme, že doteraz sme si ukázali 2 módy spúšťania programov v Pythone
 
@@ -342,10 +350,10 @@ V Pythone však vieme spustiť aj samotný balík, pomocou príkazu `python -m b
     ```
     MODUL
 
-    Väčšie projekty rozdeľujeme do viacerých súborov - modulov
-    Každý modul má svoj vlastný priestor mien (namespace)
-    Ak chcem použiť nejaký modul, musím ho importovať
-    Pri importovaní sa modul spustí a vykoná iba pri prvom importe
+    Väčšie projekty rozdeľujeme do súborov - modulov
+    Každý modul má vlastný priestor mien (namespace)
+    Ak chcem použiť modul, musím ho importovať
+    Pri importovaní sa modul vykoná iba pri prvom importe
 
     Syntax importovania modulov:
     import ...
@@ -354,13 +362,13 @@ V Pythone však vieme spustiť aj samotný balík, pomocou príkazu `python -m b
     from ... import ... as ...
     
     Špeciálna premenná __name__
-    Používa sa na rozlíšenie, či modul importujem alebo ho spúšťam
+    Rozlíšenie, či modul importujem alebo ho spúšťam
     if __name__ == '__main__': main()
 
-    BALÍK
+    BALÍK - adresár s modulmi
 
-    Je to adresár s modulmi. Názov balíka je názov adresára. 
-    Balíky v sebe môžu obsahovať ďalšie balíky.
+    Názov balíka je názov adresára. 
+    Balíky v sebe môžu mať ďalšie balíky.
     Importovanie modulov v balíkoch je podobné ako importovanie obyčajných modulov. 
     Názvy balíkov a modulu oddelíme bodkou.
 
@@ -376,7 +384,7 @@ V Pythone však vieme spustiť aj samotný balík, pomocou príkazu `python -m b
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Čo je modul, čo je balík
     - Ako zistím, či sa modul spustil ako program, alebo či sa importoval
@@ -387,3 +395,9 @@ V Pythone však vieme spustiť aj samotný balík, pomocou príkazu `python -m b
     - Špeciálne súbory `__init__.py` a `__main__.py`. Význam a použitie
     - Ako spustím modul projektu, ako spustím balík?
 
+    Praktické skúšanie:
+
+    - Vytvorte projekt s názvom 'skuska'. V projekte vytvorte balík 'tvary' a v ňom moduly 'obdlznik' a 'stvorec'. Do modulov napíšte funkcie na výpočet obvodu a obsahu. Vytvorte modul 'main' a v ňom použite vami vytvorené funkcie z ostatných modulov. Výsledný program spustite z konzoly ako modul.
+    - Vytvorte projekt s názvom 'skuska'. Vytvorte balík 'kalkulacka', ktorý bude mať moduly 'zakladne' (funkcie scitaj, odcitaj) a 
+    'pokrocile' (funkciu faktorial). Do `__init__.py` modulu kalkulacka napíšte importy tak, aby sa dali používať funkcie zo submodulov iba importovaním balíka. V module 'main' importujte balík 'kalkulacka' a na príklade použite niektorú z jeho funkcií.
+    - Vytvorte projet s názvom 'skuska'. Vytvorte modul 'matematika', ktorý bude mať dve funkcie: 'sucet' a 'rozdiel'. Do modulu dajte aj funkciu 'main', ktorá bude obsahovať príklad použitia funkcií z modulu. Upravte modul 'matematika' tak, aby sa jeho funkcia main spustila iba ak je modul spúšťaný ako program (python -m matematika). Vytvorte modul main, v ktorom importujete funkciu z modulu matematika a použijete ju na príklade.

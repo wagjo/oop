@@ -1,8 +1,16 @@
 # Teória 4: Trieda, balíky
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 V tejto časti vás oboznámime s triedami v Jave. Vysvetlíme si na čo slúžia, ako sa vytvárajú a ukážeme si ich reprezentáciu v UML diagramoch. Predstavíme si tiež balíky tried a modifikátory prístupu.
 
 Jednotlivé koncepty si detailne preberieme na iných hodinách. Dnes to bude iba úvod. Ak chcete vedieť všetky detaily a nechce sa vám čakať, s pomocou internetu a umelej inteligencie si viete všetky informácie veľmi rýchlo a jednoducho dohľadať.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/t04w.pdf">t04w.pdf</a></i>
+  </aside>
+</div>
 
 ## Trieda - základy
 
@@ -246,7 +254,7 @@ Podobne je to aj pri atribútoch a metódach. Použitie modifikátorov prístupu
     ```
     TRIEDA
 
-    Trieda (anglicky Class) je základný stavebný blok v Jave
+    Trieda - Class - je základný stavebný blok v Jave
       - Podľa triedy sa vytvárajú objekty
       - Dátový typ objektu je trieda, z ktorej bol objekt vytvorený
 
@@ -258,34 +266,30 @@ Podobne je to aj pri atribútoch a metódach. Použitie modifikátorov prístupu
     Atribúty a metódy môžu byť statické, potom nepatria objektu, ale triede
 
     Vytváranie tried
-      - Názov triedy začína veľkým písmenom
-      - Zdrojový kód píšeme do .java súborov
-      - Názov súboru s verejnou triedou je taký istý ako názov triedy
-      - Operátor `new` volá konštruktor triedy
+      - Začína veľkým písmenom
+      - Zdrojový kód v .java súbore
+      - Názov súboru rovnaký ako názov triedy
+      - new volá konštruktor triedy
     
     Zakresliť UML Class Diagram triedy
 
     BALÍKY TRIED
 
     Balíky tried - packages
-      - Zoskupujú triedy a pomáhajú riešiť problémy s názvami
-      - Príkaz `package nazov.balika;`
-      - Adresárová štruktúra musí byť rovnaká ako názov balíka
-      - Názvy balíkov píšeme malými písmenami, časti oddeľujeme bodkami
+      - Zoskupujú triedy a riešia problémy s názvami
+      - package nazov.balika;
+      - Adresárová štruktúra rovnaká ako názov balíka
+      - Názvy malými písmenami, časti oddeľujeme bodkami
 
     Modifikátory prístupu
       - public - verejný prístup z akejkoľvek triedy
       - private - prístup má iba sama trieda
-      - bez modifikátora - prístup je dovolený iba v rámci toho istého balíka
+      - bez modifikátora - prístup iba v rámci toho istého balíka
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Na ďalšej hodine budeme kontrolovať nasledovné veci:
-
-    - Zapísané poznámky z hodiny vo vašom zošite
-
-    Ústne skúšanie alebo krátka 5-minútovka:
+    Ústne skúšanie:
 
     - Čo je trieda
     - Čo trieda obsahuje

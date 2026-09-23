@@ -1,6 +1,14 @@
 # Cvičenie 3: Riadenie toku programu
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Na tomto cvičení sa hlbšie ponoríme do spôsobov, akými sa v Jave dá riadiť tok programu. Priblížime si detailne podmienky a cykly.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/c03w.pdf">c03w.pdf</a></i>
+  </aside>
+</div>
 
 ## Podmienka switch
 
@@ -302,8 +310,6 @@ Cyklus for-each je jednoduchý, nepotrebujete v ňom spravovať index ako pri kl
     - musí mať primitívnu hodnotu, String, enum
     - ak nič nevyhovuje, vyberie default
     - ak neuvediem break, nastáva fall-through a vykoná sa aj nasledujúca možnosť
-    - moderná verzia switch, je už výraz, nepoužíva fall-through a
-      jeden prípad môže mať viacero možností
 
     Riadenie toku cyklov
     - break ukončí predčasne cyklus
@@ -321,11 +327,18 @@ Cyklus for-each je jednoduchý, nepotrebujete v ňom spravovať index ako pri kl
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Ústne skúšanie alebo krátka 5-minútovka:
+    Ústne skúšanie:
 
     - Popíšte fungovanie príkazu switch
     - Čo je fall-through a aké má využitie
     - Aký je rozdiel medzi while a do-while
     - Ako funguje príkaz break
     - Ako funguje príkaz continue
+    - Na čo slúži for-each, vlastnosti
     
+    Praktické skúšanie:
+
+    - Napíš program, ktorý podľa zadanej známky (1–5) vypíše slovné hodnotenie ("Výborný", "Chválitebný", ...). Použi switch.
+    - Používateľ bude zadávať celé čísla. Program bude hľadať najväčšie z nich. Zadanie čísla 0 ukončí zadávanie a vypíše sa najväčšie zadané číslo. Použite do-while.
+    - Používateľ zadáva ceny položiek. Program počíta celkovú sumu a skončí, keď používateľ zadá 0. Použite do-while.
+    - Napíš program, ktorý vypíše všetky párne čísla od 1 po n (hodnotu n zadá používateľ). Použite while.
