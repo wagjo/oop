@@ -1,7 +1,15 @@
 # Cvičenie 4: Balíky a triedy, polia, varargs
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Na dnešnom cvičení sa bližšie povenujeme poliam, ktoré predstavujú základný spôsob ako v Jave uchovávať dokopy viac hodnôt.
 Pred tým si však vyskúšame vytvoriť projekt s viacerými triedami.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/c04w.pdf">c04w.pdf</a></i>
+  </aside>
+</div>
 
 ## Projekt s viacerými triedami v balíkoch
 
@@ -395,7 +403,7 @@ Keďže vararg argument je v skutočnosti pole hodnôt, vieme pri volaní takejt
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Čo je pole
     - Vlastnosti poľa
@@ -405,3 +413,7 @@ Keďže vararg argument je v skutočnosti pole hodnôt, vieme pri volaní takejt
     - Varargs - čo to je
     - Ako sa pristupuje k varargs vnútri metódy?
     
+    Praktické skúšanie:
+
+    - Vytvorte projekt s názvom pole. V balíku `sk.spse.util` vytvorte triedu `Math`. V tejto triede vytvorte statickú metódu `priemer`, ktorá má na vstupe pole čísel a vráti ich aritmetický priemer. Zavolajte ju z metódy `sk.spse.Main.main()`
+    - Vytvorte projekt s názvom pole. V balíku `sk.spse.util` vytvorte triedu `Pole`. V nej vytvorte statickú metódu `najdlhsiRetazec`, ktorá má na vstupe pole reťazcov a vráti najdlhší z nich. Zavolajte ju z metódy `sk.spse.Main.main()

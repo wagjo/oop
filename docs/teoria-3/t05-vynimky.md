@@ -1,6 +1,14 @@
 # Teória 5: Správa chýb, výnimky
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 V tejto časti sa budeme venovať spôsobom, akými Java pomocou výnimiek spravuje chyby v programoch.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/t05w.pdf">t05w.pdf</a></i>
+  </aside>
+</div>
 
 ## Výnimky
 
@@ -263,13 +271,13 @@ Môžeme dokonca uviesť viacero takýchto zdrojov, ktoré sa majú automaticky 
     ```
     SPRÁVA CHÝB
 
-    Výnimka (anglicky exception) je objekt, ktorý reprezentuje chybový alebo nečakaný stav programu
+    Výnimka (exception) je objekt, ktorý reprezentuje chybový alebo nečakaný stav programu
       - Ak nastane chyba, program 'vyhodí' výnimku
-      - Vyhodená výnimka sa musí ošetriť v metóde kde nastala, alebo v nadradených metódach
+      - Výnimka sa ošetrí v metóde kde nastala, alebo v nadradených metódach
       - Ak sa neošetrí ani v main() tak program skončí chybou
 
     Kategórie výnimiek
-      - Errors - Veľmi vážne chyby programu, neošetrujeme, program by sa mal ukončiť
+      - Errors - Veľmi vážne chyby; Neošetrujeme, program sa ukončí
       - Unchecked Exceptions - Bežné chyby pri programovaní
       - Checked Exceptions - Vážnejšie chyby, ktoré musíme ošetriť, 
         inak sa program ani neskompiluje a nespustí
@@ -284,18 +292,14 @@ Môžeme dokonca uviesť viacero takýchto zdrojov, ktoré sa majú automaticky 
     Pri vytváraní výnimky je vhodné uviesť krátku správu, aká chyba nastala
 
     try-with-resources automatické zatvára zdroje
-      - Zdroje, ktoré chcem zatvoriť, dám do zátvoriek hneď za príkazom `try`
+      - Zdroje dám do zátvoriek hneď za príkazom `try`
       - Je to lepšie ako použiť blok finally
 
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Na ďalšej hodine budeme kontrolovať nasledovné veci:
-
-    - Zapísané poznámky z hodiny vo vašom zošite
-
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Čo je výnimka
     - 3 kategórie výnimiek, na čo sa používajú

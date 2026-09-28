@@ -1,8 +1,16 @@
 # Pokročílí 5: Správa knižníc
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 V programovaní pod pojmom knižnica rozumieme sadu funkcií a tried, ktoré riešia nejakú špecifickú úlohu a vieme ich použiť vo svojich programoch. Python poskytuje bohatú štadardnú knižnicu, v ktorej máme k dispozícii množstvo modulov s užitočnými funkciami.
 
 Pri programovaní však nie sme odkázaní iba na štandardnú knižnicu, ale vieme si stiahnuť a použiť tisíce knižníc, ktoré vytvorili iní programátori. Python nám poskytuje rôzne nástroje na správu, používanie a aj vytváranie takýchto knižníc. Dnes sa im povenujeme bližšie.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/p05w.pdf">p05w.pdf</a></i>
+  </aside>
+</div>
 
 ## Správa distribučných balíkov pomocou `pip`
 
@@ -292,9 +300,9 @@ Takto vytvorený projekt potom vieme lokálne nainštalovať príkazom `pip inst
     ```
     PIP
 
-    pip je nástroj na spravovanie distribučných balíkov
-    pip knižnice sa v Pythone inštalujú globálne
-    Nemôžeme mať naraz nainštalované 2 verzie tej istej knižnice
+    spravovanie distribučných balíkov
+    pip knižnice sa inštalujú globálne
+    Nemôžeme mať naraz 2 verzie tej istej knižnice
 
     pip list
     pip install
@@ -302,35 +310,34 @@ Takto vytvorený projekt potom vieme lokálne nainštalovať príkazom `pip inst
 
     VIRTUÁLNE PROSTREDIE
 
-    Izolovaný priestor, ktorý má vlastnú sadu knižníc
-    Knižnice z jedného virtuálneho prostredia neovplyvňujú iné virtuálne prostredia
-    a nie sú viditeľné ani zo systému.
-    Virtuálne prostredie potrebuje svoj vlastný adresár, väčšinou je to .venv
+    Izolovaný priestor pre python a knižnice
+    Neovplyvňuje iné virtuálne prostredia a nie je viditeľné ani zo systému.
+    Potrebuje svoj vlastný adresár, väčšinou .venv
 
     PYPI.ORG
 
     Python Package Index (PyPI) na adrese https://pypi.org
-    pip balíky sa sťahujú práve z tohto repozitára
-    Viem v ňom zverejniť zadarmo aj svoje balíky
+    repozitár pip balíkov
+    Viem v ňom zverejniť zadarmo svoje balíky
 
     requirements.txt
 
-    Starý spôsob písania závislostí, do textového súboru
-    Okrem názvu knižnice vieme uviesť verziu.
-    Vieme na to použiť operátory ==, ~=, >, >=, <, <= a iné
-    Ak mám súbor requirements.txt, závislosti nainštalujem pomocou pip install -r requirements.txt
+    Starý spôsob písania závislostí
+    Iba názov knižnice a verzia.
+    operátory ==, ~=, >= a iné
+    Závislosti nainštalujem pomocou pip install -r requirements.txt
 
     pyproject.toml
 
-    Moderný spôsob konfigurácie projektu
-    V súbore musím uviesť minimálne názov môjho projektu a verziu.
-    Závislosti na knižniciach uvádzam do atribútu dependencies
+    Moderný spôsob pre projekty
+    Musím uviesť názov môjho projektu a verziu.
+    Závislosti uvádzam do dependencies
     Lokálne nainštalujem príkazom pip install -e .
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Čo je nástroj pip, ako sa používa
     - Čo je virtuálne prostredie v Pythone, na čo sa používa
@@ -339,5 +346,10 @@ Takto vytvorený projekt potom vieme lokálne nainštalovať príkazom `pip inst
     - Ako sa píšu závislosti na knižniciach
     - Ako nainštalujem závislosti zo súboru requirements.txt
     - pyproject.toml, na čo slúži, aké má minimálne atribúty
-    - Ako zapíšem závislosti do súboru pyproject.toml
+    - Kde zapíšem závislosti do súboru pyproject.toml
     - Ako nainštalujem lokálne projekt, ktorý má pyproject.toml
+
+    Praktické skúšanie:
+
+    - Vytvorte nový projekt s názvom farby. Vytvorte v ňom súbor 'pyproject.toml' a vložte závislosť na knižnici 'colored'. V projkte vytvorte adresár src a balík 'farby'. V balíku vytvorte súbor `__main__.py` a v ňom farebne (za pomoci funkcií z knižnice colored) vypíšte na obrazovku "Hello World!". Projekt pripravte tak, aby z konzoly išiel spustiť príkazom 'python -m farby'
+    - Vytvorte program, ktorý načíta text z klávesnice a potom ho pomocou knižnice colored vypíše 10x na obrazovku, vždy inou farbou. Bonus: meňte aj farbu pozadia.

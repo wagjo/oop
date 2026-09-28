@@ -138,5 +138,35 @@ hide:
 </ul>
 </td>
 </tr>
+<!--
+<tr>
+<td width=10%>5</td>
+<td width=30%>
+<a href="../teoria-3/t05-vynimky">Výnimky</a> (<a href="../assets/t05w.pdf">pdf</a>)
+<ul>
+<li>Správa chýb</li>
+<li>Výnimky</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../cvicenie-3/c05-wrapper">Obalené typy</a> (<a href="../assets/c05w.pdf">pdf</a>)
+<ul>
+<li>Literály</li>
+<li>Null</li>
+<li>Typová konverzia</li>
+<li>Obalené typy</li>
+</ul>
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p05-pip">Správa knižníc</a> (<a href="../assets/p05w.pdf">pdf</a>)
+<ul>
+<li>pip, PyPI.org</li>
+<li>Virtuálne prostredie</li>
+<li>requirements.txt</li>
+<li>pyproject.toml</li>
+</ul>
+</td>
+</tr>
+-->
 </tbody>
 </table>
