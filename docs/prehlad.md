@@ -138,7 +138,6 @@ hide:
 </ul>
 </td>
 </tr>
-<!--
 <tr>
 <td width=10%>5</td>
 <td width=30%>
@@ -149,6 +148,7 @@ hide:
 </ul>
 </td>
 <td width=30%>
+<!--
 <a href="../cvicenie-3/c05-wrapper">Obalené typy</a> (<a href="../assets/c05w.pdf">pdf</a>)
 <ul>
 <li>Literály</li>
@@ -156,6 +156,7 @@ hide:
 <li>Typová konverzia</li>
 <li>Obalené typy</li>
 </ul>
+-->
 </td>
 <td width=30%>
 <a href="../pokrocili-3/p05-pip">Správa knižníc</a> (<a href="../assets/p05w.pdf">pdf</a>)
@@ -167,6 +168,5 @@ hide:
 </ul>
 </td>
 </tr>
--->
 </tbody>
 </table>

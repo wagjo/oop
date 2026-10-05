@@ -51,7 +51,7 @@ Na vyriešenie tohto problému sa v Pythone používa virtuálne prostredie, ang
 
 !!! info "Moderné nástroje na správu knižníc"
 
-    Modernou alternatívou k `pip` je nástroj [`uv`](https://docs.astral.sh/uv/), ktorý nahrádza `pip` a aj ďalšie iné Python nástroje. Oproti `pip` je 10-100x rýchlejší a ponpka viac funkcionalít
+    Modernou alternatívou k `pip` je nástroj [`uv`](https://docs.astral.sh/uv/), ktorý nahrádza `pip` a aj ďalšie iné Python nástroje. Oproti `pip` je 10-100x rýchlejší a ponúka viac funkcionalít
 </aside>
 </div>
 
@@ -131,7 +131,7 @@ Vygenerovať súbor so závislosťami si vieme aj automaticky pomocou príkazu *
 
 Ak má projekt takýto súbor, potom všetky jeho **závislosti vieme nainštalovať jedným príkazom `pip install -r requirements.txt`**
 
-V súbore `requirements.txt` vidíme, že verzie vieme písať rôznymi spôsobmi. Ak verziu distribučného balíka neuvedieme, nainštaluje sa najnovšia verzia. Pomocou operátora `==` nainštalujeme konkrétnu verziu, a pomocou operátorov `>=`, `<=`, `>` a `<` vieme uviesť, aké verzie vyžadujeme. Operátor `~=` bude akceptovať iba kompatibilné verzie podľa sémentického verzionovania, napr. `~=2.2` bude akceptovať verzie `2.2.1`, `2.2.9`, `2.3`, ale nie `2.1` alebo `3.0`.
+V súbore `requirements.txt` vidíme, že verzie vieme písať rôznymi spôsobmi. Ak verziu distribučného balíka neuvedieme, nainštaluje sa najnovšia verzia. Pomocou operátora `==` nainštalujeme konkrétnu verziu, a pomocou operátorov `>=`, `<=`, `>` a `<` vieme uviesť, aké verzie vyžadujeme. Operátor `~=` bude akceptovať iba kompatibilné verzie podľa sémantického verzionovania, napr. `~=2.2` bude akceptovať verzie `2.2.1`, `2.2.9`, `2.3`, ale nie `2.1` alebo `3.0`.
 
 !!! abstract "Dokumentácia"
 
@@ -192,7 +192,7 @@ Takto vytvorený projekt potom vieme lokálne nainštalovať príkazom `pip inst
     ```
     print("Hello World!")
     ```
-    1. V terminály lokálne nainštalujte tento projekt pomocou `pip install -e .`
+    1. V termináli lokálne nainštalujte tento projekt pomocou `pip install -e .`
     1. Projekt spustite pomocou `python -m cowsay`
 
 !!! example "Úloha 5.2: Farebný výpis argumentov"
