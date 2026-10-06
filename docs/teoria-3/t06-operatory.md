@@ -1,6 +1,14 @@
 # Teória 6: Operátory
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Operátory v Jave sú špeciálne symboly alebo kľúčové slová, ktoré vykonávajú operácie nad premennými alebo hodnotami. Dnes sa bližšie pozrieme na niektoré z nich.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/t06w.pdf">t06w.pdf</a></i>
+  </aside>
+</div>
 
 ## Aritmetické operátory
 
@@ -288,8 +296,7 @@ Tak ako aj v matematike aj v Jave môžeme použiť zátvorky, ak chceme zmeniť
     Aritmetické
     +, -, *, /, %
     Ak sú obidva operandy celé čísla, výsledok je celé číslo zaokrúhlené nadol
-    Modulo % má vo výsledku znamienko deleného čísla. 
-
+    
     Priradenie
     = kopíruje primitívnu hodnotu alebo referenciu na objekt
     +=, -=, *=, /=, %= priradenie s operáciou
@@ -298,15 +305,12 @@ Tak ako aj v matematike aj v Jave môžeme použiť zátvorky, ak chceme zmeniť
     ++x najprv zvýši x, potom vráti novú hodnotu
     x++ najprv vráti starú hodnotu x, potom ju zvýši
 
-    Relačné operátory
+    Relačné operátory - výsledok je boolean hodnota
     == porovnáva primitívne hodnoty, pri objektoch porovnáva identitu
     ==, !=, <, >, <=, >=
-    výsledok je boolean hodnota
 
     Bitové operátory
     Nepliesť si ich s logickými
-    Bitové operátory pracujú na úrovni jednotlivých bitov. 
-    Vstupy a výstupy týchto operátorov sú vždy čísla
     &, |, ^, ~, >>, <<, >>>
 
     Logické operátory
@@ -319,16 +323,11 @@ Tak ako aj v matematike aj v Jave môžeme použiť zátvorky, ak chceme zmeniť
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Na ďalšej hodine budeme kontrolovať nasledovné veci:
-
-    - Zapísané poznámky z hodiny vo vašom zošite
-
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Aritmetické operátory, modulo, celočíselné delenie
     - Priradenie, správanie operátora =
     - Inkrement a dekrement, rozdiel v správaní ++x a x++
     - Relačné operátory, správanie operátora ==
-    - Bitové operátory
-    - Logické operátory - čo je short-circuit, aké má využitie
+    - Bitové operátory vs Logické operátory - čo je short-circuit, aké má využitie
     - instanceof - na čo slúži
