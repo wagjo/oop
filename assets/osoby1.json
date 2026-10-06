@@ -1,0 +1,72 @@
+[
+  {
+    "meno": "Ján",
+    "priezvisko": "Novák",
+    "titul": "Ing.",
+    "pohlavie": "MUZ",
+    "datumNarodenia": "1985-03-12"
+  },
+  {
+    "meno": "Martina",
+    "priezvisko": "Kováčová",
+    "titul": null,
+    "pohlavie": "ZENA",
+    "datumNarodenia": "1992-07-25"
+  },
+  {
+    "meno": "Peter",
+    "priezvisko": "Horváth",
+    "titul": "Mgr.",
+    "pohlavie": "MUZ",
+    "datumNarodenia": "1978-11-04"
+  },
+  {
+    "meno": "Lucia",
+    "priezvisko": "Tóthová",
+    "titul": null,
+    "pohlavie": "ZENA",
+    "datumNarodenia": "2000-01-18"
+  },
+  {
+    "meno": "Marek",
+    "priezvisko": "Varga",
+    "titul": null,
+    "pohlavie": "MUZ",
+    "datumNarodenia": "1995-09-30"
+  },
+  {
+    "meno": "Zuzana",
+    "priezvisko": "Miháliková",
+    "titul": "PhDr.",
+    "pohlavie": "ZENA",
+    "datumNarodenia": "1982-05-06"
+  },
+  {
+    "meno": "Tomáš",
+    "priezvisko": "Urban",
+    "titul": null,
+    "pohlavie": "MUZ",
+    "datumNarodenia": "1999-12-14"
+  },
+  {
+    "meno": "Veronika",
+    "priezvisko": "Králiková",
+    "titul": "Bc.",
+    "pohlavie": "ZENA",
+    "datumNarodenia": "2001-08-02"
+  },
+  {
+    "meno": "Andrej",
+    "priezvisko": "Bartoš",
+    "titul": "JUDr.",
+    "pohlavie": "MUZ",
+    "datumNarodenia": "1974-02-21"
+  },
+  {
+    "meno": "Katarína",
+    "priezvisko": "Šimková",
+    "titul": null,
+    "pohlavie": "ZENA",
+    "datumNarodenia": "1988-10-09"
+  }
+]
