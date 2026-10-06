@@ -25,10 +25,12 @@ nav:
     - 4 - Moduly: 'pokrocili-3/p04-moduly.md'   
     - 5 - Správa knižníc: 'pokrocili-3/p05-pip.md' 
   - Prehľad tém: 'prehlad.md'
-#  - Zbierka úloh: 
+#  - Extra Bonus:
+#     - Použitie LLM: 'zbierka-python/pouzitie-llm.md'
 #     - Výukové platformy: 'zbierka-java/platformy.md'
+#  - Zbierka úloh: 
 #    - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
-#    - Python - Dedičnosť: 'zbierka-python/j05-04-dedicnost.md'
+#     - Výukové platformy: 'zbierka-java/platformy.md'
 #    - Python - Testovanie: 'zbierka-python/j07-01-testovanie.md'
   #- Ťahák: 'tahak.md'
   - Kontakt: 'autor.md'
