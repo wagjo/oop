@@ -120,14 +120,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<!--
 <a href="../cvicenie-3/c04-polia">Polia, varargs</a> (<a href="../assets/c04w.pdf">pdf</a>)
 <ul>
 <li>Polia - Arrays</li>
 <li>varargs</li>
 <li>Rozdelenie kódu do viacerých tried a balíkov</li>
 </ul>
--->
 </td>
 <td width=30%>
 <a href="../pokrocili-3/p04-moduly">Moduly</a> (<a href="../assets/p04w.pdf">pdf</a>)
@@ -148,7 +146,6 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<!--
 <a href="../cvicenie-3/c05-wrapper">Obalené typy</a> (<a href="../assets/c05w.pdf">pdf</a>)
 <ul>
 <li>Literály</li>
@@ -156,7 +153,6 @@ hide:
 <li>Typová konverzia</li>
 <li>Obalené typy</li>
 </ul>
--->
 </td>
 <td width=30%>
 <a href="../pokrocili-3/p05-pip">Správa knižníc</a> (<a href="../assets/p05w.pdf">pdf</a>)
@@ -166,6 +162,34 @@ hide:
 <li>requirements.txt</li>
 <li>pyproject.toml</li>
 </ul>
+</td>
+</tr>
+<tr>
+<td width=10%>6</td>
+<td width=30%>
+<a href="../teoria-3/t06-operatory">Operátory</a> (<a href="../assets/t06w.pdf">pdf</a>)
+<ul>
+<li>Aritmetické operátory</li>
+<li>Priradenie a relačné operátory</li>
+<li>Bitové a logické operátory</li>
+<li>instanceof a poradie vykonávania</li>
+</ul>
+</td>
+<td width=30%>
+<!-- <a href="../cvicenie-3/c06-stringy">Reťazce</a> (<a href="../assets/c06w.pdf">pdf</a>)
+<ul>
+<li>String</li>
+<li>Metódy na prácu s reťazcami</li>
+<li>StringBuilder</li>
+</ul> -->
+</td>
+<td width=30%>
+<!-- <a href="../pokrocili-3/p06-agile">Agilný vývoj</a> (<a href="../assets/p06w.pdf">pdf</a>)
+<ul>
+<li>Agilný vývoj</li>
+<li>Verziovacie systémy</li>
+<li>Správa vývoja</li>
+</ul> -->
 </td>
 </tr>
 </tbody>

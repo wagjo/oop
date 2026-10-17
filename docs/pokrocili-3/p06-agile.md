@@ -274,7 +274,7 @@ Medzi pokročilé nástroje správy vývoja softvéru patrí automatizované tes
     - Nainštalovať si git na svojom počítači
     - Vytvoriť si konto na GitHube a zaslať mi užívateľské meno
 
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Aké sú princípy agilného vývoja
     - Riziká agilného vývoja
