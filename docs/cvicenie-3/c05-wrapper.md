@@ -1,10 +1,20 @@
 # Cvičenie 5: Literály, null, typová konverzia, obalené typy
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Staticko typové jazyky nám nájdu veľa chýb pri kompilácii, teda ešte pred spustením programu. Automatické kontroly typov nám dávajú pocit istoty a bezpečnosti, že náš kód je navrhnutý správne a program bude robiť to, čo očakávame.
 
 Nič však nie je zadarmo. Statická typová kontrola so sebou prináša aj množstvo nevýhod. Aby sme v staticko typovom jazyku vedeli dobre programovať, musíme spoznať a pochopiť veci, ktoré sme pri dynamických jazykoch ako Python nemuseli riešiť.
 
 Na dnešnom cvičení sa povenujeme práci s typmi, ale najprv si ukážeme literály jazyka a vysvetlíme si, ako Java rieši absenciu hodnoty pomocou výrazu `null`.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/c05w.pdf">c05w.pdf</a></i>
+  </aside>
+</div>
+
+
 
 ## Literál
 
@@ -191,9 +201,9 @@ ASCII tabuľka znakov
 
 Java poskytuje primitívne dátové typy. Sú rýchle a zaberajú málo pamäti. Keďže však v Jave skoro stále pracujeme s objektami a triedami, používanie primitívnych typov často prináša rôzne obmedzenia a komplikácie.
 
-Sú rôzne situácie, kedy je vyžadovaný objekt a nie primitívna hodnota. Často sa napríklad stáva, že metóda, ktorú by sme chceli použiť vyžaduje na vstupe objekt, ale mi máme primitívnu hodnotu.
+Sú rôzne situácie, kedy je vyžadovaný objekt a nie primitívna hodnota. Často sa napríklad stáva, že metóda, ktorú by sme chceli použiť vyžaduje na vstupe objekt, ale my máme primitívnu hodnotu.
 
-Pre takéto prípady má java k dispozícii tzv. obalené typy, anglicky *wrapper classes*. **Pre každý primitívny dátový typ existuje príslušný obalený typ**. Obalené triedy poskytujú plnohodnotné objekty, reprezentujúce dané číslo alebo inú primitívnu hodnotu. Zaberajú však viacej miesta v pamäti. Objekty obalených typov sú nemenné.
+Pre takéto prípady má Java k dispozícii tzv. obalené typy, anglicky *wrapper classes*. **Pre každý primitívny dátový typ existuje príslušný obalený typ**. Obalené triedy poskytujú plnohodnotné objekty, reprezentujúce dané číslo alebo inú primitívnu hodnotu. Zaberajú však viacej miesta v pamäti. Objekty obalených typov sú nemenné (po vytvorení sa hodnota týchto objektov už nedá meniť).
 
 === "Obalené typy v Jave"
 
@@ -368,13 +378,12 @@ Metódy tried obalených typov sa často používajú na typovú konverziu s tri
     ```
     LITERÁL
 
-    Literál je zápis údaja priamo v kóde
-    Literál null vyjadruje neprítomnosť hodnoty
-    Výnimka NullPointerException sa vyhodí, ak program očakával objekt a nie null
+    Zápis údaja priamo v kóde
+    null vyjadruje neprítomnosť hodnoty
+    NullPointerException sa vyhodí, ak program očakával objekt a dostal null
 
     TYPOVÁ KONVERZIA
 
-    Typová konverzia umožňuje konvertovať medzi dátovými typmi
     Implicitná konverzia - widening, automaticky konvertuje menšie typy na väčšie
     byte → short → int → long → float → double
     Explicitná konverzia - narrowing alebo casting, manuálna konverzia
@@ -384,15 +393,15 @@ Metódy tried obalených typov sa často používajú na typovú konverziu s tri
     OBALENÉ TYPY
 
     Obalené typy - wrapper classes
-    Pre každý primitívny dátový typ existuje príslušný obalený typ - trieda
-    Autoboxing a auto-unboxing je automatická konverzia z a do balených typov, keď je to potrebné
+    Pre primitívny dátový typ existuje príslušný obalený typ - trieda
+    Autoboxing a auto-unboxing je automatická konverzia z a do balených typov
     Uprednostňujeme primitívne typy pred obalenými, Java robí konverzie za nás
     2 obalené objekty porovnávam cez equals()
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Na čo slúži literál null, aká výnimka sa s ním spája
     - Ako funguje implicitná typová konverzia
@@ -401,3 +410,9 @@ Metódy tried obalených typov sa často používajú na typovú konverziu s tri
     - Čo je autoboxing a auto-unboxing
     - Ako sa parsujú čisla z reťazca znakov a ako sa prevádzajú čísla na reťazec
     
+    Praktické skúšanie
+
+    - Napíš program, ktorý načíta dve čísla a napíše výsledok po delení. Ošetrite čo najviac výnimiek pri chybách, ktoré môžu nastať.
+    - Napíš metódu, ktorá porovnáva dva reťazce aj v prípade, že jeden alebo oba sú null.
+      Výstup: true, ak sú rovnaké (vrátane oboch null), inak false.
+

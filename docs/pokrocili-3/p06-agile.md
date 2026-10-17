@@ -1,6 +1,14 @@
 # Pokročílí 6: Agilný vývoj, verziovacie systémy, správa vývoja
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Ak softvér vyvíja tím ľudí, dohodnú sa na spôsobe spolupráce aby si navzájom rozumeli a nevznikal chaos. Metódy a princípy pri tvorbe softvéru sa s rokmi menili. V súčasnosti je zaužívaný tzv. agilný prístup k vývoju softvéru. Dnes si ho bližšie priblížime.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/p06w.pdf">p06w.pdf</a></i>
+  </aside>
+</div>
 
 ## Agilný vývoj
 

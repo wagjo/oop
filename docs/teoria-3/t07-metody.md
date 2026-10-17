@@ -1,6 +1,15 @@
 # Teória 7: Metódy
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 V dnešnej časti si vysvetlíme, aké máme v Jave rôzne druhy metód.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/t07w.pdf">t07w.pdf</a></i>
+  </aside>
+</div>
+
 
 ## Základná syntax metódy
 
@@ -313,38 +322,33 @@ Uvedieme si zopár príkladov metód z knižníc Java API
     METÓDY
 
     Statické metódy
-    - Nepatria objektu ale triede ako takej
-    - Volajú sa cez názov triedy, napríklad Arrays.sort()
+    - Patria triede ako takej, nie objektu
+    - Volajú sa cez názov triedy, napr. Arrays.sort()
     - Využitie: utilitky, factory metódy a vstupný bod programu
 
     Inštančné metódy
-    - pracujú s objektom, volanie obj.metoda()
-    - majú prístup k všetkým atribútom svojej triedy
-    - majú v sebe definovanú špeciálnu premennú this, pomocou ktorej pristupujeme k objektu
+    - Pracujú s objektom, volanie obj.metoda()
+    - Majú prístup k atribútom svojej triedy
+    - Majú špeciálnu premennú this, na prístup k objektu
 
     Špeciálne inštančné metódy toString() a equals()
 
-    Preťaženie metód
-    - Môžeme mať viacero metód s rovnakým menom
-    - Preťažené metódy sa musia vzájomne líšiť počtom argumentov alebo typmi argumentov
-    - Definícia viacerých metód v rovnakým názvom sa nazýva preťaženie, anglicky overloading
+    Preťaženie metód - overloading
+    - Viacero metód s rovnakým menom
+    - Musia sa vzájomne líšiť počtom argumentov alebo typmi argumentov
     - Na návratový typ sa neprihliada
 
-    Getter metódy slúžia na zistenie hodnoty nejakého atribútu v objekte
-    Setter metódy slúžia na zmenu hodnoty v objekte
+    Getter metódy - zistenie hodnoty nejakého atribútu v objekte
+    Setter metódy - zmena hodnoty v objekte
 
     Továrenské metódy - factory methods
-    Sú to statické metódy, ktoré vracajú inštanciu svojej triedy
-    Továrenské metódy oddeľujú proces vytvárania objektov od kódu, ktorý ich používa
+    Statické metódy, ktoré vracajú inštanciu svojej triedy
+    Oddeľujú proces vytvárania objektov od kódu, ktorý ich používa
     ```
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Na ďalšej hodine budeme kontrolovať nasledovné veci:
-
-    - Zapísané poznámky z hodiny vo vašom zošite
-
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Rozdiel medzi statickými a inštančnými metódami
     - Ako voláme statické a ako voláme inštančné metódy
