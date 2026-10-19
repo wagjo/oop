@@ -155,3 +155,24 @@ Príklady dejov, ktoré môžete vyskúšať:
 * Film ktory sa paci chlapcom a na ktory by ste zobrali chlapca na prvom rande
 * Stredoveki dobrodruhovia sa plavia na lodi a zazivaju vela dobrodruzstiev a stretnu aj piratov
 * Film, ktory vyzera ze dopadne dobre, ale nakoniec skonci velmi smutne a zle
+
+### Obmeny úlohy
+
+!!! example "Úloha 5:"
+
+    Upravte váš projekt tak, aby program požiadal užívateľa o vloženie textu v nárečí alebo v nespisovnom slovenskom jazyku, s chybami
+    alebo bez mäkčenov a dĺžňov a vrátil naspať pravopisne a gramaticky správny text.
+
+    Ktorý model je naviac vhodný?
+
+!!! example "Úloha 6:"
+
+    Upravte váš projekt tak, aby preložil text zo slovenčiny do angličtiny.
+
+    Ktorý model je naviac vhodný?
+
+
+
+
+
+
