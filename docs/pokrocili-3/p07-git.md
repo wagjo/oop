@@ -1,6 +1,14 @@
 # Pokročílí 7: Verziovací nástroj git
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Dnes sa naučíme pracovať s najpopulárnejším distribuovaným verziovacím nástrojom `git`. Najprv si ukážeme základné príkazy tohto nástroja a na konci cvičenia si vyskúšame, ako nástroj PyCharm integruje prácu s verziami v rámci svojho IDE.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/p07w.pdf">p07w.pdf</a></i>
+  </aside>
+</div>
 
 ## git
 
@@ -530,9 +538,14 @@ Panel Commit, panel Git a diff zmeny v hlavnom okne
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Čo je working tree
     - Čo je index / staging area
     - Čo obsahuje commit
     - Základné príkazy na prácu s gitom
+
+    Praktické skúšanie:
+
+    - Vytvorte nový repozitár na disku. V ňom vytvorte 3 súbory s textovým obsahom a commitnite ich. Potom jeden z nich vymažte a commitnite. Potom jeden súbor zmeňte a a ďalší pridajte a commitnite.
+    - Vytvorte nový repozitár na disku. V ňom vytvorte 3 súbory s textovým obsahom a commitnite ich. Potom vytvorte vetvu s názvom "test" a v nej zmeňte nejakú súbor a commitnite. Následne sa prepnite do hlavného branchu, a tam vytvorte tiež súbor a commitnite. Potom mergnite vetvu "test" do hlavnej vetvy.

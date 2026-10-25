@@ -21,6 +21,7 @@ nav:
     - 3 - Riadenie toku programu: 'cvicenie-3/c03-cykly.md'
     - 4 - Polia, varargs: 'cvicenie-3/c04-polia.md'
     - 5 - Obalené typy: 'cvicenie-3/c05-wrapper.md'
+    - 6 - Reťazce znakov: 'cvicenie-3/c06-stringy.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'
@@ -28,6 +29,7 @@ nav:
     - 4 - Moduly: 'pokrocili-3/p04-moduly.md'   
     - 5 - Správa knižníc: 'pokrocili-3/p05-pip.md' 
     - 6 - Agilný vývoj: 'pokrocili-3/p06-agile.md'
+    - 7 - Git: 'pokrocili-3/p07-git.md'
   - Prehľad tém: 'prehlad.md'
   - Extra Bonus:
      - Použitie LLM: 'zbierka-python/pouzitie-llm.md'

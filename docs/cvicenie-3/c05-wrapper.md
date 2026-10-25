@@ -14,8 +14,6 @@ Na dnešnom cvičení sa povenujeme práci s typmi, ale najprv si ukážeme lite
   </aside>
 </div>
 
-
-
 ## Literál
 
 Dátové typy majú svoje konkrétne hodnoty. Zápis takejto hodnoty priamo v kóde sa nazýva **literál**. Syntax literálov je súčasťou programovacieho jazyka.

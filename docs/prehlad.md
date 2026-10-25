@@ -176,12 +176,12 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<!-- <a href="../cvicenie-3/c06-stringy">Reťazce</a> (<a href="../assets/c06w.pdf">pdf</a>)
+<a href="../cvicenie-3/c06-stringy">Reťazce</a> (<a href="../assets/c06w.pdf">pdf</a>)
 <ul>
 <li>String</li>
 <li>Metódy na prácu s reťazcami</li>
 <li>StringBuilder</li>
-</ul> -->
+</ul>
 </td>
 <td width=30%>
 <a href="../pokrocili-3/p06-agile">Agilný vývoj</a> (<a href="../assets/p06w.pdf">pdf</a>)
@@ -214,13 +214,13 @@ hide:
 </ul> -->
 </td>
 <td width=30%>
-<!-- <a href="../pokrocili-3/p07-git">Git</a> (<a href="../assets/p07w.pdf">pdf</a>)
+<a href="../pokrocili-3/p07-git">Git</a> (<a href="../assets/p07w.pdf">pdf</a>)
 <ul>
 <li>Git repozitár</li>
 <li>Working tree a index/staging area</li>
 <li>Zápis zmien do repozitára</li>
 <li>Vetvy zmien</li>
-</ul> -->
+</ul>
 </td>
 </tr>
 </tbody>

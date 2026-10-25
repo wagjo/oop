@@ -1,6 +1,14 @@
 # Cvičenie 6: Práca s reťazcami znakov
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Dnešné cvičenie si ukážeme, ako sa v Jave pracuje s reťazcami znakov. Ukážeme si spôsoby vytvárania a manipulácie s reťazcami. Taktiež si predstavíme rôzne pomocné metódy na vyhľadávanie a transformáciu reťazcov.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/c06w.pdf">c06w.pdf</a></i>
+  </aside>
+</div>
 
 !!! example "Domáca úloha"
 
@@ -365,10 +373,15 @@ Na tomto cvičení sme si predstavili tieto metódy:
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Ako sú v Jave reprezentované reťazce
     - Vlasnosti reťazcov
     - Základné metódy na prácu s reťazcami
     - Čo je a na čo sa používa treida StringBuilder
     
+    Praktické skúšanie:
+
+    - Napíš statickú metódu, ktorá má na vstupe text typu String. V tomto texte ktorý, obsahuje slová oddelené medzerami, nájdite a vráťte najdlhšie slovo.
+    - Napíš statickú metódu, ktorá má na vstupe text typu String. V tomto texte ktorý, obsahuje slová oddelené medzerami, spočítajte počet slov a tento počet vráťte.
+    - Napíšte program, ktorý od používateľa načíta viacero slov (počet zadá používateľ) a pomocou StringBuilder ich spojí do jednej vety s medzerami medzi slovami.
