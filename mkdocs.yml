@@ -33,7 +33,8 @@ nav:
   - Prehľad tém: 'prehlad.md'
   - Extra Bonus:
      - Výukové platformy: 'zbierka-java/platformy.md'
-     - Použitie LLM: 'zbierka-python/pouzitie-llm.md'
+     - Použitie LLM v Jave: 'zbierka-java/pouzitie-llm.md'
+     - Použitie LLM v Pythone: 'zbierka-python/pouzitie-llm.md'
 #  - Zbierka úloh: 
 #    - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
 #     - Výukové platformy: 'zbierka-java/platformy.md'
