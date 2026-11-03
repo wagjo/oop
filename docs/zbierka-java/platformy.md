@@ -13,7 +13,8 @@ Edabit ([https://edabit.com/](https://edabit.com/)) je interaktívna platforma n
 
     Zaregistrujte sa na stránke ([https://edabit.com/](https://edabit.com/))
 
-    * Splňte aspoň 10 Java zadaní. Úlohy obtiažnosti *Very Easy* zvládnete aj s tým, čo sme doteraz preberali.
+    * Splňte aspoň 10 Python zadaní. Úlohy obtiažnosti *Very Easy* zvládnete aj s tým, čo sme doteraz preberali.
+    * Splňte aspoň 5 *Easy* Python zadaní.
     * Pošlite mi cez EduPage URL na váš Edabit profil (môj profil je [https://edabit.com/user/SaNvxFq5kPWxQ4qJC](https://edabit.com/user/SaNvxFq5kPWxQ4qJC))
 
 
