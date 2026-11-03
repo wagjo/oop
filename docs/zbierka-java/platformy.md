@@ -35,7 +35,7 @@ Odporúčané úlohy pre začiatočníkov:
 
     Zaregistrujte sa na stránke ([https://www.codingame.com/](https://www.codingame.com/))
 
-    * Splňte aspoň 3 Java zadania. Odporúčam vybrať si z vyššie uvedených zadaní.
+    * Splňte aspoň 3 zadania pomocou Pythonu. Odporúčam vybrať si z vyššie uvedených zadaní.
     * Pridajte si ma ako 'Priateľa'
         * Môj profil je [https://www.codingame.com/profile/7d00eac6052e40d62eef6ac8308aae726321957](https://www.codingame.com/profile/7d00eac6052e40d62eef6ac8308aae726321957)
         * Invite link [https://www.codingame.com/servlet/urlinvite?u=7591236](https://www.codingame.com/servlet/urlinvite?u=7591236)
