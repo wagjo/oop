@@ -36,4 +36,6 @@ Odporúčané úlohy pre začiatočníkov:
     Zaregistrujte sa na stránke ([https://www.codingame.com/](https://www.codingame.com/))
 
     * Splňte aspoň 3 Java zadania. Odporúčam vybrať si z vyššie uvedených zadaní.
-    * Pošlite mi cez EduPage URL na váš CodinGame profil (môj profil je [https://www.codingame.com/profile/7d00eac6052e40d62eef6ac8308aae726321957](https://www.codingame.com/profile/7d00eac6052e40d62eef6ac8308aae726321957))
+    * Pridajte si ma ako 'Priateľa'
+        * Môj profil je [https://www.codingame.com/profile/7d00eac6052e40d62eef6ac8308aae726321957](https://www.codingame.com/profile/7d00eac6052e40d62eef6ac8308aae726321957)
+        * Invite link [https://www.codingame.com/servlet/urlinvite?u=7591236](https://www.codingame.com/servlet/urlinvite?u=7591236)
