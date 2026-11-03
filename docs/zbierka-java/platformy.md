@@ -1,6 +1,6 @@
 # Výukové platformy
 
-Na dnešnej hodine sa zaregistrujete na dvoch výukových platformách a vyskúšate si riešit jednoduché úlohy v Jave. URL na vaše profily mi zašlite cez Edupage.
+Na dnešnej hodine sa zaregistrujete na dvoch výukových platformách a vyskúšate si riešit jednoduché úlohy v Jave alebo Pythone. URL na vaše profily mi zašlite cez Edupage.
 
 ## Edabit
 
