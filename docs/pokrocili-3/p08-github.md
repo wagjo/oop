@@ -1,6 +1,15 @@
 # Pokročílí 8: Vzdialené repozitáry, GitHub
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Dnešné cvičenie pokračujeme s prácou s nástrojom git a ukážeme si, ako funguje komunikácia so vzdialenými repozitármi. Taktiež si ukážeme prácu s platformou GitHub, ktorá nám umožňuje okrem iného hostovať a spravovať vzdialené git repozitáre.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/p08w.pdf">p08w.pdf</a></i>
+  </aside>
+</div>
+
 
 ## GitHub
 
@@ -185,7 +194,7 @@ V GitHube na takéto schválenie máme Pull requests. Vyskúšame si teraz z vet
     Prijímanie zmien - git pull
 
     GitHub Issues - správa bugov, úloh a pod.
-    Každý issue má svoje číslo, odkazujeme na neho pomocou mriežky, napr. #2
+    Každý issue má svoje číslo, píše sa s mriežkou, napr. #2
 
     GitHub projects - tabuľky s rôznymi stavmi issues, napr. štýlu Kanban
     
@@ -195,7 +204,7 @@ V GitHube na takéto schválenie máme Pull requests. Vyskúšame si teraz z vet
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Ako sa pripojí vzdialený repozitár
     - Posielanie commitov do vzdialeného repozitára
@@ -203,3 +212,7 @@ V GitHube na takéto schválenie máme Pull requests. Vyskúšame si teraz z vet
     - Na čo slúži GitHub issues
     - Na čo slúži GitHub projects
     - Na čo slúži GitHub pull requests
+
+    Praktické skúšanie:
+
+    - Vytvorte issue vo vašom GitHub repozitári s názvom TestBug. Vo vašom projekte na GitHube vytvorte vetvu s názvom Test, commitnite do nej nejaké zmeny, v texte týchto zmien pridajte referenciu na váš novo vytvorený issue. Z vetvy Test vytvorte pull request.

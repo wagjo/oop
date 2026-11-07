@@ -1,6 +1,14 @@
 # Cvičenie 7: Triedy a metódy
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Dnešné cvičenie je zamerané na opakovanie a upevnenie znalostí o tvorbe tried a metód v Jave.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/c07w.pdf">c07w.pdf</a></i>
+  </aside>
+</div>
 
 
 ## Vytváranie tried
@@ -228,7 +236,3 @@ Máme vytvorené 2 triedy, ktoré nám reprezentujú potravinu a denný jedálni
 !!! warning "Skúšanie a kontrola vedomostí"
 
     Vypracovať domácu úlohu do budúceho cvičenia
-
-    Okruhy otázok na test:
-
-    - Vedieť vytvoriť a použiť balíky, triedy a metódy

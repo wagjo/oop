@@ -205,13 +205,13 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<!-- <a href="../cvicenie-3/c07-triedy">Triedy a Metódy</a> (<a href="../assets/c07w.pdf">pdf</a>)
+<a href="../cvicenie-3/c07-triedy">Triedy a Metódy</a> (<a href="../assets/c07w.pdf">pdf</a>)
 <ul>
 <li>Triedy s atribútmi</li>
 <li>Getter metódy</li>
 <li>toString</li>
 <li>Inštančné a statické metódy</li>
-</ul> -->
+</ul>
 </td>
 <td width=30%>
 <a href="../pokrocili-3/p07-git">Git</a> (<a href="../assets/p07w.pdf">pdf</a>)
@@ -223,5 +223,68 @@ hide:
 </ul>
 </td>
 </tr>
+
+<tr>
+<td width=10%>8</td>
+<td width=30%>
+<a href="../teoria-3/t08-konstruktor">Inicializácia a konštruktory</a> (<a href="../assets/t08w.pdf">pdf</a>)
+<ul>
+<li>Inicializácia objektu</li>
+<li>Konštruktory</li>
+<li>Statická inicializácia</li>
+</ul>
+</td>
+<td width=30%>
+<!-- <a href="../cvicenie-3/c08-metody">Metódy</a> (<a href="../assets/c08w.pdf">pdf</a>)
+<ul>
+<li>Hra Hangman</li>
+<li>Statické a inštančné metódy</li>
+<li>Getter a Setter metódy</li>
+<li>UML diagram tried</li>
+</ul> -->
+</td>
+<td width=30%>
+<a href="../pokrocili-3/p08-github">GitHub</a> (<a href="../assets/p08w.pdf">pdf</a>)
+<ul>
+<li>Vzdialený repozitár</li>
+<li>GitHub Issues</li>
+<li>GitHub Projects</li>
+<li>GitHub Pull requests</li>
+</ul>
+</td>
+</tr>
+
+
+<tr >
+<td width=10%>9</td>
+<td width=30%>
+<!-- <a href="../teoria-3/t09-premenne">Premenné</a> (<a href="../assets/t09w.pdf">pdf</a>)
+<ul>
+<li>Viditeľnosť premenných</li>
+<li>Zatienenie atribútov</li>
+<li>Inferencia typov</li>
+<li>Názvy premenných</li>
+</ul> -->
+</td>
+<td width=30%>
+<!-- <a href="../cvicenie-3/c09-konstruktor">Inicializácia a konštruktory</a> (<a href="../assets/c09w.pdf">pdf</a>)
+<ul>
+<li>Slovník do hry Hangman</li>
+<li>Slovník v kóde</li>
+<li>Slovník zo súboru a z internetu</li>
+<li>Slovník z klávesnice</li>
+</ul> -->
+</td>
+<td width=30%>
+<!-- <a href="../pokrocili-3/p09-oop">Triedy a metódy</a> (<a href="../assets/p09w.pdf">pdf</a>)
+<ul>
+<li>Trieda a konštruktor</li>
+<li>Inštančné metódy a atribúty</li>
+<li>Triedne metódy a atribúty</li>
+<li>Statické metódy</li>
+</ul> -->
+</td>
+</tr>
+
 </tbody>
 </table>

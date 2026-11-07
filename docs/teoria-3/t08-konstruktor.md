@@ -1,5 +1,13 @@
 # Teória 8: Inicializácia objektov, konštruktory
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
+Dnes sa bližšie pozrieme na spôsoby inicializácie objektov v Jave.</main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/t08w.pdf">t08w.pdf</a></i>
+  </aside>
+</div>
 
 ## Proces vytvárania objektu
 
@@ -351,15 +359,15 @@ Podobne ako pri inštančných inicializátoroch, aj statické inicializátory s
     Inicializácia objektu sa vykoná v tomto poradí:
     1. Priama inicializácia atribútov
     2. Inicializačný blok - inštančný inicializátor
-    3. Konštruktor, podľa toho aké argumenty má new
+    3. Konštruktor, podľa argumentov v new
 
-    Ak nie je atribút inicializovaný, Java ho inicializuje automaticky na 0, null alebo false
+    Ak atribút nie je inicializovaný, dá sa na 0, null alebo false.
 
     Konštruktor je špeciálna metóda, ktorá nemá návratový typ a má rovnaký názov ako jeho trieda
     Defaultný konštruktor (nulárny konštruktor) - bez argumentov
     Kopírovací konštruktor - má jeden argument, typu svojej triedy
     Parametrizovaný konštrutor - má jeden alebo viac argumentov
-    Ak v kóde triedy nemáme napísaný žiadny konštruktor, vytvorí sa automaticky defaultný konštruktor
+    Ak nemáme žiadny konštruktor, automaticky sa vytvorí defaultný konštruktor
     Konštruktor má modifikátor prístupu. Ak je private, musíme mať továrenskú metódu
 
     Statická inicializácia triedy - inicializuje statické atribúty, v tomto poradí:
@@ -371,11 +379,7 @@ Podobne ako pri inštančných inicializátoroch, aj statické inicializátory s
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Na ďalšej hodine budeme kontrolovať nasledovné veci:
-
-    - Zapísané poznámky z hodiny vo vašom zošite
-
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Proces vytvárania objektu
     - Aké druhy inicializácie objektu poznáme
