@@ -41,6 +41,7 @@ nav:
      - Výukové platformy: 'zbierka-java/platformy.md'
      - Použitie LLM v Jave: 'zbierka-java/pouzitie-llm.md'
      - Použitie LLM v Pythone: 'zbierka-python/pouzitie-llm.md'
+#     - Rozpoznávanie tváre v Pythone: 'zbierka-python/face-detection.md'
 #  - Zbierka úloh: 
 #    - Java - Dedičnosť: 'zbierka-java/j05-04-dedicnost.md'
 #     - Výukové platformy: 'zbierka-java/platformy.md'
