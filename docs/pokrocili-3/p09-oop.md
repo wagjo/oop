@@ -1,7 +1,14 @@
 # Pokročílí 9: Triedy a metódy
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Dnešné cvičenie je venované triedam a objektom v Pythone. Python podporuje paradigmy objektovo orientovaného programovania, a umožňuje nám navrhnúť logiku programu pomocou tried a objektov.
+  </main>
 
+  <aside>
+<i>Prezentácia: <a href="../../assets/p09w.pdf">p09w.pdf</a></i>
+  </aside>
+</div>
 
 ## Trieda
 
@@ -230,7 +237,7 @@ Názov statická metóda je síce podobný statickej metóde v Jave, avšak stat
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Ako sa vytvára trieda 
     - Konštruktor `__init__`
@@ -238,3 +245,8 @@ Názov statická metóda je síce podobný statickej metóde v Jave, avšak stat
     - Triedne metódy a atribúty, `cls`
     - Statické metódy
     - Dunder inštančná metódy `__str__`
+
+    Praktické skúšanie:
+
+    - Vytvorte triedu Stvorec s konštruktorom a metódamy obvod a obsah. Vytvorte 2 objekty tejto triedy a vypíšte ich obvod a obsah.
+    - Vytvorte triedu Osoba s atribútmi meno a priezvisko. Vytvorte konštruktor a metódu `__str__`. Vytvorte 2 objekty tejto triedy a vypíšte ich do konzoly.

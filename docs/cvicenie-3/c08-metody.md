@@ -1,6 +1,14 @@
 # Cvičenie 8: Metódy
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Na dnešnom cvičení si vyskúšame písanie metód. Aby sme robili aj niečo praktickejšie, naprogramujeme si jednoduchú textovú hru.
+  </main>
+
+  <aside>
+<i>Prezentácia: <a href="../../assets/c08w.pdf">c08w.pdf</a></i>
+  </aside>
+</div>
 
 ## Hangman
 
@@ -280,8 +288,3 @@ Blahoželáme k úspešnému naprogramovaniu hry. Nižšie nájdete bonusové ú
 !!! warning "Skúšanie a kontrola vedomostí"
 
     Na budúcom cvičení pokračujeme v tomto projekte, pokiaľ ste niektoré úlohy nestihli na hodine, dokončte si ich do budúcej hodiny doma.
-
-    Okruhy otázok na test:
-
-    - Vedieť vytvoriť a použiť inštančné metódy
-    

@@ -1,6 +1,14 @@
 # Teória 9: Premenné
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 O premenných sme si už pár krát hovorili. Vysvetlili sme si, že môžu byť *primitívneho* alebo *referenčného* (neprimitívneho) typu. Taktiež sme si ukázali, že primitívne premenné ukladajú hodnotu priamo a referenčné majú uložený iba odkaz na objekt, ktorý je na inom mieste v pamäti.
+</main>
+  <aside>
+<i>Prezentácia: <a href="../../assets/t09w.pdf">t09w.pdf</a></i>
+  </aside>
+</div>
+
 
 Okrem premenných sme si vysvetliti aj *konštanty*, ktoré sa definujú s kľúčovým slovkom `final` a ich hodnota sa po inicializácii už nemení.
 
@@ -38,6 +46,8 @@ Inštančné atribúty sú prístupné cez názov objektu. Každý objekt má sv
 Inštančné atribúty sú viditeľné z metód priamo, alebo k nim vieme pristupovať cez premennú `this`.
 
 Viditeľnosť inštančných atribútov mimo metód jej triedy je daná modifikátorom prístupu, napr. `public`, `private`.
+
+
 
 === "Viditeľnosť inštančného atribútu"
 
@@ -293,11 +303,7 @@ Prešli sme si základy jazyka Java. Od budúceho týždňa sa viac zameriame na
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Na ďalšej hodine budeme kontrolovať nasledovné veci:
-
-    - Zapísané poznámky z hodiny vo vašom zošite
-
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Viditeľnosť a rozsah (scope) premenných
     - Zatienenie atribútu - shadowing
