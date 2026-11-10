@@ -208,7 +208,7 @@ Máme vytvorené 2 triedy, ktoré nám reprezentujú potravinu a denný jedálni
     V triede `sk.spse.Main` vytvorte statickú metódu `nutricnyPoradca`, ktorá má na vstupe jedálniček a vypíše, čí je počet kalórii v norme, alebo či je kalórii nedostatok alebo prebytok. Norma je v rozmedzí 2000-3000 kalórii.
 
     Zavolajte nutričného poradcu na každý deň týždenného jedálnička
-
+<!-- 
 ## Domáca úloha
 
 !!! example "Domáca úloha"
@@ -223,7 +223,7 @@ Máme vytvorené 2 triedy, ktoré nám reprezentujú potravinu a denný jedálni
 
     V triede vytvorte statickú metódu `String getGeneracia(int rokNarodenia)`, ktorá vráti názov generácie podľa roku narodenia, napr. Generácia X, Zoomer, atď. Zoznam generácii môžete nájsť na stránke [https://sk.wikipedia.org/wiki/Generácia_(pokolenie_ľudí)](https://sk.wikipedia.org/wiki/Gener%C3%A1cia_(pokolenie_%C4%BEud%C3%AD)). Rozpoznajte aspoň 5 generácií.
 
-    Súbor s triedou vhodne nazvite podľa pravidiel Javy a zašlite cez Edupage v danej domácej úlohe do budúceho cvičenia.
+    Súbor s triedou vhodne nazvite podľa pravidiel Javy a zašlite cez Edupage v danej domácej úlohe do budúceho cvičenia. -->
 
 ## Zhrnutie cvičenia
 
@@ -235,4 +235,4 @@ Máme vytvorené 2 triedy, ktoré nám reprezentujú potravinu a denný jedálni
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Vypracovať domácu úlohu do budúceho cvičenia
+    - Vytvorte triedu Osoba s atribútmi meno, priezviskoa vek. Vytvorte konštruktor, gettery a metódu toString. Napíšte metódu main a v nej vytvorte 3 objekty typu Osoba a vypíšte ich do konzoly.
