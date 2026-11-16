@@ -25,7 +25,7 @@ nav:
     - 5 - Obalené typy: 'cvicenie-3/c05-wrapper.md'
     - 6 - Reťazce znakov: 'cvicenie-3/c06-stringy.md'
     - 7 - Triedy a metódy: 'cvicenie-3/c07-triedy.md'
-#    - 8 - Hangman: 'cvicenie-3/c08-metody.md'
+    - 8 - Hangman: 'cvicenie-3/c08-metody.md'
   - Pokročilí: 
     - 1 - Úvod, premenné, vstup a výstup: 'pokrocili-3/p01-uvod.md'
     - 2 - Vetvenie, cykly: 'pokrocili-3/p02-cykly.md'
