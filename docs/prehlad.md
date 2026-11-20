@@ -235,13 +235,13 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<!-- <a href="../cvicenie-3/c08-metody">Metódy</a> (<a href="../assets/c08w.pdf">pdf</a>)
+<a href="../cvicenie-3/c08-metody">Metódy</a> (<a href="../assets/c08w.pdf">pdf</a>)
 <ul>
 <li>Hra Hangman</li>
 <li>Statické a inštančné metódy</li>
 <li>Getter a Setter metódy</li>
 <li>UML diagram tried</li>
-</ul> -->
+</ul>
 </td>
 <td width=30%>
 <a href="../pokrocili-3/p08-github">GitHub</a> (<a href="../assets/p08w.pdf">pdf</a>)
@@ -258,22 +258,22 @@ hide:
 <tr >
 <td width=10%>9</td>
 <td width=30%>
-<!-- <a href="../teoria-3/t09-premenne">Premenné</a> (<a href="../assets/t09w.pdf">pdf</a>)
+<a href="../teoria-3/t09-premenne">Premenné</a> (<a href="../assets/t09w.pdf">pdf</a>)
 <ul>
 <li>Viditeľnosť premenných</li>
 <li>Zatienenie atribútov</li>
 <li>Inferencia typov</li>
 <li>Názvy premenných</li>
-</ul> -->
+</ul>
 </td>
 <td width=30%>
-<!-- <a href="../cvicenie-3/c09-konstruktor">Inicializácia a konštruktory</a> (<a href="../assets/c09w.pdf">pdf</a>)
+<a href="../cvicenie-3/c09-konstruktor">Inicializácia a konštruktory</a> (<a href="../assets/c09w.pdf">pdf</a>)
 <ul>
 <li>Slovník do hry Hangman</li>
 <li>Slovník v kóde</li>
 <li>Slovník zo súboru a z internetu</li>
 <li>Slovník z klávesnice</li>
-</ul> -->
+</ul>
 </td>
 <td width=30%>
 <!-- <a href="../pokrocili-3/p09-oop">Triedy a metódy</a> (<a href="../assets/p09w.pdf">pdf</a>)
@@ -282,6 +282,38 @@ hide:
 <li>Inštančné metódy a atribúty</li>
 <li>Triedne metódy a atribúty</li>
 <li>Statické metódy</li>
+</ul> -->
+</td>
+</tr>
+
+
+<tr >
+<td width=10%>10</td>
+<td width=30%>
+<!-- <a href="../teoria-3/t10-zapuzdrenie">Zapuzdrenie</a> (<a href="../assets/t10w.pdf">pdf</a>)
+<ul>
+<li>Zapuzdrenie</li>
+<li>Triedny invariant</li>
+<li>Nemenný objekt</li>
+<li>Defenzívne kopírovanie</li>
+</ul> -->
+</td>
+<td width=30%>
+<!-- <a href="../cvicenie-3/c10-dedicnost">Dedičnosť</a>
+<ul>
+<li>Dedičnosť a rozhrania</li>
+<li>Návrh programu pre správu tovaru v záložni</li>
+<li>Tvorba diagramu tried v nástroji Mermaid</li>
+</ul> -->
+</td>
+<td width=30%>
+<!-- <a href="../pokrocili-3/p10-metody">Metódy a JSON</a> (<a href="../assets/p10w.pdf">pdf</a>)
+<ul>
+<li>Súkromné atribúty</li>
+<li>Vymazanie atribútov a objektov</li>
+<li>Špeciálne metódy</li>
+<li>Variabilný počet argumentov</li>
+<li>JSON</li>
 </ul> -->
 </td>
 </tr>

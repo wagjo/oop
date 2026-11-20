@@ -362,8 +362,11 @@ class Hra {
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Vedieť vytvoriť a použiť preťažené konštruktory a továrenské metódy
     - Vedieť priamo inicializovať atribúty v triede
     
+    Praktické skúšanie:
+
+    - Vytvorte triedu Kniha so String atribútmi nazov, autor a kategoria. Vytvorte parametrický konštruktor a metódu toString. Vytvorte továrenskú metódu novaDetektivka(String nazov, String autor), ktorá vytvorí objekt triedy Kniha s kategóriou "detektivka". V metóde main vytvorte 2 objekty tejto triedy a vypíšte ich do konzoly.

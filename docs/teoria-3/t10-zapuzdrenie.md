@@ -1,6 +1,14 @@
 # Teória 10: Zapuzdrenie
 
+<div class="md-has-sidebar" markdown>
+  <main markdown>
 Dnes začíname preberať hlavné koncepty objektovo orientovaného programovania. Začneme pri zapuzdrení.
+</main>
+  <aside>
+<i>Prezentácia: <a href="../../assets/t10w.pdf">t10w.pdf</a></i>
+  </aside>
+</div>
+
 
 ## Zapuzdrenie
 
@@ -309,11 +317,7 @@ Problém s únikom referencií sa dá riešiť aj použitím nemenných objektov
 
 !!! warning "Skúšanie a kontrola vedomostí"
 
-    Na ďalšej hodine budeme kontrolovať nasledovné veci:
-
-    - Zapísané poznámky z hodiny vo vašom zošite
-
-    Okruhy otázok na test:
+    Ústne skúšanie:
 
     - Zapuzdrenie - čo to je
     - Techniky zapuzdrenia
