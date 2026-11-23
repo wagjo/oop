@@ -276,13 +276,13 @@ hide:
 </ul>
 </td>
 <td width=30%>
-<!-- <a href="../pokrocili-3/p09-oop">Triedy a metódy</a> (<a href="../assets/p09w.pdf">pdf</a>)
+<a href="../pokrocili-3/p09-oop">Triedy a metódy</a> (<a href="../assets/p09w.pdf">pdf</a>)
 <ul>
 <li>Trieda a konštruktor</li>
 <li>Inštančné metódy a atribúty</li>
 <li>Triedne metódy a atribúty</li>
 <li>Statické metódy</li>
-</ul> -->
+</ul>
 </td>
 </tr>
 
@@ -290,13 +290,13 @@ hide:
 <tr >
 <td width=10%>10</td>
 <td width=30%>
-<!-- <a href="../teoria-3/t10-zapuzdrenie">Zapuzdrenie</a> (<a href="../assets/t10w.pdf">pdf</a>)
+<a href="../teoria-3/t10-zapuzdrenie">Zapuzdrenie</a> (<a href="../assets/t10w.pdf">pdf</a>)
 <ul>
 <li>Zapuzdrenie</li>
 <li>Triedny invariant</li>
 <li>Nemenný objekt</li>
 <li>Defenzívne kopírovanie</li>
-</ul> -->
+</ul>
 </td>
 <td width=30%>
 <!-- <a href="../cvicenie-3/c10-dedicnost">Dedičnosť</a>
